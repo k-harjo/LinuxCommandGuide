@@ -1,0 +1,48 @@
+bg
+
+Send a job to background
+
+Syntax
+      bg [job_id...]
+Send the specified jobs to the background. A background job is executed simultaneously with fish, and does not have access to the keyboard. If no job is specified, the last job to be used is put in the background.
+
+bg takes a “job ID” available from jobs, not a PID.
+
+If jobspec is not present, the shell's notion of the current job is used.
+
+To kill a specific background job use, kill %jobspec.
+
+bg is a BASH shell builtin and a ZSH shell builtin, to display your local syntax from the bash prompt type: help bg
+
+Examples
+Put the job with job id 0 in the background:
+
+$ bg %0
+
+To start a new process in the background you can do:
+
+$ long_running_command &
+
+Send the current foreground job to the background using CTRL-Z and bg:
+
+$ long_running_command
+
+$ Ctrl-Z
+
+$ [2]+ Stopped long_running_command
+$ bg
+
+View all the background jobs using jobs:
+
+$ jobs
+[1]   Running     long_running_command &
+[2]-  Running     someothercommand &
+Bring a background job to the foreground. When executed without arguments, this will take the most recent background job to the foreground:
+
+$ fg
+
+Kill job #2:
+
+$ kill %2
+
+"I'm not kidding myself, my voice is ordinary. If I stand still while I'm singing, I might as well go back to driving a truck" ~ Elvis Presley

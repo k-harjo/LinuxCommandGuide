@@ -1,0 +1,291 @@
+Command,Explanation,Doc_Path,Html_Path
+&,Start a new process in the background,docs/txt/&.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\&.html
+alias,Create an alias,docs/txt/alias.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\alias.html
+apropos,Search Help manual pages (man -k),docs/txt/apropos.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\apropos.html
+apt,Search for and install software packages (Debian/Ubuntu),docs/txt/apt.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\apt.html
+apt-get,Search for and install software packages (Debian/Ubuntu),docs/txt/apt-get.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\apt-get.html
+aptitude,Search for and install software packages (Debian/Ubuntu),docs/txt/aptitude.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\aptitude.html
+aspell,Spell Checker,docs/txt/aspell.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\aspell.html
+at,Schedule a command to run once at a particular time,docs/txt/at.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\at.html
+awk,"Find and Replace text, database sort/validate/index",docs/txt/awk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\awk.html
+basename,Strip directory and suffix from filenames,docs/txt/basename.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\basename.html
+base32,Base32 encode/decode data and print to standard output,docs/txt/base32.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\base32.html
+base64,Base64 encode/decode data and print to standard output,docs/txt/base64.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\base64.html
+bash,GNU Bourne-Again SHell,docs/txt/bash.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\bash.html
+bc,Arbitrary precision calculator language,docs/txt/bc.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\bc.html
+bg,Send to background,docs/txt/bg.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\bg.html
+bind,Set or display readline key and function bindings ,docs/txt/bind.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\bind.html
+break,Exit from a loop ,docs/txt/break.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\break.html
+builtin,Run a shell builtin,docs/txt/builtin.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\builtin.html
+bzip2,Compress or decompress named file(s),docs/txt/bzip2.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\bzip2.html
+cal,Display a calendar,docs/txt/cal.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cal.html
+caller,Return the context of any active subroutine call ,docs/txt/caller.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\caller.html
+case,Conditionally perform a command,docs/txt/case.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\case.html
+cat,Concatenate and print (display) the content of files,docs/txt/cat.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cat.html
+cd,Change Directory,docs/txt/cd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cd.html
+cfdisk,Partition table manipulator for Linux,docs/txt/cfdisk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cfdisk.html
+chattr,Change file attributes on a Linux file system,docs/txt/chattr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chattr.html
+chgrp,Change group ownership,docs/txt/chgrp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chgrp.html
+chmod,Change access permissions,docs/txt/chmod.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chmod.html
+chown,Change file owner and group,docs/txt/chown.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chown.html
+chpasswd,Update passwords in batch mode,docs/txt/chpasswd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chpasswd.html
+chroot,Run a command with a different root directory,docs/txt/chroot.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chroot.html
+chkconfig,System services (runlevel),docs/txt/chkconfig.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\chkconfig.html
+cksum,Print CRC checksum and byte counts,docs/txt/cksum.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cksum.html
+clear,Clear the terminal screen/console (ncurses),docs/txt/clear.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\clear.html
+clear_console,Clear the terminal screen/console (bash),docs/txt/clear_console.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\clear_console.html
+cmp,Compare two files,docs/txt/cmp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cmp.html
+comm,Compare two sorted files line by line,docs/txt/comm.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\comm.html
+command,Run a command - ignoring shell functions ,docs/txt/command.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\command.html
+continue,Resume the next iteration of a loop ,docs/txt/continue.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\continue.html
+cp,Copy one or more files to another location,docs/txt/cp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cp.html
+cpio,Copy files to and from archives,docs/txt/cpio.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cpio.html
+cron,Daemon to execute scheduled commands,docs/txt/cron.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\cron.html
+crontab,Schedule a command to run at a later time,docs/txt/crontab.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\crontab.html
+csplit,Split a file into context-determined pieces,docs/txt/csplit.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\csplit.html
+curl,Transfer data from or to a server,docs/txt/curl.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\curl.html
+date,Display or change the date & time,docs/txt/date.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\date.html
+dc,Desk Calculator,docs/txt/dc.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dc.html
+dd,"Data Duplicator - convert and copy a file, write disk headers, boot records",docs/txt/dd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dd.html
+ddrescue,Data recovery tool,docs/txt/ddrescue.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ddrescue.html
+declare,Declare variables and give them attributes ,docs/txt/declare.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\declare.html
+df,Display free disk space,docs/txt/df.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\df.html
+diff,Display the differences between two files,docs/txt/diff.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\diff.html
+diff3,Show differences among three files,docs/txt/diff3.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\diff3.html
+dig,DNS lookup,docs/txt/dig.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dig.html
+dir,Briefly list directory contents,docs/txt/dir.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dir.html
+dircolors,Colour setup for 'ls',docs/txt/dircolors.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dircolors.html
+dirname,Convert a full pathname to just a path,docs/txt/dirname.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dirname.html
+dirs,Display list of remembered directories,docs/txt/dirs.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dirs.html
+dos2unix,Windows/MAC to UNIX text file format converter,docs/txt/dos2unix.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dos2unix.html
+dmesg,Print kernel & driver messages,docs/txt/dmesg.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dmesg.html
+dpkg,Package manager (Debian/Ubuntu).,docs/txt/dpkg.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\dpkg.html
+du,Estimate file space usage,docs/txt/du.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\du.html
+echo,Display message on screen ,docs/txt/echo.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\echo.html
+egrep,Search file(s) for lines that match an extended expression,docs/txt/egrep.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\egrep.html
+eject,Eject removable media,docs/txt/eject.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\eject.html
+enable,Enable and disable builtin shell commands ,docs/txt/enable.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\enable.html
+env,Environment variables,docs/txt/env.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\env.html
+ethtool,Ethernet card settings,docs/txt/ethtool.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ethtool.html
+eval,Evaluate several commands/arguments,docs/txt/eval.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\eval.html
+exec,Execute a command,docs/txt/exec.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\exec.html
+exit,Exit the shell,docs/txt/exit.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\exit.html
+expand,Convert tabs to spaces,docs/txt/expand.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\expand.html
+export,Set an environment variable,docs/txt/export.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\export.html
+expr,Evaluate expressions,docs/txt/expr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\expr.html
+FALSE,"Do nothing, unsuccessfully",docs/txt/FALSE.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\FALSE.html
+fdformat,Low-level format a floppy disk,docs/txt/fdformat.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fdformat.html
+fdisk,Partition table manipulator for Linux,docs/txt/fdisk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fdisk.html
+fg,Send job to foreground,docs/txt/fg.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fg.html
+fgrep,Search file(s) for lines that match a fixed string,docs/txt/fgrep.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fgrep.html
+file,Determine file type,docs/txt/file.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\file.html
+find,Search for files that meet a desired criteria,docs/txt/find.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\find.html
+fmt,Reformat paragraph text,docs/txt/fmt.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fmt.html
+fold,Wrap text to fit a specified width,docs/txt/fold.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fold.html
+for,"Expand words, and execute commands",docs/txt/for.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\for.html
+format,Format disks or tapes,docs/txt/format.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\format.html
+free,Display memory usage,docs/txt/free.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\free.html
+fsck,File system consistency check and repair,docs/txt/fsck.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fsck.html
+ftp,File Transfer Protocol,docs/txt/ftp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ftp.html
+function,Define Function Macros,docs/txt/function.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\function.html
+fuser,Identify/kill the process that is accessing a file,docs/txt/fuser.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\fuser.html
+gawk,Find and Replace text within file(s),docs/txt/gawk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\gawk.html
+getopts,Parse positional parameters,docs/txt/getopts.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\getopts.html
+getfacl,Get file access control lists,docs/txt/getfacl.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\getfacl.html
+grep,Search file(s) for lines that match a given pattern,docs/txt/grep.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\grep.html
+groupadd,Add a user security group,docs/txt/groupadd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\groupadd.html
+groupdel,Delete a group,docs/txt/groupdel.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\groupdel.html
+groupmod,Modify a group,docs/txt/groupmod.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\groupmod.html
+groups,Print group names a user is in,docs/txt/groups.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\groups.html
+gzip,Compress or decompress named file(s),docs/txt/gzip.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\gzip.html
+hash,Remember the full pathname of a name argument,docs/txt/hash.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\hash.html
+head,Output the first part of file(s),docs/txt/head.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\head.html
+help,Display help for a built-in command ,docs/txt/help.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\help.html
+history,Command History,docs/txt/history.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\history.html
+hostname,Print or set system name,docs/txt/hostname.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\hostname.html
+htop,Interactive process viewer,docs/txt/htop.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\htop.html
+iconv,Convert the character set of a file,docs/txt/iconv.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\iconv.html
+id,Print user and group id's,docs/txt/id.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\id.html
+if,Conditionally perform a command,docs/txt/if.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\if.html
+ifconfig,Configure a network interface,docs/txt/ifconfig.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ifconfig.html
+ifdown,Stop a network interface,docs/txt/ifdown.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ifdown.html
+ifup,Start a network interface up,docs/txt/ifup.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ifup.html
+import,Capture an X server screen and save the image to file,docs/txt/import.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\import.html
+install,Copy files and set attributes,docs/txt/install.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\install.html
+iostat,Report CPU and i/o statistics,docs/txt/iostat.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\iostat.html
+ip,"Routing, devices and tunnels",docs/txt/ip.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ip.html
+jobs,List active jobs ,docs/txt/jobs.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\jobs.html
+join,Join lines on a common field,docs/txt/join.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\join.html
+kill,Kill a process by specifying its PID,docs/txt/kill.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\kill.html
+killall,Kill processes by name,docs/txt/killall.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\killall.html
+klist,List cached Kerberos tickets,docs/txt/klist.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\klist.html
+less,Display output one screen at a time,docs/txt/less.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\less.html
+let,Perform arithmetic on shell variables ,docs/txt/let.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\let.html
+link,Create a link to a file,docs/txt/link.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\link.html
+ln,Create a symbolic link to a file,docs/txt/ln.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ln.html
+local,Create a function variable ,docs/txt/local.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\local.html
+locate,Find files,docs/txt/locate.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\locate.html
+logname,Print current login name,docs/txt/logname.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\logname.html
+logout,Exit a login shell ,docs/txt/logout.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\logout.html
+look,Display lines beginning with a given string,docs/txt/look.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\look.html
+lpc,Line printer control program,docs/txt/lpc.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lpc.html
+lpr,Print files,docs/txt/lpr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lpr.html
+lprint,Print a file,docs/txt/lprint.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lprint.html
+lprintd,Delete a print job,docs/txt/lprintd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lprintd.html
+lprintq,List the print queue,docs/txt/lprintq.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lprintq.html
+lprm,Remove jobs from the print queue,docs/txt/lprm.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lprm.html
+lsattr,List file attributes on a Linux second extended file system,docs/txt/lsattr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lsattr.html
+lsblk,List block devices,docs/txt/lsblk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lsblk.html
+ls,List information about file(s),docs/txt/ls.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ls.html
+lsof,List open files,docs/txt/lsof.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lsof.html
+lspci,List all PCI devices,docs/txt/lspci.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\lspci.html
+make,Recompile a group of programs,docs/txt/make.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\make.html
+man,Help manual,docs/txt/man.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\man.html
+mapfile,Read lines from standard input into an indexed array variable ,docs/txt/mapfile.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mapfile.html
+mkdir,Create new folder(s),docs/txt/mkdir.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mkdir.html
+mkfifo,Make FIFOs (named pipes),docs/txt/mkfifo.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mkfifo.html
+mkfile,Make a file,docs/txt/mkfile.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mkfile.html
+mkisofs,Create a hybrid ISO9660/JOLIET/HFS filesystem,docs/txt/mkisofs.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mkisofs.html
+mknod,Make block or character special files,docs/txt/mknod.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mknod.html
+mktemp,Make a temporary file,docs/txt/mktemp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mktemp.html
+more,Display output one screen at a time,docs/txt/more.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\more.html
+most,Browse or page through a text file,docs/txt/most.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\most.html
+mount,Mount a file system,docs/txt/mount.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mount.html
+mtools,Manipulate MS-DOS files,docs/txt/mtools.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mtools.html
+mtr,Network diagnostics (traceroute/ping),docs/txt/mtr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mtr.html
+mv,Move or rename files or directories,docs/txt/mv.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mv.html
+mmv,Mass Move and rename (files),docs/txt/mmv.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\mmv.html
+nc,"Netcat, read and write data across networks",docs/txt/nc.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\nc.html
+netstat,Networking connections/stats,docs/txt/netstat.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\netstat.html
+nft,nftables for packet filtering and classification,docs/txt/nft.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\nft.html
+nice,Set the priority of a command or job,docs/txt/nice.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\nice.html
+nl,Number lines and write files,docs/txt/nl.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\nl.html
+nohup,Run a command immune to hangups,docs/txt/nohup.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\nohup.html
+notify-send,Send desktop notifications,docs/txt/notify-send.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\notify-send.html
+nslookup,Query Internet name servers interactively,docs/txt/nslookup.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\nslookup.html
+open,Open a file in its default application,docs/txt/open.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\open.html
+op,Operator access,docs/txt/op.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\op.html
+passwd,Modify a user password,docs/txt/passwd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\passwd.html
+paste,Merge lines of files,docs/txt/paste.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\paste.html
+pathchk,Check file name portability,docs/txt/pathchk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pathchk.html
+Perf,Performance analysis tools for Linux,docs/txt/Perf.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\Perf.html
+ping,Test a network connection,docs/txt/ping.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ping.html
+pgrep,List processes by name,docs/txt/pgrep.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pgrep.html
+pkill,Kill processes by name,docs/txt/pkill.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pkill.html
+popd,Restore the previous value of the current directory,docs/txt/popd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\popd.html
+pr,Prepare files for printing,docs/txt/pr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pr.html
+printcap,Printer capability database,docs/txt/printcap.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\printcap.html
+printenv,Print environment variables,docs/txt/printenv.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\printenv.html
+printf,Format and print data ,docs/txt/printf.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\printf.html
+ps,Process status,docs/txt/ps.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ps.html
+pushd,Save and then change the current directory,docs/txt/pushd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pushd.html
+pv,Monitor the progress of data through a pipe,docs/txt/pv.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pv.html
+pwd,Print Working Directory,docs/txt/pwd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\pwd.html
+quota,Display disk usage and limits,docs/txt/quota.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\quota.html
+quotacheck,Scan a file system for disk usage,docs/txt/quotacheck.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\quotacheck.html
+ram,ram disk device,docs/txt/ram.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ram.html
+rar,Archive files with compression,docs/txt/rar.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rar.html
+rcp,Copy files between two machines,docs/txt/rcp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rcp.html
+read,Read a line from standard input ,docs/txt/read.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\read.html
+readarray,Read from stdin into an array variable ,docs/txt/readarray.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\readarray.html
+readonly,Mark variables/functions as readonly,docs/txt/readonly.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\readonly.html
+reboot,Reboot the system,docs/txt/reboot.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\reboot.html
+rename,Rename files,docs/txt/rename.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rename.html
+renice,Alter priority of running processes,docs/txt/renice.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\renice.html
+remsync,Synchronize remote files via email,docs/txt/remsync.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\remsync.html
+return,Exit a shell function,docs/txt/return.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\return.html
+rev,Reverse lines of a file,docs/txt/rev.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rev.html
+rm,Remove files,docs/txt/rm.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rm.html
+rmdir,Remove folder(s),docs/txt/rmdir.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rmdir.html
+rsync,Remote file copy (Synchronize file trees),docs/txt/rsync.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\rsync.html
+screen,"Multiplex terminal, run remote shells via ssh",docs/txt/screen.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\screen.html
+scp,Secure copy (remote file copy),docs/txt/scp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\scp.html
+sdiff,Merge two files interactively,docs/txt/sdiff.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sdiff.html
+sed,Stream Editor,docs/txt/sed.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sed.html
+select,Accept user choices via keyboard input,docs/txt/select.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\select.html
+seq,Print numeric sequences,docs/txt/seq.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\seq.html
+set,Manipulate shell variables and functions,docs/txt/set.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\set.html
+setfacl,Set file access control lists.,docs/txt/setfacl.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\setfacl.html
+sftp,Secure File Transfer Program,docs/txt/sftp.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sftp.html
+sha256sum,Compute and check SHA256 (256-bit) checksums,docs/txt/sha256sum.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sha256sum.html
+shift,Shift positional parameters,docs/txt/shift.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\shift.html
+shopt,Shell Options,docs/txt/shopt.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\shopt.html
+shuf,Generate random permutations,docs/txt/shuf.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\shuf.html
+shutdown,Shutdown or restart linux,docs/txt/shutdown.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\shutdown.html
+sleep,Delay for a specified time,docs/txt/sleep.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sleep.html
+slocate,Find files,docs/txt/slocate.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\slocate.html
+sort,Sort text files,docs/txt/sort.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sort.html
+source,Run commands from a file '.'  ,docs/txt/source.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\source.html
+split,Split a file into fixed-size pieces,docs/txt/split.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\split.html
+ss,Socket Statistics,docs/txt/ss.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ss.html
+ssh,Secure Shell client (remote login program),docs/txt/ssh.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ssh.html
+stat,Display file or file system status,docs/txt/stat.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\stat.html
+strace,Trace system calls and signals,docs/txt/strace.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\strace.html
+su,Substitute user identity,docs/txt/su.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\su.html
+sudo,Execute a command as another user,docs/txt/sudo.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sudo.html
+sum,Print a checksum for a file,docs/txt/sum.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sum.html
+suspend,Suspend execution of this shell ,docs/txt/suspend.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\suspend.html
+sync,Synchronize data on disk with memory,docs/txt/sync.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\sync.html
+tabs,Set tabs on a terminal,docs/txt/tabs.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tabs.html
+tail,Output the last part of a file,docs/txt/tail.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tail.html
+tar,"Store, list or extract files in an archive",docs/txt/tar.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tar.html
+tee,Redirect output to multiple files,docs/txt/tee.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tee.html
+test,Evaluate a conditional expression,docs/txt/test.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\test.html
+time,Measure Program running time,docs/txt/time.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\time.html
+timeout,Run a command with a time limit,docs/txt/timeout.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\timeout.html
+times,User and system times,docs/txt/times.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\times.html
+tmux,Terminal multiplexer,docs/txt/tmux.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tmux.html
+touch,Change file timestamps,docs/txt/touch.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\touch.html
+top,List processes running on the system,docs/txt/top.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\top.html
+tput,"Set terminal-dependent capabilities, color, position",docs/txt/tput.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tput.html
+traceroute,Trace Route to Host,docs/txt/traceroute.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\traceroute.html
+trap,Execute a command when the shell receives a signal ,docs/txt/trap.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\trap.html
+tr,"Translate, squeeze, and/or delete characters",docs/txt/tr.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tr.html
+TRUE,"Do nothing, successfully",docs/txt/TRUE.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\TRUE.html
+tsort,Topological sort,docs/txt/tsort.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tsort.html
+tty,Print filename of terminal on stdin,docs/txt/tty.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\tty.html
+type,Describe a command ,docs/txt/type.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\type.html
+ulimit,Limit user resources ,docs/txt/ulimit.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\ulimit.html
+umask,Users file creation mask,docs/txt/umask.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\umask.html
+umount,Unmount a device,docs/txt/umount.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\umount.html
+unalias,Remove an alias ,docs/txt/unalias.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\unalias.html
+uname,Print system information,docs/txt/uname.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\uname.html
+unexpand,Convert spaces to tabs,docs/txt/unexpand.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\unexpand.html
+uniq,Uniquify files,docs/txt/uniq.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\uniq.html
+units,Convert units from one scale to another,docs/txt/units.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\units.html
+unix2dos,UNIX to Windows or MAC text file format converter,docs/txt/unix2dos.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\unix2dos.html
+unrar,Extract files from a rar archive,docs/txt/unrar.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\unrar.html
+unset,Remove variable or function names,docs/txt/unset.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\unset.html
+unshar,Unpack shell archive scripts,docs/txt/unshar.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\unshar.html
+until,Execute commands (until error),docs/txt/until.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\until.html
+uptime,Show uptime,docs/txt/uptime.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\uptime.html
+useradd,Create new user account,docs/txt/useradd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\useradd.html
+userdel,Delete a user account,docs/txt/userdel.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\userdel.html
+usermod,Modify user account,docs/txt/usermod.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\usermod.html
+users,List users currently logged in,docs/txt/users.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\users.html
+uuencode,Encode a binary file,docs/txt/uuencode.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\uuencode.html
+uudecode,Decode a file created by uuencode,docs/txt/uudecode.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\uudecode.html
+v,Verbosely list directory contents ('ls -l -b'),docs/txt/v.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\v.html
+vdir,Verbosely list directory contents ('ls -l -b'),docs/txt/vdir.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\vdir.html
+vi,Text Editor,docs/txt/vi.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\vi.html
+vmstat,Report virtual memory statistics,docs/txt/vmstat.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\vmstat.html
+w,Show who is logged on and what they are doing,docs/txt/w.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\w.html
+wait,Wait for a process to complete ,docs/txt/wait.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\wait.html
+watch,Execute/display a program periodically,docs/txt/watch.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\watch.html
+wc,"Print byte, word, and line counts",docs/txt/wc.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\wc.html
+whereis,"Search the user's $path, man pages and source files for a program",docs/txt/whereis.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\whereis.html
+which,Search the user's $path for a program file,docs/txt/which.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\which.html
+while,Execute commands,docs/txt/while.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\while.html
+who,Print all usernames currently logged in,docs/txt/who.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\who.html
+whoami,Print the current user id and name ('id -un'),docs/txt/whoami.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\whoami.html
+wget,"Retrieve web pages or files via HTTP, HTTPS or FTP",docs/txt/wget.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\wget.html
+write,Send a message to another user,docs/txt/write.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\write.html
+xargs,"Execute utility, passing constructed argument list(s)",docs/txt/xargs.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\xargs.html
+xdg-open,Open a file or URL in the user's preferred application.,docs/txt/xdg-open.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\xdg-open.html
+xxd,Make a hexdump or do the reverse,docs/txt/xxd.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\xxd.html
+xz,Compress or decompress .xz and .lzma files,docs/txt/xz.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\xz.html
+yes,Print a string until interrupted,docs/txt/yes.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\yes.html
+zip,Package and compress (archive) files,docs/txt/zip.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\zip.html
+.,Run a command script in the current shell,docs/txt/..txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\..html
+!!,Run the last command again,docs/txt/!!.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\!!.html
+###,Comment / Remark,docs/txt/###.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\###.html
