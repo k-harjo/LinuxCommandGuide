@@ -1,1 +1,7 @@
-EMPTY
+
+# - A comment or remark is indicated by starting the line with the # character
+
+   # This is a description
+   # Another remark
+   command
+   # Another remark

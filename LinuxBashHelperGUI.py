@@ -3,22 +3,17 @@ Created on Tue Oct 10 09:10:32 2023
 
 @author: e436482
 
-
 '''
-
-
+from Preferences import Preferences 
 import os
 from functools import partial
 from pathlib import Path
-import datetime
-import csv
+from bs4 import BeautifulSoup
 import sys
 import subprocess
-import time
 import pandas as pd
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtCore import (QTimerEvent, 
-                          QStringListModel, 
+from PyQt5.QtCore import (QStringListModel, 
                           Qt,
                           QUrl
                         )
@@ -33,7 +28,9 @@ from PyQt5.QtWidgets import (QMainWindow,
                              QVBoxLayout,  
                              QAction,
                              QListView, 
-                             QComboBox
+                             QComboBox, 
+                             QLineEdit, 
+                             QPushButton
                              )
 
 class NonEditableStringListModel(QStringListModel):
@@ -57,7 +54,7 @@ class DocumentViewer(QWebEngineView):
                     <html>
                     <head>
                         <style>
-                            body {{ margin: 0; padding: 0; font-family: Arial, sans-serif; }}
+                            body {{ margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; }}
                             pre {{ white-space: pre-wrap; word-wrap: break-word; }}
                         </style>
                     </head>
@@ -78,7 +75,9 @@ class LinuxDictGUI(QMainWindow):
         self.setFixedSize(1200, 900)
         self.setWindowTitle("Linux and Bash Helper")
         self.setWindowIcon(QIcon(''))
-
+        self.preferences = Preferences()
+        self.preferences.mode_changed.connect(self.update_stylesheet)
+        
         self.main_widget = QWidget()
         self.main_widget_layout = QHBoxLayout()
 
@@ -107,7 +106,7 @@ class LinuxDictGUI(QMainWindow):
         #settings menu
         settings_menu = self.menubar.addMenu("Settings")
         preferences = QAction("Preferences", self)
-        # preferences.triggered.connect(self.show_preferences)
+        preferences.triggered.connect(self.show_preferences)
         settings_menu.addAction(preferences)
         
         #help menu
@@ -143,30 +142,43 @@ class LinuxDictGUI(QMainWindow):
                                "locate", "ls", "mkdir", "more", "mv", "pwd", "rm", "sdiff", "sed", 
                                "sort", "top", "touch", "uniq"]
 
-
+        self.doc_widget = QWidget()
+        doc_layout = QVBoxLayout()
+        search_layout = QHBoxLayout()
         self.doc_viewer = DocumentViewer()
-        self.doc_viewer.setHtml("<html><body>Choose a term on the left to learn more!</h1></html>")
+        self.doc_viewer.setHtml("""<html><p>Choose a term on the left to learn more!</p1></html>""")
+
+
+        self.search_bar = QLineEdit()
+        self.search_btn = QPushButton("Search")
+        self.search_bar.setPlaceholderText("Search for a command")
+        search_layout.addWidget(self.search_bar)
+        search_layout.addWidget(self.search_btn)
 
         #set viewers to layouts
+        doc_layout.addLayout(search_layout)
+        doc_layout.addWidget(self.doc_viewer)
+        self.doc_widget.setLayout(doc_layout)
         cmd_layout.addWidget(self.dropdown)
         cmd_layout.addWidget(self.cmd_view)
         cmd_widget.setLayout(cmd_layout)
 
         self.main_widget_layout.addWidget(cmd_widget)
-        self.main_widget_layout.addWidget(self.doc_viewer)   
+        self.main_widget_layout.addWidget(self.doc_widget)   
 
         #item when clicked
         self.cmd_view.doubleClicked.connect(self.item_double_clicked)
         self.dropdown.currentIndexChanged.connect(self.add_items_to_viewer)
+        self.search_btn.clicked.connect(self.search)
+        self.search_bar.returnPressed.connect(self.search)
 
+        self.add_items_to_viewer()
         '''
         ##TODO: Add bash scripting examples,
-         write search algorithm, 
-         add search bar, 
          clean up most used commands (probably too many),
          create new graphics or cleaup the current ones
         '''
-        
+
     def add_items_to_viewer(self):
         self.item_list = []
         self.html_list = []
@@ -190,12 +202,47 @@ class LinuxDictGUI(QMainWindow):
     def item_double_clicked(self, index):
         for doc in self.all_linux_cmds["Html_Path"]:
             self.html_list.append(doc)
-        self.doc_viewer.setHtml("<html><body>Loading file...</h1></html>")
+        self.doc_viewer.setHtml("<html><p>Loading file...</p1></html>")
         doc = self.html_list[index.row()]
         self.doc_viewer.load_document(doc)  
 
+    def search(self):
+        results = []
+        search_term = self.search_bar.text()
+        directory = Path('docs/html/')
+        for filename in os.listdir(directory):
+            if filename.endswith('.html'):
+                with open(os.path.join(directory, filename), 'r', encoding='utf-8') as f:
+                    content = f.read()
+                    soup = BeautifulSoup(content, 'html.parser')
+                    text = soup.get_text()
+                    if search_term.lower() in text.lower():
+                        results.append(filename)
+                        if results:
+                            results_formatted = '<br>'.join(results)  # Join the results with HTML line breaks
+                            results_html = f"""
+                            <html>
+                            <body>
+                                <p>Found {len(results)} result(s) in the following pages:</p>
+                                <p>{results_formatted}</p>
+                            </body>
+                            </html>
+                            """
+                        else:
+                            results_html = "<html><body><p>No results found.</p></body></html>"
+
+        self.doc_viewer.setHtml(results_html)
+
+        return results
+
     def new_instance(self):
         subprocess.Popen([sys.executable, __file__])
+
+    def show_preferences(self):
+        self.preferences.show()
+
+    def update_stylesheet(self, style):
+        self.setStyleSheet(style)        
 
 if __name__ == "__main__":
     

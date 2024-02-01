@@ -1,1 +1,121 @@
-EMPTY
+bc - An arbitrary precision calculator language.
+
+
+Syntax
+
+      bc options file... 
+
+
+Key
+
+   -h, --help
+       Print the usage and exit.
+
+ file  A file containing the calculations/functions to perform.
+       This can be piped from standard input  
+
+   -i, --interactive
+       Force interactive mode.
+ 
+   -l, --mathlib
+       Define the standard math library.
+ 
+   -w, --warn
+       Give warnings for extensions to POSIX bc.
+
+   -s, --standard
+       Process exactly the POSIX bc language.
+
+   -q, --quiet
+       Do not print the normal GNU bc welcome.
+
+   -v, --version
+       Print the version number and copyright and quit.
+bc is a language that supports arbitrary precision numbers with interactive execution of statements.
+
+arbitrary-precision arithmetic, also called bignum arithmetic, indicates that calculations are performed on numbers whose digits of precision are limited only by the available memory of the host system. This contrasts with the faster fixed-precision arithmetic found in most arithmetic logic unit (ALU) hardware, which typically offers between 8 and 64 bits of precision. [x]
+
+bc starts by processing code from all the files listed on the command line in the order listed. After all files have been processed, bc reads from the standard input.
+
+All code is executed as it is read. If a file contains a command to halt the processor, bc will never read from the standard input.
+
+A use of bc is within a shell script, using a "here" document to pass the program details to bc.
+
+
+Examples
+
+$ echo '1+2' | bc
+$ 3
+
+
+Shell script
+
+#!/bin/bash
+# bcsample - An example of calculations with bc
+if [ $# != 1 ]
+  then
+  echo "A number argument is required"
+  exit
+fi
+
+bc <<END-OF-INPUT
+  scale=6
+  /* first we define the function */
+  define myfunc(x){
+  return(sqrt(x) + 10);
+  }
+
+  /* then use the function to do the calculation*/
+ x=$1
+ "Processing";x;" result is ";myfunc(x)
+ quit
+END-OF-INPUT
+
+echo "(to 6 decimal places)"
+Run the script above with:
+$ chmod a+x bcsample
+$ ./bcsample 125
+
+Standard functions supported by bc
+length ( expression )
+The value of the length function is the number of significant digits in the expression.
+
+read ( )
+Read a number from the standard input, regardless of where the function occurs. Beware, this can cause problems with the mixing of data and program in the standard input. The best use for this function is in a previously written program that needs input from the user, but never allows program code to be input from the user.
+
+scale ( expression )
+The number of digits after the decimal point in the expression.
+
+sqrt ( expression )
+The square root of the expression.
+
+Most standard math expressions are of course supported: + - / * % ^
+
+++ var
+increment the variable by one and set the new value as the result of the expression.
+
+var ++
+The result of the expression is the value of the variable and the variable is then incremented by one.
+
+-- var
+decrement the variable by one and set the new value as the result of the expression.
+
+var --
+The result of the expression is the value of the variable and the variable is then decremented by one.
+
+( expr )
+Parenthesis alter the standard precedence to force the evaluation of an expression.
+
+var = expr
+The variable var is assigned the value of the expression.
+
+Relational expressions and Boolean operations are also legal, look at the full bc man page for more
+
+
+Comments
+
+/* In-line comments */
+# single line comment. The end of line character is not part of the comment and is processed normally.
+
+
+*See also: dc

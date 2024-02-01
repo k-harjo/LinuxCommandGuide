@@ -1,6 +1,5 @@
-bg
 
-Send a job to background
+bg - Send a job to background
 
 Syntax
       bg [job_id...]

@@ -1,1 +1,62 @@
-EMPTY
+base32
+Base32 encode/decode data and print to standard output.
+
+Syntax
+      base32 [OPTION]... [FILE]
+
+Key
+   -d
+   --decode
+        Decode data.
+
+   -i
+   --ignore-garbage
+        When decoding, ignore non-alphabet characters.
+
+   -w
+   --wrap=COLS
+        Wrap encoded lines after COLS character (default 76).  
+        Use 0 to disable line wrapping.
+
+   --help
+        Display this help and exit.
+
+   --version
+        Output version information and exit.
+
+With no FILE, or when FILE is - , read from standard input.
+Mandatory arguments to long options are mandatory for short options too.
+
+The Base 32 encoding is designed to represent arbitrary sequences of octets in a form that needs to be case insensitive but that need not be human readable.
+
+The base32 encoded data is about 60% larger than the raw data.
+
+The data are encoded as described for the base64 alphabet in RFC 4648.
+This uses an alphabet of A-Z, followed by 2-7.
+0, 1, 8 and 9 are skipped due to the similarity with the letters O, I, B and G.
+
+When fewer than 40 input bits are available in an input group, bits with value zero are added (on the right) to form an integral number of 5-bit groups. Padding at the end of the data is performed using the "=" character.
+
+When decoding, the input may contain newlines in addition to the bytes of the formal base64 alphabet. Use --ignore-garbage to attempt to recover from any other non-alphabet bytes in the encoded stream.
+
+Advantages of Base32:
+
+The (smaller) output character set is case-insensitive.
+Because the output character set avoids similar-looking pairs of different characters, like 1 and l, the output can be transcribed by hand with a low error rate.
+The output is suitable for use as a URL string.
+One disdvantage of Base32 is that the resulting string is about 20% longer than Base64.
+
+base32 is part of the coreutils (basic file, shell and text manipulation utilities) project.
+
+Examples
+Encode the text file sample.txt:
+$ base32 sample.txt > encoded.txt
+
+Encode a binary photo file:
+$ base32 --wrap=0 picture.jpg > encoded.txt
+
+Decode the file encoded.txt:
+$ base32 encoded.txt > restore.txt
+
+
+*See also: base64, uuencode, ASCII Table

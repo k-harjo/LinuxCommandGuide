@@ -1,1 +1,46 @@
-EMPTY
+aspell - Spellcheck a file.
+
+
+Syntax
+      aspell check [options] filename
+
+
+Key
+   -mode=mode
+       The mode to use when checking files.
+       The available modes are none, url, email, sgml, tex, texinfo, nroff and any
+       others available on your system. more..
+
+   –dont-backup
+       Don't create a backup file. Normally, if there are any corrections the Aspell utility
+       will append .bak to the existing file name and then create a new file with corrections
+       made during spell checking.
+
+   -sug-mode=mode
+       The suggestion mode to use where mode is one of ultra, fast, normal, or bad-spellers.
+       For more information on these modes see Notes on the Different Suggestion Modes.
+
+   -lang=name
+   -l name
+       The language the document is written in. The default depends on the current locale.
+
+   -encoding=name
+       Encoding the document is expected to be in. The default depends on the current locale.
+
+   -master=name
+   -d name
+       The main dictionary to use.
+
+   -keymapping=name
+       The keymapping to use. Either aspell for the default mapping or ispell to use the same
+       mapping that the Ispell utility uses.
+
+
+Examples
+Check the file foo.txt:
+
+$ aspell check foo.txt
+
+Check the file foo.txt using the bad-spellers suggestion mode and the American English dictionary:
+
+$ aspell check --sug-mode=bad-spellers -d en_US foo.txt

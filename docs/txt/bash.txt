@@ -1,1 +1,127 @@
-EMPTY
+bash - Open a new instance of the bash shell.
+
+Syntax
+
+      bash [options] [file]
+
+
+Key
+
+   file   A file containing commands to run, by default bash will read commands from standard input.
+
+  In addition to the single-character shell options documented in the description of the set builtin command,
+  bash interprets the following options when it is invoked:
+
+   -c string  Read commands are read from string.
+              If there are arguments after string, they are assigned to the positional parameters, starting with $0.
+
+   -i         Interactive shell.
+
+   -l         Make bash act as if it had been invoked as a login shell, see INVOCATION below.
+
+   -r         Restricted shell, see RESTRICTED SHELL below.
+
+   -s         Commands are read from the standard input. The default if no file provided.
+              This option allows the positional parameters to be set when invoking an interactive shell.
+
+   -D         A list of all double-quoted strings preceded by $ is printed on the standard output.
+              These are the strings that are subject to language translation when the current locale is not C
+              or POSIX. This implies the -n option; no commands will be executed.
+
+   [-+]O [shopt_option]
+              shopt_option is one of the shell options accepted by the shopt builtin.
+              If shopt_option is present, -O sets the value of that option; +O unsets it. If shopt_option is not supplied,
+              the names and values of the shell options accepted by shopt are printed on the standard output.
+              If the invocation option is +O, the output is displayed in a format that may be reused as input.
+
+   --         A -- signals the end of options and disables further option processing.
+              Any arguments after the -- are treated as filenames and arguments. An argument of - is equivalent to --.
+              Bash also interprets a number of multi-character options. These options must appear on the command line
+              before the single-character options to be recognized.
+
+   --debugger  Arrange for the debugger profile to be executed before the shell starts.
+              Turns on extended debugging mode (see the description of the extdebug option to the shopt builtin)
+              and shell function tracing (see the description of the -o functrace option to the set builtin). 
+
+   --dump-po-strings Equivalent to -D, but the output is in the GNU gettext po (portable object) file format.
+
+   --dump-strings    Equivalent to -D. 
+
+   --help           Display a usage message on standard output and exit successfully.
+
+   --init-file file
+   --rcfile file
+                    Execute commands from file instead of the standard personal initialization file ~/.bashrc
+                    if the shell is interactive, see INVOCATION below.
+
+   --login          Equivalent to -l.
+
+   --noediting      Do not use the GNU readline library to read command lines when the shell is interactive.
+
+   --noprofile      Do not read either the system-wide startup file /etc/profile or any of the personal initialization
+                    files ~/.bash_profile, ~/.bash_login, or ~/.profile.
+                    By default, bash reads these files when it is invoked as a login shell (see INVOCATION below).
+
+   --norc           Do not read and execute the personal initialization file ~/.bashrc if the shell is interactive.
+                    This option is on by default if the shell is invoked as sh.
+   --posix          Change the behavior of bash where the default operation differs from the POSIX standard to
+                    match the standard (posix mode).
+
+   --restricted     Restricted shell, see RESTRICTED SHELL below.
+
+   --rpm-requires   Produce the list of files that are required for the shell script to run.
+                    This implies '-n' and is subject to the same limitations as compile time error checking checking;
+                    Backticks, [] tests, and evals are not parsed so some dependencies may be missed.
+
+   --verbose        Equivalent to -v.
+
+   --version        Show version information for this instance of bash on the standard output and exit successfully.
+
+
+Arguments
+
+If arguments remain after option processing, and neither the -c nor the -s option has been supplied, the first argument is assumed to be the name of a file containing shell commands. If bash is invoked in this fashion, $0 is set to the name of the file, and the positional parameters are set to the remaining arguments. Bash reads and executes commands from this file, then exits.
+
+Bash's exit status is the exit status of the last command executed in the script. If no commands are executed, the exit status is 0. An attempt is first made to open the file in the current directory, and, if no file is found, then the shell searches the directories in PATH for the script.
+
+
+Restricted Shell
+
+If bash is started with the name rbash, or the -r option is supplied at invocation, the shell becomes restricted. A restricted shell is used to set up an environment more controlled than the standard shell. It behaves identically to bash with the exception that the following are disallowed or not performed:
+
+		changing directories with cd
+		setting or unsetting the values of SHELL, PATH, ENV, or BASH_ENV
+		specifying command names containing /
+		specifying a file name containing a / as an argument to the . builtin command
+		Specifying a filename containing a slash as an argument to the -p option to the hash builtin command
+		importing function definitions from the shell environment at startup
+		parsing the value of SHELLOPTS from the shell environment at startup
+		redirecting output using the >, >|, <>, >&, &>, and >> redirection operators
+		using the exec builtin command to replace the shell with another command
+		adding or deleting builtin commands with the -f and -d options to the enable builtin command
+		Using the enable builtin command to enable disabled shell builtins
+		specifying the -p option to the command builtin command
+		turning off restricted mode with set +r or set +o restricted.
+		These restrictions are enforced after any startup files are read.
+		When a command that is found to be a shell script is executed, rbash turns off any restrictions in the shell spawned to execute the script.
+
+
+Invocation
+
+A login shell is one whose first character of argument zero is a -, or one started with the --login option.
+
+An interactive shell is one started without non-option arguments and without the -c option whose standard input and error are both connected to terminals (as determined by isatty(3)), or one started with the -i option. PS1 is set and $- includes i if bash is interactive, allowing a shell script or a startup file to test this state.
+
+For more details about how bash executes its startup files, run man bash.
+
+
+Examples:
+
+Open a new bash shell:
+$ bash
+
+Exit the current shell, this will return to any previous parent shell, or if none will exit the terminal session completely:
+$ exit
+
+
+*See also: screen, logout, shutdown, csh, zsh

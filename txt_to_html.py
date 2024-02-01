@@ -13,7 +13,7 @@ for item in all_linux_cmds["Doc_Path"]:
         html_content = f"""
             <html>
             <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
+                <link rel="stylesheet" type="text/css" href="docs/doc_style_sheet.css">
                 <style>
                     .title h1 {{
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */

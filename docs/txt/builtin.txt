@@ -1,1 +1,25 @@
-EMPTY
+builtin - Run a shell builtin, passing it args, and return its exit status.
+
+
+Syntax
+
+      builtin [shell-builtin [args]]
+This is useful when defining a shell function with the same name as a shell builtin, retaining the functionality of the builtin within the function.
+
+The commands marked • in the main A-Z list are bash built-ins:
+alias, bind, break, builtin, caller, command, continue, declare, echo, enable, help, jobs, let, local, logout, mapfile, printf, read, readarray, source, suspend, trap, type, ulimit, unalias, wait.
+Example
+A function to replace 'cd' that writes the hostname and current directory to an xterm title bar:
+cd()
+
+   {
+
+      builtin cd "$@" && xtitle "$HOST: $PWD"
+
+   }
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [b]uiltin
+
+The return status is non-zero if shell-builtin is not a shell builtin command.
+
+
+*See also: chroot, cron, exec, if, nohup, su, shopt, .source, type, watch

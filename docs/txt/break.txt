@@ -1,1 +1,26 @@
-EMPTY
+break - Exit from a for, while, until, or select loop
+
+
+Syntax
+
+      break [n]
+If n is supplied, the nth enclosing loop is exited. n must be greater than or equal to 1.
+
+The return status is zero unless n is not greater than or equal to 1.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help break
+
+
+Examples
+
+for myloop in 1 2 3 4 5 
+do 
+  echo -n "$myloop"
+  if [ "$myloop" -eq 3 ] 
+   then 
+   break # This line will break out of the loop
+  fi
+done
+
+
+*See also: for, select, until, while, caller, continue
