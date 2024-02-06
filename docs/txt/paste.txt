@@ -1,1 +1,54 @@
-EMPTY
+paste - Merge lines of files, write to standard output lines consisting of sequentially corresponding lines of each given file, separated by a TAB character.
+
+
+Syntax
+
+      paste [options]... [file]...
+
+
+Options
+
+   -s
+   --serial
+        Paste the lines of one file at a time rather than one line from each file.
+
+   -d DELIM-LIST
+   --delimiters DELIM-LIST
+        Consecutively use the characters in DELIM-LIST instead of TAB to
+        separate merged lines.
+        When DELIM-LIST is exhausted, start again at its beginning.
+The following special characters can also be used in DELIM-LIST:
+\n newline character
+\t tab character
+\\ backslash character
+\0 Empty string (not a null character).
+
+Any other character preceded by a backslash is equivalent to the character itself.
+
+Standard input is used for a file name of - or if no input files are given.
+
+
+Examples
+
+Combines the lines from two files:
+
+$ paste file1.txt file2.txt > result.txt
+
+List the files in the current directory in three columns:
+
+ls | paste - - -
+
+Combine pairs of lines from a file into single lines:
+
+paste -s -d '\t\n' myfile
+
+Number the lines in a file, similar to nl:
+
+sed = myfile | paste -s -d '\t\n' - -
+
+Create a colon-separated list of directories named bin, suitable for use in the PATH environment variable:
+
+find / -name bin -type d | paste -s -d : -
+
+
+*See also: csplit, cut, fold, fmt, join, split, tail

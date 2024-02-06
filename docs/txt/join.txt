@@ -1,1 +1,69 @@
-EMPTY
+join - Join lines on a common field, writes to standard output a line for each pair of input lines that have identical join fields.
+
+
+Syntax
+
+      join [Options]... File1 File2
+
+
+Options
+
+   -a FILE-NUMBER
+       Print a line for each unpairable line in file FILE-NUMBER (either '1' or '2'),
+       in addition to the normal output.
+
+   -e STRING
+       Replace those output fields that are missing in the input with STRING.
+
+   -i
+   --ignore-case
+      Ignore differences in case when comparing keys.  With this option, the lines of the
+      input files must be ordered in the same way.  Use 'sort -f' to produce this ordering.
+
+   -1 FIELD
+   -j1 FIELD
+      Join on field FIELD (a positive integer) of file 1.
+
+  -2 FIELD
+   -j2 FIELD
+      Join on field FIELD (a positive integer) of file 2.
+
+   -j FIELD
+      Equivalent to '-1 FIELD -2 FIELD'.
+
+   -o FIELD-LIST...
+      Construct each output line according to the format in FIELD-LIST.
+      Each element in FIELD-LIST is either the single character '0' or has the form M.N where
+      the file number, M, is '1' or '2' and N is a positive field number.
+
+      A field specification of '0' denotes the join field.  In most cases, the functionality
+      of the '0' field spec can be reproduced using the explicit M.N that corresponds to the join field.
+      However, when printing unpairable lines (using either of the '-a' or '-v' options), there is no
+      way to specify the join field using M.N in FIELD-LIST if there are unpairable lines in both files.
+      To give 'join' that functionality, POSIX invented the '0' field specification notation.
+
+      The elements in FIELD-LIST are separated by commas or blanks.
+      Multiple FIELD-LIST arguments can be given after a single '-o' option; the values of
+      all lists given with '-o' are concatenated together.
+      All output lines - including those printed because of any -a or -v option - are subject to
+      the specified FIELD-LIST.
+
+   -t CHAR
+      Use character CHAR as the input and output field separator.
+
+   -v FILE-NUMBER
+      Print a line for each unpairable line in file FILE-NUMBER (either '1' or '2'),
+      instead of the normal output.
+
+Either File1 or File2 (but not both) can be '-', meaning standard input. File1 and File2 should be already sorted in increasing textual order on the join fields, using the collating sequence specified by the 'LC_COLLATE' locale.
+
+Unless the '-t' option is given, the input should be sorted ignoring blanks at the start of the join field, as in 'sort -b'. If the '--ignore-case' option is given, lines should be sorted without regard to the case of characters in the join field, as in 'sort -f'.
+
+The defaults are:
+The join field is the first field in each line;
+Fields in the input are separated by one or more blanks, with leading blanks on the line ignored;
+Fields in the output are separated by a space;
+Each output line consists of the join field, the remaining fields from File1, then the remaining fields from File2.
+
+
+*See also: csplit, cut, fmt, fold, head, paste, split, tail

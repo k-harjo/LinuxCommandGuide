@@ -1,1 +1,27 @@
-EMPTY
+rev - Reverse lines of a file.
+
+
+Syntax:
+
+     rev [file]
+The rev utility copies the specified files to the standard output, reversing the order of characters in every line.
+
+If no file is specified, the standard input is read (type CTRL-D to end).
+
+The most common use of rev is to reverse the lines, apply a sort to the result and then pipe through rev a second time to restore the original.
+
+
+Examples
+
+Given the input of:
+
+The quick brown fox
+jumps over the lazy dog
+
+Rev will output:
+
+xof mworb kciuq ehT
+god yzal eht revo spmuj
+
+
+*See also: sort

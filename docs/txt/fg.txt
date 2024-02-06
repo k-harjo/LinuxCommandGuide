@@ -1,1 +1,24 @@
-EMPTY
+fg - Send job to foreground.
+
+
+Syntax
+
+      fg [job_id...]
+Resume the specified job in the foreground, and make it the current job.
+
+fg takes a “job ID” available from jobs, not a PID.
+
+If jobspec is not present, the shell's notion of the current job is used.
+
+The return value is that of the command placed into the foreground, or failure if run when job control is disabled or, when run with job control enabled, if jobspec does not specify a valid job or jobspec specifies a job that was started without job control.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help fg
+
+
+Examples
+
+Put the job with job id 0 in the foreground:
+fg %0
+
+
+*See also: bg, jobs, suspend

@@ -1,1 +1,1 @@
-EMPTY
+ethtool - Ethernet card settings

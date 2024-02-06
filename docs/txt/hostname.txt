@@ -1,1 +1,10 @@
-EMPTY
+hostname - Print or set system name
+
+
+Syntax
+
+      hostname [name]
+With no arguments, 'hostname' prints the name of the current host system. With one argument, it sets the current host name to the specified string. You must have appropriate privileges to set the host name.
+
+
+*See also: env, groups, id, logname, tty, uname, users, who, whoami

@@ -1,1 +1,43 @@
-EMPTY
+notify-send - A program to send desktop notifications, inform the user about an event or display some form of information without getting in the user’s way.
+
+
+Syntax 
+
+      notify-send [OPTIONS] summary [body]
+
+ 
+Key
+
+   -u, --urgency=LEVEL
+               The urgency level (low,  normal,  critical).
+ 
+   -t, --expire-time=TIME
+               The  timeout in milliseconds at which to expire the
+               notification.
+ 
+   -i, --icon=ICON[,ICON...]
+               An icon filename or stock icon to display.
+ 
+   -c, --category=TYPE[,TYPE...]
+               Specifies the notification category.
+ 
+   -?, --help
+               Show a help message
+ 
+   -h, --hint=TYPE:NAME:VALUE
+               Pass extra data. Valid TYPEs are int, double, string and byte.
+ 
+To use notify-send, you might need to install the following package:
+$ sudo apt-get install libnotify-bin
+
+
+Examples
+
+$ notify-send "Hello World"
+
+$ notify-send -t 5000 -u low "Hello World"
+
+The return status is zero if all information was written successfully.
+
+
+*See also: echo

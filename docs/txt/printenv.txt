@@ -1,1 +1,19 @@
-EMPTY
+printenv - List the names and values of all environment variables or, with VARIABLE, the value of the environment variable name.
+
+
+Syntax
+
+      printenv [OPTION]... [VARIABLE]... 
+
+         
+Key
+
+   VARIABLE     The name of the environment variable.
+
+   -0, --null   End each output line with 0 byte rather than newline.
+
+   --help       Display this help and exit
+
+   --version    Output version information and exit
+
+Some shells may provide a builtin printenv command which is similar or identical to this utility.

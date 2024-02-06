@@ -1,1 +1,200 @@
-EMPTY
+sort - Sort text files. Sort, merge, or compare all the lines from the files given (or standard input.)
+
+
+Syntax
+
+      sort [options] [file...]
+      sort [options]... --files0-from=F
+
+
+Ordering Options
+
+   -b, --ignore-leading-blanks
+       Ignore leading blanks. 
+   -d, --dictionary-order
+       Consider only blanks and alphanumeric characters.
+   -f, --ignore-case
+       Fold lower case to upper case characters.
+   -g, --general-numeric-sort
+       Compare according to general numerical value.
+   -i, --ignore-nonprinting
+       Consider only printable characters.
+   -M, --month-sort
+       Compare (unknown) < 'JAN' < ... < 'DEC'
+   -h, --human-numeric-sort
+       Compare human readable numbers (e.g., 2K 1G).
+   -n, --numeric-sort
+       Compare according to string numerical value.
+   -R, --random-sort
+       Sort by random hash of keys.
+   --random-source=FILE
+       Get random bytes from FILE.
+   -r, --reverse
+       Reverse the result of comparisons.
+   --sort=WORD
+       Sort according to WORD: general-numeric -g, human-numeric -h, month -M, numeric -n, random -R, version -V 
+   -V, --version-sort
+       Natural sort of (version) numbers within text.
+
+
+Other options:
+
+   --batch-size=NMERGE
+       Merge at most NMERGE inputs at once; for more use temp files.
+   -c, --check, --check=diagnose-first
+       Check for sorted input; do not sort.
+   -C, --check=quiet, --check=silent
+       Like -c, but do not report first bad line.
+   --compress-program=PROG
+       Compress temporaries with PROG; decompress them with PROG -d 
+   --files0-from=F
+       Read input from the files specified by NUL-terminated names in file F; If F is - then read names from standard input.
+   -k, --key=POS1[,POS2]
+       Start a key at POS1 (origin 1), end it at POS2 (default end of line).
+   -m, --merge
+       Merge already sorted files; do not sort.
+   -o, --output=FILE
+       Write result to FILE instead of standard output.
+   -s, --stable
+       Stabilize sort by disabling last-resort comparison.
+   -S, --buffer-size=SIZE
+       Use SIZE for main memory buffer.
+   -t, --field-separator=SEP
+       Use SEP instead of non-blank to blank transition.
+   -T, --temporary-directory=DIR
+       Use DIR for temporaries, not $TMPDIR or /tmp; multiple options specify multiple directories.
+   -u, --unique
+       With -c, check for strict ordering; without -c, output only the first of an equal run.
+   -z, --zero-terminated
+       End lines with 0 byte, not newline.
+   --help
+       Display help and exit.
+   --version
+       Output version information and exit.
+
+Write sorted concatenation of all FILE(s) to standard output.
+Mandatory arguments to long options are mandatory for short options too.
+
+POS is F[.C][OPTS], where F is the field number and C the character position in the field; both are origin 1.
+
+If neither -t nor -b is in effect, characters in a field are counted from the beginning of the preceding whitespace.
+
+OPTS is one or more single-letter ordering options, which override global ordering options for that key. If no key is given, use the entire line as the key.
+
+SIZE may be followed by the following multiplicative suffixes: % 1% of memory, b 1, K 1024 (default), and so on for M, G, T, P, E, Z, Y.
+
+With no FILE, or when FILE is -, read standard input.
+
+*** WARNING *** The locale specified by the environment affects sort order.
+Set LC_ALL=C to get the traditional sort order that uses native byte values.
+
+
+How lines are compared
+
+A pair of lines is compared as follows: if any key fields have been specified, 'sort' compares each pair of fields, in the order specified on the command line, according to the associated ordering options, until a difference is found or no fields are left. Unless otherwise specified, all comparisons use the character collating sequence specified by the 'LC_COLLATE' locale.
+
+If any of the global options 'Mbdfinr' are given but no key fields are specified, 'sort' compares the entire lines according to the global options.
+
+Finally, as a last resort when all keys compare equal (or if no ordering options were specified at all), 'sort' compares the entire lines. The last resort comparison honors the '-r' global option. The '-s' (stable) option disables this last-resort comparison so that lines in which all fields compare equal are left in their original relative order. If no fields or global options are specified, '-s' has no effect.
+
+GNU 'sort' (as specified for all GNU utilities) has no limits on input line length or restrictions on bytes allowed within lines. In addition, if the final byte of an input file is not a newline, GNU 'sort' silently supplies one. A line's trailing newline is part of the line for comparison purposes; for example, with no options in an ASCII locale, a line starting with a tab sorts before an empty line because tab precedes newline in the ASCII collating sequence.
+
+Upon any error, 'sort' exits with a status of '2'.
+
+If the environment variable 'TMPDIR' is set, 'sort' uses its value as the directory for temporary files instead of '/tmp'. The '-T TEMPDIR' option in turn overrides the environment variable.
+
+
+Notes
+
+Historical (BSD and System V) implementations of 'sort' have differed in their interpretation of some options, particularly '-b', '-f', and '-n'. GNU sort follows the POSIX behavior, which is usually (but not always!) like the System V behavior. According to POSIX, '-n' no longer implies '-b'. For consistency, '-M' has been changed in the same way. This can affect the meaning of character positions in field specifications in obscure cases. The only fix is to add an explicit '-b'.
+
+A position in a sort field specified with the '-k' or '+' option has the form 'F.C', where F is the number of the field to use and C is the number of the first character from the beginning of the field (for '+POS') or from the end of the previous field (for '-POS'). If the '.C' is omitted, it is taken to be the first character in the field. If the '-b' option was specified, the '.C' part of a field specification is counted from the first nonblank character of the field (for '+POS') or from the first nonblank character following the previous field (for '-POS').
+
+A sort key option can also have any of the option letters 'Mbdfinr' appended to it, in which case the global ordering options are not used for that particular field. The '-b' option can be independently attached to either or both of the '+POS' and '-POS' parts of a field specification, and if it is inherited from the global options it will be attached to both. Keys can span multiple fields.
+
+
+Examples
+
+Character sort:
+
+$ sort countries.txt
+
+Numeric sort:
+
+$ sort -n numbers.txt
+
+
+To sort the file below on the third field (area code):
+
+Jim Alchin 212121 Seattle
+Bill Gates 404404 Seattle
+Steve Jobs 246810 Nevada
+Scott Neally 212277 Los Angeles
+
+$ sort -k 3,3 people.txt> sorted.txt
+
+or using the 'old' syntax:
+$ sort +2 -3 people.txt> sorted2.txt
+
+To sort the same file on the 4th column and supress duplicates: (should return 3 rows)
+$ sort -u -k 4,4 people.txt> sorted3.txt
+In the remaining examples, the POSIX '-k' option is used to specify sort keys rather than the obsolete '+POS1-POS2' syntax.
+
+
+Sort in descending (reverse) numeric order:
+
+$ sort -nr
+
+Sort alphabetically, omitting the first and second fields. This
+uses a single key composed of the characters beginning at the
+start of field three and extending to the end of each line:
+
+$ sort -k3
+
+Sort numerically on the second field and resolve ties by sorting
+alphabetically on the third and fourth characters of field five.
+
+
+Use ':' as the field delimiter:
+
+$ sort -t : -k 2,2n -k 5.3,5.4
+
+Note that if you had written '-k 2' instead of '-k 2,2' 'sort' would have used all characters beginning in the second field and extending to the end of the line as the primary _numeric_ key. For the large majority of applications, treating keys spanning more than one field as numeric will not do what you expect.
+
+Also note that the 'n' modifier was applied to the field-end specifier for the first key. It would have been equivalent to specify '-k 2n,2' or '-k 2n,2n'. All modifiers except 'b' apply to the associated _field_, regardless of whether the modifier character is attached to the field-start and/or the field-end part
+of the key specifier.
+
+Sort the password file on the fifth field and ignore any leading white space.
+
+
+Sort lines with equal values in field five on the numeric user ID in field three:
+
+$ sort -t : -k 5b,5 -k 3,3n /etc/passwd
+
+
+An alternative is to use the global numeric modifier '-n':
+
+$ sort -t : -n -k 5b,5 -k 3,3 /etc/passwd
+
+
+Generate a tags file in case insensitive sorted order:
+
+$ find src -type f -print0 | sort -t / -z -f | xargs -0 etags --append
+
+The use of '-print0', '-z', and '-0' in this case mean that pathnames that contain Line Feed characters will not get broken up by the sort operation.
+
+
+Finally, to ignore both leading and trailing white space, you could have applied the 'b' modifier to the field-end specifier for the first key,
+
+$ sort -t : -n -k 5b,5b -k 3,3 /etc/passwd
+
+or by using the global '-b' modifier instead of '-n' and an explicit 'n' with the second key specifier:
+
+$ sort -t : -b -k 5,5 -k 3,3n /etc/passwd
+
+A file name of '-' means standard input.
+
+By default, sort writes the results to the standard output.
+
+
+*See also: head, nl, printf

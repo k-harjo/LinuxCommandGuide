@@ -1,1 +1,262 @@
-EMPTY
+diff - Display the differences between two files, or each corresponding file in two directories. Each set of differences is called a "diff" or "patch". For files that are identical, diff normally produces no output; for binary (non-text) files, diff normally reports only that they are different.
+
+
+Syntax
+
+      diff [options] FILES
+Options
+Multiple single letter options (unless they take an argument) can be combined into a single command line word: so '-ac' is equivalent to '-a -c'.
+
+   FILES are 'FILE1 FILE2' or 'DIR1 DIR2' or 'DIR FILE...' or 'FILE... DIR'.
+              If --from-file or --to-file is given, there are no restrictions on FILES.
+              If a FILE is '-', read standard input. 
+   -a
+   --text
+       Treat all files as text.
+
+   -b
+   --ignore-space-change
+       Ignore changes in the amount of white space. 
+
+   -B
+   --ignore-blank-lines
+       Ignore changes whose lines are all blank. 
+  
+   -c NUM
+   -C NUM
+   --context[=NUM]
+       Output NUM (default 3) lines of copied context.
+
+   -d
+   --minimal
+       Try hard to find a smaller set of changes.
+
+   -e
+   --ed
+       Output an ed script.
+
+   -E
+   --ignore-tab-expansion
+       Ignore changes due to tab expansion.
+
+   -F RE
+   --show-function-line=RE
+       Show the most recent line matching RE.
+
+   --help
+       Output this help.
+
+   --horizon-lines=NUM
+       Keep NUM lines of the common prefix and suffix.
+
+   -i
+   --ignore-case
+       Ignore case differences in file contents.
+
+   --ignore-file-name-case
+       Ignore case when comparing file names.
+
+   --no-ignore-file-name-case
+       Consider case when comparing file names.
+
+   --label LABEL
+       Use LABEL instead of file name.
+
+   --left-column
+       Output only the left column of common lines.
+
+   -l
+   --paginate
+       Pass the output through 'pr' to paginate it.
+
+   -N
+   --new-file
+       Treat absent files as empty. 
+   --normal
+       Output a normal diff.
+
+   -n
+   --rcs
+       Output an RCS format diff.
+
+   -p
+   --show-c-function
+       Show which C function each change is in. 
+
+   -q
+   --brief
+       Output only whether files differ.
+
+   -r
+   --recursive
+       Recursively compare any subdirectories found.
+
+   --strip-trailing-cr
+       Strip trailing carriage return on input.
+ 
+   -S FILE
+   --starting-file=FILE
+       Start with FILE when comparing directories.
+
+   -s
+   --report-identical-files
+       Report when two files are the same.
+
+   --speed-large-files
+       Assume large files and many scattered small changes.
+
+   --suppress-common-lines
+       Do not output common lines.
+
+   -t
+   --expand-tabs
+       Expand tabs to spaces in output.
+
+   -T
+   --initial-tab
+       Make tabs line up by prepending a tab.
+
+   --unidirectional-new-file
+       Treat absent first files as empty.
+
+   -u NUM
+   -U NUM
+   --unified[=NUM]
+       Output NUM (default 3) lines of unified context. 
+   -v
+   --version
+       Output version info.
+
+   -w
+   --ignore-all-space
+       Ignore all white space.
+
+   -W NUM
+   --width=NUM
+       Output at most NUM (default 130) print columns.
+
+   -x PAT
+   --exclude=PAT
+       Exclude files that match PAT.
+
+   -X FILE
+   --exclude-from=FILE
+       Exclude files that match any pattern in FILE.
+
+   -y
+   --side-by-side
+       Output in two columns.
+
+   --from-file=FILE1
+       Compare FILE1 to all operands. FILE1 can be a directory. 
+
+   --to-file=FILE2
+       Compare all operands to FILE2. FILE2 can be a directory. 
+
+
+    -D NAME
+   --ifdef=NAME
+       Output merged file to show '#ifdef NAME' diffs.
+
+   --GTYPE-group-format=GFMT
+       Similar, but format GTYPE input groups with GFMT.
+
+   -I REGEXP
+   --ignore-matching-lines=REGEXP
+       Ignore changes whose lines all match REGEXP. 
+
+   --line-format=LFMT
+       Similar, but format all input lines with LFMT. 
+
+   --LTYPE-line-format=LFMT
+       Similar, but format LTYPE input lines with LFMT. 
+          LTYPE is 'old', 'new', or 'unchanged'.
+          GTYPE is LTYPE or 'changed'. 
+   GFMT can contain:
+   %<       lines from FILE1 
+   %>       lines from FILE2 
+   %=       lines common to FILE1 and FILE2 
+   %[-][WIDTH][.[PREC]]{doxX}LETTER
+            printf-style spec for LETTER 
+   LETTERs are as follows for new group, lower case for old group:
+   F       first line number 
+   L       last line number 
+   N       number of lines = L-F+1 
+   E       F-1 
+   M       L+1
+
+   LFMT can contain:
+   %L       contents of line 
+   %l       contents of line, excluding any trailing newline 
+   %[-][WIDTH][.[PREC]]{doxX}n
+            printf-style spec for input line number
+
+   Either GFMT or LFMT can contain:
+   %%        % 
+   %c'C'     The single character C 
+   %c'\OOO'  The character with octal code OOO 
+
+In the simplest case, diff compares the contents of the two files from-fileand to-file. A file name of - stands for text read from the standard input.
+
+If from-file is a directory and to-file is not, diff compares the file in from-file whose file name is that of to-file, and vice versa. The non-directory file must not be -.
+
+If both from-file and to-file are directories, diff compares corresponding files in both directories, in alphabetical order; this comparison is not recursive unless the -r or --recursive option is given.
+
+GNU 'diff' can show whether files are different without detailing the differences.
+It also provides ways to suppress certain kinds of differences that are not important to you.
+
+Most commonly, such differences are changes in the amount of white space between words or lines. 'diff' also provides ways to suppress differences in alphabetic case or in lines that match a regular expression that you provide.
+
+These options can accumulate; for example, you can ignore changes in both white space and alphabetic case.
+
+End -of-Line markers
+In operating systems that distinguish between text and binary files, 'diff' normally reads and writes all data as text.
+
+Use the '--binary' option to force 'diff' to read and write binary data instead. This option has no effect on a Posix-compliant system like GNU or traditional Unix. However, many personal computer operating systems represent the end of a line with a carriage return followed by a newline.
+
+On such systems, 'diff' normally ignores these carriage returns on input and generates them at the end of each output line, but with the '--binary' option 'diff' treats each carriage return as just another input character, and does not generate a carriage return at the end of each output line.
+
+This can be useful when dealing with non-text files that are meant to be interchanged with Posix-compliant systems.
+
+Ignore Case
+GNU 'diff' can treat lowercase letters as equivalent to their uppercase counterparts, so that, for example, it considers 'Funky Stuff', 'funky STUFF', and 'fUNKy stuFf' to all be the same.
+To request this, use the '-i' or '--ignore-case' option.
+
+Suppressing Lines Matching a Regular Expression
+To ignore insertions and deletions of lines that match a regular expression, use the '-I REGEXP' or '--ignore-matching-lines=REGEXP' option.
+You should escape regular expressions that contain shell metacharacters to prevent the shell from expanding them.
+
+For example, diff -I '^[0-9]' ignores all changes to lines beginning with a digit.
+
+However, -I only ignores the insertion or deletion of lines that contain the regular expression if every changed line in the hunk--every insertion and every deletion--matches the regular expression.
+
+In other words, for each non-ignorable change, 'diff' prints the complete set of changes in its vicinity, including the ignorable ones. You can specify more than one regular expression for lines to ignore by using more than one '-I' option. 'diff' tries to match each line against each regular expression, starting with the last one given.
+
+Summarizing Which Files Differ
+When you only want to find out whether files are different, and you don't care what the differences are, you can use the summary output format.
+In this format, instead of showing the differences between the files, 'diff' reports whether files differ.
+The '-q' and '--brief' options select this output format.
+This format is especially useful when comparing the contents of two directories. It is also much faster than doing the normal line by line comparisons, because 'diff' can stop analyzing the files as soon as it knows that there are any differences.
+You can also get a brief indication of whether two files differ by using 'cmp'.
+
+Using diff to patch a file
+To show context around the differing lines GNU 'diff' provides these output formats
+
+Normal Format: An output format that shows each hunk of differences without any surrounding context
+Context Format:: An output format that shows surrounding lines.
+Unified Format:: A more compact output format that shows context.
+
+'patch' can apply diffs by searching in the files for the lines of context around the differing lines; if those lines are actually a few lines away from where the diff says they are, 'patch' can adjust the line numbers accordingly and still apply the diff correctly.
+
+
+Examples
+
+$ diff -q <(sort file1.txt | uniq) <(sort file2.txt | uniq)
+
+The command above will return 0 if file1.txt = file2.txt and will return 1 if file1.txt ≠ file2.txt
+Note the files have to be sorted first (the order matters) and if the files could contain duplicate values, then the output of sort has to be run through the uniq command to eliminate any duplicate elements.
+
+For more on patching files and producing commands that direct the 'ed' text editor to edit a file - run info diff
+
+
+*See also: cmp, dircmp, diff3, sdiff

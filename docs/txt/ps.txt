@@ -1,1 +1,355 @@
-EMPTY
+ps - Process status, information about processes running in memory. If you want a repetitive update of this status, use top.
+
+
+Syntax
+
+         ps option(s)
+This version of ps accepts 3 kinds of option:
+
+UNIX options, which may be grouped and must be preceded by a dash.
+BSD options, which may be grouped and must not be used with a dash.
+GNU long options, which are preceded by two dashes.
+Options of different types can be freely mixed, but conflicts can appear. There are some synonymous options, which are functionally identical, due to the many standards and ps implementations that this ps is compatible with.
+
+Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards require that "ps -aux" print all processes owned by a user named "x", as well as printing all processes that would be selected by the -a option. If the user named "x" does not exist, this ps may interpret the command as "ps aux" instead and print a warning. This behavior is intended to aid in transitioning old scripts and habits. It is fragile, subject to change, and thus should not be relied upon.
+
+By default, ps selects all processes with the same effective user ID (euid=EUID) as the current user and associated with the same terminal as the invoker. It displays the process ID (pid=PID), the terminal associated with the process (tname=TTY), the cumulated CPU time in [DD-]hh:mm:ss format (time=TIME), and the executable name (ucmd=CMD). Output is unsorted by default.
+
+The use of BSD-style options will add process state (stat=STAT) to the default display and show the command args (args=COMMAND) instead of the executable name. You can override this with the PS_FORMAT environment variable.
+
+The use of BSD-style options will also change the process selection to include processes on other terminals (TTYs) that are owned by you; alternately, this may be described as setting the selection to be the set of all processes filtered to exclude processes owned by other users or not on a terminal. These effects are not considered when options are described as being "identical" below, so -M will be considered identical to Z and so on.
+
+Except as described below, process selection options are additive. The default selection is discarded, and then the selected processes are added to the set of processes to be displayed. A process will thus be shown if it meets any of the given selection criteria.
+
+
+Simple Process Selection:
+
+   -A         Select all processes, including those of other users.
+   -a         Select all processes except both session leaders (see getsid(2)) and
+              processes not associated with a terminal.
+    a         Lift the BSD-style "only yourself" restriction, which is imposed upon
+              the set of all processes when some BSD-style (without "-") options are
+              used or when the ps personality setting is BSD-like.
+
+   -d         Select all processes except session leaders.
+   --deselect Negate selection.
+   -e         Select all processes, including those of other users.
+
+    g         Really all, even session leaders. This flag is obsolete and may be
+              discontinued in a future release.
+   -N         Negate selection.
+    r         Restrict output to running processes
+    T         Select all processes associated with this terminal.
+              Identical to the t option without any argument.
+    x         Lift the BSD-style "must have a tty" restriction, which is imposed upon
+              the set of all processes when some BSD-style (without "-") options are
+              used or when the ps personality setting is BSD-like.
+Process Selection by List:
+   -C cmdlist      Select by Command name, processes whose executable name is in cmdlist.
+                   The command name is not the same as the command line.
+                   Previous versions of procps and the kernel truncated this
+                   command name to 15 characters. This limitation is no longer
+                   present in both. If you depended on matching only 15 characters,
+                   you may no longer get a match.
+
+   -g grplist      Select by session OR by effective group name.
+                   This ps will select by session when the list is completely numeric
+                   (as sessions are).  Group ID numbers will work only when some group
+                   names are also specified. 
+
+   --group grplist Select by effective group ID (EGID) or Name.
+                   The effective group ID describes the group whose file access
+                   permissions are used by the process (see getegid(2)).
+                   The -g option is often an alternative to --group.
+
+   -G grplist      Select by Real Group ID (RGID) or Name.
+   --Group grplist Select by Real Group ID (RGID) or Name.
+
+   -p pidlist      Select by process ID (PID)
+   --pid pidlist   Select by process ID (PID)
+    p pidlist      Select by process ID (PID)
+
+   --ppid pidlist  Select by parent process ID.
+                   This selects the processes with a parent process ID
+                   in pidlist. That is, it selects processes that are
+                   children of those listed in pidlist.
+
+   --quick-pid pidlist  Select by process ID (quick mode).
+    q pidlist      Select by process ID (quick mode).
+                      Quick mode doesn't apply additional filtering rules.
+                      The order of pids is unsorted and preserved.
+                      No additional selection options, sorting and forest type
+                      listings are allowed in this mode. 
+
+   -s sesslist     Select by session ID.
+   --sid sesslist  Select by session ID.
+
+   -t ttylist      Select by terminal (tty)
+   --tty ttylist   Select by terminal (tty)
+                      Terminals (ttys, or screens for text output) can be
+                      specified in several forms: /dev/ttyS1, ttyS1, S1.
+                      A plain "-" may be used to select processes not attached
+                      to any terminal.
+
+    t ttylist      Select by tty. Nearly identical to -t and --tty,
+                   but can also be used with an empty ttylist to indicate
+                   the terminal associated with ps.
+                   Using the T option (Simple Process Selection above) is
+                   considered cleaner than using T with an empty ttylist.
+
+
+   -U userlist     Select by Real User ID (RUID) or Name.
+   --User userlist Select by Real User ID (RUID) or Name. (Same as -U)
+                   The real user ID identifies the user who created the process.
+
+   -u userlist     Select by effective user ID (EUID) or Name.
+   --user userlist Select by effective user ID (EUID) or Name.
+    U userlist     Select by effective user ID (EUID) or Name.
+                   The effective user ID describes the user whose file access
+                   permissions are used by the process (see geteuid(2)
+
+   -123      implied --sid
+   123       implied --pid
+Output Format Control:
+   -c         Different scheduler info for -l option.
+   -F         Extra Full listing. See the -f option, which -F implies.
+   -f         Full-format listing.
+              This can be combined with many other UNIX-style options to add
+              additional columns. It also causes the command arguments to be
+              printed. When used with -L, the NLWP (number of threads) and LWP
+              (thread ID) columns will be added. See the c option, the format
+              keyword args, and the format keyword comm.
+
+  --format format
+              user-defined format.  Identical to -o and o.
+
+   -j         Jobs format.
+    j         BSD job control format.
+   -l         Long format. The -y option is often useful with this.
+    l         Display BSD long format.
+
+   -M         Add a column of security data.  Identical to Z (for SELinux).
+
+    O format  Is preloaded o (overloaded).
+              The BSD O option can act like -O (user-defined output format with
+              some common fields predefined) or can be used to specify sort order.
+              Heuristics are used to determine the behavior of this option.
+              To ensure that the desired behavior is obtained (sorting or formatting),
+              specify the option in some other way (e.g. with -O or --sort).
+              When used as a formatting option, it is identical to -O, with the BSD
+              personality.
+
+   -O format  is like -o, but preloaded with some default columns.
+              Identical to -o pid,format,state,tname,time,command
+                       or  -o pid,format,tname,time,cmd,  see -o below.
+
+   -o format  Display in a user-defined format (space or comma separated).
+   --format   Display in a user-defined format (space or comma separated).
+    o format  Display in a user-defined format (space or comma separated).
+                 Headers may be renamed (ps -o pid, ruser=RealUser -o comm=Command) as desired.
+                 If all column headers are empty (ps -o pid= -o comm=) then the header line
+                 will not be output.  Column width will increase as needed for wide headers;
+                 this may be used to widen up columns such as
+                 WCHAN (ps -o pid,wchan=WIDE-WCHAN-COLUMN -o comm).  Explicit width control
+                 (ps opid,wchan:42,cmd) is offered too.  The behavior of ps -o pid=X,comm=Y
+                 varies with personality; output may be one column named "X,comm=Y" or two
+                 columns named "X" and "Y".  Use multiple -o options when in doubt.
+                 Use the PS_FORMAT environment variable to specify a default as desired;
+                 DefSysV and DefBSD are macros that may be used to choose the default UNIX or
+                 BSD columns.
+
+    s         Display signal format.
+    u         Display user-oriented format.
+    v         Display virtual memory format.
+    X         Register format.
+   -y         Do not show flags; show rss in place of addr.
+              This option can only be used with -l.
+    Z         Add a column of security data.  Identical to -M (for SELinux).
+Output Modifiers:
+   c              Show the true command name.
+                  This is derived from the name of the executable file, rather than
+                  from the argv value.  Command arguments and any modifications to them
+                  are thus not shown. This option effectively turns the args format
+                  keyword into the comm format keyword; it is useful with the -f format
+                  option and with the various BSD-style format options, which all normally
+                  display the command arguments.  See the -f option, the format keyword
+                  args, and the format keyword comm.
+   --cols n       Set screen width.
+   --columns n    Set screen width.
+   --cumulative   Include some dead child process data (as a sum with the parent).
+
+    e             show environment after the command.
+    f             ASCII-art process hierarchy (forest).
+   --forest       ASCII art process tree.
+
+    h             No header.  (or, one header per screen in the BSD personality).
+   -H             Show process hierarchy (forest).
+   --headers      Repeat header lines, one per page of output.
+
+    k spec        Specify sorting order.  Sorting syntax is
+                  [+|-]key[,[+|-]key[,...]].  Choose a multi-letter key from the
+                  STANDARD FORMAT SPECIFIERS.  The "+" is optional since
+                  default direction is increasing numerical or lexicographic order.
+                  Identical to --sort.
+
+                      Examples:
+                      ps jaxkuid,-ppid,+pid
+                      ps axk comm o comm,args
+                      ps kstart_time -ef
+
+   --lines        Set screen height.
+   -m  m          Show all threads.
+   -n             Set namelist file.
+   --no-headers   Print no header line at all.--no-heading is an alias for this option.
+
+    n             Numeric output for WCHAN and USER.
+
+    O order       sorting order (overloaded).
+                  The BSD O option can act like -O (user-defined output format with some
+                  common fields predefined) or can be used to specify sort order.
+                  Heuristics are used to determine the behavior of this option.
+                  To ensure that the desired behavior is obtained (sorting or formatting),
+                  specify the option in some other way (e.g.  with -O or --sort).
+
+   --rows n       Set screen height.
+
+    S             Sum up some information, such as CPU usage, from dead child processes
+                  into their parent. This is useful for examining a system where a parent
+                  process repeatedly forks off short-lived children to do work.
+
+   --sort         Specify sorting order.
+                  Sorting syntax is [+|-]key[,[+|-]key[,...]].
+                  Choose a multi-letter key from the STANDARD FORMAT SPECIFIERS.
+                  The "+" is optional since default direction is increasing numerical or
+                  lexicographic order.  Identical to k.
+                  For example: ps jax --sort=uid,-ppid, +pid
+
+   -w             Wide output.  Use this option twice for unlimited width.
+    w             Wide output.  Use this option twice for unlimited width.
+   --width n      Set screen width.
+
+
+Thread Display
+
+    H    Show threads as if they were processes.
+   -L    Show threads, possibly with LWP and NLWP columns.
+    m    Show threads after processes.
+   -m    Show threads after processes.
+   -T    Show threads, possibly with SPID column.
+
+
+Information
+
+   --help    Print help message.
+   --info    Print debugging info.
+    L        List all format specifiers.
+   --version Print version.
+   -V        Print version.
+    V        Print version.
+
+
+This ps works by reading the virtual files in /proc. This ps does not need to be setuid kmem or have any privileges to run. Do not give this ps any special permissions.
+
+CPU usage is currently expressed as the percentage of time spent running during the entire lifetime of a process. This is not ideal, and it does not conform to the standards that ps otherwise conforms to. CPU usage is unlikely to add up to exactly 100%.
+
+The SIZE and RSS fields don't count some parts of a process including the page tables, kernel stack, struct thread_info, and struct task_struct. This is usually at least 20 KiB of memory that is always resident. SIZE is the virtual size of the process (code+data+ stack).
+
+Processes marked <defunct> are dead processes (so-called "zombies") that remain because their parent has not destroyed them properly. These processes will be destroyed by init(8) if the parent process exits.
+
+If the length of the username is greater than the length of the display column, the username will be truncated. See the -o and -O formatting options to customize length.
+
+Commands options such as ps -aux are not recommended as it is a confusion of two different standards. According to the POSIX and UNIX standards, the above command asks to display all processes with a TTY (generally the commands users are running) plus all processes owned by a user named "x". If that user doesn't exist, then ps will assume you really meant "ps aux".
+
+%CPU shows the cputime/realtime percentage. It will not add up to 100% unless you are lucky. It is time used divided by the time the process has been running.
+
+Processes marked defunct are dead processes (so-called"zombies") that remain because their parent has not destroyed them properly. These processes will be destroyed by init(8) if the parent process exits.
+
+
+PROCESS FLAGS
+
+  The sum of these values is displayed in the "F" column, which is
+  provided by the flags output specifier:
+
+   1    forked but didn't exec
+   4    used super-user privileges
+
+
+PROCESS STATE CODES
+
+   D    uninterruptible sleep (usually IO)
+   I    Idle kernel thread
+   R    running or runnable (on run queue)
+   S    interruptible sleep (waiting for an event to complete)
+   T    stopped by job control signal
+   t    stopped by debugger during the tracing
+   W    paging (not valid since the 2.6.xx kernel)
+   X    dead (should never be seen)
+   Z   a defunct ("zombie") process
+
+
+For BSD formats and when the "stat" keyword is used, additional letters can be displayed:
+
+   W   has no resident pages
+   <   high-priority process
+   N   low-priority task
+   L   has pages locked into memory (for real-time and custom IO)
+   s   is a session leader
+   l   is multi-threaded (using CLONE_THREAD, like NPTL pthreads do)
+  +    is in the foreground process group
+
+
+ENVIRONMENT VARIABLES and PERSONALITY (posix,linux,bsd,sun)
+
+When displaying multiple fields, part of the output might be truncated, to avoid this supply a width to the arguments:
+ps -e -o user:20,args.
+
+Since ps cannot run faster than the system and is run as any other scheduled process, the information it displays can never be exact.
+
+
+Examples
+
+List every process on the system using standard syntax:
+ps -e
+ps -ef
+ps -eF
+ps -ely
+
+List every process on the system using BSD syntax:
+ps ax
+ps axu
+
+Print a process tree:
+ps -ejH ps axjf
+
+To get info about threads:
+ps -eLf ps axms
+
+Get security info:
+ps -eo euser,ruser,suser,fuser,f,comm,label
+ps axZ ps -eM
+
+To see every process running as root (real & effective ID) in user format:
+ps -U root -u root u
+
+List every process except those running as root (real & effective ID)
+ps -U root -u root -N
+
+To see every process with a user-defined format:
+ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm
+ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm
+ps -Ao pid,tt,user,fname,tmout,f,wchan
+
+Print only the process IDs of syslogd:
+ps -C syslogd -o pid=
+
+Print only the name of PID 42:
+ps -q 42 -o comm=
+
+List the top 10 CPU users.
+ps -e -o pcpu -o pid -o user -o args | sort -k 1 | tail -21r
+
+Odd display with AIX field descriptors:
+ps -o "%u : %U : %p : %a"
+
+
+*See also: top, htop, Perf, pstree, proc, atop, bmon, iftop, sysstat, w

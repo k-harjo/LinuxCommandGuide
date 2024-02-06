@@ -1,1 +1,21 @@
-EMPTY
+mkfifo - Make FIFOs (named pipes) with the specified names.
+
+
+Syntax
+
+      mkfifo [options] NAME...
+
+
+Options
+
+ -m MODE
+ --mode=MODE
+      Set the mode of created FIFOs to MODE, which is symbolic as in
+      'chmod' and uses 0666 (read and write allowed for everyone) minus
+      the bits set in the umask for the point of departure.
+
+
+A "FIFO" is a special file type that permits independent processes to communicate. One process opens the FIFO file for writing, and another for reading, after which data can flow as with the usual anonymous pipe in shells or elsewhere.
+
+
+*See also: mknod, sed, umask

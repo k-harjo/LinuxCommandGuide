@@ -1,1 +1,104 @@
-EMPTY
+pkill - Kill processes by a full or partial name.
+
+
+Syntax
+
+      pgrep [-flvx] [-d delimiter] [-n|-o] [-P ppid,...] [-g pgrp,...]
+         [-s sid,...] [-u euid,...] [-U uid,...] [-G gid,...]
+            [-t term,...] [pattern]
+
+      pkill [-signal] [-fvx] [-n|-o] [-P ppid,...] [-g pgrp,...]
+         [-s sid,...] [-u euid,...] [-U uid,...] [-G gid,...]
+            [-t term,...] [pattern]
+
+
+Key
+
+   pattern
+       An Extended Regular Expression to match process names or command lines.
+
+   -d delimiter
+       Set the string used to delimit each process ID in the output
+       (by default a newline). (pgrep only.) 
+   -f
+       The pattern is normally only matched against the process name.
+       When -f is set, the full command line is used. 
+   -g pgrp,...
+       Only match processes in the process group IDs listed.
+       Process group 0 is translated into pgrep's or pkill's own process group. 
+   -G gid,...
+       Only match processes whose real group ID is listed.
+       Either the numerical or symbolical value can be used. 
+   -l
+       List the process name as well as the process ID. (pgrep only.) 
+   -n
+       Select only the newest (most recently started) of the matching processes. 
+   -o
+       Select only the oldest (least recently started) of the matching processes. 
+   -P ppid,...
+       Only match processes whose parent process ID is listed. 
+   -s sid,...
+       Only match processes whose process session ID is listed.
+       Session ID 0 is translated into pgrep's or pkill's own session ID. 
+   -t term,...
+       Only match processes whose controlling terminal is listed.
+       The terminal name should be specified without the "/dev/" prefix. 
+   -u euid,...
+       Only match processes whose effective user ID is listed.
+       Either the numerical or symbolical value can be used. 
+   -U uid,...
+       Only match processes whose real user ID is listed.
+       Either the numerical or symbolical value can be used. 
+   -v
+       Negates the matching. 
+   -x
+       Only match processes whose name (or command line if -f is specified)
+       exactly match the pattern. 
+   -signal
+       Defines the signal to send to each matched process.
+       Either the numeric or the symbolic signal name can be used. (pkill only.)
+pgrep searches the process table on the running system and prints the process IDs of all processes that match the criteria given on the command line.
+
+pkill searches the process table on the running system and signals all processes that match the criteria given on the command line.
+
+All the criteria have to match. For example, pgrep -u root sshd will only list the processes called sshd AND owned by root. On the other hand, pgrep -u root,daemon will list the processes owned by root OR daemon.
+
+
+Examples
+
+Example 1: Find the process ID of the named daemon:
+
+$ pgrep -u root named
+
+Example 2: Make syslog reread its configuration file:
+
+$ pkill -HUP syslogd
+
+Example 3: Give detailed information on all xterm processes:
+
+$ ps -fp $(pgrep -d, -x xterm)
+
+Example 4: Make all netscape processes run nicer:
+
+$ renice +4 'pgrep netscape'
+
+
+--Common Kill Signals--
+Signal name	Signal value	Effect
+SIGHUP		1		Hangup
+SIGINT		2		Interrupt from keyboard
+SIGQUIT		3		Quit
+SIGABRT		6		Cancel
+SIGKILL		9		Kill signal
+SIGTERM		15		Termination signal - allow an orderly shutdown
+SIGSTOP		17,19,23	Stop the process
+
+
+Exit Status
+1. One or more processes matched the criteria.
+2. No processes matched.
+3. Syntax error in the command line.
+4. Fatal error: out of memory etc.
+
+
+*See also: pgrep, ps, kill, killall, bg, fg, w

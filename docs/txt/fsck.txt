@@ -1,1 +1,43 @@
-EMPTY
+fsck - Filesystem consistency check and interactive repair. Journaling file systems avoid the need to run fsck.
+
+
+Syntax
+
+      fsck [options] [filesystem] ...
+
+
+Options
+
+  --     Pass all subsequent options to filesystem-specific checker.
+         All options that fsck doesn't recognize will also be passed.
+
+  -r     Interactive mode; prompt before making any repairs.
+
+  -s     Serial mode.
+
+  -t fstype
+         Specify the filesystem type. Do not check filesystems of any other type.
+
+  -A     Check all filesystems listed in /etc/fstab.
+
+  -N     Suppress normal execution; just display what would be done.
+
+  -R     Meaningful only with -A: check all filesystems listed in /etc/fstab except the root filesystem.
+
+  -T     Suppress printing of title.
+
+  -V     Verbose mode.
+
+
+EXIT CODES
+
+  1    Errors were found and corrected.
+  2    Reboot suggested.
+  4    Errors were found but not corrected.
+  8    fsck encountered an operational error.
+  16   fsck was called incorrectly.
+  128  A shared library error was detected.
+The return status is the exit status of the last command executed in consequent-commands, or zero if none were executed.
+
+
+*See also: reboot, ddrescue

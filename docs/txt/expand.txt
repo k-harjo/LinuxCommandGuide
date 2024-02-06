@@ -1,1 +1,23 @@
-EMPTY
+expand  - Convert tabs to spaces, write the contents of each given file, to standard output, with tab characters converted to the appropriate number of spaces. If no file is given, or for a file of '-', write to standard input.
+
+
+Syntax
+
+      expand [options]... [file]...
+
+
+Options
+
+   -TAB1[,TAB2]...
+   -t TAB1[,TAB2]...
+   --tabs=TAB1[,TAB2]...
+If only one tab stop is given, set the tabs TAB1 spaces apart (default is 8). Otherwise, set the tabs at columns TAB1, TAB2, ... (numbered from 0), and replace any tabs beyond the last tabstop given with single spaces. If the tabstops are specified with the '-t' or '--tabs' option, they can be separated by blanks as well as by commas.
+
+   -i
+   --initial
+Only convert initial tabs (those that precede all non-space or non-tab characters) on each line to spaces.
+
+By default, expand converts all tabs to spaces. It preserves backspace characters in the output; they decrement the column count for tab calculations. The default action is equivalent to '-8' (set tabs every 8 columns).
+
+
+*See also: cut, expr, fmt, grep, tr, unexpand, uuencode

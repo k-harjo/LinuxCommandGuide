@@ -1,1 +1,88 @@
-EMPTY
+function - Shell functions are a way to group commands for later execution using a single name for the group. They are executed just like a regular command. When the name of a shell function is used as a simple command name, the list of commands associated with that function name will be executed.
+
+
+Functions are declared using this syntax:
+
+[ function ] name () { command-list; }
+This defines a shell function named name. The reserved word function is optional and is only required for posix compatibility. If the function reserved word is supplied, the parentheses are optional.
+
+If a function called name already exists it will be overwritten. If you already have an alias called name, this alias should be removed with unalias before creating the function.
+
+Function names typically consist of letters, numbers, and underscores, and beginning with a letter or underscore, but (unlike variable names) they can include many other characters including unicode.
+
+
+function body
+
+The body of the function is the command-list between { and }. This list is executed whenever name is specified as the name of a command.
+
+Note that for historical reasons, the curly braces that surround the body of the function must be separated from the body by blanks or newlines. This is because the braces are reserved words and are only recognized as such when they are separated by whitespace. Also, the command-list must be terminated with a semicolon or a newline.
+
+If the function reserved word is supplied, the parentheses { } are optional.
+The curly parentheses { } indicate a compound command, it is possible to write a one line function without these, or to use normal ( ) parentheses which will spawn the function in a subshell rather than execute it in the current environment.
+
+
+Executing a function
+
+Shell functions are executed in the current shell context; no new process is created to interpret them.
+
+When a function is executed, the arguments to the function become the positional parameters during its execution.
+The special parameter '#' that expands to the number of positional parameters is updated to reflect the change.
+Positional parameter 0 is unchanged.
+The FUNCNAME variable is set to the name of the function while the function is executing.
+
+If the builtin command return is executed in a function, the function completes and execution resumes with the next command after the function call. When a function completes, the values of the positional parameters and the special parameter '#' are restored to the values they had prior to the function's execution. If a numeric argument is given to return, that is the function's return status; otherwise the functions's return status is the exit status of the last command executed before the return.
+
+The exit status of a function is the exit status of the last command executed in the body.
+
+To view a bash function's definition use the type command: type myfunctionname
+
+Variables local to the function can be declared with the local builtin. These variables are visible only to the function and the commands it invokes.
+
+Functions can be recursive. No limit is placed on the number of recursive calls.
+
+
+Arguments
+
+Just like a bash shell script, a Function can process passed arguments, a function will also return an exit status.
+
+Calling a function within a script with a command-line argument:
+
+
+Examples
+
+As an alternative to a simple alias:
+
+lsl() { ls -l $1; }
+
+mcd() { mkdir $1 && cd $1; }
+
+A function to run $HOME/bin/myexecutable
+
+myex() {
+$HOME/bin/myexecutable "$@"
+}
+export -f myex
+
+A shell script to demonstrate passing arguments:
+
+function.sh arg1
+
+#!/bin/bash
+# function.sh
+#  Call this script with a command-line argument,
+#+ something like $0 arg1.
+
+func ()
+{
+echo "$1"   # Echo the first arg passed to the function.
+}
+
+echo "==============================================="
+echo
+echo "Now call the above function passing the scripts first command-line argument."
+func $1
+
+exit 0
+
+
+*See also: expr, eval, for, gawk, set

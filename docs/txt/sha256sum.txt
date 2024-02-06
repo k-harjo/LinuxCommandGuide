@@ -1,1 +1,31 @@
-EMPTY
+sha256sum - Compute and check SHA256 (256-bit) checksums.
+
+
+Syntax
+
+      sha256sum [OPTION]... [FILE]...  
+
+
+Options
+
+   -b, --binary   Read in binary mode.
+   -c, --check    Read SHA256 sums from the FILEs and check them.
+   -t, --text     Read in text mode (default). On a GNU system, there is no difference between binary and text mode.
+   --help         Display this help and exit
+   --version      Output version information and exit
+
+
+The following options are useful only when verifying checksums:
+   --quiet        Don't print OK for each successfully verified file.
+   --status       Don't output anything, status code shows success.
+   -w, --warn     Warn about improperly formatted checksum lines.
+
+With no FILE, or when FILE is -, read standard input. The sums are computed as described in FIPS-180-2. When checking, the input should be a former output of this program. The default mode is to print a line with checksum, a character indicating type ('*' for binary, ' ' for text), and name for each FILE.
+
+
+Full Texinfo man page:
+
+info coreutils aqsha256sum invocationaq
+
+
+*See also: cksum, md5sum, sum

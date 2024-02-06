@@ -1,1 +1,105 @@
-EMPTY
+ddrescue - Data recovery tool, save data from a crashed partition.
+
+
+Syntax
+
+      ddrescue [options] infile outfile [logfile]
+
+
+Options:
+
+   -b=bytes          Hardware block size of input device [512]
+   --block-size=bytes
+
+   -B                Show binary multipliers in numbers [default SI] 
+   --binary-prefixes
+
+   -c=blocks         Hardware blocks to copy at a time [128] 
+   --cluster-size=blocks
+
+   -C                Do not read new data beyond logfile limits 
+   --complete-only
+
+   -d                Use direct disc access for input file 
+   --direct
+
+   -e=n              Maximum number of error areas allowed
+   --max-errors=n
+
+   -i=pos            Starting position in input file [0]
+   --input-position=pos
+
+   -n                Do not try to split error areas 
+   --no-split
+
+   -o=pos            Starting position in output file [ipos] 
+   --output-position=pos
+
+   -q                Quiet operation 
+   --quiet
+
+   -r=n              Exit after given retries (-1=infinity) [0]
+   --max-retries=n
+
+   -s=bytes          Maximum size of data to be copied 
+   --max-size=bytes
+
+   -t                Truncate output file
+   --truncate
+
+   -v                Verbose operation
+   --verbose
+
+   -V                Output version information and exit
+   --version
+Numbers can be followed by a multiplier: b = blocks, k = kB = 10^3 = 1000, Ki = KiB = 2^10 = 1024, M = 10^6, Mi = 2^20, G = 10^9, Gi = 2^30, etc...
+
+
+Installation
+
+Debian / Ubuntu Linux:
+# apt-get install ddrescue
+
+RedHat /Fedora /CentOS Linux:
+# yum -y install ddrescue
+
+GNU ddrescue is a data recovery tool. It copies data from one file or block device (hard disc, cdrom, etc) to another, trying hard to rescue data in case of read errors.
+
+The basic operation of ddrescue is fully automatic. That is, you don't have to wait for an error, stop the program, read the log, run it in reverse mode, etc.
+
+If you use the logfile feature of ddrescue, the data is rescued very efficiently (only the needed blocks are read). Also you can interrupt the rescue at any time and resume it later at the same point.
+
+Ddrescue does not write zeros to the output when it finds bad sectors in the input, and does not truncate the output file if not asked to. So, every time you run it on the same output file, it tries to fill in the gaps without wiping out the data already rescued.
+
+Automatic merging of backups: If you have two or more damaged copies of a file, cdrom, etc, and run ddrescue on all of them, one at a time, with the same output file, you will probably obtain a complete and error-free file. This is so because the probability of having damaged areas at the same places on different input files is very low. Using the logfile, only the needed blocks are read from the second and successive copies.
+
+Ddrescue recommends lzip for compression of backups, because of its reliability and data recovery capabilities, including error-checked merging of backup copies. The combination ddrescue + lziprecover is the best option for recovering data from multiple damaged copies.
+
+Recordable CD and DVD media keep their data only for a finite time (typically for many years). After that time, data loss develops slowly with read errors growing from the outer media region towards the inside. Just make two (or more) copies of every important CD/DVD you burn so that you can later recover them with ddrescue.
+
+The logfile is periodically saved to disc. So in case of a crash you can resume the rescue with little recopying.
+
+Also, the same logfile can be used for multiple commands that copy different areas of the file, and for multiple recovery attempts over different subsets.
+
+Ddrescue also features a "fill mode" able to selectively overwrite parts of the output file, which has a number of interesting uses like wiping data, marking bad areas or even, in some cases, "repair" damaged sectors.
+
+ddrescue written by Antonio Diaz Diaz, download from the GNU web site.
+Installs as /usr/bin/ddrescue
+
+
+Examples
+
+To copy /dev/sda (damaged \device\harddisk0) to another drive /dev/sdb (empty \device\harddisk1)
+
+# ddrescue /dev/sda /dev/sdb
+
+To recover the partition data run fsck, for example if /home (user data) is on /dev/sda2, run fsck on partition /dev/sdb2:
+# fsck /dev/sdb2
+
+This avoids touching the damaged /dev/sda, if the procedure fails you can send the original disk to a professional data recovery service.
+
+Lastly mount the partition somewhere and see if you can access the data:
+# mount /dev/sdb2 /mnt/data
+
+
+*See also: info ddrescue, dd_rescue

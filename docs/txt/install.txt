@@ -1,1 +1,81 @@
-EMPTY
+install - Copy files and set attributes, copies files while setting their permission modes and, if possible, their owner and group.
+
+
+Syntax
+
+      install [options]... SOURCE DEST
+
+      install [options]... SOURCE... DIRECTORY
+
+      install -d [options]... DIRECTORY...
+
+The 3 variants above install either a single SOURCE file to DEST target or copy multiple SOURCE files to the destination. In the last variant, each DIRECTORY (and any missing parent directories) is created.
+
+'install' is similar to 'cp', but allows you to control the attributes of destination files. It is typically used in Makefiles to copy programs into their destination directories. It refuses to copy files onto themselves.
+Options
+
+   -b
+   --backup
+       Make a backup of each file that would otherwise be overwritten or
+       removed.  *Note Backup options::.
+
+   -C
+       Install file, unless target already exists and is the same file,
+       in which case the modification time is not changed.
+
+   -c
+       Ignored; for compatibility with old Unix versions of 'install'.
+
+   -d
+   --directory
+       Create each given directory and any missing parent directories, setting the owner,
+       group and mode as given on the command line or to the defaults.
+       It also gives any parent directories it creates those attributes.
+
+   -g GROUP
+   --group=GROUP
+       Set the group ownership of installed files or directories to GROUP.
+       The default is the process's current group. GROUP can be either a group name
+       or a numeric group id.
+
+   -m MODE
+   --mode=MODE
+       Set the permissions for the installed file or directory to MODE, which can be
+       either an octal number, or a symbolic mode as in 'chmod', with 0 as the point
+       of departure (*note File permissions::).
+       The default mode is 0755--read, write, and execute for the owner, and read and execute for group and other.
+
+   -o OWNER
+   --owner=OWNER
+       If 'install' has appropriate privileges (is run as root), set the ownership of installed 
+       files or directories to OWNER. The default is 'root'.
+       OWNER can be either a user name or a numeric user ID.
+
+   -p
+   --preserve-timestamps
+       Set the time of last access and the time of last modification of each installed file
+       to match those of each corresponding original file.
+       When a file is installed without this option, its last access and last modification
+       times are both set to the time of installation.
+       This option is useful if you want to use the last modification times of installed files 
+       to keep track of when they were last built as opposed to when they were last installed.
+
+   -s
+   --strip
+       Strip the symbol tables from installed binary executables.
+
+   -S SUFFIX
+   --suffix=SUFFIX
+       Append SUFFIX to each backup file made with '-b'.
+
+   -v
+   --verbose
+       Print the name of each file before copying it.
+
+   -V METHOD
+   --version-control=METHOD
+       Change the type of backups made with '-b'.
+       The METHOD argument can be 'numbered' (or 't'), 'existing' (or 'nil'), or 'never' (or 'simple').
+
+
+*See also: cp

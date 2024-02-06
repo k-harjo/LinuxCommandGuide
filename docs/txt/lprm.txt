@@ -1,1 +1,70 @@
-EMPTY
+lprm - Remove jobs from the line print spooling queue.
+
+
+Syntax
+
+      lprm [-Pprinter] [-] [job# ...] [user ...]
+
+
+Options and arguments:
+
+     -Pprinter
+             Specify the queue associated with a specific printer (otherwise
+             the default printer is used).
+
+     -       If a single '-' is given, lprm will remove all jobs which a user
+             owns.  If the super-user employs this flag, the spool queue will
+             be emptied entirely.
+
+     user    Causes lprm to attempt to remove any jobs queued belonging to
+             that user (or users).  This form of invoking lprm is useful only
+             to the super-user.
+
+     job#   A user can dequeue an individual job by specifying its job number.
+            This number can be obtained from the lpq(1) program, e.g.
+
+                   % lpq -l
+
+                   1st:ken                         [job #013ucbarpa]
+                           (standard input)        100 bytes
+                   % lprm 13
+
+     If neither arguments or options are given, lprm will delete the currently
+     active job if it is owned by the user who invoked lprm.
+
+     lprm announces the names of any files it removes and is silent if there
+     are no jobs in the queue which match the request list.
+
+     lprm will kill off an active daemon, if necessary, before removing any
+     spooling files.  If a daemon is killed, a new one is automatically
+     restarted upon completion of file removals.
+
+
+Environment
+
+     If the following environment variable exists, it is utilized by lprm.
+
+     PRINTER  If the environment variable PRINTER exists, and a printer has
+              not been specified with the -P option, the default printer is
+              assumed from PRINTER.
+
+
+Files
+
+     /etc/printcap       Printer characteristics file.
+     /var/spool/*        Spooling directories.
+     /var/spool/*/lock   Lock file used to obtain the pid of the current daemon
+                         and the job number of the currently active job.
+
+Lprm will remove a job, or jobs, from a printer's spool queue.
+
+Since the spooling directory is protected from users, using Lprm is normally the only method by which a user can remove a job.
+
+The owner of a job is determined by the user's login name and host name on the machine where the lpr command was invoked.
+
+Bug: since there are race conditions possible in the update of the lock file, the currently active job might be incorrectly identified.
+
+ERROR Messages: 'Permission denied' if the user tries to remove files other than their own.
+
+
+*See also: lpc, lpr, lprint, lprintd, lprintq, lpr, printcap, symlink

@@ -1,1 +1,33 @@
-EMPTY
+rmdir - Remove directory, this command will only work if the folders are empty.
+
+
+Syntax
+
+      rmdir [options]... folder(s)...
+
+
+Options
+
+      --ignore-fail-on-non-empty
+                  Ignore each failure that is solely because the
+                  directory is non-empty.
+
+  -p, --parents   Remove explicit parent directories if being emptied
+
+      --verbose   Output a diagnostic for every directory processed
+
+      --help      Display help and exit
+
+      --version   Output version information and exit
+
+
+Examples
+
+$ rmdir myfolder
+
+Before removing directories with a wildcard, it's wise to list them first:
+
+$ ls -d britney*/
+
+
+*See also: rm

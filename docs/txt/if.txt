@@ -1,1 +1,54 @@
-EMPTY
+if - Conditionally perform a command.
+
+Syntax
+      if test-commands; then
+        consequent-commands;
+      [elif more-test-commands; then
+        more-consequents;]
+      [else alternate-consequents;]
+      fi
+
+Or in a single line:
+     if test-commands; then consequent-commands; fi
+The test-commands list is executed, and if it's return status is zero (success), the consequent-commands list is executed.
+
+Although if is most often used with test to return a True/False decision, it can be used with any command that returns an exit code of 0 for success.
+
+If test-commands returns a non-zero status, each elif list is executed in turn, and if its exit status is zero, the corresponding more-consequents is executed and the command completes.
+
+If 'else alternate-consequents' is present, and the final command in the final if or elif clause has a non-zero exit status, the alternate-consequents is executed.
+
+For simple comparisons, a concise alternative is to use test along with the conditional operator && instead of IF.
+
+
+Examples
+
+var=snark
+[[ "$var" = "snark" ]] && echo "found snark"
+
+or the equivalent using if:
+
+var=snark
+if [[ "$var" = "snark" ]]
+ then echo "found snark"
+fi
+
+Test if the file music.txt exists:
+
+If [[ -e music.txt ]]; then   
+  echo "we found the file"
+fi
+
+A single-line if command:
+
+if [ $dayofmonth -lt 8 ]; then firstweek=1; fi
+The return status is the exit status of the last command executed, or zero if no condition tested true.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help if
+
+"Then you admit confirming not denying you ever said that?"
+"NO! ... I mean Yes! WHAT?"
+I'll put 'maybe.' ~ Bloom County
+
+
+*See also: case, eval, expr, for, select, test, until, while

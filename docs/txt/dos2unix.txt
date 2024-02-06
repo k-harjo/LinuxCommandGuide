@@ -1,1 +1,83 @@
-EMPTY
+dos2unix - Windows/MAC to UNIX text file format converter.
+
+
+Syntax
+
+      dos2unix [options] [-c convmode] [-o file ...] [-n infile outfile ...]
+
+
+Key
+
+   -h --help        Print online help. 
+   -k --keepdate    Keep the date stamp of output file same as input file. 
+   -q --quiet       Quiet mode. Suppress all warning and messages.
+   -V --version     Prints version information.
+
+   -c --convmode convmode
+                    Set conversion mode.
+                    Where convmode is one of: ASCII, 7bit, ISO, Mac with ASCII being the default.
+                    Simulates dos2unix under SunOS.
+
+   -o --oldfile file ...
+                    Old file mode.
+                    Convert the file and write output to it. The program defaults to run in this mode.
+                    Wildcard names may be used.
+
+   -n --newfile infile outfile ...
+                    New file mode. Convert the infile and write output to outfile.
+                    File names must be given in pairs and wildcard names should NOT be used or you WILL lose your files.
+dos2unix converts plain text files in DOS/MAC format to UNIX format.
+
+Later versions of dos2unix have additional options to add/remove Byte Order Marks (BOM) and handle alternate code pages.
+
+Alternative using sed
+
+sed -i -e 's/\r//g' file
+
+
+Examples
+
+Get input from stdin and write output to stdout:
+dos2unix
+
+Convert and replace a.txt. Convert and replace b.txt.
+
+dos2unix a.txt b.txt
+dos2unix -o a.txt b.txt
+
+Convert and replace a.txt in ASCII conversion mode.
+
+dos2unix a.txt -c iso b.txt
+
+Convert and replace b.txt in ISO conversion mode.
+
+dos2unix -c ascii a.txt -c iso b.txt
+
+Convert c.txt from Mac to Unix ascii format.
+
+dos2unix -c mac c.txt b.txt
+
+Convert and replace a.txt while keeping original date stamp.
+
+dos2unix -k a.txt
+dos2unix -k -o a.txt
+
+Convert a.txt and write to e.txt.
+
+dos2unix -n a.txt e.txt
+
+Convert a.txt and write to e.txt, keep date stamp of e.txt same as a.txt.
+
+dos2unix -k -n a.txt e.txt
+
+Convert and replace a.txt. Convert b.txt and write to e.txt.
+
+dos2unix a.txt -n b.txt e.txt
+dos2unix -o a.txt -n b.txt e.txt
+
+Convert c.txt and write to e.txt. Convert and replace a.txt. Convert and replace b.txt. Convert d.txt and write to f.txt.
+
+dos2unix -n c.txt e.txt -o a.txt b.txt -n d.txt f.txt
+
+
+*See also: unix2dos, dos2unix

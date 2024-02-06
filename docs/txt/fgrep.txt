@@ -1,1 +1,24 @@
-EMPTY
+fgrep - Search file(s) for lines that match a fixed string
+
+
+Syntax
+
+      fgrep options ...
+
+fgrep is the same as 'grep -F'
+
+all other options are the same as grep 
+It's a popular fallacy that fgrep stands for fast-grep, in fact fgrep means fixed-string grep.
+
+fgrep implements the Aho–Corasick string matching algorithm which is very fast at matching multiple strings in the input stream/file. So if fgrep is used like this:
+
+fgrep -f patternlist.txt largetextfile.txt
+
+it is much faster than the grep equivalent:
+
+grep -f patternlist.txt largetextfile.txt
+
+Matching a single pattern with fgrep is not significantly faster than grep.
+
+
+*See also: egrep, gawk, grep

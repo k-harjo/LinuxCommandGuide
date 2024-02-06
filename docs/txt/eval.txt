@@ -1,1 +1,14 @@
-EMPTY
+eval - Evaluate several commands/arguments
+
+
+Syntax
+
+      eval [arguments]
+The arguments are concatenated together into a single command, which is then read and executed, and its exit status returned as the exit status of eval.
+
+If there are no arguments or only empty arguments, the return status is zero.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [e]val
+
+
+*See also: case, expr, for, gawk, test

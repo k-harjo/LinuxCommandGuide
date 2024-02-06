@@ -1,1 +1,36 @@
-EMPTY
+jobs - Print currently running jobs and their status.
+
+
+Syntax
+
+      jobs [OPTIONS] [PID]
+
+
+Options:
+   -c 
+   --command  Print the command name for each process in jobs
+
+   -g
+   --group    Only print the group id of each job
+
+   -h
+   --help     Display a help message and exit
+
+   -l
+   --last     Only the last job to be started is printed
+
+   -p
+   --pid      Print the process id for each process in all jobs 
+
+On systems that supports this feature, jobs will print the CPU usage of each job since the last command was executed. The CPU usage is expressed as a percentage of full CPU activity. Note that on multiprocessor systems, the total activity can be more than 100%.
+
+This is a BASH shell builtin, not all systems support all the options above, to display your local syntax type: help jobs
+
+
+Example
+
+$ jobs
+
+
+
+*See also: fg, bg, shopt, suspend

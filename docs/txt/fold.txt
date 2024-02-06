@@ -1,1 +1,29 @@
-EMPTY
+fold - Wrap input lines to fit in specified width, writes each FILE ('-' means standard input), or standard input if none are given, to standard output, breaking long lines.
+
+
+Syntax
+
+      fold [options]... [FILE]...
+
+
+Options
+
+   -b
+   --bytes
+      Count bytes rather than columns, so that tabs, backspaces, and carriage returns
+      are each counted as taking up one column, just like other characters.
+
+   -s
+   --spaces
+      Break at word boundaries: the line is broken after the last blank before the maximum
+      line length.  If the line contains no such blanks, the line is broken at the maximum line length as usual.
+
+   -w WIDTH
+   --width=WIDTH
+      Use a maximum line length of WIDTH columns instead of 80.
+By default, 'fold' breaks lines wider than 80 columns. The output is split into as many lines as necessary.
+
+'fold' counts screen columns by default; thus, a Tab can count more than one column, Backspace decreases the column count, and CarriageReturn sets the column to zero.
+
+
+*See also: csplit, cut, expand, fmt, head, paste, split, tail

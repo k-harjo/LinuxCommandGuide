@@ -1,1 +1,27 @@
-EMPTY
+popd - Remove the top entry from the directory stack, and cd to the new top directory.
+
+
+Syntax
+
+      popd [+N | -N] [-n]
+
+
+Key
+
+   +N   Remove the Nth directory (counting from the left of the list 
+        printed by dirs), starting with zero. 
+
+   -N   Remove the Nth directory (counting from the right of the list 
+        printed by dirs), starting with zero. 
+
+   -n   Suppress the normal change of directory when removing directories from 
+        the stack, so that only the stack is manipulated. 
+
+When no arguments are given, popd removes the top directory from the stack and performs a cd to the new top directory.
+
+The elements are numbered from 0 starting at the first directory listed with dirs; i.e., popd is equivalent to popd +0.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help popd
+
+
+*See also: dirs, pushd

@@ -1,1 +1,98 @@
-EMPTY
+op (Operator access) - A flexible means for system administrators to grant trusted users access to certain root operations without having to give them full superuser privileges.
+
+
+Syntax 
+
+      op mnemonic [arg] 
+
+
+Key
+
+    -V   Show version number.
+   
+    -l   List available commands.
+         Note that this will only display commands you are permitted to run.
+
+
+Configuration
+
+Configuration entries are read from /etc/op.conf and all files in lexical order from /etc/op.d with the extension .conf. Files must be owned by root and not have group or other permissions set.
+
+The fields of the entries in the configuration files are separated by white space. Each entry can span several lines and continues until the next alphanumeric string is found at the beginning of a lines (which is taken to be the next mnemonic or variable definition, and thus the beginning of a new entry). Comments can be embedded beginning with a # character. Each entry in the configuration files has the following form:
+
+mnemonic
+
+command [ arg ... ] ; [ option ... ]
+
+or
+
+var=value
+
+var a variable name, which must be an upper case alphanumeric identifier. Variables are expanded when reading options.
+
+value the remainder of the line is taken to be the value of the variable.
+
+mnemonic a unique, alphanumeric identifier for each operator function.
+
+command the full pathname of the executable to be run by op when the associated mnemonic is chosen.
+
+arg(s) any arguments, either literal or variable, needed by command. Literal arguments are specified directly, like specific command options (0Gun) or files (/dev/rmt20). Variable arguments are specified here as $1, $2 ... $n;
+For a full list look in the options section of the op man page( man op ).
+
+$* indicates any number trailing arguments.
+
+
+Examples
+
+Example /etc/op.conf:
+
+# Define some users
+OPERATORS=(fred|barry)
+# Define hosts that Fred is restricted to
+FRED_HOSTS=(alpha|beta)
+# Define hosts that Barry is restricted to
+BARRY_HOSTS=(theta|gamma)
+# Define user/host access list
+ACCESS_LIST=fred@FRED_HOSTS|barry@BARRY_HOSTS
+
+# 'op shell' - gives user a root shell
+shell
+/bin/su -;
+users=ACCESS_LIST
+
+environment
+
+password
+help="Root shell"
+
+# 'op reboot' - reboot system
+reboot
+/sbin/reboot;
+users=ACCESS_LIST
+
+password
+help="Reboot system"
+
+# 'op shutdown <time>' - shutdown at a
+# certain time. Restricts argument to
+# valid values only
+shutdown
+/sbin/shutdown -h $1;
+users=ACCESS_LIST
+$1=(now|[0-1]?[0-9]:[0-9][0-9]|2[0-3]:[0-5][0-9]|+[0-9]+)
+help="Shutdown system"
+
+# Switch inetd on and off, shows complex
+# shell example and 'string' arguments. $1
+# in this example is expanded by op
+inetd /bin/sh -c '
+case $1 in
+on) /usr/sbin/inetd -s ;;
+off) /usr/bin/pkill inetd ;;
+esac
+';
+users=ACCESS_LIST
+$1=on|off
+
+
+*See also: chroot, sudo, su

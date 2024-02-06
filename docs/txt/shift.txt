@@ -1,1 +1,26 @@
-EMPTY
+shift - Shift positional parameters to the left by n.
+
+
+Syntax
+
+      shift [n]
+
+
+Options
+
+   n  : The number of parameters to shift (default = 1)
+The positional parameters from
+n+1 ... $#
+are renamed to
+$1 ... $#-n+1
+
+Parameters represented by the numbers $# to n+1 are unset.
+
+n must be a positive number less than or equal to $#.
+
+The return status is zero unless n is greater than $# or less than zero.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help shift
+
+
+*See also: getopts

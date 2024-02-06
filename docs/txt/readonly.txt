@@ -1,1 +1,35 @@
-EMPTY
+readonly - Mark one or more variables or functions as read-only.
+
+
+Syntax
+
+      readonly [-aApf] [name] ... 
+
+
+Key
+
+   -a   Treat each name as an array variable.
+   -A   restrict the variables to associative arrays.
+
+   -p   Print a list of all readonly names (This is the default)
+
+   -f   Mark shell functions corresponding to the names as read-only.
+
+The given names are marked readonly and the values of these names can not be changed by subsequent assignment.
+
+If the -f option is given, then functions corresponding to the names are so marked.
+
+If no arguments are given, or if '-p' is given, a list of all readonly names is printed.
+
+The '-a' option means to treat each name as an array variable.
+
+An argument of '--' disables further option processing.
+
+If a variable name is followed by =word, the value of the variable is set to word.
+
+The return status is 0 unless an invalid option is encountered, one of the names is not a valid shell variable name, or -f is supplied with a name that is not a function.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [r]eadonly
+
+
+*See also: chmod, env, export, function, hostname, local, printenv, shift

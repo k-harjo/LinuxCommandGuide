@@ -1,1 +1,15 @@
-EMPTY
+caller - Return the context of any active subroutine call (a shell function or a script executed with the . or source builtins).
+
+Syntax
+      caller [expr]
+Without expr, caller displays the line number and source filename of the current subroutine call.
+
+If a non-negative integer is supplied as expr, caller displays the line number, subroutine name, and source file corresponding to that position in the current execution call stack. This extra information may be used, for example, to print a stack trace. The current frame is frame 0.
+
+The return value is 0 unless the shell is not executing a subroutine call or expr does not correspond to a valid position in the call stack.
+
+caller is a BASH shell builtin
+
+"I used to think the worst thing in life was to end up alone, it's not the worst thing in life is to end up with people that make you feel alone" ~ Robin Williams
+
+*See also: builtin

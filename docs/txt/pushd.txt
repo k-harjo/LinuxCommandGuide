@@ -1,1 +1,26 @@
-EMPTY
+pushd - Save and then change the current directory. With no arguments, pushd exchanges the top two directories.
+
+
+Syntax
+
+      pushd [dir | +N | -N] [-n]
+
+
+Key
+
+   +N   Brings the Nth directory (counting from the left of the list printed by dirs,
+        starting with zero) to the top of the list by rotating the stack.
+       
+
+   -N   Brings the Nth directory (counting from the right of the list printed by dirs,
+        starting with zero) to the top of the list by rotating the stack. 
+
+   -n   Suppresses the normal change of directory when adding directories to the 
+        stack, so that only the stack is manipulated. 
+
+   dir  Makes the current working directory be the top of the stack, and then executes 
+        the equivalent of 'cd dir'. cds to dir.
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help pushd
+
+
+*See also: dirs, popd

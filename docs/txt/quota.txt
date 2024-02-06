@@ -1,1 +1,38 @@
-EMPTY
+quota - Display disk usage and limits, by default only the user quotas are printed.
+
+
+Syntax
+
+      quota [ -guv | q ]
+      quota [ -uv | q ] user
+      quota [ -gv | q ] group
+
+
+Options
+
+      -g     Print group quotas for the group of which the user is a member.
+
+      -u     Print user quotas (this is the default)
+
+      -v     Verbose, will display quotas on filesystems where no storage is allocated.
+
+      -q     Print a more terse message, containing only information on filesystems
+             where usage is over quota.
+
+Specifying both -g and -u displays both the user quotas and the group quotas (for the user).
+
+Only the super-user can use the -u flag and the optional user argument to view the limits of other users. Non- super-users can use the the -g flag and optional group argument to view only the limits of groups of which they are members.
+
+The -q flag takes precedence over the -v flag.
+
+Quota reports the quotas of all the filesystems listed in /etc/fstab. For filesystems that are NFS-mounted a call to the rpc.rquotad on the server machine is performed to get the information. If quota exits with a non-zero status, one or more filesystems are over quota.
+
+
+Files
+
+quota.user located at the filesystem root with user quotas
+quota.group located at the filesystem root with group quotas
+/etc/fstab to find filesystem names and locations
+
+
+*See also: fstab, edquota, quotacheck, quotaon, repquota, ulimit

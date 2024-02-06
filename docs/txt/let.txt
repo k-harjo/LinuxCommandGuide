@@ -1,1 +1,16 @@
-EMPTY
+let - Perform arithmetic on shell variables.
+
+
+Syntax
+
+      let expression [expression]
+Each expression is an arithmetic expression to be evaluated. If the last expression evaluates to 0, let returns 1; otherwise 0 is returned.
+
+let is very similar to (( - the only difference being let is a builtin (simple command), and (( is a compound command.
+
+The arguments to let are therefore subject to all the same expansions and substitutions as any other simple command - requiring proper quoting and escaping - whereas the contents of (( aren't subject to word-splitting or pathname expansion (almost never desirable for arithmetic). For this reason, the arithmetic compound command should generally be preferred over let.
+
+let is a bash builtin command.
+
+
+*See also: expr, eval, test

@@ -1,1 +1,48 @@
-EMPTY
+shutdown - Shutdown or restart linux
+
+
+Syntax
+
+      shutdown [options] when [message]
+
+
+Options
+
+   -c    Cancel a shutdown that is in progress.
+
+   -f    Reboot fast, by suppressing the normal call to fsck
+         when rebooting.
+   -h    Halt the system when shutdown is complete.
+
+   -k    Print the warning message, but suppress actual shutdown.
+
+   -n    Perform shutdown without a call to init.
+
+   -r    Reboot the system when shutdown is complete.
+
+   -t sec 
+         Ensure a sec-second delay between killing processes
+         and changing the runlevel.
+
+   when  The time to execute the shutdown. This accepts several formats:
+         'now' will bring the system down immediately.
+         +m, where m is the number of minutes to wait until shutting down,
+         hh:mm which specifies the time on the 24hr clock. 
+
+
+Examples
+
+Shutdown immediately:
+$ shutdown -h now
+
+Reboot immediately:
+$ shutdown -r now
+
+Shutdown at 8 pm:
+$ shutdown -h 20:00
+
+Shutdown in 10 minutes:
+$ shutdown -h +10
+
+
+*See also: logout

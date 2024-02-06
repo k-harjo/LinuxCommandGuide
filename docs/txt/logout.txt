@@ -1,1 +1,31 @@
-EMPTY
+logout - Exit a login shell.
+
+
+Syntax
+
+      logout [n]
+Returns a status of n to the shell's parent.
+
+A login shell, is your topmost shell, and is started when you log in.
+
+When you terminate a login shell (via the commands 'exit', 'logout,' or the end of file [^D]), you are logged out completely.
+
+
+Sub-Shells
+
+A 'sub-shell' is a shell created after login, either by loading a new shell or opening a window with a graphics interface. A sub-shell usually will not accept the command 'logout' to terminate, you must use 'exit' or ^D.
+When you terminate a sub-shell, you are returned to the process or shell that created it.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help logout
+
+
+Example (starting from a bash shell)
+
+$ tcsh
+% # now in the tcsh shell
+% exit
+$ # now back in the bash shell
+$ logout
+
+
+*See also: exit, logname

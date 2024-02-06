@@ -1,1 +1,45 @@
-EMPTY
+cal - Display a calendar.
+
+Syntax
+      cal [-smjy13] [[[day] month] year] 
+
+      ncal [-smjy13] [[[day] month] year]
+
+Key:
+   -1    Display single month output. (default)
+
+   -3    Display prev/current/next month output.
+
+   -s    Display Sunday as the first day of the week.
+
+   -m    Display monday as the first day of the week.
+
+   -j    Display julian dates (days one-based, numbered from January 1).
+
+   -y    Display a calendar for the current year.
+
+   -V    Display version information and exit.
+If a single parameter is provided, that will specify a 4 digit year (1 - 9999) to display.
+
+If two parameters are provided, they will denote the Month (1 - 12) and Year (1 - 9999).
+
+If no arguments are specified, the current month is displayed.
+
+cal Displays weeks starting on Sunday, even though most locales start the week on Monday.
+
+ncal (New Calendar) Displays a vertical layout starting on Monday and displays the date of easter.
+The ncal format makes a year fit on a 25x80 terminal.
+
+If no parameters are specified, the current month's calendar is displayed.
+
+The year must be specified with 4 digits. A year starts on 01 Jan.
+
+Examples
+
+Show the calendar for 2022
+$ cal 2022
+
+Show a calendar for the current year with weeks starting on Monday:
+$ ncal -m
+
+*See also: dc, factor, units, wc, word, and line counts.

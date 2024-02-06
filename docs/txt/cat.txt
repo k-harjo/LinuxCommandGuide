@@ -1,1 +1,66 @@
-EMPTY
+cat - Concatenate and print (display) the content of files.
+
+Syntax
+      cat [Options] [File]...
+
+Concatenate FILE(s), or standard input, to standard output.
+
+  -A, --show-all           equivalent to -vET
+
+  -b, --number-nonblank    number nonblank output lines
+
+  -e                       equivalent to -vE
+
+  -E, --show-ends          display $ at end of each line
+
+  -n, --number             number all output lines
+
+  -s, --squeeze-blank      never more than one single blank line
+
+  -t                       equivalent to -vT
+
+  -T, --show-tabs          display TAB characters as ^I
+
+  -u                       (ignored)
+
+  -v, --show-nonprinting   use ^ and M- notation, except for LFD and TAB
+
+      --help               display this help and exit
+
+      --version            output version information and exit
+
+With no FILE, or when FILE is -, read standard input.
+When given a single FILE, cat will pass the file unchanged to STDOUT (by default the display). 
+The cat command can be piped into grep to find specific words in the file:
+cat file.txt | grep keyword output.txt
+
+However all modern versions of grep have this built-in. Running a single command/process is more efficient, and so with large files will be noticably faster:
+grep keyword file.txt output.txt
+
+grep can also display an entire file, (like cat), by using the grep keyword "." which will match lines with at least 1 character. Alternatively the grep keyword "^" will match the beginning of every line including blank lines.
+When grep is used to display multiple files, it will prepend each line of output with the filename:
+$ grep . *.txt
+
+Examples:
+
+Display a file:
+$ cat myfile.txt
+
+Display all .txt files:
+$ cat *.txt
+
+Concatenate two files:
+$ cat File1.txt File2.txt > union.txt
+
+If you need to combine two files but also eliminate duplicates, this can be done with sort unique:
+$ sort -u File1.txt File2.txt > unique_union.txt
+
+Put the contents of a file into a variable
+$ my_variable='cat File3.txt'
+
+View CPU and memory information:
+$ cat /proc/cpuinfo
+$ cat /proc/meminfo
+
+
+*See also: cp, mv, pv, tac, hexdump

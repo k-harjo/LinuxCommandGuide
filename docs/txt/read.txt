@@ -1,1 +1,96 @@
-EMPTY
+read - Read one line from the standard input, (or from a file) and assign the word(s) to variable name(s).
+
+
+Syntax
+
+      read [-ers] [-a aname]  [-d delim] [-i text] [-n nchars]
+         [-N nchars] [-p prompt] [-r] [-s] [-t timeout] [-u fd]
+            [name...]
+
+
+Key
+
+   -a aname
+             The words are assigned to sequential indices of the array variable aname, starting at 0.
+             aname is unset before any new values are assigned.  Other name arguments are ignored.
+
+   -d delim
+             The first character of delim is used to terminate the input line, rather than newline.
+
+   -e        If the standard input is coming from a terminal, readline is used to obtain the line.
+
+   -i text   If readline is being used to read the line, text is placed into the editing buffer before editing begins. 
+
+   -n nchars
+             read returns after reading nchars characters rather than waiting for a complete line of input.
+
+   -N nchars
+             read returns after reading exactly nchars characters rather than waiting for a complete line
+             of input, unless EOF is encountered or read times out. Delimiter characters encountered in
+             the input are not treated specially and do not cause read to return until nchars characters are read. 
+
+   -p prompt
+             Display prompt on standard error, without a trailing newline, before attempting to read
+             any input. The prompt is displayed only if input is coming from a terminal.
+
+   -r        Do not treat a Backslash as an escape character.  The backslash is considered to be part
+             of the line. In particular, a backslash-newline pair can not be used as a line continuation.
+             Without this option, any backslashes in the input will be discarded.
+             You should almost always use the -r option with read.
+
+   -s        Silent mode. If input is coming from a terminal, characters are not echoed.
+
+   -t timeout
+             Cause read to time out and return failure if a complete line of input is not read
+             within timeout seconds. This option has no effect if read is not reading input from
+             the terminal or a pipe.
+
+   -u fd     Read input from file descriptor fd.
+
+   name      The name(s) to assign to each word.
+             If no names are supplied, the line read is assigned to the variable $REPLY. 
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [r]ead
+
+One line is read from the standard input, and the first word is assigned to the first name, the second word to the second name, and so on, with leftover words and their intervening separators assigned to the last name.
+
+The read command modifies each line read; by default it removes all leading and trailing whitespace characters (spaces and tabs, or any whitespace characters present in IFS). If that is not desired, the IFS variable can be cleared with IFS=
+
+If there are fewer words read from the standard input than names, the remaining names are assigned empty values.
+The characters in the value of the IFS variable are used to split the line into words.
+
+The backslash character '\' can be used to remove any special meaning for the next character read, and for line continuation.
+The return code is zero, unless end-of-file is encountered or read times out.
+
+
+Examples
+
+Loop through a text file 'demo.txt' and print each line:
+
+while IFS= read -r line; do
+echo "Line: $line"
+done <demo.txt
+
+Prompt for some values and then display on screen horizontally and then vertically:
+
+#!/bin/bash
+read var_year
+echo "The year is: $var_year"
+
+echo -n "Enter your name and press [ENTER]: "
+read var_name
+echo "Your name is: $var_name"
+
+$ read
+$ echo You entered $REPLY
+
+$ echo "First Second Third Fourth " | while read -r -d ' ' ret1; do printf "=$ret1="; done =First==Second==Third==Fourth=
+
+$ echo "First Second Third Fourth " | while read -r -d ' ' ret1; do printf "=$ret1= \n"; done
+=First=
+=Second=
+=Third=
+=Fourth=
+
+
+*See also: mapfile, select

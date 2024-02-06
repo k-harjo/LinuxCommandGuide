@@ -1,1 +1,83 @@
-EMPTY
+iconv - Convert encoding of a file from one character set encoding to another.
+
+
+Syntax
+
+      iconv [Option...] -f encoding -t encoding inputfile 
+      iconv -l
+
+
+Options
+
+   -f encoding
+   --from-code encoding
+          Convert characters From encoding.
+
+   -t encoding
+   --to-code encoding
+          Convert characters To encoding.
+
+   --list
+          List known coded character sets
+          The encodings available are system dependent.
+
+   -o file
+   --output file
+          Specify an output file (instead of stdout.)
+
+
+Options controlling conversion problems:
+
+   -c     When this option is given, characters that cannot be converted are silently
+          discarded, instead of leading to a conversion error.
+
+   --unicode-subst=formatstring
+          Replace Unicode characters that cannot be represented in the target
+          encoding with a placeholder string that is constructed from formatstring,
+          applied to the Unicode code point. The formatstring must be in the same
+          format as for the printf command or the  printf() function, taking either
+          no argument or exactly one unsigned integer argument.
+
+   --byte-subst=formatstring
+          Replace bytes in the input that are not valid in the source encoding 
+          with a placeholder string constructed from the given formatstring,
+          applied to the byte's value. The formatstring must be in the same
+          format as for the printf command or  the  printf()  function, taking either
+          no argument or exactly one unsigned integer argument.
+
+   --widechar-subst=formatstring
+          Replace wide characters in the input that are not valid in the source
+          encoding with a placeholder string that is constructed from the given
+          formatstring, applied to the byte's value. The formatstring must
+          be in the same format as for the printf command or the  printf() function,
+          taking either no argument or exactly one unsigned integer argument.
+
+
+Options controlling error output:
+
+   −s
+   −−silent
+        Suppress error messages about invalid or unconvertible characters are omitted
+
+   --verbose
+        Print progress information. 
+The iconv program converts the encoding of characters in inputfile from one coded character set to another. The result is written to standard output unless otherwise specified by the --output option.
+
+
+Examples
+
+Convert input.txt from ISO-8859-1 to UTF-8 and save as output.txt
+
+$ iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
+
+Script to convert all .HTML files in a directory from Windows 1242 to UTF8 (from brianwc/ShareAlike.org)
+
+#/bin/bash
+LIST='ls *.html'
+for i in $LIST;
+do iconv -f WINDOWS-1252 -t UTF8 $i -o $i."utf8";
+mv $i."utf8" $i;
+done
+
+
+*See also: uuencode

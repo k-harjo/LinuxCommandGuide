@@ -1,1 +1,59 @@
-EMPTY
+cron - Daemon to execute scheduled commands
+
+
+Syntax
+
+      cron [-n | -p | -s | -m<mailcommand>]
+
+      cron -x [ext,sch,proc,pars,load,misc,test,bit] 
+
+
+Key
+
+   -s  This option will direct cron to send job output to the system log using syslog(3).
+       This is useful if your system has no sendmail(8), or if mail is disabled using -m off.
+
+   -m  This option allows you to specify a shell command string to use for sending cron
+       mail output instead of sendmail(8). This command must accept a fully formatted mail
+       message (with headers) on stdin and send it as a mail message to the recipients
+       specified in the mail headers.
+
+   -n  This option changes default behavior causing it to run crond in the foreground.
+       This can be useful when starting it out of init.
+
+   -p  Permit any crontab, which user set.
+
+   -x  This option sets debug flags.
+
+   As a special case, the string off will disable sending mail.
+
+How to run the cron daemon: Cron should be started from /etc/init.d or /etc/rc.d/init.d (older systems may also use /etc/rc or /etc/rc.local). It will return immediately, so you don't need to start it with '&'.
+
+
+What cron does:
+
+Cron searches /var/spool/cron for crontab files which are named after accounts in /etc/passwd; crontabs found are loaded into memory. Cron also searches for /etc/crontab and the files in the /etc/cron.d/ directory, which are in a different format.
+
+Cron then wakes up every minute, examining all stored crontabs, checking each command to see if it should be run in the current minute.
+
+cron will normally allow a task to run indefinitely. Consider using options of the program you’re calling to implement a timeout, or utilise the timeout command wrapper.
+
+
+Modifying a cron job:
+
+To edit a users crontab entry, log into your system for that particular user and type crontab -e.
+The default editor for the 'crontab -e' command is vi.
+Change the default editor by running: export VISUAL='editor'
+
+cron checks each minute to see if its spool directory's modtime (or the modtime on /etc/crontab) has changed, and if it has, cron will then examine the modtime on all crontabs and reload those which have changed. Thus cron need not be restarted whenever a crontab file is modfied. Note that the crontab command updates the modtime of the spool directory whenever it changes a crontab.
+
+
+Mailing output:
+
+Cron will email to the user all output of the commands it runs, to silence this, redirect the output to a log file or to /dev/null
+You can also redirect email to the user named in the MAILTO environment variable in the crontab, if such exists.
+
+Cron comes from the word chronos, the Greek word for time.
+
+
+*See also: anacron, at, crontab, chroot, exec, if, nohup, su, watch, .period

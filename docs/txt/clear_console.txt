@@ -1,1 +1,1 @@
-EMPTY
+clear_console - Bash only

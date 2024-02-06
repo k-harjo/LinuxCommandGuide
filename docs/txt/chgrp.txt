@@ -1,1 +1,52 @@
-EMPTY
+chgrp - Change group ownership.
+
+'chgrp' changes the group ownership of each given File to Group (which can be either a group name or a numeric group id) or to match the same group as an existing reference file.
+
+
+Syntax
+
+      chgrp [Options]... {Group | --reference=File} File...
+
+Key
+
+  -c
+  --changes
+       Verbosely describe the action for each File whose group actually changes.
+
+  -f
+  --silent
+  --quiet
+       Do not print error messages about files whose group cannot be changed.
+
+  -f
+  --no-dereference
+       Act on symbolic links themselves instead of what they point to.
+       Only available if the 'lchown' system call is provided.
+
+  --reference=FILE
+       Use the group of the reference FILE instead of an explicit GROUP.
+
+  -v
+  --verbose
+       Verbosely describe the action or non-action taken for every File.
+
+  -R
+  --recursive
+       Recursively change the group ownership of directories and their
+       contents.
+
+
+Example
+
+Change the group ownership of a file to 'OpsGroup':
+
+$ chgrp OpsGroup /usr/database/demo.dbf
+
+Change the group ownership of a directory and all sub-directories to 'OpsGroup', display all the changes made:
+
+$ chgrp -c -R OpsGroup /usr/database/
+
+Groupthink - Tendency of decision makers to join together around a policy or person without questioning basic assumptions.
+
+
+*See also: chmod, chown, setfacl, bash syntax

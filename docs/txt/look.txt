@@ -1,1 +1,26 @@
-EMPTY
+look - Display any lines in file which contain string as a prefix.
+
+
+Syntax
+
+      look [-df] [-t termchar] string [file]
+
+      As look performs a binary search, the lines in file must be sorted.
+
+
+Options:
+
+ -d   Dictionary character set and order, i.e. only alphanumeric characters are compared.
+
+ -f   Ignore the case of alphabetic characters (UPPER/lower).
+
+ -t   Specify a string termination character, i.e. only the characters
+      in string up to and including the first occurrence of termchar are compared.
+If file is not specified, the dictionary file /usr/share/dict/words is used, only alphanumeric characters are compared and the case of alphabetic characters is ignored.
+
+Exits 0 if one or more lines were found and displayed, 1 if no lines were found, and >1 if an error occurred.
+
+The return status is the exit status of the last command executed in consequent-commands, or zero if none were executed.
+
+
+*See also: grep, sort

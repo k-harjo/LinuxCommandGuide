@@ -1,1 +1,40 @@
-EMPTY
+enable - Enable and disable builtin shell commands.
+
+
+Syntax
+
+       enable [-a] [-dnps] [-f filename] [name …]
+
+
+Key
+
+   -a   List each builtin with an indication of whether or not it is enabled.
+  
+   -d   Delete a builtin loaded with '-f'. 
+
+   -f   Load the new builtin command name from shared object filename, on systems that
+        support dynamic loading.
+
+   -n   Disable the names listed, otherwise names are enabled.
+
+   -p   Print a list of shell builtins, default if no name arguments appear.
+        With no other arguments, the list consists of all enabled shell builtins. 
+
+   -s   Restrict to enable only POSIX special builtins
+
+Disabling a builtin allows a disk command which has the same name as a shell builtin to be executed without specifying a full pathname, even though the shell normally searches for builtins before disk commands.
+
+If there are no options, a list of the shell builtins is displayed.
+If '-s' is used with '-f', the new builtin becomes a special builtin.
+
+The return status is zero unless a name is not a shell builtin or there is an error loading a new builtin from a shared object.
+
+
+Examples
+
+To use the test binary found via $PATH instead of the shell builtin version:
+
+$ enable -n test
+
+
+*See also: builtin, chroot, exec, nohup, su, watch, .source

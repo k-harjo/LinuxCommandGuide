@@ -1,1 +1,20 @@
-EMPTY
+return - Cause a shell function to exit with the return value n.
+
+
+Syntax
+
+      return [n]  
+
+
+Options
+
+      n    Return value i.e. an errorlevel
+
+If n is not supplied, the return value is the exit status of the last command executed in the function. This can also be used to terminate execution of a script being executed with the . (or source) builtin, returning either n or the exit status of the last command executed within the script as the exit status of the script.
+
+The return status is false if return is used outside a function and not during the execution of a script by . or source.
+
+return is a bash builtin command.
+
+
+*See also: . 

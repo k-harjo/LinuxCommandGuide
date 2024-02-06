@@ -1,1 +1,57 @@
-EMPTY
+head - Output the first part of files, prints the first part (10 lines by default) of each file.
+
+
+Syntax
+
+      head [-n count] [options] [file ...]
+
+      head [-c bytes] [options] [file ...]
+
+
+Options:
+
+  -count
+     Return the first count of lines from the file. (must be the first option specified).
+This option is only recognized if it is specified first. Count is a decimal number optionally followed by a size letter ('b', 'k',
+'m' for bytes, Kilobytes or Megabytes) , or 'l' to mean count by lines, or other option letters ('cqv').
+
+  -c bytes
+  --bytes=bytes
+       Print the first bytes bytes, instead of initial lines. 
+       Appending 'b' multiplies bytes by 512, 'k' by 1024, and 'm' by 1048576.
+
+  -n count
+  --lines=count
+       Output the first count lines.
+
+  -q
+  --quiet
+  --silent
+       Never print file name headers.
+
+  -v
+  --verbose
+       Always print file name headers.
+If no files are given (or if given a file of '-') head will read from standard input.
+
+If more than one file is specified, 'head' will print a one-line header consisting of ==> FILE NAME <== before the output for each file.
+
+Two option formats are accepted: the new one, in which numbers are arguments to the options ('-q -n 1'), and the old one, in which the number precedes any option letters ('-1q')
+
+
+Examples
+
+Extract the first 85 lines from a file:
+
+head -85 file.txt
+
+Extract lines 40-50 from a file, first using head to get the first 50 lines then tail to get the last 10:
+
+head -50 file.txt | tail -10
+
+List the 5 largest subdirectories in the current directory:
+
+du -hs */ | sort | head -n 5
+
+
+*See also: csplit, cut, fmt, paste, split, tail

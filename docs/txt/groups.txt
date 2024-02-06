@@ -1,1 +1,12 @@
-EMPTY
+groups - Print group names a user is in.
+
+
+Syntax
+
+     groups [username]...
+Prints the names of the primary and any supplementary groups for each given username, or the current process if no names are given.
+
+If names are given, the name of each user is printed before the list of that user's groups.
+
+
+*See also: env, id, logname, printenv, users, uname, who, whoami

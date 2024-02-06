@@ -1,1 +1,24 @@
-EMPTY
+command - Run command with arguments ignoring any shell function named command.
+
+
+Syntax
+
+      command [-pVv] command [arguments ...]
+
+
+Key
+
+      -P   Use a default path
+      -v   Verbose
+      -V   More verbose
+Only shell builtin commands or commands found by searching the PATH are executed. If there is a shell function named ls, running 'command ls' within the function will execute the external command ls instead of calling the function recursively.
+
+The '-p' option means to use a default value for $PATH that is guaranteed to find all of the standard utilities. The return status in this case is 127 if command cannot be found or an error occurred, and the exit status of command otherwise.
+
+If either the '-V' or '-v' option is supplied, a description of command is printed. The '-v' option causes a single word indicating the command or file name used to invoke command to be displayed; the '-V' option produces a more verbose description. In this case, the return status is zero if command is found, and non-zero if not.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help command
+
+
+
+*See also: builtin, chroot, crontab, exec, if, nohup, .source, su, type, watch

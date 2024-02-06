@@ -1,1 +1,35 @@
-EMPTY
+nice - Run a command with modified scheduling priority, print or modify the scheduling priority of a job.
+
+
+SYNTAX
+
+      nice [Option]... [Command [Arg]...]
+
+
+OPTION
+
+      -n MyADJUSTMENT
+      -MyADJUSTMENT
+      --adjustment=MyADJUSTMENT
+
+Priority can be adjusted by 'nice' over the range of -20 (the highest priority) to 19 (the lowest). Default = 10
+
+If no arguments are given, 'nice' prints the current scheduling priority, which it inherited.
+
+Otherwise, 'nice' runs the given Command with its scheduling priority adjusted.
+
+If no option for MyADJUSTMENT is given, the priority of the command is incremented by 10. You must have appropriate privileges to specify a negative adjustment.
+
+nice is built into csh(1) with a slightly different syntax than described here. The form 'nice +10' nices to positive nice, and 'nice -10' can be used by the super-user to give a process more of the processor.
+
+
+Examples
+
+Run an echo command with low priority:
+sudo nice -n 10 echo Hello
+
+Run an echo command with high priority:
+sudo nice -n -10 echo Hello
+
+
+*See also: nohup, sync, sleep

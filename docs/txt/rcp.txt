@@ -1,1 +1,23 @@
-EMPTY
+rcp (Remote Copy) - move files between machines. Each file or directory is either a remote filename of the form rname@rhost:path or a local filename.
+
+
+Syntax
+
+      rcp [options] file1 file2
+
+      rcp [options] file ... directory
+
+
+Options
+
+   -k   Attempt to get tickets for remote host; query krb_realmofhost to determine realm.
+
+   -p   Preserve modification times and modes of the source files.
+
+   -r   If any of the source files are directories, rcp copies each subtree rooted at that name.
+        The destination must be a directory.
+
+   -x   Turns on DES encryption for all data passed by rcp.
+
+
+*See also: rsync

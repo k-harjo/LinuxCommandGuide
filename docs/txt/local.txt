@@ -1,1 +1,18 @@
-EMPTY
+local - Create variables
+
+
+SYNTAX
+
+      local [option] name[=value]
+For each argument, a local variable named name is created, and assigned value.
+
+The option can be any of the options accepted by declare.
+
+local can only be used within a function; it makes the variable name have a visible scope restricted to that function and its children.
+
+The return status is zero unless local is used outside a function, an invalid name is supplied, or name is a readonly variable.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help local
+
+
+*See also: declare, env, export, function, readonly, set

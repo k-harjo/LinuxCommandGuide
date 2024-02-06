@@ -1,1 +1,22 @@
-EMPTY
+exit - Exit from a program, shell or log out of a Unix network.
+
+
+Syntax
+
+      exit [n]
+
+Key
+
+   n   Set the exit status to n (default=0)
+If n is omitted, the exit status is that of the last command executed. A trap on EXIT is executed before the shell terminates.
+
+The exit status code can be displayed with echo $?
+
+The shell variable SHLVL displays how deeply nested you are in the bash shell, the first session opened in a terminal will be 1 and each subsequent shell session opened will increment the number. If SHLVL is greater than 1 then exit will exit the shell, if SHLVL is = 1, then exit will logout and close the terminal.
+
+In a subshell SHLVL does not increment, but instead you can compare $BASHPID to $$
+
+exit is a bash built in command.
+
+
+*See also: bash, logout, lo, bye, quit, return, shutdown

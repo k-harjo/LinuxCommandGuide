@@ -1,1 +1,135 @@
-EMPTY
+crontab (cron table) - Schedule a command to run at a later time.
+
+
+Syntax
+
+      crontab [ -u user ] file
+
+      crontab [ -u user ] { -l | -r | -e }
+
+
+Key
+
+   -l  List - display the current crontab entries.
+
+   -r  Remove the current crontab.
+
+   -e  Edit the current crontab using the editor specified by the 
+       VISUAL or EDITOR environment variables.
+       After you exit from the editor, the modified crontab will be installed automatically.
+
+Crontab is the program used to install, deinstall or list the tables used to drive the cron daemon in Vixie Cron.
+Each user can have their own crontab, and though these are files in /var, they are not intended to be edited directly.
+
+If the -u option is given, it specifies the name of the user whose crontab is to be tweaked. If this option is not given, crontab examines "your" crontab, i.e., the crontab of the person executing the command. Note that su can confuse crontab and that if you are running inside of su you should always use the -u option for safety's sake.
+
+cron file is used to install a new crontab from some named file or standard input if the pseudo-filename - is given.
+
+A crontab file contains instructions to the cron daemon of the general form: 'run this command at this time on this date'. Each user has their own crontab, and commands in any given crontab will be executed as the user who owns the crontab. Uucp and News will usually have their own crontabs, eliminating the need for explicitly running su as part of a cron command.
+
+Crontab comments and variables
+Blank lines and leading spaces and tabs are ignored. Lines whose first non-space character is a pound-sign (#) are comments, and are ignored.
+Comments are not allowed on the same line as cron commands, since they will be taken to be part of the command. Similarly, comments are not allowed on the same line as environment variable settings.
+
+An active line in a crontab will be either an environment setting or a cron command.
+
+An environment setting is of the form, name = value where the spaces around the equal-sign (=) are optional, and any subsequent non-leading spaces in value will be part of the value assigned to name. The value string can be placed in quotes (single or double, but matching) to preserve leading or trailing blanks. The name string can also be placed in quote (single or double, but matching) to preserve leading, traling or inner blanks.
+
+Several environment variables are set up automatically by the cron daemon. SHELL is set to /bin/sh, and LOGNAME and HOME are set from the /etc/passwd line of the crontab's owner. HOME and SHELL can be overridden by settings in the crontab; LOGNAME can not.
+
+(Another note: the LOGNAME variable is sometimes called USER on BSD systems... on these systems, USER will be set also).
+
+In addition to LOGNAME, HOME, and SHELL, cron will look at MAILTO if it has any reason to send mail as a result of running commands in 'this' crontab. If MAILTO is defined (and non-empty), mail is sent to the user so named. If MAILTO is defined but empty (MAILTO=""), no mail will be sent. Otherwise mail is sent to the owner of the crontab. This option is useful if you decide on /bin/mail instead of /usr/lib/sendmail as your mailer when you install cron -- /bin/mail doesn't do aliasing, and UUCP usually doesn't read its mail.
+
+The CRON_TZ specifies the time zone specific for the cron table. User type into the chosen table times in the time of the specified time zone. The time into log is taken from local time zone, where is the daemon running. The MLS_LEVEL environment variable provides support for multiple per-job SELinux security contexts in the same crontab. By default, cron jobs execute with the default SELinux security context of the user that created the crontab file. When using multiple security levels and roles, this may not be sufficient, because the same user may be running in a different role or at a different security level. For more about roles and SELinux MLS/MCS see selinux(8)
+
+Commands are executed by cron when the minute, hour, and month of year fields match the current time, and when at least one of the two day fields (day of month, or day of week) match the current time. cron examines cron entries once every minute.
+
+
+Crontab format
+
+The format of a cron command is very much the V7 standard, with a number of upward-compatible extensions.
+
+Each line has five time and date fields, followed by a user name (with optional ':group' and '/login-class' suffixes) if this is the system crontab file, followed by a command. You should run the task as a user with only the privileges it needs to run, and nothing else. For example, if you need to backup a database, don't just use the database root user, but use (or create) a specific user with only the rights needed to perform the backup.
+
+You should test each command interactively on the command line, logged in as the user configured to run the task and with the appropriate environment set.
+
+Each line in the cron table follows the following format:
+
+* * * * *  [UserName] Command_to_execute
+- – – – -
+| | | | |
+| | | | +—– Day of week (0–7) (Sunday=0 or 7) or Sun, Mon, Tue,…
+| | | +———- Month (1–12) or Jan, Feb,…
+| | +————-— Day of month (1–31)
+| +——————– Hour (0–23)
++————————- Minute (0–59)
+There are several ways of specifying multiple values in a field:
+
+• The asterisk (*) operator specifies all possible values for a field. e.g. every hour or every day (first-last).
+• The comma (,) operator specifies a list of values, for example: "1,3,4,7,8" The specified range is inclusive.
+• The dash (-) operator specifies a range of values, for example: "1-6", which is equivalent to "1,2,3,4,5,6"
+There is also an operator which some extended versions of cron support, the slash (/) operator, which can be used to skip a given number of values. For example, "*/3" in the hour time field is equivalent to "0,3,6,9,12,15,18,21";
+"*" specifies 'every hour' but the "/3" means that only the first, fourth, seventh...and such values given by "*" are used.
+
+Step values can be used in conjunction with ranges. Following a range with '/number' specifies skips of the number's value through the range. For example, 0-23/2 can be used in the hours field to specify command execution every other hour (the alternative in the V7 standard is 0,2,4,6,8,10,12,14,16,18,20,22).
+Steps are also permitted after an asterisk, so if you want to say 'every two hours', just use */2
+
+Names can also be used for the 'month' and 'day of week' fields. Use the first three letters of the particular day or month (case doesn't matter). Ranges or lists of names are not allowed.
+
+The 'sixth' field (the rest of the line) specifies the command to be run. The entire command portion of the line, up to a newline or % character, will be executed by /bin/sh or by the shell specified in the SHELL variable of the cronfile. Percent-signs (%) in the command, unless escaped with backslash (\), will be changed into newline characters, and all data after the first % will be sent to the command as standard input.
+
+Instead of the first five fields, one of eight special strings can appear:
+   string        meaning
+   ------        -------
+   @reboot      Run once, at startup.
+   @yearly      Run once a year, "0 0 1 1 *".
+   @annually    (sames as @yearly)
+   @monthly     Run once a month, "0 0 1 * *".
+   @weekly      Run once a week, "0 0 * * 0".
+   @daily       Run once a day, "0 0 * * *".
+   @midnight    (same as @daily)
+   @hourly      Run once an hour, "0 * * * *".
+The Command to be executed
+If the command to be executed is at all complex, place it into its own script and just add that script to the crontab file.
+
+The crontab files have to be regular files or symlinks to regular files, they must not be executable or writable by anyone else other than the owner. This requirement can be overridden by specifying cron -p on the command line.
+
+Logging progress
+Cron will email to the user all output of the commands it runs, although it is possible to silence this, by redirecting the output to /dev/null, a better approach is redirecting to a log file so that you capture any errors.
+
+If you do want to log process via mail; and have a mail agent configured; then set the destination address in a MAILTO variable at the top of the crontab file:
+
+MAILTO=ashley.gray@example.com
+
+
+Files
+
+If inotify support is in use, changes in the symlinked crontabs are not automatically noticed by the cron daemon. The cron daemon must receive a SIGHUP to reload the crontabs. This is a limitation of inotify API.
+
+If the /etc/cron.allow file exists, then users must be listed in it in order to be allowed to run the crontab command.
+If the /etc/cron.allow file does not exist but the /etc/cron.deny file does, then users must not be listed in the /etc/cron.deny file in order to run crontab.
+
+crontab updates the modtime of the spool directory whenever it changes a crontab.
+
+/etc/anacrontab System crontab file for jobs like cron.daily, weekly, monthly.
+/var/spool/cron/ Usual place for storing users crontab.
+/etc/cron.d/ Stored system crontables, grouped in separate files.
+
+
+Examples
+
+CRON_TZ=Japan 
+# run five minutes after midnight, every day 
+ 5 0 * * *       $HOME/bin/daily.job >> $HOME/tmp/out 2>&1
+#Run /usr/bin/test.sh at 12.59 every day and supress the output (redirect to null) 
+ 59 12 * * * simon /usr/bin/test.sh > /dev/null 2>&1
+# Run demo.sh everyday at 9pm (21:00)
+ 0 21 * * * demo.sh 1>/dev/null 2>&1
+# Run demo.sh every Tuesday to Saturday at 1am (01:00)
+ 0 1 * * 2-7 demo.sh 1>/dev/null 2>&1
+# Run demo.sh  at 07:30, 09:30 13:30 and 15:30
+ 30 07,09,13,15 * * * demo.sh
+
+
+*See also: at, cron, nice, builtin, chroot, exec, nohup, .source, su, watch

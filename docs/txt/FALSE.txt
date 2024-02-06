@@ -1,1 +1,16 @@
-EMPTY
+false - Do nothing, returning a non-zero (false) exit status.
+
+
+Syntax
+
+      false
+'false' does nothing except return an exit status of 1, meaning "failure". It can be used as a place holder in shell scripts where an unsuccessful command is needed.
+
+'false' ignores all command line arguments, even --help and --version, since to do otherwise would change expected behavior that some programmers might be relying on.
+
+This version of 'false' is implemented as a C program, and is thus more secure and faster than a shell script implementation, and can safely be used as a dummy shell for the purpose of disabling accounts.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help false
+
+
+*See also: true, yes

@@ -1,1 +1,117 @@
-EMPTY
+dd - (Data Duplicator) convert and copy a file, write disk headers, boot records, create a boot floppy. dd can make an exact clone of an (unmounted) disk, this will include all blank space so the output destination must be at least as large as the input.
+
+
+Syntax
+
+     dd [Options]
+
+
+Key
+
+   if=FILE
+      Input file : Read from FILE instead of standard input.
+
+   of=FILE
+      Output file : Write to FILE instead of standard output.
+      Unless 'conv=notrunc' is given, 'dd' truncates FILE to
+      zero bytes (or the size specified with 'seek=').
+
+   bs=BYTES
+      Block size, both read and write BYTES bytes at a time.
+      This overrides 'ibs' and 'obs'.
+
+   cbs=BYTES
+      Convert BYTES bytes at a time.
+
+   count=N
+      Copy N input blocks ('ibs'-byte blocks from the input file, instead of
+      everything) until the end of the file.
+
+   ibs=BYTES
+      Read BYTES bytes at a time.
+
+   obs=BYTES
+      Write BYTES bytes at a time.
+
+   oflag=FLAGS
+      Write as per the comma separated symbol list.
+
+   iflag=FLAGS
+      Read as per the comma separated symbol list.
+
+   seek=N (or oseek=N) skip N obs-sized output blocks.
+
+   skip=N (or iseek=N) skip N ibs-sized input blocks.
+
+   status=LEVEL
+      The LEVEL of information to print to stderr;
+         'none'  suppress everything but error messages,
+        'noxfer' suppress the final transfer statistics,
+        'progress' show periodic transfer statistics
+
+       N and BYTES may be followed by the following multiplicative
+       suffixes: c=1, w=2, b=512, kB=1000, K=1024, MB=1000*1000,
+       M=1024*1024, xM=M, GB=1000*1000*1000, G=1024*1024*1024, and so on
+       for T, P, E, Z, Y.  Binary prefixes can be used, too: KiB=K,
+       MiB=M, and so on.  If N ends in 'B', it counts bytes not blocks.
+
+   conv=CONVERSION[,CONVERSION]...
+      Convert the file as specified by the CONVERSION argument(s).  
+      (No spaces around any comma)
+
+     Conversions:
+    'ascii'    Convert EBCDIC to ASCII.
+    'ebcdic'   Convert ASCII to EBCDIC.
+    'ibm'      Convert ASCII to alternate EBCDIC.
+    'block'    For each line in the input, output 'cbs' bytes, replacing the
+               input newline with a space and padding with spaces as necessary.
+    'unblock'  Replace trailing spaces in each 'cbs'-sized input block with a newline.
+    'lcase'    Change uppercase letters to lowercase.
+    'ucase'    Change lowercase letters to uppercase.
+    'swab'     Swap every pair of input bytes.  GNU 'dd', unlike others, works when
+               an odd number of bytes are read--the last byte is copied
+               (since there is nothing to swap it with).
+    'noerror'  Continue after read errors.
+    'notrunc'  Do not truncate the output file.
+    'sync'     Pad every input block to size of 'ibs' with trailing zero bytes.
+The numeric-valued options (N and BYTES) can be followed by a multiplier: c=1, w=2, b=512, kB=1000, K=1024, MB=1000*1000, M=1024*1024, xM=M, GB=1000*1000*1000, G=1024*1024*1024, and so on for T, P, E, Z, Y. Binary prefixes can be used, too: KiB=K, MiB=M, and so on. If N ends in 'B', it counts bytes not blocks.
+The name dd can be an allusion to the DD statement found in IBM's Job Control Language (JCL), where the acronym stands for "Data Description". The lack of any confirmation prompt before truncating the output file has popularised the jocular name 'Data Destroyer'.
+
+dd can copy a smaller drive to a larger one, but can’t copy a larger drive to a smaller one.
+
+When cloning a disk drive, its a good idea to list the partitions before and afterwards using sudo fdisk –l
+An empty/unformatted drive will appear as "Disk dev/sdn doesn't contain a vaild partition table".
+
+If dd receives a USR1 signal, the current input and output block counts will be written to the standard error output in the same format as the standard completion message. e.g. kill -USR1 1234 where 1234 is the process id.
+
+
+Examples
+
+Clone the drive sda onto drive sdb:
+$ dd if=/dev/sda of=/dev/sdb
+
+Clone the drive hda onto an image file:
+$ dd if=/dev/hda of=/image.img
+
+Copy a CD or DVD disc to a .iso image file, first unmounting the disc:
+sudo umount /dev/dvd-device
+dd if=/dev/dvd-device of=dvd.iso bs=2048 conv=sync,notrunc
+# dvd-device will typically be dvd for a dvd disc or cdrom for a cdrom disc.
+
+Clone a hard drive to a zipped image file in 100Mb blocks:
+$ dd if=/dev/hda bs=100M | gzip -c > /image.img
+
+Create a 10 KB file filled with random data (10 x 1K blocks):
+$ dd if=/dev/random of=random.bin bs=1024 count=10
+
+Create an 8 GB empty file (also known as "sparse file") called spacer.img
+$ dd if=/dev/zero of=spacer.img bs=1 count=0 seek=8G
+
+Completely wipe the hard drive hdz by overwriting it with random data:
+$ dd if=/dev/urandom of=/dev/hdz
+
+Create a boot floppy:
+$ dd if=boot.img of=/dev/fd0 bs=1440
+
+
+*See also: cp, cpio, ddrescue, install, mtools, sum

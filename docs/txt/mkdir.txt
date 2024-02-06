@@ -1,1 +1,33 @@
-EMPTY
+mkdir - Create new folder(s), if they do not already exist.
+
+
+Syntax
+
+      mkdir [Options] folder...
+
+      mkdir "Name with spaces"
+
+
+Options
+
+  -m MODE, --mode=MODE   Set permission mode (as in chmod), not rwxrwxrwx - umask.
+
+       -p, --parents     No error if existing, make parent directories as needed.
+
+       -v, --verbose     Print a message for each created directory.
+
+mkdir creates the standard entries . (dot) for the current folder and .. (dot dot) for its parent.
+
+The -v option is non-standard and its use in scripts is not recommended.
+
+A folder name that includes spaces can appear in some applications as "Name%20with%20spaces" This is because 20 is the Ascii code for a space in Hex.
+
+
+Examples
+
+Create the folder 'demo':
+
+$ mkdir -p demo
+
+
+*See also: cd, ln, rm, rmdir

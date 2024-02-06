@@ -1,1 +1,104 @@
-EMPTY
+ln - Make links between files, by default, it makes hard links; with the -s option, it makes symbolic (or "soft") links.
+
+
+Syntax
+
+      ln [OPTION]... [-T] OriginalSourceFile NewLinkFile (1st form)
+
+      ln [OPTION]... OriginalSourceFile                  (2nd form)
+
+      ln [OPTION]... OriginalSourceFile... DIRECTORY     (3rd form)
+
+      ln [OPTION]... -t DIRECTORY OriginalSourceFile...  (4th form)
+
+In the 1st form, create a link to OriginalSourceFile with the name NewLinkFile.
+In the 2nd form, create a link to OriginalSourceFile in the current directory.
+In the 3rd and 4th forms, create links to each OriginalSourceFile in DIRECTORY.
+
+Create hard links by default, symbolic links with --symbolic. When creating hard links, each OriginalSourceFile must exist. Symbolic links can hold arbitrary text; if later resolved, a relative link is interpreted in relation to its parent directory.
+
+Mandatory arguments to long options are mandatory for short options too.
+
+
+Options
+
+   --backup[=CONTROL]
+       Make a backup of each existing destination file.
+
+   -b
+       Like --backup but does not accept an argument.
+
+   -d, -F, --directory
+       Allow the superuser to attempt to hard link directories
+       (note: will probably fail due to system restrictions, even for the superuser).
+
+   -f, --force
+       Remove existing destination files.
+
+   -i, --interactive
+       Prompt whether to remove destinations.
+
+   -L, --logical
+       Make hard links to symbolic link references.
+
+   -n, --no-dereference
+       Treat destination that is a symlink to a directory as if it were a normal file.
+
+   -P, --physical
+       Make hard links directly to symbolic links.
+
+   -s, --symbolic
+       Make symbolic links instead of hard links.
+
+   -S, --suffix=SUFFIX
+       Override the usual backup suffix.
+
+   -t, --target-directory=DIRECTORY
+       Specify the DIRECTORY in which to create the links.
+
+   -T, --no-target-directory
+       Treat NewLinkFile as a normal file.
+
+   -v, --verbose
+       Print name of each linked file.
+
+   --help
+       Display this help and exit.
+
+   --version
+
+       Output version information and exit
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX. The version control method can be selected via the --backup option or through the VERSION_CONTROL environment variable.
+
+
+Here are the values:
+
+Using -s ignores -L and -P. Otherwise, the last option specified controls behavior when the source is a symbolic link, defaulting to -P.
+   none, off        Never make backups (even if --backup is given) 
+   numbered, t      Make numbered backups 
+   existing, nil    Numbered if numbered backups exist, simple otherwise 
+   simple, never    Always make simple backups
+It is an error if the last argument is not a directory and more than two files are given. Without -f or -i, ln will not remove an existing file. Use the --backup option to make ln rename existing files.
+
+A "hard link" is another name for an existing file; the link and the original are indistinguishable. Technically speaking, they share the same inode, and the inode contains all the information about a file--indeed, it is not incorrect to say that the inode _is_ the file.
+On all existing implementations, you cannot make a hard link to a directory, and hard links cannot cross filesystem boundaries. (These restrictions are not mandated by POSIX, however.)
+
+"Symbolic links" ("symlinks" for short), on the other hand, are a special file type (which not all kernels support: System V release 3 (and older) systems lack symlinks) in which the link file actually refers to a different file, by name. When most operations (opening, reading, writing, and so on) are passed the symbolic link file, the kernel automatically "dereferences" the link and operates on the target of the link. But some operations (e.g., removing) work on the link file itself, rather than on its target.
+
+
+Examples
+
+$ ln file1.txt link1
+$ rm file1.txt          #The file cannot be deleted until the link is removed.
+ 
+$ ln -s /some/name            # create a link ./name pointing to /some/name
+$ ln -s /some/name mylink2    # or give the link a name
+
+$ ln -s /home/simon/demo /home/jules/mylink3   #Create mylink3 pointing to demo
+
+$ ln -s item1 item2 ..        # creates links ../item1 and ../item2 pointing to ./item1 and ./item2
+If you delete a file for which a symbolic link still exists, the rm will succeed but the symbolic link would remain and any attempt to reference it will return a 'file not found' error.
+
+
+*See also: pathchk, link, symlink

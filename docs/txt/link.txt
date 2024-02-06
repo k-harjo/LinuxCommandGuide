@@ -1,1 +1,19 @@
-EMPTY
+link - Create a link to a file
+
+
+Syntax
+
+      link FILE1 FILE2
+
+      link OPTION
+
+Create a link named FILE2 to an existing FILE1.
+
+
+Options
+
+   --help      Display this help and exit 
+   --version   Output version information and exit
+
+
+*See also: ln

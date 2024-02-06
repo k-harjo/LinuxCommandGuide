@@ -1,1 +1,123 @@
-EMPTY
+chmod - Change access permissions, change mode.
+
+Syntax
+       chmod [Options]... Mode [,Mode]... file...
+
+       chmod [Options]... Numeric_Mode file...
+
+       chmod [Options]... --reference=RFile file...
+
+Options
+  -f, --silent, --quiet   Suppress most error messages.
+
+  -v, --verbose           Output a diagnostic for every file processed.
+  -c, --changes           like verbose but report only when a change is made.
+
+      --reference=RFile   use RFile's mode instead of MODE values.
+
+  -R, --recursive         Change files and directories recursively.
+                          Take care to not run recursive chmod on the root '/' directory or any other system directory.
+
+      --help              Display help and exit.
+
+      --version           output version information and exit.
+chmod changes the permissions of each given file according to mode, where mode describes the permissions to modify.
+Mode can be specified with octal numbers or with letters.
+
+Using letters is easier to understand for most people. e.g. chmod +x filename.sh to make filename.sh executable.
+
+When chmod is applied to a directory:
+
+read = list files in the directory
+write = add new files to the directory
+execute = access files in the directory
+chmod never changes the permissions of symbolic links. This is not a problem since the permissions of symbolic links are never used. However, for each symbolic link listed on the command line, chmod changes the permissions of the pointed-to file. In contrast, chmod ignores symbolic links encountered during recursive directory traversals.
+
+Numeric mode:
+From one to four octal digits
+Any omitted digits are assumed to be leading zeros.
+
+The first digit = selects attributes for the set user ID (4) and set group ID (2) and save text image (1)S
+The second digit = permissions for the user who owns the file: read (4), write (2), and execute (1)
+The third digit = permissions for other users in the file's group: read (4), write (2), and execute (1)
+The fourth digit = permissions for other users NOT in the file's group: read (4), write (2), and execute (1)
+
+The octal (0-7) value is calculated by adding up the values for each digit
+User (rwx) = 4+2+1 = 7
+Group(rx) = 4+1 = 5
+World (rx) = 4+1 = 5
+chmode mode = 0755
+
+Examples
+
+chmod 400 file - Read by owner
+chmod 040 file - Read by group
+chmod 004 file - Read by world
+
+chmod 200 file - Write by owner
+chmod 020 file - Write by group
+chmod 002 file - Write by world
+
+chmod 100 file - execute by owner
+chmod 010 file - execute by group
+chmod 001 file - execute by world
+
+To combine these, just add the numbers together:
+chmod 444 file - Allow read permission to owner and group and world
+chmod 777 file - Allow everyone to read, write, and execute file
+
+Symbolic Mode
+The format of a symbolic mode is a combination of the letters +-= rwxXstugoa
+Multiple symbolic operations can be given, separated by commas.
+The full syntax is [ugoa...][[+-=][rwxXstugo...]...][,...] but this is explained below.
+
+A combination of the letters ugoa controls which users' access to the file will be changed:
+
+User	letter
+The user who owns it	u
+Other users in the file's Group	g
+Other users not in the file's group	o
+All users	a
+If none of these are given, the effect is as if a were given, but bits that are set in the umask are not affected.
+
+All users a is effectively user + group + others
+
+The operator '+' causes the permissions selected to be added to the existing permissions of each file; '-' causes them to be removed; and '=' causes them to be the only permissions that the file has.
+
+The letters 'rwxXstugo' select the new permissions for the affected users:
+
+Permission								letter
+Read									r
+Write									w
+Execute 								x
+Execute only if the file is a directory 				X
+Set user or group ID on execution					s
+Restricted deletion flag or sticky bit					t
+The permissions that the User who owns the file currently has for it	u
+The permissions that other users in the file's Group have for it	g
+Permissions that Other users not in the file's group have for it	o
+
+
+
+Examples
+
+Deny execute permission to everyone:
+chmod a-x file
+
+Allow read permission to everyone:
+chmod a+r file
+
+Make a file readable and writable by the group and others:
+chmod go+rw file
+
+Make a shell script executable by the user/owner
+$ chmod u+x myscript.sh
+
+You can then execute it like this: ./myscript.sh
+
+Allow everyone to read, write, and execute the file and turn on the set group-ID:
+chmod =rwx,g+s file
+This page documents the GNU version of chmod.
+
+
+*See also: access, ls -l, chgrp, chown, setfacl, stat

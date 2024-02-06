@@ -1,1 +1,18 @@
-EMPTY
+dirname - Convert a full pathname to just a path.
+
+
+Syntax
+     dirname pathname
+Prints all but the final slash-delimited component of a string (presumably a filename).
+If PATHNAME is a single component, dirname prints . (meaning the current directory)
+
+Examples
+Extract the path from the variable pathnamevar and store in the variable result using parameter expansion $( )
+
+$ result=$(dirname "$pathnamevar")
+
+
+*See
+hash - Remember the full pathname of a name argument.
+ls - List information about File(s).
+which - Show full path of commands.

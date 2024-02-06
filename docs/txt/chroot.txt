@@ -1,1 +1,18 @@
-EMPTY
+chroot - Run a command with a different root directory. On many systems, only the super-user can do this.
+
+
+SYNTAX
+
+     chroot NEWROOT [COMMAND [ARGS]...]
+
+     chroot OPTION
+Ordinarily, filenames are looked up starting at the root of the directory structure, i.e. '/'
+
+'chroot' changes the root to the directory NEWROOT (which must exist) and then runs COMMAND with optional ARGS.
+
+If COMMAND is not specified, the default is the value of the 'SHELL' environment variable or '/bin/sh' if not set, invoked with the '-i' option.
+
+The only options are '--help' and '--version'
+
+
+*See also: builtin, cron, exec, if, nohup, .source, su, watch

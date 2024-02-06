@@ -1,1 +1,68 @@
-EMPTY
+su - Substitute user identity
+
+Run a command with substitute user and group id, allow one user to temporarily become another user. It runs a command (often an interactive shell) with the real and effective user id, group id, and supplemental groups of a given user.
+
+
+Syntax
+
+      su [options]... [user [arg]...]
+
+
+Options
+
+   -c COMMAND
+   --command=COMMAND
+       Pass COMMAND, a single command line to run, to the shell with a -c option 
+       instead of starting an interactive shell.
+
+   -f
+   --fast
+       Pass the '-f' option to the shell.  This probably only makes sense if the shell run
+       is 'csh' or 'tcsh', for which the '-f' option  prevents reading the startup file ('.cshrc').
+       With Bourne-like shells, the '-f' option disables file name pattern expansion (globbing),
+       which is not likely to be useful.
+
+   -l
+   --login
+       Make the shell a login shell.  This means the following.  Unset all environment variables except
+       'TERM', 'HOME', and 'SHELL' (which are set as described above), and 'USER' and 'LOGNAME' (which
+       are set, even for the super-user, as described above), and set 'PATH' to a compiled-in default value.
+       Change to USER's home directory.
+       Prepend '-' to the shell's name, intended to make it read its login startup file(s).
+
+   -m
+   -p
+   --preserve-environment
+       Do not change the environment variables 'HOME', 'USER', 'LOGNAME', or 'SHELL'.
+       Run the shell given in the environment variable 'SHELL' instead of the shell from
+       USER's passwd entry, unless the user running 'su' is not the superuser
+       and USER's shell is restricted.
+       A "restricted shell" is one that is not listed in the file '/etc/shells', or in
+       a compiled-in list if that file does not exist.
+       Parts of what this option does can be overridden by '--login' and '--shell'.
+
+   -s SHELL
+   --shell=SHELL
+       Run SHELL instead of the shell from USER's passwd entry, unless the user running
+       'su' is not the superuser and USER's shell is restricted (see '-m' just above).
+
+   --help
+       Display this help and exit
+
+   --version
+       Output version information and exit
+
+If no user is given, the default is 'root', the super-user.
+
+The shell to use is taken from user's 'passwd' entry, or /bin/sh if none is specified there.
+
+If USER has a password, 'su' prompts for the password unless run by a user with effective user id of zero (the super-user).
+
+By default, su does not change the current directory. It sets the environment variables 'HOME' and 'SHELL' from the password entry for USER, and if USER is not the super-user, sets 'USER' and 'LOGNAME' to USER.
+
+By default, the shell is not a login shell. Any additional ARGs are passed as additional arguments to the shell.
+
+GNU su does not treat '/bin/sh' or any other shells specially (e.g., by setting 'argv[0]' to -su, passing '-c' only to certain shells, etc.). su can optionally be compiled to use syslog to report failed, and optionally successful, su attempts. (If the system supports syslog.) However, GNU su does not check if the user is a member of the 'wheel' group; see options above.
+
+
+*See also: chroot, id, logname

@@ -1,1 +1,23 @@
-EMPTY
+hash - Remember the full pathnames of commands specified as name arguments, so they need not be searched for on subsequent invocations.
+
+
+Syntax
+
+      hash [-r] [-p filename] [name] 
+
+
+Options
+
+      -r   Reset, causes the shell to forget all remembered locations.
+
+      -p   Use filename as the location of name (don't search $PATH).
+The commands are found by searching through the directories listed in $PATH.
+
+If no arguments are given, information about remembered commands is printed.
+
+The return status is zero unless a name is not found or an invalid option is supplied.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help hash
+
+
+*See also: dirname, which

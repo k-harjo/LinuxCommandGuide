@@ -1,1 +1,37 @@
-EMPTY
+exec - Execute a command
+
+
+Syntax
+
+      exec [-cl] [-a name] [command [arguments]]
+
+
+Options
+
+      -c   Causes command to be executed with an empty environment.
+
+      -l   Place a dash at the beginning of the zeroth arg passed to command.
+           (This is what the login program does.)
+
+      -a   The shell passes name as the zeroth argument to command.
+
+If command is supplied, it replaces the shell without creating a new process. If no command is specified, redirections can be used to affect the current shell environment.
+
+If there are no redirection errors, the return status is zero; otherwise the return status is non-zero.
+
+To run an executable file or a shell script from the command line it is often not necessary to use exec at all, just prefix the filename with ./
+bash will only search the path not the current working directory for the file.
+
+To execute a program/script in the current working directory use:
+
+./file_name
+or
+./ScriptName
+
+You might be tempted to 'fix' this by adding '.' to $PATH but this is widely considered to be bad practice for security reasons.
+A better plan is putting all shell scripts into a folder and adding that one folder to your $PATH
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [e]xec
+
+
+*See also: exit, builtin, crontab, chroot, if, nohup, .source, su, type, watch

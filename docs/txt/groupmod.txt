@@ -1,1 +1,74 @@
-EMPTY
+groupmod - Modify a user security group.
+
+
+Syntax
+
+      groupmod [options] GROUP 
+groupmod modifies the definition of the specified GROUP by modifying the appropriate entry in the group database.
+
+
+Options
+
+   -g, --gid GID
+   
+       The group ID of the given GROUP will be changed to GID.
+       The value of GID must be a non-negative decimal integer.
+       This value must be unique, unless the -o option is used.
+       Values between 0 and 999 are typically reserved for system groups.
+
+       Any files that have the old group ID and must continue to
+       belong to GROUP, must have their group ID changed manually.
+
+   -h, --help
+       Display help message and exit.
+
+   -n, --new-name NEW_GROUP
+       The name of the group will be changed from GROUP to NEW_GROUP.
+
+   -o, --non-unique
+       When used with the -g option, allow to change the
+       group GID to a non-unique value.
+
+   -p, --password PASSWORD
+       The encrypted password, as returned by crypt(3).
+
+       Note: This option is not recommended because the
+       password (or encrypted password) will be visible by
+       users listing the processes.
+
+       Make sure the password respects the system's password policy. 
+
+
+Configuration
+
+The following configuration variables in /etc/login.defs change the behavior of this tool:
+
+MAX_MEMBERS_PER_GROUP (number)
+Maximum members per group entry. When the maximum is reached, a new group entry (line) is started in /etc/group (with the same name, same password, and same GID).
+The default value is 0, meaning that there are no limits in the number of members in a group.
+This feature (split group) permits to limit the length of lines in the group file. This is useful to make sure that lines for NIS groups are not larger than 1024 characters.
+If you need to enforce such limit, you can use 25.
+
+Split groups might not be supported by all tools (even in the Shadow toolsuite). You should not use this variable unless you really need it.
+
+
+Files
+
+/etc/group Group account information.
+/etc/gshadowSecure group account information.
+
+
+Exit Values
+
+The groupmod command exits with the following values:
+
+ 0  Success 
+ 2  Invalid command syntax 
+ 3  Invalid argument to option 
+ 4  Specified group doesn't exist 
+ 6  Specified group doesn't exist 
+ 9  Group name already in use 
+ 10 Can't update group file 
+
+
+*See also: groupadd, groupdel, usermod

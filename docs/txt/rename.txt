@@ -1,1 +1,36 @@
-EMPTY
+rename - Rename files.
+
+
+Syntax
+
+      rename from to file...
+rename will rename the specified files by replacing the first occurrence of from in their name by to.
+The rename command is mostly used to bulk-rename a number of similarly named files, to change the name of a single file use mv.
+
+
+Examples
+
+Given the files foo1, ..., foo9, foo10, ..., foo278, the commands
+
+$ rename foo foo0 foo?
+$ rename foo foo0 foo??
+
+will turn them into foo001, ..., foo009, foo010, ..., foo278.
+
+Fix the extension of your .htm files so they become .html :
+
+$ rename .htm .html *.htm
+
+Rename all files (*) to be lowercase:
+
+$ rename 'y/A-Z/a-z/' *
+
+Rename is NOT a bash builtin, it is available on most distributions, if you dont have it then an alternative is to use a for loop.
+For example to rename a folder full of .txt files to have the extension .html
+
+$ for i in *.txt; do mv "$i" "'basename $i .txt'.html"; done
+or
+$ for files in *.txt; do mv "$files" "${files%.txt}.html"; done
+
+
+*See also: mv

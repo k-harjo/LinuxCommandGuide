@@ -1,1 +1,14 @@
-EMPTY
+logname - Print current login name
+
+
+SYNTAX
+
+      logname
+Prints the calling user's name, as found in the file'/var/run/utmp', and exits with a status of 0.
+
+If there is no '/var/run/utmp' entry for the calling process, 'logname' prints an error message and exits with a status of 1.
+
+The only options are '--help' and '--version'.
+
+
+*See also: groups, hostname, id, uname, users, who

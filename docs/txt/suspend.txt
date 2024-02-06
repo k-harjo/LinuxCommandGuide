@@ -1,1 +1,17 @@
-EMPTY
+suspend - Suspend the execution of this shell until it receives a SIGCONT signal.
+
+
+Syntax
+
+      suspend [-f]
+
+
+Key
+
+   -f   Do not complain if this is a login shell; just suspend anyway.
+The return status is 0 unless the shell is a login shell and -f is not supplied, or if job control is not enabled.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help suspend
+
+
+*See also: fg, bg, jobs, logout
