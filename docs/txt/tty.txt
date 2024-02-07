@@ -1,1 +1,24 @@
-EMPTY
+tty - Print file name of terminal on standard input, print the file name of the terminal connected to standard input. It prints 'not a tty' if standard input is not a terminal.
+
+
+Syntax
+
+      tty [option]...
+
+
+Options
+
+   -s
+   --silent
+   --quiet
+           Print nothing; only return an exit status.
+
+ Exit status:
+
+     0 if standard input is a terminal
+     1 if standard input is not a terminal
+     2 if given incorrect arguments
+     3 if a write error occurs
+
+
+*See also: env, hostname, id, logname, uname, users, who, whoami

@@ -1,1 +1,12 @@
-EMPTY
+until - Execute consequent-commands as long as test-commands has an exit status which is not zero.
+
+
+Syntax
+
+      until test-commands; do consequent-commands; done
+The return status is the exit status of the last command executed in consequent-commands, or zero if none was executed.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help until
+
+
+*See also: case, for, if, while

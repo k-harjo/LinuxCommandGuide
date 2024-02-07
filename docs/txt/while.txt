@@ -1,1 +1,14 @@
-EMPTY
+while - Execute consequent-commands as long as test-commands has an exit status of zero
+
+
+Syntax
+
+      while test-commands; do consequent-commands; done
+The while command continuously executes the do consequent-commands as long as the last command in test-commands returns an exit status of zero.
+
+The return status is the exit status of the last command executed in consequent-commands, or zero if none were executed.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help while
+
+
+*See also: case, for, if, until

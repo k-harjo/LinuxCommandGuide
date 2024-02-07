@@ -1,1 +1,88 @@
-EMPTY
+tail - Output the last part of a file. Display the last part (10 lines by default) of file or, by default, standard input, to standard output. tail will read from standard input if no files are given or when given a file of -
+
+
+Syntax
+
+      tail [options] -c bytes [file ...]
+
+      tail [options] -n number [file ...]
+
+
+Key
+
+   -c, --bytes=bytes
+       Output the last bytes bytes of each of the specified files.
+       Alternatively, use -c +bytes to output bytes starting with the nth byte of each file.
+
+   -n, --lines=number
+       Output the last number lines, instead of the last 10; or use -n +number to output lines starting with the Kth 
+
+   -f, --follow[={name|descriptor}]
+       Output appended data as the file grows; -f, --follow, and --follow=descriptor are equivalent
+
+   -F
+       Same as --follow=name --retry 
+
+   --max-unchanged-stats=N
+       With --follow=name, reopen a FILE which has not changed size after N (default 5) iterations
+       to see if it has been unlinked or renamed (this is the usual case of rotated log files).
+       With inotify, this option is rarely useful. 
+
+   --pid=PID
+       With -f, terminate after process ID, PID dies 
+
+   -q, --quiet, --silent
+       Never output headers giving file names 
+
+   --retry
+       Keep trying to open a file even when it is or becomes inaccessible;
+       useful when following by name, i.e., with --follow=name
+
+   -s, --sleep-interval=N
+       With -f, sleep for approximately N seconds (default 1.0) between iterations. 
+       With inotify and --pid=P, check process P at least once every N seconds. 
+
+   -v, --verbose
+       Always output headers giving file names 
+
+   --help
+       Display this help and exit 
+
+   --version
+       Output version information and exit
+
+If more than one file is specified, 'tail' prints a one-line header consisting of ==> FILE NAME <== before the output for each FILE.
+
+K (the number of bytes or lines) can have a multiplier suffix: b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024, GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+
+The Process Control keyboard shortcuts can be used while tail is running.
+
+With --follow (-f), tail defaults to following the file descriptor, which means that even if a tail'ed file is renamed, tail will continue to track its end. This default behavior is not desirable when you really want to track the actual name of the file, not the file descriptor (e.g., log rotation). Use --follow=name in that case. That causes tail to track the named file in a way that accommodates renaming, removal and creation.
+
+GNU 'tail' can output any amount of data (some other versions of 'tail' cannot). It also has no '-r' option (print in reverse), since reversing a file is really a different job from printing the end of a file; BSD 'tail' (which is the one with '-r') can only reverse files that are at most as large as its buffer, which is typically 32k. A more reliable and versatile way to reverse files is the GNU 'tac' command.
+
+'tail' accepts two option formats: the new one, in which numbers are arguments to the options ('-n 1'), and the old one, in which the number precedes any option letters ('-1' or '+1'). If any option-argument is a number N starting with a '+', 'tail' begins printing with the Nth item from the start of each file, instead of from the end.
+
+
+Examples
+
+Extract the last 85 lines from a file:
+
+$ tail -85 file.txt
+
+Output the newly appended lines of a file instantly:
+
+$ tail -f /var/log/wifi.log
+
+Output newly appended lines, and keep trying if the file is temporarily inaccessible:
+
+$ tail -f /var/log/wifi.log --retry
+or
+$ tail -F /var/log/wifi.log
+
+Extract lines 40-50 from a file, first using head to get the first 50 lines then tail to get the last 10:
+
+$ head -50 file.txt | tail -10
+
+
+*See also: csplit, cut, fmt, head, join, less, paste, split, swatch, tailf

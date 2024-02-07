@@ -1,1 +1,44 @@
-EMPTY
+tsort - Topological sort, perform a topological sort on the given FILE, or standard input if no input file is given or for a FILE of '-'.
+
+
+Syntax
+
+      tsort [options] [file]
+
+
+Options
+
+   --help
+   --version
+'tsort' reads its input as pairs of strings, separated by blanks, indicating a partial ordering. The output is a total ordering that corresponds to the given partial ordering.
+   For example
+
+     tsort <<EOF
+     a b c
+     d
+     e f
+     b c d e
+     EOF
+
+will produce the output
+
+     a
+     b
+     c
+     d
+     e
+     f
+
+'tsort' will detect cycles in the input and writes the first cycle
+encountered to standard error. <eof a
+     b
+     c
+     d
+     e
+     f
+     eof will produce the output detect cycles in input and writes first cycle
+encountered to standard error.
+Note that for given partial ordering generally there is no unique total ordering.
+
+
+*See also: sort 

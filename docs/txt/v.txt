@@ -1,1 +1,1 @@
-EMPTY
+v - Verbosely list directory contents ('ls -l -b')

@@ -5,6 +5,7 @@ Created on Tue Oct 10 09:10:32 2023
 
 '''
 from Preferences import Preferences 
+from LinuxTerm import LinuxTermWidget
 import os
 from functools import partial
 from pathlib import Path
@@ -30,7 +31,8 @@ from PyQt5.QtWidgets import (QMainWindow,
                              QListView, 
                              QComboBox, 
                              QLineEdit, 
-                             QPushButton
+                             QPushButton, 
+                             QTextBrowser
                              )
 
 class NonEditableStringListModel(QStringListModel):
@@ -64,6 +66,7 @@ class DocumentViewer(QWebEngineView):
                     </html>
                     """
                     self.setHtml(html_content)
+
 
 class LinuxDictGUI(QMainWindow):
     """
@@ -124,6 +127,12 @@ class LinuxDictGUI(QMainWindow):
         # an_steps.triggered.connect(self.open_analysis_steps)
         help_menu.addAction(an_steps)
 
+        #Practice terminal menu
+        term_menu = self.menubar.addMenu("Terminal")
+        linux_term_action = QAction("Linux Terminal", self)
+        linux_term_action.triggered.connect(self.open_linux_term)
+        term_menu.addAction(linux_term_action)
+
         '''
         Widgets
         '''
@@ -141,14 +150,14 @@ class LinuxDictGUI(QMainWindow):
                                "cut", "diff", "echo", "exit", "find", "fun", "grep", "gunzip", "gzip", 
                                "locate", "ls", "mkdir", "more", "mv", "pwd", "rm", "sdiff", "sed", 
                                "sort", "top", "touch", "uniq"]
-
+        #document viewer
         self.doc_widget = QWidget()
         doc_layout = QVBoxLayout()
         search_layout = QHBoxLayout()
         self.doc_viewer = DocumentViewer()
         self.doc_viewer.setHtml("""<html><p>Choose a term on the left to learn more!</p1></html>""")
 
-
+        #search bar
         self.search_bar = QLineEdit()
         self.search_btn = QPushButton("Search")
         self.search_bar.setPlaceholderText("Search for a command")
@@ -210,28 +219,26 @@ class LinuxDictGUI(QMainWindow):
         results = []
         search_term = self.search_bar.text()
         directory = Path('docs/html/')
+        # Initialize results_html with a default value
+        results_html = "<html><body><p>No results found.</p></body></html>"
         for filename in os.listdir(directory):
             if filename.endswith('.html'):
                 with open(os.path.join(directory, filename), 'r', encoding='utf-8') as f:
                     content = f.read()
-                    soup = BeautifulSoup(content, 'html.parser')
-                    text = soup.get_text()
-                    if search_term.lower() in text.lower():
+                    if search_term.lower() in content.lower():
                         results.append(filename)
-                        if results:
-                            results_formatted = '<br>'.join(results)  # Join the results with HTML line breaks
-                            results_html = f"""
-                            <html>
-                            <body>
-                                <p>Found {len(results)} result(s) in the following pages:</p>
-                                <p>{results_formatted}</p>
-                            </body>
-                            </html>
-                            """
-                        else:
-                            results_html = "<html><body><p>No results found.</p></body></html>"
-
+        if results:
+            results_formatted = '<br>'.join(results)
+            results_html = f"""
+            <html>
+            <body>
+                <p>Found {len(results)} result(s) in the following pages:</p>
+                <p>{results_formatted}</p>
+            </body>
+            </html>
+            """
         self.doc_viewer.setHtml(results_html)
+
 
         return results
 
@@ -243,6 +250,14 @@ class LinuxDictGUI(QMainWindow):
 
     def update_stylesheet(self, style):
         self.setStyleSheet(style)        
+    
+    def open_linux_term(self):
+        self.linux_term_widget = LinuxTermWidget()
+        self.linux_term_widget.load_term()
+        self.linux_term_widget.show()
+
+
+        
 
 if __name__ == "__main__":
     

@@ -1,1 +1,184 @@
-EMPTY
+The vi editor (visual editor) - A quick reference guide.
+
+
+To startup vi:
+
+vi filename
+
+	Vi has three main modes Command mode, Insert mode and Command-Line mode.
+	vi modes
+
+	The editor begins in command mode, where cursor movement and copy/paste commands can be issued. If you are ever unsure which mode you're in, press Esc to return to command mode.
+
+Insert text (Insert mode):
+ 	 	
+	Open line above cursor
+	O	 	 	 	 
+	Insert text at beginning of line
+	I	
+	Insert text at cursor
+	i	
+	append text after cursor
+	a	
+	Append text at line end
+	A 	 	
+	Open line below cursor
+	o	 	 	 	 
+
+Switch to Command mode:
+
+	Switch to command mode: [ESC]
+
+	Most commands execute as soon as typed except for "colon" commands which execute when you press the return key.
+
+
+Cursor Movement (command mode):
+ 	 	
+Scroll Backward 1 screen
+[ctrl] b	 	
+ 	 	
+Scroll Up 1/2 screen
+[ctrl] u	 	
+Go to beginning of line
+0	
+Go to line n
+nG	
+Go to end of line
+$
+ 	 	
+Scroll Down 1/2 screen
+[ctrl] d	
+Go to line number ##
+:##
+ 	 	
+Scroll Forward 1 screen
+[ctrl] f	 	
+ 	 	
+Go to last line
+G	 	
+Scroll by sentence f/b
+( )	 	 	 	
+Scroll by word f/b
+w b	
+Move left, down, up, right
+h j k l	
+Left 6 chars
+6h
+Scroll by paragraph f/b
+{ }	
+Move left, down, up, right
+← ↓ ↑ → Arrow Keys	
+Go to line #6
+6G
+Delete text (command mode):
+
+Change word
+cw	
+Replace one character
+r	 	 
+Delete word
+dw	
+Delete text at cursor
+x	
+Delete entire line (to buffer)
+dd
+ 	 	
+Delete (backspace) text at cursor
+X	
+Delete 5 lines (to buffer)
+5dd
+ 	 	
+Delete current to end of line
+D	
+Delete lines 5-10
+:5,10d
+Editing (command mode):
+
+Copy line
+yy	
+Copy n lines
+nyy	
+Copy lines 1-2 /paste after 3
+:1,2t3
+Paste above current line
+P	
+ 	 	 
+Paste below current line
+p	 	 	
+Move lines 4-5 /paste after 6
+:4,5m6
+ 	 	Find the next t	ft	
+Join previous line
+J
+Search backward for string
+?string	
+Search forward for string
+/string	
+Find next string occurrence
+n
+% (entire file)
+s (search and replace) /old text with new/
+c (confirm) g (global - all)
+:%s/oldstring/newstring/cg	 	 	
+Ignore case during search
+:set ic
+Repeat last command
+.	
+Undo previous command
+u	
+Undo all changes to line
+U
+Save and Quit (command mode):
+
+Save changes to buffer
+:w
+Save changes and quit vi
+ZZ or :wq
+Save file to new file
+:w file
+ 		
+Quit without saving
+:q!
+Save lines to new file
+:10,15w file
+In general a number n preceding any vi command will tell vi to repeat that command n times.
+
+:syntax on Turn on syntax highlighting
+:syntax off Turn off syntax highlighting
+:set number Turn on Line numbering (shorthand :set nu)
+:set nonumber Turn off Line numbering (shorthand :set nonu)
+
+:set ignorecase Ignore case sensitivity when searching
+:set noignorecase Restore case sensitivity (default)
+
+:set autoindent Turn on Auto-indentation
+Use the command >> to indent and the << command to outdent
+:set shiftwidth=4 Set indentation to four spaces
+:set noautoindent Turn off Auto-indentation
+Change all Windows CR/LF to Unix style LF line endings in the current file:
+:g/^M/s///g
+(To enter the ^M, type CTRL-V CTRL-M)
+
+
+Command-line mode
+
+Command-line mode commands are typed at the bottom of the screen.
+To enter Command-line mode from Command mode, push colon : a colon will appear at the bottom.
+
+Command-line (Ex) commands:
+
+q [Enter]If you haven't made any modifications, or have already saved them beforehand.
+quit [Enter]If you haven't made any modifications, or have already saved them beforehand.
+q! [Enter]ignore any modifications and quit.
+w [Enter]Save and return to Command mode.
+wq [Enter]Save and quit.
+x [Enter]Save and quit, same as wq
+
+The Ex mode is similar to the command line mode as it also allows you to enter Ex commands. Unlike the command-line mode you won't return to normal mode automatically. You can enter an Ex command by typing a Q in normal mode and leave it again with the :visual command. Note that the Ex mode is designed for Batch processing and as such won't support mappings or command-line editing.
+
+vi is pronounced as the two letters: "vee eye"
+
+The vi editor was an update on the earlier ex (and ed) editors, it introduced a Visual Interactive mode which was contracted to give the name vi.
+
+
+*See also: VIM tutor, bcvi, book

@@ -1,1 +1,53 @@
-EMPTY
+type - Describe a command. For each name, indicate how it would be interpreted if used as a command name.
+
+
+Syntax
+
+      type [-aftpP] name [name ...]
+
+
+Key
+
+   -a  Print all the places that contain an executable named name. 
+This includes aliases and functions, if and only if the -p option is not also used.
+The table of hashed commands is not consulted when using -a.
+
+   -t   Print a string describing the file type which is one of:
+           alias    (shell alias)
+           function (shell function)
+           builtin  (shell builtin)
+           file     (disk file)
+           keyword  (shell reserved word) 
+If the name is not found, then nothing is printed, and an exit status of false is returned.
+
+   -f  Suppress shell function lookup, as with the command builtin.
+
+   -p  Print the path of the disk file that name would execute as a command.
+       returns nothing if 'type -t name' would not return file.
+
+   -P  Force a PATH search for each name, even if 'type -t name' would not return file.
+If a command is hashed, -p and -P print the hashed value, not necessarily the file that appears first in PATH.
+
+With no options, indicate how each name would be interpreted if used as a command name.
+type returns true if all of the arguments are found, false if any are not found.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [t]ype
+
+
+Examples
+
+ $ type -a grep
+ grep is /usr/bin/grep
+ 
+ $ type type
+ type is a shell builtin
+
+ $ type lsl
+ lsl is a function
+ lsl ()
+ {
+    ls -l $1
+ }
+
+
+*See also: builtin, function, whereis, which

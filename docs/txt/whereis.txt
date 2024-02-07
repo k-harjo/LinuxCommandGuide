@@ -1,1 +1,48 @@
-EMPTY
+whereis - Search $path, man pages and source files for an application file.
+
+The supplied filenames are first stripped of leading pathname components and any (single) trailing extension of the form .ext (for example, .c). Prefixes of s. resulting from use of source code control are also dealt with. whereis then attempts to locate the desired program in a list of standard Linux directories (e.g., /bin, /etc, /usr/bin, /usr/local/bin/, etc.).
+
+
+Syntax
+
+      whereis [options] files
+
+
+Options
+
+   -b    Search only for binaries.
+
+   -B directories
+         Change or otherwise limit the directories to search for
+         binaries.
+
+   -f    Terminate the last directory list and signal the
+         start of filenames;
+         Required when any of the -B, -M, or -S options are used.
+
+   -m    Search only for manual sections.
+
+   -M directory
+         Change or otherwise limit the directories to search for
+         manual sections.
+
+   -s    Search only for sources.
+
+   -S directory
+         Change or otherwise limit the directories to search for
+         sources.
+
+   -u    Search for unusual entries, that is, files that do not
+         have one entry of each requested type.
+         Thus, the command whereis -m -u * asks for those files
+         in the current directory that have no documentation.
+
+
+Examples
+
+Find all files in /usr/bin that are not documented in /usr/man/man1 but that have source in /usr/src:
+% cd /usr/bin
+% whereis -u -M /usr/man/man1 -S /usr/src -f *
+
+
+*See also: pwd, hash, type, which

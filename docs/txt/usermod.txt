@@ -1,1 +1,43 @@
-EMPTY
+usermod - Modify user account information.
+
+
+Syntax
+
+      usermod [options] [user]
+
+
+Options
+
+  -c comment    Comment field.
+
+  -d dir        Home directory.
+
+  -e date       Account expiration date.
+                date is in the format MM/DD/YYYY.
+                Two-digit year fields are also accepted.
+                The value is stored as the number of days since January 1, 1970.
+                This option requires the use of shadow passwords.
+
+  -f days       Permanently disable account this many days after the
+                password has expired. A value of -1 disables this feature.
+                This option requires the use of shadow passwords.
+
+  -g group      Initial group name or ID number.
+                If a different default group has not been specified using the -D option,
+
+  -G groups     Supplementary groups given by name or number in a comma-separated
+                list with no whitespace. The user will be removed from any groups to
+                which they currently belong that are not included in groups.
+
+  -l name       Login name. This cannot be changed while the user is logged in.
+
+  -o            Override. Accept a nonunique uid with the -u option. (Probably a bad idea.)
+
+  -s shell      Login shell.
+
+  -u uid        Numerical user ID. The value must be unique unless the -o option is used.
+                The default value is the smallest ID value greater than 99 and greater
+                than every other uid.
+
+
+*See also: userdel, useradd, passwd

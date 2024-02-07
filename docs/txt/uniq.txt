@@ -1,1 +1,82 @@
-EMPTY
+uniq - Report or filter out repeated lines in a file. Reads standard input comparing adjacent lines, and writes a copy of each unique input line to the standard output. The second and succeeding copies of identical adjacent input lines are not written.
+
+
+Syntax
+
+      uniq [options]... [InputFile [OutputFile]]
+
+
+Options
+
+   -N
+   -f N
+   --skip-fields=N
+       Skip N fields on each line before checking for uniqueness.  Fields
+       are sequences of non-space non-tab characters that are separated
+       from each other by at least one spaces or tabs.
+
+   +N
+   -s N
+   --skip-chars=N
+       Skip N characters before checking for uniqueness.  If you use both
+       the field and character skipping options, fields are skipped over
+       first.
+
+   -c
+   --count
+       Print the number of times each line occurred along with the line.
+
+   -i
+   --ignore-case
+       Ignore differences in case when comparing lines.
+
+   -d
+   --repeated
+       Print only duplicate lines.
+
+   -D
+   --all-repeated
+       Print all duplicate lines and only duplicate lines.  This option
+       is useful mainly in conjunction with other options e.g., to ignore
+       case or to compare only selected fields.  This is a GNU extension.
+
+   -u
+   --unique
+       Don't output lines that are repeated in the input.
+       Print only lines that are unique in the INPUT.
+
+   -w N
+   --check-chars=N
+       Compare N characters on each line
+       (after skipping any specified fields and characters).
+       By default the entire rest of the lines are compared.
+
+By default, uniq prints the unique lines in a sorted file, it discards all but one of identical successive input lines. so that the OUTPUT contains unique lines.
+
+uniq will only compare lines that appear successively in the input.
+
+Repeated lines in the input will not be detected if they are not adjacent, so it may be necessary to sort the files first.
+
+If an InputFile of - (or nothing) is given, then uniq will read from standard input.
+
+If no OutputFile file is specified, uniq writes to standard output.
+
+
+Examples
+
+Print the file demo.txt ommiting any duplicate lines:
+
+$ sort demo.txt | uniq
+
+Print only the unique numbers given the input 1, 1, 2, 3
+
+$ printf "%s\n" 1 1 2 3 | uniq -u
+2
+3
+
+Count the frequency of some words:
+
+echo "one two three one three" | tr -cs "A-Za-z" "\n" | sort | uniq -c | sort -n -r
+
+
+*See also: sort, tr

@@ -1,1 +1,41 @@
-EMPTY
+uuencode - encode a binary file
+
+
+Syntax
+
+       uuencode [-m] [ file ] name
+
+
+Key
+
+   file An input file to read.
+
+   -m   Use base64 encoding instead of UU  encoding.
+
+   name Output file.
+
+   -o   Output the decoded string to the file outfile
+Uuencode and uudecode are used to transmit binary files over transmission mediums that do not support other than simple ASCII data. The encoding uses only printing ASCII characters and includes the mode of the file and the operand name for use by uudecode.
+
+Uuencode reads file (or by default the standard input) and writes an encoded version to the standard output.
+The resulting file will have the mode of the original file except that setuid and execute bits are not retained.
+
+If outfile or name is /dev/stdout the result will be written to standard output.
+
+Uudecode transforms uuencoded files (or by default, the standard input) into the original form.
+Uudecode ignores any leading and trailing lines. The program can automatically decide which of the supported encoding schemes are used.
+
+Debian/Ubuntu users can install uuencode as part of the ’sharutils’ group of Unix utilities with apt-get install sharutils
+
+Examples
+The following example packages up a source tree, compresses it, uuencodes it and mails it to a user on another system. When uudecode is run on the target system, the file 'src_tree.tar.Z' will be created which can then be uncompressed and extracted into the original tree.
+
+      tar  cf  -   src_tree   |   compress   |   uuencode
+      src_tree.tar.Z | mail sys1!sys2!user
+"One of the main causes of the fall of the Roman Empire was that, lacking zero, they had no way to indicate successful termination of their C programs" ~ Robert Firth
+
+Related linux commands
+iconv - Convert the character set of a file.
+base32 - Base32 encode/decode data and print to standard output.
+base64 - Base64 encode/decode data and print to standard output.
+Equivalent Windows command: CERTUTIL -Encode as hex.

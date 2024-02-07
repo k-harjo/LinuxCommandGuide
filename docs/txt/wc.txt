@@ -1,1 +1,57 @@
-EMPTY
+wc - Print byte, word, and line counts, count the number of bytes, whitespace-separated words, and newlines in each given FILE, or standard input if none are given or for a FILE of '-'.
+
+
+Syntax
+
+      wc [options]... [file]...
+
+
+Options
+
+   -c
+   --bytes
+   --chars
+        Print only the byte counts.
+
+   -w
+   --words
+        Print only the word counts.
+
+   -l
+   --lines
+        Print only the newline counts.
+
+   -L
+   --max-line-length
+        Print only the length of the longest line per file, 
+        and if there is more than one file it prints the maximum (not the sum) 
+        of those lengths. 
+
+'wc' prints one line of counts for each file, and if the file was given as an argument, it prints the file name following the counts.
+
+If more than one FILE is given, 'wc' prints a final line containing the cumulative counts, with the file name 'total'. The counts are printed in this order: newlines, words, bytes. The bytes count includes any newline characters at the end of a line, so it will be equal to the number of visible characters minus the number of lines.
+
+By default, each count is output right-justified in a 7-byte field with one space between fields so that the numbers and file names line up nicely in columns. However, POSIX requires that there be exactly one space separating columns. You can make 'wc' use the POSIX-mandated output format by setting the 'POSIXLY_CORRECT' environment variable.
+
+By default, 'wc' prints all three counts. Options can specify that only certain counts be printed. Options do not undo others previously given, so wc --bytes --words will print both the byte counts and the word counts.
+
+The command grep -c will also count the number of matching lines, grep -c is faster than piping grep to wc -l
+
+
+Examples
+
+Count the number of lines in file1.txt
+
+$ wc -l < file1.txt
+
+Count the number of words in file2.txt
+
+$ wc -w file2.txt
+
+Count the number of words by pasting from the clipboard:
+
+$ wc -l
+(paste the list into the window and then type CTRL-D)
+
+
+*See also: cat, cal, units

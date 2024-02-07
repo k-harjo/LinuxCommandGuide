@@ -1,1 +1,12 @@
-EMPTY
+times - Print out the user and system times used by the shell and its children.
+
+
+Syntax
+
+      times
+The return status is zero.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help times
+
+
+*See also: time

@@ -1,1 +1,94 @@
-EMPTY
+timeout - Run a command with a time limit, runs the given command and kills it if it is still running after the specified time interval.
+
+
+Syntax
+
+       timeout [option] duration command [arg]...
+
+
+Key
+
+   command
+      The command to execute, this must not be a special built-in utility.
+      Options must precede operands.
+
+   --preserve-status
+       Return the exit status of the managed command on timeout, rather than
+       a specific exit status indicating a timeout.
+       This is useful if the managed command supports running for an
+       indeterminite amount of time.
+
+   --foreground
+       Don't create a separate background program group, so that the
+       managed command can use the foreground TTY normally.
+       This is needed to support timing out commands not started directly
+       from an interactive shell, in two situations.
+
+        1) command is interactive and needs to read from the terminal for example.
+        2) The user wants to support sending signals directly
+           to command from the terminal (like Ctrl-C for example) 
+
+        Note in this mode of operation, any children of command will not be timed out.
+
+   -k duration
+   --kill-after=duration
+       Ensure the monitored command is killed by also sending a ‘KILL’ signal, after
+       the specified duration.
+       Without this option, if the selected signal proves not to be fatal, timeout
+       does not kill the command.
+
+   -s signal
+   --signal=signal
+       Send this signal to command on timeout, rather than the default ‘TERM’ signal.
+       signal can be a name like ‘HUP’ or a number. See Signal specifications. 
+
+   duration is a floating point number followed by an optional unit:
+
+       ‘s’ for seconds (the default)
+       ‘m’ for minutes
+       ‘h’ for hours
+       ‘d’ for days
+
+        A duration of 0 disables the associated timeout.
+        Note that the actual timeout duration is dependent on system conditions,
+        which should be especially considered when specifying sub-second timeouts.
+
+   --help
+        Print a usage message listing all available options, then exit successfully.
+
+   --version
+        Print the version number, then exit successfully.
+
+   --   Delimit the option list. Later arguments, if any, are treated as operands
+        even if they begin with -. For example, ‘sort -- -r’ reads from the file
+        named -r. 
+
+
+Exit status:
+
+     124 if command times out
+     125 if timeout itself fails
+     126 if command is found but cannot be invoked
+     127 if command cannot be found
+     137 if command is sent the KILL(9) signal (128+9)
+     The exit status of command otherwise
+
+The timeout command debuted in Coretuils 7.0 Beta (2008-10-05)
+
+
+Examples
+
+Run a command (LongRunningCommand) and timeout after 1 minute if the process has not completed already:
+
+$ timeout 1m LongRunningCommand
+
+Running date before and after the command will show how long it took:
+
+$ date; timeout 1m LongRunningCommand; date
+
+Apply a 10 second time out to a crontab task
+
+$ 0 1 * * * cronuser timeout 10s demo-script
+
+
+*See also: crontab, time, timelimit

@@ -1,1 +1,74 @@
-EMPTY
+watch - Execute a program periodically, showing output full screen
+
+
+Syntax
+
+      watch [options] command options
+
+
+Options
+
+   -n
+   --interval=n 
+                 Specify an interval n seconds to run command
+
+   -d
+   --differences[=cumulative]]
+                 Highlight the differences between successive updates
+
+   -h
+   --help        Display Help
+
+   -v
+   --version     Display version
+
+watch runs command repeatedly, displaying its output (the first screenfull). This allows you to watch the program
+output change over time. By default, the program is run every 2 seconds.
+
+The --cumulative option makes highlighting "sticky", presenting a running display of all positions that have ever changed.
+
+watch will run until interrupted.
+
+Note that command is given to "sh -c" which means that you might need to use extra quoting to get the desired effect.
+
+POSIX option processing is used (i.e., option processing stops at the first non-option argument). This means that command_options don't get interpreted by watch itself.
+
+
+Examples
+
+       To watch for mail, you might do
+
+              watch -n 60 from
+
+       To watch the contents of a directory change, you could use
+
+              watch -d ls -l
+
+       If  you're only interested in files owned by user joe, you
+       might use
+
+              watch -d 'ls -l | fgrep joe'
+
+       To see the effects of quoting, try these out
+
+              watch echo $$
+
+              watch echo '$$'
+
+              watch echo "'"'$$'"'"
+
+       You can watch for your administrator to install the latest
+       kernel with
+
+              watch uname -r
+
+       (Just kidding.)
+
+
+Bugs
+
+Upon terminal resize, the screen will not be correctly repainted until the next scheduled update. All differences highlighting is lost on that update as well.
+Non-printing characters are stripped from program output. Use "cat -v" as part of the command pipeline if you want to see them.
+
+
+*See also: at, builtin, crontab, chroot, exec, if, nohup, su, watch, .period

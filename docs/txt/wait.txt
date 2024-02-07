@@ -1,1 +1,27 @@
-EMPTY
+wait - Wait for each specified process to complete and return its termination status.
+
+
+Syntax
+
+      wait [n ...]
+
+
+Key
+
+   n   A process ID or a job specification
+
+Each n can be a process ID or a job specification; if a job specification is given, all processes in that job's pipeline are waited for.
+
+If n is not given, all currently active child processes are waited for, and the return status is zero.
+
+If n specifies a non-existent process or job, the return status is 127. Otherwise, the return status is the exit status of the last process or job waited for.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help wait
+
+
+Example
+
+$ wait 2585
+
+
+*See also: ps, lsof, waitfor

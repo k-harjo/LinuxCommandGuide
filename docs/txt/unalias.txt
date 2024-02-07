@@ -1,1 +1,40 @@
-EMPTY
+unalias - remove an alias, aliases allow a string to be substituted for a word when it is used as the first word of a simple command.
+
+
+Syntax
+
+      unalias [-a] [name ... ]
+
+
+Key
+
+   -p   Print the current values
+
+   -a   Remove All aliases
+
+If arguments are supplied, an alias is defined for each name whose value is given.
+
+If no value is given, alias will print the current value of the alias.
+
+Without arguments or with the -p option, alias prints the list of aliases on the standard output in a form that allows them to be reused as input.
+
+The value of an alias can be set to an expression including spaces, command options and/or variables, the expression must be quoted, either with 'Single quotes' that will be evaluated dynamically each time the Alias is used, or "Double quotes" which will be evaluated once when the alias is created.
+
+The value cannot contain any positional parameters ($1 etc), if you need to do that use a shell function instead.
+
+The name can not be 'alias' or 'unalias'.
+
+unalias can be used to remove each name from the list of defined aliases.
+
+'alias' and 'unalias' are BASH built-ins. For almost every purpose, shell functions are preferred over aliases.
+
+
+Examples:
+
+Create an alias 'ls' that will change the default action of ls:
+$ alias ls="ls --classify"
+$ ls
+$ unalias ls
+
+
+*See also: export, env, echo, readonly, shift, alias

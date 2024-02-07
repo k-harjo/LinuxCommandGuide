@@ -1,1 +1,30 @@
-EMPTY
+unexpand - Convert spaces to tabs, write the contents of each given FILE, or standard input if none are given or for a FILE of '-', to standard output. Strings of two or more space or tab characters are converted to as many tabs as possible followed by as many spaces as are needed.
+
+
+Syntax
+
+      unexpand [options]... [file]...
+
+
+Options
+
+   -a
+   --all
+      Convert all strings of two or more spaces or tabs,
+      not just initial ones, to tabs.
+
+   -TAB1[,TAB2]...
+   -t TAB1[,TAB2]...
+   --tabs=TAB1[,TAB2]...
+      If only one tab stop is given, set the tabs TAB1 spaces apart instead of the default 8.
+      Otherwise, set the tabs at columns TAB1, TAB2, ... (numbered from 0),
+      and leave spaces and tabs beyond the tabstops given unchanged.
+      If the tabstops are specified with the '-t' or '--tabs' option,
+      they can be separated by blanks as well as by commas.
+      This option implies the '-a' option.
+By default, 'unexpand' converts only initial spaces and tabs (those that precede all non space or tab characters) on each line.
+It preserves backspace characters in the output; they decrement the column count for tab calculations.
+By default, tabs are set at every 8th column.
+
+
+*See also: cut, expand, expr, fmt, grep, seq, tr, uuencode

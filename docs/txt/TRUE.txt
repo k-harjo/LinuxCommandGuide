@@ -1,1 +1,14 @@
-EMPTY
+true - Do nothing, returning a zero (true) exit status
+
+
+Syntax:
+
+      true
+'true' does nothing except return an exit status of 0, meaning "success". It can be used as a place holder in shell scripts where a successful command is needed, although the shell built-in command : (colon) does the same thing faster.
+
+'true' ignores all command line arguments, even --help and --version, since to do otherwise would change expected behavior that some programmers may be relying on.
+
+This version of 'true' is implemented as a C program, and is thus more secure and faster than a shell script implementation, and may safely be used as a dummy shell for the purpose of disabling accounts.
+
+
+*See also: false, yes 

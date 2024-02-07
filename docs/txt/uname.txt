@@ -1,1 +1,41 @@
-EMPTY
+uname - Print system information, print information about the machine and operating system it is run on. If no options are given, 'uname' acts as if the '-s' option were given.
+
+
+Syntax
+
+      uname [options]...
+
+
+Options
+
+   -a  --all          Print all of the below information.
+
+   -m  --machine      Print the machine (hardware) type.
+
+   -n  --nodename     Print the machine's network node hostname.
+
+   -p  --processor    Print the machine's processor type.
+
+   -r  --kernel-release  Print the kernel release.
+
+   -s  --kernel-name     Print the kernel name.
+
+   -v  --kernel-version   Print the kernel version.
+
+   -i  --hardware-platform Print the hardware platform or "unknown".
+
+   -o  --operating-system  Print the operating system.
+If multiple options or '-a' are given, the selected information is printed in this order:
+
+SYSNAME NODENAME RELEASE OSVERSION MACHINE
+
+The full documentation for uname is maintained as a Texinfo manual. If the info and uname programs are properly installed at your site, the command:
+info coreutils aquname invocationaq should give you access to the complete manual.
+
+The OSVERSION, at least, might be multiple words.
+For example:
+$uname -a
+=> Linux hayley 1.0.4 #3 Thu May 12 18:06:34 1994 i486
+
+
+*See also: env, groups, hostname, logname, ps, tty, users, who, whoami

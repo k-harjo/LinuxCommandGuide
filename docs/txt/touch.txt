@@ -1,1 +1,88 @@
-EMPTY
+touch - Change file timestamps, change the access and/or modification times of the specified files.
+
+
+Syntax
+
+      touch [options]... File...
+
+
+Options
+
+   -a
+   --time=atime
+   --time=access
+   --time=use
+        Change the access time only.
+
+   -c
+   --no-create
+        Do not create files that do not exist.
+
+   -d
+   --date=time
+        Use time instead of the current time.  It can contain month names,
+        timezones, 'am' and 'pm', etc.
+
+   -f   Ignored; for compatibility with BSD versions of 'touch'.
+
+   -h, --no-dereference
+        Affect each symbolic link instead of any referenced file
+        (useful only on systems that can change the timestamps of a symlink) 
+
+   -m
+   --time=mtime
+   --time=modify
+        Change the modification time only.
+
+   -r FILE
+   --reference=FILE
+        Use the times of the reference FILE instead of the current time.
+
+   -t [[CC]YY]MMDDhhmm[.ss]
+        Set to a specific date/time.
+
+   --help     Display help and exit
+
+   --version  Output version information and exit
+
+The -t argument will accept four-digit or two-digit years, specifying the seconds is optional. If no digits of the year are specified, the argument is interpreted as a date in the current year.
+
+The --date=STRING is a mostly free format human readable date string such as "Sun, 29 Feb 2004 16:21:42 -0800" or "2004-02-29 16:21:42" or even "next Thursday". A date string may contain items indicating calendar date, time of day, time zone, day of week, relative time, relative date, and numbers. An empty string indicates the beginning of the day.
+
+If two-digit year is specified, then CC is 20 for years in the range 0 ... 68, and 19 for year in 69 ... 99.
+
+If the first FILE would be a valid argument to the '-t' option and no timestamp is given with any of the '-d', '-r', or '-t' options and the '--' argument is not given, that argument is interpreted as the time for the other files instead of as a file name.
+
+Any FILE that does not exist is created empty.
+
+If changing both the access and modification times to the current time, 'touch' can change the timestamps for files that the user running it does not own but has write permission for. Otherwise, the user must own the files.
+
+
+Examples
+
+Create/datestamp one file called sample.txt:
+
+touch sample.txt
+
+or in a subfolder:
+
+touch "some folder/sample.txt"
+
+Create a file sample.txt dated as 1958-12-31@14:30:
+
+$ touch -t 195812311430 sample.txt
+
+Create a file sample.txt dated as 2050-12-31@09:30:
+
+$ touch -t 205012310930 sample.txt
+
+Using brace expansion, create/datestamp 10 files called project1, project2 etc:
+
+touch project{1,2,3,4,5,6,7,8,9,10}
+
+Create/datestamp 100 files called file1, file2 etc:
+
+for i in $(seq 1 100); do echo -n "file${i} "; touch file${i} 2>&1; done
+
+
+*See also: chgrp, chmod, chown, date, mkdir, rm, which

@@ -1,1 +1,69 @@
-EMPTY
+top - Process viewer, find the CPU-intensive programs currently running. See ps for explanations of the field descriptors.
+
+
+Syntax
+
+      top options
+
+
+Options
+
+   -b   Run in batch mode; don't accept command-line input.
+        Useful for sending output to another command or to a file.
+   -c   Show command line in display instead of just command name.
+   -d delay
+        Specify delay between refreshes.
+   -i   Suppress display of idle and zombie processes.
+   -n num
+        Update display num times, then exit.
+   -p pid
+        Monitor only processes with the specified process ID.
+   -q   Refresh without any delay.
+        If user is privileged, run with highest priority.
+   -s   Secure mode. Disable some (dangerous) interactive commands.
+   -S   Cumulative mode. Print total CPU time of each process,
+        including dead child processes.
+
+
+Interactive commands
+
+space    Update display immediately.
+  A      Sort by age, with newest first.
+  c      Toggle display of command name or full command line.
+  f, F   Add fields to display or remove fields from the display.
+  h, ?   Display help about commands and the status of secure and cumulative modes.
+  k      Prompt for process ID to kill and signal to send (default is 15) to kill it.
+  i      Toggle suppression of idle and zombie processes.
+  l      Toggle display of load average and uptime information.
+ ^L      Redraw screen.
+  m      Toggle display of memory information.
+  M      Sort tasks by resident memory usage.
+  n, #   Prompt for number of processes to show. 
+         If 0 is entered, show as many as will fit on the screen
+         (default).
+  N      Sort numerically by process ID.
+  o, O   Change order of displayed fields.
+  P      Sort tasks by CPU usage (default).
+  q      Exit.
+  r      Apply renice to a process. Prompt for PID and renice value. Suppressed in secure mode.
+  s      Change delay between refreshes. 
+         Prompt for new delay time, which should be in seconds.
+         (Suppressed in secure mode.)
+  S      Toggle cumulative mode. (See the -S option.)
+  t      Toggle display of processes and CPU states information.
+  T      Sort tasks by time/cumulative time.
+  W      Write current setup to ~/.toprc. This is the recommended way to write a top configuration file.
+Top displays per-process CPU usage (not total server load) it is useful for seeing how much work the machine is doing now compared to some point in the past.
+
+At the top of the display output there are three numbers representing the number of processes waiting for the CPU now, an average for the past five minutes, and an average for the past fifteen minutes. These three numbers are the "load average"
+
+Top should only be used to compare the load average on two different machines if they have an identical configuration (both hardware and software.)
+
+
+Example
+
+To display processes sorted by CPU usage, updating every 5 seconds:
+$ top -Ps5
+
+
+*See also: htop, kill, signal, w 
