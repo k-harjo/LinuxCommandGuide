@@ -1,0 +1,93 @@
+
+alias - Create an alias, aliases allow a string to be substituted for a word when it is used as the first word of a simple command.
+
+
+<s1>Syntax</s1>
+
+      unalias [-a] [name ... ]
+
+
+
+ <img src="test/img//alias (1).png" alt="Description of alias">
+
+<s1>Key</s1>
+
+   -a   Remove All aliases
+If arguments are supplied, an alias is defined for each name whose value is given.
+
+If no value is given, alias will print the current value of the alias.
+
+Without arguments or with the -p option, alias prints the list of aliases on the standard output in a form that allows them to be reused as input.
+
+The value of an alias can be set to an expression including spaces, command options and/or variables, the expression must be quoted, either with 'Single quotes' that will be evaluated dynamically each time the Alias is used, or "Double quotes" which will be evaluated once when the alias is created.
+
+The value cannot contain any positional parameters ($1 etc), if you need to do that use a shell function instead.
+
+The name can not be 'alias' or 'unalias'.
+
+unalias can be used to remove each name from the list of defined aliases.
+
+Make an alias permanent
+Use your favorite text editor to create a file called ~/.bash_aliases, and type the alias commands into the file.
+.bash_aliases will run at login (or you can just execute it with ..bash_aliases )
+
+Expand Multiple aliases
+If the last character of the alias value is a space or tab character, then the next command word following the alias is also checked for alias expansion.
+
+Details of alias replacement
+The first word of each simple command, if unquoted, is checked to see if it has an alias. If so, that word is replaced by the text of the alias. The alias name and the replacement text can contain any valid shell input, including shell metacharacters, with the exception that the alias name can not contain '='.
+
+The first word of the replacement text is tested for aliases, but a word that is identical to an alias being expanded is not expanded a second time. This means that one can alias ls to "ls -F", for instance, and Bash does not try to recursively expand the replacement text.
+
+Aliases are not expanded when the shell is not interactive, unless the expand_aliases shell option is set using shopt .
+
+The rules concerning the definition and use of aliases are somewhat confusing. Bash always reads at least one complete line of input before executing any of the commands on that line. Aliases are expanded when a command is read, not when it is executed. Therefore, an alias definition appearing on the same line as another command does not take effect until the next line of input is read. The commands following the alias definition on that line are not affected by the new alias. This behavior is also an issue when functions are executed. Aliases are expanded when a function definition is read, not when the function is executed, because a function definition is itself a compound command. As a consequence, aliases defined in a function are not available until after that function is executed. To be safe, always put alias definitions on a separate line, and do not use alias in compound commands.
+
+'alias' and 'unalias' are BASH built-ins. For almost every purpose, shell functions are preferred over aliases.
+
+<img src="test/img//alias (2).png" alt="Description of alias">
+
+<s1>Examples:</s1>
+Create an alias 'c' that will clear the screen:
+$ alias c="clear"
+
+Create an alias 'ls' that will change the default action of ls:
+$ alias ls="ls --classify"
+$ ls
+$ unalias ls
+
+More aliases for ls:
+$ alias la="ls -lAXh --color=always"   # Show all, sort by extension
+$ alias ls-al="ls -al"   # fix typo missing space
+$ alias l="ls -l"
+$ alias la="ls -la"
+$ alias ls='/bin/ls -N'  # Print entry names without quoting
+
+Create an alias cp to ensure that when copying files, progress is always displayed and files do not get overwritten without a confirmation:
+$ alias cp="cp -iv"
+
+Create an alias mv to ensure that when moving files, progress is always displayed and files do not get overwritten without a confirmation:
+$ alias mv="mv -iv"
+
+Create an alias rm that will prompt before deleting:
+$ alias rm="rm -i"
+
+Use alias to cd into to sub-sub directories:
+$ alias ..='cd ..'
+$ alias ...='cd ../..'
+$ alias ....='cd ../../..'
+
+Use alias to fix missing space typos:
+$ alias cd..='cd ..'
+
+Display the working directory
+$ alias .='echo $PWD'
+
+Shorten apt-get installation commands:
+$ alias canhaz='sudo apt-get install'
+
+Run firefox and open a specific website:
+$ alias ss64='/home/simon/firefox/firefox https://ss64.com'
+
+
+*See also: export, env, echo, readonly, shift

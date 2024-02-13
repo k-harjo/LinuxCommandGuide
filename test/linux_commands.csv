@@ -1,0 +1,9 @@
+Command,Explanation,Doc_Path,Html_Path
+alias,Create an alias,C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\alias.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\alias.html
+apropos,Search Help manual pages (man -k),C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\apropos.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\apropos.html
+apt,Search for and install software packages (Debian/Ubuntu),C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\apt.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\apt.html
+apt-get,Search for and install software packages (Debian/Ubuntu),C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\apt-get.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\apt-get.html
+aptitude,Search for and install software packages (Debian/Ubuntu),C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\aptitude.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\aptitude.html
+aspell,Spell Checker,C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\aspell.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\aspell.html
+at,Schedule a command to run once at a particular time,C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\at.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\at.html
+awk,"Find and Replace text, database sort/validate/index",C:\Users\khbil\Documents\Python_Scripts\LinuxBash-py311\test\docs\awk.txt,C:\Users\khbil\Documents\Python_Scripts\LinuxBash\docs\html\awk.html
