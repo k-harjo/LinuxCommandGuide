@@ -1,10 +1,14 @@
-aspell - Spellcheck a file.
+aspell - Spellcheck a file. Generally, it will scan the given files or anything from standard input then it check for misspellings. Finally it allows the user to correct the words interactively. 
 
 
-<s1>Syntax</s1>
+Syntax
+
+      aspell check [options] filename
 
 
-<s1>Key</s1>
+Key
+
+   -mode=mode
        The mode to use when checking files.
        The available modes are none, url, email, sgml, tex, texinfo, nroff and any
        others available on your system. more..
@@ -35,10 +39,12 @@ aspell - Spellcheck a file.
 
 
 Examples
-Check the file foo.txt:
 
-$ aspell check foo.txt
+$ aspell -a
+<img src="test/img//aspell (1).png" alt="Description of aspell">
 
 Check the file foo.txt using the bad-spellers suggestion mode and the American English dictionary:
 
-$ aspell check --sug-mode=bad-spellers -d en_US foo.txt
+aspell will display incorrectly spelled words below the input you provided. 
+$ aspell list 
+<img src="test/img//aspell (2).png" alt="Description of aspell">

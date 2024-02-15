@@ -3,7 +3,7 @@ import pandas as pd
 
 linux_file = "C:/Users/khbil/Documents/Python_Scripts/LinuxBash-py311/test/linux_commands.csv"
 all_linux_cmds = pd.read_csv(linux_file)
-subheadings = ["Definition", "Syntax", "Examples:", "Example", "Example:", "Examples:", "Key", "Options"]
+subheadings = ["Definition", "Syntax", "Examples:", "Example", "Example:", "Examples:", "Examples", "Key", "Options"]
 
 for file in all_linux_cmds["Doc_Path"]:
     print(file)

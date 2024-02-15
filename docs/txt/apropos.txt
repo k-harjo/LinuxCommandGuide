@@ -1,11 +1,14 @@
 apropos - Search the manual page names and descriptions, whatis database.
 
+
 Syntax
+
       apropos keyword
 
       apropos [-dalv?V] [-e|-r|-w] [-s list] [-m system[,...]] [-M path] [-L locale] [-C file] keyword ...
 
-Options (not all distributions support these options, run apropos -?)
+
+Options
 
    -a, --and
             Only display items that match all the supplied keywords.
@@ -82,40 +85,15 @@ Options (not all distributions support these options, run apropos -?)
 
    -v, --verbose
             Print verbose warning messages.
-Each manual page has a short description available within it. apropos searches the descriptions for instances of keyword.
 
-keyword is usually a regular expression, as if (-r) was used, or may contain wildcards (-w), or match the exact keyword (-e). Using these options, it may be necessary to quote the keyword or escape (\) the special characters to stop the shell from interpreting them.
 
-The standard matching rules allow matches to be made against the page name and word boundaries in the description.
+Examples: 
 
-The database searched by apropos is updated by the mandb program. Depending on your installation, this may be run by a periodic cron job, or may need to be run manually after new manual pages have been installed.
+apropos list
+image001
 
-Exit Status
-0  Successful program execution.
-
-1  Usage, syntax or configuration file error.
-
-2  Operational error.
-
-16 Nothing was found that matched the criteria specified.
-
-Environment
-SYSTEM If $SYSTEM is set, it will have the same effect as if it had been specified as the argument to the -m option.
-
-MANPATH If $MANPATH is set, its value is interpreted as the colon- delimited manual page hierarchy search path to use.
-
-MANWIDTH If $MANWIDTH is set, its value is used as the terminal width (see the --long option). If it is not set, the terminal width will be calculated using the value of $COLUMNS, and ioctl(2) if available, or falling back to 80 characters if all else fails.
-
-POSIXLY_CORRECT If $POSIXLY_CORRECT is set, even to a null value, the default apropos search will be as an extended regex (-r). Nowadays, this is the default behaviour anyway.
-
-Examples
-Show all the command help involving zip:
-
-$ apropos zip
-
-Show all the command help involving the phrase "zip archive":
-
-$ apropos "zip archive"
+apropos -e set
+image002
 
 
 *See also: man

@@ -1,7 +1,9 @@
 apt-get - Search for and install software packages (Debian/Ubuntu).
 
 
-<s1>Syntax</s1>
+Syntax
+
+      apt-get [-sqdyfmubV] [-o= config_string ] [-c= config_file ]
          [-t= target] update 
 
       apt-get [-sqdyfmubV] [-o= config_string ] [-c= config_file ]
@@ -46,7 +48,9 @@ apt-get - Search for and install software packages (Debian/Ubuntu).
  Where Target = {target_release_name | target_release_number_expression | target_release_codename}
 
 
-<s1>Options</s1>
+Options
+
+apt-get and aptitude now share the same list of installed packages and so can be used interchangeably.
 
 All command line options can be set using the configuration file, the descriptions indicate the configuration option to set.
 For boolean options you can override the config file by using something like -f-,--no-f, -f=no or several other variations.
@@ -230,9 +234,7 @@ For boolean options you can override the config file by using something like -f-
         package or removing an essential package occurs then apt-get will exit.
         Configuration Item: APT::Get::Assume-Yes.
 
-
-apt-get 
-option		Description	
+Options		Description	
 
 update		update is used to resynchronize the package index files from their sources. The indexes of available packages are fetched from the location(s) specified in 				/etc/apt/sources.list. For example, when using a Debian archive, this command retrieves and scans the Packages.gz files, so that information about new and updated 			packages is available. An update should always be performed before an upgrade or dist-upgrade. Please be aware that the overall progress meter will be incorrect as the 		size of the package files cannot be known in advance.	
 		apt update
@@ -262,7 +264,6 @@ source		source causes apt-get to fetch source packages. APT will examine the ava
 		A specific source version can be retrieved by postfixing the source name with an equals and then the version to fetch, similar to the mechanism used for the package 			files. This enables exact matching of the source package name and version, implicitly enabling the APT::Get::Only-Source option.
 		Note that source packages are not tracked like binary packages, they exist only in the current directory and are similar to downloading source tar balls.
 
- 
 build‑dep	build-dep causes apt-get to install/remove packages in an attempt to satisfy the build dependencies for a source package.	 
 
 check		check is a diagnostic tool; it updates the package cache and checks for broken dependencies.	 
@@ -275,27 +276,16 @@ autoremove	autoremove is used to remove packages that were automatically install
 
 
 
-
 Examples
-These examples assume that /etc/apt/sources.list already includes the web address of at least one software repository.
 
-Sync the local software database with the repository database (build cache):
-$ sudo apt-get update
+apt-get update
 
-Search for a particular program (search the cache) in this case the gimp program:
-$ apt-cache search gimp
+sudo apt-get update
+<img src="test/img//apt-get (1).png" alt="Description of apt-get">
 
-If the above succeeds then the software is available and can be installed:
-$ sudo apt-get install gimp
-
-To remove the software if you no longer need it:
-$ sudo apt-get remove gimp
-
-Upgrade all the software on your system to the latest versions:
-$ sudo apt-get upgrade
-
-Upgrading the whole linux distribution to a new version:
-$ sudo apt-get dist-upgrade
+sudo apt-get upgrade
+<img src="test/img//apt-get (2).png" alt="Description of apt-get">
 
 
 **See also: dpkg, Synaptic Package Manager, Tasksel, aptitude
+

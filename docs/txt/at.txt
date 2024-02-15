@@ -1,4 +1,8 @@
-at - Schedule a command to run once at a particular time, examine or delete jobs: at, batch, atq, atrm
+at - Schedule a command to run once at a particular time, examine, or delete jobs.
+at command is a command-line utility that is used to schedule a command to be executed at a particular time in the future. Jobs created with at command are executed only once. The at command can be used to execute any program or mail at any time in the future. It executes commands at a particular time and accepts times of the form HH:MM to run a job at a specific time of day.
+
+The following expressions such as noon, midnight, teatime, tomorrow, next week, next Monday, etc. could be used with at command to schedule a job. 
+
 
 Syntax
 
@@ -8,6 +12,7 @@ Syntax
       atq [-V] [-q queue]       # List the user's pending jobs, or for the superuser; list all jobs.
       atrm [-V] job [job...]    # Delete jobs, identified by their job number.
       batch                     # Execute commands when system load levels permit.
+
 
 Key
 
@@ -40,6 +45,7 @@ Key
          Times displayed will be in the format "Thu Feb 20 14:50:00 1997".
 
    -V    Print the version number to standard error.
+
 at and batch read commands from standard input or a specified file which are to be executed at a later time.
 
 batch executes commands when system load levels permit; in other words, when the load average drops below 0.8, or the value specified in the invocation of atd.
@@ -54,58 +60,7 @@ The exact definition of the time specification can be found in /usr/share/doc/at
 For both at and batch, commands are read from standard input or the file specified with the -f option and executed. The working directory, the environment (except for the variables TERM, DISPLAY and _) and the umask are retained from the time of invocation. An at - or batch - command invoked from a su(1) shell will retain the current userid. The user will be mailed standard error and standard output from his commands, if any. Mail will be sent using the command /usr/sbin/sendmail. If at is executed from a su(1) shell, the owner of the login shell will receive the mail.
 
 
-Installation
-
-Most distributions include at by default, if you do need to install it use the package manager for your distribution e.g for apt.
-$ sudo apt update
-$ sudo apt install at
-or
-$sudo apt-get install at
-
-
-Permissions
-
-The superuser may use these commands in any case. For other users, permission to use at is determined by the files /etc/at.allow and /etc/at.deny.
-
-If the file /etc/at.allow exists, only usernames mentioned in it are allowed to use at.
-If /etc/at.allow does not exist, /etc/at.deny is checked, every username not mentioned in it is then allowed to use at.
-If neither exists, only the superuser is allowed use of at.
-
-An empty /etc/at.deny means that every user is allowed use these commands, this is the default configuration.
-
-
-Environment
-
-SHELL The value of the SHELL environment variable at the time of at invocation will determine which shell is used to execute the at job commands. If SHELL is unset when at is invoked, the user's login shell will be used; otherwise, if SHELL is set when at is invoked, it must contain the path of a shell interpreter executable that will be used to run the commands at the specified time.
-
-at will record the values of environment variables present at time of at invocation. When the commands are run at the specified time, at will restore these variables to their recorded values . These variables are excluded from this processing and are never set by at when the commands are run : TERM, DISPLAY, SHELLOPTS, _, PPID, BASH_VERSINFO, EUID, UID, GROUPS. If the user submitting the at job is not the super-user, variables that alter the behaviour of the loader ld.so(8), such as LD_LIBRARY_PATH, cannot be recorded and restored by at.
-
-
-Files
-
-/var/spool/at
-/var/spool/at/spool
-/proc/loadavg
-/var/run/utmp
-/etc/at.allow
-/etc/at.deny
-
-
 Examples
 
-Run the export1.sh script at 11pm:
-
-$ echo "/home/scripts/export1.sh" | at 23:00
-
-In the example above we are piping the command required to at, without that at will prompt with an at> prompt where you can interactively enter the command required, pressing Ctrl-D to exit when done.
-
-We can do the same thing using a Here document:
-
-$ at 23:00 <<SS64
-"/home/scripts/export1.sh"
-SS64
-
-The job to be run can also be stored in a file and executed with -f, if the file contains multiple lines/commands then each will be launched as a separate job:
-
-$ echo "/home/scripts/export1.sh" >/home/scripts/myjob.sh
-$ at 23:00 -f /home/scripts/myjob.sh
+at -l
+image001
