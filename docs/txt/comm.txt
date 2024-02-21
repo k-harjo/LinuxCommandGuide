@@ -1,12 +1,15 @@
-comm - Compare two sorted files line by line. Output the lines that are common, plus the lines that are unique.
+comm compares two sorted files line by line and write to standard output; the lines that are common and the lines that are unique. 
 
 
 Syntax
 
-      comm [options]... File1 File2
+$comm [OPTION]... FILE1 FILE2 
 
+	As using comm, we are trying to compare two files therefore the SYNTAX: of comm command needs two filenames as arguments. 
 
-Options
+	With no OPTION used, comm produces three-column output where first column contains lines unique to FILE1, second column contains lines unique to FILE2 and third and last column contains lines common to both the files. 
+
+	comm command only works right if you are comparing two files which are already sorted. 
 
    -1   Suppress lines unique to file1
 
@@ -31,43 +34,11 @@ Options
 
 
    A file name of '-' means standard input.
-With no options, 'comm' produces three text columns as output. The utility reads file1 and file2, which should be sorted lexically.
-This will output:
-
- Lines only in file1; Lines only in file2; Lines in both files. 
-If printing of a column is suppressed, the output will be padded with TAB characters.
-
-The options -1, -2, and -3 suppress printing of the corresponding columns.
-The filename '-' means standard input.
-
-Each column will have a number of tab characters prepended to it equal to the number of lower numbered columns that are being printed. For example, if column number two is being suppressed, lines printed in column number one will not have any tabs preceding them, and lines printed in column number three will have one.
-
-Before 'comm' can be used, the input files must be sorted using the collating sequence specified by the 'LC_COLLATE' locale, with trailing newlines significant. If an input file ends in a non-newline character, a newline is silently appended. The 'sort' command with no options always outputs a file that is suitable input to 'comm'.
-
-Unlike some other comparison utilities, 'comm' has an exit status that does not depend on the result of the comparison. Upon normal completion 'comm' produces an exit code of zero. If there is an error it exits with nonzero status.
 
 
 Examples
 
-Return the unique lines in the file words.txt that don't exist in countries.txt
-
-$ comm -23 <(sort words.txt | uniq) <(sort countries.txt | uniq)
-
-Return the lines that are in both words.txt and countries.txt:
-
-$ comm -12 <(sort words.txt | uniq) <(sort countries.txt | uniq)
-
-Return the files that are in the directory 'march' but not in the directory 'april':
-
-$ comm -23 <(ls march) <(ls april)
-
-Return the files that are in the directory 'march' but not in the directory 'april':
-
-$ comm -23 <(ls march) <(ls april)
-
-Return the files that are in the directory 'april' but not in the directory 'march':
-
-$ comm -13 <(ls march) <(ls april)
+image001
 
 
 *See also: cmp, diff, diff3, sdiff, head, sort

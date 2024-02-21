@@ -1,18 +1,25 @@
-cksum - Print CRC checksum and byte counts.
-
-Computes a cyclic redundancy check (CRC) checksum for each given File, or standard input if none are given or for a File of -
+cksum command in Linux is used to display a CRC (Cyclic Redundancy Check) value, the byte size of the file, and the name of the file to standard output. CRC is unique for each file and only changes if the file is edited. It is used to check whether the file had accidentally corrupted while transfer. If the CRC is the same after the transfer, it means that the file had not been accidentally corrupted. 
 
 
 Syntax
 
       cksum [Option]... [File]...
+
+image001
+
+Options Available in `cksum`
+
+–help : It displays help information. 
+image002
+
+–version : It displays version information. 
+image003
+
+Note: An intruder can corrupt a file in such a way that it produces the same CRC value after the transfer. That is why it is only checked for accidental corruption. 
+
 cksum prints the CRC checksum for each file along with the number of bytes in the file, and the filename unless no arguments were given.
 
 cksum is typically used to ensure that files transferred by unreliable means (e.g., netnews) have not been corrupted, by comparing the cksum output for the received files with the cksum output for the original files (typically given in the distribution).
-
-The CRC algorithm is specified by the POSIX.2 standard. It is not compatible with the BSD or System V sum algorithms; it is more robust.
-
-The only options are --help and --version.
 
 
 *See also: sum, md5sum, sha256sum

@@ -1,1 +1,19 @@
-ethtool - Ethernet card settings
+ethtool is a command-line tool in Linux for managing network interface devices. It allows us to modify the parameters of the devices and query the information of those devices. 
+
+The ethtool usually comes with any distribution of Linux. But if it’s missing, we can install it with the distro’s package manager.  
+
+
+Examples
+
+$ sudo apt-get install -y ethtool 
+
+Then, we run the command with –version to verify the installation: 
+
+$ sudo ethtool --version 
+ethtool version 5.1  
+
+If the version is displayed without any errors, we’ve successfully installed the ethtool in our Linux. 6 
+
+To get the general properties of a network interface device, we simply run ethtool followed by its name: 
+
+image001

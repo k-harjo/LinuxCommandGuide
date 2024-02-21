@@ -1,9 +1,9 @@
-fmt - Reformat paragraph text, fill and join lines to produce output lines of a given width (75 characters by default).
+fmt command in LINUX actually works as a formatter for simplifying and optimizing text files. Formatting of text files can also be done manually, but it can be really time-consuming when it comes to large text files, this is where fmt comes to rescue. fmt re-formats each paragraph in the file specified, writing to standard output.  
 
 
 Syntax
 
-     fmt [option(s)]... [file]...
+	fmt [-WIDTH] [OPTION]... [FILE]... 
 
 
 Options
@@ -42,11 +42,16 @@ Options
        One use is to format certain kinds of program comments, while leaving the code unchanged.
 'fmt' reads from the specified FILE arguments (or standard input if none are given), and writes to standard output.
 
-The fmt utility is meant to format mail messages prior to sending, but can also be useful for other simple tasks.
 
-By default, blank lines, spaces between words, and indentation are preserved in the output; successive input lines with different indentation are not joined; tabs are expanded on input and introduced on output.
+Examples
 
-'fmt' prefers breaking lines at the end of a sentence, and tries to avoid line breaks after the first word of a sentence or before the last word of a sentence. A "sentence break" is defined as either the end of a paragraph or a word ending in any of '.?!', followed by two spaces or end of line, ignoring any intervening parentheses or quotes.
+fmt kt.txt 
+Used `fmt` command to view the content in single line. 
+image001
+
+fmt kt.txt > dv.txt 
+Here we have use `>` to save the output in filename `dv.txt` 
+image002
 
 
 *See also: mail, nroff, csplit, cut, fold, join, paste, split, tr, tail

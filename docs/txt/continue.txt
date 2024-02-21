@@ -1,9 +1,11 @@
-continue - Resume the next iteration of an enclosing for, while, until, or select loop.
+continue is a command which is used to skip the current iteration in for, while, and until loop. It is used in scripting languages and shell scripts to control the flow of executions. It takes one more parameter [N], if N is mentioned then it continues from the nth enclosing loop. 
 
 
-SYNTAX
+Syntax
 
+      continue
       continue [n]
+
 If n is supplied, the execution of the nth enclosing loop is resumed. n must be greater than or equal to 1. The return status is zero unless n is not greater than or equal to 1.
 
 This is a BASH shell builtin, to display your local syntax from the bash prompt type: help continue
@@ -11,15 +13,7 @@ This is a BASH shell builtin, to display your local syntax from the bash prompt 
 
 Examples
 
-for myloop in 1 2 3 4 5 
-do 
-  if [ "$myloop" -eq 3 ] 
-   then 
-   continue # Skip rest of this particular loop iteration.
-  fi
-  echo -n "$myloop"
-done
-continue is a POSIX 'special' builtin
+image001
 
 
 *See also: break, for, if, until, while

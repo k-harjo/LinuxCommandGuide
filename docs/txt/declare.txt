@@ -1,4 +1,4 @@
-declare - Declare variables and give them attributes.
+declare is a builtin command of the bash shell. It is used to declare shell variables and functions, set their attributes and display their values.  
 
 
 Syntax
@@ -56,19 +56,14 @@ Key
 
    -x   Mark each name for export to subsequent commands via the environment.
 
-If no names are given, then 'declare' will display the values of variables instead.
 
-Using + instead of - turns off the attribute instead, with the exceptions that ‘+a’ and ‘+A’ may not be used to destroy array variables and ‘+r’ will not remove the readonly attribute.
+Example
 
-When used in a function, declare makes each name local, as with the local command, unless the -g option is used.
+In this example we will declare a variable using declare command.
+image001
+-p This is used to displays the options and attributes of each variable name if it is used with name arguments.  
 
-If a variable name is followed by =value, the value of the variable is set to value.
-
-The typeset command is supplied for compatibility with the Korn shell; however, it has been deprecated in favor of the declare builtin command.
-
-When using -a or -A and the compound assignment syntax to create array variables, additional attributes do not take effect until subsequent assignments.
-
-The return status is zero unless an invalid option is encountered, an attempt is made to define a function using '-f foo=bar', an attempt is made to assign a value to a readonly variable, an attempt is made to assign a value to an array variable without using the compound assignment syntax, one of the names is not a valid shell variable name, an attempt is made to turn off readonly status for a readonly variable, an attempt is made to turn off array status for an array variable, or an attempt is made to display a non-existent function with '-f'.
+image002
 
 
 *See also: alias, env, echo, export, hostname, local, printenv, readonly, shift

@@ -1,4 +1,4 @@
-fold - Wrap input lines to fit in specified width, writes each FILE ('-' means standard input), or standard input if none are given, to standard output, breaking long lines.
+fold command in Linux wraps each line in an input file to fit a specified width and prints it to the standard output. By default, it wraps lines at a maximum width of 80 columns, which is configurable. To fold input using the fold command pass a file or standard input to the command.
 
 
 Syntax
@@ -6,7 +6,7 @@ Syntax
       fold [options]... [FILE]...
 
 
-Options
+Key
 
    -b
    --bytes
@@ -21,9 +21,19 @@ Options
    -w WIDTH
    --width=WIDTH
       Use a maximum line length of WIDTH columns instead of 80.
+
 By default, 'fold' breaks lines wider than 80 columns. The output is split into as many lines as necessary.
 
 'fold' counts screen columns by default; thus, a Tab can count more than one column, Backspace decreases the column count, and CarriageReturn sets the column to zero.
+
+
+Examples
+
+fold GfG.txt 
+image001
+
+fold -w[n] GfG.txt 
+image002
 
 
 *See also: csplit, cut, expand, fmt, head, paste, split, tail

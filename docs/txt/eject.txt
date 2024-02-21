@@ -1,4 +1,4 @@
-eject - Eject removable media
+eject command - it allows ejecting a removable media (typically a CD-ROM, floppy disk, tape, or JAZ or ZIP disk) using the software. 
 
 
 Syntax
@@ -80,82 +80,14 @@ Options
        Run in verbose mode; more information is displayed about what the command is doing.
    -V --version
        Display the program version and exit.
-Eject allows removable media (typically a CD, floppy disk, tape, or JAZ or ZIP disk) to be ejected under software control. The command can also control some multi-disc CD changers, the auto-eject feature supported by some devices, and close the disc tray of some CD drives.
-
-The device corresponding to <name> is ejected. The name can be a device file or mount point, either a full path or with the leading "/dev", "/media" or "/mnt" omitted. If no name is specified, the default name "cdrom" is used.
-
-There are four different methods of ejecting, depending on whether the device is a CD, SCSI device, removable floppy, or tape. By default eject tries all four methods in order until it succeeds.
-
-If the device is currently mounted, it is unmounted before ejecting.
-
-All options have corresponding --long names, as listed above. The long names can be abbreviated as long as they are unique.
-
-
-Exit Status
-
-Returns 0 if operation was successful, 1 if operation failed or command syntax was not valid.
-
-
-Notes
-
-Eject only works with devices that support one or more of the four methods of ejecting. This includes most CD drives (IDE, SCSI, and proprietary), some SCSI tape drives, JAZ drives, ZIP drives (parallel port, SCSI, and IDE versions), and LS120 removable floppies. Users have also reported success with floppy drives on Sun SPARC and Apple Macintosh systems. If eject does not work, it is most likely a limitation of the kernel driver for the device and not the eject program itself.
-
-The -r, -s, -f, and -q options allow controlling which methods are used to eject. More than one method can be specified. If none of these options are specified, it tries all four (this works fine in most cases).
-
-Eject might not always be able to determine if the device is mounted (e.g. if it has several names). If the device name is a symbolic link, eject will follow the link and use the device that it points to.
-
-If eject determines that the device can have multiple partitions, it will attempt to unmount all mounted partitions of the device before ejecting. If an unmount fails, the program will not attempt to eject the media.
-
-You can eject an audio CD. Some CD drives will refuse to open the tray if the drive is empty. Some devices do not support the tray close command.
-
-If the auto-eject feature is enabled, then the drive will always be ejected after running this command. Not all Linux kernel CD drivers support the auto-eject mode. There is no way to find out the state of the auto-eject mode.
-
-You need appropriate privileges to access the device files. Running as root or setuid root is required to eject some devices (e.g. SCSI devices).
-
-The heuristic used to find a device, given a name, is as follows. If the name ends in a trailing slash, it is removed (this is to support filenames generated using shell file name completion). If the name starts with '.' or '/', it tries to open it as a device file or mount point. If that fails, it tries prepending '/dev/', '/media/' ,'/mnt/', '/dev/cdroms', '/dev/rdsk/', '/dev/dsk/', and finally './' to the name, until a device file or mount point is found that can be opened. The program checks /etc/mtab for mounted devices. If that fails, it also checks /etc/fstab for mount points of currently unmounted devices.
-
-Creating symbolic links such as /dev/cdrom or /dev/zip is recommended so that eject can determine the appropriate devices using easily remembered names.
-
-To save typing you can create a shell alias for the eject options that work for your particular setup.
 
 
 Examples
 
-Eject the default device:
+eject -h
 
-eject
-
-Eject a device or mount point named cdrom:
-
-eject cdrom
-
-Eject using device name:
-
-eject /dev/cdrom
-
-Eject using mount point:
-
-eject /mnt/cdrom/
-
-Eject 4th IDE device:
-
-eject hdd
-
-Eject first SCSI device:
-
-eject sda
-
-Eject using SCSI partition name (e.g. a ZIP drive):
-
-eject sda4
-
-Select 5th disc on multi-disc changer:
-
-eject -v -c4 /dev/cdrom
-
-Turn on auto-eject on a SoundBlaster CD drive:
-
-eject -a on /dev/sbpcd
+Output
+image001
 
 
 *See also: mount, umount

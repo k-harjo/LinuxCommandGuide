@@ -1,5 +1,4 @@
-for - Loop command. The for loop executes a sequence of commands for each member in a list of items.
-
+for command in Linux is used to repeatedly execute a set of command for every element present in the list.
 
 Syntax
 
@@ -16,95 +15,11 @@ Equivalent to:
 EXP1, EXP2, and EXP3 are arithmetic expressions. If any expression is omitted, it behaves as if it evaluates to 1.
 
 
-Words
+Example:
 
-The words can be a simple list of strings file1.txt file2.txt file3.txt or Apple Sony "Hewlett Packard"
+image001
 
-Alternatively, create the words by iterating over the output of another command - so to print the numbers from 1 to 10 with backticks:
-
-for i in `seq 1 10` 
- do       
-echo "$i"
-done
-or with Brace Expansion.
-for i in {1..10} 
- do       
-echo "$i"
-done
-or as a one liner:
-for i in {1..10}; do echo $i; done
-
-When a wildcard is introduced, then words will match against filenames, * will match every file in the directory.
-
-for thisfile in *; do
-   echo "found $thisfile"
-done
-The second form of the for command is evaluated thus:
-
-First, the arithmetic expression expr1 is evaluated according to shell arithmetic expression rules.
-The arithmetic expression expr2 is then evaluated repeatedly until it evaluates to zero.
-
-Each time expr2 evaluates to a non-zero value, commands are executed and the arithmetic expression expr3 is evaluated.
-If any expression is omitted, it behaves as if it evaluates to 1.
-
-
-Return Status
-
-The Return Status of for will be the exit status of the last command that executes, (if there are multiple expressions then the last command in list .)
-If there are no items in the expansion of words, no commands are executed, and the return status is zero.
-
-The return status is false if any of the expressions is invalid.
-
-
-Positional Parameters
-
-These are assigned from the shell's arguments when the shell is invoked, they can be reassigned using the set builtin command.
-Positional parameter N can be referenced as ${N}, or as $N when N consists of a single digit. $1, $2 etc.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help for
-
-
-Examples
-
-Loop through a set of strings:
-for m in Apple Sony Panasonic "Hewlett Packard" Nokia
-do
-echo "Manufacturer is:" $m
-done
-
-# or as a single line...
-for m in Apple Sony Panasonic "Hewlett Packard" Nokia; do echo "Manufacturer is:" $m;done
-
-Loop through all the files in a 'lodef' folder, for each one, copy an identically named file from the 'hidef' folder into the 'matching' folder:
-for filename in $(ls lodef/); do cp hidef/$filename matching/$filename; done;
-
-Ping 5 consecutive ip addresses:
-for i in 1 2 3 4 5; do ping -c 2 10.1.1.$i; done
-
-Loop 100 times:
-for i in $(seq 1 100); do echo -n "Hello World${i} "; done
-
-
-Loop through a folder of .jpg files and rename (mv) all the filenames, replacing all spaces with underscores '_':
-
-# First set the Field Separator to a Newline only
-OIFS=$IFS
-IFS=$'\n'
-
-for f in *.jpg
-do mv "$f" "${f// /_}"
-done
-# Restore the original field separator
-IFS=$OIFS
-
-
-Loop through the arguments passed to a function:
-foo ()
-{
- for ARG in "$@";do echo $ARG; done
-}
-# try it
-foo abc 123 "Hello World" 'bash rules'
+image002
 
 
 *See also: case, eval, if, gawk, m4, until, while

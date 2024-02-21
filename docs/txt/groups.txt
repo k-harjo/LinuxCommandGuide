@@ -1,12 +1,20 @@
-groups - Print group names a user is in.
+groups are the collection of users. Groups make it easy to manage users with the same security and access privileges. 
+
+The `groups` is a powerful tool that helps administrators to view the group memberships of a user and retrieve information about user groups on a Linux System. 
 
 
-Syntax
+Syntax  
 
-     groups [username]...
-Prints the names of the primary and any supplementary groups for each given username, or the current process if no names are given.
+groups [options] [username] 
 
-If names are given, the name of each user is printed before the list of that user's groups.
+
+Examples
+
+Provided with a username: groups demon 
+image001
+
+To display group membership for the current user: groups 
+image002
 
 
 *See also: env, id, logname, printenv, users, uname, who, whoami

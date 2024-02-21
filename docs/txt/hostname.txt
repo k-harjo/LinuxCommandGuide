@@ -1,10 +1,22 @@
-hostname - Print or set system name
+hostname command is used to obtain the DNS(Domain Name System) name and set the system’s hostname or NIS(Network Information System) domain name. 
 
 
 Syntax
 
-      hostname [name]
-With no arguments, 'hostname' prints the name of the current host system. With one argument, it sets the current host name to the specified string. You must have appropriate privileges to set the host name.
+	hostname -[option] [file] 
+
+
+Examples
+
+`-i` Option in `hostname` command in Linux 
+Display the IP address of the host 
+	hostname - i 
+image001
+
+`-I` Option in `hostname` command in Linux  
+This option is used to get all IP (network) addresses. The option doesn’t depend on resolvability of hostname. 
+	hostname –I 
+image002
 
 
 *See also: env, groups, id, logname, tty, uname, users, who, whoami

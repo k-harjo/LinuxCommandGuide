@@ -1,25 +1,15 @@
 case - Conditionally perform a command, case will selectively execute the command-list corresponding to the first pattern that matches word.
 
-Syntax 
-      case word in [ [(] pattern [| pattern]...) command-list ;;]... esac
-The '|' is used to separate multiple patterns, and the ')' operator terminates a pattern list. A list of patterns and an associated command-list is known as a clause. Each clause must be terminated with ';;'.
+The case command in Linux is the best alternative when we had to use multiple if/elif on a single variable. It is used to execute the commands based on the pattern matching. 
 
-The word undergoes tilde expansion, parameter expansion, command substitution, arithmetic expansion, and quote removal before matching is attempted. Each pattern undergoes tilde expansion, parameter expansion, command substitution, and arithmetic expansion. There can be an arbitrary number of case clauses, each terminated by a ';;'. The first pattern that matches determines the command-list that is executed.
 
-Here is an example using case in a script that could be used to describe one interesting feature of an animal:
+Syntax
 
-echo -n "Enter the name of an animal: "
-read ANIMAL
-echo -n "The $ANIMAL has "
-case $ANIMAL in
-  (horse | dog | cat) legs=four;;
-  (man | kangaroo ) legs=two;;
-  (*) echo -n legs="an unknown number of";;
-esac
-echo $legs" legs."
-The return status is zero if no pattern is matched. Otherwise, the return status is the exit status of the command-list executed.
+case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac 
 
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help case
+
+Example: 
+image001
 
 
 *See also: if, for, until, select, while

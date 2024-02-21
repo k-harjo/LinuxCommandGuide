@@ -1,9 +1,9 @@
-dirs - Display the list of currently remembered directories.
+dirs command shell builtin is used to display the list of currently remembered directories. By default, it includes the directory you are currently in. A directory can get into the list via pushd command followed by the dir name and can be removed via popd command. SYNTAX:dirs [-clpv] [+N] [-N] 
 
 
 Syntax
 
-      dirs [+N | -N] [-clpv]
+	dirs [-clpv] [+N] [-N]
 
 
 Options
@@ -25,9 +25,18 @@ Options
           line. 
      -v   Causes dirs to print the directory stack with one entry per 
           line, prefixing each entry with its index in the stack.
-Equivalent to 'ls -C -b'; that is,by default files are listed in columns, sorted vertically, and special characters are represented by backslash escape sequences.
 
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help dirs
+
+Examples
+
+/home/vivek/Rocket -> ~/Rocket 
+image001
+
+Using Options:
+image002
+
+Using Parameters:
+image003
 
 
 *See also: popd, pushd

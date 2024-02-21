@@ -1,1 +1,45 @@
-free - Display memory usage
+free - displays the total amount of free space available along with the amount of memory used and swap memory in the system, and also the buffers used by the kernel 
+
+
+Syntax
+
+$free [OPTION] 
+ 
+OPTION: refers to the options compatible with free command. 
+
+
+Key
+
+-b, – -bytes : It displays the memory in bytes. 
+
+-k, – -kilo : It displays the amount of memory in kilobytes(default). 
+
+-m, – -mega : It displays the amount of memory in megabytes. 
+
+-g, – -giga : It displays the amount of memory in gigabytes. 
+
+– – tera : It displays the amount of memory in terabytes. 
+
+-h, – -human : It shows all output columns automatically scaled to shortest three digit unit and display the units also of print out. The units used are B(bytes), K(kilos), M(megas), G(gigas), and T(teras). 
+
+-c, – -count : It displays the output c number of times and this option actually works with -s option. 
+
+-l, – -lohi : It shows the detailed low and high memory statistics 
+
+-o, – -old : This option disables the display of the buffer adjusted line. 
+
+-s, – -seconds : This option allows you to display the output continuously after s seconds delay. In actual, the usleepsystem call is used for microsecond resolution delay times. 
+
+-t, – -total : It adds an additional line in the output showing the column totals. 
+
+– -help : It displays a help message and exit. 
+
+-V, – -version : It displays version info and exit. 
+
+
+Examples
+
+image001
+
+image002
+

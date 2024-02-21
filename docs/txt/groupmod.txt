@@ -1,13 +1,13 @@
-groupmod - Modify a user security group.
-
+groupmod command is used to modify or change the existing group on Linux system. 
 
 Syntax
 
       groupmod [options] GROUP 
+
 groupmod modifies the definition of the specified GROUP by modifying the appropriate entry in the group database.
 
 
-Options
+Key
 
    -g, --gid GID
    
@@ -39,36 +39,9 @@ Options
        Make sure the password respects the system's password policy. 
 
 
-Configuration
+Example
 
-The following configuration variables in /etc/login.defs change the behavior of this tool:
-
-MAX_MEMBERS_PER_GROUP (number)
-Maximum members per group entry. When the maximum is reached, a new group entry (line) is started in /etc/group (with the same name, same password, and same GID).
-The default value is 0, meaning that there are no limits in the number of members in a group.
-This feature (split group) permits to limit the length of lines in the group file. This is useful to make sure that lines for NIS groups are not larger than 1024 characters.
-If you need to enforce such limit, you can use 25.
-
-Split groups might not be supported by all tools (even in the Shadow toolsuite). You should not use this variable unless you really need it.
-
-
-Files
-
-/etc/group Group account information.
-/etc/gshadowSecure group account information.
-
-
-Exit Values
-
-The groupmod command exits with the following values:
-
- 0  Success 
- 2  Invalid command syntax 
- 3  Invalid argument to option 
- 4  Specified group doesn't exist 
- 6  Specified group doesn't exist 
- 9  Group name already in use 
- 10 Can't update group file 
+image001
 
 
 *See also: groupadd, groupdel, usermod

@@ -1,10 +1,30 @@
-dir - Briefly list directory contents.
+dir command differs from ls command in the format of listing contents that is in default listing options. By default, dir command lists the files and folders in columns, sorted vertically and special characters are represented by backslash escape sequences. But unlike ls, when the output is on terminal, it does not produce colored output as ls does.  
 
 
 Syntax
+	
+	dir [OPTION] [FILE] 
 
-     dir (also installed as 'd')
-Equivalent to 'ls -C -b'; that is,by default files are listed in columns, sorted vertically, and special characters are represented by backslash escape sequences.
+
+Key 
+
+	-a, -all	Displays all the hidden files(starting with `.`) along with two files denoted by `.` and `..` which signals for current and previous directory respectively.
+
+	-l, –author 	Displays author of all the files. -l is required to display the contents in the form of a list 
+	
+	-color		Used to colorize the output. 
+
+
+Examples
+
+dir -a
+image001
+
+dir -l –author 
+image002
+
+dir –color 
+image003
 
 
 *See also: ls

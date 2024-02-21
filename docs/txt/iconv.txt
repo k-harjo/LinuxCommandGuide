@@ -1,4 +1,4 @@
-iconv - Convert encoding of a file from one character set encoding to another.
+iconv command is used to convert some text in one encoding into another encoding. If no input file is provided then it reads from standard input. Similarly, if no output file is given then it writes to standard output. If no from-encoding or to-encoding is provided then it uses current local’s character encoding.  
 
 
 Syntax
@@ -7,7 +7,7 @@ Syntax
       iconv -l
 
 
-Options
+Key
 
    -f encoding
    --from-code encoding
@@ -66,18 +66,13 @@ The iconv program converts the encoding of characters in inputfile from one code
 
 Examples
 
-Convert input.txt from ISO-8859-1 to UTF-8 and save as output.txt
+Print the list of all character set encodings   
+iconv -l 
+image001
 
-$ iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
-
-Script to convert all .HTML files in a directory from Windows 1242 to UTF8 (from brianwc/ShareAlike.org)
-
-#/bin/bash
-LIST='ls *.html'
-for i in $LIST;
-do iconv -f WINDOWS-1252 -t UTF8 $i -o $i."utf8";
-mv $i."utf8" $i;
-done
+Reading and writing from a file 
+iconv -f UTF-8 -t ASCII//TRANSLIT -o out.txt in.txt 
+image002
 
 
 *See also: uuencode

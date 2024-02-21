@@ -1,4 +1,10 @@
-id - Print real and effective user id (uid) and group id (gid). Prints identity information about the given user, or if no username is specified the current process.
+id command in Linux is used to find out user and group names and numeric ID’s (UID or group ID) of the current user or any other user in the server. This command is useful to find out the following information as listed below: 
+
+	-User name and real user id. 
+	-Find out the specific Users UID. 
+	-Show the UID and all groups associated with a user. 
+	-List out all the groups a user belongs to. 
+	-Display security context of the current user. 
 
 
 Syntax
@@ -6,7 +12,7 @@ Syntax
       id [options]... [username]
 
 
-Options
+Key
 
    -g
    --group
@@ -30,8 +36,14 @@ Options
    --user
        Print only the user id.
 
-By default, id prints the real user id, real group id, effective user id if different from the real user id, effective group id if different from the real group id, and supplemental group ids. Each of these numeric values is preceded by an identifying string and followed by the corresponding user or group name in parentheses.
-The options cause 'id' to print only part of the above information.
+
+Example
+
+id
+image001
+
+id -u master
+image002
 
 
 See also: echo, env, groups, hostname, logname, uname, users, who, whoami

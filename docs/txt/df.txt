@@ -1,4 +1,4 @@
-df - (Disk Free) display free disk space. With no arguments, 'df' reports the space used and available on all currently mounted filesystems (of all types). Otherwise, 'df' reports on the filesystem containing each argument FILE.
+disk free also known as `df`, which is a powerful utility that provides valuable information on disk space utilization. The df command displays information about file system disk space usage on the mounted file system. This command retrieves the information from `/proc/mounts` or `/etc/mtab`. By default, df command shows disk space in Kilobytes (KB) and uses the SI unit suffixes (e.g, M for megabytes, G for gigabytes) for clarity. 
 
 
 Syntax
@@ -112,13 +112,13 @@ If an argument FILE is a disk device file containing a mounted filesystem, 'df' 
 
 Examples
 
-List free disk space:
+This will display information about all the mounted file systems which will include total size, used space, usage percentage, and the mount point. 
+image001
 
-df -h
+To display all the file system, use -a option 
 
-Email a disk free space report:
-
-df -h | grep 'File' -A1 | mail -s "Disk space Report" you@example.com
+df –a 
+image002
 
 
 *See also: du, quot, tunefs, mnttab, attributes

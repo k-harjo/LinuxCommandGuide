@@ -1,9 +1,10 @@
-dmesg - Print kernel (and driver) messages, control the kernel ring buffer.
+dmesg command also called as “driver message” or “display message” is used to examine the kernel ring buffer and print the message buffer of kernel. The output of this command contains the messages produced by the device drivers. Usage of dmesg : When the computer boots up, there are lot of messages(log) generated during the system start-up. So you can read all these messages by using dmesg command. The contents of kernel ring buffer are also stored in /var/log/dmesg file. The dmesg command can be useful when system encounters any problem during its start-up, so by reading the contents of dmesg command you can actually find out where the problem occurred(as there are many steps in system boot-up sequence).  
 
 
 Syntax
 
       dmesg [ -c ] [ -n level ] [ -s bufsize ]
+
 The dmesg program allows you to print system messages from the buffer (mostly kernel and drivers loading at bootup) and can also be used to configure the kernel ring buffer.
 
 
@@ -29,13 +30,7 @@ As it's a ring-buffer, it will automatically cycle out old information when the 
 
 Examples
 
-Print all the bootup messages to a file:
-
-$ sudo dmesg > messages.txt
-
-Print recent messages:
-
-$ sudo dmesg | tail -f
+image001
 
 
 *See also: chkconfig, syslogd

@@ -1,4 +1,6 @@
-export - Set an environment variable. The supplied names are marked for automatic export to the environment of subsequently executed commands.
+export is bash shell BUILTINS commands, which means it is part of the shell. It marks an environment variables to be exported to child-processes.  
+
+Export is defined in POSIX as The shell shall give the export attribute to the variables corresponding to the specified names, which shall cause them to be in the environment of subsequently executed commands. If the name of a variable is followed by = word, then the value of that variable shall be set to the word. In simple terms, environment variables are set when you open a new shell session. at any time if you change any of the variable values, the shell has no way of picking that change. The export command, on the other hand, provides the ability to update the current shell session about the change you made to the exported variable. You don’t have to wait until new shell session to use the value of the variable you changed. 
 
 
 Syntax
@@ -22,27 +24,13 @@ Options
 If no names are supplied, or if the '-p' option is given, a list of exported names is displayed.
 
 
-Viewing environment variables
-
-To view the environment variable called MYVAR run:
-echo "$MYVAR"
-
-Alternatively the env command can be used to display, set, or remove environment variables.
-
-The return status is zero unless an invalid option is supplied, one of the names is not a valid shell variable name, or '-f' is supplied with a name that is not a shell function.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [e]xport
-
-
 Examples
 
-Set the shell variable 'MYDEPT' equal to 'Sales' :
+$ export -p
 
- MYDEPT=Sales
- echo $MYDEPT
-To make the change permanent, you can export this shell variable as an environment variable:
+Without any argument: To view all the exported variables.   
 
- export MYDEPT
+image001
 
 
 *See also: env, echo, hostname, local, printenv, readonly, shift, unset, Variables

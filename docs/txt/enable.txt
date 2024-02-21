@@ -1,9 +1,11 @@
-enable - Enable and disable builtin shell commands.
+enables and disables are the built-in shell commands. enable command is used to start the printers or classes whereas the disable command is used to stop the printers or classes. 
 
 
 Syntax
 
        enable [-a] [-dnps] [-f filename] [name …]
+
+       disable [-c] [-W] [ -r [ reason ] ] printer 
 
 
 Key
@@ -21,13 +23,6 @@ Key
         With no other arguments, the list consists of all enabled shell builtins. 
 
    -s   Restrict to enable only POSIX special builtins
-
-Disabling a builtin allows a disk command which has the same name as a shell builtin to be executed without specifying a full pathname, even though the shell normally searches for builtins before disk commands.
-
-If there are no options, a list of the shell builtins is displayed.
-If '-s' is used with '-f', the new builtin becomes a special builtin.
-
-The return status is zero unless a name is not a shell builtin or there is an error loading a new builtin from a shared object.
 
 
 Examples

@@ -1,5 +1,4 @@
-cpio - Copy files to and from archives.
-The following archive formats are supported: binary, old ASCII, new ASCII, crc, HPUX binary, HPUX old ASCII, old tar, and POSIX.1 tar. The tar format is provided for compatibility with the tar program. By default, cpio creates binary format archives, for compatibility with older cpio programs. When extracting from archives, cpio automatically recognizes which kind of archive it is reading and can read archives created on machines with a different byte-order.
+cpio stands for “copy in, copy out“. It is used for processing the archive files like *.cpio or *.tar. This command can copy files to and from archives.  
 
 
 Syntax
@@ -209,33 +208,20 @@ Options:
        Print the cpio program version number and exit.
 
 
-EXIT STATUS
-
-   The cpio utility exits 0 on success, and >0 if an error occurs.
-The cpio command is traditionally used to copy file hierarchies in conjunction with the find command. When creating an archive in copy-out mode give find the -depth option to minimize problems with permissions on directories that are unreadable.
-
-The -depth option forces find to print of the entries in a directory before printing the directory itself. This limits the effects of restrictive directory permissions by printing the directory entries in a directory before the directory name itself.
-
 Examples
-Archive the content of a single directory, -ov = Copy-out + view all files:
 
-   ls | cpio -ov > directory.cpio
-Copy all files from src to dest, the find command can provide the file list to cpio,
- -pmud = Set file modification time + Unconditionally overwrite + Create directories as necessary:
-   find src | cpio -pmud dest
-Archive an entire directory tree:
+To create a *.cpio file: We can create *.cpio files containing files and directory with the help of cpio command.  
 
-   find . -print -depth | cpio -ov > tree.cpio
-Take the contents of the archive tree.cpio and extract it to the current directory
- -idv = Copy-In + Create directories + verbose
+SYNTAX:cpio -ov < name-list > archive 
 
-   cpio -idv < tree.cpio
-Copy files from src to dest that are more than 2 days old and which contain the word 'foobar':
-   find src -mtime +2 | xargs grep -l foobar | cpio -pdmu dest
-By carefully selecting options to the find command and combining it with other standard utilities, it is possible to exercise very fine control over which files are copied. This next example copies files from src to dest that are more than 2 days old and whose names match a particular pattern:
-   find src -mtime +2 | grep foo[bar] | cpio -pdmu dest
-“R2D2! You know better than to trust a strange computer!” ~ C3PO (The Empire Strikes Back)
+Here, -ov is used as -o create the new archive and -v list the files processed. 
+image001
 
+
+SYNTAX:cpio -ov -H tar > archive 
+
+To create *.tar archive file using cpio: The cpio helps to create a *.tar archive. 
+image002
 
 
 *See also: info cpio, cp, dd, install, mv, rcp

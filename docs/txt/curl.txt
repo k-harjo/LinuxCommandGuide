@@ -1,4 +1,4 @@
-curl - Transfer data from or to a server, using one of the protocols: HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE. (To transfer multiple files use wget or FTP.)
+curl is a command-line tool to transfer data to or from a server, using any of the supported protocols (HTTP, FTP, IMAP, POP3, SCP, SFTP, SMTP, TFTP, TELNET, LDAP, or FILE). curl is powered by Libcurl. This tool is preferred for automation since it is designed to work without user interaction. curl can transfer multiple files at once.  
 
 
 Syntax 
@@ -225,37 +225,15 @@ Key
    --proxy [protocol://][user:password@]proxyhost[:port]
         Use the  specified HTTP proxy.
         If the port number is not specified, it is assumed at port 1080.
-This page is a heavily abbreviated selection of the full options, for more detail including return codes, run man curl
-
-curl is a powerful tool, please use it responsibly, regularly and repeatedly downloading files from the same website can result in your IP being automatically flagged/blocked.
-
-The return status is zero if no errors occur, non-zero otherwise.
 
 
 Examples
 
-Retrieve a web page and display in the terminal, use --include (-i) option to also display header information:
+curl -o hello.zip ftp://speedtest.tele2.net/1MB.zip 
+image001
 
-$ curl https://ss64.com
-$ curl https://ss64.com -i
-
-Retrieve a web page and save to a file
-$ curl https://ss64.com/bash/ -o ss64.html
-
-Retrieve a web page, or its redirected target:
-$ curl ss64.co/bash/
-$ curl ss64.co/bash/ --location
-
-Limit the rate of data transfer to 1 Kilobytes/sec:
-$ curl https://ss64.com/bash/ --limit-rate 1k -o ss64.html
-
-Retrieve a web page, passing a specific User-Agent HTTP header (some websites use this to sniff the browser used):
-$ curl -A "Mozilla FireFox(72.0)" https://example.com
-
-Download via a proxy server:
-$ curl -x proxy.example.com:3128 https://ss64.com/bash/
-"We are shallow because we have become enslaved by gross materialism, the glitter of gold and its equivalents, for which reason we think that only the material goods of this earth can satisfy us and we must therefore grab as much as can while we are able" ~ F. Sionil Jose
-
+curl -O ftp://speedtest.tele2.net/1MB.zip 
+image002
 
 *See also: HTTPie, ftp
 

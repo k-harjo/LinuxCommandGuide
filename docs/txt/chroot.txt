@@ -1,18 +1,42 @@
-chroot - Run a command with a different root directory. On many systems, only the super-user can do this.
+chroot command in Linux/Unix system is used to change the root directory. Every process/command in Linux/Unix like systems has a current working directory called root directory. It changes the root directory for currently running processes as well as its child processes. A process/command that runs in such a modified environment cannot access files outside the root directory. This modified environment is known as “chroot jail” or “jailed directory”. Some root user and privileged process are allowed to use chroot command. 
+
+image001
+
+“chroot” command can be very useful: 
+	To create a test environment. 
+	To recover the system or password. 
+	To reinstall the bootloader. 
 
 
-SYNTAX
+Syntax
 
      chroot NEWROOT [COMMAND [ARGS]...]
 
      chroot OPTION
-Ordinarily, filenames are looked up starting at the root of the directory structure, i.e. '/'
 
-'chroot' changes the root to the directory NEWROOT (which must exist) and then runs COMMAND with optional ARGS.
+     chroot /path/to/new/root command 
 
-If COMMAND is not specified, the default is the value of the 'SHELL' environment variable or '/bin/sh' if not set, invoked with the '-i' option.
+     chroot /path/to/new/root /path/to/server 
 
-The only options are '--help' and '--version'
+     chroot [options] /path/to/new/root /path/to/server 
+
+
+Example
+
+Step 1: We will create a mini-jail with bash and basic commands only. Let’s create a “jail” directory inside the “home” directory, which will be our new root.$ mkdir $HOME/jail 
+
+Step 2: Create directories inside “$HOME/jail”:$ mkdir -p $HOME/jail/{bin, lib64} 
+$ cd $HOME/jail 
+ 
+Step 3: Copy /bin/bash and /bin/ls into $HOME/jail/bin/ location using cp command:$ cp -v /bin/{bash, ls} $HOME/jail/bin 
+
+Step 4: Use ldd command to print shared libraries:$ ldd /bin/bash 
+
+image001
+
+Step 5: Copy required libraries into $HOME/jail/lib64/ location using cp command:cp -v libraries/displayed/by/above/command $HOME/jail/lib64Similarly, copy the libraries of ls command into $HOME/jail/lib64 location. 
+
+Step 6: Finally, chroot into your mini-jail:$ sudo chroot $HOME/jail /bin/bash 
 
 
 *See also: builtin, cron, exec, if, nohup, .source, su, watch

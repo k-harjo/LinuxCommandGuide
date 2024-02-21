@@ -1,4 +1,4 @@
-date - Display or change the date.
+date command is used to display the system date and time. date command is also used to set date and time of the system. By default the date command displays the date in the time zone on which unix/linux operating system is configured. You must be the super-user (root) to change the date and time. 
 
 
 Syntax
@@ -6,14 +6,9 @@ Syntax
       date [option]... [+Format]
   
       date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
-'date' with no arguments prints the current time and date, in the format of the %c directive (described below).
-
-If given an argument that starts with a +, date prints the current time and date (or the time and date specified by the --date option, see below) in the format defined by that argument, which is the same as in the strftime function.
-
-Except for directives, which start with %, characters in the format string are printed unchanged. The directives are described below.
 
 
-Options:
+Key
 
   -d, --date=String         Display time described by String, instead of 'now'
                             this can be in almost any common format.  
@@ -136,133 +131,27 @@ The - and _ are GNU extensions. Here is an example illustrating the differences:
      =>  1/ 2
 
 
-Here are the same format codes in categories:
-
-     Date:
-       %D    Date in mm/dd/yy format (06/24/13)
-       %x    Date in standard format for locale (09/24/13 for English-US)
-        
-     Year:
-       %C   Century (20 for 2015)
-       %Y   Year in 4-digit format (2015)
-       %y   Year in 2-digit format (14)
-       %G   Same as 'Y'
-       %g   Same as 'y'
-        
-     Month: 
-       %b   Month name - abbreviated (Jan)
-       %B   Month name - full (January)
-       %h   Same as 'b'
-       %m   Month number (09)
-        
-     Week:     
-       %U   Week number of year with Sunday as first day of week (00..53)
-       %V   ISO week number, with Monday as first day of week (01..53)
-       %W   week number of year with Monday as first day of week (00..53)
-        
-     Day:
-       %a   Day of the week - abbreviated name (Mon)
-       %A   Day of the week - full name (Monday)
-       %u   Day of the week - number (Monday = 1)
-       %d   Day of the month - 2 digits (05)
-       %e   Day of the month - digit preceded by a space ( 5)
-       %j   Day of the year - (1-366)
-       %u   day of week (1..7); 1 is Monday
-       %w   Same as 'u'
-        
-     Time:
-       %p   AM or PM
-       %r   Time in 12-hour format (09:15:36 AM)
-       %R   Time in 24-hour format - no seconds (17:45)
-       %T   Time in 24 hour format (17:45:52)
-       %X   Same as 'T'
-       %Z   Time offset from UTC (-07) This generally consists of Time Zone+DST
-        
-     Hour: 
-       %H   Hour in 24-hour format (17)
-       %I   Hour in 12 hour format (05)
-       %k   Same as 'H'
-       %l   Same as 'I' (Upper-case I = Lower-case L)
-        
-     Minutes & Seconds:
-       %M   Minutes (35)
-       %S   Seconds (05)
-       %s   Seconds elapsed since January 1, 1970 00:00:00 UTC (Unix time)
-
-
-Setting the time
-If given an argument that does not start with +, date sets the system clock to the time and date specified by that argument (as described below). You must have appropriate privileges to set the system clock. The --date and --set options can not be used with such an argument. The --universal option can be used with such an argument to indicate that the specified time and date are relative to Coordinated Universal Time rather than to the local time zone.
-
-The argument must consist entirely of digits, which have the following meaning:
-
- MM     month
- DD     day within month
- HH     hour
- MM     minute
- CC     first two digits of year (optional)
- YY     last two digits of year (optional)
- SS     second (optional) 
- 
- The '--set' option also sets the system clock; see the examples below.
 Examples
-Print the date of the day before yesterday:
-$ date --date='2 days ago'
 
-Rename a file with the current date and time
-$ STAMPME=$HOME/demo_file_$(date +%Y%m%d-%H%M).txt
-$ mv $HOME/demo_file $STAMPME
+Date and time of previous day 
+date --date="yesterday" 
+image001
 
-Show the time on the west coast of the US (use tzselect(1) to find TZ)
+Date and time of 2 months ago 
+date --date="2 month ago" 
+image002
 
-$ TZ='America/Los_Angeles'
-$ date
+Date and time of 10 days ago 
+date –date=”10 day ago” 
+image003
 
-Show the local date/time for 9AM next Friday on the west coast of the US
+How to Display Future Dates 
+Date and time of upcoming particular week day.   
 
-$ date --date='TZ="America/Los_Angeles" 09:00 next Fri'
-
-Print the date of the day three months and one day hence:
-$ date --date='3 months 1 day'
-
-Print the day of year of Christmas in the current year:
-$ date --date='25 Dec' +%j
-
-Print the current full month name and the day of the month:
-$ date '+%B %d'
-Note that the '%d' expands to a zero-padded two-digit field, for example:
-$ date -d 1may '+%B %d'  will print 'May 01'.
-
-Print a date without the leading zero for one-digit days of the month, you can use the (GNU extension) '-' modifier to suppress the padding altogether.
-$ date -d=1may '+%B %-d'
-
-Print the current date and time in the format required by many non-GNU versions of 'date' when setting the system clock:
-$ date +%m%d%H%M%Y.%S
-
-Set the system date and time
-$ date --set="2012-6-29 11:59 AM"
-
-Set the system clock forward by two minutes:
-$ date --set='+2 minutes'
-
-Print the date as an ISO 8601 compliant date/time string:
-$ date -I
-
-To convert a date string to the number of seconds since the epoch 1970-01-01 00:00:00 GMT (Unix time), use the '--date' option with the '%s' format. That can be useful in sorting and/or graphing /or comparing data by date. The following command outputs the number of the seconds since the epoch for the time one second later than the epoch, but in time zone five hours later (Cambridge,Massachusetts), thus a total of five hours and one second after the epoch:
-
-$ date --date='2000-01-01 00:00:01 UTC +5 hours' +%s
-946706400
-
-Suppose you had not specified time zone information in the example above. Then, date would have used your computer's idea of the time zone (and DST) when interpreting the string. Here's what you would get if you were in Greenwich, England:
-
-# local time zone will be used
-$ date --date='2000-01-01 00:00:01' +%s
-946684800
-
-Seconds since the 1970 epoch can be useful when sorting or graphing dated data . But to convert a number of seconds back to a more readable date, use a command like:
-
-$ date -d '1970-01-01 946684800 sec' +"%Y-%m-%d %T %z"
-2000-01-01 00:00:00 +0000
-“Carpe Diem - Seize the day” ~ Horace
+Command:  
+$date --date="next tue" 
+Output:  
+Tue Oct 17 00:00:00 PDT 2017 
 
 
 *See also: cal, crontab, time, times, touch

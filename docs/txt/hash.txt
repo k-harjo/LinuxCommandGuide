@@ -1,4 +1,4 @@
-hash - Remember the full pathnames of commands specified as name arguments, so they need not be searched for on subsequent invocations.
+hash command in Linux system is the built-in command of bash which is used to maintain a hash table of recently executed programs. It remembers and shows the program locations. It will give the full pathname of each command name. 
 
 
 Syntax
@@ -6,18 +6,26 @@ Syntax
       hash [-r] [-p filename] [name] 
 
 
-Options
+Key
 
-      -r   Reset, causes the shell to forget all remembered locations.
+	-d: This is used to forget the remembered location of each NAME. 
 
-      -p   Use filename as the location of name (don't search $PATH).
-The commands are found by searching through the directories listed in $PATH.
+	-l: It will display in a format that may be reused as input. 
 
-If no arguments are given, information about remembered commands is printed.
+	-p: pathname use PATHNAME as the full pathname of NAME. 
 
-The return status is zero unless a name is not found or an invalid option is supplied.
+	-r: Forget all remembered locations. 
 
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help hash
+	-t: To display the remembered location of each NAME, preceding each location with the corresponding NAME if multiple NAMEs are given. 
+
+
+Examples
+
+hash
+image001
+
+hash -l
+image002
 
 
 *See also: dirname, which

@@ -1,4 +1,4 @@
-csplit - Split a file into context-determined pieces.
+The csplit command is used to split any file into many parts as required by the user. The parts are determined by context lines. Output pieces of FILE separated by PATTERN(s) to files ‘xx00’, ‘xx01’, …, and output byte counts of each piece to standard output.  
 
 
 Syntax
@@ -7,7 +7,7 @@ Syntax
 Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ..., and output byte counts of each piece to standard output. (standard input if FILE is - ).
 
 
-Options
+Key
 
    -f PREFIX
    --prefix=PREFIX
@@ -50,41 +50,13 @@ Options
    --silent
    --quiet
        Do not print counts of output file sizes.
-Read standard input if FILE is -. Each PATTERN can be:
 
-The contents of the output files are determined by the PATTERN arguments, as detailed below. An error occurs if a PATTERN argument refers to a nonexistent line of the input file (e.g., if no remaining line matches a given regular expression). After every PATTERN has been matched, any remaining input is copied into one last output file.
 
-By default, 'csplit' prints the number of bytes written to each output file after it has been created.
+Examples
 
-The types of pattern arguments are:
+image001
 
-   N
-      Create an output file containing the input up to but not including
-      line N (a positive integer).  If followed by a repeat count, also
-      create an output file containing the next LINE lines of the input
-      file once for each repeat.
-
-   /REGEXP/[OFFSET]
-      Create an output file containing the current line up to (but not
-      including) the next line of the input file that contains a match
-      for REGEXP.  The optional OFFSET is a '+' or '-' followed by a
-      positive integer.  If it is given, the input up to the matching
-      line plus or minus OFFSET is put into the output file, and the
-      line after that begins the next section of input.
-
-   %REGEXP%[OFFSET]
-      Like the previous type, except that it does not create an output
-      file, so that section of the input file is effectively ignored.
-
-   {REPEAT-COUNT}
-      Repeat the previous pattern REPEAT-COUNT additional times.
-      REPEAT-COUNT can either be a positive integer or an asterisk,
-      meaning repeat as many times as necessary until the input is
-      exhausted.
-
-The output files' names consist of a prefix ('xx' by default) followed by a suffix. By default, the suffix is an ascending sequence of two-digit decimal numbers from '00' and up to '99'. In any case, concatenating the output files in sorted order by filename produces the original input file.
-
-By default, if 'csplit' encounters an error or receives a hangup, interrupt, quit, or terminate signal, it removes any output files that it has created so far before it exits.
+image002
 
 
 

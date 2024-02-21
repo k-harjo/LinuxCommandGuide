@@ -1,5 +1,4 @@
-exit - Exit from a program, shell or log out of a Unix network.
-
+exit command in linux is used to exit the shell where it is currently running. It takes one more parameter as [N] and exits the shell with a return of status N. If n is not provided, then it simply returns the status of last command that is executed.
 
 Syntax
 
@@ -8,15 +7,17 @@ Syntax
 Key
 
    n   Set the exit status to n (default=0)
+
 If n is omitted, the exit status is that of the last command executed. A trap on EXIT is executed before the shell terminates.
 
-The exit status code can be displayed with echo $?
 
-The shell variable SHLVL displays how deeply nested you are in the bash shell, the first session opened in a terminal will be 1 and each subsequent shell session opened will increment the number. If SHLVL is greater than 1 then exit will exit the shell, if SHLVL is = 1, then exit will logout and close the terminal.
+Examples
 
-In a subshell SHLVL does not increment, but instead you can compare $BASHPID to $$
+exit: Exit Without Parameter 
+image001
 
-exit is a bash built in command.
+exit [n]: Exit With Parameter 
+image002
 
 
 *See also: bash, logout, lo, bye, quit, return, shutdown

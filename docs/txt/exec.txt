@@ -1,12 +1,16 @@
-exec - Execute a command
+exec command in Linux is used to execute a command from the bash itself. This command does not create a new process it just replaces the bash with the command to be executed. If the exec command is successful, it does not return to the calling process.  
 
 
 Syntax
 
-      exec [-cl] [-a name] [command [arguments]]
+exec [-cl] [-a name] [command [arguments]] [redirection ...] 
+
+Note: exec command does not create a new process. When we run the exec command from the terminal, the ongoing terminal process is replaced by the command that is provided as the argument for the exec command. The exec command can be used in two modes: 
+
+Exec with a command as an argument: In the first mode, the exec tries to execute it as a command passing the remaining arguments, if any, to that command and managing the redirections, if any 
 
 
-Options
+Key
 
       -c   Causes command to be executed with an empty environment.
 
@@ -15,23 +19,12 @@ Options
 
       -a   The shell passes name as the zeroth argument to command.
 
-If command is supplied, it replaces the shell without creating a new process. If no command is specified, redirections can be used to affect the current shell environment.
 
-If there are no redirection errors, the return status is zero; otherwise the return status is non-zero.
+Examples
 
-To run an executable file or a shell script from the command line it is often not necessary to use exec at all, just prefix the filename with ./
-bash will only search the path not the current working directory for the file.
+image001
 
-To execute a program/script in the current working directory use:
-
-./file_name
-or
-./ScriptName
-
-You might be tempted to 'fix' this by adding '.' to $PATH but this is widely considered to be bad practice for security reasons.
-A better plan is putting all shell scripts into a folder and adding that one folder to your $PATH
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [e]xec
+image002
 
 
 *See also: exit, builtin, crontab, chroot, if, nohup, .source, su, type, watch

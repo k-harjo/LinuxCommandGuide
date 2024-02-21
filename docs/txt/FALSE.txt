@@ -1,16 +1,18 @@
-false - Do nothing, returning a non-zero (false) exit status.
+false command is used to return an exit status code (“1” by default) that indicates failure. It is useful when the user wants a conditional expression or an argument to always be unsuccessful. When no argument is passed to the false command, it fails with no output and exit status as 1.  
 
 
 Syntax
 
-      false
-'false' does nothing except return an exit status of 1, meaning "failure". It can be used as a place holder in shell scripts where an unsuccessful command is needed.
+false [argument] 
 
-'false' ignores all command line arguments, even --help and --version, since to do otherwise would change expected behavior that some programmers might be relying on.
 
-This version of 'false' is implemented as a C program, and is thus more secure and faster than a shell script implementation, and can safely be used as a dummy shell for the purpose of disabling accounts.
+Examples
 
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help false
+image001
+
+if false; then echo "It's false"; else echo "It's True"; fi 
+
+image002
 
 
 *See also: true, yes

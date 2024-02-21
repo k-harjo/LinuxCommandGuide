@@ -1,14 +1,22 @@
-eval - Evaluate several commands/arguments
+eval is a built-in Linux command which is used to execute arguments as a shell command. It combines arguments into a single string and uses it as an input to the shell and execute the commands.  
 
 
 Syntax
 
       eval [arguments]
+
 The arguments are concatenated together into a single command, which is then read and executed, and its exit status returned as the exit status of eval.
 
 If there are no arguments or only empty arguments, the return status is zero.
 
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [e]val
+
+Examples
+
+In the below figure, you can see that cd Desktop command is stored in a variable “CD” as a shell command. Now you can use this “CD” as an argument with eval command. 
+image001
+
+eval --help
+image002
 
 
 *See also: case, expr, for, gawk, test

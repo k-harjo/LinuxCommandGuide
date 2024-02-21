@@ -1,4 +1,8 @@
-egrep (Extended grep) - Search file(s) for lines that match an extended expression.
+egrep is a pattern searching command which belongs to the family of grep functions. It works the same way as grep -E does. It treats the pattern as an extended regular expression and prints out the lines that match the pattern. If there are several files with the matching pattern, it also displays the file names for each line.  
+
+Note: The egrep command used mainly due to the fact that it is faster than the grep command. The egrep command treats the meta-characters as they are and do not require to be escaped as is the case with grep. This allows reducing the overhead of replacing these characters while pattern matching making egrep faster than grep or fgrep.  
+
+Options: Most of the options for this command are same as grep. 
 
 
 Syntax
@@ -14,7 +18,7 @@ If multiple file names are provided on the command line, each output line is pre
 egrep is usually faster than grep or fgrep.
 
 
-OPTIONS
+Key
 
   -c  Print out a count of the lines that matched the pattern, instead of the lines themselves.
 
@@ -30,6 +34,15 @@ OPTIONS
   -e PATTERN
       Use PATTERN as the regexp to match.
       The purpose of the '-e' option is to allow patterns that start with a '-'.
+
+
+Examples
+
+egrep [options] 'PATTERN' files 
+image001
+
+-v: It prints the lines that does not match with the pattern. 
+image002
 
 
 *See also: fgrep, gawk, grep

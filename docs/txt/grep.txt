@@ -1,4 +1,4 @@
-grep - Search file(s) for specific text.
+grep command searches a file for a particular pattern of characters, and displays all lines that contain that pattern.  
 
 
 Syntax
@@ -237,64 +237,15 @@ Options
        containing unusual characters like newlines.
        This option can be used with commands like find -print0, perl -0, sort -z, and
        xargs -0 to process arbitrary file names, even those that contain newline characters. 
-Environment variables
-Grep's behavior can be affected by setting the following environment variables
-GREP_OPTIONS                 - default options
-GREP_COLOR                   - The marker for highlighting
-LC_ALL, LC_COLLATE, LANG     - These variables specify the LC_COLLATE locale,
-                               which determines the collating sequence used
-                               to interpret range expressions like [a-z]. 
-LC_ALL, LC_COLLATE, LANG
-    These variables specify the LC_MESSAGES locale, which determines the
-    language used for messages. The default C locale uses American English messages. 
-LC_ALL, LC_CTYPE, LANG       - specify the LC_CTYPE locale, which determines the type of
-                               characters, e.g., which characters are whitespace.
-LC_ALL, LC_MESSAGES, LANG
-    These variables specify the LC_MESSAGES locale, which determines the
-    language that grep uses for messages. The default C locale uses American English messages. 
-POSIXLY_CORRECT              - Posix behaviour
-_N_GNU_nonoption_argv_flags_
-    If the ith character of this environment variable's value is 1, do not consider
-    the ith operand of grep to be an option, ( N is grep's numeric process ID)
-
-see 'info grep' for more
-Grep stands for: Global Regular Expression Print.
-History: grep comes from the ed command to print all lines matching a certain pattern g/re/p where "re" is a "regular expression".
-
-
-Exit Status
-
-grep exits with one of the following values:
-   0     One or more lines were selected.
-   1     No lines were selected.
-   >1    An error occurred - syntax error in pattern, inaccessible input files, or other system error.
-In other words a failure to find a matching item is reported as an error (1)
-
-The '-v' option can be used to effectively invert the exit status.
 
 
 Examples
 
-Search the file example.txt, including binary data (-a) for the string 'hunting the snark':
-
-$ sudo grep -a 'hunting the snark' example.txt
-
-Search the whole partition (/sda1), including binary data(-a) for the string 'hunting the snark' return all the lines starting 25 Before the text found and 50 lines After the matching text found.
-This can be a way to discover fragments of deleted files but is very slow:
-
-$ grep -a -B 25 -A 50 'hunting the snark' /dev/sda1 > results.txt
-
-Search the file wordlist.txt for any lines that include either 'sco' or 'sca':
-
-$ grep "sc[oa]" wordlist.txt
-
-Search the file wordlist.txt for any lines that don't include at least one vowel:
-
-$ grep -v [aeiou] wordlist.txt
-
-Remove lines from invoices.txt if they appear in paid.txt:
-
-$ grep -F -x -v -f paid.txt invoices.txt >paidinvoices.txt
+Case insensitive search: grep -i "UNix" geekfile.txt 
+image001
+ 
+Displaying the Count of Number of Matches Using grep: grep -c "unix" geekfile.txt 
+image002
 
 
 *See also: egrep, fgrep, pgrep, find, gawk, locate, sed, tr, whereis

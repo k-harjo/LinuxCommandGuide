@@ -1,4 +1,4 @@
-FTP - File Transfer Protocol
+FTP (file transfer protocol) is an internet protocol that is used for transferring files between client and server over the internet or a computer network. It is similar to other internet protocols like SMTP which is used for emails and HTTP which is used for websites. FTP server enables the functionality of transferring files between server and client. A client connects to the server with credentials and depending upon the permissions it has, it can either read files or upload files to the server as well. In this article, we will see how to set up an FTP server, configure user permissions, configure a firewall and finally encrypt our FTP traffic with SSL.
 
 
 Syntax
@@ -167,9 +167,13 @@ Commands to run at the FTP: prompt
 
 Examples
 
-Connect to the speedtest FTP server as 'anonymous' and with a null password:
+Let’s start by creating our public user account. Type in 
 
-ftp ftp://anonymous:@speedtest.tele2.net
+sudo adduser ftpuser 
+
+Enter your password, leave other values empty, and at last, enter Y to save changes. 
+
+image001
 
 
 *See also: curl, RAW FTP

@@ -1,24 +1,26 @@
-fgrep - Search file(s) for lines that match a fixed string
+fgrep filter is used to search for the fixed-character strings in a file. There can be multiple files also to be searched. This command is useful when you need to search for strings which contain lots of regular expression metacharacters, such as “^”, “$”, etc.  
 
 
 Syntax
 
-      fgrep options ...
+	fgrep [options] [ -e pattern_list] [pattern] [file] 
 
 fgrep is the same as 'grep -F'
 
 all other options are the same as grep 
 It's a popular fallacy that fgrep stands for fast-grep, in fact fgrep means fixed-string grep.
 
-fgrep implements the Aho–Corasick string matching algorithm which is very fast at matching multiple strings in the input stream/file. So if fgrep is used like this:
 
-fgrep -f patternlist.txt largetextfile.txt
+Examples
 
-it is much faster than the grep equivalent:
+-c option: Displaying the count of number of matches. We can find the number of lines that match the given string.  
 
-grep -f patternlist.txt largetextfile.txt
+$fgrep -c "usin.g" para 
+image001
 
-Matching a single pattern with fgrep is not significantly faster than grep.
+-h option: To display the matched lines. 
+fgrep -h "usin.g" para 
+image002
 
 
 *See also: egrep, gawk, grep

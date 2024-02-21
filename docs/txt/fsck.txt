@@ -1,12 +1,26 @@
-fsck - Filesystem consistency check and interactive repair. Journaling file systems avoid the need to run fsck.
+File System Consistency Checker (FSCK): FSCK is one approach still used by older Linux-based systems to find and repair inconsistencies. It is not a complete solution and may still have inodes pointing to garbage data. The major focus is to make the metadata internally consistent. The following are the checks that FSCK performs to achieve consistency: 
 
+Superblock Checks: FSCK performs a sanity check to see if the file size is greater than the number of blocks allocated. In this case, it tries to find the suspect superblock and use an alternate copy instead. 
 
+Free Block Checks: FSCK also scans inodes to ensure that blocks in inodes are marked allocated. 
+
+Inode State Checks: FSCK checks inodes for corruption. Corrupted inodes are simply cleared. 
+
+Inode Link Checks: FSCK counts the number of links to an inode, and modifies the inode count. If an allocated inode has no directory or file referring to it, FSCK moves it to the lost and found directory. 
+
+Duplicate Pointers: FSCK checks duplicate pointers. For example, if two inodes have pointers to the same data block, one of the inode can be deleted. 
+
+Bad Blocks: A bad pointer is simply one that points to a memory address which is out of range. In this case, FSCK deletes the pointer. 
+
+Directory Checks: FSCK makes sure the directory format is correct, e.g. they should start with “.” and “..”. 
+
+ 
 Syntax
 
       fsck [options] [filesystem] ...
 
 
-Options
+Key
 
   --     Pass all subsequent options to filesystem-specific checker.
          All options that fsck doesn't recognize will also be passed.
@@ -29,15 +43,11 @@ Options
   -V     Verbose mode.
 
 
-EXIT CODES
+Examples
 
-  1    Errors were found and corrected.
-  2    Reboot suggested.
-  4    Errors were found but not corrected.
-  8    fsck encountered an operational error.
-  16   fsck was called incorrectly.
-  128  A shared library error was detected.
-The return status is the exit status of the last command executed in consequent-commands, or zero if none were executed.
+image001
+
+image002
 
 
 *See also: reboot, ddrescue

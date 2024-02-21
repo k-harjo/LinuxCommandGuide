@@ -1,7 +1,7 @@
-dig (DNS lookup utility) - A flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. Most DNS administrators use dig to troubleshoot DNS problems because of its flexibility, ease of use and clarity of output. Other lookup tools tend to have less functionality than dig.
+dig command stands for Domain Information Groper. It is used for retrieving information about DNS name servers. It is basically used by network administrators. It is used for verifying and troubleshooting DNS problems and to perform DNS lookups. Dig command replaces older tools such as nslookup and the host. 
 
 
-Syntax:
+Syntax
 
      dig [@server] [-b address] [-c class] [-f filename] [-k filename]
              [-p port#] [-t type] [-x addr] [-y name:key] [-4] [-6]
@@ -11,7 +11,7 @@ Syntax:
      dig [global-queryopt...] [query...]
 
 
-Options:
+Key
 
    -b address
          Set the source IP address of the query to address.
@@ -70,50 +70,17 @@ Options:
         in named.conf.
 
    -h   Print a brief summary of the command-line arguments and options.
-Although dig is normally used with command-line arguments, it also has a batch mode of operation for reading lookup requests from a file. Unlike earlier versions, the BIND9 implementation of dig allows multiple lookups to be issued from the command line.
-
-Unless it is told to query a specific name server, dig will try each of the servers listed in /etc/resolv.conf
-
-When no command line arguments or options are given, will perform an NS query for "." (the root).
-
-It is possible to set per-user defaults for dig via ${HOME}/.digrc. This file is read and any options in it are applied before the command line arguments.
-
-
-Commonly used record types
-
-A (Host address)
-AAAA (IPv6 host address)
-ALIAS (Auto resolved alias)
-CNAME (Canonical name for an alias)
-MX (Mail eXchange)
-NS (Name Server)
-PTR (Pointer)
-SOA (Start Of Authority)
-SRV (location of service)
-TXT (Descriptive text)
 
 
 Examples
 
-List the DNS A records for ss64.com:
-$ dig ss64.com
-or
-$ dig ss64.com A
+To query domain “A” record 
+dig geeksforgeeks.org 
+image001
 
-List the DNS AAAA (ipv6) records for ss64.com:
-$ dig ss64.com AAAA
-
-List the DNS A records for ss64.com using Google DNS (8.8.8.8) instead of your local cache:
-$ dig ss64.com @8.8.8.8
-
-List the Signature record (SIG record) for ss64.com:
-$ dig ss64.com SIG
-
-List the Mail exchanger record (MX record) for ss64.com:
-$ dig ss64.com MX
-
-Test your DNS resolver's source port behavior:
-$ dig +short porttest.dns-oarc.net TXT
+To remove comment lines. 
+dig geeksforgeeks.org +nocomments 
+image002
 
 
 *See also: host, named, dnssec-keygen

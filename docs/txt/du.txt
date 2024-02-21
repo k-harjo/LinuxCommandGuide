@@ -1,10 +1,13 @@
-du - (Disk Usage) report the amount of disk space used by the specified files and for each subdirectory.
+du command - Used to track the files and directories which are consuming excessive amount of space on hard disk drive 
+
+Suppose there are two files say kt.txt and pt.txt and you want to know the disk usage of these files, then you can simply use du command by specifying the file names along with it.
 
 
 Syntax
 
       du [options]... [file]...
-With no arguments, 'du' reports the disk space for the current directory. Normally the disk space is printed in units of 1024 bytes, but this can be overridden
+      
+      du [OPTION]... --files0-from=F
 
 
 Options
@@ -89,25 +92,8 @@ On BSD systems, 'du' reports sizes that are half the correct values for files th
 
 Examples
 
-List the total files sizes for everything 1 directory (or less) below the currrent directory ( . )
-
-[simon@testserver]$ du -hc --max-depth=1 .
-400M ./data1
-1.0G ./data2
-1.3G .
-1.3G total
-
-List the 10 largest subdirectories in the current directory:
-
-du -hs */ | sort -hr | head
-
-Display the 10 largest subdirectories of the current folder, each with its human redable size:
-
-du -k * | sort -nr | cut -f2 | xargs -d '\n' du -sh | head -n 10
-
-Display folder sizes, to a depth of 2, starting from the home directory (~):
-
-du -ch --max-depth=2 ~
+image001
+As shown above du displayed the disk space used by the corresponding files. Now, the displayed values are actually in the units of the first available SIZE from – -block-size, and the DU_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables and if not in this format then units are default to 1024 bytes (or 512 if POSIXLY_CORRECT is set). Don’t get puzzled from the above paragraph. We can simply use -h option to force du to produce the output in the human readable format. 
 
 
 *See also: ls

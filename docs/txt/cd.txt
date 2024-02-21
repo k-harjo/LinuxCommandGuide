@@ -1,63 +1,28 @@
 cd - (Change Directory) change the current working directory to a specific Folder.
+The ‘cd’ command allows users to change their current working directory within the file system. The basic 
 
 Syntax 
+
       cd [Options] [Directory]
 
 Key
     -P    Do not follow symbolic links
     -L    Follow symbolic links (default)
-If directory is given, changes the shell's working directory todirectory. If not, changes to HOME (shell variable).
 
-$ cd - will go back to the last folder you looked at. This does not stack, so issuing CD - repeatedly will just toggle between two directories, to go back further use pushd/popd. Previous directory - equivalent to $OLDPWD
 
-./ or just . is shorthand for the current directory.
+Examples: 
 
-CDPATH
-The shell variable CDPATH provides a useful feature, this variable is similar to PATH but it sets up a list of paths where cd will search for subdirectories. CDPATH can be set on the command line for use in the current session, or in .bash_profile for permanent use, the list of paths must be colon separated (:)
+cd Documents 
 
-$ CDPATH=".:~:~/Library"
+image001
 
-If dir begins with a slash (/), then CDPATH is not used.
+We are in location “/home/raghvendra/Documents/geeksforgeeks/example” and want to move to the parent or one level up in the directory. We can use the following command. 
 
-If a non-empty directory name from CDPATH is used, or if - is the first argument, and the directory change is successful, the absolute pathname of the new working directory is written to the standard output.
+cd .. 
 
-The return status is zero if the directory is successfully changed, non-zero otherwise.
+ image002
 
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help cd
 
-Examples
+*See also: popd, pushd, pwd, shopt 
 
-Move to the sybase folder:
-$ cd /usr/local/sybase
-$ pwd
-/usr/local/sybase
-
-Change to another folder:
-$ cd /var/log
-$ pwd
-/var/log
-
-Quickly get back:
-$ cd -
-$ pwd
-/usr/local/sybase
-
-Move up one folder:
-$ cd ..
-$ pwd
-/usr/local/
-
-$ cd (Back to your home folder)
-
-Change to the directory fred inside the current directory:
-$ cd ./fred
-
-"I believe entertainment can aspire to be art, and can become art, but if you set out to make art you're an idiot" ~ Steve Martin
-
-Related linux commands
-popd - Restore the previous value of the current directory.
-pushd - Save and then change the current directory.
-pwd - Print Working Directory.
-shopt - Shell Options for the cd builtin.
-Equivalent Windows command: CD - Change Directory.
 

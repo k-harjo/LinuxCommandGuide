@@ -1,13 +1,20 @@
-diff3 - Show differences among three files. When two people have made independent changes to a common original, 'diff3' can report the differences between the original and the two changed versions, and can produce a merged file that contains both persons' changes together with warnings about conflicts. The files to compare are MYFILE, OLDFILE, and YOURFILE.
-At most one of these three file names can be '-', which tells 'diff3' to read the standard input for that file.
+diff3 command is used to compare the three files line by line. It internally uses the diff command to compare. When three files are compared then the following output may come which have their own meaning: 
 
 
 Syntax
 
-      diff3 [options] MYFILE OLDFILE YOURFILE
+	diff3 [options] MYFILE OLDFILE YOURFILE
+
+	====  : All the files are different. 
+
+	====1 : File 1 is different. 
+
+	====2 : File 2 is different. 
+
+	====3 : File 3 is different. 
 
 
-Options
+Key
 
    -a --text
          Treat all files as text and compare them line-by-line, even if they  do not appear to be text.
@@ -62,13 +69,14 @@ Options
    --help
          Output this help.
 
-'diff3' normally compares three input files line by line, finds groups of lines that differ, and reports each group of differing lines. Its output is designed to make it easy to inspect two different sets of changes to the same file.
 
-If 'diff3' thinks that any of the files it is comparing is binary (a non-text file), it normally reports an error, because such comparisons are usually not useful. As with 'diff', you can force 'diff3' to consider all files to be text files and compare them line by line by using the '-a' or '--text' options.
+Example
 
-Multiple single letter options (unless they take an argument) can be combined into a single command line argument.
+Let us consider three files as a.txt, b.txt and c.txt.
+image001
 
-An exit status of 0 means diff3 was successful, 1 means some conflicts were found, and 2 means trouble.
+Now if diff3 command is used over these three files then following output will come: 
+image002
 
 
 *See also: cmp, diff, sdiff

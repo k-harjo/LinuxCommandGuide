@@ -1,4 +1,14 @@
-dd - (Data Duplicator) convert and copy a file, write disk headers, boot records, create a boot floppy. dd can make an exact clone of an (unmounted) disk, this will include all blank space so the output destination must be at least as large as the input.
+dd - (Data Duplicator) a command-line utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy files. 
+
+	-On Unix, device drivers for hardware (such as hard disk drives) and special device files (such as /dev/zero and /dev/random) appear in the file system just like normal files. 
+
+	-dd can also read and/or write from/to these files, provided that function is implemented in their respective drivers 
+
+	-As a result, dd can be used for tasks such as backing up the boot sector of a hard drive, and obtaining a fixed amount of random data. 
+
+	-The dd program can also perform conversions on the data as it is copied, including byte order swapping and conversion to and from the ASCII and EBCDIC text encodings. 
+
+Usage: The command line SYNTAX: of dd differs from many other Unix programs, in that it uses the SYNTAX: option=value for its command line options, rather than the more-standard -option value or –option=value formats. By default, dd reads from stdin and writes to stdout, but these can be changed by using the if (input file) and of (output file) options. 
 
 
 Syntax
@@ -74,6 +84,7 @@ Key
     'noerror'  Continue after read errors.
     'notrunc'  Do not truncate the output file.
     'sync'     Pad every input block to size of 'ibs' with trailing zero bytes.
+
 The numeric-valued options (N and BYTES) can be followed by a multiplier: c=1, w=2, b=512, kB=1000, K=1024, MB=1000*1000, M=1024*1024, xM=M, GB=1000*1000*1000, G=1024*1024*1024, and so on for T, P, E, Z, Y. Binary prefixes can be used, too: KiB=K, MiB=M, and so on. If N ends in 'B', it counts bytes not blocks.
 The name dd can be an allusion to the DD statement found in IBM's Job Control Language (JCL), where the acronym stands for "Data Description". The lack of any confirmation prompt before truncating the output file has popularised the jocular name 'Data Destroyer'.
 
@@ -85,33 +96,22 @@ An empty/unformatted drive will appear as "Disk dev/sdn doesn't contain a vaild 
 If dd receives a USR1 signal, the current input and output block counts will be written to the standard error output in the same format as the standard completion message. e.g. kill -USR1 1234 where 1234 is the process id.
 
 
-Examples
+Examples:  
 
-Clone the drive sda onto drive sdb:
-$ dd if=/dev/sda of=/dev/sdb
+To backup the entire harddisk: 
+# dd if=/dev/sda of=/dev/sdb 
 
-Clone the drive hda onto an image file:
-$ dd if=/dev/hda of=/image.img
+To backup a Partition 
+# dd if=/dev/hda1 of=~/partition.img 
 
-Copy a CD or DVD disc to a .iso image file, first unmounting the disc:
-sudo umount /dev/dvd-device
-dd if=/dev/dvd-device of=dvd.iso bs=2048 conv=sync,notrunc
-# dvd-device will typically be dvd for a dvd disc or cdrom for a cdrom disc.
+To create an image of a Hard Disk 
+# dd if=/dev/hda of=~/hdadisk.img 
 
-Clone a hard drive to a zipped image file in 100Mb blocks:
-$ dd if=/dev/hda bs=100M | gzip -c > /image.img
+To restore using the Hard Disk Image: 
+# dd if=hdadisk.img of=/dev/hdb 
 
-Create a 10 KB file filled with random data (10 x 1K blocks):
-$ dd if=/dev/random of=random.bin bs=1024 count=10
-
-Create an 8 GB empty file (also known as "sparse file") called spacer.img
-$ dd if=/dev/zero of=spacer.img bs=1 count=0 seek=8G
-
-Completely wipe the hard drive hdz by overwriting it with random data:
-$ dd if=/dev/urandom of=/dev/hdz
-
-Create a boot floppy:
-$ dd if=boot.img of=/dev/fd0 bs=1440
+To create CDROM Backup 
+# dd if=/dev/cdrom of=tgsservice.iso bs=2048 
 
 
 *See also: cp, cpio, ddrescue, install, mtools, sum

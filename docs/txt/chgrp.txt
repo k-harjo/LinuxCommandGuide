@@ -1,11 +1,11 @@
-chgrp - Change group ownership.
-
-'chgrp' changes the group ownership of each given File to Group (which can be either a group name or a numeric group id) or to match the same group as an existing reference file.
+The `chgrp` command in Linux is used to change the group ownership of a file or directory. All files in Linux belong to an owner and a group. You can set the owner by using “chown” command, and the group by the “chgrp” command. 
 
 
 Syntax
 
-      chgrp [Options]... {Group | --reference=File} File...
+chgrp [OPTION]… GROUP FILE… 
+chgrp [OPTION]… –reference=RFILE FILE 
+
 
 Key
 
@@ -38,15 +38,10 @@ Key
 
 Example
 
-Change the group ownership of a file to 'OpsGroup':
-
-$ chgrp OpsGroup /usr/database/demo.dbf
-
-Change the group ownership of a directory and all sub-directories to 'OpsGroup', display all the changes made:
-
-$ chgrp -c -R OpsGroup /usr/database/
-
-Groupthink - Tendency of decision makers to join together around a policy or person without questioning basic assumptions.
+Changing Group Ownership of a Single File 
+ 
+sudo chgrp geeksforgeeks abc.txt 
+image001
 
 
 *See also: chmod, chown, setfacl, bash syntax

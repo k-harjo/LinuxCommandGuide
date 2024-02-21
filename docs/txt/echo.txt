@@ -1,9 +1,13 @@
-echo - Display message on screen, writes each given STRING to standard output, with a space between each and a newline after the last one.
+echo command in Linux is a built-in command that allows users to display lines of text or strings that are passed as arguments. It is commonly used in shell scripts and batch files to output status text to the screen or a file. 
 
 
 Syntax
 
-     echo [options]... [String]...
+	echo [option] [string] 
+
+	[options] = The various options available for modifying the behavior of the `echo` command 
+
+	[string] = It is the string that we want to display. 
 
 
 Options
@@ -36,45 +40,14 @@ There is also an echo utility (man echo) , but the shell built-in version will g
 
 Examples
 
-echo "Hello World"
+echo "Geeks for Geeks" 
+image001
 
-DEMO=Testing123
-echo "$DEMO"
-# Testing123
+NOTE: -e here enables the interpretation of backslash escapes  
+      \b: it removes all the spaces in between the text 
 
-echo "with quotes we can echo
-several lines at a time"
-
-
-Echo can also display in color by using Escape sequences for foreground (30..37) and background (40..47) colours.
-
-$ COL_BLUE="\x1b[34;01m"
-$ COL_RESET="\x1b[39;49;00m"
-$ echo -e $COL_BLUE"Important Message: "$COL_RESET"This is a message"
-
-
-Here is a shell script to display all the color combinations:
-
- #!/bin/bash
- #
- echo ---Bg---40---41---42---43---44---45---46---47
- for i in {30..37} # foreground
- do
- echo -n -e fg$i- 
- for j in {40..47} # background
- do
- echo -n -e '\E['$i';'$j'm SS64'
- tput sgr0 # Reset text attributes to normal without clear
- done
- echo # newline
- done
- 
- echo -- Clear BG --
- for n in {30..37} # foreground
- do
- echo -e fg$n '\E['$n';'01'm SS64'
- tput sgr0 # Reset text attributes to normal without clear
- done
+echo -e "Geeks \bfor \bGeeks" 
+image002
 
 
 *See also: head, less, more, notify-send, pg, tee

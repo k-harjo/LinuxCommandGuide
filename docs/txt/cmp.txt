@@ -5,9 +5,6 @@ Syntax
 
       cmp options... FromFile [ToFile]
 
-
-Options
-
    Multiple single letter options (unless they take an argument) can be combined into
    a single command line word:  so '-cl' is equivalent to -c -l.
 
@@ -51,12 +48,7 @@ Options
 
 Examples
 
-$ cmp tnsnames.ora tnsnames.old
-
-'cmp' reports the differences between two files character by character, instead of line by line. As a result, it is more useful than 'diff' for comparing binary files. For text files, 'cmp' is useful mainly when you want to know only whether two files are identical.
-
-For files that are identical, 'cmp' produces no output. When the files differ, by default, 'cmp' outputs the byte offset and line number where the first difference occurs. You can use the '-s' option to suppress that information, so that 'cmp' produces no output and reports whether the files differ using only its exit status.
-Unlike 'diff', 'cmp' cannot compare directories; it can only compare two files.
+image001
 
 
 See also: comm, diff, diff3, dircmp, sdiff
