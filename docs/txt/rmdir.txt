@@ -1,33 +1,45 @@
-rmdir - Remove directory, this command will only work if the folders are empty.
+rmdir command is useful when you want to remove the empty directories from the filesystem in Linux. This command lets you specify the terminal to remove a particular directory right from the terminal. However, having correct knowledge of the rmdir command is essential, or you may end up deleting any important directory.
+Syntax:
+rmdir mydir1 mydir2 mydir3 .....
+Examples:
+For example, we will delete the LINUX directory, including all its all ancestors, through the following command:
+rmdir LINUX INFO DETAIL
 
 
-Syntax
-
-      rmdir [options]... folder(s)...
-
-
-Options
-
-      --ignore-fail-on-non-empty
-                  Ignore each failure that is solely because the
-                  directory is non-empty.
-
-  -p, --parents   Remove explicit parent directories if being emptied
-
-      --verbose   Output a diagnostic for every directory processed
-
-      --help      Display help and exit
-
-      --version   Output version information and exit
+For example, we will delete the LINUX directory, including all its all ancestors, through the following command:
+rmdir -p LINUX/mydir1/mydir2/mydir3
 
 
-Examples
-
-$ rmdir myfolder
-
-Before removing directories with a wildcard, it's wise to list them first:
-
-$ ls -d britney*/
 
 
-*See also: rm
+
+
+
+
+Remove Multiple Directories With the Same Expression
+
+ls 
+LINUX1
+LINUX2
+LINUX3
+
+rmdir -v LINUX*
+rmdir: removing directory, 'LINUX1'
+rmdir: removing directory, 'LINUX2'
+rmdir: removing directory, 'LINUX3'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

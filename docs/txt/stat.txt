@@ -1,115 +1,25 @@
-stat - Display file or file system status. Mandatory arguments to long options are mandatory for short options too.
-
-
+stat is a  command which gives information about the file and filesystem. Stat command gives information such as the size of the file, access permissions and the user ID and group ID, birth time access time of the file. Stat command has another feature, by which it can also provide the file system information. This is the best tool to use when we want the information of any file.
 Syntax:
+stat --options filenames
+The information we get from stat
+Following is the information we get about the file when we run the stat command.
+File: The name of the provided file. If the provided file is a symlink, then the name will be different.
+Size: The size of a given file in Bytes.
+Blocks: Total number of allocated blocks to the file to store on the hard disk.
+IO Block: The size of every allocated block in bytes.
+File type: The file may be of the following types: Regular files, special files, directories, or symbolic links.
+Device: Device number in hexadecimal format.
+Inode: Inode number of the file.
+Links: Number of hard links of the file.
+Access: Access permissions in the numeric and symbolic methods.
+Context: The field stores SELinux security context.
+Access: The last time at which the file was accessed.
+Modify: The last time at which file was modified.
+Change: The last time the at which file’s attribute or content was changed.
+Birth: The time at which the file was created.
 
-       stat [OPTION]... FILE...
+Displaying the File System Information
 
+Example: stat -f filename
 
-Key:
-
-    -L, --dereference
-              follow links
-
-    -f, --file-system
-              display file system status instead of file status
-
-    -c  --format=FORMAT
-              use the specified FORMAT instead of the default; output a
-              newline after each use of FORMAT
-
-    --printf=FORMAT
-              like --format, but interpret backslash escapes, and do not
-              output a mandatory trailing newline; if you want a newline,
-              include \n in FORMAT
-
-    -t, --terse
-              print the information in terse form
-
-    --help display this help and exit
-
-    --version
-              output version information and exit
-
-
-The valid format sequences for files (without --file-system):
-
-    %a     Access rights in octal
-    %A     Access rights in human readable form
-    %b     Number of blocks allocated (see %B)
-    %B     The size in bytes of each block reported by %b
-    %C     SELinux security context string
-    %d     Device number in decimal
-    %D     Device number in hex
-    %f     Raw mode in hex
-    %F     File type
-    %g     Group ID of owner
-    %G     Group name of owner
-    %h     Number of hard links
-    %i     inode number
-    %m     Mount point
-    %n     File name
-    %N     Quoted file name with dereference if symbolic link
-    %o     Optimal I/O transfer size hint
-    %s     Total size, in bytes
-    %t     Major device type in hex, for character/block device special files
-    %T     Minor device type in hex, for character/block device special files
-    %u     User ID of owner
-    %U     User name of owner
-    %w     Time of file birth, human-readable; - if unknown
-    %W     Time of file birth, seconds since Epoch; 0 if unknown
-    %x     Time of last access, human-readable
-    %X     Time of last access, seconds since Epoch
-    %y     Time of last data modification, human-readable
-    %Y     Time of last data modification, seconds since Epoch
-    %z     Time of last status change, human-readable
-    %Z     Time of last status change, seconds since Epoch
-
-
-Valid format sequences for file systems:
-
-    %a     Free blocks available to non-superuser
-    %b     Total data blocks in file system
-    %c     Total file nodes in file system
-    %d     Free file nodes in file system
-    %f     Free blocks in file system
-    %i     File system ID in hex
-    %l     Maximum length of filenames
-    %n     File name
-    %s     Block size (for faster transfers)
-    %S     Fundamental block size (for block counts)
-    %t     File system type in hex
-    %T     File system type in human readable form
-
-
-Your shell can have its own version of stat, which usually supersedes the version described here. Please refer to your shell's documentation for details about the options it supports.
-
-
-Examples
-
-List the file permissions for ss64.sh:
-
-$ stat -c%A ss64.sh
--rw-r--r--
-
-
-Display permissions in octal form (%a) and the filename (%n) for all files in the directory:
-
-$ stat -c "%a %n" *
-
-or with owner group size in different forms:
-$ stat -c "%a %A %G:%U %g:%g %n %s" *
-
-
-Display file system (directory) information for /etc:
-
-$ stat -f /etc
-File: "/etc"
-ID: 0 Namelen: 255 Type: reiserfs
-Block size: 4096 Fundamental block size: 4096
-Blocks: Total: 1977922 Free: 1272318 Available: 1272318
-Inodes: Total: 0 Free: 0
-
-
-*See also: chmod, ls
 

@@ -1,27 +1,27 @@
-popd - Remove the top entry from the directory stack, and cd to the new top directory.
 
 
-Syntax
-
-      popd [+N | -N] [-n]
-
-
-Key
-
-   +N   Remove the Nth directory (counting from the left of the list 
-        printed by dirs), starting with zero. 
-
-   -N   Remove the Nth directory (counting from the right of the list 
-        printed by dirs), starting with zero. 
-
-   -n   Suppress the normal change of directory when removing directories from 
-        the stack, so that only the stack is manipulated. 
-
-When no arguments are given, popd removes the top directory from the stack and performs a cd to the new top directory.
-
-The elements are numbered from 0 starting at the first directory listed with dirs; i.e., popd is equivalent to popd +0.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help popd
+Deleting a directory from the stack without changing the current directory
+popd -n
 
 
-*See also: dirs, pushd
+
+
+
+
+
+Pr
+pr command is used to prepare a file for printing by adding suitable footers, headers, and the formatted text. pr command actually adds 5 lines of margin both at the top and bottom of the page.  The header part shows the date and time of the last modification of the file with the file name and the page number.
+Syntax:
+pr [options][filename]
+Examples:
+pr -3 abc.txt
+here abc.txt is the name of file.
+
+To suppress the headers and footers the -t option is used.
+pr -t abc.txt
+After executing the above command it will give us the following output.
+
+
+
+
+

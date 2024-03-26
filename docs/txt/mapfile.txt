@@ -1,53 +1,20 @@
-mapfile - Read lines from the standard input into the indexed array variable array, or from file descriptor fd if the -u option is supplied. The variable MAPFILE is the default array. The command name readarray may be used as an alias for mapfile, with no difference in operation.
+mapfile also called (read array) is a command of the Bash shell used to read arrays. It reads lines from the standard input into an array variable. Also, mapfile must read from substitution (< <) and not from a pipe. Also, mapfile is faster and more convenient when compared to a read loop. It returns 1 or 0 depending on whether the command was successful or not. If no array name is not specified, the default variable MAPFILE is used as the target array variable.
+Syntax: mapfile [array]
+Example 1. Reading an array from a file:
+$ mapfile MYFILE < example.txt
+$ echo ${MYFILE[@]}
+$ echo ${MYFILE[0]
+
+Example 2. Capture the output into an array:
+$ mapfile GEEKSFORGEEKS < <(printf "Item 1\nItem 2\nItem 3\n")
+$ echo  ${GEEKSFORGEEKS[@]}
 
 
-Syntax
-
-      mapfile [-d delim] [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callback] [-c quantum] [array]
-    readarray [-d delim] [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callback] [-c quantum] [array]
 
 
-Key
-
-   -d    The first character of delim is used to terminate each input line, rather than newline.
-         If delim is the empty string, mapfile will terminate a line when it reads a NUL character. 
-
-   -n    Copy at most count lines. If count is 0, all lines are copied.
-
-   -O    Begin assigning to array at index origin. The default index is 0.
-
-   -s    Discard the first count lines read.
-
-   -t    Remove a trailing newline from each line read.
-
-   -u    Read lines from file descriptor fd instead of the standard input.
-
-   -C    Evaluate callback each time quantum lines are read. The -c option specifies quantum.
-
-   -c    Specify the number of lines read between each call to callback. 
-
-If -C is specified without -c, the default quantum is 5000.
-When callback is evaluated, it is supplied the index of the next array element to be assigned as an additional argument. callback is evaluated after the line is read but before the array element is assigned.
-
-If not supplied with an explicit origin, mapfile will clear array before assigning to it.
-
-mapfile returns successfully unless an invalid option or option argument is supplied, array is invalid or unassignable, or if array is not an indexed array.
-
-mapfile can't do anything that couldn't be done using read and a loop. A read loop is far more portable but is significantly slower tham mapfile.
-
-mapfile is a BASH shell builtin, to display your local syntax from the bash prompt type: help mapfile
-Examples
-Capture the output of a script inner.sh and store it in an array called myarray:
-
-mapfile -t myarray < <(./inner.sh)
-
-The last part of this <(./inner.sh)expands to a filename, however mapfile normally expects stdin, we can redirect the filename to stdin with a < character, but the two <'s have to be separated with a space so that they don’t get interpreted as <<.
-
-Print the text Alpha, Beta, Gamma as 3 separate lines, when fed into mapfile these will be saved in the array 'GreekArray':
-
-mapfile -t GreekArray < <(printf "Alpha\nBeta\nGamma")
-
-In both these examples the -t option removes the newline characters so that only text is stored in each array element. Discarding the newline character is usually what you need.
 
 
-*See also: read, select
+
+
+
+

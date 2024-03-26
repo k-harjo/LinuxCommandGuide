@@ -1,16 +1,25 @@
-let - Perform arithmetic on shell variables.
+The `let` command in Linux is a powerful tool used for evaluating arithmetic expressions on shell variables. It supports various operators and functionalities to perform calculations and manipulate values.
+Syntax:
+let [expression]
+Options available in `let` command
+Basic arithmetic operators
+The addition(+), subtraction(-), multiplication(*), division(/) and modulus(%) operators can be used in the expression with the let command.
+
+Examples:
+let "myvar =2" "myvar1=1" "myvar2=myvar1+myvar"; echo $myvar2
+let "myvar =2" "myvar1=1" "myvar2=myvar1-myvar"; echo $myvar2
+let "myvar =2" "myvar1=1" "myvar2=myvar1*myvar"; echo $myvar2
+let "myvar =2" "myvar1=1" "myvar2=myvar1/myvar"; echo $myvar2
+let "myvar =2" "myvar1=1" "myvar2=myvar1%myvar"; echo $myvar2
+
+Post-increment(var++) / post-decrement(var–) operator:
+
+let "myvar=10" "myvar2=--myvar"; echo $myvar $myvar2
+
+Pre-increment(++var) / Pre-decrement(–var) operator:
 
 
-Syntax
-
-      let expression [expression]
-Each expression is an arithmetic expression to be evaluated. If the last expression evaluates to 0, let returns 1; otherwise 0 is returned.
-
-let is very similar to (( - the only difference being let is a builtin (simple command), and (( is a compound command.
-
-The arguments to let are therefore subject to all the same expansions and substitutions as any other simple command - requiring proper quoting and escaping - whereas the contents of (( aren't subject to word-splitting or pathname expansion (almost never desirable for arithmetic). For this reason, the arithmetic compound command should generally be preferred over let.
-
-let is a bash builtin command.
 
 
-*See also: expr, eval, test
+
+

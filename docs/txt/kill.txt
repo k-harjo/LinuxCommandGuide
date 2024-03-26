@@ -1,58 +1,13 @@
-kill - Kill a process by specifying its PID, either via a signal or forced termination.
+kill command used to terminate processes manually. kill command sends a signal to a process which terminates the process.
+Syntax:
+kill [signal] PID
+PID = The `kill` command requires the process ID (PID) of the process we want to terminate.
+[signal] = We have to specify the signal and if we don’t specify the signal, the default signal `TERM` is sent to terminate the process.
+
+Some Common Signals in `kill` command in Linux
+The table below shows some common signals and their corresponding numbers.
+
+To check signal name and number we can use `kill -l` command.
+Example:
 
 
-Syntax
-
-      kill [-s sigspec] [-n signum] [-sigspec] jobspec or pid
-      kill -l [exit_status]
-      kill -l [sigspec]
-
-
-Key
-
-   -l   List the signal names
-   -s   Send a specific signal
-   -n   Send a specific signal number
-Send a signal specified by sigspec or signum to the process named by job specification jobspec or process ID pid.
-
-sigspec is either a case-insensitive signal name such as SIGINT (with or without the SIG prefix) or a signal number; signum is a signal number.
-
-If sigspec is not present, SIGTERM is used (Terminate).
-
-If any arguments are supplied when '-l' is given, the names of the signals corresponding to the arguments are listed, and the return status is zero. exit_status is a number specifying a signal number or the exit status of a process terminated by a signal.
-
-The return status is true if at least one signal was successfully sent, or false if an error occurs or an invalid option is encountered.
-
---Common Kill Signals--
-Signal name	Signal value	Effect
-SIGHUP		1		Hangup
-SIGINT		2		Interrupt from keyboard
-SIGQUIT		3		Quit
-SIGABRT		6		Cancel
-SIGKILL		9		Kill signal
-SIGTERM		15		Termination signal - allow an orderly shutdown
-SIGSTOP		17,19,23	Stop the process
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help kill or man kill
-
-
-Examples
-
-List the running process
-
-$ ps
-PID TTY TIME CMD
-1293 pts/5 00:00:00 MyProgram
-Then Kill it
-
-$ kill 1293
-[2]+ Terminated MyProgram
-To run a command and then kill it after 5 seconds:
-
-$ my_command & sleep 5
-$ kill -0 $! && kill $!
-
-kill is a bash built in command: $ help kill
-
-
-*See also: bg, jobs, killall, pkill, ps, Xkill

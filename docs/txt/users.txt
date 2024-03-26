@@ -1,21 +1,17 @@
-users - Print login names of users currently logged in, print on a single line a blank-separated list of user names of users currently logged in to the current host.
+
+users –help: This option will display the help message and exit
 
 
-Syntax
-
-      users [OPTION]... [FILE] 
 
 
-Key
-
-   --help     display this help and exit
-   --version     output version information and exit
-
-With no FILE argument, 'users' will by default extract the user information from the file /var/run/utmp
-
-If a FILE argument is given, 'users' uses that file instead. A common choice is /var/log/wtmp
-
-Each user name corresponds to a login session, so if a user has more than one login session, that user's name will appear the same number of times in the output.
 
 
-*See also: groups, hostname, id, logname, printenv, uname, w, who, whoami
+
+
+
+
+
+
+
+
+

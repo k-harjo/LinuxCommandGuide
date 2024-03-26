@@ -1,129 +1,42 @@
-scp - Secure copy (remote file copy program)
+scp (secure copy) command in Linux system is used to copy file(s) between servers in a secure way.
+The SCP command or secure copy allows the secure transferring of files between the local host and the remote host or between two remote hosts. It uses the same authentication and security as it is used in the Secure Shell (SSH) protocol. SCP is known for its simplicity, security, and pre-installed availability.
+Syntax:
+The Basc Syntax of scp command in Linux is as follows:
+scp [options] [[user@]host1:]source_file_or_directory ... [[user@]host2:]destination
 
 
-Syntax
-
-      scp [-1246BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
-             [-l limit] [-o ssh_option] [-P port] [-S program]
-                [ [user@]host1:]file1 [...] [ [user@]host2:]file2
-
-scp copies files between hosts on a network. It uses ssh for data transfer, and uses the same authentication and provides the same security as ssh. Unlike rcp, scp will ask for passwords or passphrases if they are needed for authentication.
-
-Any file name can contain a host and user specification to indicate that the file is to be copied to/from that host.
-Copies between two remote hosts are permitted.
+For example: If we want to copy a file name “test.txt” from local system to a
+“remoteuser” = “Jayesh”
+“remotehost” = “10.143.90.2”
+“/remote/directory” = “/home/jayesh”
 
 
-Options:
-
-    -1  Force scp to use protocol 1.
-
-    -2  Force scp to use protocol 2.
-
-    -4  Force scp to use IPv4 addresses only.
-
-    -6  Force scp to use IPv6 addresses only.
-
-    -B  Select batch mode (dont ask for passwords or passphrases).
-
-    -C  Compression, passes the -C flag to ssh to enable compression.
-
-    -c cipher
-    Select the cipher to use for encrypting the data transfer.
-    This option is directly passed to ssh.
-
-    -F ssh_config
-    Specifies an alternative per-user configuration file for ssh.
-    This option is directly passed to ssh.
-
-    -i identity_file
-    Select the file from which the identity (private key) for RSA
-    authentication is read. This option is directly passed to ssh.
-
-    -l limit
-    Limit the used bandwidth, specified in Kbit/s.
-
-    -o ssh_option
-    Can be used to pass options to ssh in the format used in ssh_config(5).
-    This is useful for specifying options for which there is no separate scp command-line flag.
-
-    For full details of the options listed below, and their possible values, see ssh_config(5).
-
-    AddressFamily
-    BatchMode
-    BindAddress
-    ChallengeResponseAuthentication
-    CheckHostIP
-    Cipher
-    Ciphers
-    Compression
-    CompressionLevel
-    ConnectionAttempts
-    ConnectTimeout
-    ControlMaster
-    ControlPath
-    GlobalKnownHostsFile
-    GSSAPIAuthentication
-    GSSAPIDelegateCredentials
-    HashKnownHosts
-    Host
-    HostbasedAuthentication
-    HostKeyAlgorithms
-    HostKeyAlias
-    HostName
-    IdentityFile
-    IdentitiesOnly
-    KbdInteractiveDevices
-    LogLevel
-    MACs
-    NoHostAuthenticationForLocalhost
-    NumberOfPasswordPrompts
-    PasswordAuthentication
-    Port
-    PreferredAuthentications
-    Protocol
-    ProxyCommand
-    PubkeyAuthentication
-    RekeyLimit
-    RhostsRSAAuthentication
-    RSAAuthentication
-    SendEnv
-    ServerAliveInterval
-    ServerAliveCountMax
-    SmartcardDevice
-    StrictHostKeyChecking
-    TCPKeepAlive
-    UsePrivilegedPort
-    User
-    UserKnownHostsFile
-    VerifyHostKeyDNS
-
-    -P port
-    The port to connect to on the remote host.
-    Note that this option is written with a capital 'P', because -p is already reserved for
-    preserving the times and modes of the file in rcp(1).
-
-    -p Preserves modification times, access times, and modes from the original file.
-
-    -q Disables the progress meter.
-
-    -r Recursively copy entire directories.
-
-    -S program
-    Name of program to use for the encrypted connection. The program must understand ssh options.
-   
-    -v Verbose mode.
-        Causes scp and ssh to print debugging messages about their progress.
-        This is helpful in debugging connection, authentication, and configuration problems. 
-
-scp exits with 0 on success or >0 if an error occurred.
-
-scp is part of the the OpenSSH suite.
+Example 1:
+scp test.txt jayesh@10.143.90.2:/home/jayesh
 
 
-Examples
-
-Copy file1 to a remote host:
-scp /home/simon/file1 kate@ss64.com:/home/kate
+To Verify: Use `ls` command in the location we copied file.
 
 
-*See also: rcp
+Example 2:
+How to Securely copy a file from remote machine to our local machine.
+
+scp user@remotehost:/home/user/file_name
+here
+“user” = username of remote system.
+“remotehost” = IP address (or hostname) of remote system.
+“/home/user/file_name” = path of file that has to be copied.
+“.” = this means that we are copying that file in current location in local system.
+
+If we have
+“user” = jayesh
+“remotehost” = 10.143.90.2
+“home/user/file_name” = home/jayesh/test1.txt
+
+scp jayesh@10.143.90.2:/home/jayesh/test1.txt
+
+
+
+
+
+

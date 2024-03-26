@@ -1,19 +1,26 @@
-sleep - Delay for a specified time, pause for an amount of time specified by the sum of the values of the command line arguments.
+sleep command is used to create a dummy job. A dummy job helps in delaying the execution. It takes time in seconds by default but a small suffix(s, m, h, d) can be added at the end to convert it into any other format. This command pauses the execution for an amount of time which is defined by NUMBER.
 
-Syntax
-      sleep [NUMBER [smhd]]...
+Syntax:
 
-Key:
-
-   s  :  seconds (default)
-
-   m  :  minutes
-
-   h  :  hours
-
-   d  :  days
-
-An alternative to sleep is setting the variable TMOUT, setting TMOUT=1200 will exit the shell if nothing is typed for 20 minutes. This can be a useful security fallback to ensure you don't remain logged on to a production server for too long.
+sleep NUMBER[SUFFIX]…
+Examples:
+Using Suffixes in `sleep` Command in Linux:
+Sleep allows you to specify time units using suffixes, providing flexibility in defining durations.
+sleep 3m
 
 
-*See also: nice
+Specifying Fractional Seconds in `sleep` Command in Linux
+You can use decimal values to specify fractional seconds.
+sleep 3.5
+
+
+
+
+
+
+
+
+
+
+
+

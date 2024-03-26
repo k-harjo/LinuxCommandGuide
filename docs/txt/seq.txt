@@ -1,46 +1,29 @@
-seq - int a sequence of numbers to standard output
-
-
-Syntax
-
-      seq [options]... [FIRST [STEP]] LAST...
-
-
-Options
-
- -f FORMAT
- --format=FORMAT
-     Print all numbers using FORMAT; default '%g'.  FORMAT must contain
-     exactly one of the standarding float output formats '%e', '%f', or
-     '%g'.
-
- -s STRING
- --separator=STRING
-     Separate numbers with STRING; default is a newline.  The output
-     always terminates with a newline.
-
- -w
- --equal-width
-     Print all numbers with the same width, by padding with leading
-     zeroes.  (To have other kinds of padding, use '--format').
-'seq' prints the numbers from FIRST to LAST by STEP.
-
-By default, FIRST and STEP are both 1, and each number is printed on its own line. All numbers can be reals, not just integers.
+seq command in Linux is used to generate numbers from FIRST to LAST in steps of INCREMENT. It is a very useful command where we had to generate list of numbers in while, for, until loop.
+Syntax:
+seq [OPTION]... LAST
+  or
+seq [OPTION]... FIRST LAST
+  or
+seq [OPTION]... FIRST INCREMENT LAST
 
 
 Examples:
-
-Produce a sequence of numbers from 1 to 100
-
-$ seq 100
-
-You can also produce a sequence with the for command
-
-for ((myseq=0; myseq<50; myseq++))
-do
-echo The sequence is ${myseq}
-done
-fi
+seq LAST: When only one argument is given then it produces numbers from 1 to LAST in step increment of 1. If the LAST is less than 1, then is produces no output.
 
 
-*See also: expr, for, nl
+seq FIRST LAST: When two arguments are given then it produces numbers from FIRST till LAST is step increment of 1. If LAST is less than FIRST, then it produces no output.
+
+
+seq FIRST INCREMENT LAST: When three arguments are given then it produces numbers from FIRST till LAST in step of INCREMENT. If LAST is less than FIRST, then it produces no output.
+
+
+
+
+
+
+
+
+
+
+
+

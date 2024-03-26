@@ -1,21 +1,39 @@
-mkfifo - Make FIFOs (named pipes) with the specified names.
+mkfifo() makes a FIFO special file with name pathname. Here mode specifies the FIFO’s permissions. It is modified by the process’s umask in the usual way: the permissions of the created file are (mode & ~umask).
+Using FIFO: As named pipe(FIFO) is a kind of file, we can use all the system calls associated with it i.e. open, read, write, close.
+Example Programs to illustrate the named pipe: There are two programs that use the same FIFO. Program 1 writes first, then reads. The program 2 reads first, then writes. They both keep doing it until terminated.
+Examples:
+Program 1(Writes first)
+
+How to bind to port number less than 1024 with non root access?
+Difference between Ubuntu and Kubuntu
+Implementing Directory Management using Shell Script
+Difference between system() and execl() call
+dup() and dup2() Linux system call
+mindepth and maxdepth in Linux find() command for limiting search to a specific directory.
+Difference Between Linux and Solaris
+Maximum number of threads that can be created within a process in C
+Making your own Linux Shell in C
+How to test all Linux distributions without downloading them?
+Thread functions in C/C++
+C program that does not suspend when Ctrl+Z is pressed
+Named Pipe or FIFO with example C program
+In computing, a named pipe (also known as a FIFO) is one of the methods for inter-process communication.
+It is an extension to the traditional pipe concept on Unix. A traditional pipe is “unnamed” and lasts only as long as the process.
+A named pipe, however, can last as long as the system is up, beyond the life of the process. It can be deleted if no longer used.
+Usually a named pipe appears as a file and generally processes attach to it for inter-process communication. A FIFO file is a special kind of file on the local storage which allows two or more processes to communicate with each other by reading/writing to/from this file.
+A FIFO special file is entered into the filesystem by calling mkfifo() in C. Once we have created a FIFO special file in this way, any process can open it for reading or writing, in the same way as an ordinary file. However, it has to be open at both ends simultaneously before you can proceed to do any input or output operations on it.
+
+Creating a FIFO file: In order to create a FIFO file, a function calls i.e. mkfifo is used.
+CPP
+
+mkfifo() makes a FIFO special file with name pathname. Here mode specifies the FIFO’s permissions. It is modified by the process’s umask in the usual way: the permissions of the created file are (mode & ~umask).
+Using FIFO: As named pipe(FIFO) is a kind of file, we can use all the system calls associated with it i.e. open, read, write, close.
+Example Programs to illustrate the named pipe: There are two programs that use the same FIFO. Program 1 writes first, then reads. The program 2 reads first, then writes. They both keep doing it until terminated.
+Program 1(Writes first)
+C
+
+Program 2(Reads First)
+
+Output: Run the two programs simultaneously on two terminals.
 
 
-Syntax
-
-      mkfifo [options] NAME...
-
-
-Options
-
- -m MODE
- --mode=MODE
-      Set the mode of created FIFOs to MODE, which is symbolic as in
-      'chmod' and uses 0666 (read and write allowed for everyone) minus
-      the bits set in the umask for the point of departure.
-
-
-A "FIFO" is a special file type that permits independent processes to communicate. One process opens the FIFO file for writing, and another for reading, after which data can flow as with the usual anonymous pipe in shells or elsewhere.
-
-
-*See also: mknod, sed, umask

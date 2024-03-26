@@ -1,54 +1,17 @@
-ifup / ifdown - Bring a network interface up or down
+The ifup command basically brings the network interface up, allowing it to transmit and receive data. Technically ifup command is used to configure network interfaces based on interface definitions in the file /etc/network/interfaces.
+Syntax:I
+fup [-nv] [--no-act] [--verbose] [-i FILE|--interfaces=FILE] [--allow CLASS] -a|IFACE...
+Example:
+Let us see an example when our interface is down and how the browser reacts to it.
+
+In this case, the interface was not up and configured. To get the network interface up and work we use
+usesudo ifup –av
+
+After using ifup command, the network is working:
 
 
-Syntax
-
-      ifup [options] -a | IFACE...
-     
-      ifdown [options] -a|IFACE...
 
 
-Options
-
-   -a, --all       If given to ifup, affect all interfaces marked auto.
-                   Interfaces are brought up in the order in which they are defined in /etc/network/interfaces.
-
-                   If given to ifdown, affect all defined interfaces.
-                   Interfaces are brought down in the order in which they are currently listed in the state file.
-                   Only interfaces defined in /etc/network/interfaces will be brought down.
-
-   --force         Force configuration or deconfiguration of the interface.
-
-   --allow=CLASS   Only allow interfaces listed in an allow-CLASS line in /etc/network/interfaces
-                   to be acted upon.
-   -i FILE
-   --interfaces=FILE
-                   Read interface definitions from FILE instead of from /etc/network/interfaces.
-
-   -n, --no-act    Don't configure any interfaces or run any "up" or "down" commands.
-
-   --no-mappings   Don't run any mappings. See interfaces for more information about the mapping feature.
-
-   -v, --verbose   Show commands as they are executed.
-
-   -h, --help      Display help for ifup
-
-   -V, --version   Show copyright and version information.
 
 
-Examples
 
-Bring up all the interfaces defined with auto in /etc/network/interfaces :
-
-ifup -a
-
-Bring up interface eth0:
-
-ifup eth0
-
-Bring down all interfaces that are currently up:
-
-ifdown -a
-
-
-*See also: ifplugd, logout

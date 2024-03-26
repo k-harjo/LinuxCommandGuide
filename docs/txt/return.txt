@@ -1,20 +1,16 @@
-return - Cause a shell function to exit with the return value n.
+return command is used to exit from a shell function. It takes a parameter [N], if N is mentioned then it returns [N] and if N is not mentioned then it returns the status of the last command executed within the function or script. N can only be a numeric value.
+Syntax:
+return [N]
+Example:
 
 
-Syntax
-
-      return [n]  
-
-
-Options
-
-      n    Return value i.e. an errorlevel
-
-If n is not supplied, the return value is the exit status of the last command executed in the function. This can also be used to terminate execution of a script being executed with the . (or source) builtin, returning either n or the exit status of the last command executed within the script as the exit status of the script.
-
-The return status is false if return is used outside a function and not during the execution of a script by . or source.
-
-return is a bash builtin command.
+Note: echo $? is used to display the last return status. Option:
+return –help : It displays help information
 
 
-*See also: . 
+
+
+
+
+
+

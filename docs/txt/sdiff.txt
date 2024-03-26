@@ -1,87 +1,17 @@
-sdiff - Merge two files interactively. Show the differences, with output to outfile.
+sdiff command in linux is used to compare two files and then writes the results to standard output in a side-by-side format.
+It displays each line of the two files with a series of spaces between them if the lines are identical. It displays greater than sign if the line only exists in the file specified by the File2 parameter, and a | (vertical bar) for lines that are different.
+Syntax:
+sdiff [  -l | -s ] [  -o OutFile ] [  -w Number ] File1 File2
+
+Examples:
+sdiff -l file1 file2 :
+It displays only the left side when lines are identical.
 
 
-Syntax
-
-      sdiff -o outfile [options] from-file to-file
-
-
-Options
-
-   Multiple single letter options (unless they take an argument)
-   can be combined into a single command line argument.
-
-   -a
-   --text Treat all files as text and compare them line-by- line,
-          even if they do not appear to be text.
-
-   -b
-   --ignore-space-change
-          Ignore changes in amount of white space.
-
-   -B
-   --ignore-blank-lines
-          Ignore changes that just insert or delete blank lines.
-
-   -d
-   --minimal
-          Change the algorithm to perhaps find a smaller set of changes.
-          This makes sdiff slower (sometimes much slower).
-
-   -H
-   --speed-large-files
-          Use heuristics to speed  handling of large files that have numerous scattered small changes.
-
-   -i
-   --ignore-case
-          Ignore changes in case; consider upper- and lower-case to be the same.
-
-   -I regexp
-          Ignore changes that just insert or delete lines that match regexp.
-
-   --ignore-all-space
-          Ignore white space when comparing lines.
-
-   --ignore-matching-lines=regexp
-          Ignore changes that just insert or delete lines that match regexp.
-
-   -l
-   --left-column
-          Print only the left column of two common lines.
-
-   -o file
-   --output=file
-          Put merged output into file. This option is required for merging.
-
-   -s
-   --suppress-common-lines
-          Do not print common lines.
-
-   -t
-   --expand-tabs
-          Expand tabs to spaces in the output, to preserve the alignment of tabs
-          in the input files.
-
-   -v
-   --version
-          Output the version number of sdiff.
-
-   -w columns
-   --width=columns
-          Use an output width of columns.  Note that for historical reasons,
-          this option is -W in diff, -w in sdiff.
-
-Long named options can be abbreviated to any unique prefix of their name.
-
-If from-file is a directory and to-file is not, sdiff compares the file in from-file whose file name is that of to-file, and vice versa. from-file and to-file can not both be directories.
-
-sdiff options begin with -, so normally from-file and to-file can not begin with -. However, -- as an argument by itself treats the remaining arguments as file names even if they begin with -.
-
-You can not use - as an input file.
-
-sdiff without -o (or --output) produces a side-by-side difference. This usage is obsolete; use diff --side-by-side instead.
-
-An exit status of 0 means no differences were found, 1 means some differences were found, and 2 means trouble.
+sdiff -s file1 file2 :
+It does not display the identical identical lines
 
 
-*See also: cmp, comm, diff, diff3
+
+
+

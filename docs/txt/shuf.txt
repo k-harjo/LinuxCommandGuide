@@ -1,58 +1,6 @@
-shuf - Generate random permutations.
 
 
-Syntax
-
-      shuf [OPTION]... [FILE]
-
-      shuf -e [OPTION]... [ARG]...
-
-      shuf -i LO-HI [OPTION]... 
+shuf file.txt
+Suppose file.txt contains 6 lines, then the shuf command displays the input lines in random order as output.
 
 
-Key
-   
-   -e, --echo
-            Treat each ARG as an input line.
-
-   -i, --input-range=LO-HI
-            Treat each number LO through HI as an input line.
-
-   -n, --head-count=COUNT
-            Output at most COUNT lines.
-            This should be faster than piping all the output to head.
-
-   -o, --output=FILE
-            Write result to FILE instead of standard output.
-
-   --random-source=FILE
-            Get random bytes from FILE.
-
-   -z, --zero-terminated
-            End lines with 0 byte, not newline.
-
-   --help   Display help and exit.
-            To read the complete manual run: info coreutils aqshuf invocationaq
-
-   --version
-            Output version information and exit.
-
-With no FILE, or when FILE is -, read standard input.
-
-
-Examples:
-
-Shuffle the content of the file cards.txt and display on screen:
-$ shuf cards.txt
-
-Shuffle the content of the file cards.txt and return 3 values:
-$ shuf -n 3 cards.txt
-
-Shuffle the numbers 1 to 5:
-$ shuf -e 1 2 3 4 5
-
-Simulate the rolling of a dice:
-$ seq 1 6 | shuf -n 1
-
-
-*See also: head, sort, shift

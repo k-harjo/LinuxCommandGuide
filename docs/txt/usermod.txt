@@ -1,43 +1,17 @@
-usermod - Modify user account information.
+usermod command or modify user is a command in Linux that is used to change the properties of a user in Linux through the command line. After creating a user we have to sometimes change their attributes like password or login directory etc. so in order to do that we use the Usermod command. The information of a user is stored in the following files:
+/etc/passwd
+/etc/group
+/etc/shadow
+/etc/login.defs
+/etc/gshadow
+/etc/login.defs
+
+Examples:
+To add a comment for a user
+sudo usermod -c "This is test user" test_user
+
+To change the home directory of a user
+sudo usermod -d /home/manav test_user
 
 
-Syntax
 
-      usermod [options] [user]
-
-
-Options
-
-  -c comment    Comment field.
-
-  -d dir        Home directory.
-
-  -e date       Account expiration date.
-                date is in the format MM/DD/YYYY.
-                Two-digit year fields are also accepted.
-                The value is stored as the number of days since January 1, 1970.
-                This option requires the use of shadow passwords.
-
-  -f days       Permanently disable account this many days after the
-                password has expired. A value of -1 disables this feature.
-                This option requires the use of shadow passwords.
-
-  -g group      Initial group name or ID number.
-                If a different default group has not been specified using the -D option,
-
-  -G groups     Supplementary groups given by name or number in a comma-separated
-                list with no whitespace. The user will be removed from any groups to
-                which they currently belong that are not included in groups.
-
-  -l name       Login name. This cannot be changed while the user is logged in.
-
-  -o            Override. Accept a nonunique uid with the -u option. (Probably a bad idea.)
-
-  -s shell      Login shell.
-
-  -u uid        Numerical user ID. The value must be unique unless the -o option is used.
-                The default value is the smallest ID value greater than 99 and greater
-                than every other uid.
-
-
-*See also: userdel, useradd, passwd

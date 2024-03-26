@@ -1,92 +1,33 @@
-sed - SED is a stream editor. A stream editor is used to perform basic text transformations on an input stream (a file or input from a pipeline).
-	While in some ways similar to an editor which permits scripted edits, SED works by making only one pass over the input(s), and is consequently more efficient. But it is SED's 	ability to filter text in a pipeline which particularly distinguishes it from other types of editors.
+sed is used for finding, filtering, text substitution, replacement and text manipulations like insertion, deletion search etc.
+SED command in UNIX stands for stream editor and it can perform lots of functions on file like searching, find and replace, insertion or deletion. Though most common use of SED command in UNIX is for substitution or for find and replace. By using SED you can edit files even without opening them, which is much quicker way to find and replace something in file, than first opening that file in VI Editor and then changing it.
+SED is a powerful text stream editor. Can do insertion, deletion, search and replace(substitution).
+SED command in unix supports regular expression which allows it perform complex pattern matching.
+Syntax:
+sed OPTIONS... [SCRIPT] [INPUTFILE...]
+Example:
+Consider the below text file as an input.
+
+Replacing or substituting string: Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word “unix” with “linux” in the file.
 
 
-Syntax
-
-      sed [options]...
 
 
-Key
 
-   -e SCRIPT
-  --expression=SCRIPT
-      Add the commands in SCRIPT to the set of commands to be run while
-       processing the input.
-
-   -f SCRIPT-FILE
-   --file=SCRIPT-FILE
-       Add the commands contained in the file SCRIPT-FILE to the set of
-       commands to be run while processing the input.
-
-   -n
-   --quiet
-   --silent
-       By default, SED will print out the pattern space at then end of
-       each cycle through the script.  These options disable this
-       automatic printing, and SED will only produce output when
-       explicitly told to via the 'p' command.
-
-   -h
-   --help
-       Print a usage message and then exit.
-
-   -V
-   --version
-       Print out version info and exit.
+Replacing the nth occurrence of a pattern in a line : Use the /1, /2 etc flags to replace the first, second occurrence of a pattern in a line. The below command replaces the second occurrence of the word “unix” with “linux” in a line.
 
 
-A single command can be specified as the first argument to sed. Multiple commands can be specified by using the -e or -f options. All commands are applied to the input in the order they are specified regardless of their origin.
-
-If no -e, -f, --expression, or --file options are given on the command-line, then the first non-option argument on the command line is taken to be the SCRIPT to be executed.
-
-If any command-line parameters remain after processing the above, these parameters are interpreted as the names of input files to be processed. A file name of - refers to the standard input stream. The standard input will processed if no file names are specified.
+Replacing all the occurrence of the pattern in a line : The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
 
 
-Regular Expressions
-
-sed supports regular expressions (like awk), and can select whole lines or patterns of text.
-e.g.
-
- /REGEXP/
-     This will select any line which matches the regular expression
-     REGEXP.  If REGEXP itself includes any '/' characters, each must
-     be escaped by a backslash ('\').
-
- /REGEXP/I
- \%REGEXP%I
-     The 'I' modifier to regular-expression matching is a GNU extension
-     which causes the REGEXP to be matched in a case-insensitive manner.
-Having selected a pattern you can either delete or replace it...
-
- d
-     Delete the pattern space; immediately start next cycle.
-
- s/REGEXP/REPLACEMENT/FLAGS
-     (The '/' characters can be uniformly replaced by any other single
-     character within any given 's' command.)
-
-The /character (or whatever other character is used instead) can appear in the REGEXP or REPLACEMENT only if it is preceded by a \ character. Also newlines can appear in the REGEXP using the two character sequence '\n'.
-
-The 's' command attempts to match the pattern space against the supplied REGEXP. If the match is successful, then that portion of the pattern space which was matched is replaced with REPLACEMENT.
-
-The REPLACEMENT can contain '\N' (N being a number from 1 to 9, inclusive) references, which refer to the portion of the match which is contained between the Nth '\(' and its matching '\)'.
-Also, the REPLACEMENT can contain unescaped '&' characters which will reference the whole matched portion of the pattern space. To include a literal '\', '&', or newline in the final replacement, be sure to precede the desired '\', '&', or newline in the REPLACEMENT with a '\'.
 
 
-The 's' command can be followed with zero or more of the following FLAGS:
-    g       Apply the replacement to *all* matches to the REGEXP, not just the first.
-
-    p       If the substitution was made, then print the new pattern space.
-
-    NUMBER  Only replace the NUMBERth match of the REGEXP.
-
-    w FILE-NAME
-            If the substitution was made, then write out the result to the named file.
-
-    I       Match REGEXP in a case-insensitive manner. This is a GNU extension.
-
-More detail is available from 'info sed'
 
 
-*See also: awk, grep, regex, re_format
+
+
+
+
+
+
+
+

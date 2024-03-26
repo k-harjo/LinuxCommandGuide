@@ -1,30 +1,12 @@
-tee - Redirect output to multiple files, copies standard input to standard output and also to any files given as arguments. This is useful when you want not only to send some data down a pipe, but also to save a copy.
+tee - reads the standard input and writes it to both the standard output and one or more files.
+tee command reads the standard input and writes it to both the standard output and one or more files. The command is named after the T-splitter used in plumbing. It basically breaks the output of a program so that it can be both displayed and saved in a file. It does both the tasks simultaneously, copies the result into the specified files or variables and also display the result.
+
+SYNTAX:
+tee [OPTION]... [FILE]...
+
+Example:
+geek@HP:~$ wc -l file1.txt|tee -a file2.txt
 
 
-Syntax
-
-      tee [options]... [file]...
 
 
-Options
-
-   -a
-   --append
-        Append standard input to the given files rather than overwriting
-        them.
-
-   -i
-   --ignore-interrupts'
-        Ignore interrupt signals.
-
-
-Examples
-
-   ps -ax | tee processes.txt | more
-If a file being written to does not already exist, it is created.
-If a file being written to already exists, the data it previously contained is overwritten unless the '-a' option is used.
-
-The name tee is derived from plumbing terminology: T for a T-shaped pipe splitter.
-
-
-*See also: echo, head, less, more, pg

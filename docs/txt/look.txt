@@ -1,26 +1,35 @@
-look - Display any lines in file which contain string as a prefix.
-
-
-Syntax
-
-      look [-df] [-t termchar] string [file]
-
-      As look performs a binary search, the lines in file must be sorted.
-
+The look command in Linux shows the lines beginning with a given string. This command also uses binary search if the file is sorted. If file is not specified, the file /usr/share/dict/words is used. And then only the alphanumeric characters are compared and the case of alphabetic characters is ignored.
+Syntax:
+look [-bdf] [-t termchar] string [file ...]
 
 Options:
-
- -d   Dictionary character set and order, i.e. only alphanumeric characters are compared.
-
- -f   Ignore the case of alphabetic characters (UPPER/lower).
-
- -t   Specify a string termination character, i.e. only the characters
-      in string up to and including the first occurrence of termchar are compared.
-If file is not specified, the dictionary file /usr/share/dict/words is used, only alphanumeric characters are compared and the case of alphabetic characters is ignored.
-
-Exits 0 if one or more lines were found and displayed, 1 if no lines were found, and >1 if an error occurred.
-
-The return status is the exit status of the last command executed in consequent-commands, or zero if none were executed.
+-[string]: This option is used to search for the given string in a specified file.
 
 
-*See also: grep, sort
+Examples:
+look "include" Assignment.c
+
+
+
+-f : This option is used to ignore case of alphabetic character.
+look -f ab words
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

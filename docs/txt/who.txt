@@ -1,66 +1,11 @@
-who - Print who is currently logged in
+
+geekforgeeks@HP~: whoami –help
 
 
-Syntax
-
-      who [options] [file] [am i]
 
 
-Options
-
-   -m
-     Print the current user id, name and domain
-     (Same as 'who am i')
-
-   -q
-   --count
-     Print only the login names and the number of users logged on.
-     Overrides all other options.
-
-   -s
-     Ignored; for compatibility with other versions of 'who'.
-
-   -i
-   -u
-   --idle
-     After the login time, print the number of hours and minutes that
-     the user has been idle.  '.' means the user was active in last
-     minute.  'old' means the user was idle for more than 24 hours.
-
-   -l
-   --lookup
-     Attempt to canonicalize hostnames found in utmp through a DNS
-     lookup.  This is not the default because it can cause significant
-     delays on systems with automatic dial-up internet access.
-
-   -H
-   --heading
-     Print a line of column headings.
-
-   -w
-   -T
-   --mesg
-   --message
-   --writable
-     After each login name print a character indicating the user's
-     message status:
-
-          +  allowing 'write' messages
-          -  disallowing 'write' messages
-          ?  cannot find terminal device
-
-The who command differs from whoami in that it provides a list of all users currently logged into the system as well as additional information about each of those users (including login times and terminal numbers). It also differs in that, in the event of a change in ownership of a login session through the use of the su command, it reports the original owner of the session, whereas whoami provides the user name of the effective (i.e., current) owner of the session.
-
-If given no non-option arguments, 'who' prints the following information for each user currently logged on:
-
-login name,
-terminal line,
-login time,
-remote hostname or X display.
-
-If given one non-option argument, 'who' uses that instead of '/var/run/utmp' as the name of the file containing the record of users logged on. '/var/run/wtmp' is commonly given as an argument to 'who' to look at who has previously logged on.
-
-If given two non-option arguments, 'who' prints only the entry for the user running it (determined from its standard input), preceded by the hostname. Traditionally, the two arguments given are 'am i', as in 'who am i'.
 
 
-*See also: groups, hostname, id, uname, logname, users, w 
+
+
+

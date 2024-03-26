@@ -1,104 +1,12 @@
-rm - Remove files (delete/unlink).
+rm stands for remove here. rm command is used to remove objects such as files, directories, symbolic links and so on from the file system like UNIX. To be more precise, rm removes references to objects from the filesystem, where those objects might have had multiple references (for example, a file with two different names). By default, it does not remove directories. This command normally works silently and you should be very careful while running rm command because once you delete the files then you are not able to recover the contents of files and directories.
+Syntax:
+rm [OPTION]... FILE...
+Let us consider 5 files having name a.txt, b.txt and so on till e.txt.
+$ ls
+a.txt  b.txt  c.txt  d.txt  e.txt
+Examples:
+
+Note: No output is produced by rm, since it typically only generates messages in the case of an error.
+Options: 1. -i (Interactive Deletion): Like in cp, the -i option makes the command ask the user for confirmation before removing each file, you have to press y for confirm deletion, any other key leaves the file un-deleted.
 
 
-Syntax
-
-      rm [options]... file...
-
-
-Options
-
-   -f, --force
-       Ignore nonexistent files, never prompt.
-   -i
-       Prompt before every removal.
-   -I
-       Prompt once before removing more than three files, or when removing recursively.
-       Less intrusive than -i, while still giving protection against most mistakes.
-
-   --interactive[=WHEN]
-       Prompt according to WHEN: never, once (-I), or always (-i). Without WHEN, prompt always.
-
-   --one-file-system
-       When removing a hierarchy recursively, skip any directory that is on a file system
-       different from that of the corresponding command line argument.
-
-   --no-preserve-root
-       Do not treat '/' specially.
-
-   --preserve-root
-       Do not remove '/' (default).
-
-   -r, -R, --recursive
-       Remove directories and their contents recursively.
-
-   -v, --verbose
-       Explain what is being done.
-
-   --help
-       Display this help and exit.
-
-   --version
-       Output version information and exit.
-
-To remove a file you must have write permission on the file and the folder where it is stored.
-The OWNER of a file does not need rw permissions in order to rm it.
-
-By default, rm does not remove directories. Use the --recursive (-r or -R) option to remove each listed directory too, along with all of its contents.
-
-Note that if you use rm to remove a file, it is usually possible to recover the contents of that file. If you want more assurance that the contents are truly unrecoverable, consider using shred.
-
-
-Expanding variables
-
-If you are expanding a variable always put quotes around the filename in case it contains spaces:
-
-rm -- "$filename"
-
-Also consider the case where the $variable has not been set: rm -rf /$variable is not a good idea.
-
-The rm command accepts the -- option which will cause it to stop processing flag options from that point forward.
-Without this a filename variable which happened to contain something like "-rf" will be interpreted as part of the command.
-
-Using -- also allows the removal of file names that begin with a dash -.
-rm -- -some_file
-Alternatively use an absolute or relative path reference.
-rm /home/user/-some_file
-rm ./-some_file
-
-
-Undeletable files
-
-To delete a file with non-printable characters in the name: 'bad file name' Use the shell wildcard "?" for each character
-
-rm bad?file?name
-
-
-Bulk Deletes
-
-Older file systems such as ext2fs, perform badly for massive bulk deletes. The newer ext3fs doesn't have this performance problem.
-To remove a very large number of files from a directory it can be quicker to rm them one at a time in a loop:
-
-find demo_dir -type f | while read -r; do rm -v "$REPLY"; sleep 0.2; done
-
-
-Examples
-
-Remove demo.txt:
-
-rm demo.txt
-
-Remove demo1.txt and demo2.txt:
-
-rm demo1.txt demo2.txt
-
-Remove all the .txt files in the current directory and prompt before each deletion:
-
-rm -i *.txt
-
-Remove all the files from the current directory apart from text.txt.
-
-rm -f !(test.txt)
-
-
-*See also: ls, find, rmdir

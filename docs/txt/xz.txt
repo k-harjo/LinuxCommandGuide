@@ -1,206 +1,40 @@
-xz, xz, unxz, xzcat, lzma, unlzma, lzcat - Compress or decompress .xz and .lzma files
+xz is a general-purpose data compression and decompression command-line tool similar to gzip and bzip2. It can be used to compress and decompress the files. The native file format of xz is .xz. But it can also support other various formats to compress or decompress files.xz gives us complete control over the compression and decompression of files. In Linux, xz tool is come by default with the system you don’t need to install it. Now let’s see how to use the xz tool to compress the files.
 
+Compressing files using XZ:
+There are two ways in which we can compress the files using the xz one way is just mention file name followed by xz command like:
+xz filename
 
-Syntax
 
-      xz [option]... [file]...
 
-      unxz   is equivalent to xz --decompress.
-      xzcat  is equivalent to xz --decompress --stdout.
-      lzma   is equivalent to xz --format=lzma.
-      unlzma is equivalent to xz --format=lzma --decompress.
-      lzcat  is equivalent to xz --format=lzma --decompress --stdout.
+Another way is by using the -z or –compress option:
+xz -z filename
 
 
-Key
 
-Operation mode:
 
-       -z, --compress
-              Force compression
 
-       -d, --decompress
-              Force decompression
 
-       -t, --test
-              Test compressed file integrity
 
-       -l, --list
-              List information about files
 
-Operation modifiers:
 
-       -k, --keep
-              Keep (don’t delete) input files
 
-       -f, --force
-              Force overwrite of output file and (de)compress links
 
-       -c, --stdout
-              Write to standard output and don’t delete input files
 
-       -S, --suffix=.SUF
-              Use the suffix ‘.SUF’ on compressed files
+Yes
+yes, the command in Linux is used to print a continuous output stream of a given STRING. If STRING is not mentioned then it prints ‘y’;
+Syntax: of `yes` command in Linux
 
-       --files=[FILE]
-              Read  filenames  to  process  from  FILE;  if  FILE  is omitted,
-              filenames are read from the standard input;  filenames  must  be
-              terminated with the newline character
+yes [STRING]
 
-       --files0=[FILE] like --files but use the null character as terminator
+Examples:
+Let us say that we want to delete all the `.txt` files present in the current directory. Instead of writing `rm -i *.txt` and then typing y at the end for every file, what can be we can use
+`yes | rm -i *.txt`.
 
-              Basic file format and compression options:
 
-       -F, --format=FMT
-              File  format  to  encode  or  decode; possible values are ‘auto’
-              (default), ‘xz’, ‘lzma’, and ‘raw’
+If we want to create a file name `jayesh.txt` with 100 lines containing “hello GFG”.
+Syntax:
+yes "Hello GFG" | head -n 100 > jayesh.txt
 
-       -C, --check=CHECK
-              integrity check type: ‘crc32’, ‘crc64’ (default), or ‘sha256’
 
-       -0 .. -9
-              Compression preset; 0-2 fast compression, 3-5 good  compression,
-              6-9 excellent compression; default is 6
 
-       -e, --extreme
-              Use  more  CPU  time when encoding to increase compression ratio
-              without increasing memory usage of the decoder
 
-       -M, --memory=NUM
-              Use roughly NUM bytes of memory  at  maximum;  0  indicates  the
-              default  setting,  which  depends  on the operation mode and the
-              amount of physical memory (RAM)
-
-              Custom filter  chain  for  compression  (alternative  for  using
-              presets):
-
-       --lzma1=[OPTS]
-
-       --lzma2=[OPTS]
-
-              LZMA1 or LZMA2; OPTS is a comma-separated list of zero or
-              more   of   the   following  options  (valid  values;  default):
-              preset=NUM reset options to preset  number  NUM  (1-9)  dict=NUM
-              dictionary  size  (4KiB  -  1536MiB;  8MiB) lc=NUM     number of
-              literal context bits  (0-4;  3)  lp=NUM      number  of  literal
-              position  bits (0-4; 0) pb=NUM     number of position bits (0-4;
-              2) mode=MODE  compression mode (fast, normal;  normal)  nice=NUM
-              nice length of a match (2-273; 64) mf=NAME    match finder (hc3,
-              hc4, bt2,  bt3,  bt4;  bt4)  depth=NUM   maximum  search  depth;
-              0=automatic (default)
-
-       --x86  x86 filter (sometimes called BCJ filter)
-
-       --powerpc
-              PowerPC (big endian) filter
-
-       --ia64 IA64 (Itanium) filter
-
-       --arm  ARM filter
-
-       --armthumb
-              ARM-Thumb filter
-
-       --sparc
-              SPARC filter
-
-       --delta=[OPTS]
-              Delta  filter;  valid  OPTS  (valid  values;  default): dist=NUM
-              distance between bytes being subtracted
-
-              from each other (1-256; 1)
-
-Other options:
-
-       -q, --quiet
-              suppress warnings; specify twice to suppress errors too
-
-       -v, --verbose
-              be verbose; specify twice for even more verbose
-
-       -h, --help
-              display the short help (lists only the basic options)
-
-       -H, --long-help
-              display this long help
-
-       -V, --version
-              display the version number
-
-       With no FILE, or when FILE is -, reads standard input.
-
-
-Exit Status
-
-    1 - All is good.
-    2 - An error occurred.
-    3 - Something worth a warning occurred, but no actual errors occurred.
-
-   Notices (not warnings or errors) printed on standard error don't affect the exit status. 
-
-
-Description
-
-xz is a general-purpose data compression tool with command line syntax similar to gzip and bzip2. The native file format is the .xz format, but also the legacy .lzma format and raw compressed streams with no container format headers are supported.
-
-Compared with gzip or bzip2, xz will create smaller archives but in benchmarks has a slower decompression time and higher memory use. Also xz is less widely available. With typical files, XZ Utils create 30 % smaller output than gzip and 15 % smaller output than bzip2.
-
-xz compresses or decompresses each file according to the selected operation mode. If no files are given or file is -, xz reads from standard input and writes the processed data to standard output. xz will refuse (display an error and skip the file) to write compressed data to standard output if it is a terminal. Similarly, xz will refuse to read compressed data from standard input if it is a terminal.
-
-Unless --stdout is specified, files other than - are written to a new file whose name is derived from the source file name:
-
-When compressing, the suffix of the target file format (.xz or .lzma) is appended to the source filename to get the target filename.
-When decompressing, the .xz or .lzma suffix is removed from the filename to get the target filename. xz also recognizes the suffixes .txz and .tlz, and replaces them with the .tar suffix.
-If the target file already exists, an error is displayed and the file is skipped.
-
-Unless writing to standard output, xz will display a warning and skip the file if any of the following applies:
-
-File is not a regular file. Symbolic links are not followed, thus they are never considered to be regular files.
-File has more than one hardlink.
-File has setuid, setgid, or sticky bit set.
-The operation mode is set to compress, and the file already has a suffix of the target file format (.xz or .txz when compressing to the .xz format, and .lzma or .tlz when compressing to the .lzma format).
-The operation mode is set to decompress, and the file doesn't have a suffix of any of the supported file formats (.xz, .txz, .lzma, or .tlz).
-After successfully compressing or decompressing the file, xz copies the owner, group, permissions, access time, and modification time from the source file to the target file. If copying the group fails, the permissions are modified so that the target file doesn't become accessible to users who didn't have permission to access the source file. xz doesn't support copying other metadata like access control lists or extended attributes yet.
-
-Once the target file has been successfully closed, the source file is removed unless --keep was specified. The source file is never removed if the output is written to standard output.
-
-Sending SIGINFO or SIGUSR1 to the xz process makes it print progress information to standard error. This has only limited use since when standard error is a terminal, using --verbose will display an automatically updating progress indicator.
-
-
-Memory usage
-
-The memory usage of xz varies from a few hundred kilobytes to several gigabytes depending on the compression settings. The settings used when compressing a file affect also the memory usage of the decompressor. Typically the decompressor needs only 5 % to 20 % of the amount of RAM that the compressor needed when creating the file. Still, the worst-case memory usage of the decompressor is several gigabytes.
-
-To prevent uncomfortable surprises caused by huge memory usage, xz has a built-in memory usage limiter. The default limit is 40 % of total physical RAM. While operating systems provide ways to limit the memory usage of processes, relying on it wasn't deemed to be flexible enough.
-
-When compressing, if the selected compression settings exceed the memory usage limit, the settings are automatically adjusted downwards and a notice about this is displayed. As an exception, if the memory usage limit is exceeded when compressing with --format=raw, an error is displayed and xz will exit with exit status 1.
-
-If source file cannot be decompressed without exceeding the memory usage limit, an error message is displayed and the file is skipped. Note that compressed files may contain many blocks, which may have been compressed with different settings. Typically all blocks will have roughly the same memory requirements, but it is possible that a block later in the file will exceed the memory usage limit, and an error about too low memory usage limit gets displayed after some data has already been decompressed.
-
-The absolute value of the active memory usage limit can be seen near the bottom of the output of --long-help. The default limit can be overriden with --memory=limit.
-
-xz is currently single threaded. Multithreaded compression and decompression are planned for a future release.
-
-
-Examples
-
-Compress file.txt and remove the original uncompressed file, creating file.txt.xz in its place:
-
-$ xz file.txt
-
-Compress file.txt and keep the original uncompressed file:
-
-$ xz -k file.txt
-
-Decompress an xz compressed file and remove the compressed file, creating file.txt in its place:
-
-$ xz -d file.txt.xz
-
-Decompress an xz compressed file and keep the original compressed file:
-
-$ xz -d -k file.txt.xz
-
-To compress an entire directory, use tar with the -J flag, this will automatically compress using xz.
-
-
-*See also: bzip2, gzip, tar, unrar

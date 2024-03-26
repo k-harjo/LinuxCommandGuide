@@ -1,88 +1,70 @@
-mv - Move or rename files or directories.
+mv is used to move one or more files or directories from one place to another in file system like UNIX.
+Syntax:
+
+mv [options(s)] [source_file_name(s)] [Destination_file_name]
+Examples:
+If we have a file “name = jayesh_gfg” and want to rename it to “name = geeksforgeeks”.
+mv jayesh_gfg geeksforgeeks
 
 
-SYNTAX
-
-      mv [options]... Source Dest
-
-      mv [options]... Source... Directory
-If the last argument names an existing directory, 'mv' moves each other given file into a file with the same name in that directory. Otherwise, if only two files are given, it renames the first as the second. It is an error if the last argument is not a directory and more than two files are given.
+If we have a file “name = geeksforgeeks” and want to move it to location “name = /home/jayeshkumar/jkj”.
+mv geeksforgeeks /home/jayeshkumar/jkj/
 
 
-OPTIONS  
-
-   -b
-   --backup
-       Make a backup of each file that would otherwise be overwritten or removed.
-
-   -f
-   --force
-       Remove existing destination files and never prompt the user.
-
-   -i
-   --interactive
-       Prompt whether to overwrite each existing destination file,
-       regardless of its permissions.  If the response does not begin
-       with 'y' or 'Y', the file is skipped.
-
-   -S SUFFIX
-   --suffix=SUFFIX
-       Append SUFFIX to each backup file made with '-b'.
-       The backup suffix is ~, unless set with SIMPLE_BACKUP_SUFFIX.
-
-   -u
-   --update
-       Do not move a nondirectory that has an existing destination with
-       the same or newer modification time.
-
-   -v
-   --verbose
-       Print the name of each file before moving it.
-
-   -V METHOD
-   --version-control=METHOD'
-       Change the type of backups made with '-b'. METHOD can be:
-     
-       t, numbered     make numbered backups
-       nil, existing   numbered if numbered backups exist, simple otherwise
-       never, simple   always make simple backups
-
-    --help       Display help and exit
-    --version    Output version information and exit
-The key combination Ctrl+w (cut last word followed by Ctrl-y, Ctrl-y (Paste twice) can be useful when writing mv commands, to quickly create two copies of the path, you can then just edit the destination to generate the new name.
-
-Many users find it useful to set an alias mv="mv -iv" in bashrc, so that progress is always displayed and files do not get overwritten without a confirmation.
-
-'mv' can move only regular files across filesystems.
-
-If a destination file exists but is normally unwritable, standard input is a terminal, and the '-f' or '--force' option is not given, 'mv' prompts the user for whether to replace the file. (You might own the file, or have write permission on its directory.) If the response does not begin with 'y' or 'Y', the file is skipped.
+If we have a directory “name = jkj” and want to rename it to “name = new_gfg”.
+mv jkj new_gfg
 
 
-Examples
+nc (netcat)
+Netcat is one of the most powerful networking tools, security tools, and network monitoring tools. It acts like a cat command over a network. It is even considered a Swiss army knife of networking tools. It is generally used for the following reasons:
+Operation related to TCP, UDP, or UNIX-domain sockets.
+Port Scanning
+Port Listening
+Port redirection
+open Remote connections
+Read/Write data across the network.
+Network debugging
+Network daemon testing
+Simple TCP proxies
+A Socks or HTTP Proxy Command for ssh
 
-Rename the file apple as orange.doc:
-mv apple orange.doc
-
-Move orange.doc to the Documents folder:
-mv orange.doc ~/Documents/orange.doc
-
-Rename a bunch of .txt file extensions to *.htm
-for f in *.txt; do mv ./"$f" "${f%txt}htm"; done
-
-Using bash shell parameter expansion ${parameter/pattern/string}
-Rename all files in the current directory, replacing spaces with underscores:
-ls | while read f; do mv "$f" "${f// /_}";done
-
-Reversing this to replace underscores with spaces:
-for f in *.txt; do mv "$f" "${f//_/ }";done
-
-Rename files that end with 'copy.txt' to just .txt
-for f in *copy.html; do mv "$f" "${f/copy.txt/.txt}";done
-
-Move all .jpg files in the current directory, to the 'CA' sub-folder, and for those with "New York" in the filename, replace with "California_"
-
-$ mkdir CA
-$ for f in *.jpg; do mv "$f" "CA/${f/New York/California_}"; done
+It is designed by keeping in mind that it should be a flexible “back-end” tool that can be used directly or driven by any other program.
+netcat (nc) command options
+It offers various options that help us in enhancing its functionality. Some commonly used options include:
 
 
-*See also: cp, mmv, mv
+
+Examples:
+System 1
+We are running `nc` command in listen mode and providing a port number.
+nc -lv 1111
+You can replace port number `1111` with your desired port number.
+
+
+System 2
+We are running `nc` command with IP address of System 1 and a port number on which system 1 is listening.
+nc -v 10.143.90.24 1111
+
+
+
+
+
+
+
+
+
+
+
+
+
+nestat
+netstat displays various network related information such as network connections, routing tables, interface statistics, masquerade connections, multicast memberships, etc.
+Syntax:
+netstat [options]
+Examples:
+-a -all: Show both listening and non-listening sockets. With the –interfaces option, show interfaces that are not up.
+netstat -a | more
+
+List All TCP Ports Using netstat Command in Linux
+netstat –at
+

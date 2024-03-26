@@ -1,41 +1,53 @@
-uname - Print system information, print information about the machine and operating system it is run on. If no options are given, 'uname' acts as if the '-s' option were given.
+The term “uname” stands for “Unix Name,” and the command itself is designed to provide you with key details about your Linux system. It’s like asking your computer, “Hey, who are you, and what are you made of?” The answers you get can help you understand your system’s kernel version, operating system, hardware architecture, and more. This command ‘uname‘ displays the information about the system.
+Syntax:
+uname [OPTIONs]
 
 
-Syntax
-
-      uname [options]...
 
 
-Options
-
-   -a  --all          Print all of the below information.
-
-   -m  --machine      Print the machine (hardware) type.
-
-   -n  --nodename     Print the machine's network node hostname.
-
-   -p  --processor    Print the machine's processor type.
-
-   -r  --kernel-release  Print the kernel release.
-
-   -s  --kernel-name     Print the kernel name.
-
-   -v  --kernel-version   Print the kernel version.
-
-   -i  --hardware-platform Print the hardware platform or "unknown".
-
-   -o  --operating-system  Print the operating system.
-If multiple options or '-a' are given, the selected information is printed in this order:
-
-SYSNAME NODENAME RELEASE OSVERSION MACHINE
-
-The full documentation for uname is maintained as a Texinfo manual. If the info and uname programs are properly installed at your site, the command:
-info coreutils aquname invocationaq should give you access to the complete manual.
-
-The OSVERSION, at least, might be multiple words.
-For example:
-$uname -a
-=> Linux hayley 1.0.4 #3 Thu May 12 18:06:34 1994 i486
+Examples:
+uname  -a
 
 
-*See also: env, groups, hostname, logname, ps, tty, users, who, whoami
+uname  -s
+
+
+uname  -n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unexpand
+The unexpand command by default convert each spaces into tabs writing the produced output to the standard output. Here’s the syntax of unexpand command :
+Syntax :
+$unexpand [OPTION]... [FILE]...
+
+Examples:
+-a, – -all option : This option is used to convert all blanks, instead of just initial blanks (which is by default).
+
+
+– -first-only option : This is used to convert only leading sequences of blanks (overrides -a option).
+
+
+
+
+
+
+
+
+
+
+
+
+

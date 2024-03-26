@@ -1,59 +1,10 @@
-slocate - Security Enhanced version of GNU Locate. Secure Locate provides a secure way to index and quickly search for files on your system. It uses incremental encoding just like GNU locate to compress its database to make searching faster, but it will also store file permissions and ownership so that users will not see files they do not have access to.
+slocate command in Linux is used to find the files in your system. This is a secure version of the Linux command locate which is also used for file searching, similar to locate command it creates a database of the file locations for faster searching. But it is much more secure than locate command because it allows users to only see the files that the particular user is authorized with. So if a superuser decides to create files with permission only for the superuser then non-superusers won’t have access to those files while using slocate command. later slocate got replaced with command mlocate which has been a more sophisticated way of using it.
+Syntax:
+slocate [OPTION]... [FILE]....
+Examples:
+slocate -i [FILE]
+
+slocate -c [FILE]
 
 
-Syntax
 
-      slocate [-qi] [-d path] [--database=path] search string
-
-      slocate [-i] [-r regexp] [--regexp=regexp]
-
-      slocate [-qv] [-o file] [--output=file]
-
-      slocate [-e dir1,dir2,...] [-f fstype1,...] <[-l level] [-c] <[-U path] [-u]>
-
-      slocate [-Vh] [--version] [--help] 
-
-
-Options
-
-   -u            Create slocate database starting at path /. 
-
-   -U dir        Create slocate database starting at path dir.
-
-   -e dir1,dir2,...
-                 Exclude directories from the slocate database. 
-
-   -f fstype1,...
-                 Exclude files on specific file systems from the slocate database. 
-
-   -c            Parse '/etc/updatedb.conf' when updating the slocate database. 
-
-   -l level
-       Security level. 0 turns security checks off.
-       This will make search faster. 1 turns security checks on. This is the default. 
-
-   -i            Do a case insensitive search. 
-
-   -q            Quiet mode. Error messages are suppressed. 
-
-   -n num        Limit the amount of results shown to num. 
-
-   -r regexp
-    --regexp=regexp  Search the database using a basic POSIX regular expression. 
-
-   -o file
-    --output=file    The database to create. 
-
-   -d path
-    --database=path  The path of databases to search in. 
-   -h
-    --help           Display this help. 
-   -v
-    --verbose        Verbose mode. Display files when creating database. 
-   -V
-    --version        Display version. 
-
-slocate enables system users to search entire filesystems without displaying unauthorized files.
-
-
-*See also: locate, find, fnmatch

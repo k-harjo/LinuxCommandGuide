@@ -1,20 +1,5 @@
-whoami - Print the current user id and name. Same as id -un.
-
-
-Syntax
-
-      whoami [options]
-
-
-Options
-
-   --help      Display Help
-   --version   Display program version info
-
-The whoami utility has been obsoleted by the id(1) utility, and is equivalent to 'id -un'.
-The command id -p is suggested for normal interactive use.
-
-The whoami utility displays your effective user ID as a name.
-
-
-*See also: id, who 
+whoami displays the username of the current user when this command is invoked.
+The ‘whoami’ command is a simple yet powerful utility designed to reveal the current username associated with the active user session. When executed, it provides a swift response by outputting the username associated with the user who issued the command.
+Syntax:
+whoami [OPTION]
+Examples:

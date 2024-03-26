@@ -1,20 +1,13 @@
-pwd - Print Working Directory (shell builtin)
+Examples:
+Displaying the Current Working Directory Using Built-in pwd (pwd):
 
 
-Syntax
 
-      pwd [-LP]
-
-
-Options
-
-      -P  : The pathname printed will not contain symbolic links.
-      -L  : The pathname printed can contain symbolic links
-
-The default action is to show the current folder as an absolute path.
-All components of the path will be actual folder names - none will be symbolic links.
-
-Some shells provide a builtin pwd command which is similar or identical to this utility.
+Displaying the Current Working Directory Using Binary pwd (/bin/pwd):
 
 
-*See also: cd
+
+
+
+
+

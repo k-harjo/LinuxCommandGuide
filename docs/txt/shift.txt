@@ -1,26 +1,22 @@
-shift - Shift positional parameters to the left by n.
+shift is a builtin command in bash which after getting executed, shifts/move the command line arguments to one position left. The first argument is lost after using shift command. This command takes only one integer as an argument. This command is useful when you want to get rid of the command line arguments which are not needed after parsing them.
+Syntax: shift n
+Here, n is the number of positions by which you want to shift command-line arguments to the left if you do not specify, the default value of n is assumed to be 1 i.e shift works the same as shift 1.
+Example: Let’s create a shell script file named as sampleshift.sh as follows. The total number of command-line arguments is represented by $#. Use the following command to create the desired shell script filevi sampleshift.sh
+Now paste the following code:#!/bin/bash
+
+# total number of command-line arguments
+echo "Total arguments passed are: $#"
+
+# $* is used to show the command line arguments
+echo "The arguments are: $*"
+
+echo "The First Argument is: $1"
+shift 2
+
+echo "The First Argument After Shift 2 is: $1"
+shift
+echo "The First Argument After Shift is: $1"
+Now to save the file press ESC and then type “:x” without quotes and hit Enter. Now to execute the file, use the following command on Linux terminalsh sampleshift.shBut here we have to pass command-line arguments so we can use the following commandsh sampleshift.sh G1 G2 G3 G4Here, we are passing 4 command-line arguments named G1, G2, G3, and G4. Below is the screenshot of the output of using shift command:
 
 
-Syntax
 
-      shift [n]
-
-
-Options
-
-   n  : The number of parameters to shift (default = 1)
-The positional parameters from
-n+1 ... $#
-are renamed to
-$1 ... $#-n+1
-
-Parameters represented by the numbers $# to n+1 are unset.
-
-n must be a positive number less than or equal to $#.
-
-The return status is zero unless n is greater than $# or less than zero.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help shift
-
-
-*See also: getopts

@@ -1,118 +1,12 @@
-import - Capture some or all of an X server screen and save the image to file.
+import command in Linux system is used for capturing a screenshot for any of the active pages we have and it gives the output as an image file. You can capture a single window if you want or you can take the entire screen or you can take a screenshot of any rectangular portion of the screen.
+Syntax:
+import [options] output-file
+
+import command with help option: It will print the general syntax of the command along with the various options that can be used with the import command as well as gives a brief description about each option.
+Examples:
 
 
-Syntax
-
-      import [ options ... ] [ file ]
-import reads an image from any visible window on an X server and outputs it as an image file.
-You can capture a single window, the entire screen, or any rectangular portion of the screen.
-
-The target window can be specified by id, name, or can be selected by clicking the mouse in the desired window.
-
-If you press a button and then drag, a rectangle will form which expands and contracts as the mouse moves. To save the portion of the screen defined by the rectangle, just release the button. The keyboard bell is rung once at the beginning of the screen capture and twice when it completes.
+-identify: This option is being used to identify the format and characteristics of the
+image.import -identify sample.png
 
 
-Examples
-
-To select an X window with the mouse and save it in the MIFF image format to a file titled MyTest.miff, use:
-
-import MyTest.miff
-
-To save the desktop to a jpeg file, use:
-
-import -window root MyTest.jpg
-Although not strictly speaking part of the shell 'import' seems to be present on most linux distributions.
-
-
-OPTIONS
-
--border 
-include image borders in the output image.
-
--colors value
-preferred number of colours in the image. The actual number of colours in the image can be less than your request, but never more.
--colorspace value
-The type of colorspace: GRAY, OHTA, RGB, Transpar*ent, XYZ, YCbCr, YIQ, YPbPr, YUV, or CMYK.
-colour reduction, by default, takes place in the RGB colour space.
-
-The Transparent colour space behaves uniquely in that it preserves the matte channel of the image if it exists.
-The -colors or -monochrome option is required for this option to take effect.
-
--comment string
-annotate an image with a comment.
-
--compress type
-The type of image compression: None, BZip, Fax, Group4, JPEG, LZW, RunlengthEncoded, or Zip.
-Specify +compress to store the binary image in an uncompressed format. The default is the compression type of the specified image file.
-
--delay <1/100ths of a second>x 
-display the next image after pausing.
-This option is useful for regulating the display of the sequence of images. 1/100ths of a second must expire before the display of the next image. The default is 6/100 of a second between each frame of the image sequence. The second value is optional. It specifies the number of seconds to pause before repeating your animation sequence.
-
--density x
-Vertical and horizontal resolution in pixels of the image.
--frame
-Include window manager frame.
--geometry x{+-}{+-}{%}{!}{<}{>}
-The width and height of the image.
--interlace type
-The type of interlacing scheme: None, Line, Plane, or Partition. The default is None.
-This option is used to specify the type of interlacing scheme for raw image formats such as RGB or YUV.
-
-No - means do not interlace (RGBRGBRGBRGBRGBRGB...)
-Line - uses scanline interlacing (RRR...GGG...BBB...RRR...GGG...BBB...)
-Plane - uses plane interlacing (RRRRRR...GGGGGG...BBBBBB...)
-Partition - is like plane except the different planes are saved to individual files (e.g. image.R, image.G, and image.B)
-
-Use Line, or Plane to create an interlaced GIF or progressive JPEG image.
-
--label name assign a label to an image.
-Use this option to assign a specific label to the image.
-
--monochrome
-transform image to black and white.
-
--negate
-Replace every pixel with its complementary colour (white becomes black, yellow becomes blue, etc.)
-Use +negate to only negate the grayscale pixels of the image.
-
--quality value
-JPEG/MIFF/PNG compression level.
-For the JPEG image format, quality is 0 (worst) to 100 (best). The default quality is 75.
-Quality for the MIFF and PNG image format sets the amount of image compression (quality / 10) and filter-type (quality % 10). Compression quality values range from 0 (worst) to 100 (best).
-
--rotate degrees{<}{>}
-Apply Path image rotation to the image.
-Use > to rotate the image only if its width exceeds the height. < rotates the image only if its width is less than the height. For example, if you specify -90> and the image size is 480x640, the image is not rotated by the specified angle. However, if the image is 640x480, it is rotated by-90 degrees. Empty triangles left over from rotating the image are filled with the colour defined as bordercolor (class borderColor).
-
--scene value  
-Number of screen snapshots.
-Use this option to grab more than one image from the X server screen to create an animation sequence.
-
--screen 
-This option indicates that the GetImage request used to obtain the image should be done on the root window, rather than directly on the specified window. In this way, you can obtain pieces of other windows that overlap the specified window, and more importantly, you can capture menus or other popups that are independent windows but appear over the specified window.
-
--silent 
-Operate silently, i.e. don't ring any bells.
-
--transparency color 
-Make this colour transparent within the image.
-
--treedepth value 
-Normally, this integer value is zero or one. A zero or one tells convert to choose a optimal tree depth for the colour reduction algorithm.
-Try values between 2 and 8 for this parameter.
-
--verbose 
-print detailed information about the image. This information is printed: image scene number; image name; image size; the image class (Direct- Class or PseudoClass); the total number of unique colours; and the number of seconds to read and write the image.
-
--window id 
-select window with this id or name. With this option you can specify the target window by id or name rather than using the mouse. Specify 'root' to select X's root window as the target window.
-
-All Options are processed in command line order. Any option you specify on the command line remains in effect until it is explicitly changed by specifying the option again with a different effect.
-
-file specifies the image filename. If file is omitted, it defaults to magick.miff. The default image format is MIFF. To specify a particular image format, precede the filename with an image format name and a colon (i.e. gif:image) or specify the image type as the filename suffix (i.e. image.jpg). See convert(1) for a list of valid image formats.
-
-Specify file as - for standard output. If file has the extension .Z or .gz, the file size is compressed using with compress or gzip respectively. Precede the image file name | to pipe to a system command. If file already exists, you will be prompted as to whether it should be overwritten.
-
-
-*See also: cat, echo, more

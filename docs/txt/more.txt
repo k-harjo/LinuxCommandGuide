@@ -1,104 +1,14 @@
-more - Display output one screen at a time, less provides more emulation and extensive enhancements.
+more command is used to view the text files in the command prompt, displaying one screen at a time in case the file is large (For example log files). The more command also allows the user do scroll up and down through the page. The syntax along with options and command is as follows. Another application of more is to use it with some other command after a pipe. When the output is large, we can use more command to see output one by one.
+Syntax:
+more [-options] [-num] [+/pattern] [+linenum] [file_name]
+[-options]: any option that you want to use in order to change the way the file is displayed. Choose any one from the followings: (-d, -l, -f, -p, -c, -s, -u)
+[-num]: type the number of lines that you want to display per screen.
+[+/pattern]: replace the pattern with any string that you want to find in the text file.
+[+linenum]: use the line number from where you want to start displaying the text content.
+[file_name]: name of the file containing the text that you want to display on the screen
+Options:
+-d : Use this command in order to help the user to navigate. It displays “[Press space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” when wrong key is pressed.
 
+Example:
+more -d sample.txt
 
-Syntax
-
-      more [-dlfpcsu] [-num] [+/ pattern] [+ linenum] [file ...]
-
-
-Options
-
-     Command line options are described below.  Options are also taken from
-     the environment variable MORE (make sure to precede them with a dash
-     (''-'')) but command line options will override them.
- 
-     -num  This option specifies an integer which is the screen size (in lines).
- 
-     -d    More will prompt the user with the message "[Press space to continue,
-           'q' to quit.]" and will display "[Press 'h' for instructions.]"
-           instead of ringing the bell when an illegal key is pressed.
- 
-     -l    More usually treats ^L (form feed) as a special character, and will
-           pause after any line that contains a form feed.  The -l option will
-           prevent this behavior.
- 
-     -f    Causes more to count logical, rather than screen lines (i.e., long lines are not folded).
- 
-     -p    Do not scroll.  Instead, clear the whole screen and then display the text.
-                     
-     -c    Do not scroll.  Instead, paint each screen from the top, clearing
-           the remainder of each line as it is displayed.
- 
-     -s    Squeeze multiple blank lines into one.
- 
-     -u    Suppress underlining.
- 
-     +/    The +/ option specifies a string that will be searched for before
-           each file is displayed.
- 
-     +num  Start at line number num.
- 
-
-COMMANDS
-
-     Interactive commands for more are based on vi(1).  Some commands can be
-     preceeded by a decimal number, called k in the descriptions below.  In
-     the following descriptions, ^X means control-X.
- 
-     h or ?      Help: display a summary of these commands.  If you forget all  
-                 the other commands, remember this one.
- 
-     SPACE       Display next k lines of text.  Defaults to current screen
-                 size.
- 
-     z           Display next k lines of text.  Defaults to current screen
-                 size.  Argument becomes new default.
- 
-     RETURN      Display next k lines of text.  Defaults to 1.
-                 Argument becomes new default.
- 
-     d or ^D     Scroll k lines.  Default is current scroll size, initially
-                 11.  Argument becomes new default.
- 
-     q or Q or INTERRUPT    Exits the more command.
-           
-     s           Skip forward k lines of text.  Defaults to 1.
- 
-     f           Skip forward k screenfuls of text.  Defaults to 1.
- 
-     b or ^B     Skip backwards k screenfuls of text.  Defaults to 1.
- 
-     '           Go to place where previous search started.
- 
-     =           Display current line number.
- 
-     /pattern    Search for kth occurrence of regular expression. Defaults to 1.
- 
-     n           Search for kth occurrence of last r.e.  Defaults to 1.
- 
-     ! or :!     Execute  in a subshell           
-         
-     v           Start up /usr/bin/vi at current line
- 
-     ^L          Redraw screen
- 
-     :n          Go to kth next file.  Defaults to 1.
- 
-     :p          Go to kth previous file.  Defaults to 1.
- 
-     :f          Display current file name and line number
- 
-     .           Repeat previous command
- 
-
-ENVIRONMENT
-
-     More utilizes the following environment variables, if they exist:
- 
-     MORE        This variable can be set with favored options to more.
-     SHELL       Current shell in use (normally set by the shell at login
-When the output of more is redirected to a file, it outputs a small header for each file:
-:::::::::::::: filename.txt ::::::::::::::
-
-
-*See also: echo, less, tee, most

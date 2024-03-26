@@ -1,40 +1,16 @@
-source
+source is used to read and execute the content of a file(generally set of commands), passed as an argument in the current shell script
 
-Read and execute commands from the filename argument in the current shell context.
+Syntax:
+source FILENAME [arguments]
+Example 1: To pass gfg.txt as an argument which is stored in the home directory and contain list of command i.e. ls, date and time. Each command enlisted in the file will be executed line by line.
 
-
-Syntax
-
-      . filename [arguments]
-
-      source filename [arguments]
-source is a synonym for dot/period '.' in bash, but not in POSIX sh, so for maximum compatibility use the period.
-
-When a script is run using source it runs within the existing shell, any variables created or modified by the script will remain available after the script completes. In contrast if the script is run just as filename, then a separate subshell (with a completely separate set of variables) would be spawned to run the script.
-
-There is a subtle difference between executing a script by running .ss64script (dot ss64script) and . ss64script (dot space ss64script)
-the first is running a file thats been hidden from the 'ls' command, (although ls -a will show hidden files) the second option will execute ss64script even if it has not been set as an executable with chmod.
-
-Unless you provide an exact path to filename then bash will look first via the PATH variable and then in the current directory (only if filename is not found in $PATH.) If any arguments are supplied, they become the positional parameters when filename is executed. Otherwise the positional parameters are unchanged.
-
-When a script is run using 'source' it runs within the existing shell, any variables created or modified by the script will remain available after the script completes.
-
-If a script is run just as ss64script, then a separate subshell (with a separate set of variables) will be spawned to run the script.
+Example 2: To pass a path_name of a file as an argument where, /home/sc/sourcefolder/ is the file directory here. The content of the file is written below:
 
 
-Other ways that the bash shell can interpret a dot/period:
-
-A dot can represent the current directory ("./filename")
-In a regular expression, "." will match any single character, (not zero or more characters.)
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [s]ource
-
-The return status is the exit status of the last command executed, or zero if no commands are executed. If filename is not found, or cannot be read, the return status is non-zero.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help source
-
-Examples
-$ source ~/myscript
 
 
-*See also: command, builtin, crontab, chroot, exec, if, nohup, su, type, watch
+
+
+
+
+

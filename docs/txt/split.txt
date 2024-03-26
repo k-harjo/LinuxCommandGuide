@@ -1,54 +1,32 @@
-split - Split a file into fixed-size pieces, creates output files containing consecutive sections of INPUT
-(standard input if none is given or INPUT is '-')
+split command in Linux is used to split large files into smaller files. It splits the files into 1000 lines per file(by default) and even allows users to change the number of lines as per requirement.
+Syntax:
+split [options] name_of_file prefix_for_new_files
+Examples:
+Split file into short files. Assume a file name with name index.txt. Use below split command to break it into pieces.
+split index.txt
+
+Split file based on number of lines.
+split -l 4 index.txt split_file
 
 
-Syntax
 
-      split [options] [INPUT [PREFIX]]
+Ss
+One such utility is the ‘ss’ command, which stands for “Socket Statistics.” It is a potent tool for inspecting and displaying detailed information about network sockets on a Linux system. The ‘ss’ command is an indispensable resource for network administrators, system administrators, and developers, offering insights into network connections, routing tables, and more.
+Syntax:
+ss [options]
+Examples:
+Display Listening Sockets:
 
-
-Options
-
- -LINES
- -l LINES
- --lines=LINES
-     Put LINES lines of INPUT into each output file.
-
- -b BYTES
- --bytes=BYTES
-     Put the first BYTES bytes of INPUT into each output file.
-     Appending 'b' multiplies BYTES by 512, 'k' by 1024, and 'm' by
-     1048576.
-
- -C BYTES
- --line-bytes=BYTES
-     Put into each output file as many complete lines of INPUT as
-     possible without exceeding BYTES bytes.  For lines longer than
-     BYTES bytes, put BYTES bytes into each output file until less than
-     BYTES bytes of the line are left, then continue normally.  BYTES
-     has the same format as for the '--bytes' option.
-
- --verbose
-     Write a diagnostic to standard error just before each output file
-     is opened.
+To see all sockets currently in the listening state (sockets waiting for incoming connections), employ the -l option:
+ss –l
 
 
-By default, 'split' puts 1000 lines of INPUT (or whatever is left over for the last section), into each output file.
+Display Established Connections:
 
-The output files' names consist of PREFIX ('x' by default) followed by a group of letters 'aa', 'ab', and so on, such that concatenating the output files in sorted order by file name produces the original input file.
-
-If more than 676 output files are required, 'split' uses 'zaa', 'zab', etc.
+ss –e
 
 
-Examples
-
-Split up the file demo.zip into multiple 100 MB files:
-
-$ split -b 100m demo.zip
-
-The output files will be named with 3 letters starting xaa, xab, … to reassemble them, cat the files in alphabetical order:
-
-$ cat 'ls x*' > demo2.zip
 
 
-*See also: csplit, cut, fmt, fold, head, join, paste
+
+

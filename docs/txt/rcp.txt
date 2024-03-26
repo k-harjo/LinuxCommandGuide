@@ -1,23 +1,37 @@
-rcp (Remote Copy) - move files between machines. Each file or directory is either a remote filename of the form rname@rhost:path or a local filename.
+rcp  is used to copy files from one computer to another computer.
+There comes a time while using LINUX when there is a need to copy some information stored in a file to another computer. This can be done simply using rcp command line utility . Obviously there exists some other methods to complete the above mentioned task which are more secure (like scp or rsync) but this command lets you do this in the simple way and a LINUX beginner can use this command to copy files from one computer to another computer. 
+
+Syntax:
+rcp [-p] [-r] file name ... directory
+
+Options:
+-r : This option is used when there is a need to copy an entire directory.
+-p : This option allows the copy to have the modification times, access times, modes and ACLs if applicable as the original file.
+file name : refers to the name of the file.
+directory : refers to the name of directory
+
+Examples:
+Using rcp to receive a file from remote host to local host : In the above example we learnt how to use rcp command to send a file from local host to a remote host. We can use the same rcp command to receive a file from a remote host to a local host like shown below:
+
+The above will transfer a file named kt.txt in one directory from a remote host named kartik to the local host. The . (dot) used at the end is for placing the file kt.txt in the current directory of the local host, obviously you can provide a path of your own choice instead of a dot that is here representing the current directory.
+
+Using rcp with -p option : The rcp command like cp changes the modification time of the destination file to the late time. So, in order to retain the same modification time -p option is used.
 
 
-Syntax
-
-      rcp [options] file1 file2
-
-      rcp [options] file ... directory
+The above will copy the entire directory localdir along with it sub directories to the HOME directory of remote host named kartik.
+Using rcp to copy two files together : this can be done simply just giving the names of two files together. For the sake of simplicity, we are using rcp for transferring the files from a local host to a remote host.
 
 
-Options
-
-   -k   Attempt to get tickets for remote host; query krb_realmofhost to determine realm.
-
-   -p   Preserve modification times and modes of the source files.
-
-   -r   If any of the source files are directories, rcp copies each subtree rooted at that name.
-        The destination must be a directory.
-
-   -x   Turns on DES encryption for all data passed by rcp.
 
 
-*See also: rsync
+
+
+
+
+
+
+
+
+
+
+

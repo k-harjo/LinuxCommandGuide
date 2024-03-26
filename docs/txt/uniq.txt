@@ -1,82 +1,71 @@
-uniq - Report or filter out repeated lines in a file. Reads standard input comparing adjacent lines, and writes a copy of each unique input line to the standard output. The second and succeeding copies of identical adjacent input lines are not written.
+The uniq command in Linux is a command-line utility that reports or filters out the repeated lines in a file. In simple words, uniq is the tool that helps to detect the adjacent duplicate lines and also deletes the duplicate lines. uniq filters out the adjacent matching lines from the input file(that is required as an argument) and writes the filtered data to the output file.
+Syntax:
+The basic syntax of the `uniq` command is:
+uniq [OPTIONS] [INPUT_FILE [OUTPUT_FILE]]
+Common Options of the uniq Command
 
 
-Syntax
-
-      uniq [options]... [InputFile [OutputFile]]
 
 
-Options
-
-   -N
-   -f N
-   --skip-fields=N
-       Skip N fields on each line before checking for uniqueness.  Fields
-       are sequences of non-space non-tab characters that are separated
-       from each other by at least one spaces or tabs.
-
-   +N
-   -s N
-   --skip-chars=N
-       Skip N characters before checking for uniqueness.  If you use both
-       the field and character skipping options, fields are skipped over
-       first.
-
-   -c
-   --count
-       Print the number of times each line occurred along with the line.
-
-   -i
-   --ignore-case
-       Ignore differences in case when comparing lines.
-
-   -d
-   --repeated
-       Print only duplicate lines.
-
-   -D
-   --all-repeated
-       Print all duplicate lines and only duplicate lines.  This option
-       is useful mainly in conjunction with other options e.g., to ignore
-       case or to compare only selected fields.  This is a GNU extension.
-
-   -u
-   --unique
-       Don't output lines that are repeated in the input.
-       Print only lines that are unique in the INPUT.
-
-   -w N
-   --check-chars=N
-       Compare N characters on each line
-       (after skipping any specified fields and characters).
-       By default the entire rest of the lines are compared.
-
-By default, uniq prints the unique lines in a sorted file, it discards all but one of identical successive input lines. so that the OUTPUT contains unique lines.
-
-uniq will only compare lines that appear successively in the input.
-
-Repeated lines in the input will not be detected if they are not adjacent, so it may be necessary to sort the files first.
-
-If an InputFile of - (or nothing) is given, then uniq will read from standard input.
-
-If no OutputFile file is specified, uniq writes to standard output.
 
 
-Examples
+Examples:
+How to Remove Duplicate Lines Using `uniq` Command
 
-Print the file demo.txt ommiting any duplicate lines:
-
-$ sort demo.txt | uniq
-
-Print only the unique numbers given the input 1, 1, 2, 3
-
-$ printf "%s\n" 1 1 2 3 | uniq -u
-2
-3
-
-Count the frequency of some words:
-
-echo "one two three one three" | tr -cs "A-Za-z" "\n" | sort | uniq -c | sort -n -r
+To remove duplicate lines from `kt.txt`, we can use the `uniq` command:
+uniq kt.txt
 
 
-*See also: sort, tr
+How to Count Duplicate Lines Using `uniq` Command in Linux
+The `-c` option prefixes each line with the number of occurrences in the input:
+uniq -c kt.txt
+
+
+
+
+
+
+
+
+
+
+
+
+unixdos
+unix2dos is a tool to convert line breaks in a text file from Unix format (Line feed) to DOS format (carriage return + Line feed) and vice versa.
+dos2unix command: converts a DOS text file to UNIX format.
+Unix2dos command: converts a Unix text file to DOS format
+
+Example:
+$unix2dos myfile.txt
+Convert UNIX file to DOS format by using unix2dos command
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unset
+unset command in Bash is used to unset or remove a variable or function. It allows you to delete the values and attributes of variables or functions, making them undefined or unset. This can be useful when you want to clear the value of a variable or remove a function definition from the current shell session.
+Syntax:
+unset -f function_name
+Examples:
+Unset a Bash Function
+
+Unset a Function After Task Completion
+

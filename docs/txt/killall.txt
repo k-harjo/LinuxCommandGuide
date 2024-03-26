@@ -1,126 +1,22 @@
-killall - kill processes by name.
+The primary contrast between the kill and killall command is that the “kill” ends process cycles dependent on Process ID number (PID), while the killall orders end running cycles dependent on their names and different attributes. Normal users can end/kill their own cycles(processes), however not those that have a place with different users, while the root client can end all cycles.
+To know the contrast among kill and killall orders we first need to ensure that we comprehend the nuts and bolts behind cycles on the Linux OS. The process is an occurrence of a running system. Each process cycle is allotted PID ( Process ID ) which is remarkable for each cycle and in this way, no two cycles can be allocated the same PID. When the cycle is ended the PID is accessible for reuse.
+Syntax:
+killall [ -Z CONTEXT ] [ -u USER ] [ -y TIME ] [ -o TIME ] [ -eIgiqrvw ] [ -s SIGNAL | -SIGNAL ] NAME...
+Example:
+$ sudo killall yes
 
 
-Syntax
-
-      killall [option(s)] [--] name ...
-
-      killall -l
-
-      killall -V,--version 
 
 
-Options
-
-   -e
-   --exact  Require an exact match for very long names.
-            If a command name is longer than 15 characters, the full name might be
-            unavailable (i.e. it is swapped out). In this case, killall will kill everything
-            that matches within the first 15 characters. With -e, such entries are skipped. 
-            killall prints a message for each skipped entry if -v is specified in addition to -e, 
-
-   -g
-   --process-group
-            Kill the process group to which the process belongs.
-            The kill signal is only sent once per group, even if multiple processes belonging
-            to the same process group were found.
-
-   -I
-   --ignore-case
-            Do case insensitive process name match.
- 
-   -i
-   --interactive
-            Interactively ask for confirmation before killing.
-
-   -l
-   --list   List all known signal names.
-
-   name     The command/process to be killed
-
-   -q
-   --quiet  Do not complain if no processes were killed.
-     
-   -r
-   --regexp Interpret process name pattern as an extended regular expression.
-     
-   -s signal
-   -signal
-   --signal signal
-            Send signal instead of the default SIGTERM. See list below.
-            e.g. -s 9 = SIGKILL
-
-   -u user
-   --user user
-            Kill only processes the specified user owns. Command names are optional.
-
-   -v
-   --verbose
-            Report if the signal was successfully sent.
-
-   -V
-   --version
-            Display version information.
-   -w
-   --wait   Wait for all killed processes to die. killall checks once per second if any
-            of the killed processes still exist and only returns if none are left.
-            Note that killall can wait forever if the signal was ignored, had no effect, or
-            if the process stays in zombie state. 
-
-   -Z pattern
-   --context pattern 
-            Specify security context: kill only processes having security context that match
-            with given expended regular expression pattern. Must precede other arguments on
-            the command line. Command names are optional. (SELinux Only)
-
-   --       Each parameter after a '--' parameter is always interpreted as a non-option parameter.
 
 
-killall sends a signal to all processes running any of the specified commands. If no signal name is specified, SIGTERM is sent.
-
-Signals can be specified either by name (e.g. -HUP) or by number (e.g. -1) or by option -s.
-
-If the command name is not regular expression (option -r) and contains a slash (/), processes executing that particular file will be selected for killing, independent of their name.
-
-killall returns a zero return code if at least one process has been killed for each listed command, or no commands were listed and at least one process matched the -u and -Z search criteria. killall returns non-zero otherwise.
-
-A killall process never kills itself (but can kill other killall processes).
 
 
---Common Kill Signals--
-Signal name	Signal value	Effect
-SIGHUP		1		Hangup
-SIGINT		2		Interrupt from keyboard
-SIGQUIT		3		Quit
-SIGABRT		6		Cancel
-SIGKILL		9		Kill signal
-SIGTERM		15		Termination signal - allow an orderly shutdown
-SIGSTOP		17,19,23	Stop the process
 
 
-Files
-
-/proc
-location of the proc file system
 
 
-Known Bugs
-
-Typing killall name might not have the desired effect on non-Linux systems, especially when done by a privileged user. e.g. on Solaris it will kill all active processes.
-
-Killing by file only works for executables that are kept open during execution, i.e. impure executables can't be killed this way.
-
-killall -w doesn't detect if a process disappears and is replaced by a new process with the same PID between scans.
-
-If processes change their name, killall might not be able to match them correctly.
 
 
-Examples
 
-Kill firefox:
-
-$ killall -9 mozilla-bin
-
-
-*See also: kill, ps, pkill, fuser, jobs, bg
 

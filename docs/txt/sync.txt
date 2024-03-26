@@ -1,14 +1,5 @@
-sync - Synchronize data on disk with memory
-
-
-Syntax
-
-      sync
-Writes any data buffered in memory out to disk. This can include (but is not limited to) modified superblocks, modified inodes, and delayed reads and writes.
-This must be implemented by the kernel; The 'sync' program does nothing but exercise the 'sync' system call. The kernel keeps data in memory to avoid doing (relatively slow) disk reads and writes. This improves performance, but if the computer crashes, data can be lost or the filesystem corrupted as a result. 'sync' ensures everything in memory is written to disk.
-
-Any arguments are ignored, except for a lone '--help' or '--version'
-
-
-
-*See also: mount
+sync command in Linux is used to synchronize cached writes to persistent storage. If one or more files are specified, sync only them, or their containing file systems.
+Syntax:
+sync [OPTION] [FILE]...
+Note: Nothing is being shown in the screenshots just because sync command makes the cache in the background.
+Example: It will be going to sync all cached file data that belongs to the current user.

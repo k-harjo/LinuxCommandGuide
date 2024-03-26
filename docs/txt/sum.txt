@@ -1,25 +1,17 @@
-sum - Print a checksum for a file. 'sum' is provided for compatibility; 'cksum' is preferable in new applications.
+sum command in Linux is used to find checksum and count the blocks in a file. Basically, this command is used to show the checksum and block count for each specified file. When no file is specified then it will read the standard input.
+
+Syntax:
+sum [OPTION]... [FILE]…
+Examples:
+sum -r: This option will use BSD sum algorithm, use 1K blocks.
+sum -r myfile.txt
 
 
-Syntax
-
-      sum [options]... [file]...
-
-
-Options
-
- -r
-     Use the default (BSD compatible) algorithm.  This option is
-     included for compatibility with the System V 'sum'.  Unless '-s'
-     was also given, it has no effect.
-
- -s
- --sysv
-     Compute checksums using an algorithm compatible with System V
-     'sum''s default, and print file sizes in units of 512-byte blocks.
-'sum' prints the checksum for each FILE followed by the number of blocks in the file (rounded up). If more than one FILE is given, file names are also printed (by default). (With the '--sysv' option, corresponding file name are printed when there is at least one file argument.)
-
-By default, GNU 'sum' computes checksums using an algorithm compatible with BSD 'sum' and prints file sizes in units of 1024-byte blocks.
+sum -s: This option will use System V sum algorithm, use 512 bytes blocks.
+sum -s myfile.txt
 
 
-*See also: cksum, sha256sum
+
+
+
+

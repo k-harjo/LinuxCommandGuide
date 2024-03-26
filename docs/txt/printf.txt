@@ -1,157 +1,56 @@
-printf - Format and print data. Write the formatted arguments to the standard output under the control of the format.
+printf command in Linux is used to display the given string, number or any other format specifier on the terminal window. It works the same way as “printf” works in programming languages like C.
+Syntax:
+$printf [-v var] format [arguments]
+Example:
+$printf "%b\n" "Geeks" "for" "\nGeeks\n"
+
+$printf "%d\n" "213" "109"
 
 
-Syntax
-
-      printf [-v var] format [argument]...
-
-      printf --help
-
-      printf --version
 
 
-Key
-
-   -v   Cause the output to be assigned to the variable var rather than being printed to the standard output. 
-
-   The format characters and their meanings are:
-
-       \"     double quote
-
-       \0NNN  character with octal value NNN (0 to 3 digits)
-
-       \\     backslash
-
-       \a     alert (BEL)
-
-       \b     backspace
-
-       \c     produce no further output
-
-       \f     form feed
-
-       \n     new line
-
-       \r     carriage return
-
-       \t     horizontal tab
-
-       \v     vertical tab
-
-       \xNNN  byte with hexadecimal value NNN (1 to 3 digits)
-
-       \uNNNN character with hexadecimal value NNNN (4 digits)
-
-       \UNNNNNNNN
-              character with hexadecimal value NNNNNNNN (8 digits)
-
-       %%     a single %
-
-       %b     ARGUMENT as a string with '\' escapes interpreted
-
-       %Wd    Integer 'W' digits wide xxxx
-
-       %W.De  Scientific notation x.xxxx e nnn. float, double
-
-       %W.Df  Fixed format xx.xxxx. float, double
-
-       %W.Dg  Variable 'W' digits wide,'D' decimals  xxxx.xx
-
-       %q     Output the corresponding argument in a format that can be
-              reused as shell input
-
-       %(datefmt)T
-              Output the date-time string resulting from using datefmt as a format string for strftime(3).
-              The corresponding argument is an integer representing the number of seconds since the epoch.
-              Two special argument values may be used: -1 represents the current time, and -2 represents
-              the time the shell was invoked.
-              If no argument is specified, conversion behaves as if -1 had been given.
-              This is an exception to the usual printf behavior. 
-
-       %s     Character string char
-
-       and  all C format specifications ending with one of diouxXfeEgGcs, with
-       ARGUMENTs converted to proper type first.  Variable widths are handled.
-       e.g.  '\0ooo' = an octal number, '\xhhh' = a hex number
 
 
-The format is a character string which contains three types of objects:
-
-Plain characters, which are copied to standard output,
-Character escape sequences, which are converted and copied to standard output,
-Format specifications, each of which causes printing of the next successive argument.
-The format is reused as necessary to consume all of the arguments. If the format requires more arguments than are supplied, the extra format specifications behave as if a zero value or null string, as appropriate, had been supplied.
-
-The return value is zero on success, non-zero on failure.
 
 
-Examples
-
-Print the decimal number 5 followed by a newline (\n):
-$ printf "%d\n" 5
-5
-
-Print as float (default 6 decimal places):
-$ printf "%f\n" 5
-5.000000
-
-Print text followed by variable $USER
-$ printf "Hello, $USER.\n\n"
-
-Loop through a text file 'demo.txt' and print each line:
-
-while IFS= read -r line; do
-printf '%s\n' "$line"
-done <demo.txt
-
-Print multiple lines:
-$ printf %s "\
-with quotes we can echo
-several lines at a time
-"
 
 
-Display variables:
-
-$ distance=15
-$ printf "Distance is %5d Miles\n" $distance
-Distance is 15 Miles
-
-Echo a list of numbers from 1 to 100, adding 3 digits of Zero padding so they appear as 001, 002, 003 etc:
-for ((num=1;num<=100;num+=1)); do echo 'printf "%03d" $num'; done
-
-Use \n anywhere to start a new line:
-$ printf "Two separate\nlines\n"
-Two separate
-lines
-
-Print Unix Epoch time in seconds and save in the variable epochtime:
-$ printf -v epochtime "%(%s)T"
-
-In bash version 5, you can use $EPOCHREALTIME with microsecond accuracy.
-
-Print decimal numbers interspersed with text:
-$ printf "There are %d orders valued at over %d euros.\n" 64 1500
-There are 64 orders valued at over 1500 euros.
-
-Print text interspersed with command results:
-$ printf "This is 'uname -s' running on a 'uname -m' processor.\n\n"
-
-Convert a hex number to decimal:
-$ printf "%d\n " 0xF
-15
-
-Convert a decimal number to Hex:
-$ printf "0x%X\n " 15
-0xF
-
-Convert a decimal number to Octal:
-$ printf "0%o\n " 8
-010
-
-Convert an Octal number to decimal:
-$ printf "%d\n " 010
-8
 
 
-*See also: cat, less, more
+
+
+
+Ps
+ps is used to list the currently running processes and their PIDs along with some other information depends on different options.
+
+Examples:
+To view all running processes, use either of the following options with the `ps` command:
+ps -A
+
+
+List Processes Not associated with a Terminal in Linux
+View all processes except both session leaders and processes not associated with a terminal.
+ps –a
+
+
+
+
+
+
+
+Pushd
+pushd is a shell built-in command which allows us to easily manipulate the directory stack. This appends a directory to the top of the directory stack, or rotates the stack, making the new top of the stack the present working directory. The “d” in pushd stands for the directory as it pushes the directory path onto the stack. The directory stack increases in size after each pushd command. This stack is based on the Last In First Out (LIFO) principle. This command has an exit status 0 i.e, it returns success unless an invalid argument is supplied or the directory change fails.
+Syntax:
+pushd [directory]
+Desktop becomes the present working directory and is pushed onto the stack and the list of directories is displayed. The same operations will be performed for the other commands below.
+pushd ~/Templates
+pushd ~/Videos
+pushd ~/Downloads
+pushd ~/Music
+pushd ~/Downloads
+Examples:
+
+Adding a directory without changing the current directory:
+
+pushd -n [Directory]
+

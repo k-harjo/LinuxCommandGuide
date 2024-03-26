@@ -1,12 +1,10 @@
-until - Execute consequent-commands as long as test-commands has an exit status which is not zero.
+until command in Linux used to execute a set of commands as long as the final command in the ‘until’ Commands has an exit status which is not zero. It is mostly used where the user needs to execute a set of commands until a condition is true.
+Syntax:
+until COMMANDS; do COMMANDS; done
+Here, if the COMMANDS get evaluated to false then the statements will be executed. If the COMMANDS get evaluated to true then the no statements will be executed and control will go after the done statement.
+Examples:
+
+help until : It displays help information.
 
 
-Syntax
 
-      until test-commands; do consequent-commands; done
-The return status is the exit status of the last command executed in consequent-commands, or zero if none was executed.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help until
-
-
-*See also: case, for, if, while

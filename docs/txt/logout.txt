@@ -1,31 +1,16 @@
-logout - Exit a login shell.
-
+The logout command is a Linux/UNIX shell command that performs the task of logging out the logged-in user from the system in that session, programmatically. Logout only works in logon shells, not in the non-logon shells. The difference is as follows:
+Login-Shell uses invokes the ~/.bash_profile whereas the Non-Login shell invokes the ~/.bashrc first.
+Login-Shell is preferred when the system environment has multiple users.
 
 Syntax
 
-      logout [n]
-Returns a status of n to the shell's parent.
-
-A login shell, is your topmost shell, and is started when you log in.
-
-When you terminate a login shell (via the commands 'exit', 'logout,' or the end of file [^D]), you are logged out completely.
-
-
-Sub-Shells
-
-A 'sub-shell' is a shell created after login, either by loading a new shell or opening a window with a graphics interface. A sub-shell usually will not accept the command 'logout' to terminate, you must use 'exit' or ^D.
-When you terminate a sub-shell, you are returned to the process or shell that created it.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help logout
-
-
-Example (starting from a bash shell)
-
-$ tcsh
-% # now in the tcsh shell
-% exit
-$ # now back in the bash shell
 $ logout
+.bash_logout File in Linux
+for better privacy measures.
+
+Sample file
+A screenshot of the .bash_logout file is attached below.
+The .bash_logout file is executed only when a login shell is invoked. The purpose of the file is to clear the screen after logout in the terminal
 
 
-*See also: exit, logname
+

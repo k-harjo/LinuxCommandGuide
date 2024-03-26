@@ -1,27 +1,15 @@
-wait - Wait for each specified process to complete and return its termination status.
+wait command is one of the process management commands. There are different process commands in Linux mainly 5 commands are widely used which are ps, wait, sleep, kill, exit.
+wait is an inbuilt command in the Linux shell. It waits for the process to change its state i.e. it waits for any running process to complete and returns the exit status.
+Syntax:
+wait [ID]
+Approach:
+Creating a simple process.
+Using a special variable($!) to find the PID(process ID) for that particular process.
+Print the process ID.
+Using wait command with process ID as an argument to wait until the process finishes.
+After the process is finished printing process ID with its exit status.
+Note: Exist status 0 indicates that the process is executed successfully without any issue. Any value other than 0 indicates that the process has not been completed successfully.
 
 
-Syntax
-
-      wait [n ...]
 
 
-Key
-
-   n   A process ID or a job specification
-
-Each n can be a process ID or a job specification; if a job specification is given, all processes in that job's pipeline are waited for.
-
-If n is not given, all currently active child processes are waited for, and the return status is zero.
-
-If n specifies a non-existent process or job, the return status is 127. Otherwise, the return status is the exit status of the last process or job waited for.
-
-This is a BASH shell builtin, to display your local syntax from the bash prompt type: help wait
-
-
-Example
-
-$ wait 2585
-
-
-*See also: ps, lsof, waitfor
