@@ -1,12 +1,12 @@
 base64 - Base64 encode/decode data and print to standard output.
 
 
-Syntax
+<s1>Syntax</s1>
 
       base64 [OPTION]... [FILE]
 
 
-Key
+<s1>Key</s1>
 
    -d
    --decode
@@ -28,7 +28,7 @@ Key
         Output version information and exit.
 
 
-Examples
+<s1>Examples</s1>
 
 Encode the text file sample.txt:
 $ base64 sample.txt > encoded.txt
@@ -43,7 +43,7 @@ Encode a string:
 $ echo abcdef | base64
 YWJjZGVmCg==
 
-image001
+<img src="img/base64 (1).png" alt="Description of base64">
 
 
 *See also: base32, uuencode, ASCII Table

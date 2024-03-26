@@ -1,0 +1,44 @@
+xz is a general-purpose data compression and decompression command-line tool similar to gzip and bzip2. It can be used to compress and decompress the files. The native file format of xz is .xz. But it can also support other various formats to compress or decompress files.xz gives us complete control over the compression and decompression of files. In Linux, xz tool is come by default with the system you don’t need to install it. Now let’s see how to use the xz tool to compress the files.
+
+Compressing files using XZ:
+There are two ways in which we can compress the files using the xz one way is just mention file name followed by xz command like:
+xz filename
+
+image001
+
+
+Another way is by using the -z or –compress option:
+xz -z filename
+
+image002
+
+
+
+
+
+
+
+
+
+
+
+Yes
+yes, the command in Linux is used to print a continuous output stream of a given STRING. If STRING is not mentioned then it prints ‘y’;
+Syntax: of `yes` command in Linux
+
+yes [STRING]
+
+Examples:
+Let us say that we want to delete all the `.txt` files present in the current directory. Instead of writing `rm -i *.txt` and then typing y at the end for every file, what can be we can use
+`yes | rm -i *.txt`.
+
+image003
+
+If we want to create a file name `jayesh.txt` with 100 lines containing “hello GFG”.
+Syntax:
+yes "Hello GFG" | head -n 100 > jayesh.txt
+image004
+
+
+
+

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,122 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>dd</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>dd - (Data Duplicator) a command-line utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy files. 
+
+	-On Unix, device drivers for hardware (such as hard disk drives) and special device files (such as /dev/zero and /dev/random) appear in the file system just like normal files. 
+
+	-dd can also read and/or write from/to these files, provided that function is implemented in their respective drivers 
+
+	-As a result, dd can be used for tasks such as backing up the boot sector of a hard drive, and obtaining a fixed amount of random data. 
+
+	-The dd program can also perform conversions on the data as it is copied, including byte order swapping and conversion to and from the ASCII and EBCDIC text encodings. 
+
+Usage: The command line SYNTAX: of dd differs from many other Unix programs, in that it uses the SYNTAX: option=value for its command line options, rather than the more-standard -option value or –option=value formats. By default, dd reads from stdin and writes to stdout, but these can be changed by using the if (input file) and of (output file) options. 
+
+
+<s1>Syntax</s1>
+
+     dd [Options]
+
+
+<s1>Key</s1>
+
+   if=FILE
+      Input file : Read from FILE instead of standard input.
+
+   of=FILE
+      Output file : Write to FILE instead of standard output.
+      Unless 'conv=notrunc' is given, 'dd' truncates FILE to
+      zero bytes (or the size specified with 'seek=').
+
+   bs=BYTES
+      Block size, both read and write BYTES bytes at a time.
+      This overrides 'ibs' and 'obs'.
+
+   cbs=BYTES
+      Convert BYTES bytes at a time.
+
+   count=N
+      Copy N input blocks ('ibs'-byte blocks from the input file, instead of
+      everything) until the end of the file.
+
+   ibs=BYTES
+      Read BYTES bytes at a time.
+
+   obs=BYTES
+      Write BYTES bytes at a time.
+
+   oflag=FLAGS
+      Write as per the comma separated symbol list.
+
+   iflag=FLAGS
+      Read as per the comma separated symbol list.
+
+   seek=N (or oseek=N) skip N obs-sized output blocks.
+
+   skip=N (or iseek=N) skip N ibs-sized input blocks.
+
+   status=LEVEL
+      The LEVEL of information to print to stderr;
+         'none'  suppress everything but error messages,
+        'noxfer' suppress the final transfer statistics,
+        'progress' show periodic transfer statistics
+
+       N and BYTES may be followed by the following multiplicative
+       suffixes: c=1, w=2, b=512, kB=1000, K=1024, MB=1000*1000,
+       M=1024*1024, xM=M, GB=1000*1000*1000, G=1024*1024*1024, and so on
+       for T, P, E, Z, Y.  Binary prefixes can be used, too: KiB=K,
+       MiB=M, and so on.  If N ends in 'B', it counts bytes not blocks.
+
+   conv=CONVERSION[,CONVERSION]...
+      Convert the file as specified by the CONVERSION argument(s).  
+      (No spaces around any comma)
+
+     Conversions:
+    'ascii'    Convert EBCDIC to ASCII.
+    'ebcdic'   Convert ASCII to EBCDIC.
+    'ibm'      Convert ASCII to alternate EBCDIC.
+    'block'    For each line in the input, output 'cbs' bytes, replacing the
+               input newline with a space and padding with spaces as necessary.
+    'unblock'  Replace trailing spaces in each 'cbs'-sized input block with a newline.
+    'lcase'    Change uppercase letters to lowercase.
+    'ucase'    Change lowercase letters to uppercase.
+    'swab'     Swap every pair of input bytes.  GNU 'dd', unlike others, works when
+               an odd number of bytes are read--the last byte is copied
+               (since there is nothing to swap it with).
+    'noerror'  Continue after read errors.
+    'notrunc'  Do not truncate the output file.
+    'sync'     Pad every input block to size of 'ibs' with trailing zero bytes.
+
+The numeric-valued options (N and BYTES) can be followed by a multiplier: c=1, w=2, b=512, kB=1000, K=1024, MB=1000*1000, M=1024*1024, xM=M, GB=1000*1000*1000, G=1024*1024*1024, and so on for T, P, E, Z, Y. Binary prefixes can be used, too: KiB=K, MiB=M, and so on. If N ends in 'B', it counts bytes not blocks.
+The name dd can be an allusion to the DD statement found in IBM's Job Control Language (JCL), where the acronym stands for "Data Description". The lack of any confirmation prompt before truncating the output file has popularised the jocular name 'Data Destroyer'.
+
+dd can copy a smaller drive to a larger one, but can’t copy a larger drive to a smaller one.
+
+When cloning a disk drive, its a good idea to list the partitions before and afterwards using sudo fdisk –l
+An empty/unformatted drive will appear as "Disk dev/sdn doesn't contain a vaild partition table".
+
+If dd receives a USR1 signal, the current input and output block counts will be written to the standard error output in the same format as the standard completion message. e.g. kill -USR1 1234 where 1234 is the process id.
+
+
+<s1>Examples:  </s1>
+
+To backup the entire harddisk: 
+# dd if=/dev/sda of=/dev/sdb 
+
+To backup a Partition 
+# dd if=/dev/hda1 of=~/partition.img 
+
+To create an image of a Hard Disk 
+# dd if=/dev/hda of=~/hdadisk.img 
+
+To restore using the Hard Disk Image: 
+# dd if=hdadisk.img of=/dev/hdb 
+
+To create CDROM Backup 
+# dd if=/dev/cdrom of=tgsservice.iso bs=2048 
+
+
+*See also: cp, cpio, ddrescue, install, mtools, sum</p></pre> 
             </body>
-            </html>
         

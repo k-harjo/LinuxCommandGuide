@@ -7,15 +7,15 @@ It is recommended to have a basic idea of the following topics:
 	-Arguments in bash. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       getopts optstring name [args]
 
 
-Example
+<s1>Example</s1>
 
 getopts
-image001
+<img src="img/getopts (1).png" alt="Description of getopts">
 
 
 *See also: export, shift

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,141 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>bc</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>bc - An arbitrary precision calculator language.
+
+bc command is used for command line calculator. It is similar to basic calculator by using which we can do basic mathematical calculations.  
+Arithmetic operations are the most basic in any kind of programming language. Linux or Unix operating system provides the bc command and expr command for doing arithmetic calculations. You can use these commands in bash or shell script also for evaluating arithmetic expressions.  
+
+
+<s1>Syntax</s1>
+
+    bc [ -hlwsqv ] [long-options] [ file ... ] 
+
+
+<s1>Key</s1>
+
+   -h, --help
+       Print the usage and exit.
+
+ file  A file containing the calculations/functions to perform.
+       This can be piped from standard input  
+
+   -i, --interactive
+       Force interactive mode.
+ 
+   -l, --mathlib
+       Define the standard math library.
+ 
+   -w, --warn
+       Give warnings for extensions to POSIX bc.
+
+   -s, --standard
+       Process exactly the POSIX bc language.
+
+   -q, --quiet
+       Do not print the normal GNU bc welcome.
+
+   -v, --version
+       Print the version number and copyright and quit.
+
+The bc command supports the following features:  
+
+     -Arithmetic operators 
+     -Increment or Decrement operators 
+     -Assignment operators 
+     -Comparison or Relational operators 
+     -Logical or Boolean operators 
+     -Math functions 
+     -Conditional statements 
+     -Iterative statements  
+
+
+<s1>Examples:   </s1>
+
+Input : $ echo "12+5" | bc 
+Output : 17 
+ 
+Input : $ echo "10^2" | bc 
+Output : 100 
+
+How to store the result of complete operation in variable?  
+
+<s1>Example:   </s1>
+
+Input: 
+$ x=`echo "12+5" | bc` 
+$ echo $x 
+
+Output:17 
+
+ 
+$ echo '1+2' | bc
+$ 3
+
+In use with Bash, shell script.
+
+#!/bin/bash
+# bcsample - An example of calculations with bc
+if [ $# != 1 ]
+  then
+  echo "A number argument is required"
+  exit
+fi
+
+bc <<END-OF-INPUT
+  scale=6
+  /* first we define the function */
+  define myfunc(x){
+  return(sqrt(x) + 10);
+  }
+
+  /* then use the function to do the calculation*/
+ x=$1
+ "Processing";x;" result is ";myfunc(x)
+ quit
+END-OF-INPUT
+
+echo "(to 6 decimal places)"
+Run the script above with:
+$ chmod a+x bcsample
+$ ./bcsample 125
+
+Standard functions supported by bc
+length ( expression )
+The value of the length function is the number of significant digits in the expression.
+
+read ( )
+Read a number from the standard input, regardless of where the function occurs. Beware, this can cause problems with the mixing of data and program in the standard input. The best use for this function is in a previously written program that needs input from the user, but never allows program code to be input from the user.
+
+scale ( expression )
+The number of digits after the decimal point in the expression.
+
+sqrt ( expression )
+The square root of the expression.
+
+Most standard math expressions are of course supported: + - / * % ^
+
+++ var
+increment the variable by one and set the new value as the result of the expression.
+
+var ++
+The result of the expression is the value of the variable and the variable is then incremented by one.
+
+-- var
+decrement the variable by one and set the new value as the result of the expression.
+
+var --
+The result of the expression is the value of the variable and the variable is then decremented by one.
+
+( expr )
+Parenthesis alter the standard precedence to force the evaluation of an expression.
+
+var = expr
+The variable var is assigned the value of the expression.
+
+Relational expressions and Boolean operations are also legal, look at the full bc man page for more
+
+
+*See also: dc</p></pre> 
             </body>
-            </html>
         

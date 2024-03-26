@@ -1,12 +1,12 @@
 diff stands for difference. The diff command is a versatile utility that is pre-installed on most Linux distributions. Its primary purpose is to compare the contents of two files and display the differences between them. The command provides a comprehensive way to highlight changes, additions, and deletions in a clear and readable format. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       diff [options] FILES
 
 
-Key
+<s1>Key</s1>
 
 Multiple single letter options (unless they take an argument) can be combined into a single command line word: so '-ac' is equivalent to '-a -c'.
 
@@ -177,13 +177,13 @@ Multiple single letter options (unless they take an argument) can be combined in
           GTYPE is LTYPE or 'changed'. 
 
 
-Examples
+<s1>Examples</s1>
 
 diff a.txt b.txt 
-image001
+<img src="img/diff (1).png" alt="Description of diff">
 
 diff -c file1.txt file2.txt 
-image002
+<img src="img/diff (2).png" alt="Description of diff">
 
 
 *See also: cmp, dircmp, diff3, sdiff

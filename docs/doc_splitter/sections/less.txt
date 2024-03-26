@@ -1,0 +1,25 @@
+less command is a Linux utility that can be used to read the contents of a text file one page (one screen) at a time. It has faster access because if a file is large, it doesn’t access the complete file, but accesses it page by page.
+Syntax:
+less [options] filename
+The less command provides several options that modify its behavior. Here are some commonly used options:
+
+Examples:
+dmesg | less -p "fail"
+The above command tells less to start at first occurrence of pattern “fail” in the file and displaying the file from that point.
+Output:
+image001
+
+Displaying line number
+
+
+dmesg | less -N
+The -N option displays line numbers along with the file content, allowing you to reference specific lines easily.
+Output:
+image002
+
+Checking a small file
+
+
+
+
+

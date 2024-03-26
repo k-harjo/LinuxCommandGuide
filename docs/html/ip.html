@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,14 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>ip</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>ip command in Linux is present in the net-tools which are used for performing several network administration tasks. IP stands for Internet Protocol. This command is used to show or manipulate routing, devices, and tunnels. It is similar to the ifconfig command, but it is much more powerful with more functions and facilities attached to it. ifconfig is one of the deprecated commands in the net-tools of Linux that has not been maintained for many years. The ip command is used to perform several tasks like assigning an address to a network interface or configuring network interface parameters. It can perform several other tasks like configuring and modifying the default and static routing, setting up a tunnel over IP, listing IP addresses and property information, modifying the status of the interface, and assigning, deleting, and setting up IP addresses and routes.
+
+<s1>Syntax:</s1>
+ip [ OPTIONS ] OBJECT { COMMAND | help }
+
+<s1>Example:</s1>
+This option is used to show all IP addresses associated with all network devices.
+ip address
+<img src="img/ip (1).png" alt="Description of ip"></p></pre> 
             </body>
-            </html>
         

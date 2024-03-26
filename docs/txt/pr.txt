@@ -1,12 +1,12 @@
 pr - Prepare files for printing, printing and pagination filter for text files. When multiple input files are specified, each is read, formatted, and written to standard output.
 
 
-Syntax
+<s1>Syntax</s1>
 
       pr [options] [file ...]
 
 
-Options
+<s1>Options</s1>
 
   +beg_pag[:end-pag], 
   --pages=[beg_pag[:end-pag]

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,65 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>chattr</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>chattr - Change file attributes on a Linux file system.
+
+
+<s1>Syntax</s1>
+
+      chattr [ -RVf ] [ -v version ] [ mode ] files...
+
+      The format of a symbolic mode is +-=[acdeijstuADST]
+
+
+<s1>Key</s1>
+
+
+   -R          Recursively change attributes of directories and their contents.
+
+   -V          Be verbose with chattr's output and print the program version.
+
+   -f          Suppress most error messages.
+
+   -v version  Set the file's version/generation number.
+The operator '+' causes the selected attributes to be added to the existing attributes of the files; '-' causes them to be removed; and '=' causes them to be the only attributes that the files have.
+
+The letters 'acdeijstuADST' select the new attributes for the files:
+
+a Append only
+A No atime updates
+c Compressed
+d No Dump
+D Synchronous directory updates
+e Extent format
+i Immutable
+j Data journalling
+s Secure deletion
+S Synchronous updates
+t No tail-merging
+T Top of directory hierarch
+u Undeletable
+The following attributes are read-only, and may be listed by lsattr but not modified by chattr:
+
+h Huge file
+E Compression error
+I Indexed directory
+X Compression raw access
+Z Compressed dirty file
+
+
+<s1>Example</s1>
+
+The chattr’ can be used to preserve some system files that are very important and needs to remain in the host PC no matter what. Also to make a directory undeletable or unmodifiable for users other than superuser, this is necessary. The common use of ‘chattr’ is as below:-  
+
+Making the file immutable: The command here made the file named file.txt immutable, hence now no operations are possible on this file until the attributes of the file are changed again. 
+
+<img src="img/chattr (1).png" alt="Description of chattr">
+ 
+Opening the file only in append mode: The flag a’ is used to open the file only in append mode. Consequently, it can only be appended and the previous data can’t be modified. 
+
+<img src="img/chattr (2).png" alt="Description of chattr">
+ 
+
+*See also: lsattr</p></pre> 
             </body>
-            </html>
         

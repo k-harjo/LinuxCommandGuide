@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,65 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>Perf</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>perf - Performance analysis tools for Linux
+
+<s1>SYNTAX</s1>
+      perf [--version] [--help] COMMAND [ARGS] 
+
+All perf subcommands need to run as root (sudo)
+
+# show programs that are using the most CPU:
+$ sudo perf top
+
+# Sample CPUs at 49% show top symbols:
+$ sudo perf top -F 49
+
+# Start COMMAND and profile it:
+$ sudo perf record COMMAND
+
+# Profile PID until Ctrl-C is pressed:
+$ sudo perf record PID
+
+# Profile every process until Ctrl-C is pressed:
+$ sudo perf record -a
+
+# CPU counter statistics for COMMAND
+$ sudo perf stat COMMAND
+
+# Detailed CPU counter statistics for COMMAND
+$ sudo perf stat -ddd COMMAND
+
+# Various basic CPU statistics system wide:
+$ sudo perf stat -e cycles,instructions,cache-misses -a
+
+# Show perf.data in an ncurses browser:
+$ sudo perf report
+
+# Trace syscalls system wide:
+$ sudo perf trace
+
+# Trace syscalls for PID:
+$ sudo perf trace -p PID
+
+# Sample CPU functions for COMMAND at 99 Hzertz:
+$ sudo perf record -F 99 COMMAND
+
+# Sample CPU functions for PID until Ctrl-C is pressed:
+$ sudo perf record -p PID
+
+# Sample CPU functions for PID for 10 seconds:
+$ sudo perf record -p PID sleep 10
+
+# Sample CPU stack traces for PID for 10 seconds:
+$ sudo perf record -p PID -g -- sleep 10
+
+# Trace new processes until Ctrl-C is pressed:
+$ sudo perf record -e sched:sched_process_exec -a
+perf can trace system calls faster than strace.
+
+perf record saves to the perf.data file.
+
+
+*See also: htop, strace</p></pre> 
             </body>
-            </html>
         

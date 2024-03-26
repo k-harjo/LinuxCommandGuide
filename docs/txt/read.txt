@@ -1,16 +1,12 @@
 
-Examples:
+<s1>Examples:</s1>
 read command without any option: The read command asks for the user’s input and exit once the user provides some input.
 
+<img src="img/read (1).png" alt="Description of read">
 
 
 In the following example we are acquiring the user’s name and then showing the user’s name with a greeting.echo "what is your name..?";read name;echo "hello $name"
-
-
-
-
-
-
+<img src="img/read (2).png" alt="Description of read">
 
 
 

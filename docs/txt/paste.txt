@@ -1,12 +1,12 @@
 paste - Merge lines of files, write to standard output lines consisting of sequentially corresponding lines of each given file, separated by a TAB character.
 
 
-Syntax
+<s1>Syntax</s1>
 
       paste [options]... [file]...
 
 
-Options
+<s1>Options</s1>
 
    -s
    --serial
@@ -28,7 +28,7 @@ Any other character preceded by a backslash is equivalent to the character itsel
 Standard input is used for a file name of - or if no input files are given.
 
 
-Examples
+<s1>Examples</s1>
 
 Combines the lines from two files:
 

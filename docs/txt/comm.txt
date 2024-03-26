@@ -1,7 +1,7 @@
 comm compares two sorted files line by line and write to standard output; the lines that are common and the lines that are unique. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 $comm [OPTION]... FILE1 FILE2 
 
@@ -36,9 +36,9 @@ $comm [OPTION]... FILE1 FILE2
    A file name of '-' means standard input.
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/comm (1).png" alt="Description of comm">
 
 
 *See also: cmp, diff, diff3, sdiff, head, sort

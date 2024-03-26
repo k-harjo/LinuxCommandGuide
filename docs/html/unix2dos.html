@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,82 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>unix2dos</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>unix2dos - UNIX to Windows or MAC text file format converter.
+
+
+<s1>Syntax</s1>
+
+      unix2dos [options] [-c convmode] [-o file ...] [-n infile outfile ...]
+
+
+<s1>Key</s1>
+
+   -h --help        Print online help. 
+   -k --keepdate    Keep the date stamp of output file same as input file. 
+   -q --quiet       Quiet mode. Suppress all warning and messages.
+   -V --version     Prints version information.
+
+   -c --convmode convmode
+                    Set conversion mode.
+                    Where convmode is one of: ASCII, 7bit, ISO, Mac with ASCII being the default.
+                    Simulates dos2unix under SunOS.
+
+   -o --oldfile file ...
+                    Old file mode.
+                    Convert the file and write output to it. The program defaults to run in this mode.
+                    Wildcard names may be used.
+
+   -n --newfile infile outfile ...
+                    New file mode. Convert the infile and write output to outfile.
+                    File names must be given in pairs and wildcard names should NOT be used or you WILL lose your files.
+
+unix2dos converts plain text files in UNIX format to Windows or MAC format.
+
+Later versions of dos2unix have additional options to add/remove Byte Order Marks (BOM) and handle alternate code pages.
+
+Alternative using sed
+
+sed -i -e 's/\r*$/\r/' file
+
+
+<s1>Examples</s1>
+
+Get input from stdin and write output to stdout:
+unix2dos
+
+Convert and replace a.txt. Convert and replace b.txt:
+
+unix2dos a.txt b.txt
+unix2dos -o a.txt b.txt
+
+Convert and replace a.txt in ASCII conversion mode. Convert and replace b.txt in ISO conversion mode.
+
+unix2dos a.txt -c iso b.txt
+unix2dos -c ascii a.txt -c iso b.txt
+
+Convert and replace a.txt while keeping original date stamp:
+
+unix2dos -k a.txt
+unix2dos -k -o a.txt
+
+Convert a.txt and write to e.txt:
+
+unix2dos -n a.txt e.txt
+
+Convert a.txt and write to e.txt, keep date stamp of e.txt same as a.txt:
+
+unix2dos -k -n a.txt e.txt
+
+Convert and replace a.txt. Convert b.txt and write to e.txt:
+
+unix2dos a.txt -n b.txt e.txt
+unix2dos -o a.txt -n b.txt e.txt
+
+Convert c.txt and write to e.txt. Convert and replace a.txt. Convert and replace b.txt. Convert d.txt and write to f.txt:
+
+unix2dos -n c.txt e.txt -o a.txt b.txt -n d.txt f.txt
+
+
+*See also: dos2unix</p></pre> 
             </body>
-            </html>
         

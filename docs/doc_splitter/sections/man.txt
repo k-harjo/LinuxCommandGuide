@@ -1,0 +1,21 @@
+man is used to display the user manual of any command that we can run on the terminal
+Syntax:
+man [option] [command]
+
+
+
+
+
+
+
+Examples:
+man 2 intro
+image001
+
+
+man -f ls
+image002
+
+
+
+

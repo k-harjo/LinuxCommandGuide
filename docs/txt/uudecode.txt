@@ -1,12 +1,12 @@
 uudecode - decode a file created by uuencode
 
 
-Syntax
+<s1>Syntax</s1>
 
        uudecode [-o outfile] [ file ]...
 
 
-Key
+<s1>Key</s1>
 
    file An input file to read.
 
@@ -29,7 +29,7 @@ Uudecode ignores any leading and trailing lines. The program can automatically d
 Debian/Ubuntu users can install uuencode as part of the ’sharutils’ group of Unix utilities with apt-get install sharutils
 
 
-Examples
+<s1>Examples</s1>
 
 The following example packages up a source tree, compresses it, uuencodes it and mails it to a user on another system. When uudecode is run on the target system, the file 'src_tree.tar.Z' will be created which can then be uncompressed and extracted into the original tree.
 

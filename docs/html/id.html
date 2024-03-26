@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,54 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>id</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>id command in Linux is used to find out user and group names and numeric ID’s (UID or group ID) of the current user or any other user in the server. This command is useful to find out the following information as listed below: 
+
+	-User name and real user id. 
+	-Find out the specific Users UID. 
+	-Show the UID and all groups associated with a user. 
+	-List out all the groups a user belongs to. 
+	-Display security context of the current user. 
+
+
+<s1>Syntax</s1>
+
+      id [options]... [username]
+
+
+<s1>Key</s1>
+
+   -g
+   --group
+       Print only the group id.
+
+   -G
+   --groups
+       Print only the supplementary groups.
+
+   -n
+   --name
+       Print the user or group name instead of the ID number.
+       Requires -u, -g, or -G
+
+   -r
+   --real
+       Print the real, instead of effective, user or group id.  
+       Requires -u, -g, or -G
+
+   -u
+   --user
+       Print only the user id.
+
+
+<s1>Example</s1>
+
+id
+<img src="img/id (1).png" alt="Description of id">
+
+id -u master
+<img src="img/id (2).png" alt="Description of id">
+
+
+See also: echo, env, groups, hostname, logname, uname, users, who, whoami</p></pre> 
             </body>
-            </html>
         

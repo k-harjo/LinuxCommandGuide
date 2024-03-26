@@ -1,18 +1,18 @@
 dirname is a command in Linux that is used to remove the trailing forward slashes “/” from the NAME and prints the remaining portion. If the argument NAME does not contain the forward slash “/” then it simply prints dot “.”. In other words, we can say that the `dirname` command is a useful tool for extracting the directory portion from a given path or filename.   
 
 
-Syntax
+<s1>Syntax</s1>
 
 dirname [OPTION] NAME 
 
 
-Examples
+<s1>Examples</s1>
 
 dirname bash.sh
-image001
+<img src="img/dirname (1).png" alt="Description of dirname">
 
 dirname -z /Desktop/root/bash.sh 
-image002
+<img src="img/dirname (2).png" alt="Description of dirname">
 
 
 *See also: hash, ls, which

@@ -1,14 +1,14 @@
 nft - Administration tool of the nftables framework for Network Address Translation (NAT), packet filtering and classification. Set up, maintain and inspect packet filtering and classification rules in the Linux kernel, in the nftables framework.
 
 
-Syntax
+<s1>Syntax</s1>
 
       nft [ -nNscae ] [ -I directory] [ -f filename | -i | cmd...]
       nft -h
       nft -v
 
 
-Key
+<s1>Key</s1>
 
    -n, --numeric    Show data numerically.
                     When used once (the default behaviour), skip lookup of addresses to symbolic names.

@@ -2,12 +2,12 @@ dos2unix command: converts a DOS text file to UNIX format.
 Unix2dos command : converts a Unix text file to DOS format 
 
 
-Syntax
+<s1>Syntax</s1>
 
       dos2unix [options] [-c convmode] [-o file ...] [-n infile outfile ...]
 
 
-Key
+<s1>Key</s1>
 
    -h --help        Print online help. 
    -k --keepdate    Keep the date stamp of output file same as input file. 
@@ -33,9 +33,9 @@ Alternative using sed
 sed -i -e 's/\r//g' file
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/dos2unix (1).png" alt="Description of dos2unix">
 
 
 *See also: unix2dos, dos2unix

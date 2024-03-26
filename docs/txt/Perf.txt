@@ -1,6 +1,6 @@
 perf - Performance analysis tools for Linux
 
-SYNTAX
+<s1>SYNTAX</s1>
       perf [--version] [--help] COMMAND [ARGS] 
 
 All perf subcommands need to run as root (sudo)

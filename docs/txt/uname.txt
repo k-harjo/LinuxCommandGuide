@@ -1,18 +1,21 @@
 The term “uname” stands for “Unix Name,” and the command itself is designed to provide you with key details about your Linux system. It’s like asking your computer, “Hey, who are you, and what are you made of?” The answers you get can help you understand your system’s kernel version, operating system, hardware architecture, and more. This command ‘uname‘ displays the information about the system.
-Syntax:
+<s1>Syntax:</s1>
 uname [OPTIONs]
 
 
 
 
-Examples:
+<s1>Examples:</s1>
 uname  -a
+<img src="img/uname (1).png" alt="Description of uname">
 
 
 uname  -s
+<img src="img/uname (2).png" alt="Description of uname">
 
 
 uname  -n
+<img src="img/uname (3).png" alt="Description of uname">
 
 
 
@@ -33,17 +36,13 @@ The unexpand command by default convert each spaces into tabs writing the produc
 Syntax :
 $unexpand [OPTION]... [FILE]...
 
-Examples:
+<s1>Examples:</s1>
 -a, – -all option : This option is used to convert all blanks, instead of just initial blanks (which is by default).
 
+<img src="img/uname (4).png" alt="Description of uname">
 
 – -first-only option : This is used to convert only leading sequences of blanks (overrides -a option).
-
-
-
-
-
-
+<img src="img/uname (5).png" alt="Description of uname">
 
 
 

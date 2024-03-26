@@ -3,12 +3,12 @@ expand allows you to convert tabs into spaces in a file and when no file is spec
 Thus, expand is useful for pre-processing character files like before sorting that contain tab characters. expand actually writes the produced output to standard output with tab characters expanded to space characters. In this, backspace characters are preserved in the output and also decrease the column count for tab calculations.   
 
 
-Syntax
+<s1>Syntax</s1>
 
       expand [options]... [file]...
 
 
-Key
+<s1>Key</s1>
 
    -TAB1[,TAB2]...
    -t TAB1[,TAB2]...
@@ -23,13 +23,13 @@ Only convert initial tabs (those that precede all non-space or non-tab character
 By default, expand converts all tabs to spaces. It preserves backspace characters in the output; they decrement the column count for tab calculations. The default action is equivalent to '-8' (set tabs every 8 columns).
 
 
-Examples
+<s1>Examples</s1>
 
 Suppose you have a file name kt.txt containing tab characters. You can use expand as:  
 
-image001
+<img src="img/expand (1).png" alt="Description of expand">
 
-image002
+<img src="img/expand (2).png" alt="Description of expand">
 
 
 *See also: cut, expr, fmt, grep, tr, unexpand, uuencode

@@ -1,12 +1,12 @@
 op (Operator access) - A flexible means for system administrators to grant trusted users access to certain root operations without having to give them full superuser privileges.
 
 
-Syntax 
+<s1>Syntax </s1>
 
       op mnemonic [arg] 
 
 
-Key
+<s1>Key</s1>
 
     -V   Show version number.
    
@@ -42,7 +42,7 @@ For a full list look in the options section of the op man page( man op ).
 $* indicates any number trailing arguments.
 
 
-Examples
+<s1>Examples</s1>
 
 Example /etc/op.conf:
 

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,54 +89,38 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>bg</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>bg
+                <pre><p>bg command in linux is used to place foreground jobs in background. 
 
-Send a job to background
 
-Syntax
-      bg [job_id...]
-Send the specified jobs to the background. A background job is executed simultaneously with fish, and does not have access to the keyboard. If no job is specified, the last job to be used is put in the background.
+<s1>Syntax: </s1>
 
-bg takes a “job ID” available from jobs, not a PID.
+bg [job_spec ...] 
 
-If jobspec is not present, the shell's notion of the current job is used.
+job_spec may be: 
 
-To kill a specific background job use, kill %jobspec.
+%n :   Refer to job number n. 
+%str : Refer to a job which was started by a command beginning with str. 
+%?str :Refer to a job which was started by a command containing str. 
+%% or %+ : Refer to the current job. fg and bg will operate on this job if no job_spec is given. 
+%- : Refer to the previous job. 
 
-bg is a BASH shell builtin and a ZSH shell builtin, to display your local syntax from the bash prompt type: help bg
+Options: 
 
-Examples
-Put the job with job id 0 in the background:
+bg [JOB_SPEC] : This command is used to put the mentioned job in background. In the below screenshot, we do following : 
 
-$ bg %0
+ 
+We use jobs command to list all jobs 
 
-To start a new process in the background you can do:
+We create a process using sleep command, we get its ID as 1. 
 
-$ long_running_command &
+We put it in background by providing its ID to bg. 
 
-Send the current foreground job to the background using CTRL-Z and bg:
+<img src="img/bg (1).png" alt="Description of bg">
 
-$ long_running_command
+‘sleep 500’ is used to create dummy foreground job. 
 
-$ Ctrl-Z
+bg –help : This command displays help information. 
 
-$ [2]+ Stopped long_running_command
-$ bg
-
-View all the background jobs using jobs:
-
-$ jobs
-[1]   Running     long_running_command &
-[2]-  Running     someothercommand &
-Bring a background job to the foreground. When executed without arguments, this will take the most recent background job to the foreground:
-
-$ fg
-
-Kill job #2:
-
-$ kill %2
-
-"I'm not kidding myself, my voice is ordinary. If I stand still while I'm singing, I might as well go back to driving a truck" ~ Elvis Presley</p></pre> <!-- Replace with your actual paragraph content -->
+imgage002</p></pre> 
             </body>
-            </html>
         

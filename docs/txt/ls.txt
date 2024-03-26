@@ -1,22 +1,18 @@
 ls is a Linux shell command that lists directory contents of files and directories.  It provides valuable information about files, directories, and their attributes.
-Syntax:
+<s1>Syntax:</s1>
 
 ls [option] [file/directory]
 
 
 
-Examples:
+<s1>Examples:</s1>
 Display One File Per Line Using `ls -1 `
 
 ls –1
+<img src="img/ls (1).png" alt="Description of ls">
 
 
 Display All Information About Files/Directories Using `ls -l`
 
 ls –l
-
-
-
-
-
-
+<img src="img/ls (2).png" alt="Description of ls">

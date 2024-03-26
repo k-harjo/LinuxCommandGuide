@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,49 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>tsort</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>tsort - Topological sort, perform a topological sort on the given FILE, or standard input if no input file is given or for a FILE of '-'.
+
+
+<s1>Syntax</s1>
+
+      tsort [options] [file]
+
+
+<s1>Options</s1>
+
+   --help
+   --version
+'tsort' reads its input as pairs of strings, separated by blanks, indicating a partial ordering. The output is a total ordering that corresponds to the given partial ordering.
+   For example
+
+     tsort <<EOF
+     a b c
+     d
+     e f
+     b c d e
+     EOF
+
+will produce the output
+
+     a
+     b
+     c
+     d
+     e
+     f
+
+'tsort' will detect cycles in the input and writes the first cycle
+encountered to standard error. <eof a
+     b
+     c
+     d
+     e
+     f
+     eof will produce the output detect cycles in input and writes first cycle
+encountered to standard error.
+Note that for given partial ordering generally there is no unique total ordering.
+
+
+*See also: sort </p></pre> 
             </body>
-            </html>
         

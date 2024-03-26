@@ -6,9 +6,9 @@ wget has been designed for robustness over slow or unstable network connections;
 Syntax :
 wget [option] [URL]
 
-Examples:
+<s1>Examples:</s1>
 To simply download a webpage
+<img src="img/wget (1).png" alt="Description of wget">
 
 To download the file in background
-
-
+<img src="img/wget (2).png" alt="Description of wget">

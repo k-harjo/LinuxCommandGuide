@@ -3,7 +3,7 @@ apt - Search for and install software packages (Debian/Ubuntu).
 apt is a subset of the most commonly used apt-get and apt-cache commands, use apt-get for more the low-level package management options.
 
 
-Syntax 
+<s1>Syntax </s1>
 
       apt [...COMMANDS] [...PACKAGES] 
 
@@ -43,7 +43,7 @@ Syntax
          {-h | --help}
 
 
-Options
+<s1>Options</s1>
 
 All command line options may be set using the configuration file, the descriptions indicate the configuration option to set.
 For boolean options you can override the config file by using something like -f-,--no-f, -f=no or several other variations.
@@ -66,10 +66,10 @@ For boolean options you can override the config file by using something like -f-
 apt/apt-get and aptitude now share the same list of installed packages and so can be used interchangeably.
 
 
-Examples
+<s1>Examples</s1>
 
 apt show youtube-dl
-image001
+<img src="img/apt (1).png" alt="Description of apt">
 
 
 *See also: dpkg, apt-get, Synaptic Passage Manager, Taskel

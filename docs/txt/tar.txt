@@ -2,15 +2,15 @@ tar is used to create Archive and extract the Archive files
 File compression is a fundamental task in managing and transferring data efficiently on a Linux system. The Tar command, short for Tape Archive, is a powerful tool that allows users to create compressed and archived files.
 tar Command to Compress Files in Linux
 The Linux ‘tar’ stands for tape archive, which is used to create Archive and extract the Archive files. tar command in Linux is one of the important commands that provides archiving functionality in Linux. We can use the Linux tar command to create compressed or uncompressed Archive files and also maintain and modify them.
-Syntax:
+<s1>Syntax:</s1>
 
 tar [options] [archive-file] [file or directory to be archived]
 
-Examples:
+<s1>Examples:</s1>
 Creating an uncompressed tar Archive using option -cvf
 tar cvf file.tar *.c
+<img src="img/tar (1).png" alt="Description of tar">
 
 Extracting files from Archive using option –xvf
 tar xvf file.tar
-
-
+<img src="img/tar (2).png" alt="Description of tar">

@@ -1,12 +1,12 @@
 fmt command in LINUX actually works as a formatter for simplifying and optimizing text files. Formatting of text files can also be done manually, but it can be really time-consuming when it comes to large text files, this is where fmt comes to rescue. fmt re-formats each paragraph in the file specified, writing to standard output.  
 
 
-Syntax
+<s1>Syntax</s1>
 
 	fmt [-WIDTH] [OPTION]... [FILE]... 
 
 
-Options
+<s1>Options</s1>
 
    -c
    --crown-margin
@@ -43,15 +43,15 @@ Options
 'fmt' reads from the specified FILE arguments (or standard input if none are given), and writes to standard output.
 
 
-Examples
+<s1>Examples</s1>
 
 fmt kt.txt 
 Used `fmt` command to view the content in single line. 
-image001
+<img src="img/fmt (1).png" alt="Description of fmt">
 
 fmt kt.txt > dv.txt 
 Here we have use `>` to save the output in filename `dv.txt` 
-image002
+<img src="img/fmt (2).png" alt="Description of fmt">
 
 
 *See also: mail, nroff, csplit, cut, fold, join, paste, split, tr, tail

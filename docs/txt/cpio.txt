@@ -1,7 +1,7 @@
 cpio stands for “copy in, copy out“. It is used for processing the archive files like *.cpio or *.tar. This command can copy files to and from archives.  
 
 
-Syntax
+<s1>Syntax</s1>
 
    Copy-In mode:
       cpio {-i|--extract} [-bcdfmnrtsuvBSV] [-C bytes] [-E file] [-H format] [-M message] [-R [user][:.][group]]
@@ -208,21 +208,20 @@ Options:
        Print the cpio program version number and exit.
 
 
-Examples
+<s1>Examples</s1>
 
 To create a *.cpio file: We can create *.cpio files containing files and directory with the help of cpio command.  
 
 SYNTAX:cpio -ov < name-list > archive 
 
 Here, -ov is used as -o create the new archive and -v list the files processed. 
-image001
+<img src="img/cpio (1).png" alt="Description of cpio">
 
 
 SYNTAX:cpio -ov -H tar > archive 
 
 To create *.tar archive file using cpio: The cpio helps to create a *.tar archive. 
-image002
+<img src="img/cpio (2).png" alt="Description of cpio">
 
 
 *See also: info cpio, cp, dd, install, mv, rcp
-

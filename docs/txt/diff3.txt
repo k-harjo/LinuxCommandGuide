@@ -1,7 +1,7 @@
 diff3 command is used to compare the three files line by line. It internally uses the diff command to compare. When three files are compared then the following output may come which have their own meaning: 
 
 
-Syntax
+<s1>Syntax</s1>
 
 	diff3 [options] MYFILE OLDFILE YOURFILE
 
@@ -14,7 +14,7 @@ Syntax
 	====3 : File 3 is different. 
 
 
-Key
+<s1>Key</s1>
 
    -a --text
          Treat all files as text and compare them line-by-line, even if they  do not appear to be text.
@@ -70,13 +70,13 @@ Key
          Output this help.
 
 
-Example
+<s1>Example</s1>
 
 Let us consider three files as a.txt, b.txt and c.txt.
-image001
+<img src="img/diff3 (1).png" alt="Description of diff3">
 
 Now if diff3 command is used over these three files then following output will come: 
-image002
+<img src="img/diff3 (2).png" alt="Description of diff3">
 
 
 *See also: cmp, diff, sdiff

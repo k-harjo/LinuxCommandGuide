@@ -1,12 +1,12 @@
 lspci - List all PCI devices.
 
 
-Syntax
+<s1>Syntax</s1>
 
       lspci [options] 
 
 
-Key
+<s1>Key</s1>
 
    Basic display modes:
 

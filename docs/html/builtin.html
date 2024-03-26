@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,30 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>builtin</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>builtin - Run a shell builtin, passing it args, and return its exit status.
+
+
+<s1>Syntax</s1>
+
+      builtin [shell-builtin [args]]
+
+
+<s1>Example</s1>
+
+A function to replace 'cd' that writes the hostname and current directory to an xterm title bar:
+cd()
+
+   {
+
+      builtin cd "$@" && xtitle "$HOST: $PWD"
+
+   }
+<img src="img/builtin (1).png" alt="Description of builtin">
+
+Use builtin --help for more information.
+<img src="img/builtin (2).png" alt="Description of builtin">
+
+
+*See also: chroot, cron, exec, if, nohup, su, shopt, .source, type, watch</p></pre> 
             </body>
-            </html>
         

@@ -1,12 +1,12 @@
 quotacheck - Scan a file system for disk usage.
 
 
-Syntax
+<s1>Syntax</s1>
 
       quotacheck [ -gubcfinvdMmR ] [ -F quota-format ] -a | filesystem
 
 
-Options
+<s1>Options</s1>
 
    -b, --backup
            Forces quotacheck to make backups of the quota file before writing the new data.

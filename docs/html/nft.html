@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,53 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>nft</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>nft - Administration tool of the nftables framework for Network Address Translation (NAT), packet filtering and classification. Set up, maintain and inspect packet filtering and classification rules in the Linux kernel, in the nftables framework.
+
+
+<s1>Syntax</s1>
+
+      nft [ -nNscae ] [ -I directory] [ -f filename | -i | cmd...]
+      nft -h
+      nft -v
+
+
+<s1>Key</s1>
+
+   -n, --numeric    Show data numerically.
+                    When used once (the default behaviour), skip lookup of addresses to symbolic names.
+                    Use twice to also show Internet services (port numbers) numerically.
+                    Use three times to also show protocols and UIDs/GIDs numerically.
+
+   -N, --reversedns Translate IP addresses to names. Usually requires network traffic for DNS lookup.
+
+   -s, --stateless  Omit stateful information of rules and stateful objects.
+
+   -c, --check      Check commands validity without actually applying the changes.
+
+   -a, --handle     Show object handles in output.
+
+   -e, --echo       When inserting items into the ruleset using add, insert or replace commands,
+                    print notifications just like nft monitor.
+
+   -I, --includepath directory
+                    Add the directory directory to the list of directories to be searched for included files.
+                    This option may be specified multiple times.
+
+   -f, --file filename  Read input from filename. If filename is -, read from stdin.
+                        nft scripts must start #!/usr/sbin/nft -f
+
+   -i, --interactive    Read input from an interactive readline CLI.
+                        You can use quit to exit, or use the EOF marker, normally this is CTRL-D.
+
+   -h, --help       Show help message and all options.
+
+   -v, --version    Show version.
+
+The Linux kernel subsystem is known as nf_tables, and 'nf' stands for Netfilter.
+
+nftables provides several advantages over iptables: the simplification of the Linux kernel ABI, reduction of code duplication, improved error reporting, and more efficient execution, storage and incremental changes of filtering rules. Traditionally used iptables(8), ip6tables(8), arptables(8) and ebtables(8) (for IPv4, IPv6, ARP and Ethernet bridging, respectively) are intended to be replaced with nft(8) as a single unified implementation, providing firewall configuration on top of the in-kernel virtual machine.
+
+
+*See also: ip, tc</p></pre> 
             </body>
-            </html>
         

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,40 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>expand</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>expand allows you to convert tabs into spaces in a file and when no file is specified it reads from standard input.  
+
+Thus, expand is useful for pre-processing character files like before sorting that contain tab characters. expand actually writes the produced output to standard output with tab characters expanded to space characters. In this, backspace characters are preserved in the output and also decrease the column count for tab calculations.   
+
+
+<s1>Syntax</s1>
+
+      expand [options]... [file]...
+
+
+<s1>Key</s1>
+
+   -TAB1[,TAB2]...
+   -t TAB1[,TAB2]...
+   --tabs=TAB1[,TAB2]...
+
+If only one tab stop is given, set the tabs TAB1 spaces apart (default is 8). Otherwise, set the tabs at columns TAB1, TAB2, ... (numbered from 0), and replace any tabs beyond the last tabstop given with single spaces. If the tabstops are specified with the '-t' or '--tabs' option, they can be separated by blanks as well as by commas.
+
+   -i
+   --initial
+Only convert initial tabs (those that precede all non-space or non-tab characters) on each line to spaces.
+
+By default, expand converts all tabs to spaces. It preserves backspace characters in the output; they decrement the column count for tab calculations. The default action is equivalent to '-8' (set tabs every 8 columns).
+
+
+<s1>Examples</s1>
+
+Suppose you have a file name kt.txt containing tab characters. You can use expand as:  
+
+<img src="img/expand (1).png" alt="Description of expand">
+
+<img src="img/expand (2).png" alt="Description of expand">
+
+
+*See also: cut, expr, fmt, grep, tr, unexpand, uuencode</p></pre> 
             </body>
-            </html>
         

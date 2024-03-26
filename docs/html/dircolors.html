@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,38 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>dircolors</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>dircolors - Color setup for 'ls', outputs a sequence of shell commands to set up the terminal for color output from 'ls' (and 'dir', etc.).
+
+
+<s1>Syntax</s1>
+
+      eval 'dircolors [options]... [file]'
+If FILE is specified, 'dircolors' reads it to determine which colors to use for which file types and extensions. Otherwise, a precompiled
+database is used. For details on the format of these files, run 'dircolors --print-database'.
+
+The output is a shell command to set the 'LS_COLORS' environment variable. You can specify the shell syntax to use on the command line, or 'dircolors' will guess it from the value of the 'SHELL' environment variable.
+
+
+<s1>Options </s1>
+
+ -b
+ --sh
+ --bourne-shell
+     Output Bourne shell commands.  This is the default if the 'SHELL'
+     environment variable is set and does not end with 'csh' or 'tcsh'.
+
+ -c 
+ --csh
+ --c-shell
+     Output C shell commands.  This is the default if 'SHELL' ends with
+     'csh' or 'tcsh'.
+
+ -p
+ --print-database
+     Print the (compiled-in) default color configuration database.  This
+     output is itself a valid configuration file, and is fairly
+     descriptive of the possibilities.
+
+*See also: ls</p></pre> 
             </body>
-            </html>
         

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,80 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>uniq</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>The uniq command in Linux is a command-line utility that reports or filters out the repeated lines in a file. In simple words, uniq is the tool that helps to detect the adjacent duplicate lines and also deletes the duplicate lines. uniq filters out the adjacent matching lines from the input file(that is required as an argument) and writes the filtered data to the output file.
+<s1>Syntax:</s1>
+The basic syntax of the `uniq` command is:
+uniq [OPTIONS] [INPUT_FILE [OUTPUT_FILE]]
+Common Options of the uniq Command
+
+
+
+
+
+
+<s1>Examples:</s1>
+How to Remove Duplicate Lines Using `uniq` Command
+
+To remove duplicate lines from `kt.txt`, we can use the `uniq` command:
+uniq kt.txt
+<img src="img/uniq (1).png" alt="Description of uniq">
+
+
+How to Count Duplicate Lines Using `uniq` Command in Linux
+The `-c` option prefixes each line with the number of occurrences in the input:
+uniq -c kt.txt
+<img src="img/uniq (2).png" alt="Description of uniq">
+
+
+
+
+
+
+
+
+
+
+
+
+unixdos
+unix2dos is a tool to convert line breaks in a text file from Unix format (Line feed) to DOS format (carriage return + Line feed) and vice versa.
+dos2unix command: converts a DOS text file to UNIX format.
+Unix2dos command: converts a Unix text file to DOS format
+
+<s1>Example:</s1>
+$unix2dos myfile.txt
+Convert UNIX file to DOS format by using unix2dos command
+<img src="img/uniq (3).png" alt="Description of uniq">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Unset
+unset command in Bash is used to unset or remove a variable or function. It allows you to delete the values and attributes of variables or functions, making them undefined or unset. This can be useful when you want to clear the value of a variable or remove a function definition from the current shell session.
+<s1>Syntax:</s1>
+unset -f function_name
+<s1>Examples:</s1>
+Unset a Bash Function
+<img src="img/uniq (4).png" alt="Description of uniq">
+
+Unset a Function After Task Completion
+<img src="img/uniq (5).png" alt="Description of uniq"></p></pre> 
             </body>
-            </html>
         

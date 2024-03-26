@@ -1,6 +1,6 @@
+<img src="img/lsblk (1).png" alt="Description of lsblk">
 
 
 To print size information in bytes.
 lsblk –b
-
-
+<img src="img/lsblk (2).png" alt="Description of lsblk">

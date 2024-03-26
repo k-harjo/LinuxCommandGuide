@@ -1,12 +1,12 @@
 cfdisk - used to create, delete, and modify partitions on a disk device. It displays or manipulates the disk partition table by providing a text-based “graphical” interface. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       cfdisk [ -agvz ] [ -c cylinders ] [ -h heads ]
                 [ -s sectors-per-track ] [ -P opt ] [ device ]  
 
-Options
+<s1>Options</s1>
 
    -a  Use an arrow cursor instead of reverse video
        for highlighting the current partition.
@@ -34,16 +34,16 @@ Options
            See the print command (below) for more information on the print formats. 
 
 
-Examples
+<s1>Examples</s1>
 
 cfdisk /dev/sda 
-image001
+<img src="img/cfdisk (1).png" alt="Description of cfdisk">
 
 After running you get a prompt like this: 
-image002
+<img src="img/cfdisk (2).png" alt="Description of cfdisk">
 
 Choose gpt from the list. Now you will see a partition table like this: 
-image003
+<img src="img/cfdisk (3).png" alt="Description of cfdisk">
 
 
 *See also: fdisk, fdformat, mkfs, parted, sfdisk

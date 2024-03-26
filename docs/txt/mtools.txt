@@ -1,13 +1,13 @@
 mapfile - Read lines from the standard input into the indexed array variable array, or from file descriptor fd if the -u option is supplied. The variable MAPFILE is the default array. The command name readarray may be used as an alias for mapfile, with no difference in operation.
 
 
-Syntax
+<s1>Syntax</s1>
 
       mapfile [-d delim] [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callback] [-c quantum] [array]
     readarray [-d delim] [-n count] [-O origin] [-s count] [-t] [-u fd] [-C callback] [-c quantum] [array]
 
 
-Key
+<s1>Key</s1>
 
    -d    The first character of delim is used to terminate each input line, rather than newline.
          If delim is the empty string, mapfile will terminate a line when it reads a NUL character. 
@@ -38,7 +38,7 @@ mapfile can't do anything that couldn't be done using read and a loop. A read lo
 mapfile is a BASH shell builtin, to display your local syntax from the bash prompt type: help mapfile
 
 
-Examples
+<s1>Examples</s1>
 
 Capture the output of a script inner.sh and store it in an array called myarray:
 

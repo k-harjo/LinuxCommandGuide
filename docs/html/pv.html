@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,66 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>pv</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>pv is a terminal-based (command-line based) tool in Linux that allows us for the monitoring of data being sent through pipe. The full form of pv command is Pipe Viewer. pv helps the user by giving him a visual display of the following,
+Time Elapsed
+Completed Progress (percentage bar)
+Current data transfer speed (also referred to as throughput rate)
+Data Transferred
+ETA (Estimated Time) (Remaining time)
+
+<s1>Syntax:</s1>
+pv fileName
+pv OPTIONS fileName
+pv fileName > outputFileName
+pv OPTIONS | command > outputFileName
+command1 | pv | command2
+Options for pv command
+1. General Options
+-help : Displays the usage information.
+–version : Displays the version information.
+2. Display Modifiers
+–progress / -p : Displays the progress bar.
+–timer / -t : Displays the elapsed time.
+–eta / -e : Displays the Estimated Time for the operation. Guess for the time is based on the previous data transfer rate and the size of data to be transferred.
+–rate / -r : Turns on the rate counter for the operation.
+–bytes / -b : Displays the total amount of data transferred till now.
+–numeric / -n : Displays integer percentage instead of the visual representation.
+–quiet / -q : No output
+3. Output Modifiers
+–wait / -W : To wait for transfer of first byte before displaying progress.
+–interval SECONDS / -i SECONDS : Specified the time interval between updates.
+–force / -F : Forces an operation, i.e. forces pv to display visuals even when Standard Error is not a terminal.
+–size SIZE / -s : Assume the total data to be transferred is SIZE bytes for calculating computing percentage or ETA.
+–line-mode / -L : Instead of counting size, progress bar will move if new line is found.
+–name NAME / -n NAME : Prefix output info with name.
+–cursor / -c : Use cursor positioning escape sequence instead of using carriage returns.
+4. Data Transfer Modifier
+–rate-limit RATE / -L RATE : Limit transfer to max of RATE byte per second.
+–buffer-size BYTES / -B BYTES : Use transfer buffer size of BYTE bytes.
+–remote PID / -R PID : If PID is instance of pv, will cause that instance to act, through it has been given instance’s command line instead.
+
+<s1>Examples:</s1>
+Creating a progress bar with the copy command
+$ pv history.log > $HOME/Documents/history.log
+<img src="img/pv (1).png" alt="Description of pv">
+
+
+Making zip with the progress bar
+$ pv history.log | zip>$HOME/Documents/history.zip
+<img src="img/pv (2).png" alt="Description of pv">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

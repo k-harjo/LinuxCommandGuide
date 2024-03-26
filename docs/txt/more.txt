@@ -1,5 +1,5 @@
 more command is used to view the text files in the command prompt, displaying one screen at a time in case the file is large (For example log files). The more command also allows the user do scroll up and down through the page. The syntax along with options and command is as follows. Another application of more is to use it with some other command after a pipe. When the output is large, we can use more command to see output one by one.
-Syntax:
+<s1>Syntax:</s1>
 more [-options] [-num] [+/pattern] [+linenum] [file_name]
 [-options]: any option that you want to use in order to change the way the file is displayed. Choose any one from the followings: (-d, -l, -f, -p, -c, -s, -u)
 [-num]: type the number of lines that you want to display per screen.
@@ -9,6 +9,6 @@ more [-options] [-num] [+/pattern] [+linenum] [file_name]
 Options:
 -d : Use this command in order to help the user to navigate. It displays “[Press space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” when wrong key is pressed.
 
-Example:
+<s1>Example:</s1>
 more -d sample.txt
-
+<img src="img/more (1).png" alt="Description of more">

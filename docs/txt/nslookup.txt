@@ -1,9 +1,10 @@
 nslookup - It is a network administration tool for querying the Domain Name System (DNS) to obtain domain name or IP address mapping or any other specific DNS record.
-Syntax:
+<s1>Syntax:</s1>
 nslookup [option] [hosts]
 
-Examples:
+<s1>Examples:</s1>
 nslookup -type=soa redhat.com
+<img src="img/nslookup (1).png" alt="Description of nslookup">
 
 
 
@@ -14,7 +15,7 @@ nslookup -type=soa redhat.com
 
 Password
 The passwd command in Linux is a powerful tool that allows system administrators and users to manage password-related tasks. Its primary purpose is to change user passwords, but it offers additional functionalities such as updating password aging policies, unlocking accounts, and more.
-Syntax:
+<s1>Syntax:</s1>
 passwd [options] [username]
 Options Available in `passwd` Command in Linux
 
@@ -24,7 +25,7 @@ Options Available in `passwd` Command in Linux
 
 
 
-Examples:
+<s1>Examples:</s1>
 To change a user password using the passwd command, follow these steps:
 Step 1: Open a terminal on your Linux system.
 Step 2: Type the following command and press Enter:

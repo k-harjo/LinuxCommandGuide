@@ -1,7 +1,7 @@
 unrar - Extract files from a rar archive.
 
 
-Syntax
+<s1>Syntax</s1>
 
       unrar command [-switch_1 -switch_N] archive [files...] [path...]
 A summary of commands is below. Every command/switch must be separated by whitespace.
@@ -40,7 +40,7 @@ Switches
 For a complete description, run unrar without options.
 
 
-Examples
+<s1>Examples</s1>
 
 Extract the rar archive SS64.rar:
 

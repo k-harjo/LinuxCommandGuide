@@ -1,25 +1,21 @@
 The `let` command in Linux is a powerful tool used for evaluating arithmetic expressions on shell variables. It supports various operators and functionalities to perform calculations and manipulate values.
-Syntax:
+<s1>Syntax:</s1>
 let [expression]
 Options available in `let` command
 Basic arithmetic operators
 The addition(+), subtraction(-), multiplication(*), division(/) and modulus(%) operators can be used in the expression with the let command.
 
-Examples:
+<s1>Examples:</s1>
 let "myvar =2" "myvar1=1" "myvar2=myvar1+myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1-myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1*myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1/myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1%myvar"; echo $myvar2
+<img src="img/let (1).png" alt="Description of let">
 
 Post-increment(var++) / post-decrement(var–) operator:
 
 let "myvar=10" "myvar2=--myvar"; echo $myvar $myvar2
+<img src="img/let (2).png" alt="Description of let">
 
 Pre-increment(++var) / Pre-decrement(–var) operator:
-
-
-
-
-
-

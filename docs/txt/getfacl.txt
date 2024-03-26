@@ -1,14 +1,14 @@
 getfacl displays the access permissions defined by the traditional file mode permission bits. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       getfacl [-aceEsRLPtpndvh] file ...
 
       getfacl [-aceEsRLPtpndvh] - 
 
 
-Key
+<s1>Key</s1>
 
    -a, --access
           Display the file access control list.
@@ -69,9 +69,9 @@ Environment variables
 If the environment variable POSIXLY_CORRECT is defined, the default behavior of getfacl changes in the following ways: Unless otherwise specified, only the ACL is printed. The default ACL is only printed if the -d option is given. If no command line parameter is given, getfacl behaves as if it was invoked as "getfacl -". 
 
 
-Example
+<s1>Example</s1>
 
-image001
+<img src="img/getfacl (1).png" alt="Description of getfacl">
 
 
 *See also: setfacl, chown

@@ -3,11 +3,10 @@ function command is used to create functions or methods. It is used to perform a
 The function can be created in the user’s current shell session or saved in the shell startup file to make them available every time a new shell session is initiated 
 
 
-Syntax
+<s1>Syntax</s1>
 
 function name { COMMANDS ; } 
-image001
+<img src="img/function (1).png" alt="Description of function">
 
 Parameterised function 
-image002
-
+<img src="img/function (2).png" alt="Description of function">

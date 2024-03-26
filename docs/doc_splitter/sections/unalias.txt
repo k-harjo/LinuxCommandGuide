@@ -1,0 +1,23 @@
+unalias command is a shell command which removes each name from the list of defined aliases.
+How to Remove an Alias
+Removing an existing alias is known as unaliasing.
+Syntax:
+unalias [alias name]
+image001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,13 +1,13 @@
 ulimit (User limits) - limit the use of system-wide resources.
 
 
-Syntax
+<s1>Syntax</s1>
 
       ulimit [-HS] -a
       ulimit [-HS] [-bcdefiklmnpqrstuvxPRT] [limit]
 
 
-Key
+<s1>Key</s1>
 
    -S   Set a soft limit for the given resource.
    -H   Set a hard limit for the given resource.
@@ -54,7 +54,7 @@ The return status is zero unless an invalid option is supplied, a non-numeric ar
 This is a BASH shell builtin, to display your local syntax from the bash prompt type: help ulimit
 
 
-Examples
+<s1>Examples</s1>
 
 $ ulimit -a
 core file size          (blocks, -c) 0

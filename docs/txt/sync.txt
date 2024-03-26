@@ -1,5 +1,5 @@
 sync command in Linux is used to synchronize cached writes to persistent storage. If one or more files are specified, sync only them, or their containing file systems.
-Syntax:
+<s1>Syntax:</s1>
 sync [OPTION] [FILE]...
 Note: Nothing is being shown in the screenshots just because sync command makes the cache in the background.
 Example: It will be going to sync all cached file data that belongs to the current user.

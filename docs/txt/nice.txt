@@ -1,7 +1,9 @@
 nice command in Linux helps in execution of a program/process with modified scheduling priority. It launches a process with a user-defined scheduling priority. In this, if we give a process a higher priority, then Kernel will allocate more CPU time to that process.
-Examples:
+<s1>Examples:</s1>
 To set the priority of a process
 nice -10 gnome-terminal
+<img src="img/nice (1).png" alt="Description of nice">
 
 To set the negative priority for a process
+<img src="img/nice (2).png" alt="Description of nice">
 nice --10 gnome-terminal

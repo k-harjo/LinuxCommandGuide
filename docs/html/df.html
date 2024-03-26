@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,129 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>df</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>disk free also known as `df`, which is a powerful utility that provides valuable information on disk space utilization. The df command displays information about file system disk space usage on the mounted file system. This command retrieves the information from `/proc/mounts` or `/etc/mtab`. By default, df command shows disk space in Kilobytes (KB) and uses the SI unit suffixes (e.g, M for megabytes, G for gigabytes) for clarity. 
+
+
+<s1>Syntax</s1>
+
+     df [option]... [FILE]...
+Normally the disk space is printed in units of 1024 bytes, but this can be overridden.
+<s1>Options</s1>
+
+   -a
+   --all
+      Include in the listing filesystems that have a size of 0 blocks,
+      which are omitted by default.  Such filesystems are typically
+      special-purpose pseudo-filesystems, such as automounter entries.
+      Also, filesystems of type "ignore" or "auto", supported by some
+      operating systems, are only included if this option is specified.
+
+   -h
+   --human-readable
+      Append a size letter such as 'M' for megabytes to each size.
+      Powers of 1024 are used, not 1000; 'M' stands for 1,048,576 bytes.
+      Use the '-H' or '--si' option if you prefer powers of 1000.
+
+   -H
+   --si
+      Append a size letter such as 'M' for megabytes to each size.  (SI
+      is the International System of Units, which defines these letters
+      as prefixes.)  Powers of 1000 are used, not 1024; 'M' stands for
+      1,000,000 bytes.  Use the '-h' or '--human-readable' option if you
+      prefer powers of 1024.
+
+   -i
+   --inodes
+      List inode usage information instead of block usage.  An inode
+      (short for index node) is contains information about a file such
+      as its owner, permissions, timestamps, and location on the disk.
+
+   -k
+   --kilobytes
+      Print sizes in 1024-byte blocks, overriding the default block size.
+
+   -l
+   --local
+      Limit the listing to local filesystems.  By default, remote
+      filesystems are also listed.
+
+   -m
+   --megabytes
+      Print sizes in megabyte (that is, 1,048,576-byte) blocks.
+
+   --no-sync
+      Do not invoke the 'sync' system call before getting any usage data.
+      This can make 'df' run significantly faster on systems with many
+      disks, but on some systems (notably SunOS) the results can be
+      slightly out of date.  This is the default.
+
+   -P
+   --portability
+      Use the POSIX output format.  This is like the default format
+      except that the information about each filesystem is always
+      printed on exactly one line; a mount device is never put on a line
+      by itself.  This means that if the mount device name is more than
+      20 characters long (e.g., for some network mounts), the columns
+      are misaligned.
+
+   --sync
+      Invoke the 'sync' system call before getting any usage data.  On
+      some systems (notably SunOS), doing this yields more up to date
+      results, but in general this option makes 'df' much slower,
+      especially when there are many or very busy filesystems.
+
+   -t FSTYPE
+   --type=FSTYPE
+      Limit the listing to filesystems of type FSTYPE.  Multiple
+      filesystem types can be specified by giving multiple '-t' options.
+      By default, nothing is omitted.
+
+   -T
+   --print-type
+      Print each filesystem's type.  The types printed here are the same
+      ones you can include or exclude with '-t' and '-x'.  The particular
+      types printed are whatever is supported by the system.  Here are
+      some of the common names (this list is certainly not exhaustive):
+
+     'nfs'
+         An NFS filesystem, i.e., one mounted over a network from
+         another machine.  This is the one type name which seems to be
+         used uniformly by all systems.
+
+     '4.2, ufs, efs...'
+         A filesystem on a locally-mounted hard disk.  (The system
+         might even support more than one type here; Linux does.)
+
+     'hsfs, cdfs'
+         A filesystem on a CD-ROM drive.  HP-UX uses 'cdfs', most other
+         systems use 'hsfs' ('hs' for 'High Sierra').
+
+     'pcfs'
+         An MS-DOS filesystem, usually on a diskette.
+
+   -x FSTYPE
+   --exclude-type=FSTYPE
+      Limit the listing to filesystems not of type FSTYPE.  Multiple
+      filesystem types can be eliminated by giving multiple '-x'
+      options.  By default, no filesystem types are omitted.
+
+   -v
+      Ignored; for compatibility with System V versions of 'df'.
+
+If an argument FILE is a disk device file containing a mounted filesystem, 'df' shows the space available on that filesystem rather than on the filesystem containing the device node (i.e., the root filesystem). GNU 'df' does not attempt to determine the disk usage on unmounted filesystems, because on most kinds of systems doing so requires extremely nonportable intimate knowledge of filesystem structures.
+
+
+<s1>Examples</s1>
+
+This will display information about all the mounted file systems which will include total size, used space, usage percentage, and the mount point. 
+<img src="img/df (1).png" alt="Description of df">
+
+To display all the file system, use -a option 
+
+df –a 
+<img src="img/df (2).png" alt="Description of df">
+
+
+*See also: du, quot, tunefs, mnttab, attributes</p></pre> 
             </body>
-            </html>
         

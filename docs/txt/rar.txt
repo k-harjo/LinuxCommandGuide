@@ -1,7 +1,7 @@
 rar - Archive files with compression.
 
 
-Syntax
+<s1>Syntax</s1>
 
       rar command [-switch_1 -switch_N] archive [files...]
 A summary of commands is below. Every command/switch must be separated by whitespace.
@@ -268,7 +268,7 @@ Switches:
 For a complete description, run rar without options.
 
 
-Examples
+<s1>Examples</s1>
 
 Create a new rar archive archive.rar containing file1.dat, file2.dat, file3.dat:
 

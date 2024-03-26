@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,45 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>uudecode</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>uudecode - decode a file created by uuencode
+
+
+<s1>Syntax</s1>
+
+       uudecode [-o outfile] [ file ]...
+
+
+<s1>Key</s1>
+
+   file An input file to read.
+
+   -m   Use base64 encoding instead of UU  encoding.
+
+   name Output file.
+
+   -o   Output the decoded string to the file outfile
+
+Uuencode and uudecode are used to transmit binary files over transmission mediums that do not support other than simple ASCII data. The encoding uses only printing ASCII characters and includes the mode of the file and the operand name for use by uudecode.
+
+Uuencode reads file (or by default the standard input) and writes an encoded version to the standard output.
+The resulting file will have the mode of the original file except that setuid and execute bits are not retained.
+
+If outfile or name is /dev/stdout the result will be written to standard output.
+
+Uudecode transforms uuencoded files (or by default, the standard input) into the original form.
+Uudecode ignores any leading and trailing lines. The program can automatically decide which of the supported encoding schemes are used.
+
+Debian/Ubuntu users can install uuencode as part of the ’sharutils’ group of Unix utilities with apt-get install sharutils
+
+
+<s1>Examples</s1>
+
+The following example packages up a source tree, compresses it, uuencodes it and mails it to a user on another system. When uudecode is run on the target system, the file 'src_tree.tar.Z' will be created which can then be uncompressed and extracted into the original tree.
+
+      tar  cf  -   src_tree   |   compress   |   uuencode
+      src_tree.tar.Z | mail sys1!sys2!user
+
+
+*See also: uuencode, iconv, base32, base64</p></pre> 
             </body>
-            </html>
         

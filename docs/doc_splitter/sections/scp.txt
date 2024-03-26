@@ -1,0 +1,45 @@
+scp (secure copy) command in Linux system is used to copy file(s) between servers in a secure way.
+The SCP command or secure copy allows the secure transferring of files between the local host and the remote host or between two remote hosts. It uses the same authentication and security as it is used in the Secure Shell (SSH) protocol. SCP is known for its simplicity, security, and pre-installed availability.
+Syntax:
+The Basc Syntax of scp command in Linux is as follows:
+scp [options] [[user@]host1:]source_file_or_directory ... [[user@]host2:]destination
+
+
+For example: If we want to copy a file name “test.txt” from local system to a
+“remoteuser” = “Jayesh”
+“remotehost” = “10.143.90.2”
+“/remote/directory” = “/home/jayesh”
+
+
+Example 1:
+scp test.txt jayesh@10.143.90.2:/home/jayesh
+image001
+
+
+To Verify: Use `ls` command in the location we copied file.
+image002
+
+
+Example 2:
+How to Securely copy a file from remote machine to our local machine.
+
+scp user@remotehost:/home/user/file_name
+here
+“user” = username of remote system.
+“remotehost” = IP address (or hostname) of remote system.
+“/home/user/file_name” = path of file that has to be copied.
+“.” = this means that we are copying that file in current location in local system.
+
+If we have
+“user” = jayesh
+“remotehost” = 10.143.90.2
+“home/user/file_name” = home/jayesh/test1.txt
+
+scp jayesh@10.143.90.2:/home/jayesh/test1.txt
+image003
+
+
+
+
+
+

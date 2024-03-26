@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,35 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>rename</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>rename is used to rename the named files according to the regular expression perlexpr
+Changing the names of files in Linux is something we often do, and the “rename” command is like a helpful friend for this job. This guide is like a journey to becoming really good at renaming files on Linux, showing you how handy and useful the “rename” command can be. Whether you’re just starting out or you’re already good at working with files, this article will teach you what you need to know. It covers everything from simple renaming to more advanced tricks.
+<s1>Syntax:</s1>
+The basic syntax of the rename command is as follows:
+rename [options] expression files.
+Options: These are additional flags that modify the behavior of the rename command.
+Expression: This is the regular expression or Perl code that defines the transformation to be applied to the filenames.
+Files: These are the filenames or patterns of filenames that match the files to be renamed.
+
+Options Available in `rename` command
+
+<s1>Example:</s1>
+rename -s 's/root/new/' sym.png
+<img src="img/rename (1).png" alt="Description of rename">
+
+
+rename `-v` option
+This option is used to show which files are being renamed, if there are any.
+<img src="img/rename (2).png" alt="Description of rename">
+
+
+Examples of `rename` Command to remane File in Linux
+1) Renaming a Single File Using `rename` Command in Linux
+When you want to rename a single file in Linux, the rename command comes in handy. Let’s consider an example where you have a file named “file.txt" and you want to replace it with “name newfile.txt”
+The basic syntax of the rename command is:
+rename 's/old_pattern/new_pattern/' filename.
+s/old_pattern/new_pattern/: This is a Perl-style regular expression that defines the substitution pattern. It instructs the rename command to replace occurrences of old_pattern with new_pattern.
+filename: This is the name of the file you want to rename.
+rename 's/file/newfile/' file.txt
+<img src="img/rename (3).png" alt="Description of rename"></p></pre> 
             </body>
-            </html>
         

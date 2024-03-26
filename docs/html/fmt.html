@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,62 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fmt</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>fmt command in LINUX actually works as a formatter for simplifying and optimizing text files. Formatting of text files can also be done manually, but it can be really time-consuming when it comes to large text files, this is where fmt comes to rescue. fmt re-formats each paragraph in the file specified, writing to standard output.  
+
+
+<s1>Syntax</s1>
+
+	fmt [-WIDTH] [OPTION]... [FILE]... 
+
+
+<s1>Options</s1>
+
+   -c
+   --crown-margin
+       "Crown margin" mode: preserve the indentation of the first two lines within a paragraph,
+       and align the left margin of each subsequent line with that of the second line.
+
+   -t
+   --tagged-paragraph
+       "Tagged paragraph" mode: like crown margin mode, except that if indentation
+       of the first line of a paragraph is the same as the indentation of the
+       second, the first line is treated as a one-line paragraph.
+
+   -s
+   --split-only
+       Split lines only.  Do not join short lines to form longer ones.
+       This prevents sample lines of code, and other such "formatted" text from being unduly combined.
+
+   -u
+   --uniform-spacing
+       Uniform spacing. Reduce spacing between words to one space, and spacing between sentences to two spaces.
+
+   -WIDTH
+   -w WIDTH
+   --width=WIDTH
+       Fill output lines up to WIDTH characters (default 75).  'fmt' initially tries to 
+       make lines about 7% shorter than this, to give it room to balance line lengths. 
+
+   -p PREFIX
+   --prefix=PREFIX
+       Only lines beginning with PREFIX (possibly preceded by whitespace) are subject
+       to formatting. The prefix and any preceding whitespace are stripped for the
+       formatting and then re-attached to each formatted output line.
+       One use is to format certain kinds of program comments, while leaving the code unchanged.
+'fmt' reads from the specified FILE arguments (or standard input if none are given), and writes to standard output.
+
+
+<s1>Examples</s1>
+
+fmt kt.txt 
+Used `fmt` command to view the content in single line. 
+<img src="img/fmt (1).png" alt="Description of fmt">
+
+fmt kt.txt > dv.txt 
+Here we have use `>` to save the output in filename `dv.txt` 
+<img src="img/fmt (2).png" alt="Description of fmt">
+
+
+*See also: mail, nroff, csplit, cut, fold, join, paste, split, tr, tail</p></pre> 
             </body>
-            </html>
         

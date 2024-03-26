@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,44 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fold</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>fold command in Linux wraps each line in an input file to fit a specified width and prints it to the standard output. By default, it wraps lines at a maximum width of 80 columns, which is configurable. To fold input using the fold command pass a file or standard input to the command.
+
+
+<s1>Syntax</s1>
+
+      fold [options]... [FILE]...
+
+
+<s1>Key</s1>
+
+   -b
+   --bytes
+      Count bytes rather than columns, so that tabs, backspaces, and carriage returns
+      are each counted as taking up one column, just like other characters.
+
+   -s
+   --spaces
+      Break at word boundaries: the line is broken after the last blank before the maximum
+      line length.  If the line contains no such blanks, the line is broken at the maximum line length as usual.
+
+   -w WIDTH
+   --width=WIDTH
+      Use a maximum line length of WIDTH columns instead of 80.
+
+By default, 'fold' breaks lines wider than 80 columns. The output is split into as many lines as necessary.
+
+'fold' counts screen columns by default; thus, a Tab can count more than one column, Backspace decreases the column count, and CarriageReturn sets the column to zero.
+
+
+<s1>Examples</s1>
+
+fold GfG.txt 
+<img src="img/fold (1).png" alt="Description of fold">
+
+fold -w[n] GfG.txt 
+<img src="img/fold (2).png" alt="Description of fold">
+
+
+*See also: csplit, cut, expand, fmt, head, paste, split, tail</p></pre> 
             </body>
-            </html>
         

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,28 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>sleep</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>sleep command is used to create a dummy job. A dummy job helps in delaying the execution. It takes time in seconds by default but a small suffix(s, m, h, d) can be added at the end to convert it into any other format. This command pauses the execution for an amount of time which is defined by NUMBER.
+
+<s1>Syntax:</s1>
+
+sleep NUMBER[SUFFIX]…
+<s1>Examples:</s1>
+Using Suffixes in `sleep` Command in Linux:
+Sleep allows you to specify time units using suffixes, providing flexibility in defining durations.
+sleep 3m
+<img src="img/sleep (1).png" alt="Description of sleep">
+
+
+Specifying Fractional Seconds in `sleep` Command in Linux
+You can use decimal values to specify fractional seconds.
+sleep 3.5
+<img src="img/sleep (2).png" alt="Description of sleep">
+
+
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

@@ -3,18 +3,18 @@ bash - Open a new instance of the bash shell.
 Bash script is a plain text files with the “.sh” extension. It can be executed by invoking the Bash interpreter. A typical Bash script starts with a shebang (#!/bin/bash), which indicates the directory or path to the Bash interpreter. After the shebang, one can define variables and functions, use conditionals and loops and execute built-in commands like any other programming language. 
 
 
-Syntax: 
+<s1>Syntax: </s1>
 
       bash [options] [file] 
 
 
-Examples: 
+<s1>Examples: </s1>
 
 bash filename.sh 
 
 The script will simply get executed after “sourcing” the file. The source command will execute the shell script as the default bash command provided you are in the bash shell.  You need to be in the bash shell to execute the script using the source command. 
 
-image001 
+<img src="img/bash (1).png" alt="Description of bash"> 
 
 Making the Script Executable with chmod 
 
@@ -34,10 +34,10 @@ If you are not on the same path as the bash script, make sure you provide the re
 
 ./pathToTheFile.sh 
 
-image002 
+<img src="img/bash (2).png" alt="Description of bash"> 
 
 using chmod and executing the script. 
 
-image003
+<img src="img/bash (3).png" alt="Description of bash">
 
 Executing a script from a relative path. 

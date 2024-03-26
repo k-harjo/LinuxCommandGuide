@@ -1,12 +1,12 @@
 dirs command shell builtin is used to display the list of currently remembered directories. By default, it includes the directory you are currently in. A directory can get into the list via pushd command followed by the dir name and can be removed via popd command. SYNTAX:dirs [-clpv] [+N] [-N] 
 
 
-Syntax
+<s1>Syntax</s1>
 
 	dirs [-clpv] [+N] [-N]
 
 
-Options
+<s1>Options</s1>
 
      +N   Displays the Nth directory (counting from the left of the list 
           printed by dirs when invoked without options), starting with 
@@ -27,16 +27,16 @@ Options
           line, prefixing each entry with its index in the stack.
 
 
-Examples
+<s1>Examples</s1>
 
 /home/vivek/Rocket -> ~/Rocket 
-image001
+<img src="img/dirs (1).png" alt="Description of dirs">
 
 Using Options:
-image002
+<img src="img/dirs (2).png" alt="Description of dirs">
 
 Using Parameters:
-image003
+<img src="img/dirs (3).png" alt="Description of dirs">
 
 
 *See also: popd, pushd

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,52 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>base32</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>Base32 encode/decode data and print to standard output.
+
+
+<s1>Syntax</s1>
+
+      base32 [OPTION]... [FILE]
+
+
+<s1>Key</s1>
+
+   -d
+   --decode
+        Decode data.
+
+   -i
+   --ignore-garbage
+        When decoding, ignore non-alphabet characters.
+
+   -w
+   --wrap=COLS
+        Wrap encoded lines after COLS character (default 76).  
+        Use 0 to disable line wrapping.
+
+   --help
+        Display this help and exit.
+
+   --version
+        Output version information and exit.
+
+With no FILE, or when FILE is - , read from standard input.
+
+
+<s1>Examples:</s1>
+
+Encode the text file sample.txt:
+$ base32 sample.txt > encoded.txt
+
+Encode a binary photo file:
+$ base32 --wrap=0 picture.jpg > encoded.txt
+
+Decode the file encoded.txt:
+$ base32 encoded.txt > restore.txt
+
+<img src="img/base32 (1).png" alt="Description of base32">
+
+
+*See also: base64, uuencode, ASCII Table</p></pre> 
             </body>
-            </html>
         

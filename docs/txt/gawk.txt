@@ -21,14 +21,14 @@ gawk command can be used to :
 	-Conditionals and loops. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       awk <options> 'Program' Input-File1 Input-File2 ...
 
       awk -f PROGRAM-FILE <options> Input-File1 Input-File2 ...
 
 
-Key
+<s1>Key</s1>
 
  -F FS
  --field-separator FS
@@ -85,16 +85,16 @@ Key
      A series of patterns and actions: see below
 
 
-Example:
+<s1>Example:</s1>
 
 gawk -F: '{print $1}' /etc/passwd 
-image001
+<img src="img/gawk (1).png" alt="Description of gawk">
 
 -f: Read the AWK program source from the file program-file, instead of from the first command line argument. Multiple -f (or –file) options may be used.  
 
  
 gawk -F: -f mobile.txt /etc/passwd 
-image002
+<img src="img/gawk (2).png" alt="Description of gawk">
 
 
 *See also: awk, oawk, nawk, egrep, expr, eval, for, grep, m4, tr

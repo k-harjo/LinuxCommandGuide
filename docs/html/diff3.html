@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,87 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>diff3</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>diff3 command is used to compare the three files line by line. It internally uses the diff command to compare. When three files are compared then the following output may come which have their own meaning: 
+
+
+<s1>Syntax</s1>
+
+	diff3 [options] MYFILE OLDFILE YOURFILE
+
+	====  : All the files are different. 
+
+	====1 : File 1 is different. 
+
+	====2 : File 2 is different. 
+
+	====3 : File 3 is different. 
+
+
+<s1>Key</s1>
+
+   -a --text
+         Treat all files as text and compare them line-by-line, even if they  do not appear to be text.
+
+   -A --show-all
+         Output all changes from OLDFILE to YOURFILE into MYFILE, surrounding all conflicts with bracket lines.
+
+   -e --ed
+         Output unmerged changes from OLDFILE to YOURFILE into MYFILE.
+
+   -E --show-overlap
+         Output unmerged changes from OLDFILE to YOURFILE into MYFILE, bracketing conflicts. 
+
+   -x --overlap-only
+         Output unmerged changes from OLDFILE to YOURFILE into MYFILE, output only overlapping changes.
+
+   -X
+         Output unmerged changes from OLDFILE to YOURFILE into MYFILE, output only overlapping changes, bracketing them.
+
+   -3 --easy-only
+         Output unmerged changes from OLDFILE to YOURFILE into MYFILE, Output only nonoverlapping changes. 
+
+   -m --merge
+         Output merged file instead of ed script (default -A).
+         Unlike piping the output from 'diff3' to 'ed', this works even for binary files and incomplete lines.
+
+   -L LABEL --label=LABEL
+         Use LABEL instead of file name.
+         Use the label LABEL for the brackets output by the '-A', '-E' and '-X' options.
+         This option can be given up to three times, one for each input file.
+         The default labels are the names of the input files.
+
+         Thus 'diff3 -L X -L Y -L Z -m A B C' acts like 'diff3 -m A B C', except that the
+         output looks like it came from files named 'X', 'Y' and 'Z' rather than from files named 'A', 'B' and 'C'.
+
+   -i
+         Append 'w' and 'q' commands at the end of ed scripts.
+         This option must be combined with one of the '-AeExX3' options, and can not be combined with '-m'.
+
+   -T --initial-tab
+         Output a tab rather than two spaces before the text of a line in normal format.
+
+   --diff-program=PROGRAM
+         Use PROGRAM to compare files.
+
+   --strip-trailing-cr
+         strip trailing carriage return on input.
+
+   -v --version
+         Output the version number of 'diff3'.
+
+   --help
+         Output this help.
+
+
+<s1>Example</s1>
+
+Let us consider three files as a.txt, b.txt and c.txt.
+<img src="img/diff3 (1).png" alt="Description of diff3">
+
+Now if diff3 command is used over these three files then following output will come: 
+<img src="img/diff3 (2).png" alt="Description of diff3">
+
+
+*See also: cmp, diff, sdiff</p></pre> 
             </body>
-            </html>
         

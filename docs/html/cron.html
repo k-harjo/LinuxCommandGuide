@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,66 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>cron</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>cron is a software utility, offered by a Linux-like operating system that automates the scheduled task at a predetermined time. It is a daemon process, which runs as a background process and performs the specified operations at the predefined time when a certain event or condition is triggered without the intervention of a user. Dealing with a repeated task frequently is an intimidating task for the system administrator and thus he can schedule such processes to run automatically in the background at regular intervals of time by creating a list of those commands using cron. It enables the users to execute the scheduled task on a regular basis unobtrusively like doing the backup every day at midnight, scheduling updates on a weekly basis, synchronizing the files at some regular interval. Cron checks for the scheduled job recurrently and when the scheduled time fields match the current time fields, the scheduled commands are executed. It is started automatically from /etc/init.d on entering multi-user run levels.  
+
+
+<s1>Syntax</s1>
+
+      cron [-n | -p | -s | -m<mailcommand>]
+
+      cron -x [ext,sch,proc,pars,load,misc,test,bit] 
+
+
+<s1>Key</s1>
+
+   -s  This option will direct cron to send job output to the system log using syslog(3).
+       This is useful if your system has no sendmail(8), or if mail is disabled using -m off.
+
+   -m  This option allows you to specify a shell command string to use for sending cron
+       mail output instead of sendmail(8). This command must accept a fully formatted mail
+       message (with headers) on stdin and send it as a mail message to the recipients
+       specified in the mail headers.
+
+   -n  This option changes default behavior causing it to run crond in the foreground.
+       This can be useful when starting it out of init.
+
+   -p  Permit any crontab, which user set.
+
+   -x  This option sets debug flags.
+
+   As a special case, the string off will disable sending mail.
+
+How to run the cron daemon: Cron should be started from /etc/init.d or /etc/rc.d/init.d (older systems may also use /etc/rc or /etc/rc.local). It will return immediately, so you don't need to start it with '&'.
+
+<img src="img/cron (1).png" alt="Description of cron">
+
+
+What cron does:
+
+Cron searches /var/spool/cron for crontab files which are named after accounts in /etc/passwd; crontabs found are loaded into memory. Cron also searches for /etc/crontab and the files in the /etc/cron.d/ directory, which are in a different format.
+
+Cron then wakes up every minute, examining all stored crontabs, checking each command to see if it should be run in the current minute.
+
+cron will normally allow a task to run indefinitely. Consider using options of the program you’re calling to implement a timeout, or utilise the timeout command wrapper.
+
+
+Modifying a cron job:
+
+To edit a users crontab entry, log into your system for that particular user and type crontab -e.
+The default editor for the 'crontab -e' command is vi.
+Change the default editor by running: export VISUAL='editor'
+
+cron checks each minute to see if its spool directory's modtime (or the modtime on /etc/crontab) has changed, and if it has, cron will then examine the modtime on all crontabs and reload those which have changed. Thus cron need not be restarted whenever a crontab file is modfied. Note that the crontab command updates the modtime of the spool directory whenever it changes a crontab.
+
+
+Mailing output:
+
+Cron will email to the user all output of the commands it runs, to silence this, redirect the output to a log file or to /dev/null
+You can also redirect email to the user named in the MAILTO environment variable in the crontab, if such exists.
+
+Cron comes from the word chronos, the Greek word for time.
+
+
+*See also: anacron, at, crontab, chroot, exec, if, nohup, su, watch, .period</p></pre> 
             </body>
-            </html>
         

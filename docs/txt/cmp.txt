@@ -1,7 +1,7 @@
 cmp - Compare two files, and if they differ, tells the first byte and line number where they differ. You can use the 'cmp' command to show the offsets and line numbers where two files differ. 'cmp' can also show all the characters that differ between the two files, side by side.
 
 
-Syntax
+<s1>Syntax</s1>
 
       cmp options... FromFile [ToFile]
 
@@ -46,9 +46,9 @@ Syntax
        differences were found, and 2 means trouble.
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/cmp (1).png" alt="Description of cmp">
 
 
 See also: comm, diff, diff3, dircmp, sdiff

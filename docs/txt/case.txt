@@ -3,13 +3,13 @@ case - Conditionally perform a command, case will selectively execute the comman
 The case command in Linux is the best alternative when we had to use multiple if/elif on a single variable. It is used to execute the commands based on the pattern matching. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac 
 
 
-Example: 
-image001
+<s1>Example: </s1>
+<img src="img/case (1).png" alt="Description of case">
 
 
 *See also: if, for, until, select, while

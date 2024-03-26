@@ -1,12 +1,12 @@
 fdformat - Low-level format a floppy disk
 
 
-Syntax
+<s1>Syntax</s1>
 
       fdformat [ -n ] device
 
 
-Options
+<s1>Options</s1>
 
        -n   No verify. This will disable the verification that is performed after the format.
 fdformat does a low level format on a floppy disk.

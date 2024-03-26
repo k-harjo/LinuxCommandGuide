@@ -1,6 +1,6 @@
 for command in Linux is used to repeatedly execute a set of command for every element present in the list.
 
-Syntax
+<s1>Syntax</s1>
 
       for name [in words ...]; do commands; done
 For each element in words, name is set to that element, and the commands are executed.
@@ -15,11 +15,11 @@ Equivalent to:
 EXP1, EXP2, and EXP3 are arithmetic expressions. If any expression is omitted, it behaves as if it evaluates to 1.
 
 
-Example:
+<s1>Example:</s1>
 
-image001
+<img src="img/for (1).png" alt="Description of for">
 
-image002
+<img src="img/for (2).png" alt="Description of for">
 
 
 *See also: case, eval, if, gawk, m4, until, while

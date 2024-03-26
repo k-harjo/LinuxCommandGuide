@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,81 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>klist</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>klist - List cached Kerberos tickets. List the Kerberos principal and Kerberos tickets held in a credentials cache, or the keys held in a keytab file.
+
+
+<s1>Syntax</s1>
+
+      klist [-e] [[-c] [-l] [-A] [-f] [-s] [-a [-n]]] [-k [-t] [-K]] [cache_name | keytab_name] 
+
+
+<s1>Key</s1>
+   
+   -e  Display the encryption types of the session key and the ticket for each credential
+       in the credential cache, or each key in the keytab file.
+
+   -c  List tickets held in a credentials cache. This is the default if neither -c nor -k is specified.
+
+   -l  If a cache collection is available, display a table summarizing the caches present in the collection.
+
+   -A  If a cache collection is available, displays the contents of all of the caches in the collection.
+
+   -f  Show the flags present in the credentials, using the following abbreviations:
+          F  Forwardable
+          f  forwarded
+          P  Proxiable
+          p  proxy
+          D  postDateable
+          d  postdated
+          R  Renewable
+          I  Initial
+          i  invalid
+          H  Hardware authenticated
+          A  preAuthenticated
+          a  anonymous
+          T  Transit policy checked
+          O  Okay as delegate
+
+   -s  Cause klist to run silently (produce no output), but to still set the exit status according
+       to whether it finds the credentials cache.
+       The exit status is '0' if klist finds a credentials cache, and '1' if it does not
+       or if the tickets are expired.
+
+   -a  Display list of addresses in credentials.
+
+   -n  Show numeric addresses instead of reverse-resolving addresses.
+
+   -k  List keys held in a keytab file.
+
+   -t  Display the time entry timestamps for each keytab entry in the keytab file.
+
+   -K  Display the value of the encryption key in each keytab entry in the keytab file.
+
+   -V  Display the Kerberos version number and exit. 
+
+If cache_name or keytab_name is not specified, klist will display the credentials in the default credentials cache or keytab file as appropriate. If the KRB5CCNAME environment variable is set, its value is used to name the default ticket cache.
+
+Environment Variables:
+KRB5CCNAME
+
+Location of the default Kerberos 5 credentials (ticket) cache, in the form type:residual. If no type prefix is present, the FILE type is assumed. The type of the default cache may determine the availability of a cache collection; for instance, a default cache of type DIR causes caches within the directory to be present in the collection.
+
+
+Files
+
+/tmp/krb5cc_[uid] default location of Kerberos 5 credentials cache ([uid] is the decimal UID of the user).
+
+/etc/krb5.keytab default location for the local host's keytab file.
+
+
+<s1>Examples</s1>
+
+Query the Kerberos ticket cache to determine if any tickets are present:
+
+C:\> klist
+
+
+
+*See also: </p></pre> 
             </body>
-            </html>
         

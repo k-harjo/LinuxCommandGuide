@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,30 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>cksum</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>cksum command in Linux is used to display a CRC (Cyclic Redundancy Check) value, the byte size of the file, and the name of the file to standard output. CRC is unique for each file and only changes if the file is edited. It is used to check whether the file had accidentally corrupted while transfer. If the CRC is the same after the transfer, it means that the file had not been accidentally corrupted. 
+
+
+<s1>Syntax</s1>
+
+      cksum [Option]... [File]...
+
+<img src="img/cksum (1).png" alt="Description of cksum">
+
+Options Available in `cksum`
+
+–help : It displays help information. 
+<img src="img/cksum (2).png" alt="Description of cksum">
+
+–version : It displays version information. 
+<img src="img/cksum (3).png" alt="Description of cksum">
+
+Note: An intruder can corrupt a file in such a way that it produces the same CRC value after the transfer. That is why it is only checked for accidental corruption. 
+
+cksum prints the CRC checksum for each file along with the number of bytes in the file, and the filename unless no arguments were given.
+
+cksum is typically used to ensure that files transferred by unreliable means (e.g., netnews) have not been corrupted, by comparing the cksum output for the received files with the cksum output for the original files (typically given in the distribution).
+
+
+*See also: sum, md5sum, sha256sum</p></pre> 
             </body>
-            </html>
         

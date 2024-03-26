@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,17 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>notify-send</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>notify-send: This command is used to alert the notification popups in Linux. We will have the alert of the battery charging/discharging warning with this command.
+
+We are going to write a bash script that will speak “Battery Low” when the battery’s charging percentage will go below some specified threshold value. Before starting this, first, we need to understand some basic commands and terminology which are described below:
+Some Bash Commands:
+acpi: This command returns the percentage of battery charged, whether the device is charging or discharging and the amount of time left before the battery fully discharges.
+<img src="img/notify-send (1).png" alt="Description of notify-send">
+
+Example: acpi -b produces the following output:
+Battery 0: Discharging, 13%, 00:52:52 remaining
+Here, Battery 0 means it is not charging and Battery 1 means it is charging. 13% is the Percentage of Battery Charged. 00:52:52 is the time left before it Hibernates.
+notify-send: This command is used to alert the notification popups in Linux. We will have the alert of the battery charging/discharging warning with this command.
+<img src="img/notify-send (2).png" alt="Description of notify-send"></p></pre> 
             </body>
-            </html>
         

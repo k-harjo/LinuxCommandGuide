@@ -1,22 +1,22 @@
 hostname command is used to obtain the DNS(Domain Name System) name and set the system’s hostname or NIS(Network Information System) domain name. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 	hostname -[option] [file] 
 
 
-Examples
+<s1>Examples</s1>
 
 `-i` Option in `hostname` command in Linux 
 Display the IP address of the host 
 	hostname - i 
-image001
+<img src="img/hostname (1).png" alt="Description of hostname">
 
 `-I` Option in `hostname` command in Linux  
 This option is used to get all IP (network) addresses. The option doesn’t depend on resolvability of hostname. 
 	hostname –I 
-image002
+<img src="img/hostname (2).png" alt="Description of hostname">
 
 
 *See also: env, groups, id, logname, tty, uname, users, who, whoami

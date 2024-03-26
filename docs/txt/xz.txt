@@ -4,11 +4,13 @@ Compressing files using XZ:
 There are two ways in which we can compress the files using the xz one way is just mention file name followed by xz command like:
 xz filename
 
+<img src="img/xz (1).png" alt="Description of xz">
 
 
 Another way is by using the -z or –compress option:
 xz -z filename
 
+<img src="img/xz (2).png" alt="Description of xz">
 
 
 
@@ -26,15 +28,13 @@ Syntax: of `yes` command in Linux
 
 yes [STRING]
 
-Examples:
+<s1>Examples:</s1>
 Let us say that we want to delete all the `.txt` files present in the current directory. Instead of writing `rm -i *.txt` and then typing y at the end for every file, what can be we can use
 `yes | rm -i *.txt`.
 
+<img src="img/xz (3).png" alt="Description of xz">
 
 If we want to create a file name `jayesh.txt` with 100 lines containing “hello GFG”.
-Syntax:
+<s1>Syntax:</s1>
 yes "Hello GFG" | head -n 100 > jayesh.txt
-
-
-
-
+<img src="img/xz (4).png" alt="Description of xz">

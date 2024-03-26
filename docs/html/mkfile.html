@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,16 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>mkfile</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>makefile is a set of commands (similar to terminal commands) with variable names and targets to create object file and to remove them. In a single make file we can create multiple targets to compile and to remove object, binary files. You can compile your project (program) any number of times by using Makefile. The main idea of this file is to specify the dependencies.
+make utility : This is a command line utility and used to process the instructions written in the Makefile.
+Let us take a simple example. The client.c file contains the main function, the server.c file contains the user defined function, 
+The third file which is server.h header file which calls the user defined functions in the server.c file and the fourth file which is makefile.mk which contains set of all the commands with their variable names.
+Here we write the client.c file
+This is used to run the makefile 
+make -f makefile.mk
+This is the syntax to run the makefile after typing this press enter the code will compile and that will create an executable file named “a” (in windows), “a.out”(in linux).
+<s1>Examples:</s1>
+make -f makefile.mk
+<img src="img/mkfile (1).png" alt="Description of mkfile"></p></pre> 
             </body>
-            </html>
         

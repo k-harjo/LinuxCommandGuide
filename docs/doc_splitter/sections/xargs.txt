@@ -1,0 +1,25 @@
+xargs is a Unix command which can be used to build and execute commands from standard input.
+Importance:
+Some commands like grep can accept input as parameters, but some commands accept arguments, this is a place where xargs came into the picture.
+Syntax of `xargs` command in Linux
+xargs [options] [command]
+
+Example:
+
+image001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

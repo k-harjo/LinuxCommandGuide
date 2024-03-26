@@ -3,13 +3,15 @@ Syntax of reboot command in Linux
 reboot [OPTIONS...]
 
 
-Examples:
+<s1>Examples:</s1>
 Command to reboot your system after 5 minutes:
 sudo shutdown –r +5
+<img src="img/reboot (1).png" alt="Description of reboot">
 
 
 Reboot your system after 02:00 A.M:
 sudo shutdown –r 02:00
+<img src="img/reboot (2).png" alt="Description of reboot">
 
 
 Cancelling Restart:
@@ -21,9 +23,7 @@ $sudo shutdown -c "our custom example of canceling a scheduled shutdown"
 
 Restarting our server remotely in Linux
 Simply login your server with any of the ssh client using server authentication information and simply issue any of the following commands:
-Syntax:
+<s1>Syntax:</s1>
 ssh root@remote-server.com /sbin/reboot
-Example:
+<s1>Example:</s1>
 ssh root@196.162.1.1 /sbin/shutdown –r now\
-
-

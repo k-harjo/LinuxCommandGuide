@@ -1,12 +1,12 @@
 most - Browse or page through a text file.
 
 
-Syntax
+<s1>Syntax</s1>
 
       most [-1bCckMstvwz] [+lineno] [+c] [+d] [+s] [+/string] [filename...] 
 
 
-Key
+<s1>Key</s1>
 
    -1  VT100 mode. This is meaningful only on VMS systems.
        This option should be used if the terminal is strictly a VT100.
@@ -93,7 +93,7 @@ normal -- anything else
 See the sample configuration files for more.
 
 
-Examples
+<s1>Examples</s1>
 
 In the following commands, i is a numerical argument (1 by default).
 

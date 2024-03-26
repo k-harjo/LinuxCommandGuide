@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,52 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>chgrp</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>The `chgrp` command in Linux is used to change the group ownership of a file or directory. All files in Linux belong to an owner and a group. You can set the owner by using “chown” command, and the group by the “chgrp” command. 
+
+
+<s1>Syntax</s1>
+
+chgrp [OPTION]… GROUP FILE… 
+chgrp [OPTION]… –reference=RFILE FILE 
+
+
+<s1>Key</s1>
+
+  -c
+  --changes
+       Verbosely describe the action for each File whose group actually changes.
+
+  -f
+  --silent
+  --quiet
+       Do not print error messages about files whose group cannot be changed.
+
+  -f
+  --no-dereference
+       Act on symbolic links themselves instead of what they point to.
+       Only available if the 'lchown' system call is provided.
+
+  --reference=FILE
+       Use the group of the reference FILE instead of an explicit GROUP.
+
+  -v
+  --verbose
+       Verbosely describe the action or non-action taken for every File.
+
+  -R
+  --recursive
+       Recursively change the group ownership of directories and their
+       contents.
+
+
+<s1>Example</s1>
+
+Changing Group Ownership of a Single File 
+ 
+sudo chgrp geeksforgeeks abc.txt 
+<img src="img/chgrp (1).png" alt="Description of chgrp">
+
+
+*See also: chmod, chown, setfacl, bash syntax</p></pre> 
             </body>
-            </html>
         

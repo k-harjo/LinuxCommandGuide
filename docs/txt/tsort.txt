@@ -1,12 +1,12 @@
 tsort - Topological sort, perform a topological sort on the given FILE, or standard input if no input file is given or for a FILE of '-'.
 
 
-Syntax
+<s1>Syntax</s1>
 
       tsort [options] [file]
 
 
-Options
+<s1>Options</s1>
 
    --help
    --version

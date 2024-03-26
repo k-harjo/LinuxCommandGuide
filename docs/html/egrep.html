@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,53 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>egrep</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>egrep is a pattern searching command which belongs to the family of grep functions. It works the same way as grep -E does. It treats the pattern as an extended regular expression and prints out the lines that match the pattern. If there are several files with the matching pattern, it also displays the file names for each line.  
+
+Note: The egrep command used mainly due to the fact that it is faster than the grep command. The egrep command treats the meta-characters as they are and do not require to be escaped as is the case with grep. This allows reducing the overhead of replacing these characters while pattern matching making egrep faster than grep or fgrep.  
+
+Options: Most of the options for this command are same as grep. 
+
+
+<s1>Syntax</s1>
+
+      egrep [ options ] 'PATTERN' files ...
+
+egrep is the same as 'grep -E'
+
+all other options are the same as grep 
+The PATTERN is a regexp. In typical usage, the regexp is quoted to prevent the shell from expanding any of the special characters as file name wildcards. Normally, 'egrep' prints the lines that matched.
+If multiple file names are provided on the command line, each output line is preceded by the name of the file and a colon.
+
+egrep is usually faster than grep or fgrep.
+
+
+<s1>Key</s1>
+
+  -c  Print out a count of the lines that matched the pattern, instead of the lines themselves.
+
+  -s  Be silent. No output is produced, and the exit value indicates whether or not the pattern was matched.
+    
+  -v  Invert the sense of the test. 'egrep' prints the lines that do *not* match the pattern, and
+      exits successfully if the pattern was not matched.
+
+  -i  Ignore case distinctions in both the pattern and the input data.
+
+  -l  Only print the names of the files that matched, not the lines that matched.
+
+  -e PATTERN
+      Use PATTERN as the regexp to match.
+      The purpose of the '-e' option is to allow patterns that start with a '-'.
+
+
+<s1>Examples</s1>
+
+egrep [options] 'PATTERN' files 
+<img src="img/egrep (1).png" alt="Description of egrep">
+
+-v: It prints the lines that does not match with the pattern. 
+<img src="img/egrep (2).png" alt="Description of egrep">
+
+
+*See also: fgrep, gawk, grep</p></pre> 
             </body>
-            </html>
         

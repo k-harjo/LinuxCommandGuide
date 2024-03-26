@@ -1,14 +1,14 @@
 quota - Display disk usage and limits, by default only the user quotas are printed.
 
 
-Syntax
+<s1>Syntax</s1>
 
       quota [ -guv | q ]
       quota [ -uv | q ] user
       quota [ -gv | q ] group
 
 
-Options
+<s1>Options</s1>
 
       -g     Print group quotas for the group of which the user is a member.
 

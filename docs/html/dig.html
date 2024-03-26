@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,91 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>dig</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>dig command stands for Domain Information Groper. It is used for retrieving information about DNS name servers. It is basically used by network administrators. It is used for verifying and troubleshooting DNS problems and to perform DNS lookups. Dig command replaces older tools such as nslookup and the host. 
+
+
+<s1>Syntax</s1>
+
+     dig [@server] [-b address] [-c class] [-f filename] [-k filename]
+             [-p port#] [-t type] [-x addr] [-y name:key] [-4] [-6]
+                [name] [type] [class] [queryopt...]
+     dig [-h]
+
+     dig [global-queryopt...] [query...]
+
+
+<s1>Key</s1>
+
+   -b address
+         Set the source IP address of the query to address.
+         This must be a valid address on one of the host's network interfaces or "0.0.0.0" or "::".
+         An optional port can be specified by appending "#"
+
+   -c class
+         Over-ride the default query class (IN for internet).
+         class is any valid class, such as HS for Hesiod records or CH for CHAOSNET records.
+
+   -f filename 
+         Operate in batch mode by reading a list of lookup requests to process from a file.
+         The file contains a number of queries, one per line.
+         Each entry in the file should be organised in the same way they would be presented
+         as queries to dig using the command-line interface.
+
+   -p port#
+        Specify a non-standard port number to be queried,
+        default = the standard DNS port number 53.
+        This option would be used to test a name server that has been configured
+        to listen for queries on a non-standard port number.
+
+   -4   Force dig to only use IPv4 query transport.
+
+   -6   Force dig to only use IPv6 query transport.
+
+   -t type
+        Set the query type to type, any valid query type which is supported in BIND9.
+        The default query type "A", unless the -x option is supplied to indicate a reverse lookup.
+        A zone transfer can be requested by specifying a type of AXFR.
+
+        When an incremental zone transfer (IXFR) is required, type is set to ixfr=N.
+        The incremental zone transfer will contain the changes made to the zone since the
+        serial number in the zone's SOA record was N.
+
+   -x addr
+        Reverse lookups - mapping addresses to names: addr is an IPv4 address in dotted-
+        decimal notation, or a colon-delimited IPv6 address. When this option is used, there is no need
+        to provide the name, class and type arguments.
+        dig automatically performs a lookup for a name like 11.12.13.10.in-addr.arpa and sets the query type
+        and class to PTR and IN respectively.
+        By default, IPv6 addresses are looked up using nibble format under the IP6.ARPA domain. To use the older RFC1886
+        method using the IP6.INT domain specify the -i option.
+        Bit string labels (RFC2874) are now experimental and are not attempted.
+
+   -k filename
+        Sign the DNS queries sent by dig and their responses using transaction signatures (TSIG key file).
+        You can also specify the TSIG key itself on the command line using the -y option;
+        name is the name of the TSIG key and key is the actual key.
+        The key is a base-64 encoded string, typically generated by dnssec-keygen(8).
+
+        Caution should be taken when using the -y option on multi-user systems as the key can be visible in the
+        output from ps(1) or in the shell's history file.
+        When using TSIG authentication with dig, the name server that is queried needs to know the key and
+        algorithm that is being used. In BIND, this is done by providing appropriate key and server statements
+        in named.conf.
+
+   -h   Print a brief summary of the command-line arguments and options.
+
+
+<s1>Examples</s1>
+
+To query domain “A” record 
+dig geeksforgeeks.org 
+<img src="img/dig (1).png" alt="Description of dig">
+
+To remove comment lines. 
+dig geeksforgeeks.org +nocomments 
+<img src="img/dig (2).png" alt="Description of dig">
+
+
+*See also: host, named, dnssec-keygen</p></pre> 
             </body>
-            </html>
         

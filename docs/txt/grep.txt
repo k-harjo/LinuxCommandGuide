@@ -1,7 +1,7 @@
 grep command searches a file for a particular pattern of characters, and displays all lines that contain that pattern.  
 
 
-Syntax
+<s1>Syntax</s1>
 
       grep [options] PATTERN [FILE...]
 
@@ -11,7 +11,7 @@ A simple example:
 $ grep "Needle in a Haystack" /etc/*
 
 
-Options
+<s1>Options</s1>
 
    -A NUM
    --after-context=NUM
@@ -239,13 +239,13 @@ Options
        xargs -0 to process arbitrary file names, even those that contain newline characters. 
 
 
-Examples
+<s1>Examples</s1>
 
 Case insensitive search: grep -i "UNix" geekfile.txt 
-image001
+<img src="img/grep (1).png" alt="Description of grep">
  
 Displaying the Count of Number of Matches Using grep: grep -c "unix" geekfile.txt 
-image002
+<img src="img/grep (2).png" alt="Description of grep">
 
 
 *See also: egrep, fgrep, pgrep, find, gawk, locate, sed, tr, whereis

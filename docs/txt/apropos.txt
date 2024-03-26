@@ -1,14 +1,14 @@
 apropos - Search the manual page names and descriptions, whatis database.
 
 
-Syntax
+<s1>Syntax</s1>
 
       apropos keyword
 
       apropos [-dalv?V] [-e|-r|-w] [-s list] [-m system[,...]] [-M path] [-L locale] [-C file] keyword ...
 
 
-Options
+<s1>Options</s1>
 
    -a, --and
             Only display items that match all the supplied keywords.
@@ -87,13 +87,13 @@ Options
             Print verbose warning messages.
 
 
-Examples: 
+<s1>Examples: </s1>
 
 apropos list
-image001
+<img src="img/apropos (1).png" alt="Description of apropos">
 
 apropos -e set
-image002
+<img src="img/apropos (2).png" alt="Description of apropos">
 
 
 *See also: man

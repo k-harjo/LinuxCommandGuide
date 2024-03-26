@@ -1,20 +1,16 @@
 xdg-open command in the Linux system is used to open a file or URL in the user’s preferred application.
 The URL will be opened in the user’s preferred web browser if a URL is provided. The file will be opened in the preferred application for files of that type if a file is provided. xdg-open supports ftp, file, https and http URLs. This can be used inside a desktop session only. It is not recommended to use xdg-open as root. Here, the zero is an indication of success while non-zero show the failure.
-Syntax:
+<s1>Syntax:</s1>
 xdg-open {file | URL}
-Example:
+<s1>Example:</s1>
 xdg-open read.html
 
+<img src="img/xdg-open (1).png" alt="Description of xdg-open">
 
 
 xdg-open --help
 
-
-
-
-
-
-
+<img src="img/xdg-open (2).png" alt="Description of xdg-open">
 
 
 

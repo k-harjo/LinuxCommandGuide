@@ -4,16 +4,12 @@ Example 1. Reading an array from a file:
 $ mapfile MYFILE < example.txt
 $ echo ${MYFILE[@]}
 $ echo ${MYFILE[0]
+<img src="img/mapfile (1).png" alt="Description of mapfile">
 
 Example 2. Capture the output into an array:
 $ mapfile GEEKSFORGEEKS < <(printf "Item 1\nItem 2\nItem 3\n")
 $ echo  ${GEEKSFORGEEKS[@]}
-
-
-
-
-
-
+<img src="img/mapfile (2).png" alt="Description of mapfile">
 
 
 

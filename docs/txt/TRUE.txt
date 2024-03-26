@@ -1,7 +1,7 @@
 true - Do nothing, returning a zero (true) exit status
 
 
-Syntax:
+<s1>Syntax:</s1>
 
       true
 'true' does nothing except return an exit status of 0, meaning "success". It can be used as a place holder in shell scripts where a successful command is needed, although the shell built-in command : (colon) does the same thing faster.

@@ -1,3 +1,2 @@
-Example:
-
-
+<s1>Example:</s1>
+<img src="img/iostat (1).png" alt="Description of iostat">

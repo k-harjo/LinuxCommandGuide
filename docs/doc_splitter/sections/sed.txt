@@ -1,0 +1,37 @@
+sed is used for finding, filtering, text substitution, replacement and text manipulations like insertion, deletion search etc.
+SED command in UNIX stands for stream editor and it can perform lots of functions on file like searching, find and replace, insertion or deletion. Though most common use of SED command in UNIX is for substitution or for find and replace. By using SED you can edit files even without opening them, which is much quicker way to find and replace something in file, than first opening that file in VI Editor and then changing it.
+SED is a powerful text stream editor. Can do insertion, deletion, search and replace(substitution).
+SED command in unix supports regular expression which allows it perform complex pattern matching.
+Syntax:
+sed OPTIONS... [SCRIPT] [INPUTFILE...]
+Example:
+Consider the below text file as an input.
+image001
+
+Replacing or substituting string: Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word “unix” with “linux” in the file.
+image002
+
+
+
+
+
+Replacing the nth occurrence of a pattern in a line : Use the /1, /2 etc flags to replace the first, second occurrence of a pattern in a line. The below command replaces the second occurrence of the word “unix” with “linux” in a line.
+image003
+
+
+Replacing all the occurrence of the pattern in a line : The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
+image004
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 nl command is a Unix/Linux utility that is used for numbering lines, accepting input either from a file or from STDIN. It copies each specified file to STDOUT, with line numbers appended before the lines.
-Syntax:
+<s1>Syntax:</s1>
 nl [OPTION]... [FILE]...
 Options:
 -b NUMBER or -bNUMBER : used for numbering body lines
@@ -9,34 +9,32 @@ Options:
 -l NUMBER or -lNUMBER : group of NUMBER empty lines are counted as one
 -s STRING or -sSTRING : add any STRING after every logical line number
 -w NUMBER or -wNUMBER : use different NUMBER columns for line numbers
-Examples:
+<s1>Examples:</s1>
 To display a file with line numbers: Numbers all non-empty lines.
 $ nl geekfile.txt
+<img src="img/nl (1).png" alt="Description of nl">
 
 
 To number all lines (including empty lines also): -b a option is used to number all lines whether empty or non-empty.
 $ nl -b a geekfile.txt
+<img src="img/nl (2).png" alt="Description of nl">
 
 
 Nohup
 nohup (No Hang Up) is a command in Linux systems that runs the process even after logging out from the shell/terminal.
-Syntax:
+<s1>Syntax:</s1>
 nohup command [command-argument ...]
 
-Examples:
+<s1>Examples:</s1>
 To run a command in the foreground:
 $ nohup bash geekfile.sh
+<img src="img/nl (3).png" alt="Description of nl">
 
 
 To run a command in the background (with ‘&’):
 $ nohup bash geekfile.sh &
 fg
-
-
-
-
-
-
+<img src="img/nl (4).png" alt="Description of nl">
 
 
 

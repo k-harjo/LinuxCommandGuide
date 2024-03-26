@@ -5,24 +5,24 @@ What is the Find Command in Linux?
 The find command in Linux is a dynamic utility designed for comprehensive file and directory searches within a hierarchical structure. Its adaptability allows users to search by name, size, modification time, or content, providing a flexible and potent solution. As a pivotal component of the Linux command-line toolkit, the find command caters to the nuanced needs of users, ensuring precision in file exploration and retrieval. Discover the diverse functionalities of the find command and enhance your file management efficiency on the Linux platform. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 find [path] [options] [expression] 
 
 
-Examples
+<s1>Examples</s1>
 
 find ./GFG -name *.txt 
 
 This command is tailored for discovering files within a directory that adhere to a specific naming pattern. In this case, it identifies files ending with ‘.txt’ within the “GFG” directory. 
 
-image001
+<img src="img/find (1).png" alt="Description of find">
 
 find ./GFG -name sample.txt -exec rm -i {} \; 
 
 This command not only locates a specified file but also prompts the user for confirmation before initiating its removal. The example seeks to delete a file named “sample.txt” within the “GFG” directory. 
 
-image002
+<img src="img/find (2).png" alt="Description of find">
 
 
 

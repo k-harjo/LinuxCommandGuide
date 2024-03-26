@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,31 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>cd</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>cd - (Change Directory) change the current working directory to a specific Folder.
+The ‘cd’ command allows users to change their current working directory within the file system. The basic 
+
+<s1>Syntax </s1>
+
+      cd [Options] [Directory]
+
+<s1>Key</s1>
+    -P    Do not follow symbolic links
+    -L    Follow symbolic links (default)
+
+
+<s1>Examples: </s1>
+
+cd Documents 
+
+<img src="img/cd (1).png" alt="Description of cd">
+
+We are in location “/home/raghvendra/Documents/geeksforgeeks/example” and want to move to the parent or one level up in the directory. We can use the following command. 
+
+cd .. 
+
+ <img src="img/cd (2).png" alt="Description of cd">
+
+
+*See also: popd, pushd, pwd, shopt </p></pre> 
             </body>
-            </html>
         

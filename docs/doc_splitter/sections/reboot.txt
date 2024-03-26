@@ -1,0 +1,31 @@
+reboot command is used to restart or reboot the system. In a Linux system administration, there comes a need to restart the server after the completion of some network and other major updates. It can be software or hardware that is being carried on the server. Rebooting is needed so that the changes that the user has made can affect the server.
+Syntax of reboot command in Linux
+reboot [OPTIONS...]
+
+
+Examples:
+Command to reboot your system after 5 minutes:
+sudo shutdown –r +5
+image001
+
+
+Reboot your system after 02:00 A.M:
+sudo shutdown –r 02:00
+image002
+
+
+Cancelling Restart:
+If you want your system to discard the previously scheduled restart or shutdown you can simply call another shutdown command with the –c option and broadcast with it a message for the users about the cancellation of the restart.
+$sudo shutdown –c [MESSAGE]
+Cancel your scheduled Reboot:
+The previously scheduled reboot can be canceled by the system administrator by simply issuing another shutdown command with the –c option and an optional message argument.
+$sudo shutdown -c "our custom example of canceling a scheduled shutdown"
+
+Restarting our server remotely in Linux
+Simply login your server with any of the ssh client using server authentication information and simply issue any of the following commands:
+Syntax:
+ssh root@remote-server.com /sbin/reboot
+Example:
+ssh root@196.162.1.1 /sbin/shutdown –r now\
+
+

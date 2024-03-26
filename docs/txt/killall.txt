@@ -1,15 +1,10 @@
 The primary contrast between the kill and killall command is that the “kill” ends process cycles dependent on Process ID number (PID), while the killall orders end running cycles dependent on their names and different attributes. Normal users can end/kill their own cycles(processes), however not those that have a place with different users, while the root client can end all cycles.
 To know the contrast among kill and killall orders we first need to ensure that we comprehend the nuts and bolts behind cycles on the Linux OS. The process is an occurrence of a running system. Each process cycle is allotted PID ( Process ID ) which is remarkable for each cycle and in this way, no two cycles can be allocated the same PID. When the cycle is ended the PID is accessible for reuse.
-Syntax:
+<s1>Syntax:</s1>
 killall [ -Z CONTEXT ] [ -u USER ] [ -y TIME ] [ -o TIME ] [ -eIgiqrvw ] [ -s SIGNAL | -SIGNAL ] NAME...
-Example:
+<s1>Example:</s1>
 $ sudo killall yes
-
-
-
-
-
-
+<img src="img/killall (1).png" alt="Description of killall">
 
 
 

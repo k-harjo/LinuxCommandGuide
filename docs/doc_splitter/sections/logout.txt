@@ -1,0 +1,17 @@
+The logout command is a Linux/UNIX shell command that performs the task of logging out the logged-in user from the system in that session, programmatically. Logout only works in logon shells, not in the non-logon shells. The difference is as follows:
+Login-Shell uses invokes the ~/.bash_profile whereas the Non-Login shell invokes the ~/.bashrc first.
+Login-Shell is preferred when the system environment has multiple users.
+
+Syntax
+
+$ logout
+.bash_logout File in Linux
+for better privacy measures.
+
+Sample file
+A screenshot of the .bash_logout file is attached below.
+The .bash_logout file is executed only when a login shell is invoked. The purpose of the file is to clear the screen after logout in the terminal
+image001
+
+
+

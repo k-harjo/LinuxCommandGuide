@@ -1,5 +1,5 @@
 stat is a  command which gives information about the file and filesystem. Stat command gives information such as the size of the file, access permissions and the user ID and group ID, birth time access time of the file. Stat command has another feature, by which it can also provide the file system information. This is the best tool to use when we want the information of any file.
-Syntax:
+<s1>Syntax:</s1>
 stat --options filenames
 The information we get from stat
 Following is the information we get about the file when we run the stat command.
@@ -21,5 +21,4 @@ Birth: The time at which the file was created.
 Displaying the File System Information
 
 Example: stat -f filename
-
-
+<img src="img/stat (1).png" alt="Description of stat">

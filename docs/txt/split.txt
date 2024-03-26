@@ -1,32 +1,31 @@
 split command in Linux is used to split large files into smaller files. It splits the files into 1000 lines per file(by default) and even allows users to change the number of lines as per requirement.
-Syntax:
+<s1>Syntax:</s1>
 split [options] name_of_file prefix_for_new_files
-Examples:
+<s1>Examples:</s1>
 Split file into short files. Assume a file name with name index.txt. Use below split command to break it into pieces.
 split index.txt
+<img src="img/split (1).png" alt="Description of split">
 
 Split file based on number of lines.
 split -l 4 index.txt split_file
+<img src="img/split (2).png" alt="Description of split">
 
 
 
 Ss
 One such utility is the ‘ss’ command, which stands for “Socket Statistics.” It is a potent tool for inspecting and displaying detailed information about network sockets on a Linux system. The ‘ss’ command is an indispensable resource for network administrators, system administrators, and developers, offering insights into network connections, routing tables, and more.
-Syntax:
+<s1>Syntax:</s1>
 ss [options]
-Examples:
+<s1>Examples:</s1>
 Display Listening Sockets:
 
 To see all sockets currently in the listening state (sockets waiting for incoming connections), employ the -l option:
 ss –l
+<img src="img/split (3).png" alt="Description of split">
 
 
 Display Established Connections:
 
 ss –e
 
-
-
-
-
-
+<img src="img/split (4).png" alt="Description of split">

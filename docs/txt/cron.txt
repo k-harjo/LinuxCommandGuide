@@ -1,14 +1,14 @@
 cron is a software utility, offered by a Linux-like operating system that automates the scheduled task at a predetermined time. It is a daemon process, which runs as a background process and performs the specified operations at the predefined time when a certain event or condition is triggered without the intervention of a user. Dealing with a repeated task frequently is an intimidating task for the system administrator and thus he can schedule such processes to run automatically in the background at regular intervals of time by creating a list of those commands using cron. It enables the users to execute the scheduled task on a regular basis unobtrusively like doing the backup every day at midnight, scheduling updates on a weekly basis, synchronizing the files at some regular interval. Cron checks for the scheduled job recurrently and when the scheduled time fields match the current time fields, the scheduled commands are executed. It is started automatically from /etc/init.d on entering multi-user run levels.  
 
 
-Syntax
+<s1>Syntax</s1>
 
       cron [-n | -p | -s | -m<mailcommand>]
 
       cron -x [ext,sch,proc,pars,load,misc,test,bit] 
 
 
-Key
+<s1>Key</s1>
 
    -s  This option will direct cron to send job output to the system log using syslog(3).
        This is useful if your system has no sendmail(8), or if mail is disabled using -m off.
@@ -29,7 +29,7 @@ Key
 
 How to run the cron daemon: Cron should be started from /etc/init.d or /etc/rc.d/init.d (older systems may also use /etc/rc or /etc/rc.local). It will return immediately, so you don't need to start it with '&'.
 
-image001
+<img src="img/cron (1).png" alt="Description of cron">
 
 
 What cron does:

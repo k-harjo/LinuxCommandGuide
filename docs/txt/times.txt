@@ -1,7 +1,7 @@
 times - Print out the user and system times used by the shell and its children.
 
 
-Syntax
+<s1>Syntax</s1>
 
       times
 The return status is zero.

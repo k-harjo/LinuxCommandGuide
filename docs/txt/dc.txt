@@ -1,21 +1,21 @@
 dc command in Linux is used to evaluate arithmetic expressions. It evaluates expressions in the form of a postfix expression. Entering a number pushes it into the stack and entering an operator evaluates an expression and pushes the result back into the stack. It can evaluate +, -, /, *, %, ^. Different commands can be used to manipulate stack.  
 
 
-Syntax
+<s1>Syntax</s1>
 
       dc options
 
 
-Key
+<s1>Key</s1>
 
-  image001
+  <img src="img/dc (1).png" alt="Description of dc">
 
 
-Examples
+<s1>Examples</s1>
 
-image002
+<img src="img/dc (2).png" alt="Description of dc">
 
-image003
+<img src="img/dc (3).png" alt="Description of dc">
 
 
 *See also: bc, cal, expr, factor, units, wc

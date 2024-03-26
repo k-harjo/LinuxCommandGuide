@@ -1,7 +1,7 @@
 tput - Set terminal-dependent capabilities, color, position.
 
 
-Syntax
+<s1>Syntax</s1>
 
       tput [-Ttype] capname [parms ... ]
       tput [-Ttype] init
@@ -11,7 +11,7 @@ Syntax
       tput -V
 
 
-Key
+<s1>Key</s1>
 
    -Ttype  Indicates the type of terminal.  Normally this option is  unnecessary
            because the default is taken from the environment variable TERM.
@@ -80,7 +80,7 @@ Colours set with tput can be used as part of a $PS Prompt Statement variable, if
 tput is part of the ncurses package and is supplied with most Linux distributions.
 
 
-Examples
+<s1>Examples</s1>
 
 Echo the clear-screen sequence for the current terminal.
 tput clear

@@ -1,7 +1,7 @@
 jobs - Print currently running jobs and their status.
 
 
-Syntax
+<s1>Syntax</s1>
 
       jobs [OPTIONS] [PID]
 
@@ -27,7 +27,7 @@ On systems that supports this feature, jobs will print the CPU usage of each job
 This is a BASH shell builtin, not all systems support all the options above, to display your local syntax type: help jobs
 
 
-Example
+<s1>Example</s1>
 
 $ jobs
 

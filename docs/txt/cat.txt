@@ -5,7 +5,7 @@ The cat command is a versatile companion for various file-related operations, al
 The most basic use of ‘cat’ is to display the contents of a file on the terminal. This can be achieved by simply providing the filename as an argument. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       cat [Options] [File]...
 
@@ -36,20 +36,20 @@ Concatenate FILE(s), or standard input, to standard output.
       --version            output version information and exit
 
 
-Examples
+<s1>Examples</s1>
 
 If our file_name = jayesh.txt 
 
 cat jayesh.txt 
 
-image001
+<img src="img/cat (1).png" alt="Description of cat">
 Note: `ls` command is used to display all files and directories in the current location. 
 
 If we have two files, file1 and file2. 
 
 cat file1 file2 
 
-image002
+<img src="img/cat (2).png" alt="Description of cat">
 
 
 *See also: cp, mv, pv, tac, hexdump

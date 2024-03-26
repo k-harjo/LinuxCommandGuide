@@ -1,7 +1,7 @@
 nohup (No Hang Up) - Run a command immune to hangups, runs the given command with hangup signals ignored, so that the command can continue running in the background after you log out.
 
 
-SYNTAX
+<s1>SYNTAX</s1>
 
       nohup Command [Arg]...
 'nohup' increases the scheduling priority of COMMAND by 5, this gives a slightly lower priority.
@@ -13,7 +13,7 @@ If 'nohup' creates either nohup.out or $HOME/nohup.out, it creates it with no "g
 'nohup' does not automatically put the command it runs in the background; you must do that explicitly, by ending the command line with an '&'.
 
 
-Examples
+<s1>Examples</s1>
 
 bash script that takes any simple command and runs it in the background. Logging output and error output to ~/launch The output files are suffixed with the date and time including nanoseconds so that two of the same command run in the same second won’t try to write to the same file.
 

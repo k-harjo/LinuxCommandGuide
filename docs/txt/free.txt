@@ -1,14 +1,14 @@
 free - displays the total amount of free space available along with the amount of memory used and swap memory in the system, and also the buffers used by the kernel 
 
 
-Syntax
+<s1>Syntax</s1>
 
 $free [OPTION] 
  
 OPTION: refers to the options compatible with free command. 
 
 
-Key
+<s1>Key</s1>
 
 -b, – -bytes : It displays the memory in bytes. 
 
@@ -37,9 +37,8 @@ Key
 -V, – -version : It displays version info and exit. 
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/free (1).png" alt="Description of free">
 
-image002
-
+<img src="img/free (2).png" alt="Description of free">

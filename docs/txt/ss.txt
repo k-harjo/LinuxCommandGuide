@@ -1,12 +1,12 @@
 ss - Socket Statistics. Shows information similar to netstat, ss can display more TCP and state information than other tools.
 
 
-Syntax:
+<s1>Syntax:</s1>
 
      ss [options] [FILTER]
 
 
-Options
+<s1>Options</s1>
 
   -n, --numeric    Do now try to resolve service names.
   -r, --resolve    Try to resolve numeric address/ports.
@@ -54,7 +54,7 @@ Options
 Look at the official docs (Debian package iproute-doc) for details regarding filters.
 
 
-Examples
+<s1>Examples</s1>
 
 Display all TCP sockets. ss -u -a Display all UDP sockets.
 

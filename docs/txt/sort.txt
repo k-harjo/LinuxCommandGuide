@@ -2,19 +2,14 @@
 
 
 
-Examples:
+<s1>Examples:</s1>
 To sort the lines alphabetically, you can use the following command:
 sort file.txt
+<img src="img/sort (1).png" alt="Description of sort">
 
 
 Now we will sort the numeric data using sort command as follows.
 sort file1.txt
-
-
-
-
-
-
 
 
 

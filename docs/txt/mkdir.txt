@@ -1,24 +1,20 @@
 mkdir allows the user to create directories. This command can create multiple directories at once.
 It is important to note that the user executing this command must have enough permission to create a directory in the parent directory, or he/she may receive a ‘permission denied’ error.
 
-Syntax:
+<s1>Syntax:</s1>
 mkdir [options...] [directory_name]
 Options and their Practical Implementation in mkdir
 
-Examples:
+<s1>Examples:</s1>
 mkdir -v [directories]
+<img src="img/mkdir (1).png" alt="Description of mkdir">
 
 
 Create a directory name “jayesh_gfg”
 mkdir jayesh_gfg
+<img src="img/mkdir (2).png" alt="Description of mkdir">
 
 Here we have used `ls` command to display all files and directories.
-
-
-
-
-
-
 
 
 

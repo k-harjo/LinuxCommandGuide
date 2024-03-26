@@ -1,0 +1,32 @@
+ln command is used to create links between files. Before going into the application of the ln command in detail, please refer the below link for a clear understanding of the hard link and soft link in Linux. Hard and Soft Links in Linux
+Syntax:
+ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+ln [OPTION]... TARGET... DIRECTORY     (2nd form)
+ln [OPTION]... -t DIRECTORY TARGET...  (3rd form)
+Examples:
+Basically, ln command is used to create hard links and soft links for files in Linux. Let’s discuss all the three forms one by one.
+1st Form: This form is simple, the source file with destination link name you have to specify:
+image001
+
+2nd Form: Here, we have to give source file and directory as a link, simply the source file will be copied to the directory which you specify. See the example below.
+image002
+
+
+3rd Form: Here, we will specify the directory name and a file to be linked to the directory. It is mostly same to 2nd form.
+image003
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

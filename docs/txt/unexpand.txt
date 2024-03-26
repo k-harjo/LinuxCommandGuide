@@ -1,12 +1,12 @@
 unexpand - Convert spaces to tabs, write the contents of each given FILE, or standard input if none are given or for a FILE of '-', to standard output. Strings of two or more space or tab characters are converted to as many tabs as possible followed by as many spaces as are needed.
 
 
-Syntax
+<s1>Syntax</s1>
 
       unexpand [options]... [file]...
 
 
-Options
+<s1>Options</s1>
 
    -a
    --all

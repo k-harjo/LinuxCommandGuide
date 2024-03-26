@@ -1,0 +1,18 @@
+image001
+
+
+Options:
+sync -d: This option sync only file data, no unneeded metadata.
+Example:
+sync -d /home/algoscale/Desktop/aricleslist.txt /home/algoscale/Desktop/advance.html
+image002
+
+
+sync –help: This option display the help text and exit.
+sync --help
+image003
+
+
+
+
+

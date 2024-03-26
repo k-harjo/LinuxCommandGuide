@@ -1,12 +1,12 @@
 suspend - Suspend the execution of this shell until it receives a SIGCONT signal.
 
 
-Syntax
+<s1>Syntax</s1>
 
       suspend [-f]
 
 
-Key
+<s1>Key</s1>
 
    -f   Do not complain if this is a login shell; just suspend anyway.
 The return status is 0 unless the shell is a login shell and -f is not supplied, or if job control is not enabled.

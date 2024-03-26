@@ -3,14 +3,14 @@ export is bash shell BUILTINS commands, which means it is part of the shell. It 
 Export is defined in POSIX as The shell shall give the export attribute to the variables corresponding to the specified names, which shall cause them to be in the environment of subsequently executed commands. If the name of a variable is followed by = word, then the value of that variable shall be set to the word. In simple terms, environment variables are set when you open a new shell session. at any time if you change any of the variable values, the shell has no way of picking that change. The export command, on the other hand, provides the ability to update the current shell session about the change you made to the exported variable. You don’t have to wait until new shell session to use the value of the variable you changed. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       export [-fn] [name[=value]]
 
       export -p
 
 
-Options
+<s1>Options</s1>
 
       -f   The names refer to shell functions; 
            otherwise the names refer to shell variables.
@@ -24,13 +24,13 @@ Options
 If no names are supplied, or if the '-p' option is given, a list of exported names is displayed.
 
 
-Examples
+<s1>Examples</s1>
 
 $ export -p
 
 Without any argument: To view all the exported variables.   
 
-image001
+<img src="img/export (1).png" alt="Description of export">
 
 
 *See also: env, echo, hostname, local, printenv, readonly, shift, unset, Variables

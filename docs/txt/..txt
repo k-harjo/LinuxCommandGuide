@@ -1,6 +1,6 @@
 . (source or dot operator) - Read and execute commands from the filename argument in the current shell context.
 
-Syntax
+<s1>Syntax</s1>
       . filename [arguments]
 
       source filename [arguments]

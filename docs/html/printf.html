@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,66 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>printf</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>printf command in Linux is used to display the given string, number or any other format specifier on the terminal window. It works the same way as “printf” works in programming languages like C.
+<s1>Syntax:</s1>
+$printf [-v var] format [arguments]
+<s1>Example:</s1>
+$printf "%b\n" "Geeks" "for" "\nGeeks\n"
+<img src="img/printf (1).png" alt="Description of printf">
+
+$printf "%d\n" "213" "109"
+<img src="img/printf (2).png" alt="Description of printf">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ps
+ps is used to list the currently running processes and their PIDs along with some other information depends on different options.
+
+<s1>Examples:</s1>
+To view all running processes, use either of the following options with the `ps` command:
+ps -A
+<img src="img/printf (3).png" alt="Description of printf">
+
+
+List Processes Not associated with a Terminal in Linux
+View all processes except both session leaders and processes not associated with a terminal.
+ps –a
+<img src="img/printf (4).png" alt="Description of printf">
+
+
+
+
+
+
+
+Pushd
+pushd is a shell built-in command which allows us to easily manipulate the directory stack. This appends a directory to the top of the directory stack, or rotates the stack, making the new top of the stack the present working directory. The “d” in pushd stands for the directory as it pushes the directory path onto the stack. The directory stack increases in size after each pushd command. This stack is based on the Last In First Out (LIFO) principle. This command has an exit status 0 i.e, it returns success unless an invalid argument is supplied or the directory change fails.
+<s1>Syntax:</s1>
+pushd [directory]
+Desktop becomes the present working directory and is pushed onto the stack and the list of directories is displayed. The same operations will be performed for the other commands below.
+pushd ~/Templates
+pushd ~/Videos
+pushd ~/Downloads
+pushd ~/Music
+pushd ~/Downloads
+<s1>Examples:</s1>
+<img src="img/printf (5).png" alt="Description of printf">
+
+Adding a directory without changing the current directory:
+
+pushd -n [Directory]
+<img src="img/printf (6).png" alt="Description of printf"></p></pre> 
             </body>
-            </html>
         

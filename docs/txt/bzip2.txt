@@ -1,14 +1,14 @@
 bzip2 - Compress or decompress named file(s).
 
 
-Syntax
+<s1>Syntax</s1>
 
       bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ... ]
 
       bzip2recover filename
 
 
-Key
+<s1>Key</s1>
 
    -c --stdout      Compress or decompress to standard output.
 
@@ -66,11 +66,10 @@ bzip2 and bunzip2 will by default not overwrite existing files. If you want this
 If no file names are specified, bzip2 compresses from standard input to standard output. In this case, bzip2 will decline to write compressed output to a terminal, as this would be entirely incomprehensible and therefore pointless.
 
 
-Examples
+<s1>Examples</s1>
 
 $ bzip2 -z input.txt 
-image001
+<img src="img/bzip2 (1).png" alt="Description of bzip2">
 
 
 *See also: gzip, tar, unrar, xz 
-

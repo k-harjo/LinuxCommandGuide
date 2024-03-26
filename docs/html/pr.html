@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,121 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>pr</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>pr - Prepare files for printing, printing and pagination filter for text files. When multiple input files are specified, each is read, formatted, and written to standard output.
+
+
+<s1>Syntax</s1>
+
+      pr [options] [file ...]
+
+
+<s1>Options</s1>
+
+  +beg_pag[:end-pag], 
+  --pages=[beg_pag[:end-pag]
+      Begin printing on page beg_pag and end on end-pag if specified.
+
+  -num_cols
+   --columns=num_cols
+      Print in num_cols number of columns, balancing the number of lines in the columns on each page.
+
+  -a
+  --across
+      Print columns horizontally, not vertically.
+
+  -c
+  --show-control-chars
+      Convert control characters to hat notation (such as ^C) and other unprintable characters to octal backslash format.
+  -d
+  --double-space
+      Double space.
+
+  -e[tab-char[width]]
+  --expand-tabs=[tab-char[width]]
+      Convert tabs (or tab-chars) to spaces.
+      If width is specified, convert tabs to width characters (default is 8).
+
+  -f
+  -F
+  --form-feed
+      Separate pages with form feeds, not newlines.
+
+  -h header
+  --header=header
+      Use header for the header instead of the filename.
+
+  -i[out-tab-char[out-tab-width]]
+  --output-tabs[=out-tab-char[out-tab-width]]
+      Replace spaces with tabs on output. Can specify alternative tab character (default is tab) and width (default is 8).
+
+  -J
+  --join-lines
+      Merge full lines; ignore -W if set.
+
+  -l lines
+  --length=lines
+      Set page length to lines (default 66). If lines is less than 10, omit headers and footers.
+
+  -m
+  --merge
+    Print all files, one file per column.
+
+  -n[delimiter[digits]]
+  --number-lines[=delimiter[digits]]
+      Number columns, or, with the -m option, number lines.
+      Append delimiter to each number (default is a tab) and limit
+      the size of numbers to digits (default is 5).
+
+  -o width
+  --indent=width
+      Set left margin to width.
+
+  -r
+  --no-file-warnings
+      Continue silently when unable to open an input file.
+
+  -s[delimiter]
+  --separator[=delimiter]
+      Separate columns with delimiter (default is a tab) instead of spaces.
+
+  -S[string]
+  --sep-string[=string]
+      Separate columns with string. Default is a tab with -J and a space otherwise.
+
+  -t
+  --omit-header
+      Suppress headers, footers, and fills at end of pages.
+
+  -T
+  --omit-pagination
+      Like -t but also suppress form feeds.
+
+  -v
+  --show-non-printing
+      Convert unprintable characters to octal backslash format.
+
+  -w page_width
+  --width=page_width
+      Set the page width to page_width characters for multi-column output.
+      Default is 72.
+
+  -W page_width
+  --page-width=page_width
+      Set the page width to always be page_width characters.
+      Default is 72.
+
+  file
+      A pathname of a file to be printed.
+      If no file operands are specified, or if a file operand is '-',
+      the standard input is used.
+
+  --help
+      Print a help message and then exit.
+
+  --version
+      Print version information and then exit.
+
+
+*See also: cat, more</p></pre> 
             </body>
-            </html>
         

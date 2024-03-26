@@ -7,12 +7,12 @@ id command in Linux is used to find out user and group names and numeric ID’s 
 	-Display security context of the current user. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       id [options]... [username]
 
 
-Key
+<s1>Key</s1>
 
    -g
    --group
@@ -37,13 +37,13 @@ Key
        Print only the user id.
 
 
-Example
+<s1>Example</s1>
 
 id
-image001
+<img src="img/id (1).png" alt="Description of id">
 
 id -u master
-image002
+<img src="img/id (2).png" alt="Description of id">
 
 
 See also: echo, env, groups, hostname, logname, uname, users, who, whoami

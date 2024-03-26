@@ -1,19 +1,19 @@
 cksum command in Linux is used to display a CRC (Cyclic Redundancy Check) value, the byte size of the file, and the name of the file to standard output. CRC is unique for each file and only changes if the file is edited. It is used to check whether the file had accidentally corrupted while transfer. If the CRC is the same after the transfer, it means that the file had not been accidentally corrupted. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       cksum [Option]... [File]...
 
-image001
+<img src="img/cksum (1).png" alt="Description of cksum">
 
 Options Available in `cksum`
 
 –help : It displays help information. 
-image002
+<img src="img/cksum (2).png" alt="Description of cksum">
 
 –version : It displays version information. 
-image003
+<img src="img/cksum (3).png" alt="Description of cksum">
 
 Note: An intruder can corrupt a file in such a way that it produces the same CRC value after the transfer. That is why it is only checked for accidental corruption. 
 

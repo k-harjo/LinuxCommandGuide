@@ -1,12 +1,12 @@
 umask - User's file creation mask. umask sets an environment variable which automatically sets file permissions on newly created files. i.e. it will set the shell process's file creation mask to mode.
 
 
-Syntax
+<s1>Syntax</s1>
 
       umask [-p] [-S] [mode]
 
 
-Key
+<s1>Key</s1>
 
    mode  File creation mask
 

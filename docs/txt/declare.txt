@@ -1,12 +1,12 @@
 declare is a builtin command of the bash shell. It is used to declare shell variables and functions, set their attributes and display their values.  
 
 
-Syntax
+<s1>Syntax</s1>
 
       declare [-aAfFgiIlnrtux] [-p] [name[=value]]
 
 
-Key
+<s1>Key</s1>
 
    -a   Each name is an array variable.
 
@@ -57,13 +57,13 @@ Key
    -x   Mark each name for export to subsequent commands via the environment.
 
 
-Example
+<s1>Example</s1>
 
 In this example we will declare a variable using declare command.
-image001
+<img src="img/declare (1).png" alt="Description of declare">
 -p This is used to displays the options and attributes of each variable name if it is used with name arguments.  
 
-image002
+<img src="img/declare (2).png" alt="Description of declare">
 
 
 *See also: alias, env, echo, export, hostname, local, printenv, readonly, shift

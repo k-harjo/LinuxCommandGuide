@@ -1,7 +1,7 @@
 chpasswd command is used to change password although passwd command can also do same. But it changes the password of one user at a time so for multiple users chpasswd is used. Below figure shows the use of passwd command. Using passwd we are changing the password of the guest user. Here first you have to enter the password of the currently signed user and then you change the password of any other user. One must have administrator privileges. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       chpasswd [Options...]
 
@@ -44,7 +44,7 @@ Syntax
        /etc/login.defs.
 
 
-Example: 
+<s1>Example: </s1>
 
 $chpasswd 
 user1:user1_password 
@@ -53,7 +53,7 @@ user3:user3_password
 
 Note: After completion please press ctrl+d to exit from the command. As soon as ctrl + d is pressed password gets changed.
 
-image001
+<img src="img/chpasswd (1).png" alt="Description of chpasswd">
 
 A simple text file can also be used to store username and password and then use them to change the password. 
 
@@ -62,13 +62,13 @@ user1:user1_password
 user2:user2_password 
 user3:user3_password 
  
-image002
+<img src="img/chpasswd (2).png" alt="Description of chpasswd">
 
 Then provide this to chpasswd command. 
 
 $chpasswd < file_name.txt 
 
-image003
+<img src="img/chpasswd (3).png" alt="Description of chpasswd">
 
 The encryption algorithm can also be applied to the password. 
 

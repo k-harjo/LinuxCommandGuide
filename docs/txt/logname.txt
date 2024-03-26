@@ -1,7 +1,7 @@
 logname - Print current login name
 
 
-SYNTAX
+<s1>SYNTAX</s1>
 
       logname
 Prints the calling user's name, as found in the file'/var/run/utmp', and exits with a status of 0.

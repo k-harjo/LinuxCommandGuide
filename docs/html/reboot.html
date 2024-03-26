@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,34 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>reboot</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>reboot command is used to restart or reboot the system. In a Linux system administration, there comes a need to restart the server after the completion of some network and other major updates. It can be software or hardware that is being carried on the server. Rebooting is needed so that the changes that the user has made can affect the server.
+Syntax of reboot command in Linux
+reboot [OPTIONS...]
+
+
+<s1>Examples:</s1>
+Command to reboot your system after 5 minutes:
+sudo shutdown –r +5
+<img src="img/reboot (1).png" alt="Description of reboot">
+
+
+Reboot your system after 02:00 A.M:
+sudo shutdown –r 02:00
+<img src="img/reboot (2).png" alt="Description of reboot">
+
+
+Cancelling Restart:
+If you want your system to discard the previously scheduled restart or shutdown you can simply call another shutdown command with the –c option and broadcast with it a message for the users about the cancellation of the restart.
+$sudo shutdown –c [MESSAGE]
+Cancel your scheduled Reboot:
+The previously scheduled reboot can be canceled by the system administrator by simply issuing another shutdown command with the –c option and an optional message argument.
+$sudo shutdown -c "our custom example of canceling a scheduled shutdown"
+
+Restarting our server remotely in Linux
+Simply login your server with any of the ssh client using server authentication information and simply issue any of the following commands:
+<s1>Syntax:</s1>
+ssh root@remote-server.com /sbin/reboot
+<s1>Example:</s1>
+ssh root@196.162.1.1 /sbin/shutdown –r now\</p></pre> 
             </body>
-            </html>
         

@@ -5,13 +5,13 @@ expr - it evaluates a given expression and displays its corresponding output.
 	Evaluating regular expressions, string operations like substring, length of strings etc. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       expr expression
       expr option
 
 
-Key
+<s1>Key</s1>
 
    --help      Display help and exit
    --version   output version information and exit
@@ -43,13 +43,13 @@ Expressions:
 Beware that many operators need to be escaped or quoted for shells.
 
 
-Examples
+<s1>Examples</s1>
 
 $expr --version 
-image001
+<img src="img/expr (1).png" alt="Description of expr">
 
 $expr --help 
-image002
+<img src="img/expr (2).png" alt="Description of expr">
 
 
 *See also: eval, for, function, gawk, test

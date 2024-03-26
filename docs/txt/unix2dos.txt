@@ -1,12 +1,12 @@
 unix2dos - UNIX to Windows or MAC text file format converter.
 
 
-Syntax
+<s1>Syntax</s1>
 
       unix2dos [options] [-c convmode] [-o file ...] [-n infile outfile ...]
 
 
-Key
+<s1>Key</s1>
 
    -h --help        Print online help. 
    -k --keepdate    Keep the date stamp of output file same as input file. 
@@ -36,7 +36,7 @@ Alternative using sed
 sed -i -e 's/\r*$/\r/' file
 
 
-Examples
+<s1>Examples</s1>
 
 Get input from stdin and write output to stdout:
 unix2dos

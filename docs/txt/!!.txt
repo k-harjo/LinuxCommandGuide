@@ -1,7 +1,7 @@
 
 !! - Re-run all or part of a previous command.
 
-Syntax
+<s1>Syntax</s1>
       !!       Run the last command again
 
       !foo     Run the most recent command that starts with 'foo' (e.g. !ls)

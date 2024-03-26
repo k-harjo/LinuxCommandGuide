@@ -1,0 +1,19 @@
+SFTP stands for Secure File Transfer Protocol. It is a secure and efficient method for transferring files in the Linux environment. It is a command-line tool used in mostly Linux, UNIX-based operating systems. It is an extension of SSH(Secure Shell) and encrypts the command and data during transmission.
+The syntax for `SFTP` command in Linux
+sftp username@ip_address/hostname
+Examples of SFTP
+For connecting to remote server, we need to provide the username and ip address
+username: testuser1
+ip address: 192.168.28.232
+
+sftp testuser1@192.168.29.232
+image001
+
+
+Specify the buffer size that uses sftp when transferring the files
+image002
+sftp -B 4096 testuser1@192.168.29.232
+
+
+
+

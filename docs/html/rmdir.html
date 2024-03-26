@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,48 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>rmdir</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>rmdir command is useful when you want to remove the empty directories from the filesystem in Linux. This command lets you specify the terminal to remove a particular directory right from the terminal. However, having correct knowledge of the rmdir command is essential, or you may end up deleting any important directory.
+<s1>Syntax:</s1>
+rmdir mydir1 mydir2 mydir3 .....
+<s1>Examples:</s1>
+For example, we will delete the LINUX directory, including all its all ancestors, through the following command:
+rmdir LINUX INFO DETAIL
+<img src="img/rmdir (1).png" alt="Description of rmdir">
+
+
+For example, we will delete the LINUX directory, including all its all ancestors, through the following command:
+rmdir -p LINUX/mydir1/mydir2/mydir3
+<img src="img/rmdir (2).png" alt="Description of rmdir">
+
+
+
+
+
+
+
+
+Remove Multiple Directories With the Same Expression
+
+ls 
+LINUX1
+LINUX2
+LINUX3
+
+rmdir -v LINUX*
+rmdir: removing directory, 'LINUX1'
+rmdir: removing directory, 'LINUX2'
+rmdir: removing directory, 'LINUX3'
+<img src="img/rmdir (3).png" alt="Description of rmdir">
+
+
+
+
+
+
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

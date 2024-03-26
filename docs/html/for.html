@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,30 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>for</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>for command in Linux is used to repeatedly execute a set of command for every element present in the list.
+
+<s1>Syntax</s1>
+
+      for name [in words ...]; do commands; done
+For each element in words, name is set to that element, and the commands are executed.
+If 'in words' is not present, the for command executes the commands once for each positional parameter that is set, as if 'in "$@"' had been specified
+      for (( expr1 ; expr2 ; expr3 )) ; do commands ; done
+Equivalent to:
+     (( EXP1 ))
+     while (( EXP2 )); do
+      commands
+      (( EXP3 ))
+     done
+EXP1, EXP2, and EXP3 are arithmetic expressions. If any expression is omitted, it behaves as if it evaluates to 1.
+
+
+<s1>Example:</s1>
+
+<img src="img/for (1).png" alt="Description of for">
+
+<img src="img/for (2).png" alt="Description of for">
+
+
+*See also: case, eval, if, gawk, m4, until, while</p></pre> 
             </body>
-            </html>
         

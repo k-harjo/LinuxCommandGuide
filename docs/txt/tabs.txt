@@ -1,12 +1,12 @@
 tabs - Set tabs on a terminal. The tabs program processes a single list of tab stops. The last option to be processed which defines a list is the one that determines the list to be processed.
 
 
-Syntax
+<s1>Syntax</s1>
 
       tabs [options] [tabstop-list]
 
 
-Key
+<s1>Key</s1>
 
    General Options
 

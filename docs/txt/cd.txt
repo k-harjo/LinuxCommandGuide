@@ -1,28 +1,26 @@
 cd - (Change Directory) change the current working directory to a specific Folder.
 The ‘cd’ command allows users to change their current working directory within the file system. The basic 
 
-Syntax 
+<s1>Syntax </s1>
 
       cd [Options] [Directory]
 
-Key
+<s1>Key</s1>
     -P    Do not follow symbolic links
     -L    Follow symbolic links (default)
 
 
-Examples: 
+<s1>Examples: </s1>
 
 cd Documents 
 
-image001
+<img src="img/cd (1).png" alt="Description of cd">
 
 We are in location “/home/raghvendra/Documents/geeksforgeeks/example” and want to move to the parent or one level up in the directory. We can use the following command. 
 
 cd .. 
 
- image002
+ <img src="img/cd (2).png" alt="Description of cd">
 
 
 *See also: popd, pushd, pwd, shopt 
-
-

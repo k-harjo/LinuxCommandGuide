@@ -1,7 +1,7 @@
 history command in Linux provides a chronological list of previously executed commands, along with corresponding command numbers. This feature allows users to recall, reuse, and modify commands without having to retype them. The command history is stored in a file, typically ~/.bash_history for the Bash shell. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       history 
       history [n]
@@ -11,7 +11,7 @@ Syntax
       history -ps arg
 
 
-Key
+<s1>Key</s1>
 
    -c   Clear the history list. This can be combined with the other
         options to replace the history list completely.
@@ -39,19 +39,19 @@ Key
 With no options, display the command history list with line numbers. Lines listed with a * have been modified.
 
 
-Examples
+<s1>Examples</s1>
 
 Combine the history command with grep for efficient searching.  
 history | grep chpasswd 
-image001
+<img src="img/history (1).png" alt="Description of history">
 
 Remove a specific command from history using the history -d option. Example: 
 history -d 1996 
-image002
+<img src="img/history (2).png" alt="Description of history">
 
 Clear the entire command history using the history -c option. Example 
 history -c 
-image003
+<img src="img/history (3).png" alt="Description of history">
 
 
 *See also: history, fc, bashrc, bind, hash, time

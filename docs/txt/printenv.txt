@@ -1,12 +1,12 @@
 printenv - List the names and values of all environment variables or, with VARIABLE, the value of the environment variable name.
 
 
-Syntax
+<s1>Syntax</s1>
 
       printenv [OPTION]... [VARIABLE]... 
 
          
-Key
+<s1>Key</s1>
 
    VARIABLE     The name of the environment variable.
 

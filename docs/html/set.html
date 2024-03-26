@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,52 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>set</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>set command is a built-in Linux shell command that displays and sets the names and values of shell and Linux environment variables. On Unix-like operating systems, the set command functions within the Bourne shell (sh), C shell (csh), and Korn shell (ksh).
+
+<s1>Syntax:</s1>
+set [options] [arguments]
+Linux set Command Options
+The set command provides an extensive list of options that can be combined.
+Most options have a corresponding -o flag that can be used to invoke the option. The table below lists all options and their respective alternative form using the -o flag syntax.
+
+Linux set Command Examples
+This section lists examples of the most common uses of the set command.
+Using the set Command Without Options
+Running the command without options or arguments outputs a list of all settings - the names and values of all shell variables and functions. Since the list is very long, you can scroll through it using the Page Up and Page Down keys.
+
+<s1>Examples:</s1>
+The following is an example of a partial set command output:
+<img src="img/set (1).png" alt="Description of set">
+
+
+1. Run set -x:
+set -x
+2. Use your favorite text editor (we use the vi editor) to create a script. We created a simple loop that allows us to see the -x option effects:
+x=10
+while [ $x -gt 0 ]; do
+         x=$[ $x-1 ]
+         echo $x
+         sleep 2
+done
+3. Make sure to chmod the script to make it executable. This step is always mandatory before running a script. The syntax is:
+chmod +x [script-name.sh]
+4. Execute the script. The syntax is:
+./[script-name.sh]
+<img src="img/set (2).png" alt="Description of set">
+
+The output prints one line at a time, runs it, shows the result if there is one, and moves on to the next line.
+Another way to enable debugging is to place the -x flag on the shebang line of the script:
+#!/bin/bash -x
+
+
+
+
+
+
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

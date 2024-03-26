@@ -1,5 +1,5 @@
 The uniq command in Linux is a command-line utility that reports or filters out the repeated lines in a file. In simple words, uniq is the tool that helps to detect the adjacent duplicate lines and also deletes the duplicate lines. uniq filters out the adjacent matching lines from the input file(that is required as an argument) and writes the filtered data to the output file.
-Syntax:
+<s1>Syntax:</s1>
 The basic syntax of the `uniq` command is:
 uniq [OPTIONS] [INPUT_FILE [OUTPUT_FILE]]
 Common Options of the uniq Command
@@ -9,16 +9,18 @@ Common Options of the uniq Command
 
 
 
-Examples:
+<s1>Examples:</s1>
 How to Remove Duplicate Lines Using `uniq` Command
 
 To remove duplicate lines from `kt.txt`, we can use the `uniq` command:
 uniq kt.txt
+<img src="img/uniq (1).png" alt="Description of uniq">
 
 
 How to Count Duplicate Lines Using `uniq` Command in Linux
 The `-c` option prefixes each line with the number of occurrences in the input:
 uniq -c kt.txt
+<img src="img/uniq (2).png" alt="Description of uniq">
 
 
 
@@ -36,9 +38,10 @@ unix2dos is a tool to convert line breaks in a text file from Unix format (Line 
 dos2unix command: converts a DOS text file to UNIX format.
 Unix2dos command: converts a Unix text file to DOS format
 
-Example:
+<s1>Example:</s1>
 $unix2dos myfile.txt
 Convert UNIX file to DOS format by using unix2dos command
+<img src="img/uniq (3).png" alt="Description of uniq">
 
 
 
@@ -62,10 +65,11 @@ Convert UNIX file to DOS format by using unix2dos command
 
 Unset
 unset command in Bash is used to unset or remove a variable or function. It allows you to delete the values and attributes of variables or functions, making them undefined or unset. This can be useful when you want to clear the value of a variable or remove a function definition from the current shell session.
-Syntax:
+<s1>Syntax:</s1>
 unset -f function_name
-Examples:
+<s1>Examples:</s1>
 Unset a Bash Function
+<img src="img/uniq (4).png" alt="Description of uniq">
 
 Unset a Function After Task Completion
-
+<img src="img/uniq (5).png" alt="Description of uniq">

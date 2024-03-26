@@ -1,0 +1,26 @@
+
+Ifconfig
+
+ifconfig (interface configuration) command is used to configure the kernel-resident network interfaces. It is used at the boot time to set up the interfaces as necessary. After that, it is usually used when needed during debugging or when you need system tuning. Also, this command is used to assign the IP address and netmask to an interface or to enable or disable a given interface.
+
+
+SYNTAX:
+
+ifconfig [interface] [options]
+
+[interface] is the network interface you want to configure or display information for (e.g., eth0, wlan0).
+[options] are various command-line options that can be used to modify the behavior of ifconfig.
+Newer versions of some Linux distributions don’t have ifconfig command pre-installed. So, in case, there is an error “ifconfig: command not found”, Then execute the following command to install ifconfig.
+
+
+Example:
+To view information about all network interfaces on your Linux system, simply execute the following command:
+
+
+image001
+
+
+Options available in `ifconfig` Command in Linux
+Here are the most commonly used option in ifconfig command in linux
+
+image002

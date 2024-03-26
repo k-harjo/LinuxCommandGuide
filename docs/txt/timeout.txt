@@ -5,12 +5,11 @@ s for second
 m for minutes
 h for hours
 
-Syntax:
+<s1>Syntax:</s1>
 timeout [OPTION] DURATION COMMAND [ARG]...
-Examples:
+<s1>Examples:</s1>
 timeout 5s ping google.com
+<img src="img/timeout (1).png" alt="Description of timeout">
 
 timeout --signal=SIGQUIT 8 tail -f /var/log/pacman.log
-
-
-
+<img src="img/timeout (2).png" alt="Description of timeout">

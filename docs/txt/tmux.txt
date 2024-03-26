@@ -1,9 +1,12 @@
+<img src="img/tmux (1).png" alt="Description of tmux">
 
 
 tmux attach-session -t s1
+<img src="img/tmux (2).png" alt="Description of tmux">
 
 
 tmux rename-session -t s1 newses1
+<img src="img/tmux (3).png" alt="Description of tmux">
 
 
 
@@ -12,4 +15,4 @@ tmux rename-session -t s1 newses1
 
 Top
 top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.
-Syntax:
+<s1>Syntax:</s1>

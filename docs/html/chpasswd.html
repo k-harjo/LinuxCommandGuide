@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,86 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>chpasswd</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>chpasswd command is used to change password although passwd command can also do same. But it changes the password of one user at a time so for multiple users chpasswd is used. Below figure shows the use of passwd command. Using passwd we are changing the password of the guest user. Here first you have to enter the password of the currently signed user and then you change the password of any other user. One must have administrator privileges. 
+
+
+<s1>Syntax</s1>
+
+      chpasswd [Options...]
+
+   -c, --crypt-method METHOD
+      Use the specified method to encrypt the passwords.
+
+       The available methods are DES, MD5, NONE, and SHA256 or SHA512 if
+       your libc support these methods.
+
+       By default, PAM is used to encrypt the passwords.
+
+   -e, --encrypted
+       Supplied passwords are in encrypted form.
+
+   -h, --help
+       Display help message and exit.
+
+   -m, --md5
+       Use MD5 encryption instead of DES when the supplied passwords are
+       not encrypted.
+
+   -R, --root CHROOT_DIR
+       Apply changes in the CHROOT_DIR directory and use the
+       configuration files from the CHROOT_DIR directory.
+
+   -s, --sha-rounds ROUNDS
+       Use the specified number of rounds to encrypt the passwords.
+
+       The value 0 means that the system will choose the default number
+       of rounds for the crypt method (5000).
+
+       A minimal value of 1000 and a maximal value of 999,999,999 will
+       be enforced.
+
+       You can only use this option with the SHA256 or SHA512 crypt
+       method.
+
+       By default, the number of rounds is defined by the
+       SHA_CRYPT_MIN_ROUNDS and SHA_CRYPT_MAX_ROUNDS variables in
+       /etc/login.defs.
+
+
+<s1>Example: </s1>
+
+$chpasswd 
+user1:user1_password 
+user2:user2_password 
+user3:user3_password 
+
+Note: After completion please press ctrl+d to exit from the command. As soon as ctrl + d is pressed password gets changed.
+
+<img src="img/chpasswd (1).png" alt="Description of chpasswd">
+
+A simple text file can also be used to store username and password and then use them to change the password. 
+
+$cat > pass.txt 
+user1:user1_password 
+user2:user2_password 
+user3:user3_password 
+ 
+<img src="img/chpasswd (2).png" alt="Description of chpasswd">
+
+Then provide this to chpasswd command. 
+
+$chpasswd < file_name.txt 
+
+<img src="img/chpasswd (3).png" alt="Description of chpasswd">
+
+The encryption algorithm can also be applied to the password. 
+
+$chpasswd -c SHA512 
+user1:user1_password 
+user2:user2_password 
+user3:user3_password
+
+
+*See also: chgrp, chage, chmod, chown, passwd, useradd, who</p></pre> 
             </body>
-            </html>
         

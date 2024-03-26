@@ -3,7 +3,7 @@ ethtool is a command-line tool in Linux for managing network interface devices. 
 The ethtool usually comes with any distribution of Linux. But if it’s missing, we can install it with the distro’s package manager.  
 
 
-Examples
+<s1>Examples</s1>
 
 $ sudo apt-get install -y ethtool 
 
@@ -16,4 +16,4 @@ If the version is displayed without any errors, we’ve successfully installed t
 
 To get the general properties of a network interface device, we simply run ethtool followed by its name: 
 
-image001
+<img src="img/ethtool (1).png" alt="Description of ethtool">

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,152 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>chmod</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>chmod command is used to change the access mode of a file. The name is an abbreviation of change mode. Which states that every file and directory has a set of permissions that control the permissions like who can read, write or execute the file. In this the permissions have three categories: read, write, and execute simultaneously represented by `r`, `w` and `x`. These letters combine together to form a specific permission for a group of users. 
+
+
+<s1>Syntax</s1>
+
+       chmod [Options]... Mode [,Mode]... file...
+
+       chmod [Options]... Numeric_Mode file...
+
+       chmod [Options]... --reference=RFile file...
+
+
+<s1>Options</s1>
+
+  -f, --silent, --quiet   Suppress most error messages.
+
+  -v, --verbose           Output a diagnostic for every file processed.
+  -c, --changes           like verbose but report only when a change is made.
+
+      --reference=RFile   use RFile's mode instead of MODE values.
+
+  -R, --recursive         Change files and directories recursively.
+                          Take care to not run recursive chmod on the root '/' directory or any other system directory.
+
+   -h			  Change the permissions of symbolic links instead of the files they point to. 
+
+    +			  Add permissions
+
+    -			  Remove permissions
+
+    =			  Set permissions to the specified values
+
+    r                     Read permission 
+
+    w                     Write permission 
+
+    x                     Execute permission 
+
+    u                     Owner 
+
+    g                     Group 
+
+    o                     Others 
+
+    a			  All (owner,groups,others) 
+
+
+
+chmod changes the permissions of each given file according to mode, where mode describes the permissions to modify.
+Mode can be specified with octal numbers or with letters.
+
+Using letters is easier to understand for most people. e.g. chmod +x filename.sh to make filename.sh executable.
+
+
+<s1>Examples</s1>
+
+Numeric mode:
+From one to four octal digits
+Any omitted digits are assumed to be leading zeros.
+
+The first digit = selects attributes for the set user ID (4) and set group ID (2) and save text image (1)S
+The second digit = permissions for the user who owns the file: read (4), write (2), and execute (1)
+The third digit = permissions for other users in the file's group: read (4), write (2), and execute (1)
+The fourth digit = permissions for other users NOT in the file's group: read (4), write (2), and execute (1)
+
+The octal (0-7) value is calculated by adding up the values for each digit
+User (rwx) = 4+2+1 = 7
+Group(rx) = 4+1 = 5
+World (rx) = 4+1 = 5
+chmode mode = 0755
+
+chmod 400 file - Read by owner
+chmod 040 file - Read by group
+chmod 004 file - Read by world
+
+chmod 200 file - Write by owner
+chmod 020 file - Write by group
+chmod 002 file - Write by world
+
+chmod 100 file - execute by owner
+chmod 010 file - execute by group
+chmod 001 file - execute by world
+
+chmod 674 [file_name] 
+    6 represent permission of file Owner which are (rw). 
+    7 represent permission of Group which are (rwx). 
+    4 represent permission of Other which is (r). 
+
+Symbolic mode: 
+Read, write and execute permissions to the file owner: 
+chmod u+rwx [file_name] 
+ 
+Remove write permission for the group and others: 
+chmod go-w [file_name] 
+ 
+Read and write for Owner, and Read-only for the group and other: 
+chmod u+rw,go+r [file_name] 
+
+
+Understanding Script Execution in Linux 
+
+In Linux, scripts are typically written in languages like Bash, Python, or Perl. While the script’s content is crucial, ensuring it has executable permissions is equally important. Without execution permissions, Linux won’t allow the script to run. 
+
+Step 1: Navigate to the Script’s Directory 
+
+Open the terminal and use the cd command to navigate to the directory where your script is located. 
+
+For example: 
+
+cd /path/to/your/script 
+ 
+Step 2: Check Current Permissions 
+
+Use the `ls` command with the `-l` option to list the files in the directory along with their permissions. This step helps you identify the current permissions of your script: 
+
+ls –l 
+
+<img src="img/chmod (1).png" alt="Description of chmod">
+
+Step 3: Make the Script Executable 
+
+To make a script executable, you need to use the `chmod` command. Assuming your script is named `example.sh`, you can make it executable with the following command: 
+
+chmod +x example.sh 
+ 
+This command adds the execute (+x) permission to the script. 
+
+Step 4: Verify Changes 
+
+Run the `ls -l` command again to verify that the script now has execute permissions. You should see an ‘x’ in the permission field for the script: 
+
+ls –l 
+
+<img src="img/chmod (2).png" alt="Description of chmod"> 
+
+Step 5: Execute the Script 
+
+Now that your script has executable permissions, you can run it using the `./` notation followed by the script’s name. For example: 
+
+./example.sh 
+
+<img src="img/chmod (3).png" alt="Description of chmod">
+
+This notation tells Linux to look in the current directory (.) for the script named example.sh. 
+
+
+*See also: access, ls -l, chgrp, chown, setfacl, stat</p></pre> 
             </body>
-            </html>
         

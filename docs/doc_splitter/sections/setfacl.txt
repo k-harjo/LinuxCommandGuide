@@ -1,0 +1,21 @@
+setfacl stands for Set File Access Control List. It is a command utility tool for setting access control lists in files and directories. setfacl is a powerful tool for managing file permission based on respective Users and Groups rather than general file permission.
+Syntax:
+setfacl -option file_owner:file_permission filename
+
+Examples:
+Set filepermission to users on a specific fil
+setfacl -m u:kali:rw gfg.txt
+image001
+
+
+Set the permission to user for multiple files and directories
+setfacl -m u:kali:rx f1.txt f2.txt d1
+image002
+
+
+Display the file access control list
+getfacl -a f2.txt
+
+image003
+
+

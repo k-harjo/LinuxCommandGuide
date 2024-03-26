@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,72 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>groupadd</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>groupadd command is a powerful tool that facilitates the creation of new groups effortlessly 
+
+
+<s1>Syntax</s1>
+
+      groupadd [options] group 
+Creates a new group account using the values specified on the command line plus the default values from the system. The new group will be entered into the system files as needed.
+
+
+<s1>Options</s1>
+
+   -f, --force
+       This option causes the command to exit with
+       success status if the specified group already exists.
+       When used with -g, and the specified GID already exists,
+       another (unique) GID is chosen (i.e. -g is turned off). 
+
+   -g, --gid GID
+       The numerical value of the group's ID.
+       This value must be unique, unless the -o option is used.
+       The value must be non-negative. The default is to use the
+       smallest ID value greater than 999 and greater than every
+       other group. Values between 0 and 999 are typically reserved
+       for system accounts. 
+
+   -h, --help
+       Display help message and exit.
+
+   -K, --key KEY=VALUE
+       Overrides /etc/login.defs defaults
+       (GID_MIN, GID_MAX and others).
+       Multiple -K options can be specified.
+
+       Example: -K GID_MIN=100 -K GID_MAX=499
+
+       Note: -K GID_MIN=10,GID_MAX=499 doesn't work yet.
+
+   -o, --non-unique
+       This option permits to add a group with a non-unique GID.
+
+   -p, --password PASSWORD
+       The encrypted password, as returned by crypt(3).
+       The default is to disable the password.
+
+       Note: This option is not recommended because the password
+       (or encrypted password) will be visible by users listing the processes.
+
+       You should make sure the password respects the system's password policy.
+ 
+   -r, --system
+       Create a system group.
+
+       The numeric identifiers of new system groups are choosen in
+       the SYS_GID_MIN-SYS_GID_MAX range, defined in login.defs,
+       instead of GID_MIN-GID_MAX.
+
+
+<s1>Examples</s1>
+
+Using`-f, –force` option to Create New User: groupadd -f developers 
+<img src="img/groupadd (1).png" alt="Description of groupadd">
+
+To add an existing user to a group, use the usermod command: usermod -g developers existing_user 
+<img src="img/groupadd (2).png" alt="Description of groupadd">
+
+
+*See also: groupdel, groupmod, useradd</p></pre> 
             </body>
-            </html>
         

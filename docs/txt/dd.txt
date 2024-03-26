@@ -11,12 +11,12 @@ dd - (Data Duplicator) a command-line utility for Unix and Unix-like operating s
 Usage: The command line SYNTAX: of dd differs from many other Unix programs, in that it uses the SYNTAX: option=value for its command line options, rather than the more-standard -option value or –option=value formats. By default, dd reads from stdin and writes to stdout, but these can be changed by using the if (input file) and of (output file) options. 
 
 
-Syntax
+<s1>Syntax</s1>
 
      dd [Options]
 
 
-Key
+<s1>Key</s1>
 
    if=FILE
       Input file : Read from FILE instead of standard input.
@@ -96,7 +96,7 @@ An empty/unformatted drive will appear as "Disk dev/sdn doesn't contain a vaild 
 If dd receives a USR1 signal, the current input and output block counts will be written to the standard error output in the same format as the standard completion message. e.g. kill -USR1 1234 where 1234 is the process id.
 
 
-Examples:  
+<s1>Examples:  </s1>
 
 To backup the entire harddisk: 
 # dd if=/dev/sda of=/dev/sdb 

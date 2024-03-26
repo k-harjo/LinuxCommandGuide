@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,97 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>tput</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>tput - Set terminal-dependent capabilities, color, position.
+
+
+<s1>Syntax</s1>
+
+      tput [-Ttype] capname [parms ... ]
+      tput [-Ttype] init
+      tput [-Ttype] reset
+      tput [-Ttype] longname
+      tput -S  <<
+      tput -V
+
+
+<s1>Key</s1>
+
+   -Ttype  Indicates the type of terminal.  Normally this option is  unnecessary
+           because the default is taken from the environment variable TERM.
+           f -T is specified, then the shell  variables  LINES and COLUMNS will be
+           ignored,and the operating system will not be queried for the actual screen size.
+
+   capname
+           Indicates the capability from the terminfo database.
+           When termcap  support is compiled in, the termcap name for the capability
+           is also accepted.
+           Typical capabilities include:
+             tput setab color  Set ANSI Background color
+             tput setaf color  Set ANSI Foreground color
+             tput blink   Set blink mode
+             tput bold    Set bold mode
+             tput dim     Set half-bright mode
+             tput smul    Set underline mode
+             tput rmul    Exit underline mode
+             tput rev     Reverse mode
+             tput smso    Set standout mode
+             tput rmso    Exit standout mode
+             tput sgr0    Reset all attributes
+             tput cols    Display the number of columns
+             tput lines   Display the number of lines
+
+   parms   If the capability is a string that takes parameters,  the  arguments
+           parms will be instantiated into the string.
+
+   -S      Allow more than one capability per invocation of tput. The capabilities must
+           be passed to  tput  from  the  standard  input instead  of  from the command
+           line (see example).  Only one capname is allowed per line.
+
+   -V      Reports the version of ncurses which was used in  this  program, and exits.
+
+   init    If the terminfo database is present and an entry for the user's
+           terminal exists (see -Ttype, above), output the terminal's initialization strings
+           and turn tabs expansion on or off according to the specification in the entry
+
+   reset   Instead of putting out initialization strings, the terminal's reset strings
+           will be output if present (rs1, rs2, rs3, rf).  If the reset strings are not
+           present, but initialization strings are, the initialization  strings will be
+           output. Otherwise, reset acts identically to init.
+
+   longname
+           If the terminfo database is present and an entry for the user's  terminal exists
+           (see -Ttype above), then the long name of the terminal will be put out.
+           The long name is the last name in the first line of the terminal's description in
+           the  terminfo  database [see term(5)].
+
+       If  tput  is invoked by a link named reset, this has the same effect as
+       tput reset.  See tset for comparison, which has similar behavior.
+
+Color Codes
+Black = 0
+Red = 1
+Green = 2
+Yellow = 3
+Blue = 4
+Magenta = 5
+Cyan = 6
+White = 7
+Reset to default color = 9
+
+Colours set with tput can be used as part of a $PS Prompt Statement variable, if you do this, store the output of tput into a variable, which is then used when $PS1 is expanded. Storing the values means we don't have to fork a tput process multiple times every time the prompt is displayed.
+
+tput is part of the ncurses package and is supplied with most Linux distributions.
+
+
+<s1>Examples</s1>
+
+Echo the clear-screen sequence for the current terminal.
+tput clear
+
+Set the foreground colour to Red.
+tput setaf 1
+
+Print the number of columns for the current terminal.
+tput cols</p></pre> 
             </body>
-            </html>
         

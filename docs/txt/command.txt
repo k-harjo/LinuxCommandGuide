@@ -1,12 +1,12 @@
 command - Run command with arguments ignoring any shell function named command.
 
 
-Syntax
+<s1>Syntax</s1>
 
       command [-pVv] command [arguments ...]
 
 
-Key
+<s1>Key</s1>
 
       -P   Use a default path
       -v   Verbose

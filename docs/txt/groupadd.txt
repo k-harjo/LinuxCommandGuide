@@ -1,13 +1,13 @@
 groupadd command is a powerful tool that facilitates the creation of new groups effortlessly 
 
 
-Syntax
+<s1>Syntax</s1>
 
       groupadd [options] group 
 Creates a new group account using the values specified on the command line plus the default values from the system. The new group will be entered into the system files as needed.
 
 
-Options
+<s1>Options</s1>
 
    -f, --force
        This option causes the command to exit with
@@ -55,13 +55,13 @@ Options
        instead of GID_MIN-GID_MAX.
 
 
-Examples
+<s1>Examples</s1>
 
 Using`-f, –force` option to Create New User: groupadd -f developers 
-image001
+<img src="img/groupadd (1).png" alt="Description of groupadd">
 
 To add an existing user to a group, use the usermod command: usermod -g developers existing_user 
-image002
+<img src="img/groupadd (2).png" alt="Description of groupadd">
 
 
 *See also: groupdel, groupmod, useradd

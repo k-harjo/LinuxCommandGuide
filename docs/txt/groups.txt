@@ -3,18 +3,18 @@ groups are the collection of users. Groups make it easy to manage users with the
 The `groups` is a powerful tool that helps administrators to view the group memberships of a user and retrieve information about user groups on a Linux System. 
 
 
-Syntax  
+<s1>Syntax  </s1>
 
 groups [options] [username] 
 
 
-Examples
+<s1>Examples</s1>
 
 Provided with a username: groups demon 
-image001
+<img src="img/groups (1).png" alt="Description of groups">
 
 To display group membership for the current user: groups 
-image002
+<img src="img/groups (2).png" alt="Description of groups">
 
 
 *See also: env, id, logname, printenv, users, uname, who, whoami

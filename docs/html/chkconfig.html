@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,44 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>chkconfig</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>chkconfig command is used to list all available services and view or update their run level settings. In simple words it is used to list current startup information of services or any particular service, updating runlevel settings of service and adding or removing service from management. 
+
+
+<s1>Syntax </s1>
+
+chkconfig --list [name] 
+chkconfig --add name 
+chkconfig --del name 
+chkconfig --override name 
+chkconfig [--level levels] name  
+chkconfig [--level levels] name 
+
+
+<s1>Examples </s1>
+
+To List current status of all system services. 
+
+chkconfig --list 
+<img src="img/chkconfig (1).png" alt="Description of chkconfig">
+ 
+To View current status of a particular services. 
+
+chkconfig --list rhnsd 
+<img src="img/chkconfig (2).png" alt="Description of chkconfig">
+
+Enabling a Service: By default 2 3 4 5 run levels are affected by this command to enable certain run levels only, add –level attribute followed by run level. 
+
+To Delete a Service: 
+
+chkconfig del rhnsd 
+<img src="img/chkconfig (3).png" alt="Description of chkconfig"> 
+
+To add a Service: 
+
+chkconfig add rhnsd 
+<img src="img/chkconfig (4).png" alt="Description of chkconfig">
+ 
+
+See also: init, lspci, ntsysv, system-config-services</p></pre> 
             </body>
-            </html>
         

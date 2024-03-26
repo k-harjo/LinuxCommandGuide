@@ -1,0 +1,15 @@
+Examples:
+Displaying the Current Working Directory Using Built-in pwd (pwd):
+
+image001
+
+
+Displaying the Current Working Directory Using Binary pwd (/bin/pwd):
+
+image002
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+select command in Linux is used to create a numbered menu from which a user can select an option.
+If the user enters a valid option then it executes the set of command written in select block and then ask again to enter a number, if a wrong option is entered it does nothing. If user enters nothing and simply press ‘enter‘ the option menu gets printed.
+Syntax:
+select NAME [in WORDS ... ;] do COMMANDS; done
+image001
+
+
+help select : It displays help information.
+image002
+
+

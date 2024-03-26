@@ -1,12 +1,12 @@
 touch - Change file timestamps, change the access and/or modification times of the specified files.
 
 
-Syntax
+<s1>Syntax</s1>
 
       touch [options]... File...
 
 
-Options
+<s1>Options</s1>
 
    -a
    --time=atime
@@ -58,7 +58,7 @@ Any FILE that does not exist is created empty.
 If changing both the access and modification times to the current time, 'touch' can change the timestamps for files that the user running it does not own but has write permission for. Otherwise, the user must own the files.
 
 
-Examples
+<s1>Examples</s1>
 
 Create/datestamp one file called sample.txt:
 

@@ -1,12 +1,12 @@
 lsattr - List file attributes on a Linux second extended file system.
 
 
-Syntax
+<s1>Syntax</s1>
 
       lsattr [ -RVadv ] [ files... ]
 
 
-Key
+<s1>Key</s1>
 
    -d  List directories like other files, rather than listing their contents.  -v     
 
@@ -57,7 +57,7 @@ Availability
 chattr is part of the e2fsprogs package and is available from https://e2fsprogs.sourceforge.net.
 
 
-Example
+<s1>Example</s1>
 
 Make the file some-file immutable:
 $ chattr +i /home/user/demo/some-file

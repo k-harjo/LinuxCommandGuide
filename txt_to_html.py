@@ -11,10 +11,9 @@ for item in all_linux_cmds["Doc_Path"]:
         content = txt_file.read()
 
         html_content = f"""
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="docs/doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {{
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -104,11 +103,10 @@ for item in all_linux_cmds["Doc_Path"]:
                 <!-- Rest of your body content goes here -->
                 <pre><p>{content}</p></pre> 
             </body>
-            </html>
         """
         
     file_name = format(f"{n_item}.html")
-    new_file = "C:\\Users\\khbil\\Documents\\Python_Scripts\\LinuxBash\\docs\\html\\" + file_name
+    new_file = "C:/Users/khbil/Documents/Python_Scripts/LinuxBash-py311/docs/html/" + file_name
     with open(new_file, 'w', encoding='utf-8') as html_file:
         html_file.write(html_content)
 

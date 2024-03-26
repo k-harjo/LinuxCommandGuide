@@ -1,12 +1,12 @@
 locate command in Linux is used to find the files by name.
-Syntax:
+<s1>Syntax:</s1>
 locate [OPTION]... PATTERN...
 Search a File with Specific Name Using locate Command
 
+<img src="img/locate (1).png" alt="Description of locate">
 locate sample.txt
 
 Limit Search Queries to a Specific Number Using locate Command
 
 locate "*.html" -n 20
-
-
+<img src="img/locate (2).png" alt="Description of locate">

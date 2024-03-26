@@ -1,12 +1,12 @@
 shopt - Shell Options
 
 
-Syntax
+<s1>Syntax</s1>
 
       shopt [-pqsu] [-o] [optname ...]
 
 
-Options
+<s1>Options</s1>
 
      -s   Enable (set) each optname
 
@@ -154,7 +154,7 @@ xpg_echo
 'shopt' is a BASH builtin command.
 
 
-Examples
+<s1>Examples</s1>
 
 Turn on spell checker for directory names in the cd builtin:
 

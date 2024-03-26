@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,42 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>which</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>which command in Linux is a command that is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return statuses as follows.
+
+<s1>Syntax:</s1>
+
+which [filename1] [filename2] …
+<s1>Examples:</s1>
+Using `-a` to display all the occurrences of the file.
+If we want to display all the occurrences of the `python` file.
+which -a python
+<img src="img/which (1).png" alt="Description of which">
+
+Checking Command Aliases
+If we want to check whether the command `ll` is an alias or not.
+which -a ll
+<img src="img/which (2).png" alt="Description of which">
+
+
+
+
+
+
+
+
+
+
+
+
+While
+while command in Linux is used to repeatedly execute a set of command as long as the COMMAND returns true. The test command is given and all other commands are executed till the given command’s result satisfies, when the command’s result become false, the control will be out from the while command.
+<s1>Syntax:</s1>
+while COMMANDS; do COMMANDS; done
+<s1>Examples:</s1>
+<img src="img/which (3).png" alt="Description of which">
+
+Option:
+help while: It displays help information.
+<img src="img/which (4).png" alt="Description of which"></p></pre> 
             </body>
-            </html>
         

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,59 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>head</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>head command prints the top N number of data of the given input.  
+
+By default, it prints the first 10 lines of the specified files. If more than one file name is provided then data from each file is preceded by its file name.   
+
+
+<s1>Syntax</s1>
+
+      head [-n count] [options] [file ...]
+
+      head [-c bytes] [options] [file ...]
+
+
+<s1>Key</s1>
+
+  -count
+     Return the first count of lines from the file. (must be the first option specified).
+This option is only recognized if it is specified first. Count is a decimal number optionally followed by a size letter ('b', 'k',
+'m' for bytes, Kilobytes or Megabytes) , or 'l' to mean count by lines, or other option letters ('cqv').
+
+  -c bytes
+  --bytes=bytes
+       Print the first bytes bytes, instead of initial lines. 
+       Appending 'b' multiplies bytes by 512, 'k' by 1024, and 'm' by 1048576.
+
+  -n count
+  --lines=count
+       Output the first count lines.
+
+  -q
+  --quiet
+  --silent
+       Never print file name headers.
+
+  -v
+  --verbose
+       Always print file name headers.
+
+If no files are given (or if given a file of '-') head will read from standard input.
+
+If more than one file is specified, 'head' will print a one-line header consisting of ==> FILE NAME <== before the output for each file.
+
+Two option formats are accepted: the new one, in which numbers are arguments to the options ('-q -n 1'), and the old one, in which the number precedes any option letters ('-1q')
+
+
+<s1>Examples</s1>
+
+-n num: Prints the first ‘num’ lines instead of first 10 lines. num is mandatory to be specified in command otherwise it displays an error. 
+<img src="img/head (1).png" alt="Description of head">
+
+-v: By using this option, data from the specified file is always preceded by its file name. 
+<img src="img/head (2).png" alt="Description of head">
+
+
+*See also: csplit, cut, fmt, paste, split, tail</p></pre> 
             </body>
-            </html>
         

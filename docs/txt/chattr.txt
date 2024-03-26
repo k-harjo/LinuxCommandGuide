@@ -1,14 +1,14 @@
 chattr - Change file attributes on a Linux file system.
 
 
-Syntax
+<s1>Syntax</s1>
 
       chattr [ -RVf ] [ -v version ] [ mode ] files...
 
       The format of a symbolic mode is +-=[acdeijstuADST]
 
 
-Key
+<s1>Key</s1>
 
 
    -R          Recursively change attributes of directories and their contents.
@@ -44,17 +44,17 @@ X Compression raw access
 Z Compressed dirty file
 
 
-Example
+<s1>Example</s1>
 
 The chattr’ can be used to preserve some system files that are very important and needs to remain in the host PC no matter what. Also to make a directory undeletable or unmodifiable for users other than superuser, this is necessary. The common use of ‘chattr’ is as below:-  
 
 Making the file immutable: The command here made the file named file.txt immutable, hence now no operations are possible on this file until the attributes of the file are changed again. 
 
-image001
+<img src="img/chattr (1).png" alt="Description of chattr">
  
 Opening the file only in append mode: The flag a’ is used to open the file only in append mode. Consequently, it can only be appended and the previous data can’t be modified. 
 
-image002
+<img src="img/chattr (2).png" alt="Description of chattr">
  
 
 *See also: lsattr

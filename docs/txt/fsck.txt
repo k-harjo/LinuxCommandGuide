@@ -15,12 +15,12 @@ Bad Blocks: A bad pointer is simply one that points to a memory address which is
 Directory Checks: FSCK makes sure the directory format is correct, e.g. they should start with “.” and “..”. 
 
  
-Syntax
+<s1>Syntax</s1>
 
       fsck [options] [filesystem] ...
 
 
-Key
+<s1>Key</s1>
 
   --     Pass all subsequent options to filesystem-specific checker.
          All options that fsck doesn't recognize will also be passed.
@@ -43,11 +43,11 @@ Key
   -V     Verbose mode.
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/fsck (1).png" alt="Description of fsck">
 
-image002
+<img src="img/fsck (2).png" alt="Description of fsck">
 
 
 *See also: reboot, ddrescue

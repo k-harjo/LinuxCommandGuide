@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,49 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>comm</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>comm compares two sorted files line by line and write to standard output; the lines that are common and the lines that are unique. 
+
+
+<s1>Syntax</s1>
+
+$comm [OPTION]... FILE1 FILE2 
+
+	As using comm, we are trying to compare two files therefore the SYNTAX: of comm command needs two filenames as arguments. 
+
+	With no OPTION used, comm produces three-column output where first column contains lines unique to FILE1, second column contains lines unique to FILE2 and third and last column contains lines common to both the files. 
+
+	comm command only works right if you are comparing two files which are already sorted. 
+
+   -1   Suppress lines unique to file1
+
+   -2   Suppress lines unique to file2
+
+   -3   Suppress lines that appear in both files
+
+   --check-order
+        Check that the input is correctly sorted, even if all input lines are pairable 
+
+   --nocheck-order
+        Do not check that the input is correctly sorted.
+
+   --output-delimiter=STR
+        Separate columns with STR.
+
+   --help
+        Display help and exit.
+
+   --version
+        Output version information and exit
+
+
+   A file name of '-' means standard input.
+
+
+<s1>Examples</s1>
+
+<img src="img/comm (1).png" alt="Description of comm">
+
+
+*See also: cmp, diff, diff3, sdiff, head, sort</p></pre> 
             </body>
-            </html>
         

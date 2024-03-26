@@ -1,12 +1,12 @@
 curl is a command-line tool to transfer data to or from a server, using any of the supported protocols (HTTP, FTP, IMAP, POP3, SCP, SFTP, SMTP, TFTP, TELNET, LDAP, or FILE). curl is powered by Libcurl. This tool is preferred for automation since it is designed to work without user interaction. curl can transfer multiple files at once.  
 
 
-Syntax 
+<s1>Syntax </s1>
 
       curl [options] [URL...]
 
 
-Key
+<s1>Key</s1>
 
    url  One or multiple URLs that will be fetched in sequence.
 
@@ -72,7 +72,7 @@ Key
         This method is not fail-safe and there are occasions where non-successful response codes will
         slip through, especially when authentication is involved (response codes 401 and 407).
         See also --fail-with-body.
-        Example:
+<s1>        Example:</s1>
         curl --fail https://example.com
    -F name=@file
    -F name=content
@@ -160,7 +160,7 @@ Key
    -S, --show-error
         When used with -s, --silent, it makes curl show an error message if it fails.
         This option is global and does not need to be specified for each use of -:, --next.
-        Example:
+<s1>        Example:</s1>
         curl --show-error --silent https://example.com
 
    --trace-ascii file
@@ -227,13 +227,12 @@ Key
         If the port number is not specified, it is assumed at port 1080.
 
 
-Examples
+<s1>Examples</s1>
 
 curl -o hello.zip ftp://speedtest.tele2.net/1MB.zip 
-image001
+<img src="img/curl (1).png" alt="Description of curl">
 
 curl -O ftp://speedtest.tele2.net/1MB.zip 
-image002
+<img src="img/curl (2).png" alt="Description of curl">
 
 *See also: HTTPie, ftp
-

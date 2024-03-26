@@ -1,5 +1,5 @@
 kill command used to terminate processes manually. kill command sends a signal to a process which terminates the process.
-Syntax:
+<s1>Syntax:</s1>
 kill [signal] PID
 PID = The `kill` command requires the process ID (PID) of the process we want to terminate.
 [signal] = We have to specify the signal and if we don’t specify the signal, the default signal `TERM` is sent to terminate the process.
@@ -8,6 +8,5 @@ Some Common Signals in `kill` command in Linux
 The table below shows some common signals and their corresponding numbers.
 
 To check signal name and number we can use `kill -l` command.
-Example:
-
-
+<s1>Example:</s1>
+<img src="img/kill (1).png" alt="Description of kill">

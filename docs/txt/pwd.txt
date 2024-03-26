@@ -1,13 +1,9 @@
-Examples:
+<s1>Examples:</s1>
 Displaying the Current Working Directory Using Built-in pwd (pwd):
 
+<img src="img/pwd (1).png" alt="Description of pwd">
 
 
 Displaying the Current Working Directory Using Binary pwd (/bin/pwd):
 
-
-
-
-
-
-
+<img src="img/pwd (2).png" alt="Description of pwd">

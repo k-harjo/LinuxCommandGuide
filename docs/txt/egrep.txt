@@ -5,7 +5,7 @@ Note: The egrep command used mainly due to the fact that it is faster than the g
 Options: Most of the options for this command are same as grep. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       egrep [ options ] 'PATTERN' files ...
 
@@ -18,7 +18,7 @@ If multiple file names are provided on the command line, each output line is pre
 egrep is usually faster than grep or fgrep.
 
 
-Key
+<s1>Key</s1>
 
   -c  Print out a count of the lines that matched the pattern, instead of the lines themselves.
 
@@ -36,13 +36,13 @@ Key
       The purpose of the '-e' option is to allow patterns that start with a '-'.
 
 
-Examples
+<s1>Examples</s1>
 
 egrep [options] 'PATTERN' files 
-image001
+<img src="img/egrep (1).png" alt="Description of egrep">
 
 -v: It prints the lines that does not match with the pattern. 
-image002
+<img src="img/egrep (2).png" alt="Description of egrep">
 
 
 *See also: fgrep, gawk, grep

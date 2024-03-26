@@ -1,7 +1,7 @@
 awk - a scripting language used for manipulating data and generating reports. The awk command programming language requires no compiling and allows the user to use variables, numeric functions, string functions, and logical operators.
 
 
-Syntax
+<s1>Syntax</s1>
 
       awk <options> 'Program' Input-File1 Input-File2 ...
 
@@ -10,7 +10,7 @@ Syntax
       awk options 'selection _criteria {action }' input-file > output-file 
 
 
-Key
+<s1>Key</s1>
 
  -F FS
  	--field-separator FS
@@ -157,16 +157,16 @@ while         The while statement repeatedly executes a target statement as long
 for           The for statement also works like that of C, allowing users to create a loop that needs to execute a specific number of times. 
 
 
-Examples
+<s1>Examples</s1>
 
 awk -F ',' '{if($2==$3){print $1","$2","$3} else {print "No Duplicates"}}' answers.txt 
-image001
+<img src="img/awk (1).png" alt="Description of awk">
 
 awk '{i=0; while(i<=NF) { print i ":"$i; i++;}}' employees.txt
-image002
+<img src="img/awk (2).png" alt="Description of awk">
 
 awk 'BEGIN{for(i=1; i<=10; i++) print "The square of", i, "is", i*i;}' 
-image003
+<img src="img/awk (3).png" alt="Description of awk">
 
 
 *See also: awk, gawk, egrep, expr, eval, for, grep, m4, tr

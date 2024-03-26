@@ -1,6 +1,6 @@
 cal - cal command is a calendar command in Linux which is used to see the calendar of a specific month or a whole year.  
 
-Syntax
+<s1>Syntax</s1>
       cal [[[day] month ] year] 
 
       ncal [-smjy13] [[[day] month] year]
@@ -35,16 +35,16 @@ If no parameters are specified, the current month's calendar is displayed.
 
 The year must be specified with 4 digits. A year starts on 01 Jan.
 
-Examples
+<s1>Examples</s1>
 
 Show the calendar for 2022
 $ cal 
 cal : Shows current month calendar on the terminal with the current date highlighted.
-image001
+<img src="img/cal (1).png" alt="Description of cal">
 
 Show a calendar for the current year with weeks starting on Monday:
 $ cal -y
 cal -y : Shows the calendar of the complete current year with the current date highlighted. 
-image002
+<img src="img/cal (2).png" alt="Description of cal">
 
 *See also: dc, factor, ncal, units, wc, word, and line counts.

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,22 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>mapfile</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>mapfile also called (read array) is a command of the Bash shell used to read arrays. It reads lines from the standard input into an array variable. Also, mapfile must read from substitution (< <) and not from a pipe. Also, mapfile is faster and more convenient when compared to a read loop. It returns 1 or 0 depending on whether the command was successful or not. If no array name is not specified, the default variable MAPFILE is used as the target array variable.
+Syntax: mapfile [array]
+Example 1. Reading an array from a file:
+$ mapfile MYFILE < example.txt
+$ echo ${MYFILE[@]}
+$ echo ${MYFILE[0]
+<img src="img/mapfile (1).png" alt="Description of mapfile">
+
+Example 2. Capture the output into an array:
+$ mapfile GEEKSFORGEEKS < <(printf "Item 1\nItem 2\nItem 3\n")
+$ echo  ${GEEKSFORGEEKS[@]}
+<img src="img/mapfile (2).png" alt="Description of mapfile">
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

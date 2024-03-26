@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,16 +89,177 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>awk</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>
-awk - it’s a scripting language used for manipulating data and generating reports. It
-searches one or more ﬁles to see if they contain lines that matches with the specified
-patterns and then perform the associated actions.
+                <pre><p>awk - a scripting language used for manipulating data and generating reports. The awk command programming language requires no compiling and allows the user to use variables, numeric functions, string functions, and logical operators.
 
-Syntax: awk options 'selection _criteria {action}' input-file > output-ﬁle
-a. $ awk '/value/ [print}' ﬁlename.txt - print the lines which match the given pattern
-b. $ awk '{print $1, $4}' filename.txt - splitting a line in to ﬁelds
-Example: awk Word/{print $1,$3,$6,$7}' ﬁle005_practice.txt
-                </p></pre>
+
+<s1>Syntax</s1>
+
+      awk <options> 'Program' Input-File1 Input-File2 ...
+
+      awk -f PROGRAM-FILE <options> Input-File1 Input-File2 ...
+
+      awk options 'selection _criteria {action }' input-file > output-file 
+
+
+<s1>Key</s1>
+
+ -F FS
+ 	--field-separator FS
+    	 Use FS for the input field separator (the value of the 'FS' predefined variable).
+
+ -f PROGRAM-FILE
+	 --file PROGRAM-FILE
+    	 	Read the awk program source from the file PROGRAM-FILE, instead of from the first
+    		 command line argument.
+
+ -mf 'f' flag sets the maximum number of fields
+
+ -mr 'r' flag sets the maximum
+
+ -v VAR=VAL
+	 --assign VAR=VAL
+     		Assign the variable VAR the value VAL before program execution begins.
+
+ -W traditional
+ -W compat
+ 	--traditional
+	--compat
+		Use compatibility mode, in which 'gawk' extensions are turned off.
+
+ -W lint
+ 	--lint
+		Give warnings about dubious or non-portable awk constructs.
+
+ -W lint-old
+	--lint-old
+		Warn about constructs that are not available in the original V.7 Unix version of awk.
+
+ -W posix
+	--posix
+	 	Use POSIX compatibility mode, 'gawk' extensions are turned off and additional restrictions apply.
+
+ -W re-interval
+	--re-interval
+		Allow interval expressions, in regexps.
+
+ -W source=PROGRAM-TEXT
+ 	--source PROGRAM-TEXT
+     		Use PROGRAM-TEXT as awk program source code.
+     		This option allows mixing command line source code with source code from files, and is
+     		particularly useful for mixing command line programs with library functions.
+
+ --
+     Signal the end of options. This is useful to allow further arguments to the awk program
+     itself to start with a '-'. This is mainly for consistency with POSIX argument parsing conventions.
+
+'Program'
+     A series of patterns and actions: see below
+
+Input-File
+     If no Input-File is specified then awk applies the Program to "standard input",
+     (piped output of some other command or the terminal.
+     Typed input will continue until end-of-file (typing 'Control-d')
+
+The basic function of awk is to search files for lines (or other units of text) that contain a pattern.
+When a line matches, awk performs a specific action on that line.
+
+Suppose we have a file in which each line is a name followed by a phone number. Let's say the file contains the line "Audrey 5550164."
+In AWK, the first field is referred to as $1, the second as $2 and so on.
+So an AWK program to retrieve Audrey's phone number is:
+awk '$1 == "Audrey" {print $2}' numbers.txt
+which means if the first field matches Audrey, then print the second field.
+
+In awk, $0 is the whole line of arguments.
+
+The Program statement that tells awk what to do; consists of a series of "rules". Each rule specifies one pattern to search for, and one action to perform when that pattern is found.
+
+For ease of reading, each line in an awk program is normally a separate Program statement , like this:
+
+     pattern { action }
+     pattern { action }
+     ...
+e.g. Display lines from samplefile containing the string "123" or "abc" or "some text":
+
+awk '/123/ { print $0 } 
+     /abc/ { print $0 }
+     /some text/ { print $0 }' samplefile
+
+A regular expression enclosed in slashes (/) is an awk pattern that matches every input record whose text belongs to that set. e.g. the pattern /foo/ matches any input record containing the three characters 'foo', *anywhere* in the record.
+
+awk patterns can be one of the following:
+
+/Regular Expression/        - Match =
+Pattern && Pattern          - AND
+Pattern || Pattern          - OR
+! Pattern                   - NOT
+Pattern ? Pattern : Pattern - If, Then, Else
+Pattern1, Pattern2          - Range Start - end
+BEGIN                       - Perform action BEFORE input file is read
+END                         - Perform action AFTER input file is read
+
+The special patterns BEGIN and END can be used to capture control before the first input line is read and after the last. BEGIN and END do not combine with other patterns.
+
+Variable names with special meanings:
+
+     CONVFMT  conversion  format  used  when  converting  numbers
+              (default %.6g)
+
+     FS       regular  expression  used  to separate fields; also
+              settable by option -Ffs.
+
+     NF       number of fields in the current record
+
+     NR       ordinal number of the current record
+
+     FNR      ordinal number of the current record in the current
+              file
+
+     FILENAME the name of the current input file
+
+     RS       input record separator (default newline)
+
+     OFS      output field separator (default blank)
+
+     ORS      output record separator (default newline)
+
+     OFMT     output format for numbers (default %.6g)
+
+     SUBSEP   separates multiple subscripts (default 034)
+
+     ARGC     argument count, assignable
+
+     ARGV     argument  array,  assignable;  non-null members are
+              taken as filenames
+
+     ENVIRON  array  of  environment  variables;  subscripts  are
+              names.
+
+
+Statements
+
+The command provides basic control flow statements (if-else, while, for, break) and also allows users to group statements using braces {}. 
+
+if-else       The if-else statement works by evaluating the condition specified in the parentheses and, if the condition is true, the statement following the if statement is executed.
+              The else part is optional. 
+
+while         The while statement repeatedly executes a target statement as long as the specified condition is true. That means that it operates like the one in the C programming 
+              language. If the condition is true, the body of the loop is executed. If the condition is false, awk continues with the execution. 
+
+for           The for statement also works like that of C, allowing users to create a loop that needs to execute a specific number of times. 
+
+
+<s1>Examples</s1>
+
+awk -F ',' '{if($2==$3){print $1","$2","$3} else {print "No Duplicates"}}' answers.txt 
+<img src="img/awk (1).png" alt="Description of awk">
+
+awk '{i=0; while(i<=NF) { print i ":"$i; i++;}}' employees.txt
+<img src="img/awk (2).png" alt="Description of awk">
+
+awk 'BEGIN{for(i=1; i<=10; i++) print "The square of", i, "is", i*i;}' 
+<img src="img/awk (3).png" alt="Description of awk">
+
+
+*See also: awk, gawk, egrep, expr, eval, for, grep, m4, tr</p></pre> 
             </body>
-            </html>
         

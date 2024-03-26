@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,23 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>dirname</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>dirname is a command in Linux that is used to remove the trailing forward slashes “/” from the NAME and prints the remaining portion. If the argument NAME does not contain the forward slash “/” then it simply prints dot “.”. In other words, we can say that the `dirname` command is a useful tool for extracting the directory portion from a given path or filename.   
+
+
+<s1>Syntax</s1>
+
+dirname [OPTION] NAME 
+
+
+<s1>Examples</s1>
+
+dirname bash.sh
+<img src="img/dirname (1).png" alt="Description of dirname">
+
+dirname -z /Desktop/root/bash.sh 
+<img src="img/dirname (2).png" alt="Description of dirname">
+
+
+*See also: hash, ls, which</p></pre> 
             </body>
-            </html>
         

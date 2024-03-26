@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,51 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>useradd</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>useradd is a command in Linux that is used to add user accounts to your system.
+It is just a symbolic link to adduser command in Linux and the difference between both of them is that useradd is a native binary compiled with the system whereas adduser is a Perl script that uses useradd binary in the background.
+<s1>Syntax:</s1>
+The basic syntac for the `useradd` command is as follows.
+useradd [options] [User_name]
+<s1>Examples:</s1>
+sudo useradd test_user
+<img src="img/useradd (1).png" alt="Description of useradd">
+
+sudo useradd -d /home/test_user test_user
+<img src="img/useradd (2).png" alt="Description of useradd">
+
+
+
+Userdel
+userdel command in Linux system is used to delete a user account and related files. This command basically modifies the system account files, deleting all the entries which refer to the username LOGIN. It is a low-level utility for removing the users. The userdel command is a standard utility in Linux that allows administrators to delete user accounts from the system. It is a part of the user management tools that also include commands like useradd and usermod.
+<s1>Syntax:</s1>
+userdel [options] username
+
+
+
+
+
+
+<s1>Examples:</s1>
+How to Delete User in Linux
+sudo userdel -f neuser
+<img src="img/useradd (3).png" alt="Description of useradd">
+
+How to Forcely Delete User in Linux
+sudo userdel -r newuser2
+<img src="img/useradd (4).png" alt="Description of useradd">
+
+userdel –h
+<img src="img/useradd (5).png" alt="Description of useradd">
+
+
+
+
+
+
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

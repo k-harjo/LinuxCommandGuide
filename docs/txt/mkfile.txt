@@ -6,8 +6,6 @@ Here we write the client.c file
 This is used to run the makefile 
 make -f makefile.mk
 This is the syntax to run the makefile after typing this press enter the code will compile and that will create an executable file named “a” (in windows), “a.out”(in linux).
-Examples:
+<s1>Examples:</s1>
 make -f makefile.mk
-
-
-
+<img src="img/mkfile (1).png" alt="Description of mkfile">

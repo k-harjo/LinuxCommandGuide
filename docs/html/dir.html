@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,35 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>dir</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>dir command differs from ls command in the format of listing contents that is in default listing options. By default, dir command lists the files and folders in columns, sorted vertically and special characters are represented by backslash escape sequences. But unlike ls, when the output is on terminal, it does not produce colored output as ls does.  
+
+
+<s1>Syntax</s1>
+	
+	dir [OPTION] [FILE] 
+
+
+<s1>Key </s1>
+
+	-a, -all	Displays all the hidden files(starting with `.`) along with two files denoted by `.` and `..` which signals for current and previous directory respectively.
+
+	-l, –author 	Displays author of all the files. -l is required to display the contents in the form of a list 
+	
+	-color		Used to colorize the output. 
+
+
+<s1>Examples</s1>
+
+dir -a
+<img src="img/dir (1).png" alt="Description of dir">
+
+dir -l –author 
+<img src="img/dir (2).png" alt="Description of dir">
+
+dir –color 
+<img src="img/dir (3).png" alt="Description of dir">
+
+
+*See also: ls</p></pre> 
             </body>
-            </html>
         

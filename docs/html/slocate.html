@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,14 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>slocate</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>slocate command in Linux is used to find the files in your system. This is a secure version of the Linux command locate which is also used for file searching, similar to locate command it creates a database of the file locations for faster searching. But it is much more secure than locate command because it allows users to only see the files that the particular user is authorized with. So if a superuser decides to create files with permission only for the superuser then non-superusers won’t have access to those files while using slocate command. later slocate got replaced with command mlocate which has been a more sophisticated way of using it.
+<s1>Syntax:</s1>
+slocate [OPTION]... [FILE]....
+<s1>Examples:</s1>
+slocate -i [FILE]
+<img src="img/slocate (1).png" alt="Description of slocate">
+
+slocate -c [FILE]
+<img src="img/slocate (2).png" alt="Description of slocate"></p></pre> 
             </body>
-            </html>
         

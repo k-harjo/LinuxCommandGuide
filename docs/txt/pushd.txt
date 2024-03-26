@@ -1,12 +1,12 @@
 pushd - Save and then change the current directory. With no arguments, pushd exchanges the top two directories.
 
 
-Syntax
+<s1>Syntax</s1>
 
       pushd [dir | +N | -N] [-n]
 
 
-Key
+<s1>Key</s1>
 
    +N   Brings the Nth directory (counting from the left of the list printed by dirs,
         starting with zero) to the top of the list by rotating the stack.

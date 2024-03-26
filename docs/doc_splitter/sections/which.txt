@@ -1,0 +1,42 @@
+which command in Linux is a command that is used to locate the executable file associated with the given command by searching it in the path environment variable. It has 3 return statuses as follows.
+
+Syntax:
+
+which [filename1] [filename2] …
+Examples:
+Using `-a` to display all the occurrences of the file.
+If we want to display all the occurrences of the `python` file.
+which -a python
+image001
+
+Checking Command Aliases
+If we want to check whether the command `ll` is an alias or not.
+which -a ll
+image002
+
+
+
+
+
+
+
+
+
+
+
+
+While
+while command in Linux is used to repeatedly execute a set of command as long as the COMMAND returns true. The test command is given and all other commands are executed till the given command’s result satisfies, when the command’s result become false, the control will be out from the while command.
+Syntax:
+while COMMANDS; do COMMANDS; done
+Examples:
+image003
+
+Option:
+help while: It displays help information.
+image004
+
+
+
+
+

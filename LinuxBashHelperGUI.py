@@ -44,33 +44,20 @@ class DocumentViewer(QWebEngineView):
         super(DocumentViewer, self).__init__(parent)
 
     def load_document(self, doc_path):
-        if doc_path:
-            if doc_path.endswith('.html'):
-                document_url = QUrl.fromLocalFile(doc_path)
-                self.load(document_url)
-
-            elif doc_path.endswith('.txt'):
-                with open(doc_path, 'r', encoding='utf-8') as file:
-                    content = file.read()
-                    html_content = f"""
-                    <html>
-                    <head>
-                        <style>
-                            body {{ margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; }}
-                            pre {{ white-space: pre-wrap; word-wrap: break-word; }}
-                        </style>
-                    </head>
-                    <body>
-                        <pre>{content}</pre>
-                    </body>
-                    </html>
-                    """
-                    self.setHtml(html_content)
+        full_path = os.path.abspath(doc_path)
+        if os.path.exists(full_path):
+            base_url = QUrl.fromLocalFile(os.path.dirname(full_path) + os.sep)
+            print(base_url)
+            with open(full_path, 'r', encoding='utf-8') as file:
+                html_content = file.read()
+                print(html_content)
+                self.setHtml(html_content, base_url)
 
 
 class LinuxDictGUI(QMainWindow):
-    """
-    """
+    '''
+    GUI class
+    '''
     
     def __init__(self):
         super().__init__()
@@ -141,7 +128,7 @@ class LinuxDictGUI(QMainWindow):
         cmd_layout = QVBoxLayout()
         self.model = NonEditableStringListModel(self.cmd_view)
         self.dropdown = QComboBox()
-        self.dropdown.addItems(["All Commands", "Most Used in Lab", "Bash Scripting Examples"])
+        self.dropdown.addItems(["All Commands", "Most Used in Lab"])
         
         linux_file = "linux_commands.csv"
         self.all_linux_cmds = pd.read_csv(linux_file)
@@ -182,11 +169,7 @@ class LinuxDictGUI(QMainWindow):
         self.search_bar.returnPressed.connect(self.search)
 
         self.add_items_to_viewer()
-        '''
-        ##TODO: Add bash scripting examples,
-         clean up most used commands (probably too many),
-         create new graphics or cleaup the current ones
-        '''
+
 
     def add_items_to_viewer(self):
         self.item_list = []
@@ -216,17 +199,20 @@ class LinuxDictGUI(QMainWindow):
         self.doc_viewer.load_document(doc)  
 
     def search(self):
+        app_dir = os.path.dirname(os.path.abspath(__file__))
+        base_dir = os.path.join(app_dir, "docs/html")
+        base_url = QUrl.fromLocalFile(base_dir + os.sep)
+
         results = []
         search_term = self.search_bar.text()
-        directory = Path('docs/html/')
+        base_dir = Path('docs/html/')
         # Initialize results_html with a default value
         results_html = "<html><body><p>No results found.</p></body></html>"
-        for filename in os.listdir(directory):
+        for filename in os.listdir(base_dir):
             if filename.endswith('.html'):
-                with open(os.path.join(directory, filename), 'r', encoding='utf-8') as f:
-                    content = f.read()
-                    if search_term.lower() in content.lower():
-                        results.append(filename)
+                with open(base_dir, 'r', encoding='utf-8') as file:
+                    html_content = file.read()
+                    self.setHtml(html_content, base_url)
         if results:
             results_formatted = '<br>'.join(results)
             results_html = f"""

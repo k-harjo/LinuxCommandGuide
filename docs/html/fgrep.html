@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,31 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fgrep</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>fgrep filter is used to search for the fixed-character strings in a file. There can be multiple files also to be searched. This command is useful when you need to search for strings which contain lots of regular expression metacharacters, such as “^”, “$”, etc.  
+
+
+<s1>Syntax</s1>
+
+	fgrep [options] [ -e pattern_list] [pattern] [file] 
+
+fgrep is the same as 'grep -F'
+
+all other options are the same as grep 
+It's a popular fallacy that fgrep stands for fast-grep, in fact fgrep means fixed-string grep.
+
+
+<s1>Examples</s1>
+
+-c option: Displaying the count of number of matches. We can find the number of lines that match the given string.  
+
+$fgrep -c "usin.g" para 
+<img src="img/fgrep (1).png" alt="Description of fgrep">
+
+-h option: To display the matched lines. 
+fgrep -h "usin.g" para 
+<img src="img/fgrep (2).png" alt="Description of fgrep">
+
+
+*See also: egrep, gawk, grep</p></pre> 
             </body>
-            </html>
         

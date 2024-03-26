@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,81 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>mv</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>mv is used to move one or more files or directories from one place to another in file system like UNIX.
+<s1>Syntax:</s1>
+
+mv [options(s)] [source_file_name(s)] [Destination_file_name]
+<s1>Examples:</s1>
+If we have a file “name = jayesh_gfg” and want to rename it to “name = geeksforgeeks”.
+mv jayesh_gfg geeksforgeeks
+<img src="img/mv (1).png" alt="Description of mv">
+
+
+If we have a file “name = geeksforgeeks” and want to move it to location “name = /home/jayeshkumar/jkj”.
+mv geeksforgeeks /home/jayeshkumar/jkj/
+<img src="img/mv (2).png" alt="Description of mv">
+
+
+If we have a directory “name = jkj” and want to rename it to “name = new_gfg”.
+mv jkj new_gfg
+<img src="img/mv (3).png" alt="Description of mv">
+
+
+nc (netcat)
+Netcat is one of the most powerful networking tools, security tools, and network monitoring tools. It acts like a cat command over a network. It is even considered a Swiss army knife of networking tools. It is generally used for the following reasons:
+Operation related to TCP, UDP, or UNIX-domain sockets.
+Port Scanning
+Port Listening
+Port redirection
+open Remote connections
+Read/Write data across the network.
+Network debugging
+Network daemon testing
+Simple TCP proxies
+A Socks or HTTP Proxy Command for ssh
+
+It is designed by keeping in mind that it should be a flexible “back-end” tool that can be used directly or driven by any other program.
+netcat (nc) command options
+It offers various options that help us in enhancing its functionality. Some commonly used options include:
+
+
+
+<s1>Examples:</s1>
+System 1
+We are running `nc` command in listen mode and providing a port number.
+nc -lv 1111
+You can replace port number `1111` with your desired port number.
+<img src="img/mv (4).png" alt="Description of mv">
+
+
+System 2
+We are running `nc` command with IP address of System 1 and a port number on which system 1 is listening.
+nc -v 10.143.90.24 1111
+<img src="img/mv (5).png" alt="Description of mv">
+
+
+
+
+
+
+
+
+
+
+
+
+
+nestat
+netstat displays various network related information such as network connections, routing tables, interface statistics, masquerade connections, multicast memberships, etc.
+<s1>Syntax:</s1>
+netstat [options]
+<s1>Examples:</s1>
+-a -all: Show both listening and non-listening sockets. With the –interfaces option, show interfaces that are not up.
+<img src="img/mv (6).png" alt="Description of mv">
+netstat -a | more
+
+List All TCP Ports Using netstat Command in Linux
+netstat –at
+<img src="img/mv (7).png" alt="Description of mv"></p></pre> 
             </body>
-            </html>
         

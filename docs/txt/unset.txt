@@ -1,12 +1,12 @@
 unset - Remove variable or function names.
 
 
-Syntax
+<s1>Syntax</s1>
 
       unset [-fv] [name]
 
 
-Options
+<s1>Options</s1>
 
       -f    The names refer to shell Functions, and the function definition is removed.
             Readonly variables and functions can not be unset. 

@@ -1,5 +1,5 @@
 man is used to display the user manual of any command that we can run on the terminal
-Syntax:
+<s1>Syntax:</s1>
 man [option] [command]
 
 
@@ -8,12 +8,10 @@ man [option] [command]
 
 
 
-Examples:
+<s1>Examples:</s1>
 man 2 intro
+<img src="img/man (1).png" alt="Description of man">
 
 
 man -f ls
-
-
-
-
+<img src="img/man (2).png" alt="Description of man">

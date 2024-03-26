@@ -1,12 +1,12 @@
 unshar - Unpack shell archive scripts. Each file is processed in turn, as a shell archive or a collection of shell archives. If no files are given, then standard input is processed instead.
 
 
-Syntax
+<s1>Syntax</s1>
 
       unshar [options] ... [file... ]
 
 
-Options
+<s1>Options</s1>
 
    -d DIRECTORY
    --directory=DIRECTORY

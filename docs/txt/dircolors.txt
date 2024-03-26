@@ -1,7 +1,7 @@
 dircolors - Color setup for 'ls', outputs a sequence of shell commands to set up the terminal for color output from 'ls' (and 'dir', etc.).
 
 
-Syntax
+<s1>Syntax</s1>
 
       eval 'dircolors [options]... [file]'
 If FILE is specified, 'dircolors' reads it to determine which colors to use for which file types and extensions. Otherwise, a precompiled
@@ -10,7 +10,7 @@ database is used. For details on the format of these files, run 'dircolors --pri
 The output is a shell command to set the 'LS_COLORS' environment variable. You can specify the shell syntax to use on the command line, or 'dircolors' will guess it from the value of the 'SHELL' environment variable.
 
 
-Options 
+<s1>Options </s1>
 
  -b
  --sh

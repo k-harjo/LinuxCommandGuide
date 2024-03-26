@@ -1,12 +1,12 @@
 aspell - Spellcheck a file. Generally, it will scan the given files or anything from standard input then it check for misspellings. Finally it allows the user to correct the words interactively. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       aspell check [options] filename
 
 
-Key
+<s1>Key</s1>
 
    -mode=mode
        The mode to use when checking files.
@@ -38,13 +38,13 @@ Key
        mapping that the Ispell utility uses.
 
 
-Examples
+<s1>Examples</s1>
 
 $ aspell -a
-image001
+<img src="img/aspell (1).png" alt="Description of aspell">
 
 Check the file foo.txt using the bad-spellers suggestion mode and the American English dictionary:
 
 aspell will display incorrectly spelled words below the input you provided. 
 $ aspell list 
-image002
+<img src="img/aspell (2).png" alt="Description of aspell">

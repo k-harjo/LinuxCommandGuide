@@ -1,15 +1,14 @@
 ifdown command to bring network interface down, not allowing the user to transmit and receive data. Technically it places the network interface in a state where it cannot transmit or receive data. It is used to configure network interfaces based on interface definitions in the file /etc/network/interfaces.
-SYNTAX:
+
+<s1>SYNTAX:</s1>
+
 ifdown [-nv] [–no-act] [–verbose] [-i FILE|–interfaces=FILE] [–allow CLASS] -a|IFACE…
 
-Example:
+<s1>Example:</s1>
+
 sudo is used for permissions, -a to work on all devices and v for verbose the output.sudo
 ifdown –av
 
-
-
-
-
-
+<img src="img/ifdown (1).png" alt="Description of ifdown">
 
 

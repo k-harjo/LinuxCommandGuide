@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,68 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>csplit</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>The csplit command is used to split any file into many parts as required by the user. The parts are determined by context lines. Output pieces of FILE separated by PATTERN(s) to files ‘xx00’, ‘xx01’, …, and output byte counts of each piece to standard output.  
+
+
+<s1>Syntax</s1>
+
+     csplit [options]... FILE PATTERN...
+Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ..., and output byte counts of each piece to standard output. (standard input if FILE is - ).
+
+
+<s1>Key</s1>
+
+   -f PREFIX
+   --prefix=PREFIX
+       Use PREFIX as the output file name prefix.
+
+   -b SUFFIX
+   --suffix=SUFFIX
+       Use SUFFIX as the output file name suffix.  When this option is
+       specified, the suffix string must include exactly one
+       'printf(3)'-style conversion specification, possibly including
+       format specification flags, a field width, a precision
+       specifications, or all of these kinds of modifiers.  The format
+       letter must convert a binary integer argument to readable form;
+       thus, only 'd', 'i', 'u', 'o', 'x', and 'X' conversions are
+       allowed.  The entire SUFFIX is given (with the current output file
+       number) to 'sprintf(3)' to form the file name suffixes for each of
+       the individual output files in turn.  If this option is used, the
+       '--digits' option is ignored.
+
+   -n DIGITS
+   --digits=DIGITS
+       Use output file names containing numbers that are DIGITS digits
+       long instead of the default 2.
+
+   -k
+   --keep-files
+       Do not remove output files when errors are encountered.
+
+   -z
+   --elide-empty-files
+       Suppress the generation of zero-length output files.  (In cases
+       where the section delimiters of the input file are supposed to
+       mark the first lines of each of the sections, the first output
+       file will generally be a zero-length file unless you use this
+       option.)  The output file sequence numbers always run
+       consecutively starting from 0, even when this option is specified.
+
+   -s
+   -q
+   --silent
+   --quiet
+       Do not print counts of output file sizes.
+
+
+<s1>Examples</s1>
+
+<img src="img/csplit (1).png" alt="Description of csplit">
+
+<img src="img/csplit (2).png" alt="Description of csplit">
+
+
+
+*See also: cut, fmt, fold, join, paste, split, tail</p></pre> 
             </body>
-            </html>
         

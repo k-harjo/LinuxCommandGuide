@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,33 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>break</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>break - Exit from a for, while, until, or select loop
+
+
+<s1>Syntax</s1>
+
+      break [n]
+If n is supplied, the nth enclosing loop is exited. n must be greater than or equal to 1.
+
+The return status is zero unless n is not greater than or equal to 1.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help break
+
+
+<s1>Examples</s1>
+
+for myloop in 1 2 3 4 5 
+do 
+  echo -n "$myloop"
+  if [ "$myloop" -eq 3 ] 
+   then 
+   break # This line will break out of the loop
+  fi
+done
+
+<img src="img/break (1).png" alt="Description of break">
+
+
+*See also: for, select, until, while, caller, continue</p></pre> 
             </body>
-            </html>
         

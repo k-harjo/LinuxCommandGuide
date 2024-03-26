@@ -3,14 +3,14 @@ head command prints the top N number of data of the given input.
 By default, it prints the first 10 lines of the specified files. If more than one file name is provided then data from each file is preceded by its file name.   
 
 
-Syntax
+<s1>Syntax</s1>
 
       head [-n count] [options] [file ...]
 
       head [-c bytes] [options] [file ...]
 
 
-Key
+<s1>Key</s1>
 
   -count
      Return the first count of lines from the file. (must be the first option specified).
@@ -42,13 +42,13 @@ If more than one file is specified, 'head' will print a one-line header consisti
 Two option formats are accepted: the new one, in which numbers are arguments to the options ('-q -n 1'), and the old one, in which the number precedes any option letters ('-1q')
 
 
-Examples
+<s1>Examples</s1>
 
 -n num: Prints the first ‘num’ lines instead of first 10 lines. num is mandatory to be specified in command otherwise it displays an error. 
-image001
+<img src="img/head (1).png" alt="Description of head">
 
 -v: By using this option, data from the specified file is always preceded by its file name. 
-image002
+<img src="img/head (2).png" alt="Description of head">
 
 
 *See also: csplit, cut, fmt, paste, split, tail

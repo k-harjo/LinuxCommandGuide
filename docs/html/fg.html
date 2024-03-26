@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,32 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fg</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>fg command in linux used to put a background job in foreground.  
+
+
+<s1>Syntax</s1>
+
+      fg [job_id...]
+
+Resume the specified job in the foreground, and make it the current job.
+
+fg takes a “job ID” available from jobs, not a PID.
+
+If jobspec is not present, the shell's notion of the current job is used.
+
+The return value is that of the command placed into the foreground, or failure if run when job control is disabled or, when run with job control enabled, if jobspec does not specify a valid job or jobspec specifies a job that was started without job control.
+
+
+<s1>Examples</s1>
+
+fg [JOB_SPEC] : This command is used to put the mentioned job running in background to foreground
+<img src="img/fg (1).png" alt="Description of fg">
+
+“sleep 500” is a command which is used to create a dummy job which runs for 500 seconds. 
+fg –help : It displays help information. 
+<img src="img/fg (2).png" alt="Description of fg">
+
+
+*See also: bg, jobs, suspend</p></pre> 
             </body>
-            </html>
         

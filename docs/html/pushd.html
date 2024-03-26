@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,31 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>pushd</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>pushd - Save and then change the current directory. With no arguments, pushd exchanges the top two directories.
+
+
+<s1>Syntax</s1>
+
+      pushd [dir | +N | -N] [-n]
+
+
+<s1>Key</s1>
+
+   +N   Brings the Nth directory (counting from the left of the list printed by dirs,
+        starting with zero) to the top of the list by rotating the stack.
+       
+
+   -N   Brings the Nth directory (counting from the right of the list printed by dirs,
+        starting with zero) to the top of the list by rotating the stack. 
+
+   -n   Suppresses the normal change of directory when adding directories to the 
+        stack, so that only the stack is manipulated. 
+
+   dir  Makes the current working directory be the top of the stack, and then executes 
+        the equivalent of 'cd dir'. cds to dir.
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help pushd
+
+
+*See also: dirs, popd</p></pre> 
             </body>
-            </html>
         

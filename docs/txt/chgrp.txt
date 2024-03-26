@@ -1,13 +1,13 @@
 The `chgrp` command in Linux is used to change the group ownership of a file or directory. All files in Linux belong to an owner and a group. You can set the owner by using “chown” command, and the group by the “chgrp” command. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 chgrp [OPTION]… GROUP FILE… 
 chgrp [OPTION]… –reference=RFILE FILE 
 
 
-Key
+<s1>Key</s1>
 
   -c
   --changes
@@ -36,12 +36,12 @@ Key
        contents.
 
 
-Example
+<s1>Example</s1>
 
 Changing Group Ownership of a Single File 
  
 sudo chgrp geeksforgeeks abc.txt 
-image001
+<img src="img/chgrp (1).png" alt="Description of chgrp">
 
 
 *See also: chmod, chown, setfacl, bash syntax

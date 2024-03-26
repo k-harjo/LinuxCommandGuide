@@ -1,0 +1,18 @@
+
+pkill command is used to kill processes through the command line. As opposed to the kill command, pkill doesn’t need you to put the ID of the process you’re trying to terminate.
+Syntax:
+# pkill [options] <pattern>
+image001
+
+
+Examples:
+kill process by its name (pkill {process_name})
+image002
+
+
+kill process based on the full command (-f)
+image003
+
+
+
+

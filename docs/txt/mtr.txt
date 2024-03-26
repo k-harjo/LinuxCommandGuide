@@ -1,13 +1,13 @@
 mtr - Network diagnostics (traceroute/ping.)
 
 
-Syntax
+<s1>Syntax</s1>
 
      mtr [-hvrctglspni46] [--help] [--version] [--report] [--report-cycles COUNT]
         [--curses] [--split] [--raw] [--no-dns] [--gtk] [--address IP.ADD.RE.SS]
            [--interval SECONDS] [--psize BYTES | -s BYTES] HOSTNAME [PACKETSIZE]
 
-Key
+<s1>Key</s1>
 
    -c COUNT
    --report-cycles COUNT
@@ -82,7 +82,7 @@ As mtr starts, it investigates the network connection between the host mtr runs 
 Some modern routers give a lower priority to ICMP ECHO packets than to other network traffic. Consequently, the reliability of these routers reported by mtr will be significantly lower than the actual reliability of these routers.
 
 
-Examples
+<s1>Examples</s1>
 
 $ mtr 192.168.12.34
 $ mtr google.com

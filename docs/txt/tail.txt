@@ -3,11 +3,11 @@ It is the complementary of head command. The tail command, as the name implies, 
 Syntax of Tail Command in Linux
 tail [OPTION]... [FILE]…
 Options and Pratical Examples of Tail Command in Linux
+<img src="img/tail (1).png" alt="Description of tail">
 
 
-Example:
+<s1>Example:</s1>
 tail -n 3 state.txt
 or
+<img src="img/tail (2).png" alt="Description of tail">
 tail -3 state.txt
-
-

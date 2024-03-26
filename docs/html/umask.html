@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,42 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>umask</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>umask - User's file creation mask. umask sets an environment variable which automatically sets file permissions on newly created files. i.e. it will set the shell process's file creation mask to mode.
+
+
+<s1>Syntax</s1>
+
+      umask [-p] [-S] [mode]
+
+
+<s1>Key</s1>
+
+   mode  File creation mask
+
+   -S    Print the mask in symbolic format
+
+   -p    Output in a form that can be reused as input
+
+The mode specified works as a mask, if mode is omitted, the current value of the mask will be printed.
+
+You can set umask in /etc/bashrc or /etc/profile for all users. By default most Linux distros will set it to 0022 (022) or 0002 (002).
+
+So the file will contain
+umask 022
+
+If mode begins with a digit, it is interpreted as an octal number; if not, it is interpreted as a symbolic mode mask similar to that accepted by the chmod command.
+
+The return status is zero if the mode is successfully changed or if no mode argument is supplied, and non-zero otherwise.
+
+Note that when the mode is interpreted as an octal number, each number of the umask is subtracted from 7. Thus, a umask of 022 results in permissions of 755.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help umask
+
+
+*See also: 
+export - Set an environment variable.
+chmod - Change access permissions.
+chown - Change file owner and group.
+readonly - Mark variables/functions as readonly.</p></pre> 
             </body>
-            </html>
         

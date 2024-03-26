@@ -1,0 +1,33 @@
+image001
+
+
+To change the password for a user other than the one currently logged in, you can use the following steps:
+
+passwd user1
+image002
+
+
+To force a user to change their password at the next login, use the following command:
+passed -e user1
+image003
+
+
+
+Paste
+paste is used to join files horizontally (parallel merging) by outputting lines consisting of lines from each file specified, separated by tab as delimiter, to the standard output
+Syntax:
+paste [OPTION]... [FILES]…
+
+Examples:
+-s (serial): We can merge the files in sequentially manner using the -s option. It reads all the lines from a single file and merges all these lines into a single line with each line separated by tab. And these single lines are separated by newline.
+image004
+
+In the above command, first it reads data from number file and merge them into single line with each line separated by tab. After that newline character is introduced and reading from next file i.e. state starts and process repeats again till all files are read. Combination of -d and -s: The following example shows how to specify a delimiter for sequential merging of files:
+image005
+
+
+
+
+
+
+

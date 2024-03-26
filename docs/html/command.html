@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,29 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>command</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>command - Run command with arguments ignoring any shell function named command.
+
+
+<s1>Syntax</s1>
+
+      command [-pVv] command [arguments ...]
+
+
+<s1>Key</s1>
+
+      -P   Use a default path
+      -v   Verbose
+      -V   More verbose
+Only shell builtin commands or commands found by searching the PATH are executed. If there is a shell function named ls, running 'command ls' within the function will execute the external command ls instead of calling the function recursively.
+
+The '-p' option means to use a default value for $PATH that is guaranteed to find all of the standard utilities. The return status in this case is 127 if command cannot be found or an error occurred, and the exit status of command otherwise.
+
+If either the '-V' or '-v' option is supplied, a description of command is printed. The '-v' option causes a single word indicating the command or file name used to invoke command to be displayed; the '-V' option produces a more verbose description. In this case, the return status is zero if command is found, and non-zero if not.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help command
+
+
+
+*See also: builtin, chroot, crontab, exec, if, nohup, .source, su, type, watch</p></pre> 
             </body>
-            </html>
         

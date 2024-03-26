@@ -1,14 +1,14 @@
 mktemp - Make a temporary file.
 
 
-Syntax
+<s1>Syntax</s1>
 
       mktemp [-d] [-q] [-t prefix] [-u] template ...
 
       mktemp [-d] [-q] [-u] -t prefix
 
 
-Options
+<s1>Options</s1>
 
    -d      Make a directory instead of a file.
 
@@ -39,7 +39,7 @@ The mktemp utility is provided to allow shell scripts to safely use temporary fi
 EXIT Status The mktemp utility exits 0 on success, and >0 if an error occurs.
 
 
-Examples
+<s1>Examples</s1>
 
 Create a temp file and store the filename in $SCRATCH:
 $ SCRATCH=$(mktemp -t tmp.XXXXXXXXXX)

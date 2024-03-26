@@ -3,12 +3,12 @@ su - Substitute user identity
 Run a command with substitute user and group id, allow one user to temporarily become another user. It runs a command (often an interactive shell) with the real and effective user id, group id, and supplemental groups of a given user.
 
 
-Syntax
+<s1>Syntax</s1>
 
       su [options]... [user [arg]...]
 
 
-Options
+<s1>Options</s1>
 
    -c COMMAND
    --command=COMMAND

@@ -1,7 +1,7 @@
 lpc - Line printer control program.
 
 
-Syntax
+<s1>Syntax</s1>
 
       lpc [command [argument ...]]
 Lpc is used by the system administrator to control the operation of the line printer system.

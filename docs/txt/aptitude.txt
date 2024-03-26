@@ -1,7 +1,7 @@
 aptitude command in Linux package system opens up a highly built-in interface to interact with the package manager of the machine. You can install, upgrade and remove your packages using this well-built interface. Also, the actions can be performed using the command-line(similar to apt-get command) or the visual interface. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       aptitude [options...] autoclean
       aptitude [options...] clean
@@ -38,7 +38,7 @@ Syntax
       aptitude help
 
 
-Key
+<s1>Key</s1>
 
 apt-get, aptitude, and apt now share the same list of installed packages and so can be used interchangeably.
 
@@ -375,7 +375,7 @@ The following actions are available:
            Displays a brief summary of the available commands and options.
 
 
-Options
+<s1>Options</s1>
 
        The following options can be used to modify the behavior of the actions
        described above. Note that while all options will be accepted for all
@@ -730,10 +730,10 @@ Options
            Aptitude::CmdLine::Show-Size-Changes.
 
 
-Examples: 
+<s1>Examples: </s1>
 
 aptitude show package 
-image001
+<img src="img/aptitude (1).png" alt="Description of aptitude">
 
 
 *See also: dpkg, apt-get, Synaptic Passage Manager, Taskel

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,58 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>echo</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>echo command in Linux is a built-in command that allows users to display lines of text or strings that are passed as arguments. It is commonly used in shell scripts and batch files to output status text to the screen or a file. 
+
+
+<s1>Syntax</s1>
+
+	echo [option] [string] 
+
+	[options] = The various options available for modifying the behavior of the `echo` command 
+
+	[string] = It is the string that we want to display. 
+
+
+<s1>Options</s1>
+
+   -n   Do not output a trailing newline.
+
+   -E   Disable the interpretation of the following backslash-escaped characters.
+
+   -e   Enable interpretation of the following backslash-escaped characters in each String:
+
+      \a    Alert (bell)
+      \b    Backspace
+      \c    Suppress trailing newline
+      \e    Escape
+      \E    Escape 
+      \f    Form feed
+      \n    New line
+      \r    Carriage return
+      \t    Horizontal tab
+      \v    Vertical tab
+      \\    Backslash
+      \0nnn   The eight-bit character whose value is the octal value nnn (zero to three octal digits) 
+              if nnn is not a valid octal number, it is printed literally.
+      \xHH    The eight-bit character whose value is the hex value HH (one or two hex digits) 
+      \uHHHH    The Unicode (ISO/IEC 10646) character whose value is the hex value HHHH (one to four hex digits)
+      \UHHHHHHHH  The Unicode (ISO/IEC 10646) character whose value is the hex value HHHHHHHH (one to eight hex digits) 
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help echo
+There is also an echo utility (man echo) , but the shell built-in version will generally take precedence.
+
+
+<s1>Examples</s1>
+
+echo "Geeks for Geeks" 
+<img src="img/echo (1).png" alt="Description of echo">
+
+NOTE: -e here enables the interpretation of backslash escapes  
+      \b: it removes all the spaces in between the text 
+
+echo -e "Geeks \bfor \bGeeks" 
+<img src="img/echo (2).png" alt="Description of echo">
+
+
+*See also: head, less, more, notify-send, pg, tee</p></pre> 
             </body>
-            </html>
         

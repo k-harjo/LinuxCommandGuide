@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,48 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>bash</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>bash - Open a new instance of the bash shell. 
+
+Bash script is a plain text files with the “.sh” extension. It can be executed by invoking the Bash interpreter. A typical Bash script starts with a shebang (#!/bin/bash), which indicates the directory or path to the Bash interpreter. After the shebang, one can define variables and functions, use conditionals and loops and execute built-in commands like any other programming language. 
+
+
+<s1>Syntax: </s1>
+
+      bash [options] [file] 
+
+
+<s1>Examples: </s1>
+
+bash filename.sh 
+
+The script will simply get executed after “sourcing” the file. The source command will execute the shell script as the default bash command provided you are in the bash shell.  You need to be in the bash shell to execute the script using the source command. 
+
+<img src="img/bash (1).png" alt="Description of bash"> 
+
+Making the Script Executable with chmod 
+
+This method allows you to run a Bash script as an executable, which means you can run it from anywhere in your environment as long as you have a Bash shell available. To make the script executable, you need to adjust its file permissions using the chmod command. 
+
+First, navigate to the directory where your script is located. Then, run the following command to change the file’s mode, making it executable: 
+
+chmod +x filename.sh   
+
+The `+x` flag indicates that the file should be executable. If you are using Linux and are not the root user, you may need to use `sudo` before the `chmod` the command for permission. 
+
+After you’ve granted execution permission, you can run the script with the following command, assuming you are in the same directory as the script: 
+
+./filename.sh 
+
+If you are not on the same path as the bash script, make sure you provide the relative path to the file or the bash script. 
+
+./pathToTheFile.sh 
+
+<img src="img/bash (2).png" alt="Description of bash"> 
+
+using chmod and executing the script. 
+
+<img src="img/bash (3).png" alt="Description of bash">
+
+Executing a script from a relative path. </p></pre> 
             </body>
-            </html>
         

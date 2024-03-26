@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,40 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fdisk</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>fdisk also known as format disk is a dialog-driven command in Linux used for creating and manipulating disk partition table. It is used for the view, create, delete, change, resize, copy and move partitions on a hard drive using the dialog-driven interface.  
+fdisk allows you to create a maximum of four primary partitions and the number of logical partition depends on the size of the hard disk you are using.  
+
+<s1>Syntax</s1>
+
+      fdisk [-u] device
+
+      fdisk -l [-u] device ...
+
+      fdisk -s partition ...
+
+      fdisk -v
+
+
+<s1>Key</s1>
+
+   -u     When listing partition tables, give sizes in sectors instead of cylinders.
+
+   -l     List the partition tables for /dev/hd[a-d], /dev/sd[a-h], /dev/ed[a-d], and then exit.
+
+   -s partition
+          The size of the partition (in blocks) is printed on the standard output.
+
+   -v     Print version number of fdisk program and exit.
+
+
+<s1>Examples</s1>
+
+$ sudo fdisk -l 
+<img src="img/fdisk (1).png" alt="Description of fdisk">
+
+$ sudo fdisk -l /dev/sda 
+<img src="img/fdisk (2).png" alt="Description of fdisk">
+
+*See also: cfdisk, fdformat</p></pre> 
             </body>
-            </html>
         

@@ -1,12 +1,12 @@
 builtin - Run a shell builtin, passing it args, and return its exit status.
 
 
-Syntax
+<s1>Syntax</s1>
 
       builtin [shell-builtin [args]]
 
 
-Example
+<s1>Example</s1>
 
 A function to replace 'cd' that writes the hostname and current directory to an xterm title bar:
 cd()
@@ -16,10 +16,10 @@ cd()
       builtin cd "$@" && xtitle "$HOST: $PWD"
 
    }
-image001
+<img src="img/builtin (1).png" alt="Description of builtin">
 
 Use builtin --help for more information.
-image002
+<img src="img/builtin (2).png" alt="Description of builtin">
 
 
 *See also: chroot, cron, exec, if, nohup, su, shopt, .source, type, watch

@@ -1,7 +1,7 @@
 chmod command is used to change the access mode of a file. The name is an abbreviation of change mode. Which states that every file and directory has a set of permissions that control the permissions like who can read, write or execute the file. In this the permissions have three categories: read, write, and execute simultaneously represented by `r`, `w` and `x`. These letters combine together to form a specific permission for a group of users. 
 
 
-Syntax
+<s1>Syntax</s1>
 
        chmod [Options]... Mode [,Mode]... file...
 
@@ -10,7 +10,7 @@ Syntax
        chmod [Options]... --reference=RFile file...
 
 
-Options
+<s1>Options</s1>
 
   -f, --silent, --quiet   Suppress most error messages.
 
@@ -52,7 +52,7 @@ Mode can be specified with octal numbers or with letters.
 Using letters is easier to understand for most people. e.g. chmod +x filename.sh to make filename.sh executable.
 
 
-Examples
+<s1>Examples</s1>
 
 Numeric mode:
 From one to four octal digits
@@ -115,7 +115,7 @@ Use the `ls` command with the `-l` option to list the files in the directory alo
 
 ls –l 
 
-image001
+<img src="img/chmod (1).png" alt="Description of chmod">
 
 Step 3: Make the Script Executable 
 
@@ -131,7 +131,7 @@ Run the `ls -l` command again to verify that the script now has execute permissi
 
 ls –l 
 
-image002 
+<img src="img/chmod (2).png" alt="Description of chmod"> 
 
 Step 5: Execute the Script 
 
@@ -139,7 +139,7 @@ Now that your script has executable permissions, you can run it using the `./` n
 
 ./example.sh 
 
-image003
+<img src="img/chmod (3).png" alt="Description of chmod">
 
 This notation tells Linux to look in the current directory (.) for the script named example.sh. 
 

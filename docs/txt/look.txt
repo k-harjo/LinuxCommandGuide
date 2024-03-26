@@ -1,24 +1,21 @@
 The look command in Linux shows the lines beginning with a given string. This command also uses binary search if the file is sorted. If file is not specified, the file /usr/share/dict/words is used. And then only the alphanumeric characters are compared and the case of alphabetic characters is ignored.
-Syntax:
+<s1>Syntax:</s1>
 look [-bdf] [-t termchar] string [file ...]
+<img src="img/look (1).png" alt="Description of look">
 
 Options:
 -[string]: This option is used to search for the given string in a specified file.
 
 
-Examples:
+<s1>Examples:</s1>
 look "include" Assignment.c
+<img src="img/look (2).png" alt="Description of look">
 
 
 
 -f : This option is used to ignore case of alphabetic character.
 look -f ab words
-
-
-
-
-
-
+<img src="img/look (3).png" alt="Description of look">
 
 
 

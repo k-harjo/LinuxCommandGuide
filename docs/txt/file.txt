@@ -7,7 +7,7 @@ magic test: These tests are used to check for files with data in particular fixe
 language test: This test search for particular strings which can appear anywhere in the first few blocks of a file. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       file [-bchikLNnprsvz0] [--apple] [--mime-encoding] [--mime-type] [-e testname]
          [-F separator] [-f namefile] [-m magicfiles] file ... 
@@ -17,7 +17,7 @@ Syntax
       file [--help]
 
 
-Key
+<s1>Key</s1>
 
    -b, --brief     Do not prepend filenames to output lines (brief mode).
    -C, --compile   Write a magic.mgc output file that contains a pre-parsed version of the magic file or directory.
@@ -107,24 +107,24 @@ Key
    --help          Print a help message and exit.
 
 
-Example
+<s1>Example</s1>
 
 Command displays the file typefile email.py 
 file name.jpeg 
 file Invoice.pdf 
 file exam.ods 
 file videosong.mp4
-image001
+<img src="img/file (1).png" alt="Description of file">
 -b, –brief : This is used to display just file type in brief mode.  
 
 file -b email.py 
 file -b input.txt 
 file -b os.pdf 
-image002
+<img src="img/file (2).png" alt="Description of file">
 
 file [a-z]* 
 file [a-e]* 
-image003
+<img src="img/file (3).png" alt="Description of file">
 
 
 *See also: magic, strings, od, hexdump

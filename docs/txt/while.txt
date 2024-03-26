@@ -1,7 +1,7 @@
 while - Execute consequent-commands as long as test-commands has an exit status of zero
 
 
-Syntax
+<s1>Syntax</s1>
 
       while test-commands; do consequent-commands; done
 The while command continuously executes the do consequent-commands as long as the last command in test-commands returns an exit status of zero.

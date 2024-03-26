@@ -4,12 +4,12 @@ bc command is used for command line calculator. It is similar to basic calculato
 Arithmetic operations are the most basic in any kind of programming language. Linux or Unix operating system provides the bc command and expr command for doing arithmetic calculations. You can use these commands in bash or shell script also for evaluating arithmetic expressions.  
 
 
-Syntax
+<s1>Syntax</s1>
 
     bc [ -hlwsqv ] [long-options] [ file ... ] 
 
 
-Key
+<s1>Key</s1>
 
    -h, --help
        Print the usage and exit.
@@ -47,7 +47,7 @@ The bc command supports the following features:
      -Iterative statements  
 
 
-Examples:   
+<s1>Examples:   </s1>
 
 Input : $ echo "12+5" | bc 
 Output : 17 
@@ -57,7 +57,7 @@ Output : 100
 
 How to store the result of complete operation in variable?  
 
-Example:   
+<s1>Example:   </s1>
 
 Input: 
 $ x=`echo "12+5" | bc` 

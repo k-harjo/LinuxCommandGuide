@@ -1,14 +1,14 @@
 date command is used to display the system date and time. date command is also used to set date and time of the system. By default the date command displays the date in the time zone on which unix/linux operating system is configured. You must be the super-user (root) to change the date and time. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       date [option]... [+Format]
   
       date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
 
 
-Key
+<s1>Key</s1>
 
   -d, --date=String         Display time described by String, instead of 'now'
                             this can be in almost any common format.  
@@ -131,19 +131,19 @@ The - and _ are GNU extensions. Here is an example illustrating the differences:
      =>  1/ 2
 
 
-Examples
+<s1>Examples</s1>
 
 Date and time of previous day 
 date --date="yesterday" 
-image001
+<img src="img/date (1).png" alt="Description of date">
 
 Date and time of 2 months ago 
 date --date="2 month ago" 
-image002
+<img src="img/date (2).png" alt="Description of date">
 
 Date and time of 10 days ago 
 date –date=”10 day ago” 
-image003
+<img src="img/date (3).png" alt="Description of date">
 
 How to Display Future Dates 
 Date and time of upcoming particular week day.   

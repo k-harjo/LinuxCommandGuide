@@ -1,13 +1,13 @@
 userdel - Delete a user account and related files.
 
 
-Syntax
+<s1>Syntax</s1>
 
       userdel [options] LOGIN 
 userdel modifies the system account files, deleting all entries that refer to the user name LOGIN. The named user must exist.
 
 
-Options
+<s1>Options</s1>
 
    -f, --force
       This option forces the removal of the user account, even if
@@ -35,7 +35,7 @@ Options
       The mail spool is defined by the MAIL_DIR variable in the login.defs file.
 
 
-Example
+<s1>Example</s1>
 
 Delete the user account fred from the system, including their home directory and associated files:
 $ sudo userdel -r fred

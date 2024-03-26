@@ -1,7 +1,7 @@
 lprm - Remove jobs from the line print spooling queue.
 
 
-Syntax
+<s1>Syntax</s1>
 
       lprm [-Pprinter] [-] [job# ...] [user ...]
 

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,23 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>ifup</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>The ifup command basically brings the network interface up, allowing it to transmit and receive data. Technically ifup command is used to configure network interfaces based on interface definitions in the file /etc/network/interfaces.
+
+
+<s1>Syntax:</s1>
+
+ifup [-nv] [--no-act] [--verbose] [-i FILE|--interfaces=FILE] [--allow CLASS] -a|IFACE...
+<s1>Example:</s1>
+Let us see an example when our interface is down and how the browser reacts to it.
+<img src="img/ifup (1).png" alt="Description of ifup">
+
+In this case, the interface was not up and configured. To get the network interface up and work we use
+usesudo ifup –av
+<img src="img/ifup (2).png" alt="Description of ifup">
+
+After using ifup command, the network is working:
+<img src="img/ifup (3).png" alt="Description of ifup">
+
+</p></pre> 
             </body>
-            </html>
         

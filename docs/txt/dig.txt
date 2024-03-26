@@ -1,7 +1,7 @@
 dig command stands for Domain Information Groper. It is used for retrieving information about DNS name servers. It is basically used by network administrators. It is used for verifying and troubleshooting DNS problems and to perform DNS lookups. Dig command replaces older tools such as nslookup and the host. 
 
 
-Syntax
+<s1>Syntax</s1>
 
      dig [@server] [-b address] [-c class] [-f filename] [-k filename]
              [-p port#] [-t type] [-x addr] [-y name:key] [-4] [-6]
@@ -11,7 +11,7 @@ Syntax
      dig [global-queryopt...] [query...]
 
 
-Key
+<s1>Key</s1>
 
    -b address
          Set the source IP address of the query to address.
@@ -72,15 +72,15 @@ Key
    -h   Print a brief summary of the command-line arguments and options.
 
 
-Examples
+<s1>Examples</s1>
 
 To query domain “A” record 
 dig geeksforgeeks.org 
-image001
+<img src="img/dig (1).png" alt="Description of dig">
 
 To remove comment lines. 
 dig geeksforgeeks.org +nocomments 
-image002
+<img src="img/dig (2).png" alt="Description of dig">
 
 
 *See also: host, named, dnssec-keygen

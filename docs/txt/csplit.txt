@@ -1,13 +1,13 @@
 The csplit command is used to split any file into many parts as required by the user. The parts are determined by context lines. Output pieces of FILE separated by PATTERN(s) to files ‘xx00’, ‘xx01’, …, and output byte counts of each piece to standard output.  
 
 
-Syntax
+<s1>Syntax</s1>
 
      csplit [options]... FILE PATTERN...
 Output pieces of FILE separated by PATTERN(s) to files 'xx00', 'xx01', ..., and output byte counts of each piece to standard output. (standard input if FILE is - ).
 
 
-Key
+<s1>Key</s1>
 
    -f PREFIX
    --prefix=PREFIX
@@ -52,11 +52,11 @@ Key
        Do not print counts of output file sizes.
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/csplit (1).png" alt="Description of csplit">
 
-image002
+<img src="img/csplit (2).png" alt="Description of csplit">
 
 
 

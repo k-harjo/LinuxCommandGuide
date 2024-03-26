@@ -1,14 +1,14 @@
 enables and disables are the built-in shell commands. enable command is used to start the printers or classes whereas the disable command is used to stop the printers or classes. 
 
 
-Syntax
+<s1>Syntax</s1>
 
        enable [-a] [-dnps] [-f filename] [name …]
 
        disable [-c] [-W] [ -r [ reason ] ] printer 
 
 
-Key
+<s1>Key</s1>
 
    -a   List each builtin with an indication of whether or not it is enabled.
   
@@ -25,7 +25,7 @@ Key
    -s   Restrict to enable only POSIX special builtins
 
 
-Examples
+<s1>Examples</s1>
 
 To use the test binary found via $PATH instead of the shell builtin version:
 

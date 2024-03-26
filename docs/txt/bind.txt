@@ -1,6 +1,6 @@
 bind - Display current readline key and function bindings, bind a key sequence to a readline function or macro, or set a readline variable.
 
-Syntax
+<s1>Syntax</s1>
       bind [-m keymap] [-lpsvPSVX] 
       bind [-m keymap] [-q function] [-u function] [-r keyseq] 
       bind [-m keymap] -f filename 
@@ -8,7 +8,7 @@ Syntax
       bind [-m keymap] keyseq:function-name or readline-command
 
 
-Options
+<s1>Options</s1>
 
    -m keymap    Use keymap as the keymap to be affected by the subsequent bindings.
                 Acceptable keymap names are emacs, emacs-standard, emacs-meta, emacs-ctlx, vi,
@@ -48,15 +48,15 @@ Options
                 can be reused as input. 
 
 
-Examples: 
+<s1>Examples: </s1>
 
 -m: It use KEYMAP as the keymap for the duration of this command. Here we are using vi keymapping in bash, which allows us to manipulate text on the command line as you would in vi. 
 bind -m vi 
-image001
+<img src="img/bind (1).png" alt="Description of bind">
  
 bind –l 
 -l: List all the readline function names. There are around 150 functions that are available by default in this list. 
-image002
+<img src="img/bind (2).png" alt="Description of bind">
 
 
 *See also: bashrc

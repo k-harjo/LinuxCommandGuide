@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,184 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>ftp</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>FTP (file transfer protocol) is an internet protocol that is used for transferring files between client and server over the internet or a computer network. It is similar to other internet protocols like SMTP which is used for emails and HTTP which is used for websites. FTP server enables the functionality of transferring files between server and client. A client connects to the server with credentials and depending upon the permissions it has, it can either read files or upload files to the server as well. In this article, we will see how to set up an FTP server, configure user permissions, configure a firewall and finally encrypt our FTP traffic with SSL.
+
+
+<s1>Syntax</s1>
+
+      ftp [-options] [-s:filename] [-w:buffer] [host]
+
+
+<s1>Key   </s1>
+
+   -s:filename  Run a text file containing FTP commands.
+
+   host         Host name or IP address of the remote host.
+                This can include a user in the format ftp://username:[password]@hostname
+
+   -g           Disable filename wildcards.
+
+   -n           No auto-login.
+
+   -i           No interactive prompts during ftp.
+
+   -v           Hide remote server responses.
+
+   -w:buffer    Set buffer size to buffer
+                (default=4096)
+
+   -d           Debug
+ 
+   -a           Use any local interface when binding data connection.
+
+
+Commands to run at the FTP: prompt
+
+   append local-file [remote-file]
+             Append a local file to a file on the remote computer.
+
+   ascii     Set the file transfer type to ASCII, the default. 
+             In ASCII text mode, character-set and end-of-line
+             characters are converted as necessary.
+
+   bell      Toggle a bell to ring after each command. 
+             By default, the bell is off.
+
+   binary    Set the file transfer type to binary. 
+             Use 'Binary' for transferring executable program
+             files or binary data files e.g. Oracle
+
+   bye       End the FTP session and exit ftp
+
+   cd        Change the working directory on the remote host.
+
+   close     End the FTP session and return to the cmd prompt.
+
+   debug     Toggle debugging. When debug is on, FTP will display
+             every command.
+
+   delete remote-file
+             Delete file on remote host.
+
+   dir [remote-directory] [local-file]
+             List a remote directory's files and subdirectories.
+             (or save the listing to local-file)
+
+   disconnect   Disconnect from the remote host, retaining the ftp prompt.
+
+   get remote-file [local-file]
+             Copy a remote file to the local PC.
+
+   glob      Toggle the use of wildcard characters in local pathnames.
+             By default, globbing is on.
+
+   hash      Toggle printing a hash (#) for each 2K data block transferred. 
+             By default, hash mark printing is off.
+
+   help [command]
+             Display help for ftp command.
+
+   lcd [directory]
+             Change the working directory on the local PC.
+             By default, the working directory is the directory in which ftp was started.
+
+   literal argument [ ...]
+             Send arguments, as-is, to the remote FTP host.
+
+   ls [remote-directory] [local-file]
+             List a remote directory's files and folders. (short format)
+
+   mdelete remote-files [ ...]
+             Delete files on remote host.
+
+   mdir remote-files [ ...] local-file
+             Display a list of a remote directory's files and subdirectories. (or save the listing to local-file)
+             Mdir allows you to specify multiple files.
+
+   mget remote-files [ ...]
+             Copy multiple remote files to the local PC.
+
+   mkdir directory
+             Create a directory on the remote host.
+
+   mls remote-files [ ...] local-file
+             List a remote directory's files and folders.
+             (short format)
+
+   mput local-files [ ...]
+             Copy multiple local files to the remote host.
+
+   open computer [port]
+             Connects to the specified FTP server. 
+
+   prompt    Toggle prompting. Ftp prompts during multiple file transfers to 
+             allow you to selectively retrieve or store files;
+             mget and mput transfer all files if prompting is turned off. 
+             By default, prompting is on.
+
+   put local-file [remote-file]
+             Copy a local file to the remote host.
+
+   pwd       Print Working Directory
+             (current directory on the remote host)
+
+   quit      End the FTP session with the remote host and exit ftp.
+
+   quote argument [ ...]
+             Send arguments, as-is, to the remote FTP host.
+
+   recv remote-file [local-file]
+             Copy a remote file to the local PC.
+
+   remotehelp [command]
+             Display help for remote commands.
+
+   rename filename newfilename
+             Rename remote files.
+
+   rmdir directory
+             Delete a remote directory.
+
+   send local-file [remote-file]
+             Copy a local file to the remote host.
+
+   status    Display the current status of FTP connections and toggles.
+
+   trace     Toggles packet tracing; trace displays the route of each packet 
+
+   type [type-name]
+             Set or display the file transfer type:
+             'binary' or 'ASCII' (the default)
+
+             If type-name is not specified, the current type is displayed. 
+             ASCII should be used when transferring text files.
+
+             In ASCII text mode, character-set and end-of-line
+             characters are converted as necessary.
+
+             Use 'Binary' for transferring executable files. 
+
+   user user-name [password] [account]
+             Specifes a user to the remote host.
+
+   verbose   Toggle verbose mode. By default, verbose is on.
+
+   ! command    Run command on the local machine.
+
+   ? [command]  Display help for ftp command.
+
+
+<s1>Examples</s1>
+
+Let’s start by creating our public user account. Type in 
+
+sudo adduser ftpuser 
+
+Enter your password, leave other values empty, and at last, enter Y to save changes. 
+
+<img src="img/ftp (1).png" alt="Description of ftp">
+
+
+*See also: curl, RAW FTP</p></pre> 
             </body>
-            </html>
         

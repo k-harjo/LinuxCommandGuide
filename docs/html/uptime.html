@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,27 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>uptime</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>Uptime is used to find out how long the system is active (running).
+This command returns set of values that involve, the current time, and the amount of time system is in running state, number of users currently logged into, and the load time for the past 1, 5 and 15 minutes respectively.
+<s1>Syntax:</s1>
+uptime [-options]
+<s1>Examples:</s1>
+Input
+<img src="img/uptime (1).png" alt="Description of uptime">
+[mistersubha@server-1 ~]$uptime              
+08:24:37 up 207 days, 11:10, 0 users, load average: 0.00, 0.03, 0.05
+[mistersubha@server-1 ~]$uptime -h
+
+Usage:
+uptime [options]
+
+Options:
+ -p, --pretty   show uptime in pretty format
+ -h, --help     display this help and exit
+ -s, --since    system up since
+ -V, --version output version information and exit
+
+For more details see uptime
+<img src="img/uptime (2).png" alt="Description of uptime"></p></pre> 
             </body>
-            </html>
         

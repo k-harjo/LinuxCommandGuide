@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,98 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>eject</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>eject command - it allows ejecting a removable media (typically a CD-ROM, floppy disk, tape, or JAZ or ZIP disk) using the software. 
+
+
+<s1>Syntax</s1>
+
+      eject -h
+      eject [-vnrsfmqp] [name]
+      eject [-vn] -d
+      eject [-vn] -a on|off|1|0 [name]
+      eject [-vn] -c slot [name]
+      eject [-vn] -t [name]
+      eject [-vn] -T [name]
+      eject [-vn] -x speed [name]
+      eject [-vn] -X [name]
+      eject -V
+
+
+<s1>Options</s1>
+
+   -h --help
+       Display a brief description of the command options. 
+ 
+   -d --default
+       List the default device name. 
+ 
+   -a on|1|off|0
+   --auto on|1|off|0
+       Control the auto-eject mode, supported by some devices.
+       When enabled, the drive automatically ejects when the device is closed. 
+ 
+   -c slot
+   --changerslot slot
+       A CD slot can be selected from an ATAPI/IDE CD changer.
+       The CD drive can not be in use (mounted data CD or playing a music CD) for a change request to work.
+       The first slot of the changer is referred to as 0, not 1. 
+ 
+   -t --trayclose
+       Send a CD tray close command. Not all devices support this command. 
+ 
+   -T --traytoggle
+       Send a CD tray close command if it's opened, and a CD tray eject command if it's closed.
+       Not all devices support this command, because it uses the above CD tray close command. 
+ 
+   -x speed
+   --cdspeed speed
+       Send a CD select speed command.
+       The speed argument is a number indicating the desired speed (e.g. 8 for 8X speed), or 0 for maximum data rate.
+       Not all devices support this command and you can only specify speeds that the drive is capable of.
+       Every time the media is changed this option is cleared. This option can be used alone, or with the -t and -c options. 
+ 
+   -X --listspeed
+       Probe the CD drive to detect the available speeds.
+       The output is a list of speeds which can be used as an argument of the -x option.
+       Some drives can not correctly report the speed and therefore this option does not work with them. 
+ 
+   -n --noop
+       The selected device is displayed but no action is performed. 
+ 
+   -r --cdrom
+       Eject the drive using a CDROM eject command. 
+ 
+   -s --scsi
+       Eject the drive using SCSI commands. 
+ 
+   -f --floppy
+       Eject the drive using a removable floppy disk eject command. 
+ 
+   -q --tape
+       Eject the drive using a tape drive offline command. 
+ 
+   -p --proc
+       Use /proc/mounts instead /etc/mtab. It also passes the -n option to umount(1). 
+ 
+   -m --no-unmount
+       Allow eject to work with device drivers which automatically mount removable media and therefore must be always mount()ed.
+       The option tells eject to not try to unmount the given device, even if it is mounted according to
+       /etc/mtab or /proc/mounts.
+
+   -v --verbose
+       Run in verbose mode; more information is displayed about what the command is doing.
+   -V --version
+       Display the program version and exit.
+
+
+<s1>Examples</s1>
+
+eject -h
+
+Output
+<img src="img/eject (1).png" alt="Description of eject">
+
+
+*See also: mount, umount</p></pre> 
             </body>
-            </html>
         

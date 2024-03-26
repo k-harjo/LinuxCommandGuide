@@ -1,12 +1,12 @@
 klist - List cached Kerberos tickets. List the Kerberos principal and Kerberos tickets held in a credentials cache, or the keys held in a keytab file.
 
 
-Syntax
+<s1>Syntax</s1>
 
       klist [-e] [[-c] [-l] [-A] [-f] [-s] [-a [-n]]] [-k [-t] [-K]] [cache_name | keytab_name] 
 
 
-Key
+<s1>Key</s1>
    
    -e  Display the encryption types of the session key and the ticket for each credential
        in the credential cache, or each key in the keytab file.
@@ -65,7 +65,7 @@ Files
 /etc/krb5.keytab default location for the local host's keytab file.
 
 
-Examples
+<s1>Examples</s1>
 
 Query the Kerberos ticket cache to determine if any tickets are present:
 

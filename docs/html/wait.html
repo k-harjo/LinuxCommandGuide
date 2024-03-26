@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,17 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>wait</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>wait command is one of the process management commands. There are different process commands in Linux mainly 5 commands are widely used which are ps, wait, sleep, kill, exit.
+wait is an inbuilt command in the Linux shell. It waits for the process to change its state i.e. it waits for any running process to complete and returns the exit status.
+<s1>Syntax:</s1>
+wait [ID]
+Approach:
+Creating a simple process.
+Using a special variable($!) to find the PID(process ID) for that particular process.
+Print the process ID.
+Using wait command with process ID as an argument to wait until the process finishes.
+After the process is finished printing process ID with its exit status.
+Note: Exist status 0 indicates that the process is executed successfully without any issue. Any value other than 0 indicates that the process has not been completed successfully.
+<img src="img/wait (1).png" alt="Description of wait"></p></pre> 
             </body>
-            </html>
         

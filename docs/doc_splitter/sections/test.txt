@@ -1,0 +1,28 @@
+test command is a command that is used to test the validity of a command. It checks whether the command/expression is true or false. It is used to check the type of file and the permissions related to a file. Test command returns 0 as a successful exit status if the command/expression is true, and returns 1 if the command/expression is false.
+Syntax:
+test [expression]
+Examples:
+test "variable1' operator "variable2"
+Numeric comparisons
+Below is an example to check if two numbers are equal or not.
+image001
+
+
+
+
+
+
+
+
+String equality
+Below is a simple example to check the equality of two strings using the test command
+
+image002
+
+String order
+String order basically means checking if one string is greater than the other or not. Below is the example to check if one string is greater than the other.
+Script:
+image003
+
+
+

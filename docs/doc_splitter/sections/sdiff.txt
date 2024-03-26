@@ -1,0 +1,19 @@
+sdiff command in linux is used to compare two files and then writes the results to standard output in a side-by-side format.
+It displays each line of the two files with a series of spaces between them if the lines are identical. It displays greater than sign if the line only exists in the file specified by the File2 parameter, and a | (vertical bar) for lines that are different.
+Syntax:
+sdiff [  -l | -s ] [  -o OutFile ] [  -w Number ] File1 File2
+
+Examples:
+sdiff -l file1 file2 :
+It displays only the left side when lines are identical.
+image001
+
+
+sdiff -s file1 file2 :
+It does not display the identical identical lines
+image002
+
+
+
+
+

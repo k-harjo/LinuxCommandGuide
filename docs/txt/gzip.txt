@@ -1,12 +1,12 @@
 gzip command compresses files. Each single file is compressed into a single file. The compressed file consists of a GNU zip header and deflated data. If given a file as an argument, gzip compresses the file, adds a “.gz” suffix, and deletes the original file. With no arguments, gzip compresses the standard input and writes the compressed file to the standard output. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 	gzip [Options] [filenames] 
 
 
-Key
+<s1>Key</s1>
 
    --stdout
    --to-stdout
@@ -110,16 +110,16 @@ Key
 'gzip' is designed as a complement to 'tar', not as a replacement.
 
 
-Example
+<s1>Example</s1>
 
 Basic Compression using gzip Command in Linux 
-image001
+<img src="img/gzip (1).png" alt="Description of gzip">
 
 The basic syntax of the gzip command for decompressing a file is as follows: 
 iamge002 
 
 By default, gzip removes the original file after compression. To retain the original file, use the -k option: 
-image003
+<img src="img/gzip (3).png" alt="Description of gzip">
 
 
 

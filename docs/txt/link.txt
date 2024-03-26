@@ -1,7 +1,7 @@
 link - Create a link to a file
 
 
-Syntax
+<s1>Syntax</s1>
 
       link FILE1 FILE2
 
@@ -10,7 +10,7 @@ Syntax
 Create a link named FILE2 to an existing FILE1.
 
 
-Options
+<s1>Options</s1>
 
    --help      Display this help and exit 
    --version   Output version information and exit

@@ -1,7 +1,7 @@
 apt-get - Search for and install software packages (Debian/Ubuntu).
 
 
-Syntax
+<s1>Syntax</s1>
 
       apt-get [-sqdyfmubV] [-o= config_string ] [-c= config_file ]
          [-t= target] update 
@@ -48,7 +48,7 @@ Syntax
  Where Target = {target_release_name | target_release_number_expression | target_release_codename}
 
 
-Options
+<s1>Options</s1>
 
 apt-get and aptitude now share the same list of installed packages and so can be used interchangeably.
 
@@ -276,16 +276,15 @@ autoremove	autoremove is used to remove packages that were automatically install
 
 
 
-Examples
+<s1>Examples</s1>
 
 apt-get update
 
 sudo apt-get update
-image001
+<img src="img/apt-get (1).png" alt="Description of apt-get">
 
 sudo apt-get upgrade
-image002
+<img src="img/apt-get (2).png" alt="Description of apt-get">
 
 
 **See also: dpkg, Synaptic Package Manager, Tasksel, aptitude
-

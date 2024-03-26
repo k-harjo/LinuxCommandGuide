@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,83 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>cp</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>The `cp` command is a versatile tool used in Unix-like operating systems for copying files and directories. It offers three principal modes of operation, each serving different purposes.
+
+
+<s1>Syntax</s1>
+
+      cp [options]... Source Dest
+      cp [options]... Source... Directory
+
+
+<s1>Key</s1>
+
+  -a, --archive                same as -dpR
+
+  -b, --backup                 Make backup before removal.
+                               If the copy will overwrite a file in the destination, then
+                               the original file will be backed up as 'filename~' before
+                               being overwritten.
+
+  -d, --no-dereference         preserve links
+
+  -f, --force                  remove existing destinations, never prompt
+
+  -i, --interactive            prompt before overwrite
+
+  -l, --link                   link files instead of copying
+
+  -p, --preserve               preserve file attributes if possible
+
+  -P, --parents                append source path to DIRECTORY
+
+  -r                           copy recursively, non-directories as files
+
+      --sparse=WHEN            control creation of sparse files
+
+  -R, --recursive              copy directories recursively
+
+  -s, --symbolic-link          make symbolic links instead of copying
+
+  -S, --suffix=SUFFIX          override the usual backup suffix
+
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+
+  -v, --verbose                explain what is being done
+
+  -V, --version-control=WORD   override the usual version control
+
+  -x, --one-file-system        stay on this file system
+      --help                   display this help and exit
+      --version                output version information and exit.
+
+
+<s1>Examples</s1>
+
+Copying Between Two Files in Linux: 
+
+Initially, there is only one file (`a.txt`) in the directory. 
+
+The `cp` command is used to copy the contents of `a.txt` to `b.txt`. 
+
+After the command execution, both `a.txt` and the newly created `b.txt` coexist in the directory. 
+
+cp a.txt b.txt 
+<img src="img/cp (1).png" alt="Description of cp">
+
+Copy files to a Directory in Linux 
+
+cp a.txt b.txt c.txt new/ 
+<img src="img/cp (2).png" alt="Description of cp">
+
+How to Copy Directories in Linux 
+
+cp -R Src_directory Dest_directory 
+<img src="img/cp (3).png" alt="Description of cp">
+
+
+*See also: dd, cpio, install, mv, rsync, tar</p></pre> 
             </body>
-            </html>
         

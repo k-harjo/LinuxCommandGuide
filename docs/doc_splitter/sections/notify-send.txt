@@ -1,0 +1,15 @@
+notify-send: This command is used to alert the notification popups in Linux. We will have the alert of the battery charging/discharging warning with this command.
+
+We are going to write a bash script that will speak “Battery Low” when the battery’s charging percentage will go below some specified threshold value. Before starting this, first, we need to understand some basic commands and terminology which are described below:
+Some Bash Commands:
+acpi: This command returns the percentage of battery charged, whether the device is charging or discharging and the amount of time left before the battery fully discharges.
+image001
+
+Example: acpi -b produces the following output:
+Battery 0: Discharging, 13%, 00:52:52 remaining
+Here, Battery 0 means it is not charging and Battery 1 means it is charging. 13% is the Percentage of Battery Charged. 00:52:52 is the time left before it Hibernates.
+notify-send: This command is used to alert the notification popups in Linux. We will have the alert of the battery charging/discharging warning with this command.
+image002
+
+
+

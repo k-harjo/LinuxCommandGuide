@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,60 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>expr</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>expr - it evaluates a given expression and displays its corresponding output.  
+
+	Basic operations like addition, subtraction, multiplication, division, and modulus on integers. 
+
+	Evaluating regular expressions, string operations like substring, length of strings etc. 
+
+
+<s1>Syntax</s1>
+
+      expr expression
+      expr option
+
+
+<s1>Key</s1>
+
+   --help      Display help and exit
+   --version   output version information and exit
+
+Expressions:
+
+   ARG1 | ARG2               ARG1 if it is neither null nor 0, otherwise ARG2 
+   ARG1 & ARG2               ARG1 if neither argument is null or 0, otherwise 0 
+   ARG1 < ARG2               ARG1 is less than ARG2 
+   ARG1 <= ARG2              ARG1 is less than or equal to ARG2 
+   ARG1 = ARG2               ARG1 is equal to ARG2 
+   ARG1 != ARG2              ARG1 is unequal to ARG2 
+   ARG1 >= ARG2              ARG1 is greater than or equal to ARG2 
+   ARG1 > ARG2               ARG1 is greater than ARG2 
+   ARG1 + ARG2               Arithmetic sum of ARG1 and ARG2 
+   ARG1 - ARG2               Arithmetic difference of ARG1 and ARG2 
+   ARG1 * ARG2               Arithmetic product of ARG1 and ARG2 
+   ARG1 / ARG2               Arithmetic quotient of ARG1 divided by ARG2 
+   ARG1 % ARG2               Arithmetic remainder of ARG1 divided by ARG2 
+   STRING : REGEXP           Anchored pattern match of REGEXP in STRING 
+   match STRING REGEXP       Same as STRING : REGEXP 
+   substr STRING POS LENGTH  Substring of STRING, POS counted from 1 
+   index STRING CHARS        Index in STRING where any CHARS is found, or 0 
+   length STRING             Length of STRING 
+   + TOKEN                   Interpret TOKEN as a string, even if it is a 
+                             keyword like 'match' or an operator like '/'
+   ( EXPRESSION )            Value of EXPRESSION
+
+Beware that many operators need to be escaped or quoted for shells.
+
+
+<s1>Examples</s1>
+
+$expr --version 
+<img src="img/expr (1).png" alt="Description of expr">
+
+$expr --help 
+<img src="img/expr (2).png" alt="Description of expr">
+
+
+*See also: eval, for, function, gawk, test</p></pre> 
             </body>
-            </html>
         

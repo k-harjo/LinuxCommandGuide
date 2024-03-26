@@ -1,12 +1,12 @@
 Base32 encode/decode data and print to standard output.
 
 
-Syntax
+<s1>Syntax</s1>
 
       base32 [OPTION]... [FILE]
 
 
-Key
+<s1>Key</s1>
 
    -d
    --decode
@@ -30,7 +30,7 @@ Key
 With no FILE, or when FILE is - , read from standard input.
 
 
-Examples:
+<s1>Examples:</s1>
 
 Encode the text file sample.txt:
 $ base32 sample.txt > encoded.txt
@@ -41,7 +41,7 @@ $ base32 --wrap=0 picture.jpg > encoded.txt
 Decode the file encoded.txt:
 $ base32 encoded.txt > restore.txt
 
-image001
+<img src="img/base32 (1).png" alt="Description of base32">
 
 
 *See also: base64, uuencode, ASCII Table

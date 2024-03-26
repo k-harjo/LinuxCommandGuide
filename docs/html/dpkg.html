@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,35 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>dpkg</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>dpkg - Package manager (Debian/Ubuntu).
+
+In Linux, there are a lot of different distributions and each of these distributions has a different package type.  For example .rpm or Red hat Package Manager is used as the package in the Linux distribution. A package is the compressed version of the software. In this article, we will go through the Debian package which is used by Ubuntu. D package or Debian Package is used to install and download the software in Debian based Linux systems. Debian files end with .deb extension. 
+
+
+Working with Debian Packages using dpkg Command 
+
+1. Installing a stand-alone package using the Debian package 
+To install a package -i flag is used. To download a stand-alone package using the Debian package, this command is used: 
+sudo dpkg -i name_of_package.deb 
+
+<s1>Example:</s1>
+To download standalone package for the open-source text editor, atom. 
+sudo dpkg -i atom-amd64.deb 
+<img src="img/dpkg (1).png" alt="Description of dpkg">
+
+2. Removing a package using the Debian package 
+To remove a package -r flag is used  
+sudo dpkg -r name_of_package 
+
+Example: To remove the package for the text editor “atom” 
+sudo dpkg -r atom 
+<img src="img/dpkg (2).png" alt="Description of dpkg">
+ 
+Note: -P flag helps to remove everything including conf files. 
+
+dpkg -P [package-name] 
+dpkg -P googler_3.3.0-1_all.deb 
+
+*See also: apt-get, aptitude</p></pre> 
             </body>
-            </html>
         

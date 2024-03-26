@@ -1,6 +1,6 @@
 caller - Return the context of any active subroutine call (a shell function or a script executed with the . or source builtins).
 
-Syntax
+<s1>Syntax</s1>
       caller [expr]
 Without expr, caller displays the line number and source filename of the current subroutine call.
 

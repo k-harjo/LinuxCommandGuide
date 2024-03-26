@@ -1,8 +1,9 @@
 mkfifo() makes a FIFO special file with name pathname. Here mode specifies the FIFO’s permissions. It is modified by the process’s umask in the usual way: the permissions of the created file are (mode & ~umask).
 Using FIFO: As named pipe(FIFO) is a kind of file, we can use all the system calls associated with it i.e. open, read, write, close.
 Example Programs to illustrate the named pipe: There are two programs that use the same FIFO. Program 1 writes first, then reads. The program 2 reads first, then writes. They both keep doing it until terminated.
-Examples:
+<s1>Examples:</s1>
 Program 1(Writes first)
+<img src="img/mkfifo (1).png" alt="Description of mkfifo">
 
 How to bind to port number less than 1024 with non root access?
 Difference between Ubuntu and Kubuntu
@@ -33,7 +34,7 @@ Program 1(Writes first)
 C
 
 Program 2(Reads First)
+<img src="img/mkfifo (2).png" alt="Description of mkfifo">
 
 Output: Run the two programs simultaneously on two terminals.
-
-
+<img src="img/mkfifo (3).png" alt="Description of mkfifo">

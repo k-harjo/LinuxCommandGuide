@@ -1,7 +1,7 @@
 eject command - it allows ejecting a removable media (typically a CD-ROM, floppy disk, tape, or JAZ or ZIP disk) using the software. 
 
 
-Syntax
+<s1>Syntax</s1>
 
       eject -h
       eject [-vnrsfmqp] [name]
@@ -15,7 +15,7 @@ Syntax
       eject -V
 
 
-Options
+<s1>Options</s1>
 
    -h --help
        Display a brief description of the command options. 
@@ -82,12 +82,12 @@ Options
        Display the program version and exit.
 
 
-Examples
+<s1>Examples</s1>
 
 eject -h
 
 Output
-image001
+<img src="img/eject (1).png" alt="Description of eject">
 
 
 *See also: mount, umount

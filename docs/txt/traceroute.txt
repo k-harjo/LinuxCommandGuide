@@ -1,7 +1,7 @@
 traceroute - Print the route packets take to network host.
 
 
-Syntax
+<s1>Syntax</s1>
 
       traceroute [options] host [packetsize]
 

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,51 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>nl</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>nl command is a Unix/Linux utility that is used for numbering lines, accepting input either from a file or from STDIN. It copies each specified file to STDOUT, with line numbers appended before the lines.
+<s1>Syntax:</s1>
+nl [OPTION]... [FILE]...
+Options:
+-b NUMBER or -bNUMBER : used for numbering body lines
+-i NUMBER or -iNUMBER : line number increment at each line
+-n FORMAT or -nNUMBER : insert line numbers according to FORMAT
+-v NUMBER or -vNUMBER : change first line number of the given input 
+-l NUMBER or -lNUMBER : group of NUMBER empty lines are counted as one
+-s STRING or -sSTRING : add any STRING after every logical line number
+-w NUMBER or -wNUMBER : use different NUMBER columns for line numbers
+<s1>Examples:</s1>
+To display a file with line numbers: Numbers all non-empty lines.
+$ nl geekfile.txt
+<img src="img/nl (1).png" alt="Description of nl">
+
+
+To number all lines (including empty lines also): -b a option is used to number all lines whether empty or non-empty.
+$ nl -b a geekfile.txt
+<img src="img/nl (2).png" alt="Description of nl">
+
+
+Nohup
+nohup (No Hang Up) is a command in Linux systems that runs the process even after logging out from the shell/terminal.
+<s1>Syntax:</s1>
+nohup command [command-argument ...]
+
+<s1>Examples:</s1>
+To run a command in the foreground:
+$ nohup bash geekfile.sh
+<img src="img/nl (3).png" alt="Description of nl">
+
+
+To run a command in the background (with ‘&’):
+$ nohup bash geekfile.sh &
+fg
+<img src="img/nl (4).png" alt="Description of nl">
+
+
+
+
+
+
+
+
+</p></pre> 
             </body>
-            </html>
         

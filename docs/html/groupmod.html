@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,52 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>groupmod</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>groupmod command is used to modify or change the existing group on Linux system. 
+
+<s1>Syntax</s1>
+
+      groupmod [options] GROUP 
+
+groupmod modifies the definition of the specified GROUP by modifying the appropriate entry in the group database.
+
+
+<s1>Key</s1>
+
+   -g, --gid GID
+   
+       The group ID of the given GROUP will be changed to GID.
+       The value of GID must be a non-negative decimal integer.
+       This value must be unique, unless the -o option is used.
+       Values between 0 and 999 are typically reserved for system groups.
+
+       Any files that have the old group ID and must continue to
+       belong to GROUP, must have their group ID changed manually.
+
+   -h, --help
+       Display help message and exit.
+
+   -n, --new-name NEW_GROUP
+       The name of the group will be changed from GROUP to NEW_GROUP.
+
+   -o, --non-unique
+       When used with the -g option, allow to change the
+       group GID to a non-unique value.
+
+   -p, --password PASSWORD
+       The encrypted password, as returned by crypt(3).
+
+       Note: This option is not recommended because the
+       password (or encrypted password) will be visible by
+       users listing the processes.
+
+       Make sure the password respects the system's password policy. 
+
+
+<s1>Example</s1>
+
+<img src="img/groupmod (1).png" alt="Description of groupmod">
+
+
+*See also: groupadd, groupdel, usermod</p></pre> 
             </body>
-            </html>
         

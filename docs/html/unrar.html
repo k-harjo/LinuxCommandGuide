@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,59 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>unrar</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>unrar - Extract files from a rar archive.
+
+
+<s1>Syntax</s1>
+
+      unrar command [-switch_1 -switch_N] archive [files...] [path...]
+A summary of commands is below. Every command/switch must be separated by whitespace.
+
+
+Commands
+
+   e    Extract files to current directory. 
+   l    List archive content. 
+   p    Print file to stdout. 
+   t    Test archive files. 
+   v    Verbosely list archive. 
+   x    Extract files with full path.
+
+
+Switches
+
+   -av-   Disable AV check. 
+   -c-    Disable comments show. 
+   -f     Freshen files. 
+   -kb    Keep broken extracted files. 
+   -ierr  Send all messages to stderr. 
+   -inul  Disable all messages. 
+   -o+    Overwrite existing files. 
+   -o-    Do not overwrite existing files. 
+   -ppassword  Set password. 
+   -p-    Do not query password. 
+   -r     Recurse subdirectories. 
+   -u     Update files. 
+   -v     List all volumes. 
+   -xfile   Exclude specified file. 
+   -x@list  Exclude files in specified list file. 
+   -x@    Read file names to exclude from stdin. 
+   -y     Assume Yes on all queries.
+
+For a complete description, run unrar without options.
+
+
+<s1>Examples</s1>
+
+Extract the rar archive SS64.rar:
+
+$ unrar e SS64.rar
+
+List the content of a rar file without uncompressing it:
+
+$ unrar l SS64.rar
+
+
+*See also: bzip2, gzip, rar, tar</p></pre> 
             </body>
-            </html>
         

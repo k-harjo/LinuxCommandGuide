@@ -1,0 +1,14 @@
+vi command is the default editor that comes with the UNIX operating system is called visual editor.
+Syntax:
+vi [file_name]
+Example 1: Creating a new file with `file_name` =  geeksforgeeks
+image001
+vi geeksforgeeks
+Example 2: Opening a preexisted file with `file_name` =  jayesh
+image002
+vi jayesh
+
+
+
+
+

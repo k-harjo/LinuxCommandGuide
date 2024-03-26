@@ -1,14 +1,14 @@
 nc (netcat) - Read and write data across networks - arbitrary TCP and UDP connections and listens.
 
 
-Syntax
+<s1>Syntax</s1>
 
       nc [-46AcCdDhklnrStuUvz] [-b boundif] [-i interval] [-p source_port]
             [-s source_ip_address] [-T ToS] [-w timeout] [-X proxy_protocol]
                [-x proxy_address[:port]] [hostname] [port[s]]
 
 
-Options
+<s1>Options</s1>
 
    -4      Use IPv4 addresses only.
 
@@ -196,7 +196,7 @@ sudo yum install netcat
 sudo apt-get install netcat
 
 
-Examples
+<s1>Examples</s1>
 
 Open a TCP connection to port 42 of host.example.com, using port 31337 as the source port, with a timeout of 5 seconds:
 $ nc -p 31337 -w 5 host.example.com 42

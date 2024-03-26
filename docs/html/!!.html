@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,25 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>!!</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>
+!! - Re-run all or part of a previous command.
+
+<s1>Syntax</s1>
+      !!       Run the last command again
+
+      !foo     Run the most recent command that starts with 'foo' (e.g. !ls)
+
+      !foo:p   Print out the command that !foo would run
+               also add it to the command history
+
+      !$       Run the last word of the previous command (same as Alt + .)
+
+      !$:p     Print out the word that !$ would substitute
+
+      !*       Run the previous command except for the last word
+
+      !*:p     Print out the previous command except for the last word
+
+     ^foo^bar  Run the previous command replacing foo with bar</p></pre> 
             </body>
-            </html>
         

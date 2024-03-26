@@ -1,13 +1,13 @@
 lpr - Print files. Send a print job to the default system queue.
 
 
-Syntax
+<s1>Syntax</s1>
 
       lpr [-Pprinter] [-#num] [-C class] [-J job] [-T title] [-U user] [-i [numcols]]
             [-1234 font] [-wnum] [-cdfghlnmprstv] [name ...]
 
 
-Key
+<s1>Key</s1>
 
      -c      The files are assumed to contain data produced by cifplot(1)
 

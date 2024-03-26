@@ -6,6 +6,7 @@ top -n 10
 top -u paras
 3)Shows top command syntax:
 top -h
+<img src="img/top (1).png" alt="Description of top">
 
 
 
@@ -20,12 +21,13 @@ top -h
 
 Touch
 touch is used to create a file without any content. The file created using the touch command is empty. This command can be used when the user doesn’t have data to store at the time of file creation.
-Syntax:
+<s1>Syntax:</s1>
 touch [options] file_name
 How to Create Multiple Empty Files by Using Touch Command in Linux.
 
 touch File1_name File2_name File3_name
 Multiple files with name Doc1, Doc2, Doc3 are created at the same time using touch command here.
+<img src="img/top (2).png" alt="Description of top">
 
 
 Options and Pratical Implementation of How to Create an Empty File in Linux
@@ -34,6 +36,7 @@ Options and Pratical Implementation of How to Create an Empty File in Linux
 `-a` option in `touch` Command to Only Update Access Time
 
 touch -a fileName
+<img src="img/top (3).png" alt="Description of top">
 
 
 
@@ -47,7 +50,9 @@ touch -a fileName
 Tput
 tput is used to change the text on the screen. It can be used to change the foreground and background colors. In addition, you can use the tput command to change the line wrapping, cursor position, and even text attributes like bold and underline. Tput commands are very useful for making a computer’s display look pretty.
 To change the text color, type: tput green and press Enter. The prompt will change to reflect the new color. You can also enter commands to change other colors such as blue, red, and yellow. To reverse a color-change command, type: tput blank followed by Enter. The prompt will revert to its original color. You can delete a color with: tput null. To reset all colors back to their default values, use tput reset.
+<img src="img/top (4).png" alt="Description of top">
 
+<img src="img/top (5).png" alt="Description of top">
 
 
 
@@ -57,33 +62,31 @@ tr command is a UNIX command-line utility for translating or deleting characters
 Syntax :
 $ tr [OPTION] SET1 [SET2]
 Options -c : complements the set of characters in string.i.e., operations apply to characters not in the given set -d : delete characters in the first set from the output. -s : replaces repeated characters listed in the set1 with single occurrence -t : truncates set1.
-Example:
+<s1>Example:</s1>
 How to convert lower case characters to upper case
+<img src="img/top (6).png" alt="Description of top">
 
 How to translate white-space characters to tabs.
+<img src="img/top (7).png" alt="Description of top">
 
 
 
 
 The `traceroute` command is a network diagnostic tool used to trace the route taken by packets from a source to a destination over an IP network. It provides valuable insights into the network path, including the number of hops (routers) between the source and destination, and the round-trip time (RTT) for each hop.
-Syntax:
+<s1>Syntax:</s1>
 
 traceroute [options] destination
 Options Available in Traceroute
 
-Examples:
+<s1>Examples:</s1>
 Basic Traceroute Usage
 traceroute google.com
+<img src="img/top (8).png" alt="Description of top">
 
 
 Using IPv4 with Traceroute
 traceroute -4 google.com
-
-
-
-
-
-
+<img src="img/top (9).png" alt="Description of top">
 
 
 

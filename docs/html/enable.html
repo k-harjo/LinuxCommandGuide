@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,40 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>enable</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>enables and disables are the built-in shell commands. enable command is used to start the printers or classes whereas the disable command is used to stop the printers or classes. 
+
+
+<s1>Syntax</s1>
+
+       enable [-a] [-dnps] [-f filename] [name …]
+
+       disable [-c] [-W] [ -r [ reason ] ] printer 
+
+
+<s1>Key</s1>
+
+   -a   List each builtin with an indication of whether or not it is enabled.
+  
+   -d   Delete a builtin loaded with '-f'. 
+
+   -f   Load the new builtin command name from shared object filename, on systems that
+        support dynamic loading.
+
+   -n   Disable the names listed, otherwise names are enabled.
+
+   -p   Print a list of shell builtins, default if no name arguments appear.
+        With no other arguments, the list consists of all enabled shell builtins. 
+
+   -s   Restrict to enable only POSIX special builtins
+
+
+<s1>Examples</s1>
+
+To use the test binary found via $PATH instead of the shell builtin version:
+
+$ enable -n test
+
+
+*See also: builtin, chroot, exec, nohup, su, watch, .source</p></pre> 
             </body>
-            </html>
         

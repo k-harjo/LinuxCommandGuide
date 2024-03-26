@@ -1,0 +1,16 @@
+wget is used to download files from the server even when the user has not logged on to the system and it can work in background without hindering the current process.
+GNU wget is a free utility for non-interactive download of files from the Web. It supports HTTP, HTTPS, and FTP protocols, as well as retrieval through HTTP proxies.
+wget is non-interactive, meaning that it can work in the background, while the user is not logged on. This allows you to start a retrieval and disconnect from the system, letting wget finish the work. By contrast, most of the Web browsers require constant user’s presence, which can be a great hindrance when transferring a lot of data.
+wget can follow links in HTML and XHTML pages and create local versions of remote web sites, fully recreating the directory structure of the original site. This is sometimes referred to as recursive downloading. While doing that, wget respects the Robot Exclusion Standard (/robots.txt). wget can be instructed to convert the links in downloaded HTML files to the local files for offline viewing.
+wget has been designed for robustness over slow or unstable network connections; if a download fails due to a network problem, it will keep retrying until the whole file has been retrieved. If the server supports resuming, it will instruct the server to continue the download from where it left off.
+Syntax :
+wget [option] [URL]
+
+Examples:
+To simply download a webpage
+image001
+
+To download the file in background
+image002
+
+

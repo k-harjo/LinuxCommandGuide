@@ -6,23 +6,19 @@ Copying/Syncing through rsync daemon using TCP.
 
 Rsync is famous for its delta-transfer algorithm, in which it copies only the differences between the source files present in the local-host and the existing files in the destination or the remote host.
 
-Syntax:
+<s1>Syntax:</s1>
 rsync [options] source [destination]
 
-Examples:
+<s1>Examples:</s1>
 rsync foo/
 The above command will list the files and directories present in the directory foo.
+<img src="img/rsync (1).png" alt="Description of rsync">
 
 
 rsync -avh foo/ bar/
 Copy/Sync files and directory locally
 
-
-
-
-
-
-
+<img src="img/rsync (2).png" alt="Description of rsync">
 
 
 

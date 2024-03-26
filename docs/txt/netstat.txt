@@ -1,7 +1,7 @@
 netstat - Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
 
 
-Syntax
+<s1>Syntax</s1>
 
       netstat [address_family_options] [--tcp|-t] [--udp|-u] [--raw|-w] [--listening|-l]
                  [--all|-a] [--numeric|-n] [--numeric-hosts][--numeric-ports][--numeric-ports]
@@ -48,7 +48,7 @@ The type of information printed is controlled by the first argument, as follows:
  --statistics , -s
                 Display summary statistics for each protocol.
 
-Options
+<s1>Options</s1>
  --verbose , -v   Tell the user what is going on by being verbose. Especially print some useful
                   information about unconfigured address families.
  --numeric , -n   Show numerical addresses instead of trying to determine symbolic host, port or user names.
@@ -151,7 +151,7 @@ This program is obsolete. Replacement for netstat is ss. Replacement for netstat
 Starting with Linux release 2.2 netstat -i does not show interface statistics for alias interfaces. To get per alias interface counters you need to setup explicit rules using the ipchains(8) command.
 
 
-Examples:
+<s1>Examples:</s1>
 
 List running programs and ports:
 $ sudo netstat tunapl

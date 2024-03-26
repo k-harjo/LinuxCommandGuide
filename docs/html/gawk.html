@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,105 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>gawk</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>gawk command in Linux is used for pattern scanning and processing language. The awk command requires no compiling and allows the user to use variables, numeric functions, string functions, and logical operators. It is a utility that enables programmers to write tiny and effective programs in the form of statements that define text patterns that are to be searched for, in a text document and the action that is to be taken when a match is found within a line.
+
+gawk command can be used to :  
+
+	-Scans a file line by line. 
+
+	-Splits each input line into fields. 
+
+	-Compares input line/fields to pattern. 
+
+	-Performs action(s) on matched lines. 
+
+	-Transform data files. 
+
+	-Produce formatted reports. 
+
+	-Format output lines. 
+
+	-Arithmetic and string operations. 
+
+	-Conditionals and loops. 
+
+
+<s1>Syntax</s1>
+
+      awk <options> 'Program' Input-File1 Input-File2 ...
+
+      awk -f PROGRAM-FILE <options> Input-File1 Input-File2 ...
+
+
+<s1>Key</s1>
+
+ -F FS
+ --field-separator FS
+     Use FS for the input field separator (the value of the 'FS' predefined variable).
+
+ -f PROGRAM-FILE
+ --file PROGRAM-FILE
+     Read the awk program source from the file PROGRAM-FILE, instead of from the first
+     command line argument.
+
+ -mf NNN
+ -mr NNN
+     The 'f' flag sets the maximum number of fields, and the 'r' flag sets the maximum
+     record size.  These options are ignored by 'gawk', since 'gawk' has no predefined limits;
+     they are only for compatibility with the Bell Labs research version of Unix awk.
+
+ -v VAR=VAL
+ --assign VAR=VAL
+     Assign the variable VAR the value VAL before program execution begins.
+
+ -W traditional
+ -W compat
+ --traditional
+ --compat
+     Use compatibility mode, in which 'gawk' extensions are turned off.
+
+ -W lint
+ --lint
+     Give warnings about dubious or non-portable awk constructs.
+
+ -W lint-old
+ --lint-old
+     Warn about constructs that are not available in the original V.7 Unix version of awk.
+
+ -W posix
+ --posix
+     Use POSIX compatibility mode, 'gawk' extensions are turned off and additional restrictions apply.
+
+ -W re-interval
+ --re-interval
+     Allow interval expressions, in regexps.
+
+ -W source=PROGRAM-TEXT
+ --source PROGRAM-TEXT
+     Use PROGRAM-TEXT as awk program source code.
+     This option allows mixing command line source code with source code from files, and is
+     particularly useful for mixing command line programs with library functions.
+
+ --
+     Signal the end of options. This is useful to allow further arguments to the awk program
+     itself to start with a '-'. This is mainly for consistency with POSIX argument parsing conventions.
+
+'Program'
+     A series of patterns and actions: see below
+
+
+<s1>Example:</s1>
+
+gawk -F: '{print $1}' /etc/passwd 
+<img src="img/gawk (1).png" alt="Description of gawk">
+
+-f: Read the AWK program source from the file program-file, instead of from the first command line argument. Multiple -f (or –file) options may be used.  
+
+ 
+gawk -F: -f mobile.txt /etc/passwd 
+<img src="img/gawk (2).png" alt="Description of gawk">
+
+
+*See also: awk, oawk, nawk, egrep, expr, eval, for, grep, m4, tr</p></pre> 
             </body>
-            </html>
         

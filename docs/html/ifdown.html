@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,20 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>ifdown</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>ifdown command to bring network interface down, not allowing the user to transmit and receive data. Technically it places the network interface in a state where it cannot transmit or receive data. It is used to configure network interfaces based on interface definitions in the file /etc/network/interfaces.
+
+<s1>SYNTAX:</s1>
+
+ifdown [-nv] [–no-act] [–verbose] [-i FILE|–interfaces=FILE] [–allow CLASS] -a|IFACE…
+
+<s1>Example:</s1>
+
+sudo is used for permissions, -a to work on all devices and v for verbose the output.sudo
+ifdown –av
+
+<img src="img/ifdown (1).png" alt="Description of ifdown">
+
+
+</p></pre> 
             </body>
-            </html>
         

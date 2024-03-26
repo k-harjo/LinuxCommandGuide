@@ -1,0 +1,23 @@
+The ifup command basically brings the network interface up, allowing it to transmit and receive data. Technically ifup command is used to configure network interfaces based on interface definitions in the file /etc/network/interfaces.
+
+
+Syntax:
+
+ifup [-nv] [--no-act] [--verbose] [-i FILE|--interfaces=FILE] [--allow CLASS] -a|IFACE...
+Example:
+Let us see an example when our interface is down and how the browser reacts to it.
+image001
+
+In this case, the interface was not up and configured. To get the network interface up and work we use
+usesudo ifup –av
+image002
+
+After using ifup command, the network is working:
+image003
+
+
+
+
+
+
+

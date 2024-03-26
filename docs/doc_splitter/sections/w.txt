@@ -1,0 +1,25 @@
+The ‘w’ command in Linux gives us important information about who is currently using the computer, how much the computer is being used, and what programs are running.
+Syntax:
+w [options] user [...]
+
+Examples:
+This option doesn’t print the header.
+w –h
+image001
+
+This option will ignore the username while figuring out the current process and cpu times.
+w –u
+image002
+
+
+This option will toggle printing the from (remote hostname) field.
+w –f
+image003
+
+
+
+
+
+
+
+

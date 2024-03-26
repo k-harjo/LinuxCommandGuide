@@ -1,18 +1,18 @@
 false command is used to return an exit status code (“1” by default) that indicates failure. It is useful when the user wants a conditional expression or an argument to always be unsuccessful. When no argument is passed to the false command, it fails with no output and exit status as 1.  
 
 
-Syntax
+<s1>Syntax</s1>
 
 false [argument] 
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/FALSE (1).png" alt="Description of FALSE">
 
 if false; then echo "It's false"; else echo "It's True"; fi 
 
-image002
+<img src="img/FALSE (2).png" alt="Description of FALSE">
 
 
 *See also: true, yes

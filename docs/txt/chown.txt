@@ -1,7 +1,7 @@
 The 'chown' command, short for “change owner,” is a powerful tool that allows users to change the owner of files and directories. This command is particularly useful in scenarios where administrators need to grant or revoke access to specific resources. In this article, we will explore the fundamentals of file ownership in Linux and delve into the usage of the chown command. 
 
 
-Syntax
+<s1>Syntax</s1>
 
 chown [options] new_owner[:new_group] file(s) 
 
@@ -54,19 +54,19 @@ Here’s a breakdown of the components:
        diagnostic saying neither the symbolic link nor its referent is being changed.
 
 
-Examples
+<s1>Examples</s1>
 
 Using `-c` Option in `chown` to Change File Ownership 
 
 chown -c master file1.txt 
 
-image001 
+<img src="img/chown (1).png" alt="Description of chown"> 
 
 Using `-v` Option in `chown` to Change File Ownership 
 
 chown -v master file1.txt 
 
-image002
+<img src="img/chown (2).png" alt="Description of chown">
 
 
 *See also: chgrp, chmod

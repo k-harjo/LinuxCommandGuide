@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,131 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>gzip</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>gzip command compresses files. Each single file is compressed into a single file. The compressed file consists of a GNU zip header and deflated data. If given a file as an argument, gzip compresses the file, adds a “.gz” suffix, and deletes the original file. With no arguments, gzip compresses the standard input and writes the compressed file to the standard output. 
+
+
+<s1>Syntax</s1>
+
+	gzip [Options] [filenames] 
+
+
+<s1>Key</s1>
+
+   --stdout
+   --to-stdout
+   -c
+        Write output on standard output; keep original files unchanged. 
+        If there are several input files, the output consists of a sequence of independently compressed members.
+        To obtain better compression, concatenate all input files before compressing them.
+
+   --decompress
+   --uncompress
+   -d
+        Decompress.
+
+   --force
+   -f
+        Force compression or decompression even if the file has multiple links or the corresponding file
+        already exists, or if the compressed data is read from or written to a terminal.
+        If the input data is not in a format recognized by 'gzip', and if the option --stdout
+        is also given, copy the input data without change to the standard ouput: let 'zcat' behave as 'cat'.
+
+        If '-f' is not given, and when not running in the background, 'gzip' prompts to verify whether
+        an existing file should be overwritten.
+
+   --help
+   -h
+        Print a help message describing the options, then quit.
+
+   --list
+   -l
+        For each compressed file, list the following fields:
+
+          compressed size:   size of the compressed file
+          uncompressed size: size of the uncompressed file
+          ratio:             compression ratio (0.0% if unknown)
+          uncompressed_name: name of the uncompressed file
+
+          The uncompressed size is given as '-1' for files not in 'gzip' format.
+
+   --license
+   -L
+        Display the 'gzip' license then quit.
+
+   --no-name
+   -n
+        When compressing, do not save the original file name and time stamp by default.
+        (The original name is always saved if the name had to be truncated.)
+        When decompressing, do not restore the original file name if present
+        (remove only the 'gzip' suffix from the compressed file name)
+        and do not restore the original time stamp if present (copy it from the compressed file).
+        This option is the default when decompressing.
+
+   --name
+   -N
+        When compressing, always save the original file name and time stamp; this is the default.
+        When decompressing, restore the original file name and time stamp if present.
+        This option is useful on systems which have a limit on file name length or when
+        the time stamp has been lost after a file transfer.
+
+   --quiet
+   -q
+        Suppress all warning messages.
+
+   --recursive
+   -r
+        Travel the directory structure recursively. If any of the file names specified on the command line
+        are directories, 'gzip' will descend into the directory and compress all the files
+        it finds there (or decompress them in the case of 'gunzip').
+
+   --suffix SUF
+   -S SUF
+        Use suffix SUF instead of '.gz'.
+        Any suffix can be given, but suffixes other than '.z' and '.gz' should be avoided to avoid
+        confusion when files are transferred to other systems.
+        A null suffix forces gunzip to try decompression on all given files regardless of suffix, as in:
+
+          gunzip -S "" *        (*.* for MSDOS)
+
+        Previous versions of gzip used the '.z' suffix. This was changed to avoid a conflict with 'pack'.
+
+   --test
+   -t
+        Test. Check the compressed file integrity.
+
+   --verbose
+   -v
+        Verbose. Display the name and percentage reduction for each file compressed.
+
+   --version
+   -V
+        Version. Display the version number and compilation options, then quit.
+
+   --fast
+   --best
+   -N
+        Regulate the speed of compression using the specified digit N, where '-1' or '--fast'
+        indicates the fastest compression method (less compression)  and '--best' or '-9' 
+        indicates the slowest compression method (optimal compression).
+        The default compression level is '-6' (that is, biased towards high compression at expense of speed).
+'gunzip' can currently decompress files created by 'gzip', 'zip', 'compress' or 'pack'. The detection of the input format is automatic.
+
+'gzip' is designed as a complement to 'tar', not as a replacement.
+
+
+<s1>Example</s1>
+
+Basic Compression using gzip Command in Linux 
+<img src="img/gzip (1).png" alt="Description of gzip">
+
+The basic syntax of the gzip command for decompressing a file is as follows: 
+iamge002 
+
+By default, gzip removes the original file after compression. To retain the original file, use the -k option: 
+<img src="img/gzip (3).png" alt="Description of gzip">
+
+
+
+*See also: bzip2, sum, tar, unrar, unshar</p></pre> 
             </body>
-            </html>
         

@@ -9,10 +9,10 @@ Working with Debian Packages using dpkg Command
 To install a package -i flag is used. To download a stand-alone package using the Debian package, this command is used: 
 sudo dpkg -i name_of_package.deb 
 
-Example:
+<s1>Example:</s1>
 To download standalone package for the open-source text editor, atom. 
 sudo dpkg -i atom-amd64.deb 
-image001
+<img src="img/dpkg (1).png" alt="Description of dpkg">
 
 2. Removing a package using the Debian package 
 To remove a package -r flag is used  
@@ -20,7 +20,7 @@ sudo dpkg -r name_of_package
 
 Example: To remove the package for the text editor “atom” 
 sudo dpkg -r atom 
-image002
+<img src="img/dpkg (2).png" alt="Description of dpkg">
  
 Note: -P flag helps to remove everything including conf files. 
 

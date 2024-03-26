@@ -1,7 +1,7 @@
 eval is a built-in Linux command which is used to execute arguments as a shell command. It combines arguments into a single string and uses it as an input to the shell and execute the commands.  
 
 
-Syntax
+<s1>Syntax</s1>
 
       eval [arguments]
 
@@ -10,13 +10,13 @@ The arguments are concatenated together into a single command, which is then rea
 If there are no arguments or only empty arguments, the return status is zero.
 
 
-Examples
+<s1>Examples</s1>
 
 In the below figure, you can see that cd Desktop command is stored in a variable “CD” as a shell command. Now you can use this “CD” as an argument with eval command. 
-image001
+<img src="img/eval (1).png" alt="Description of eval">
 
 eval --help
-image002
+<img src="img/eval (2).png" alt="Description of eval">
 
 
 *See also: case, expr, for, gawk, test

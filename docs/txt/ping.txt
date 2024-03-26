@@ -1,12 +1,12 @@
 ping - Test a network connection.
 
 
-Syntax
+<s1>Syntax</s1>
 
       ping [options] [ hop ...] destination_host
 
 
-Options
+<s1>Options</s1>
 
    -a         Audible ping. This removes the need to look at the ping output.
 
@@ -147,7 +147,7 @@ Set it to some other value. Some machines use the same value for ICMP packets th
 PING is named after the sound that a sonar makes.
 
 
-Examples
+<s1>Examples</s1>
 
 Ping example.com, waiting for 5 seconds before sending the next packet:
 $ ping -i 5 example.com

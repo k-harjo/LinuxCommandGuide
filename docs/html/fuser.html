@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,82 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fuser</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>fuser can identify the process using the files or sockets. This command can be also used to kill the process. In this article, we are going to see how to use the fuser command to list the processes and kill the processes associated with files and directories. Let’s see how to use the fuser command. 
+
+<s1>Syntax</s1>
+
+      fuser [-a|-s|-c] [-4|-6] [-n space ] [-k [-i] [-signal ] ] [-muvf] name
+
+      fuser -l
+
+      fuser -V 
+
+
+<s1>Key</s1>
+
+   -a   Show all files specified on the command line.
+        By default, only files that are accessed by at least one process are shown.
+
+   -c   Same as -m option, used for POSIX compatibility.
+
+   -f   Silently ignored, used for POSIX compatibility.
+
+   -k   Kill processes accessing the file.
+        Unless changed with -signal, SIGKILL is sent.
+        An fuser process never kills itself, but can kill other fuser processes.
+        The effective user ID of the process executing fuser is set to its real
+        user ID before attempting to kill.
+
+   -i   Ask the user for confirmation before killing a process.
+        This option is silently ignored if -k (kill) is not present too.
+
+   -l   List all known signal names.
+
+   -m name Specifies a file on a mounted file system or a block device that is mounted.
+           All processes accessing files on that file system are listed.
+           If a directory file is specified, it is automatically changed to name/. 
+           to use any file system that might be mounted on that directory.
+
+   -n space   Select a different name space.
+              The name spaces file (file names, the default), udp (local UDP ports),
+              and tcp (local TCP ports) are supported. For ports, either the port number or
+              the symbolic name can be specified.
+              If there is no ambiguity, the shortcut notation name/Ispace (e.g. 80/tcp ) can be used. 
+
+   -s   Silent operation. -u and -v are ignored in this mode.
+        -a must not be used with -s.
+
+   -signal  Use the specified signal instead of SIGKILL when killing processes.
+            Signals can be specified either by name (e.g. -HUP) or by number (e.g. -1).
+            This option is silently ignored if the -k (kill)option is not used. 
+
+   -u   Append the user name of the process owner to each PID.
+
+   -v   Verbose mode. Processes are shown in a ps-like style.
+        The fields PID, USER and COMMAND are similar to ps.
+        ACCESS shows how the process accesses the file. If the access is by the kernel
+        (e.g. in the case of a mount point, a swap file, etc.), kernel is shown instead of the PID.
+
+   -V   Display version information.
+
+   -4   Search only for IPv4 sockets.
+        This option must not be used with the -6 option and only has an effect with the tcp and udp namespaces.
+
+   -6   Search only for IPv6 sockets.
+        This option must not be used with the -4 option and only has an effect with the tcp and udp namespaces.
+
+   -    Reset all options and set the signal back to SIGKILL. 
+
+
+<s1>Example</s1>
+
+fuser ~/ 
+<img src="img/fuser (1).png" alt="Description of fuser">
+
+fuser -v .
+<img src="img/fuser (2).png" alt="Description of fuser">
+
+
+*See also: ps, kill, killall, lsof, top, w</p></pre> 
             </body>
-            </html>
         

@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,58 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>fsck</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>File System Consistency Checker (FSCK): FSCK is one approach still used by older Linux-based systems to find and repair inconsistencies. It is not a complete solution and may still have inodes pointing to garbage data. The major focus is to make the metadata internally consistent. The following are the checks that FSCK performs to achieve consistency: 
+
+Superblock Checks: FSCK performs a sanity check to see if the file size is greater than the number of blocks allocated. In this case, it tries to find the suspect superblock and use an alternate copy instead. 
+
+Free Block Checks: FSCK also scans inodes to ensure that blocks in inodes are marked allocated. 
+
+Inode State Checks: FSCK checks inodes for corruption. Corrupted inodes are simply cleared. 
+
+Inode Link Checks: FSCK counts the number of links to an inode, and modifies the inode count. If an allocated inode has no directory or file referring to it, FSCK moves it to the lost and found directory. 
+
+Duplicate Pointers: FSCK checks duplicate pointers. For example, if two inodes have pointers to the same data block, one of the inode can be deleted. 
+
+Bad Blocks: A bad pointer is simply one that points to a memory address which is out of range. In this case, FSCK deletes the pointer. 
+
+Directory Checks: FSCK makes sure the directory format is correct, e.g. they should start with “.” and “..”. 
+
+ 
+<s1>Syntax</s1>
+
+      fsck [options] [filesystem] ...
+
+
+<s1>Key</s1>
+
+  --     Pass all subsequent options to filesystem-specific checker.
+         All options that fsck doesn't recognize will also be passed.
+
+  -r     Interactive mode; prompt before making any repairs.
+
+  -s     Serial mode.
+
+  -t fstype
+         Specify the filesystem type. Do not check filesystems of any other type.
+
+  -A     Check all filesystems listed in /etc/fstab.
+
+  -N     Suppress normal execution; just display what would be done.
+
+  -R     Meaningful only with -A: check all filesystems listed in /etc/fstab except the root filesystem.
+
+  -T     Suppress printing of title.
+
+  -V     Verbose mode.
+
+
+<s1>Examples</s1>
+
+<img src="img/fsck (1).png" alt="Description of fsck">
+
+<img src="img/fsck (2).png" alt="Description of fsck">
+
+
+*See also: reboot, ddrescue</p></pre> 
             </body>
-            </html>
         

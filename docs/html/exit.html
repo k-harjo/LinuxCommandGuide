@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,28 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>exit</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>exit command in linux is used to exit the shell where it is currently running. It takes one more parameter as [N] and exits the shell with a return of status N. If n is not provided, then it simply returns the status of last command that is executed.
+
+<s1>Syntax</s1>
+
+      exit [n]
+
+<s1>Key</s1>
+
+   n   Set the exit status to n (default=0)
+
+If n is omitted, the exit status is that of the last command executed. A trap on EXIT is executed before the shell terminates.
+
+
+<s1>Examples</s1>
+
+exit: Exit Without Parameter 
+<img src="img/exit (1).png" alt="Description of exit">
+
+exit [n]: Exit With Parameter 
+<img src="img/exit (2).png" alt="Description of exit">
+
+
+*See also: bash, logout, lo, bye, quit, return, shutdown</p></pre> 
             </body>
-            </html>
         

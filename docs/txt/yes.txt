@@ -1,14 +1,14 @@
 yes - Print the command line argument(s), separated by spaces and followed by a newline, forever until killed. When piped into a command, it will continue until the pipe breaks (i.e., the program completes its execution).
 
 
-Syntax
+<s1>Syntax</s1>
 
       yes text
       yes --help
       yes --version
 
 
-Key
+<s1>Key</s1>
 
    text       The text to repeat
    --help     Display help

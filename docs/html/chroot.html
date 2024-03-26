@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,47 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>chroot</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>chroot command in Linux/Unix system is used to change the root directory. Every process/command in Linux/Unix like systems has a current working directory called root directory. It changes the root directory for currently running processes as well as its child processes. A process/command that runs in such a modified environment cannot access files outside the root directory. This modified environment is known as “chroot jail” or “jailed directory”. Some root user and privileged process are allowed to use chroot command. 
+
+<img src="img/chroot (1).png" alt="Description of chroot">
+
+“chroot” command can be very useful: 
+	To create a test environment. 
+	To recover the system or password. 
+	To reinstall the bootloader. 
+
+
+<s1>Syntax</s1>
+
+     chroot NEWROOT [COMMAND [ARGS]...]
+
+     chroot OPTION
+
+     chroot /path/to/new/root command 
+
+     chroot /path/to/new/root /path/to/server 
+
+     chroot [options] /path/to/new/root /path/to/server 
+
+
+<s1>Example</s1>
+
+Step 1: We will create a mini-jail with bash and basic commands only. Let’s create a “jail” directory inside the “home” directory, which will be our new root.$ mkdir $HOME/jail 
+
+Step 2: Create directories inside “$HOME/jail”:$ mkdir -p $HOME/jail/{bin, lib64} 
+$ cd $HOME/jail 
+ 
+Step 3: Copy /bin/bash and /bin/ls into $HOME/jail/bin/ location using cp command:$ cp -v /bin/{bash, ls} $HOME/jail/bin 
+
+Step 4: Use ldd command to print shared libraries:$ ldd /bin/bash 
+
+<img src="img/chroot (1).png" alt="Description of chroot">
+
+Step 5: Copy required libraries into $HOME/jail/lib64/ location using cp command:cp -v libraries/displayed/by/above/command $HOME/jail/lib64Similarly, copy the libraries of ls command into $HOME/jail/lib64 location. 
+
+Step 6: Finally, chroot into your mini-jail:$ sudo chroot $HOME/jail /bin/bash 
+
+
+*See also: builtin, cron, exec, if, nohup, .source, su, watch</p></pre> 
             </body>
-            </html>
         

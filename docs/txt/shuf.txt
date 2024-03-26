@@ -1,6 +1,6 @@
+<img src="img/shuf (1).png" alt="Description of shuf">
 
 
 shuf file.txt
 Suppose file.txt contains 6 lines, then the shuf command displays the input lines in random order as output.
-
-
+<img src="img/shuf (2).png" alt="Description of shuf">

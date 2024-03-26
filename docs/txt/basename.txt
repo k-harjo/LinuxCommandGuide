@@ -1,14 +1,14 @@
 basename - Strip directory and suffix from filenames
 
 
-Syntax
+<s1>Syntax</s1>
 
       basename NAME [SUFFIX]
 
       basename OPTION
 
 
-Key
+<s1>Key</s1>
 
    --help
         Display help
@@ -19,7 +19,7 @@ Key
 basename will print NAME with any leading directory components removed. If specified, it will also remove a trailing SUFFIX (typically a file extention).
 
 
-Examples: 
+<s1>Examples: </s1>
 
 Encode the text file sample.txt: 
 

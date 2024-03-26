@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,24 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>ethtool</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>ethtool is a command-line tool in Linux for managing network interface devices. It allows us to modify the parameters of the devices and query the information of those devices. 
+
+The ethtool usually comes with any distribution of Linux. But if it’s missing, we can install it with the distro’s package manager.  
+
+
+<s1>Examples</s1>
+
+$ sudo apt-get install -y ethtool 
+
+Then, we run the command with –version to verify the installation: 
+
+$ sudo ethtool --version 
+ethtool version 5.1  
+
+If the version is displayed without any errors, we’ve successfully installed the ethtool in our Linux. 6 
+
+To get the general properties of a network interface device, we simply run ethtool followed by its name: 
+
+<img src="img/ethtool (1).png" alt="Description of ethtool"></p></pre> 
             </body>
-            </html>
         

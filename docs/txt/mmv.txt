@@ -1,7 +1,7 @@
 mmv (Mass Move) - Move, copy, append or link Multiple files using wildcard patterns.
 
 
-Syntax
+<s1>Syntax</s1>
 
       mmv [Source_Option] [-h] [-d|p] [-g|t] [-v|n] [--] [from to] 
 
@@ -181,7 +181,7 @@ To avoid difficulties in semantics and error checking, mmv refuses to move or cr
 If the mmv tool is not installed on your distro, get it with: apt-get install mmv
 
 
-Examples
+<s1>Examples</s1>
 
 Rename the file extension of all .csv files in the current directory to .xls
 

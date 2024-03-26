@@ -1,18 +1,14 @@
 renice command allows you to change and modify the scheduling priority of an already running process. Linux Kernel schedules the process and allocates CPU time accordingly for each of them.
 `
-Examples:
+<s1>Examples:</s1>
 To change the priority of all programs of a specific group.
 renice -n 10 -g 4
+<img src="img/renice (1).png" alt="Description of renice">
 
 
 To change the priority of all programs of a specific user.
 sudo renice -n 10 -u 2
-
-
-
-
-
-
+<img src="img/renice (2).png" alt="Description of renice">
 
 
 

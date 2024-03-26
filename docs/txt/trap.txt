@@ -1,14 +1,14 @@
 The trap command in Bash executes specific code in response to the signal given to the program. It traps the signal received by the program from the OS or the user and then executes the specific code provided by the programmer.It acts like a trigger in response to a signal. Just like try-catch statements help in exception handling, trap command helps in signal handling.
 
-Syntax:
+<s1>Syntax:</s1>
 trap [-options] “piece of code” [signal name or value]
 Example 1: SIGNIT Signal
 Go to the Bash terminal and write the following command:
 $ trap "echo Hello World" SIGINT
 Now on pressing Ctrl+C, SIGINT(2) signal is sent to the terminal which is trapped by the trap command and the code echo hello world will be executed instead.
+<img src="img/trap (1).png" alt="Description of trap">
 
 
 Example 2: STOP signal
 $ trap “echo This is a response to STOP signal” 20
-
-
+<img src="img/trap (2).png" alt="Description of trap">

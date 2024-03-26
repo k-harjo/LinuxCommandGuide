@@ -8,8 +8,10 @@ Trace running processes
 
 To trace particular or specific system calls.
 $strace -c ls
+<img src="img/strace (1).png" alt="Description of strace">
 
 $strace -e trace=write ls
+<img src="img/strace (2).png" alt="Description of strace">
 
 
 
@@ -21,6 +23,6 @@ The key difference between `su` and `su -` Command in Linux
 
 Path Differences between `su` & `su -` commands in Linux
 echo $PATH
+<img src="img/strace (3).png" alt="Description of strace">
 
-
-
+<img src="img/strace (4).png" alt="Description of strace">

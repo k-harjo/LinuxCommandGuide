@@ -4,12 +4,12 @@ import pandas as pd
 
 # Update these paths as needed
 img_folder_path = 'test/img/'
-linux_file = "C:/Users/khbil/Documents/Python_Scripts/LinuxBash-py311/test/linux_commands.csv"
+linux_file = "C:/Users/khbil/Documents/Python_Scripts/LinuxBash-py311/linux_commands.csv"
 
 # Load the CSV file containing document paths
 all_linux_cmds = pd.read_csv(linux_file)
 
-subheadings = ["Definition", "Syntax", "Examples:", "Example", "Example:", "Examples:", "Examples", "Key", "Options"]
+subheadings = ["Definition", "Syntax", "Syntax:", "SYNTAX", "SYNTAX:", "Examples:", "Example", "Example:", "Examples:", "Examples", "Key", "Options"]
 
 def replace_image_strings_and_modify_subheadings(file_path, img_folder_path):
     # Extract the document title from the file name

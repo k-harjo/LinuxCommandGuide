@@ -1,7 +1,7 @@
 ps - Process status, information about processes running in memory. If you want a repetitive update of this status, use top.
 
 
-Syntax
+<s1>Syntax</s1>
 
          ps option(s)
 This version of ps accepts 3 kinds of option:
@@ -192,7 +192,7 @@ Output Modifiers:
                   default direction is increasing numerical or lexicographic order.
                   Identical to --sort.
 
-                      Examples:
+<s1>                      Examples:</s1>
                       ps jaxkuid,-ppid,+pid
                       ps axk comm o comm,args
                       ps kstart_time -ef
@@ -306,7 +306,7 @@ ps -e -o user:20,args.
 Since ps cannot run faster than the system and is run as any other scheduled process, the information it displays can never be exact.
 
 
-Examples
+<s1>Examples</s1>
 
 List every process on the system using standard syntax:
 ps -e

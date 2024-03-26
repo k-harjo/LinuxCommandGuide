@@ -1,14 +1,14 @@
 crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. Crontab stands for “cron table, ” because it uses the job scheduler cron to execute tasks; cron itself is named after “chronos,” the Greek word for time. cron is the system process which will automatically perform tasks for you according to a set schedule. The schedule is called the crontab, which is also the name of the program used to edit that schedule.  
 
 
-Syntax
+<s1>Syntax</s1>
 
       crontab [ -u user ] file
 
       crontab [ -u user ] { -l | -r | -e }
 
 
-Key
+<s1>Key</s1>
 
    -l  List - display the current crontab entries.
 
@@ -32,7 +32,7 @@ DOW (Day of Week) 	Specifies the day of the week for the task. 					It is repres
 CMD (Command) 		Represents the actual command or script that will run at the scheduled time. 	—— 
 
 
-Examples 
+<s1>Examples </s1>
 
 Scheduling a Job For a Specific Time 
 
@@ -45,17 +45,17 @@ The basic usage of cron is to execute a job in a specific time as shown below. T
 To view the Crontab entries 
 
 View Current Logged-In User’s Crontab entries : To view your crontab entries type crontab -l from your unix account. 
-image001
+<img src="img/crontab (1).png" alt="Description of crontab">
 
 View Root Crontab entries: Login as root user (su – root) and do crontab -l. 
-image002
+<img src="img/crontab (2).png" alt="Description of crontab">
 
 To view crontab entries of other Linux users: Login to root and use -u {username} -l 
-image003
+<img src="img/crontab (3).png" alt="Description of crontab">
 
 To edit Crontab Entries Edit Current Logged-In User’s Crontab entries. 
 To edit a crontab entries, use crontab -e. By default this will edit the current logged-in users crontab 
-image004
+<img src="img/crontab (4).png" alt="Description of crontab">
 
 
 *See also: at, cron, nice, builtin, chroot, exec, nohup, .source, su, watch

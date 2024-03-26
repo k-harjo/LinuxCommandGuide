@@ -1,12 +1,12 @@
 units - Convert units from one scale to another. The units are defined in an external data file. You can use the extensive data file that comes with this program, or you can provide your own data file to suit your needs. You can use the program interactively with prompts, or you can use it from the command line.
 
 
-Syntax
+<s1>Syntax</s1>
 
       units options [FROM-UNIT [TO-UNIT]]
 
 
-Options
+<s1>Options</s1>
 
    -c
    --check

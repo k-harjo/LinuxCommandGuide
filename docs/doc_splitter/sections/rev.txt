@@ -1,0 +1,12 @@
+Taking input from standard input
+image001
+
+
+rev -h:
+This option will show the help message and exit.rev -h
+image002
+
+
+
+
+

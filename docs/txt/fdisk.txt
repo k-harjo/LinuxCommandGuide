@@ -1,7 +1,7 @@
 fdisk also known as format disk is a dialog-driven command in Linux used for creating and manipulating disk partition table. It is used for the view, create, delete, change, resize, copy and move partitions on a hard drive using the dialog-driven interface.  
 fdisk allows you to create a maximum of four primary partitions and the number of logical partition depends on the size of the hard disk you are using.  
 
-Syntax
+<s1>Syntax</s1>
 
       fdisk [-u] device
 
@@ -12,7 +12,7 @@ Syntax
       fdisk -v
 
 
-Key
+<s1>Key</s1>
 
    -u     When listing partition tables, give sizes in sectors instead of cylinders.
 
@@ -24,12 +24,12 @@ Key
    -v     Print version number of fdisk program and exit.
 
 
-Examples
+<s1>Examples</s1>
 
 $ sudo fdisk -l 
-image001
+<img src="img/fdisk (1).png" alt="Description of fdisk">
 
 $ sudo fdisk -l /dev/sda 
-image002
+<img src="img/fdisk (2).png" alt="Description of fdisk">
 
 *See also: cfdisk, fdformat

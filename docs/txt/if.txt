@@ -1,22 +1,11 @@
+
 if is a command in Linux which is used to execute commands based on conditions. The ‘if COMMANDS‘ list is executed. If its status is zero, then the ‘then COMMANDS‘ list is executed. Otherwise, each ‘elif COMMANDS‘ list is executed in turn, and if its exit status is zero, the corresponding ‘then COMMANDS‘ list is executed and the if command completes. Otherwise, the ‘else COMMANDS‘ list is executed, if present. The exit status of the entire construct is the exit status of the last command executed, or zero if no condition tested true.
-Syntax:
+<s1>Syntax:</s1>
 if: if COMMANDS; then COMMANDS; [ elif COMMANDS; then COMMANDS; ]... [ else COMMANDS; ] fi
-Example:
+
+
+<s1>Example:</s1>
+<img src="img/if (1).png" alt="Description of if">
 
 help if : It displays help information
-
-
-Ifconfig
-
-ifconfig (interface configuration) command is used to configure the kernel-resident network interfaces. It is used at the boot time to set up the interfaces as necessary. After that, it is usually used when needed during debugging or when you need system tuning. Also, this command is used to assign the IP address and netmask to an interface or to enable or disable a given interface.
-
-SYNTAX:
-
-ifconfig [interface] [options]
-
-Where:
-[interface] is the network interface you want to configure or display information for (e.g., eth0, wlan0).
-[options] are various command-line options that can be used to modify the behavior of ifconfig.
-Newer versions of some Linux distributions don’t have ifconfig command pre-installed. So, in case, there is an error “ifconfig: command not found”, Then execute the following command to install ifconfig.
-Example:
-To view information about all network interfaces on your Linux system, simply execute the following command:
+<img src="img/if (2).png" alt="Description of if">

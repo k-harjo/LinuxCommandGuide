@@ -3,14 +3,14 @@ du command - Used to track the files and directories which are consuming excessi
 Suppose there are two files say kt.txt and pt.txt and you want to know the disk usage of these files, then you can simply use du command by specifying the file names along with it.
 
 
-Syntax
+<s1>Syntax</s1>
 
       du [options]... [file]...
       
       du [OPTION]... --files0-from=F
 
 
-Options
+<s1>Options</s1>
 
    -a
    --all
@@ -90,9 +90,9 @@ Options
 On BSD systems, 'du' reports sizes that are half the correct values for files that are NFS-mounted from HP-UX systems. On HP-UX systems, it reports sizes that are twice the correct values for files that are NFS-mounted from BSD systems. This is due to a flaw in HP-UX; it also affects the HP-UX 'du' program.
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/du (1).png" alt="Description of du">
 As shown above du displayed the disk space used by the corresponding files. Now, the displayed values are actually in the units of the first available SIZE from – -block-size, and the DU_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables and if not in this format then units are default to 1024 bytes (or 512 if POSIXLY_CORRECT is set). Don’t get puzzled from the above paragraph. We can simply use -h option to force du to produce the output in the human readable format. 
 
 

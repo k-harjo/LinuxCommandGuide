@@ -1,12 +1,12 @@
 type - Describe a command. For each name, indicate how it would be interpreted if used as a command name.
 
 
-Syntax
+<s1>Syntax</s1>
 
       type [-aftpP] name [name ...]
 
 
-Key
+<s1>Key</s1>
 
    -a  Print all the places that contain an executable named name. 
 This includes aliases and functions, if and only if the -p option is not also used.
@@ -34,7 +34,7 @@ type returns true if all of the arguments are found, false if any are not found.
 This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [t]ype
 
 
-Examples
+<s1>Examples</s1>
 
  $ type -a grep
  grep is /usr/bin/grep

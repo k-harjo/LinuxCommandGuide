@@ -3,18 +3,18 @@ An alias is a shortcut that references a command. An alias replaces a string t
 
 
 
-Key
+<s1>Key</s1>
    -p   Print the current values
 
 
 
-Syntax: 
+<s1>Syntax: </s1>
 
 alias [option] [name]='[value]'  
 
 alias        Using the alias command on its own displays a list of all currently set aliases 
 
-image001
+<img src="img/alias (1).png" alt="Description of alias">
 
 
 alias -p     displays the list in a format suitable for input to the shell: 

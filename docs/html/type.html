@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,58 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>type</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>type - Describe a command. For each name, indicate how it would be interpreted if used as a command name.
+
+
+<s1>Syntax</s1>
+
+      type [-aftpP] name [name ...]
+
+
+<s1>Key</s1>
+
+   -a  Print all the places that contain an executable named name. 
+This includes aliases and functions, if and only if the -p option is not also used.
+The table of hashed commands is not consulted when using -a.
+
+   -t   Print a string describing the file type which is one of:
+           alias    (shell alias)
+           function (shell function)
+           builtin  (shell builtin)
+           file     (disk file)
+           keyword  (shell reserved word) 
+If the name is not found, then nothing is printed, and an exit status of false is returned.
+
+   -f  Suppress shell function lookup, as with the command builtin.
+
+   -p  Print the path of the disk file that name would execute as a command.
+       returns nothing if 'type -t name' would not return file.
+
+   -P  Force a PATH search for each name, even if 'type -t name' would not return file.
+If a command is hashed, -p and -P print the hashed value, not necessarily the file that appears first in PATH.
+
+With no options, indicate how each name would be interpreted if used as a command name.
+type returns true if all of the arguments are found, false if any are not found.
+
+This is a BASH shell builtin, to display your local syntax from the bash prompt type: help [t]ype
+
+
+<s1>Examples</s1>
+
+ $ type -a grep
+ grep is /usr/bin/grep
+ 
+ $ type type
+ type is a shell builtin
+
+ $ type lsl
+ lsl is a function
+ lsl ()
+ {
+    ls -l $1
+ }
+
+
+*See also: builtin, function, whereis, which</p></pre> 
             </body>
-            </html>
         

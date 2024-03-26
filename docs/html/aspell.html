@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,55 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>aspell</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>aspell - Spellcheck a file. Generally, it will scan the given files or anything from standard input then it check for misspellings. Finally it allows the user to correct the words interactively. 
+
+
+<s1>Syntax</s1>
+
+      aspell check [options] filename
+
+
+<s1>Key</s1>
+
+   -mode=mode
+       The mode to use when checking files.
+       The available modes are none, url, email, sgml, tex, texinfo, nroff and any
+       others available on your system. more..
+
+   –dont-backup
+       Don't create a backup file. Normally, if there are any corrections the Aspell utility
+       will append .bak to the existing file name and then create a new file with corrections
+       made during spell checking.
+
+   -sug-mode=mode
+       The suggestion mode to use where mode is one of ultra, fast, normal, or bad-spellers.
+       For more information on these modes see Notes on the Different Suggestion Modes.
+
+   -lang=name
+   -l name
+       The language the document is written in. The default depends on the current locale.
+
+   -encoding=name
+       Encoding the document is expected to be in. The default depends on the current locale.
+
+   -master=name
+   -d name
+       The main dictionary to use.
+
+   -keymapping=name
+       The keymapping to use. Either aspell for the default mapping or ispell to use the same
+       mapping that the Ispell utility uses.
+
+
+<s1>Examples</s1>
+
+$ aspell -a
+<img src="img/aspell (1).png" alt="Description of aspell">
+
+Check the file foo.txt using the bad-spellers suggestion mode and the American English dictionary:
+
+aspell will display incorrectly spelled words below the input you provided. 
+$ aspell list 
+<img src="img/aspell (2).png" alt="Description of aspell"></p></pre> 
             </body>
-            </html>
         

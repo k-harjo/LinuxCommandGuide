@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,59 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>cmp</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>cmp - Compare two files, and if they differ, tells the first byte and line number where they differ. You can use the 'cmp' command to show the offsets and line numbers where two files differ. 'cmp' can also show all the characters that differ between the two files, side by side.
+
+
+<s1>Syntax</s1>
+
+      cmp options... FromFile [ToFile]
+
+   Multiple single letter options (unless they take an argument) can be combined into
+   a single command line word:  so '-cl' is equivalent to -c -l.
+
+   -c
+       Print the differing characters.  Display control characters as a
+       '^' followed by a letter of the alphabet and precede characters
+       that have the high bit set with 'M-' (which stands for "meta").
+
+   --ignore-initial=BYTES
+       Ignore any differences in the the first BYTES bytes of the input files.
+       Treat files with fewer than BYTES bytes as if they are empty.
+
+   -l
+       Print the (decimal) offsets and (octal) values of all differing bytes.
+
+   --print-chars
+       Print the differing characters.  Display control characters as a
+       '^' followed by a letter of the alphabet and precede characters
+       that have the high bit set with 'M-' (which stands for "meta").
+
+   --quiet
+   -s
+   --silent
+       Do not print anything; only return an exit status indicating
+       whether the files differ.
+
+   --verbose
+       Print the (decimal) offsets and (octal) values of all differing
+       bytes.
+
+   -v
+   --version
+       Output the version number of 'cmp'.
+
+       The file name '-' is always the standard input.  'cmp' also uses the
+       standard input if one file name is omitted.
+
+       An exit status of 0 means no differences were found, 1 means some
+       differences were found, and 2 means trouble.
+
+
+<s1>Examples</s1>
+
+<img src="img/cmp (1).png" alt="Description of cmp">
+
+
+See also: comm, diff, diff3, dircmp, sdiff</p></pre> 
             </body>
-            </html>
         

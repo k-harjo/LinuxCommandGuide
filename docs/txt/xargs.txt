@@ -4,14 +4,9 @@ Some commands like grep can accept input as parameters, but some commands accept
 Syntax of `xargs` command in Linux
 xargs [options] [command]
 
-Example:
+<s1>Example:</s1>
 
-
-
-
-
-
-
+<img src="img/xargs (1).png" alt="Description of xargs">
 
 
 

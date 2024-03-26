@@ -1,7 +1,7 @@
 break - Exit from a for, while, until, or select loop
 
 
-Syntax
+<s1>Syntax</s1>
 
       break [n]
 If n is supplied, the nth enclosing loop is exited. n must be greater than or equal to 1.
@@ -11,7 +11,7 @@ The return status is zero unless n is not greater than or equal to 1.
 This is a BASH shell builtin, to display your local syntax from the bash prompt type: help break
 
 
-Examples
+<s1>Examples</s1>
 
 for myloop in 1 2 3 4 5 
 do 
@@ -22,7 +22,7 @@ do
   fi
 done
 
-image001
+<img src="img/break (1).png" alt="Description of break">
 
 
 *See also: for, select, until, while, caller, continue

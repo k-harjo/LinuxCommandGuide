@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,83 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>iconv</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>iconv command is used to convert some text in one encoding into another encoding. If no input file is provided then it reads from standard input. Similarly, if no output file is given then it writes to standard output. If no from-encoding or to-encoding is provided then it uses current local’s character encoding.  
+
+
+<s1>Syntax</s1>
+
+      iconv [Option...] -f encoding -t encoding inputfile 
+      iconv -l
+
+
+<s1>Key</s1>
+
+   -f encoding
+   --from-code encoding
+          Convert characters From encoding.
+
+   -t encoding
+   --to-code encoding
+          Convert characters To encoding.
+
+   --list
+          List known coded character sets
+          The encodings available are system dependent.
+
+   -o file
+   --output file
+          Specify an output file (instead of stdout.)
+
+
+Options controlling conversion problems:
+
+   -c     When this option is given, characters that cannot be converted are silently
+          discarded, instead of leading to a conversion error.
+
+   --unicode-subst=formatstring
+          Replace Unicode characters that cannot be represented in the target
+          encoding with a placeholder string that is constructed from formatstring,
+          applied to the Unicode code point. The formatstring must be in the same
+          format as for the printf command or the  printf() function, taking either
+          no argument or exactly one unsigned integer argument.
+
+   --byte-subst=formatstring
+          Replace bytes in the input that are not valid in the source encoding 
+          with a placeholder string constructed from the given formatstring,
+          applied to the byte's value. The formatstring must be in the same
+          format as for the printf command or  the  printf()  function, taking either
+          no argument or exactly one unsigned integer argument.
+
+   --widechar-subst=formatstring
+          Replace wide characters in the input that are not valid in the source
+          encoding with a placeholder string that is constructed from the given
+          formatstring, applied to the byte's value. The formatstring must
+          be in the same format as for the printf command or the  printf() function,
+          taking either no argument or exactly one unsigned integer argument.
+
+
+Options controlling error output:
+
+   −s
+   −−silent
+        Suppress error messages about invalid or unconvertible characters are omitted
+
+   --verbose
+        Print progress information. 
+The iconv program converts the encoding of characters in inputfile from one coded character set to another. The result is written to standard output unless otherwise specified by the --output option.
+
+
+<s1>Examples</s1>
+
+Print the list of all character set encodings   
+iconv -l 
+<img src="img/iconv (1).png" alt="Description of iconv">
+
+Reading and writing from a file 
+iconv -f UTF-8 -t ASCII//TRANSLIT -o out.txt in.txt 
+<img src="img/iconv (2).png" alt="Description of iconv">
+
+
+*See also: uuencode</p></pre> 
             </body>
-            </html>
         

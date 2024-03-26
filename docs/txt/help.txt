@@ -1,12 +1,12 @@
 help command displays information about shell built-in commands
 
 
-Syntax
+<s1>Syntax</s1>
 
 	$help [-dms] [pattern ...] 
 
 
-Key
+<s1>Key</s1>
 
    -C config_file  The configuration file to use; the default is /etc/man.config. (See man.config(5).) 
 
@@ -71,9 +71,9 @@ Key
                    This is useful in shell commands like man -aW man | xargs ls -l 
 
 
-Examples
+<s1>Examples</s1>
 
-image001
+<img src="img/help (1).png" alt="Description of help">
 
 
 *See also: man, help, more, less

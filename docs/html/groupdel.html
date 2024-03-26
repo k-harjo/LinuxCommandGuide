@@ -1,8 +1,7 @@
 
-            <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="doc_style_sheet.css">
-                <style>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../doc_style_sheet.css">
+                    <style>
                     .title h1 {
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         color: #555; /* Dark grey color */
@@ -24,7 +23,6 @@
                         font-style: normal; /* Override italic style for emphasis */
                         font-weight: bold; /* Bold font weight for emphasized text */
                         font-size: 36px; /* Large font size */
-
                         text-transform: uppercase; /* Uppercase text */
                         color: #000; /* Black color */
                         text-align: center; /* Center the text */
@@ -48,16 +46,19 @@
                         font-size: 16px;
                         font-style: bold;
                     }
+
                     p {
                         text-align: justify;
                         font-family: 'Open Sans', sans-serif; /* Choose a font family */
                         font-size: 14px;
                         color: black;
                     }
+
                     pre { 
                         white-space: pre-wrap;
                         word-wrap:normal;
                     }
+                    
                     /* ------- Helper Styles -------------*/
                     *,
                     *:before,
@@ -88,7 +89,36 @@
                 <div class="title">
                     <h1><span>Linux & Bash Commands</span><em>groupdel</em></h1></div>            
                 <!-- Rest of your body content goes here -->
-                <pre><p>EMPTY</p></pre> <!-- Replace with your actual paragraph content -->
+                <pre><p>groupdel command is used to delete a existing group. It will delete all entry that refers to the group, modifies the system account files, and it is handled by superuser or root user. 
+
+
+<s1>Syntax  </s1>
+
+groupdel [options] group_name 
+
+Options Available in `groupdel` Command 
+
+
+<s1>Key </s1>
+
+‘-h’, ‘–help’ 		Displays the help message and exits. 
+
+‘-f’, ‘–force’ 		This option forces the deletion of the group, even if it is still in use. 
+
+‘-R’, ‘–root’ 		It apply the changes in the CHROOT_DIR directory. Also, it uses the configuration files from the CHROOT_DIR directory. 
+
+‘-r’, ‘–remove’ 	Removes the group along with its associated files. 
+
+
+<s1>Examples  </s1>
+
+To delete a group named ‘example_group,’ simply use the following command 
+<img src="img/groupdel (1).png" alt="Description of groupdel"> 
+
+The ‘-r’ option allows you to remove the group and its associated files.  
+<img src="img/groupdel (2).png" alt="Description of groupdel"> 
+
+
+*See also: groupadd, groupmod, userdel</p></pre> 
             </body>
-            </html>
         

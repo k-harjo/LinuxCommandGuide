@@ -1,0 +1,22 @@
+install command is used to copy files and set attributes. It is used to copy files to a destination of the user’s choice, If the user want to download and install a ready to use package on GNU/Linux system then he should use apt-get, apt, yum, etc depending on their distribution.
+Syntax:
+install [OPTION]... [-T] SOURCE DEST
+install [OPTION]... SOURCE... DIRECTORY
+install [OPTION]... -t DIRECTORY SOURCE...
+install [OPTION]... -d DIRECTORY
+
+Examples:
+Copies two files rocket.c and rocket to directory demo.
+image001
+
+Compare and copies files(observe the difference)
+image002
+
+
+
+
+
+
+
+
+

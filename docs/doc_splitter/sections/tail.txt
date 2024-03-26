@@ -1,0 +1,15 @@
+tail - Prints the last N number of data of the given input
+It is the complementary of head command. The tail command, as the name implies, prints the last N number of data of the given input. By default, it prints the last 10 lines of the specified files. If more than one file name is provided then data from each file is preceded by its file name.
+Syntax of Tail Command in Linux
+tail [OPTION]... [FILE]…
+Options and Pratical Examples of Tail Command in Linux
+image001
+
+
+Example:
+tail -n 3 state.txt
+or
+image002
+tail -3 state.txt
+
+

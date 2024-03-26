@@ -1,0 +1,23 @@
+shutdown command in Linux is used to shutdown the system in a safe way. You can shutdown the machine immediately, or schedule a shutdown using 24 hour format.It brings the system down in a secure way. When the shutdown is initiated, all logged-in users and processes are notified that the system is going down, and no further logins are allowed. Only root user can execute shutdown command.
+Syntax:
+shutdown [OPTIONS] [TIME] [MESSAGE]
+Examples:
+How to use shutdown In it’s simplest form when used without any argument, shutdown will power off the machine.
+image001
+
+How to shutdown the system at a specified time The time argument can have two different formats. It can be an absolute time in the format hh:mm and relative time in the format +m where m is the number of minutes from now. The following example will schedule a system shutdown at 05 A.M:
+image002
+
+How to broadcast a custom message The following command will shut down the system in 10 minutes from now and notify the users with message “System upgrade”:
+image003
+
+
+
+
+
+
+
+
+
+
+
