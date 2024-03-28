@@ -11,4 +11,4 @@ for better privacy measures.
 Sample file
 A screenshot of the .bash_logout file is attached below.
 The .bash_logout file is executed only when a login shell is invoked. The purpose of the file is to clear the screen after logout in the terminal
-<img src="img/logout (1).png" alt="Description of logout">
+<img src="img/logout (1).png" width="700" height="auto" alt="Description of logout">

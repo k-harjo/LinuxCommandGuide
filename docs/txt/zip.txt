@@ -11,17 +11,14 @@ zip [file_name.zip] [file_name]
 Suppose we have a zip file “name = jayesh_gfg.zip” and we have three text files inside it “name = a.txt, b.txt and c.txt”. we have to unzip it in the current directory.
 Syntax and Output:
 unzip jayesh_gfg.zip
-<img src="img/zip (1).png" alt="Description of zip">
+<img src="img/zip (1).png" width="700" height="auto" alt="Description of zip">
 
 
 zip -m myfile.zip *.c
-<img src="img/zip (2).png" alt="Description of zip">
+<img src="img/zip (2).png" width="700" height="auto" alt="Description of zip">
 
 
 zip -r myfile.zip . -x  a.txt
 Here, the -r option is used to recursively add all files and directories in the current directory to the archive, and the. specifies the current directory as the source directory. The -x a.txt option excludes the file “a.txt” from the archive.
 To check files inside “myfile.zip” we can type “vi myfile.zip”.
-<img src="img/zip (3).png" alt="Description of zip">
-
-
-
+<img src="img/zip (3).png" width="700" height="auto" alt="Description of zip">

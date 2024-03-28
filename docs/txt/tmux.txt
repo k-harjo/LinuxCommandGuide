@@ -1,12 +1,12 @@
-<img src="img/tmux (1).png" alt="Description of tmux">
+<img src="img/tmux (1).png" width="700" height="auto" alt="Description of tmux">
 
 
 tmux attach-session -t s1
-<img src="img/tmux (2).png" alt="Description of tmux">
+<img src="img/tmux (2).png" width="700" height="auto" alt="Description of tmux">
 
 
 tmux rename-session -t s1 newses1
-<img src="img/tmux (3).png" alt="Description of tmux">
+<img src="img/tmux (3).png" width="700" height="auto" alt="Description of tmux">
 
 
 

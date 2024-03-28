@@ -173,7 +173,7 @@ sudo adduser ftpuser
 
 Enter your password, leave other values empty, and at last, enter Y to save changes. 
 
-<img src="img/ftp (1).png" alt="Description of ftp">
+<img src="img/ftp (1).png" width="700" height="auto" alt="Description of ftp">
 
 
 *See also: curl, RAW FTP

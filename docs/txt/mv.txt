@@ -5,17 +5,17 @@ mv [options(s)] [source_file_name(s)] [Destination_file_name]
 <s1>Examples:</s1>
 If we have a file “name = jayesh_gfg” and want to rename it to “name = geeksforgeeks”.
 mv jayesh_gfg geeksforgeeks
-<img src="img/mv (1).png" alt="Description of mv">
+<img src="img/mv (1).png" width="700" height="auto" alt="Description of mv">
 
 
 If we have a file “name = geeksforgeeks” and want to move it to location “name = /home/jayeshkumar/jkj”.
 mv geeksforgeeks /home/jayeshkumar/jkj/
-<img src="img/mv (2).png" alt="Description of mv">
+<img src="img/mv (2).png" width="700" height="auto" alt="Description of mv">
 
 
 If we have a directory “name = jkj” and want to rename it to “name = new_gfg”.
 mv jkj new_gfg
-<img src="img/mv (3).png" alt="Description of mv">
+<img src="img/mv (3).png" width="700" height="auto" alt="Description of mv">
 
 
 nc (netcat)
@@ -42,13 +42,13 @@ System 1
 We are running `nc` command in listen mode and providing a port number.
 nc -lv 1111
 You can replace port number `1111` with your desired port number.
-<img src="img/mv (4).png" alt="Description of mv">
+<img src="img/mv (4).png" width="700" height="auto" alt="Description of mv">
 
 
 System 2
 We are running `nc` command with IP address of System 1 and a port number on which system 1 is listening.
 nc -v 10.143.90.24 1111
-<img src="img/mv (5).png" alt="Description of mv">
+<img src="img/mv (5).png" width="700" height="auto" alt="Description of mv">
 
 
 
@@ -68,9 +68,9 @@ netstat displays various network related information such as network connections
 netstat [options]
 <s1>Examples:</s1>
 -a -all: Show both listening and non-listening sockets. With the –interfaces option, show interfaces that are not up.
-<img src="img/mv (6).png" alt="Description of mv">
+<img src="img/mv (6).png" width="700" height="auto" alt="Description of mv">
 netstat -a | more
 
 List All TCP Ports Using netstat Command in Linux
 netstat –at
-<img src="img/mv (7).png" alt="Description of mv">
+<img src="img/mv (7).png" width="700" height="auto" alt="Description of mv">

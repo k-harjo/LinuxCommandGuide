@@ -6,14 +6,4 @@ xargs [options] [command]
 
 <s1>Example:</s1>
 
-<img src="img/xargs (1).png" alt="Description of xargs">
-
-
-
-
-
-
-
-
-
-
+<img src="img/xargs (1).png" width="700" height="auto" alt="Description of xargs">

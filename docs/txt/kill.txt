@@ -9,4 +9,4 @@ The table below shows some common signals and their corresponding numbers.
 
 To check signal name and number we can use `kill -l` command.
 <s1>Example:</s1>
-<img src="img/kill (1).png" alt="Description of kill">
+<img src="img/kill (1).png" width="700" height="auto" alt="Description of kill">

@@ -10,8 +10,8 @@ man [option] [command]
 
 <s1>Examples:</s1>
 man 2 intro
-<img src="img/man (1).png" alt="Description of man">
+<img src="img/man (1).png" width="700" height="auto" alt="Description of man">
 
 
 man -f ls
-<img src="img/man (2).png" alt="Description of man">
+<img src="img/man (2).png" width="700" height="auto" alt="Description of man">

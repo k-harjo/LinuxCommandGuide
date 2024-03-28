@@ -5,23 +5,17 @@ seq [OPTION]... LAST
 seq [OPTION]... FIRST LAST
   or
 seq [OPTION]... FIRST INCREMENT LAST
-<img src="img/seq (1).png" alt="Description of seq">
+<img src="img/seq (1).png" width="700" height="auto" alt="Description of seq">
 
 
 <s1>Examples:</s1>
 seq LAST: When only one argument is given then it produces numbers from 1 to LAST in step increment of 1. If the LAST is less than 1, then is produces no output.
-<img src="img/seq (2).png" alt="Description of seq">
+<img src="img/seq (2).png" width="700" height="auto" alt="Description of seq">
 
 
 seq FIRST LAST: When two arguments are given then it produces numbers from FIRST till LAST is step increment of 1. If LAST is less than FIRST, then it produces no output.
-<img src="img/seq (3).png" alt="Description of seq">
+<img src="img/seq (3).png" width="700" height="auto" alt="Description of seq">
 
 
 seq FIRST INCREMENT LAST: When three arguments are given then it produces numbers from FIRST till LAST in step of INCREMENT. If LAST is less than FIRST, then it produces no output.
-<img src="img/seq (4).png" alt="Description of seq">
-
-
-
-
-
-
+<img src="img/seq (4).png" width="700" height="auto" alt="Description of seq">

@@ -1,2 +1,2 @@
 <s1>Example:</s1>
-<img src="img/iostat (1).png" alt="Description of iostat">
+<img src="img/iostat (1).png" width="700" height="auto" alt="Description of iostat">

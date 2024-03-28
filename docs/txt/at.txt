@@ -63,4 +63,4 @@ For both at and batch, commands are read from standard input or the file specifi
 <s1>Examples</s1>
 
 at -l
-<img src="img/at (1).png" alt="Description of at">
+<img src="img/at (1).png" width="700" height="auto" alt="Description of at">

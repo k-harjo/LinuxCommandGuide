@@ -140,11 +140,11 @@ htop displays per-process CPU usage (not total server load) it is useful for see
 <s1>Examples </s1>
 
 htop -u kunwarvikas 
-<img src="img/htop (1).png" alt="Description of htop">
+<img src="img/htop (1).png" width="700" height="auto" alt="Description of htop">
  
 -v –version : Output version information and exit. 
 htop –v 
-<img src="img/htop (2).png" alt="Description of htop">
+<img src="img/htop (2).png" width="700" height="auto" alt="Description of htop">
 
 
 *See also: htop, kill, top

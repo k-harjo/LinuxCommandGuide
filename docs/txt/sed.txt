@@ -6,26 +6,18 @@ SED command in unix supports regular expression which allows it perform complex 
 sed OPTIONS... [SCRIPT] [INPUTFILE...]
 <s1>Example:</s1>
 Consider the below text file as an input.
-<img src="img/sed (1).png" alt="Description of sed">
+<img src="img/sed (1).png" width="700" height="auto" alt="Description of sed">
 
 Replacing or substituting string: Sed command is mostly used to replace the text in a file. The below simple sed command replaces the word “unix” with “linux” in the file.
-<img src="img/sed (2).png" alt="Description of sed">
+<img src="img/sed (2).png" width="700" height="auto" alt="Description of sed">
 
 
 
 
 
 Replacing the nth occurrence of a pattern in a line : Use the /1, /2 etc flags to replace the first, second occurrence of a pattern in a line. The below command replaces the second occurrence of the word “unix” with “linux” in a line.
-<img src="img/sed (3).png" alt="Description of sed">
+<img src="img/sed (3).png" width="700" height="auto" alt="Description of sed">
 
 
 Replacing all the occurrence of the pattern in a line : The substitute flag /g (global replacement) specifies the sed command to replace all the occurrences of the string in the line.
-<img src="img/sed (4).png" alt="Description of sed">
-
-
-
-
-
-
-
-
+<img src="img/sed (4).png" width="700" height="auto" alt="Description of sed">

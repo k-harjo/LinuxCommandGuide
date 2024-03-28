@@ -64,7 +64,7 @@ class LinuxDictGUI(QMainWindow):
         
         self.setFixedSize(1200, 900)
         self.setWindowTitle("Linux and Bash Helper")
-        self.setWindowIcon(QIcon(''))
+        self.setWindowIcon(QIcon('docs\img\main_window_icon_blue.png'))
         self.preferences = Preferences()
         self.preferences.mode_changed.connect(self.update_stylesheet)
         
@@ -123,13 +123,17 @@ class LinuxDictGUI(QMainWindow):
         '''
         Widgets
         '''
+
+        #commad list view
         self.cmd_view = QListView()
         cmd_widget = QWidget()
         cmd_layout = QVBoxLayout()
         self.model = NonEditableStringListModel(self.cmd_view)
         self.dropdown = QComboBox()
         self.dropdown.addItems(["All Commands", "Most Used in Lab"])
-        
+        self.cmd_view.setFixedWidth(300)
+        self.dropdown.setFixedWidth(300)
+
         linux_file = "linux_commands.csv"
         self.all_linux_cmds = pd.read_csv(linux_file)
 
@@ -143,10 +147,13 @@ class LinuxDictGUI(QMainWindow):
         search_layout = QHBoxLayout()
         self.doc_viewer = DocumentViewer()
         self.doc_viewer.setHtml("""<html><p>Choose a term on the left to learn more!</p1></html>""")
+        self.doc_viewer.setFixedWidth(900)
 
         #search bar
         self.search_bar = QLineEdit()
         self.search_btn = QPushButton("Search")
+        self.search_bar.setFixedWidth(750)
+
         self.search_bar.setPlaceholderText("Search for a command")
         search_layout.addWidget(self.search_bar)
         search_layout.addWidget(self.search_btn)
@@ -158,6 +165,7 @@ class LinuxDictGUI(QMainWindow):
         cmd_layout.addWidget(self.dropdown)
         cmd_layout.addWidget(self.cmd_view)
         cmd_widget.setLayout(cmd_layout)
+        
 
         self.main_widget_layout.addWidget(cmd_widget)
         self.main_widget_layout.addWidget(self.doc_widget)   

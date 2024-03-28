@@ -4,7 +4,7 @@ nslookup [option] [hosts]
 
 <s1>Examples:</s1>
 nslookup -type=soa redhat.com
-<img src="img/nslookup (1).png" alt="Description of nslookup">
+<img src="img/nslookup (1).png" width="700" height="auto" alt="Description of nslookup">
 
 
 

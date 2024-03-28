@@ -21,4 +21,4 @@ Birth: The time at which the file was created.
 Displaying the File System Information
 
 Example: stat -f filename
-<img src="img/stat (1).png" alt="Description of stat">
+<img src="img/stat (1).png" width="700" height="auto" alt="Description of stat">

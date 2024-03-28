@@ -8,9 +8,9 @@ Most used options:
 <s1>Examples:</s1>
 readonly -f
 It will display all the functions which are marked as read-only
-<img src="img/readonly (1).png" alt="Description of readonly">
+<img src="img/readonly (1).png" width="700" height="auto" alt="Description of readonly">
 
 
 readonly or readonly –p
 Then it will list all the variables with their values which are defined as read-only (this includes default read-only variables)
-<img src="img/readonly (2).png" alt="Description of readonly">
+<img src="img/readonly (2).png" width="700" height="auto" alt="Description of readonly">

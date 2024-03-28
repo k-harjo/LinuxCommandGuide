@@ -41,10 +41,10 @@ aspell - Spellcheck a file. Generally, it will scan the given files or anything 
 <s1>Examples</s1>
 
 $ aspell -a
-<img src="img/aspell (1).png" alt="Description of aspell">
+<img src="img/aspell (1).png" width="700" height="auto" alt="Description of aspell">
 
 Check the file foo.txt using the bad-spellers suggestion mode and the American English dictionary:
 
 aspell will display incorrectly spelled words below the input you provided. 
 $ aspell list 
-<img src="img/aspell (2).png" alt="Description of aspell">
+<img src="img/aspell (2).png" width="700" height="auto" alt="Description of aspell">

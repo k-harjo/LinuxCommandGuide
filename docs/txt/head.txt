@@ -45,10 +45,10 @@ Two option formats are accepted: the new one, in which numbers are arguments to 
 <s1>Examples</s1>
 
 -n num: Prints the first ‘num’ lines instead of first 10 lines. num is mandatory to be specified in command otherwise it displays an error. 
-<img src="img/head (1).png" alt="Description of head">
+<img src="img/head (1).png" width="700" height="auto" alt="Description of head">
 
 -v: By using this option, data from the specified file is always preceded by its file name. 
-<img src="img/head (2).png" alt="Description of head">
+<img src="img/head (2).png" width="700" height="auto" alt="Description of head">
 
 
 *See also: csplit, cut, fmt, paste, split, tail

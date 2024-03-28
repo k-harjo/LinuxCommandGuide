@@ -6,7 +6,7 @@ screen [-opts] [cmd [args]]
 -ls: It is used to display the currently opened screens including those running in the background. It will list all the attached as well as detached screen sessions.
 
 screen –ls
-<img src="img/screen (1).png" alt="Description of screen">
+<img src="img/screen (1).png" width="700" height="auto" alt="Description of screen">
 
 screen --help
-<img src="img/screen (2).png" alt="Description of screen">
+<img src="img/screen (2).png" width="700" height="auto" alt="Description of screen">

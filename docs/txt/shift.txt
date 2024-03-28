@@ -18,4 +18,4 @@ shift
 echo "The First Argument After Shift is: $1"
 Now to save the file press ESC and then type “:x” without quotes and hit Enter. Now to execute the file, use the following command on Linux terminalsh sampleshift.shBut here we have to pass command-line arguments so we can use the following commandsh sampleshift.sh G1 G2 G3 G4Here, we are passing 4 command-line arguments named G1, G2, G3, and G4. Below is the screenshot of the output of using shift command:
 
-<img src="img/shift (1).png" alt="Description of shift">
+<img src="img/shift (1).png" width="700" height="auto" alt="Description of shift">

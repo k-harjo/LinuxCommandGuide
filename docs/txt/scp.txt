@@ -13,11 +13,11 @@ For example: If we want to copy a file name “test.txt” from local system to 
 
 Example 1:
 scp test.txt jayesh@10.143.90.2:/home/jayesh
-<img src="img/scp (1).png" alt="Description of scp">
+<img src="img/scp (1).png" width="700" height="auto" alt="Description of scp">
 
 
 To Verify: Use `ls` command in the location we copied file.
-<img src="img/scp (2).png" alt="Description of scp">
+<img src="img/scp (2).png" width="700" height="auto" alt="Description of scp">
 
 
 Example 2:
@@ -36,4 +36,4 @@ If we have
 “home/user/file_name” = home/jayesh/test1.txt
 
 scp jayesh@10.143.90.2:/home/jayesh/test1.txt
-<img src="img/scp (3).png" alt="Description of scp">
+<img src="img/scp (3).png" width="700" height="auto" alt="Description of scp">

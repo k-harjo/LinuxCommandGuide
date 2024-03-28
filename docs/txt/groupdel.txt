@@ -22,10 +22,10 @@ Options Available in `groupdel` Command
 <s1>Examples  </s1>
 
 To delete a group named ‘example_group,’ simply use the following command 
-<img src="img/groupdel (1).png" alt="Description of groupdel"> 
+<img src="img/groupdel (1).png" width="700" height="auto" alt="Description of groupdel"> 
 
 The ‘-r’ option allows you to remove the group and its associated files.  
-<img src="img/groupdel (2).png" alt="Description of groupdel"> 
+<img src="img/groupdel (2).png" width="700" height="auto" alt="Description of groupdel"> 
 
 
 *See also: groupadd, groupmod, userdel

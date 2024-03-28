@@ -39,10 +39,10 @@ egrep is usually faster than grep or fgrep.
 <s1>Examples</s1>
 
 egrep [options] 'PATTERN' files 
-<img src="img/egrep (1).png" alt="Description of egrep">
+<img src="img/egrep (1).png" width="700" height="auto" alt="Description of egrep">
 
 -v: It prints the lines that does not match with the pattern. 
-<img src="img/egrep (2).png" alt="Description of egrep">
+<img src="img/egrep (2).png" width="700" height="auto" alt="Description of egrep">
 
 
 *See also: fgrep, gawk, grep

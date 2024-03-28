@@ -39,22 +39,12 @@ Options for pv command
 <s1>Examples:</s1>
 Creating a progress bar with the copy command
 $ pv history.log > $HOME/Documents/history.log
-<img src="img/pv (1).png" alt="Description of pv">
+<img src="img/pv (1).png" width="700" height="auto" alt="Description of pv">
 
 
 Making zip with the progress bar
 $ pv history.log | zip>$HOME/Documents/history.zip
-<img src="img/pv (2).png" alt="Description of pv">
-
-
-
-
-
-
-
-
-
-
+<img src="img/pv (2).png" width="700" height="auto" alt="Description of pv">
 
 
 

@@ -113,13 +113,13 @@ gzip command compresses files. Each single file is compressed into a single file
 <s1>Example</s1>
 
 Basic Compression using gzip Command in Linux 
-<img src="img/gzip (1).png" alt="Description of gzip">
+<img src="img/gzip (1).png" width="700" height="auto" alt="Description of gzip">
 
 The basic syntax of the gzip command for decompressing a file is as follows: 
 iamge002 
 
 By default, gzip removes the original file after compression. To retain the original file, use the -k option: 
-<img src="img/gzip (3).png" alt="Description of gzip">
+<img src="img/gzip (3).png" width="700" height="auto" alt="Description of gzip">
 
 
 

@@ -8,14 +8,14 @@ dc command in Linux is used to evaluate arithmetic expressions. It evaluates exp
 
 <s1>Key</s1>
 
-  <img src="img/dc (1).png" alt="Description of dc">
+  <img src="img/dc (1).png" width="700" height="auto" alt="Description of dc">
 
 
 <s1>Examples</s1>
 
-<img src="img/dc (2).png" alt="Description of dc">
+<img src="img/dc (2).png" width="700" height="auto" alt="Description of dc">
 
-<img src="img/dc (3).png" alt="Description of dc">
+<img src="img/dc (3).png" width="700" height="auto" alt="Description of dc">
 
 
 *See also: bc, cal, expr, factor, units, wc

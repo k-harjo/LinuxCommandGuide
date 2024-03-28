@@ -9,4 +9,4 @@ Print the process ID.
 Using wait command with process ID as an argument to wait until the process finishes.
 After the process is finished printing process ID with its exit status.
 Note: Exist status 0 indicates that the process is executed successfully without any issue. Any value other than 0 indicates that the process has not been completed successfully.
-<img src="img/wait (1).png" alt="Description of wait">
+<img src="img/wait (1).png" width="700" height="auto" alt="Description of wait">

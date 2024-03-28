@@ -14,7 +14,7 @@ bash filename.sh
 
 The script will simply get executed after “sourcing” the file. The source command will execute the shell script as the default bash command provided you are in the bash shell.  You need to be in the bash shell to execute the script using the source command. 
 
-<img src="img/bash (1).png" alt="Description of bash"> 
+<img src="img/bash (1).png" width="700" height="auto" alt="Description of bash"> 
 
 Making the Script Executable with chmod 
 
@@ -34,10 +34,10 @@ If you are not on the same path as the bash script, make sure you provide the re
 
 ./pathToTheFile.sh 
 
-<img src="img/bash (2).png" alt="Description of bash"> 
+<img src="img/bash (2).png" width="700" height="auto" alt="Description of bash"> 
 
 using chmod and executing the script. 
 
-<img src="img/bash (3).png" alt="Description of bash">
+<img src="img/bash (3).png" width="700" height="auto" alt="Description of bash">
 
 Executing a script from a relative path. 

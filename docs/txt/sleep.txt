@@ -7,16 +7,10 @@ sleep NUMBER[SUFFIX]…
 Using Suffixes in `sleep` Command in Linux:
 Sleep allows you to specify time units using suffixes, providing flexibility in defining durations.
 sleep 3m
-<img src="img/sleep (1).png" alt="Description of sleep">
+<img src="img/sleep (1).png" width="700" height="auto" alt="Description of sleep">
 
 
 Specifying Fractional Seconds in `sleep` Command in Linux
 You can use decimal values to specify fractional seconds.
 sleep 3.5
-<img src="img/sleep (2).png" alt="Description of sleep">
-
-
-
-
-
-
+<img src="img/sleep (2).png" width="700" height="auto" alt="Description of sleep">

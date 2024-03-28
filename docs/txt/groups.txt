@@ -11,10 +11,10 @@ groups [options] [username]
 <s1>Examples</s1>
 
 Provided with a username: groups demon 
-<img src="img/groups (1).png" alt="Description of groups">
+<img src="img/groups (1).png" width="700" height="auto" alt="Description of groups">
 
 To display group membership for the current user: groups 
-<img src="img/groups (2).png" alt="Description of groups">
+<img src="img/groups (2).png" width="700" height="auto" alt="Description of groups">
 
 
 *See also: env, id, logname, printenv, users, uname, who, whoami

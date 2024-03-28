@@ -9,10 +9,10 @@ ls [option] [file/directory]
 Display One File Per Line Using `ls -1 `
 
 ls –1
-<img src="img/ls (1).png" alt="Description of ls">
+<img src="img/ls (1).png" width="700" height="auto" alt="Description of ls">
 
 
 Display All Information About Files/Directories Using `ls -l`
 
 ls –l
-<img src="img/ls (2).png" alt="Description of ls">
+<img src="img/ls (2).png" width="700" height="auto" alt="Description of ls">

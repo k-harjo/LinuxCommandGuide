@@ -2,8 +2,8 @@ join command is used to join the two files based on a key field present in both 
 <s1>Syntax:</s1>
 $join [OPTION] FILE1 FILE2
 <s1>Examples:</s1>
-<img src="img/join (1).png" alt="Description of join">
+<img src="img/join (1).png" width="700" height="auto" alt="Description of join">
 
 What if such unpairable lines are important and must be visible after joining the files. In such cases we can use -a option with join command which will help in displaying such unpairable lines. This option requires the user to pass a file number so that the tool knows which file you are talking about.
 
-<img src="img/join (2).png" alt="Description of join">
+<img src="img/join (2).png" width="700" height="auto" alt="Description of join">

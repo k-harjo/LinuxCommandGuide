@@ -15,7 +15,7 @@ It is recommended to have a basic idea of the following topics:
 <s1>Example</s1>
 
 getopts
-<img src="img/getopts (1).png" alt="Description of getopts">
+<img src="img/getopts (1).png" width="700" height="auto" alt="Description of getopts">
 
 
 *See also: export, shift

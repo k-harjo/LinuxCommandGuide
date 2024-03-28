@@ -160,13 +160,13 @@ for           The for statement also works like that of C, allowing users to cre
 <s1>Examples</s1>
 
 awk -F ',' '{if($2==$3){print $1","$2","$3} else {print "No Duplicates"}}' answers.txt 
-<img src="img/awk (1).png" alt="Description of awk">
+<img src="img/awk (1).png" width="700" height="auto" alt="Description of awk">
 
 awk '{i=0; while(i<=NF) { print i ":"$i; i++;}}' employees.txt
-<img src="img/awk (2).png" alt="Description of awk">
+<img src="img/awk (2).png" width="700" height="auto" alt="Description of awk">
 
 awk 'BEGIN{for(i=1; i<=10; i++) print "The square of", i, "is", i*i;}' 
-<img src="img/awk (3).png" alt="Description of awk">
+<img src="img/awk (3).png" width="700" height="auto" alt="Description of awk">
 
 
 *See also: awk, gawk, egrep, expr, eval, for, grep, m4, tr

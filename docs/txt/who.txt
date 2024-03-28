@@ -1,7 +1,4 @@
-<img src="img/who (1).png" alt="Description of who">
+<img src="img/who (1).png" width="700" height="auto" alt="Description of who">
 
 geekforgeeks@HP~: whoami –help
-<img src="img/who (2).png" alt="Description of who">
-
-
-
+<img src="img/who (2).png" width="700" height="auto" alt="Description of who">

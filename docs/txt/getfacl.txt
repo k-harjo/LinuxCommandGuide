@@ -71,7 +71,7 @@ If the environment variable POSIXLY_CORRECT is defined, the default behavior of 
 
 <s1>Example</s1>
 
-<img src="img/getfacl (1).png" alt="Description of getfacl">
+<img src="img/getfacl (1).png" width="700" height="auto" alt="Description of getfacl">
 
 
 *See also: setfacl, chown

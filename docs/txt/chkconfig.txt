@@ -16,24 +16,24 @@ chkconfig [--level levels] name
 To List current status of all system services. 
 
 chkconfig --list 
-<img src="img/chkconfig (1).png" alt="Description of chkconfig">
+<img src="img/chkconfig (1).png" width="700" height="auto" alt="Description of chkconfig">
  
 To View current status of a particular services. 
 
 chkconfig --list rhnsd 
-<img src="img/chkconfig (2).png" alt="Description of chkconfig">
+<img src="img/chkconfig (2).png" width="700" height="auto" alt="Description of chkconfig">
 
 Enabling a Service: By default 2 3 4 5 run levels are affected by this command to enable certain run levels only, add –level attribute followed by run level. 
 
 To Delete a Service: 
 
 chkconfig del rhnsd 
-<img src="img/chkconfig (3).png" alt="Description of chkconfig"> 
+<img src="img/chkconfig (3).png" width="700" height="auto" alt="Description of chkconfig"> 
 
 To add a Service: 
 
 chkconfig add rhnsd 
-<img src="img/chkconfig (4).png" alt="Description of chkconfig">
+<img src="img/chkconfig (4).png" width="700" height="auto" alt="Description of chkconfig">
  
 
 See also: init, lspci, ntsysv, system-config-services

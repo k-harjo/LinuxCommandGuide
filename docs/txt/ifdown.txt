@@ -9,6 +9,4 @@ ifdown [-nv] [–no-act] [–verbose] [-i FILE|–interfaces=FILE] [–allow CLA
 sudo is used for permissions, -a to work on all devices and v for verbose the output.sudo
 ifdown –av
 
-<img src="img/ifdown (1).png" alt="Description of ifdown">
-
-
+<img src="img/ifdown (1).png" width="700" height="auto" alt="Description of ifdown">

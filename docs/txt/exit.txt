@@ -14,10 +14,10 @@ If n is omitted, the exit status is that of the last command executed. A trap on
 <s1>Examples</s1>
 
 exit: Exit Without Parameter 
-<img src="img/exit (1).png" alt="Description of exit">
+<img src="img/exit (1).png" width="700" height="auto" alt="Description of exit">
 
 exit [n]: Exit With Parameter 
-<img src="img/exit (2).png" alt="Description of exit">
+<img src="img/exit (2).png" width="700" height="auto" alt="Description of exit">
 
 
 *See also: bash, logout, lo, bye, quit, return, shutdown

@@ -6,12 +6,11 @@ The ifup command basically brings the network interface up, allowing it to trans
 ifup [-nv] [--no-act] [--verbose] [-i FILE|--interfaces=FILE] [--allow CLASS] -a|IFACE...
 <s1>Example:</s1>
 Let us see an example when our interface is down and how the browser reacts to it.
-<img src="img/ifup (1).png" alt="Description of ifup">
+<img src="img/ifup (1).png" width="700" height="auto" alt="Description of ifup">
 
 In this case, the interface was not up and configured. To get the network interface up and work we use
 usesudo ifup –av
-<img src="img/ifup (2).png" alt="Description of ifup">
+<img src="img/ifup (2).png" width="700" height="auto" alt="Description of ifup">
 
 After using ifup command, the network is working:
-<img src="img/ifup (3).png" alt="Description of ifup">
-
+<img src="img/ifup (3).png" width="700" height="auto" alt="Description of ifup">

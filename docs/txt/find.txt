@@ -16,13 +16,13 @@ find ./GFG -name *.txt
 
 This command is tailored for discovering files within a directory that adhere to a specific naming pattern. In this case, it identifies files ending with ‘.txt’ within the “GFG” directory. 
 
-<img src="img/find (1).png" alt="Description of find">
+<img src="img/find (1).png" width="700" height="auto" alt="Description of find">
 
 find ./GFG -name sample.txt -exec rm -i {} \; 
 
 This command not only locates a specified file but also prompts the user for confirmation before initiating its removal. The example seeks to delete a file named “sample.txt” within the “GFG” directory. 
 
-<img src="img/find (2).png" alt="Description of find">
+<img src="img/find (2).png" width="700" height="auto" alt="Description of find">
 
 
 

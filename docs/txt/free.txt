@@ -39,6 +39,6 @@ OPTION: refers to the options compatible with free command.
 
 <s1>Examples</s1>
 
-<img src="img/free (1).png" alt="Description of free">
+<img src="img/free (1).png" width="700" height="auto" alt="Description of free">
 
-<img src="img/free (2).png" alt="Description of free">
+<img src="img/free (2).png" width="700" height="auto" alt="Description of free">

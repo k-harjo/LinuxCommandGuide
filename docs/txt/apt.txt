@@ -69,7 +69,7 @@ apt/apt-get and aptitude now share the same list of installed packages and so ca
 <s1>Examples</s1>
 
 apt show youtube-dl
-<img src="img/apt (1).png" alt="Description of apt">
+<img src="img/apt (1).png" width="700" height="auto" alt="Description of apt">
 
 
 *See also: dpkg, apt-get, Synaptic Passage Manager, Taskel

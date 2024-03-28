@@ -7,20 +7,11 @@ Options and their Practical Implementation in mkdir
 
 <s1>Examples:</s1>
 mkdir -v [directories]
-<img src="img/mkdir (1).png" alt="Description of mkdir">
+<img src="img/mkdir (1).png" width="700" height="auto" alt="Description of mkdir">
 
 
 Create a directory name “jayesh_gfg”
 mkdir jayesh_gfg
-<img src="img/mkdir (2).png" alt="Description of mkdir">
+<img src="img/mkdir (2).png" width="700" height="auto" alt="Description of mkdir">
 
 Here we have used `ls` command to display all files and directories.
-
-
-
-
-
-
-
-
-

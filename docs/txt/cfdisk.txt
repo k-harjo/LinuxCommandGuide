@@ -37,13 +37,13 @@ cfdisk - used to create, delete, and modify partitions on a disk device. It disp
 <s1>Examples</s1>
 
 cfdisk /dev/sda 
-<img src="img/cfdisk (1).png" alt="Description of cfdisk">
+<img src="img/cfdisk (1).png" width="700" height="auto" alt="Description of cfdisk">
 
 After running you get a prompt like this: 
-<img src="img/cfdisk (2).png" alt="Description of cfdisk">
+<img src="img/cfdisk (2).png" width="700" height="auto" alt="Description of cfdisk">
 
 Choose gpt from the list. Now you will see a partition table like this: 
-<img src="img/cfdisk (3).png" alt="Description of cfdisk">
+<img src="img/cfdisk (3).png" width="700" height="auto" alt="Description of cfdisk">
 
 
 *See also: fdisk, fdformat, mkfs, parted, sfdisk

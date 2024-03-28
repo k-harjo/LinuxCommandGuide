@@ -1,7 +1,7 @@
 Taking input from standard input
-<img src="img/rev (1).png" alt="Description of rev">
+<img src="img/rev (1).png" width="700" height="auto" alt="Description of rev">
 
 
 rev -h:
 This option will show the help message and exit.rev -h
-<img src="img/rev (2).png" alt="Description of rev">
+<img src="img/rev (2).png" width="700" height="auto" alt="Description of rev">

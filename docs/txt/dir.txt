@@ -18,13 +18,13 @@ dir command differs from ls command in the format of listing contents that is in
 <s1>Examples</s1>
 
 dir -a
-<img src="img/dir (1).png" alt="Description of dir">
+<img src="img/dir (1).png" width="700" height="auto" alt="Description of dir">
 
 dir -l –author 
-<img src="img/dir (2).png" alt="Description of dir">
+<img src="img/dir (2).png" width="700" height="auto" alt="Description of dir">
 
 dir –color 
-<img src="img/dir (3).png" alt="Description of dir">
+<img src="img/dir (3).png" width="700" height="auto" alt="Description of dir">
 
 
 *See also: ls

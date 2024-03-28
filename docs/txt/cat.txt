@@ -42,14 +42,14 @@ If our file_name = jayesh.txt
 
 cat jayesh.txt 
 
-<img src="img/cat (1).png" alt="Description of cat">
+<img src="img/cat (1).png" width="700" height="auto" alt="Description of cat">
 Note: `ls` command is used to display all files and directories in the current location. 
 
 If we have two files, file1 and file2. 
 
 cat file1 file2 
 
-<img src="img/cat (2).png" alt="Description of cat">
+<img src="img/cat (2).png" width="700" height="auto" alt="Description of cat">
 
 
 *See also: cp, mv, pv, tac, hexdump

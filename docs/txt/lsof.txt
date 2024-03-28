@@ -1,6 +1,6 @@
-<img src="img/lsof (1).png" alt="Description of lsof">
+<img src="img/lsof (1).png" width="700" height="auto" alt="Description of lsof">
 
 
 List all files opened by a user
 lsof -u username
-<img src="img/lsof (2).png" alt="Description of lsof">
+<img src="img/lsof (2).png" width="700" height="auto" alt="Description of lsof">

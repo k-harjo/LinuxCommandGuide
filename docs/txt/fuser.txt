@@ -68,10 +68,10 @@ fuser can identify the process using the files or sockets. This command can be a
 <s1>Example</s1>
 
 fuser ~/ 
-<img src="img/fuser (1).png" alt="Description of fuser">
+<img src="img/fuser (1).png" width="700" height="auto" alt="Description of fuser">
 
 fuser -v .
-<img src="img/fuser (2).png" alt="Description of fuser">
+<img src="img/fuser (2).png" width="700" height="auto" alt="Description of fuser">
 
 
 *See also: ps, kill, killall, lsof, top, w

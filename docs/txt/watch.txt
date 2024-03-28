@@ -8,9 +8,4 @@ Options:
 
 watch -d  free –m
 
-<img src="img/watch (1).png" alt="Description of watch">
-
-
-
-
-
+<img src="img/watch (1).png" width="700" height="auto" alt="Description of watch">

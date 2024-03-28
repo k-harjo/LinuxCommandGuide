@@ -1,9 +1,9 @@
-<img src="img/popd (1).png" alt="Description of popd">
+<img src="img/popd (1).png" width="700" height="auto" alt="Description of popd">
 
 
 Deleting a directory from the stack without changing the current directory
 popd -n
-<img src="img/popd (2).png" alt="Description of popd">
+<img src="img/popd (2).png" width="700" height="auto" alt="Description of popd">
 
 
 
@@ -18,9 +18,9 @@ pr [options][filename]
 <s1>Examples:</s1>
 pr -3 abc.txt
 here abc.txt is the name of file.
-<img src="img/popd (3).png" alt="Description of popd">
+<img src="img/popd (3).png" width="700" height="auto" alt="Description of popd">
 
 To suppress the headers and footers the -t option is used.
 pr -t abc.txt
 After executing the above command it will give us the following output.
-<img src="img/popd (4).png" alt="Description of popd">
+<img src="img/popd (4).png" width="700" height="auto" alt="Description of popd">

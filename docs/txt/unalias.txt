@@ -3,15 +3,5 @@ How to Remove an Alias
 Removing an existing alias is known as unaliasing.
 <s1>Syntax:</s1>
 unalias [alias name]
-<img src="img/unalias (1).png" alt="Description of unalias">
-
-
-
-
-
-
-
-
-
-
+<img src="img/unalias (1).png" width="700" height="auto" alt="Description of unalias">
 

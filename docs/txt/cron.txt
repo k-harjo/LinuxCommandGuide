@@ -29,7 +29,7 @@ cron is a software utility, offered by a Linux-like operating system that automa
 
 How to run the cron daemon: Cron should be started from /etc/init.d or /etc/rc.d/init.d (older systems may also use /etc/rc or /etc/rc.local). It will return immediately, so you don't need to start it with '&'.
 
-<img src="img/cron (1).png" alt="Description of cron">
+<img src="img/cron (1).png" width="700" height="auto" alt="Description of cron">
 
 
 What cron does:

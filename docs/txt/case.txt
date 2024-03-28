@@ -9,7 +9,7 @@ case WORD in [PATTERN [| PATTERN]...) COMMANDS ;;]... esac
 
 
 <s1>Example: </s1>
-<img src="img/case (1).png" alt="Description of case">
+<img src="img/case (1).png" width="700" height="auto" alt="Description of case">
 
 
 *See also: if, for, until, select, while

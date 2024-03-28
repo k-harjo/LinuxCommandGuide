@@ -41,7 +41,7 @@ $ base32 --wrap=0 picture.jpg > encoded.txt
 Decode the file encoded.txt:
 $ base32 encoded.txt > restore.txt
 
-<img src="img/base32 (1).png" alt="Description of base32">
+<img src="img/base32 (1).png" width="700" height="auto" alt="Description of base32">
 
 
 *See also: base64, uuencode, ASCII Table

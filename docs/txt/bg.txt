@@ -24,7 +24,7 @@ We create a process using sleep command, we get its ID as 1.
 
 We put it in background by providing its ID to bg. 
 
-<img src="img/bg (1).png" alt="Description of bg">
+<img src="img/bg (1).png" width="700" height="auto" alt="Description of bg">
 
 ‘sleep 500’ is used to create dummy foreground job. 
 

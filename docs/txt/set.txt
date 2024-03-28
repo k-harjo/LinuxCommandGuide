@@ -13,7 +13,7 @@ Running the command without options or arguments outputs a list of all settings 
 
 <s1>Examples:</s1>
 The following is an example of a partial set command output:
-<img src="img/set (1).png" alt="Description of set">
+<img src="img/set (1).png" width="700" height="auto" alt="Description of set">
 
 
 1. Run set -x:
@@ -29,18 +29,8 @@ done
 chmod +x [script-name.sh]
 4. Execute the script. The syntax is:
 ./[script-name.sh]
-<img src="img/set (2).png" alt="Description of set">
+<img src="img/set (2).png" width="700" height="auto" alt="Description of set">
 
 The output prints one line at a time, runs it, shows the result if there is one, and moves on to the next line.
 Another way to enable debugging is to place the -x flag on the shebang line of the script:
 #!/bin/bash -x
-
-
-
-
-
-
-
-
-
-

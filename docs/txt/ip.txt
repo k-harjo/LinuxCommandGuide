@@ -6,4 +6,4 @@ ip [ OPTIONS ] OBJECT { COMMAND | help }
 <s1>Example:</s1>
 This option is used to show all IP addresses associated with all network devices.
 ip address
-<img src="img/ip (1).png" alt="Description of ip">
+<img src="img/ip (1).png" width="700" height="auto" alt="Description of ip">

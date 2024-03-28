@@ -41,7 +41,7 @@ groupmod modifies the definition of the specified GROUP by modifying the appropr
 
 <s1>Example</s1>
 
-<img src="img/groupmod (1).png" alt="Description of groupmod">
+<img src="img/groupmod (1).png" width="700" height="auto" alt="Description of groupmod">
 
 
 *See also: groupadd, groupdel, usermod

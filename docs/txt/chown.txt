@@ -60,13 +60,13 @@ Using `-c` Option in `chown` to Change File Ownership
 
 chown -c master file1.txt 
 
-<img src="img/chown (1).png" alt="Description of chown"> 
+<img src="img/chown (1).png" width="700" height="auto" alt="Description of chown"> 
 
 Using `-v` Option in `chown` to Change File Ownership 
 
 chown -v master file1.txt 
 
-<img src="img/chown (2).png" alt="Description of chown">
+<img src="img/chown (2).png" width="700" height="auto" alt="Description of chown">
 
 
 *See also: chgrp, chmod

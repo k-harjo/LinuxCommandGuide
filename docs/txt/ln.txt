@@ -6,21 +6,11 @@ ln [OPTION]... -t DIRECTORY TARGET...  (3rd form)
 <s1>Examples:</s1>
 Basically, ln command is used to create hard links and soft links for files in Linux. Let’s discuss all the three forms one by one.
 1st Form: This form is simple, the source file with destination link name you have to specify:
-<img src="img/ln (1).png" alt="Description of ln">
+<img src="img/ln (1).png" width="700" height="auto" alt="Description of ln">
 
 2nd Form: Here, we have to give source file and directory as a link, simply the source file will be copied to the directory which you specify. See the example below.
-<img src="img/ln (2).png" alt="Description of ln">
+<img src="img/ln (2).png" width="700" height="auto" alt="Description of ln">
 
 
 3rd Form: Here, we will specify the directory name and a file to be linked to the directory. It is mostly same to 2nd form.
-<img src="img/ln (3).png" alt="Description of ln">
-
-
-
-
-
-
-
-
-
-
+<img src="img/ln (3).png" width="700" height="auto" alt="Description of ln">

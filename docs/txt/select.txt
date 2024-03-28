@@ -2,8 +2,8 @@ select command in Linux is used to create a numbered menu from which a user can 
 If the user enters a valid option then it executes the set of command written in select block and then ask again to enter a number, if a wrong option is entered it does nothing. If user enters nothing and simply press ‘enter‘ the option menu gets printed.
 <s1>Syntax:</s1>
 select NAME [in WORDS ... ;] do COMMANDS; done
-<img src="img/select (1).png" alt="Description of select">
+<img src="img/select (1).png" width="700" height="auto" alt="Description of select">
 
 
 help select : It displays help information.
-<img src="img/select (2).png" alt="Description of select">
+<img src="img/select (2).png" width="700" height="auto" alt="Description of select">

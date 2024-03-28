@@ -73,10 +73,10 @@ diff3 command is used to compare the three files line by line. It internally use
 <s1>Example</s1>
 
 Let us consider three files as a.txt, b.txt and c.txt.
-<img src="img/diff3 (1).png" alt="Description of diff3">
+<img src="img/diff3 (1).png" width="700" height="auto" alt="Description of diff3">
 
 Now if diff3 command is used over these three files then following output will come: 
-<img src="img/diff3 (2).png" alt="Description of diff3">
+<img src="img/diff3 (2).png" width="700" height="auto" alt="Description of diff3">
 
 
 *See also: cmp, diff, sdiff

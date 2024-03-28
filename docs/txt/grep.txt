@@ -242,10 +242,10 @@ $ grep "Needle in a Haystack" /etc/*
 <s1>Examples</s1>
 
 Case insensitive search: grep -i "UNix" geekfile.txt 
-<img src="img/grep (1).png" alt="Description of grep">
+<img src="img/grep (1).png" width="700" height="auto" alt="Description of grep">
  
 Displaying the Count of Number of Matches Using grep: grep -c "unix" geekfile.txt 
-<img src="img/grep (2).png" alt="Description of grep">
+<img src="img/grep (2).png" width="700" height="auto" alt="Description of grep">
 
 
 *See also: egrep, fgrep, pgrep, find, gawk, locate, sed, tr, whereis

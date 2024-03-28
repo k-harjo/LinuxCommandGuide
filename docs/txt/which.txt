@@ -7,12 +7,12 @@ which [filename1] [filename2] …
 Using `-a` to display all the occurrences of the file.
 If we want to display all the occurrences of the `python` file.
 which -a python
-<img src="img/which (1).png" alt="Description of which">
+<img src="img/which (1).png" width="700" height="auto" alt="Description of which">
 
 Checking Command Aliases
 If we want to check whether the command `ll` is an alias or not.
 which -a ll
-<img src="img/which (2).png" alt="Description of which">
+<img src="img/which (2).png" width="700" height="auto" alt="Description of which">
 
 
 
@@ -30,8 +30,8 @@ while command in Linux is used to repeatedly execute a set of command as long as
 <s1>Syntax:</s1>
 while COMMANDS; do COMMANDS; done
 <s1>Examples:</s1>
-<img src="img/which (3).png" alt="Description of which">
+<img src="img/which (3).png" width="700" height="auto" alt="Description of which">
 
 Option:
 help while: It displays help information.
-<img src="img/which (4).png" alt="Description of which">
+<img src="img/which (4).png" width="700" height="auto" alt="Description of which">

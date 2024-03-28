@@ -5,17 +5,9 @@ xdg-open {file | URL}
 <s1>Example:</s1>
 xdg-open read.html
 
-<img src="img/xdg-open (1).png" alt="Description of xdg-open">
+<img src="img/xdg-open (1).png" width="700" height="auto" alt="Description of xdg-open">
 
 
 xdg-open --help
 
-<img src="img/xdg-open (2).png" alt="Description of xdg-open">
-
-
-
-
-
-
-
-
+<img src="img/xdg-open (2).png" width="700" height="auto" alt="Description of xdg-open">

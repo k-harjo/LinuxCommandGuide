@@ -17,9 +17,9 @@ EXP1, EXP2, and EXP3 are arithmetic expressions. If any expression is omitted, i
 
 <s1>Example:</s1>
 
-<img src="img/for (1).png" alt="Description of for">
+<img src="img/for (1).png" width="700" height="auto" alt="Description of for">
 
-<img src="img/for (2).png" alt="Description of for">
+<img src="img/for (2).png" width="700" height="auto" alt="Description of for">
 
 
 *See also: case, eval, if, gawk, m4, until, while

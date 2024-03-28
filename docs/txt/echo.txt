@@ -41,13 +41,13 @@ There is also an echo utility (man echo) , but the shell built-in version will g
 <s1>Examples</s1>
 
 echo "Geeks for Geeks" 
-<img src="img/echo (1).png" alt="Description of echo">
+<img src="img/echo (1).png" width="700" height="auto" alt="Description of echo">
 
 NOTE: -e here enables the interpretation of backslash escapes  
       \b: it removes all the spaces in between the text 
 
 echo -e "Geeks \bfor \bGeeks" 
-<img src="img/echo (2).png" alt="Description of echo">
+<img src="img/echo (2).png" width="700" height="auto" alt="Description of echo">
 
 
 *See also: head, less, more, notify-send, pg, tee

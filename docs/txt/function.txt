@@ -6,7 +6,7 @@ The function can be created in the user’s current shell session or saved in th
 <s1>Syntax</s1>
 
 function name { COMMANDS ; } 
-<img src="img/function (1).png" alt="Description of function">
+<img src="img/function (1).png" width="700" height="auto" alt="Description of function">
 
 Parameterised function 
-<img src="img/function (2).png" alt="Description of function">
+<img src="img/function (2).png" width="700" height="auto" alt="Description of function">

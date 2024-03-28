@@ -45,17 +45,17 @@ The basic usage of cron is to execute a job in a specific time as shown below. T
 To view the Crontab entries 
 
 View Current Logged-In User’s Crontab entries : To view your crontab entries type crontab -l from your unix account. 
-<img src="img/crontab (1).png" alt="Description of crontab">
+<img src="img/crontab (1).png" width="700" height="auto" alt="Description of crontab">
 
 View Root Crontab entries: Login as root user (su – root) and do crontab -l. 
-<img src="img/crontab (2).png" alt="Description of crontab">
+<img src="img/crontab (2).png" width="700" height="auto" alt="Description of crontab">
 
 To view crontab entries of other Linux users: Login to root and use -u {username} -l 
-<img src="img/crontab (3).png" alt="Description of crontab">
+<img src="img/crontab (3).png" width="700" height="auto" alt="Description of crontab">
 
 To edit Crontab Entries Edit Current Logged-In User’s Crontab entries. 
 To edit a crontab entries, use crontab -e. By default this will edit the current logged-in users crontab 
-<img src="img/crontab (4).png" alt="Description of crontab">
+<img src="img/crontab (4).png" width="700" height="auto" alt="Description of crontab">
 
 
 *See also: at, cron, nice, builtin, chroot, exec, nohup, .source, su, watch

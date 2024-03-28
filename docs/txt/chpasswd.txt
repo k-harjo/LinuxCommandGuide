@@ -53,7 +53,7 @@ user3:user3_password
 
 Note: After completion please press ctrl+d to exit from the command. As soon as ctrl + d is pressed password gets changed.
 
-<img src="img/chpasswd (1).png" alt="Description of chpasswd">
+<img src="img/chpasswd (1).png" width="700" height="auto" alt="Description of chpasswd">
 
 A simple text file can also be used to store username and password and then use them to change the password. 
 
@@ -62,13 +62,13 @@ user1:user1_password
 user2:user2_password 
 user3:user3_password 
  
-<img src="img/chpasswd (2).png" alt="Description of chpasswd">
+<img src="img/chpasswd (2).png" width="700" height="auto" alt="Description of chpasswd">
 
 Then provide this to chpasswd command. 
 
 $chpasswd < file_name.txt 
 
-<img src="img/chpasswd (3).png" alt="Description of chpasswd">
+<img src="img/chpasswd (3).png" width="700" height="auto" alt="Description of chpasswd">
 
 The encryption algorithm can also be applied to the password. 
 

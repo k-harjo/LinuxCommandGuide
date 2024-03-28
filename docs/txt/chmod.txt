@@ -115,7 +115,7 @@ Use the `ls` command with the `-l` option to list the files in the directory alo
 
 ls –l 
 
-<img src="img/chmod (1).png" alt="Description of chmod">
+<img src="img/chmod (1).png" width="700" height="auto" alt="Description of chmod">
 
 Step 3: Make the Script Executable 
 
@@ -131,7 +131,7 @@ Run the `ls -l` command again to verify that the script now has execute permissi
 
 ls –l 
 
-<img src="img/chmod (2).png" alt="Description of chmod"> 
+<img src="img/chmod (2).png" width="700" height="auto" alt="Description of chmod"> 
 
 Step 5: Execute the Script 
 
@@ -139,7 +139,7 @@ Now that your script has executable permissions, you can run it using the `./` n
 
 ./example.sh 
 
-<img src="img/chmod (3).png" alt="Description of chmod">
+<img src="img/chmod (3).png" width="700" height="auto" alt="Description of chmod">
 
 This notation tells Linux to look in the current directory (.) for the script named example.sh. 
 

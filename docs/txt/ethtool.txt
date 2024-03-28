@@ -16,4 +16,4 @@ If the version is displayed without any errors, we’ve successfully installed t
 
 To get the general properties of a network interface device, we simply run ethtool followed by its name: 
 
-<img src="img/ethtool (1).png" alt="Description of ethtool">
+<img src="img/ethtool (1).png" width="700" height="auto" alt="Description of ethtool">

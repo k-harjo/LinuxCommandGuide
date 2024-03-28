@@ -73,7 +73,7 @@ help command displays information about shell built-in commands
 
 <s1>Examples</s1>
 
-<img src="img/help (1).png" alt="Description of help">
+<img src="img/help (1).png" width="700" height="auto" alt="Description of help">
 
 
 *See also: man, help, more, less

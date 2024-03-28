@@ -1,13 +1,4 @@
-<img src="img/users (1).png" alt="Description of users">
+<img src="img/users (1).png" width="700" height="auto" alt="Description of users">
 
 users –help: This option will display the help message and exit
-<img src="img/users (2).png" alt="Description of users">
-
-
-
-
-
-
-
-
-
+<img src="img/users (2).png" width="700" height="auto" alt="Description of users">

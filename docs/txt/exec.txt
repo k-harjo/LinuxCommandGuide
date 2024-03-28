@@ -22,9 +22,9 @@ Exec with a command as an argument: In the first mode, the exec tries to execute
 
 <s1>Examples</s1>
 
-<img src="img/exec (1).png" alt="Description of exec">
+<img src="img/exec (1).png" width="700" height="auto" alt="Description of exec">
 
-<img src="img/exec (2).png" alt="Description of exec">
+<img src="img/exec (2).png" width="700" height="auto" alt="Description of exec">
 
 
 *See also: exit, builtin, crontab, chroot, if, nohup, .source, su, type, watch

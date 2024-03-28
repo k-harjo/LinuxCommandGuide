@@ -14,13 +14,13 @@ How to Remove Duplicate Lines Using `uniq` Command
 
 To remove duplicate lines from `kt.txt`, we can use the `uniq` command:
 uniq kt.txt
-<img src="img/uniq (1).png" alt="Description of uniq">
+<img src="img/uniq (1).png" width="700" height="auto" alt="Description of uniq">
 
 
 How to Count Duplicate Lines Using `uniq` Command in Linux
 The `-c` option prefixes each line with the number of occurrences in the input:
 uniq -c kt.txt
-<img src="img/uniq (2).png" alt="Description of uniq">
+<img src="img/uniq (2).png" width="700" height="auto" alt="Description of uniq">
 
 
 
@@ -41,7 +41,7 @@ Unix2dos command: converts a Unix text file to DOS format
 <s1>Example:</s1>
 $unix2dos myfile.txt
 Convert UNIX file to DOS format by using unix2dos command
-<img src="img/uniq (3).png" alt="Description of uniq">
+<img src="img/uniq (3).png" width="700" height="auto" alt="Description of uniq">
 
 
 
@@ -69,7 +69,7 @@ unset command in Bash is used to unset or remove a variable or function. It allo
 unset -f function_name
 <s1>Examples:</s1>
 Unset a Bash Function
-<img src="img/uniq (4).png" alt="Description of uniq">
+<img src="img/uniq (4).png" width="700" height="auto" alt="Description of uniq">
 
 Unset a Function After Task Completion
-<img src="img/uniq (5).png" alt="Description of uniq">
+<img src="img/uniq (5).png" width="700" height="auto" alt="Description of uniq">

@@ -1,16 +1,7 @@
 write command in Linux is used to send a message to another user. The write utility allows a user to communicate with other users, by copying lines from one user’s terminal to others.
 <s1>Syntax:</s1>
 write user [tty]
-<img src="img/write (1).png" alt="Description of write">
+<img src="img/write (1).png" width="700" height="auto" alt="Description of write">
 
 write metal: In this command metal is the name of another user that I’m logged in with and when I execute this command with a message I get a notification on my terminal showing that I received a message from another user.
-<img src="img/write (2).png" alt="Description of write">
-
-
-
-
-
-
-
-
-
+<img src="img/write (2).png" width="700" height="auto" alt="Description of write">

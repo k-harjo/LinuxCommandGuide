@@ -30,7 +30,7 @@ As it's a ring-buffer, it will automatically cycle out old information when the 
 
 <s1>Examples</s1>
 
-<img src="img/dmesg (1).png" alt="Description of dmesg">
+<img src="img/dmesg (1).png" width="700" height="auto" alt="Description of dmesg">
 
 
 *See also: chkconfig, syslogd

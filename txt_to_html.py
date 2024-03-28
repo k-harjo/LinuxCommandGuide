@@ -106,7 +106,7 @@ for item in all_linux_cmds["Doc_Path"]:
         """
         
     file_name = format(f"{n_item}.html")
-    new_file = "C:/Users/khbil/Documents/Python_Scripts/LinuxBash-py311/docs/html/" + file_name
+    new_file = "docs/html/" + file_name
     with open(new_file, 'w', encoding='utf-8') as html_file:
         html_file.write(html_content)
 

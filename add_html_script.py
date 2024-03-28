@@ -4,7 +4,7 @@ import pandas as pd
 
 # Update these paths as needed
 img_folder_path = 'docs/img/'
-linux_file = "C:/Users/khbil/Documents/Python_Scripts/LinuxBash-py311/linux_commands.csv"
+linux_file = "linux_commands.csv"
 
 # Load the CSV file containing document paths
 all_linux_cmds = pd.read_csv(linux_file)
@@ -24,12 +24,12 @@ def replace_image_strings_and_modify_subheadings(file_path, img_folder_path):
 
     for line in lines:
         # First, update specific <img> tags with incorrect paths
-        line = re.sub(r'<img src="docs/html/img/(.+? \(\d+\)\.png)"', r'<img src="img/\1"', line)
-
+        # line = re.sub(r'<img src="img/(.+? \(\d+\)\.png)" alt="Description of \{doc_title\}" width="850" height="auto">', r'<img src="img/\1" width="850" height="auto">', line)
+        line = line.replace ('width="600"', 'width="700"')
         # Replace placeholders with HTML image tags
         new_line, num_replacements = re.subn(
             r'image0*(\d+)', 
-            lambda match: f'<img src="{img_folder_path}/{doc_title} ({match.group(1)}).png" alt="Description of {doc_title}">', 
+            lambda match: f'<img src="{img_folder_path}/{doc_title} ({match.group(1)}).png" alt="Description of {doc_title}"  width="850" height="auto" >', 
             line
         )
 

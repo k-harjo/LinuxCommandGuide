@@ -7,10 +7,7 @@ install [OPTION]... -d DIRECTORY
 
 <s1>Examples:</s1>
 Copies two files rocket.c and rocket to directory demo.
-<img src="img/install (1).png" alt="Description of install">
+<img src="img/install (1).png" width="700" height="auto" alt="Description of install">
 
 Compare and copies files(observe the difference)
-<img src="img/install (2).png" alt="Description of install">
-
-
-
+<img src="img/install (2).png" width="700" height="auto" alt="Description of install">

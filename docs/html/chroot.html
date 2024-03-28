@@ -91,7 +91,7 @@
                 <!-- Rest of your body content goes here -->
                 <pre><p>chroot command in Linux/Unix system is used to change the root directory. Every process/command in Linux/Unix like systems has a current working directory called root directory. It changes the root directory for currently running processes as well as its child processes. A process/command that runs in such a modified environment cannot access files outside the root directory. This modified environment is known as “chroot jail” or “jailed directory”. Some root user and privileged process are allowed to use chroot command. 
 
-<img src="img/chroot (1).png" alt="Description of chroot">
+<img src="img/chroot (1).png" width="700" height="auto" alt="Description of chroot">
 
 “chroot” command can be very useful: 
 	To create a test environment. 
@@ -123,7 +123,7 @@ Step 3: Copy /bin/bash and /bin/ls into $HOME/jail/bin/ location using cp comman
 
 Step 4: Use ldd command to print shared libraries:$ ldd /bin/bash 
 
-<img src="img/chroot (1).png" alt="Description of chroot">
+<img src="img/chroot (1).png" width="700" height="auto" alt="Description of chroot">
 
 Step 5: Copy required libraries into $HOME/jail/lib64/ location using cp command:cp -v libraries/displayed/by/above/command $HOME/jail/lib64Similarly, copy the libraries of ls command into $HOME/jail/lib64 location. 
 

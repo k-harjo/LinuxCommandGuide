@@ -52,11 +52,11 @@ bind - Display current readline key and function bindings, bind a key sequence t
 
 -m: It use KEYMAP as the keymap for the duration of this command. Here we are using vi keymapping in bash, which allows us to manipulate text on the command line as you would in vi. 
 bind -m vi 
-<img src="img/bind (1).png" alt="Description of bind">
+<img src="img/bind (1).png" width="700" height="auto" alt="Description of bind">
  
 bind –l 
 -l: List all the readline function names. There are around 150 functions that are available by default in this list. 
-<img src="img/bind (2).png" alt="Description of bind">
+<img src="img/bind (2).png" width="700" height="auto" alt="Description of bind">
 
 
 *See also: bashrc

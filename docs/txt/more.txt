@@ -11,4 +11,4 @@ Options:
 
 <s1>Example:</s1>
 more -d sample.txt
-<img src="img/more (1).png" alt="Description of more">
+<img src="img/more (1).png" width="700" height="auto" alt="Description of more">

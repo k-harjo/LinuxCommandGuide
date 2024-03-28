@@ -733,7 +733,7 @@ The following actions are available:
 <s1>Examples: </s1>
 
 aptitude show package 
-<img src="img/aptitude (1).png" alt="Description of aptitude">
+<img src="img/aptitude (1).png" width="700" height="auto" alt="Description of aptitude">
 
 
 *See also: dpkg, apt-get, Synaptic Passage Manager, Taskel

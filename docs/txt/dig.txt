@@ -76,11 +76,11 @@ dig command stands for Domain Information Groper. It is used for retrieving info
 
 To query domain “A” record 
 dig geeksforgeeks.org 
-<img src="img/dig (1).png" alt="Description of dig">
+<img src="img/dig (1).png" width="700" height="auto" alt="Description of dig">
 
 To remove comment lines. 
 dig geeksforgeeks.org +nocomments 
-<img src="img/dig (2).png" alt="Description of dig">
+<img src="img/dig (2).png" width="700" height="auto" alt="Description of dig">
 
 
 *See also: host, named, dnssec-keygen

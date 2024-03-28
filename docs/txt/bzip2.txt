@@ -69,7 +69,7 @@ If no file names are specified, bzip2 compresses from standard input to standard
 <s1>Examples</s1>
 
 $ bzip2 -z input.txt 
-<img src="img/bzip2 (1).png" alt="Description of bzip2">
+<img src="img/bzip2 (1).png" width="700" height="auto" alt="Description of bzip2">
 
 
 *See also: gzip, tar, unrar, xz 

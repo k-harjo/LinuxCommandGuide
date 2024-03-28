@@ -11,11 +11,11 @@ let "myvar =2" "myvar1=1" "myvar2=myvar1-myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1*myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1/myvar"; echo $myvar2
 let "myvar =2" "myvar1=1" "myvar2=myvar1%myvar"; echo $myvar2
-<img src="img/let (1).png" alt="Description of let">
+<img src="img/let (1).png" width="700" height="auto" alt="Description of let">
 
 Post-increment(var++) / post-decrement(var–) operator:
 
 let "myvar=10" "myvar2=--myvar"; echo $myvar $myvar2
-<img src="img/let (2).png" alt="Description of let">
+<img src="img/let (2).png" width="700" height="auto" alt="Description of let">
 
 Pre-increment(++var) / Pre-decrement(–var) operator:

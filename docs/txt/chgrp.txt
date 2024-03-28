@@ -41,7 +41,7 @@ chgrp [OPTION]… –reference=RFILE FILE
 Changing Group Ownership of a Single File 
  
 sudo chgrp geeksforgeeks abc.txt 
-<img src="img/chgrp (1).png" alt="Description of chgrp">
+<img src="img/chgrp (1).png" width="700" height="auto" alt="Description of chgrp">
 
 
 *See also: chmod, chown, setfacl, bash syntax

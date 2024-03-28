@@ -5,15 +5,15 @@ cksum command in Linux is used to display a CRC (Cyclic Redundancy Check) value,
 
       cksum [Option]... [File]...
 
-<img src="img/cksum (1).png" alt="Description of cksum">
+<img src="img/cksum (1).png" width="700" height="auto" alt="Description of cksum">
 
 Options Available in `cksum`
 
 –help : It displays help information. 
-<img src="img/cksum (2).png" alt="Description of cksum">
+<img src="img/cksum (2).png" width="700" height="auto" alt="Description of cksum">
 
 –version : It displays version information. 
-<img src="img/cksum (3).png" alt="Description of cksum">
+<img src="img/cksum (3).png" width="700" height="auto" alt="Description of cksum">
 
 Note: An intruder can corrupt a file in such a way that it produces the same CRC value after the transfer. That is why it is only checked for accidental corruption. 
 
