@@ -1,8 +1,0 @@
-image001
-
-
-To print size information in bytes.
-lsblk –b
-image002
-
-

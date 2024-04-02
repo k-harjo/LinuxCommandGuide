@@ -1,9 +1,0 @@
-image001
-
-
-List all files opened by a user
-lsof -u username
-image002
-
-
-
