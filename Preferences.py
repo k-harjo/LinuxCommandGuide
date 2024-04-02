@@ -7,6 +7,7 @@ from docs.style.BlueMode import BlueMode
 from docs.style.DarkMode import DarkMode
 from docs.style.PinkMode import PinkMode
 from docs.style.RainbowMode import RainbowMode
+from docs.style.DefaultMode import DefaultMode
 
 class Preferences(QWidget):
     mode_changed = pyqtSignal(str)
@@ -25,6 +26,8 @@ class Preferences(QWidget):
         self.dark_mode_radio = QRadioButton("Dark Mode")
         self.pink_mode_radio = QRadioButton("Pink Mode")
         self.rainbow_mode_radio = QRadioButton("Rainbow Mode")
+        self.default_mode_radio = QRadioButton("Rainbow Mode")
+
 
         # Create layout and add radio buttons
         self.layout.addWidget(self.standard_mode_radio)
@@ -32,6 +35,8 @@ class Preferences(QWidget):
         self.layout.addWidget(self.dark_mode_radio)
         self.layout.addWidget(self.pink_mode_radio)
         self.layout.addWidget(self.rainbow_mode_radio)
+        self.layout.addWidget(self.default_mode_radio)
+
         
         #create apply button
         self.apply_button = QPushButton('Apply')
@@ -50,6 +55,8 @@ class Preferences(QWidget):
             selected_mode = PinkMode.style
         elif self.rainbow_mode_radio.isChecked():
             selected_mode = RainbowMode.style
+        elif self.default_mode_radio.isChecked():
+            selected_mode = DefaultMode.style
         self.mode_changed.emit(selected_mode)
 
 if __name__ == '__main__':

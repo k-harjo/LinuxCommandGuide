@@ -207,20 +207,29 @@ class LinuxDictGUI(QMainWindow):
         self.doc_viewer.load_document(doc)  
 
     def search(self):
-        app_dir = os.path.dirname(os.path.abspath(__file__))
-        base_dir = os.path.join(app_dir, "docs/html")
-        base_url = QUrl.fromLocalFile(base_dir + os.sep)
+        # app_dir = os.path.dirname(os.path.abspath(__file__))
+        # print(app_dir)
+        # base_dir = os.path.join(app_dir, "docshtml")
+        # print(base_dir)
+        # base_url = QUrl.fromLocalFile(base_dir + os.sep)
+        # print(base_url)
 
         results = []
         search_term = self.search_bar.text()
-        base_dir = Path('docs/html/')
+        # base_dir = Path('C:/Users/e436482/Documents/Programming/Python/LinuxCommandGuide/docs/html/')
         # Initialize results_html with a default value
         results_html = "<html><body><p>No results found.</p></body></html>"
-        for filename in os.listdir(base_dir):
-            if filename.endswith('.html'):
-                with open(base_dir, 'r', encoding='utf-8') as file:
+        # for filename in os.listdir(base_dir):
+        
+        for doc in self.all_linux_cmds["Html_Path"]:
+            print(doc)
+            if doc.endswith('.html'):
+                with open(doc, 'r', encoding='utf-8') as file:
                     html_content = file.read()
-                    self.setHtml(html_content, base_url)
+                    if search_term in html_content:
+                        filename = doc.split("/")
+                        print(filename)
+                        results.append(filename[-1])
         if results:
             results_formatted = '<br>'.join(results)
             results_html = f"""

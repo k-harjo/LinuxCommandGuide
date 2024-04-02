@@ -1,8 +1,0 @@
-image001
-
-
-shuf file.txt
-Suppose file.txt contains 6 lines, then the shuf command displays the input lines in random order as output.
-image002
-
-

@@ -1,5 +1,0 @@
-whoami displays the username of the current user when this command is invoked.
-The ‘whoami’ command is a simple yet powerful utility designed to reveal the current username associated with the active user session. When executed, it provides a swift response by outputting the username associated with the user who issued the command.
-Syntax:
-whoami [OPTION]
-Examples:
