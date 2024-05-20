@@ -1,0 +1,613 @@
+"""Python Command Guide
+Created on 03/28/2024
+@author Leilani Matthews"""
+
+
+############################################### PYTHON DATA TYPES & DATA STRUCTURES #################################################
+
+'''Both Data Types and Data Structures play crucial roles in handling and organizing data in Python:
+
+Python Data types are the classification or categorization of data items. It represents the kind of value that tells what operations can be performed on a particular data. Since everything is an object in Python programming, Python data types are classes and variables are instances (objects) of these classes. The following are the standard or built-in data types in Python:
+
+Numeric
+Sequence Type
+Boolean
+Set
+Dictionary
+Binary Types( memoryview, bytearray, bytes)
+
+Python Data Structures are a way of organizing data so that it can be accessed more efficiently depending upon the situation. 
+Data Structures are fundamentals of any programming language around which a program is built. Python helps to learn the fundamental of these data structures in a simpler way as compared to other programming languages.
+
+
+Variables can store data of different types, and different types can do different things.
+Python has the following data types built-in by default, in these categories:
+
+1. TEXT TYPE	
+-str: Represents text strings.
+2. NUMERIC TYPES	
+- int:   Represents integer numbers.
+- float: Represents real numbers.
+- complex: Represents the sum of a real number and an imaginary number is defined as a complex number.
+3. SEQUENCE TYPES
+-list:  list() function creates a list object.
+-tuple: tuple is a collection of Python objects much like a list.
+-range:  range() function returns a sequence of numbers, in a given range. 
+4. MAPPING TYPE
+-dict: Represents a key-value pair collection.
+5. SET TYPES	
+-set:  a set is an unordered collection of data types that is iterable, mutable, and has no duplicate elements.
+-frozenset: frozen sets are immutable sets that allow you to perform various set operations such as union,      intersection, difference, and symmetric difference.
+6. BOOLEAN TYPE	
+-bool: Represents boolean values of `True` or `False`.
+7. BINARY TYPES	
+-bytes
+-bytearray
+-memoryview
+8. NONE TYPE
+-NoneType
+
+Setting the Data Type
+In Python, the data type is set when you assign a value to a variable:
+
+Example   Data Type
+x = str("Hello World")	str	
+x = int(20)	int	
+x = float(20.5)	float	
+x = complex(1j)	complex	
+x = list(("apple", "banana", "cherry"))	list	
+x = tuple(("apple", "banana", "cherry"))	tuple	
+x = range(6)	range	
+x = dict(name="John", age=36)	dict	
+x = set(("apple", "banana", "cherry"))	set	
+x = frozenset(("apple", "banana", "cherry"))	frozenset	
+x = bool(5)	bool	
+x = bytes(5)	bytes	
+x = bytearray(5)	bytearray	
+x = memoryview(bytes(5))	memoryview'''
+
+'''TEXT TYPE'''
+
+'''- `str`: Represents text strings.
+A String is a data structure in Python that represents a sequence of characters. It is an immutable data type, meaning that once you have created a string, you cannot change it. Strings are used widely in many different applications, such as storing and manipulating text data, representing names, addresses, and other types of data that can be represented as text.'''
+
+#Python String Format() 
+#Syntax: string = 'Hello, world!'
+
+#Example 1:
+
+# Creating a String 
+# with single Quotes 
+String1 = 'Welcome to the Geeks World'
+print("String with the use of Single Quotes: ") 
+print(String1) 
+
+#OUTPUT: 
+String with the use of Single Quotes: 
+Welcome to the Geeks World
+
+#Example 2:
+
+#Python String count() function returns the number of occurrences of a substring within a String.
+#initializing a string
+my_string = "Apple"
+#using string count() method
+char_count = my_string.count('A')
+#printing the result
+print(char_count)
+
+#OUTPUT: 
+1
+
+'''NUMERIC TYPES'''
+
+''' - `int`: Represents integer numbers.
+Python int() function returns an integer from a given object or converts a number in a given base to a decimal.'''
+#Python int() Function 
+#Syntax: int(x, base)
+
+#Example:
+
+# int() on string representation of numbers
+print("int('9')) =", int('9'))
+# int() on float values
+print("int(9.9) =", int(9.9))
+# int() on Python integer
+print("int(9) =", int(9))
+
+#OUTPUT: 
+int('9')) = 9
+int(9.9) = 9
+int(9) = 9
+
+#Convert base using int() in Python
+# octal to decimal using int()
+print("int() on 0o12 =", int('0o12', 8))
+ 
+# binary to decimal using int()
+print("int() on 0b110 =", int('0b110', 2))
+ 
+# hexa-decimal to decimal using int()
+print("int() on 0x1A =", int('0x1A', 16))
+
+#OUTPUT:
+int() on 0o12 = 10
+int() on 0b110 = 6
+int() on 0x1A = 26
+
+
+''' - `float`: Represents real numbers.
+Python float() function is used to return a floating-point number from a number or a string representation of a numeric value.'''
+#Python float() 
+#Syntax:  float(x)
+
+#Example1:
+
+# convert integer value to float
+num = float(10)
+print(num)
+
+#OUTPUT: 
+10.0
+
+#Example 2:
+# Python program to illustrate
+# Various examples and working of float()
+# for integers
+print(float(21.89))
+ 
+# for floating point numbers
+print(float(8))
+ 
+# for integer type strings
+print(float("23"))
+ 
+# for floating type strings
+print(float("-16.54"))
+ 
+# for string floats with whitespaces
+print(float("     -24.45   \n"))
+ 
+# for inf/infinity
+print(float("InF"))
+print(float("InFiNiTy"))
+ 
+# for NaN
+print(float("nan"))
+print(float("NaN"))
+
+#OUTPUT: 
+
+21.89
+8.0
+23.0
+-16.54
+-24.45
+inf
+inf
+nan
+nan
+
+'''complex: Represents the sum of a real number and an imaginary number is defined as a complex number.
+   real [optional]: numeric type (including complex). It defaults to zero.
+   imaginary [optional]: numeric type (including complex) .It defaults to zero.'''
+#Python complex() Function
+#Syntax: complex ([real[, imaginary]])
+
+#Example:
+
+# numeric type
+# nothing is passed
+z = complex()
+print("complex() with no parameters:", z)
+ 
+# integer type
+# passing first parameter only
+complex_num1 = complex(5)
+print("Int: first parameter only", complex_num1)
+ 
+# passing both parameters
+complex_num2 = complex(7, 2)
+print("Int: both parameters", complex_num2)
+ 
+# float type
+# passing first parameter only
+complex_num3 = complex(3.6)
+print("Float: first parameter only", complex_num3)
+ 
+# passing both parameters
+complex_num4 = complex(3.6, 8.1)
+print("Float: both parameters", complex_num4)
+print()
+ 
+# type
+print(type(complex_num1))
+
+#OUTPUT: 
+Nothing is passed 0j
+Int: first parameter only (5+0j)
+Int: both parameters (7+2j)
+Float: first parameter only (3.6+0j)
+Float: both parameters (3.6+8.1j)
+
+
+'''SEQUENCE TYPES
+
+list:  list() function creates a list object. Python list() function takes any iterable as a parameter and returns a list.'''
+
+#Python list() Function 
+#Syntax: list(iterable)
+
+#Example: 
+
+# initializing a string
+string = "ABCDEF"
+ 
+# using list() function to create a list
+list1 = list(string)
+ 
+# printing list1
+print(list1)
+
+#OUTPUT:
+['A', 'B', 'C', 'D', 'E', 'F']
+
+'''-tuple: tuple is a collection of Python objects much like a list.'''
+#Python tuple() function
+#Syntax: tuple(iterable)
+
+#Example 1:
+
+l = [1,2,3]
+print(tuple(l))
+
+#OUTPUT:
+(1, 2, 3)
+
+#Example 2:
+ 
+# when parameter is not passed
+tuple1 = tuple()
+print("empty tuple:", tuple1)
+ 
+# when an iterable(e.g., list) is passed
+list1= [ 1, 2, 3, 4 ] 
+tuple2 = tuple(list1)
+print("list to tuple:", tuple2)
+ 
+# when an iterable(e.g., string) is passed
+string = "geeksforgeeks"; 
+tuple4 = tuple(string)
+print("str to tuple:", tuple4)
+
+
+#OUTPUT:
+empty tuple: ()
+list to tuple: (1, 2, 3, 4)
+str to tuple: ('g', 'e', 'e', 'k', 's', 'f', 'o', 'r', 'g', 'e', 'e', 'k', 's')
+
+
+'''-range:  range() function returns a sequence of numbers, in a given range.'''
+
+#Python range() function
+#Syntax: range(start, stop, step)
+
+#Example 1:
+# printing first 6
+# whole number
+for i in range(6):
+    print(i, end=" ")
+print()
+
+#OUTPUT:
+0 1 2 3 4 5
+
+#Example 2: 
+# printing a natural
+# number from 5 to 20
+for i in range(5, 20):
+    print(i, end=" ")
+
+#OUTPUT
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+
+
+'''MAPPING TYPE'''
+
+'''- `dict`: Represents a key-value pair collection. 
+The dict() function is used to create a new dictionary or convert other iterable objects into a dictionary. A dictionary is a mutable data structure i.e. the data in the dictionary can be modified. 
+A dictionary is an indexed data structure i.e. the contents of a dictionary can be accessed by using indexes, here in the dictionary, the key is used as an index'''
+
+#Python dict() Function
+#Python dict() Syntax
+dict(**kwarg)
+
+#Example 1:
+
+#Creating dictionary using keyword arguments
+# passing keyword arguments to dict() method 
+myDict = dict(a=1, b=2, c=3, d=4) 
+print(myDict) "2")
+
+#OUTPUT:
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+#Example 2:
+
+#Creating deep-copy of the dictionary using dict()
+#dict(mapping)
+
+main_dict = {'a': 1, 'b': 2, 'c': 3} 
+  
+# deep copy using dict 
+dict_deep = dict(main_dict) 
+  
+# shallow copy without dict 
+dict_shallow = main_dict 
+  
+# changing value in shallow copy will change main_dict 
+dict_shallow['a'] = 10
+print("After change in shallow copy, main_dict:", main_dict) 
+  
+# changing value in deep copy won't affect main_dict 
+dict_deep['b'] = 20
+print("After change in deep copy, main_dict:", main_dict)
+
+#OUTPUT:
+After change in shallow copy, main_dict: {'a': 10, 'b': 2, 'c': 3}
+After change in deep copy, main_dict: {'a': 10, 'b': 2, 'c': 3}
+
+'''SET TYPES
+
+-set:  a set is an unordered collection of data types that is iterable, mutable, and has no duplicate elements.'''
+#Python set() Function
+#Syntax: set(iterable)
+
+#Example 1:
+# creating an empty set by using set() 
+s = set() 
+print("Type of s is ",type(s))
+#Output: Type of s is  <class 'set'>
+
+#Example 2:
+# working of set() on list 
+# initializing list  
+lis1 = [ 3, 4, 1, 4, 5 ] 
+  
+# Printing iterables before conversion 
+print("The list before conversion is : " + str(lis1)) 
+  
+# Iterables after conversion are  
+# notice distinct and elements 
+print("The list after conversion is : " + str(set(lis1)))
+#Output:
+The list before conversion is : [3, 4, 1, 4, 5]
+The list after conversion is : {1, 3, 4, 5}
+
+
+'''-frozenset: frozen sets are immutable sets that allow you to perform various set operations such as union, intersection,       difference, and symmetric difference.'''
+#Python frozenset()
+#Syntax : frozenset(iterable_object_name)
+
+#Example 1: 
+
+#Working of Python frozenset()
+fruits = frozenset(["apple", "banana", "orange"])
+print(fruits) 
+fruits.append("pink")
+print(fruits) 
+
+#OUTPUT:
+
+frozenset({'banana', 'orange', 'apple'})
+Traceback (most recent call last):
+  File "C:\Users\ashub\OneDrive\Desktop\achal cahtgpt\temp.py", line 3, in <module>
+    fruits.append("pink")
+AttributeError: 'frozenset' object has no attribute 'append'
+
+#Example 2: 
+#Python frozenset for Tuple
+
+# passing an empty tuple
+nu = ()
+ 
+# converting tuple to frozenset
+fnum = frozenset(nu)
+ 
+# printing empty frozenset object
+print("frozenset Object is : ", fnum)
+
+#OUTPUT:
+frozenset Object is :  frozenset()
+
+'''BOOLEAN TYPE'''
+'''-bool: Represents boolean values of `True` or `False`.
+bool() is a built-in function of Python programming language. It is used to convert any other data type value (string, integer, float, etc) into a boolean data type.
+boolean data type can store only 2 values: True and False.
+False Values: 0, NULL, empty lists, tuples, dictionaries, etc.'''
+
+
+#Python bool Format() 
+#Syntax: bool([x])
+
+#Example:
+
+x = bool(1)
+print(x)
+y = bool()
+print(y)
+
+#OUTPUT:
+True
+False
+
+# Python program to illustrate
+# built-in method bool()
+ 
+# Returns False as x is False
+x = False
+print(bool(x))
+ 
+# Returns True as x is True
+x = True
+print(bool(x))
+
+#OUTPUT:
+False
+True
+
+'''BINARY TYPES'''
+'''-bytes: Python byte() function converts an object to an immutable byte-represented object of a given size and data.'''
+
+#Python bytes() function
+#Syntax: bytes(src, enc, err)
+
+#Example 1: 
+
+# python code to demonstrate
+# int to bytes
+ 
+number = 12
+result = bytes(number)
+ 
+print(result)
+#OUTPUT:
+b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+
+#Example 2: 
+
+# Demonstrate the working of bytes() on int, iterables, none
+# initializing integer and iterables
+
+a = 4
+lis1 = [1, 2, 3, 4, 5]
+ 
+# No argument case
+print ("Byte conversion with no arguments : " + str(bytes())) 
+ 
+# conversion to bytes 
+print ("The integer conversion results in : "  + str(bytes(a)))
+print ("The iterable conversion results in : "  + str(bytes(lis1)))
+
+#OUTPUT: 
+Byte conversion with no arguments : b''
+The integer conversion results in : b'\x00\x00\x00\x00'
+The iterable conversion results in : b'\x01\x02\x03\x04\x05'
+
+
+'''-bytearray: bytearray() method returns a bytearray object in Python which is an array of given bytes. It gives a mutable sequence of integers in the range 0 <= x < 256. '''
+#Python | bytearray() function
+#Syntax: bytearray(source, encoding, errors)
+
+#Example 1:
+#bytearray() Function on String
+
+str = "HelloWorld"
+ 
+# encoding the string with unicode 8 and 16
+str = "Hello! World"
+ 
+# encoding the string with unicode 8 and 16
+array1 = bytearray(str, 'utf-8')
+array2 = bytearray(str, 'utf-16')
+ 
+print(array1)
+print(array2)
+
+#OUTPUT:
+bytearray(b'Hello! World')
+bytearray(b'\xff\xfeH\x00e\x00l\x00l\x00o\x00!\x00 \x00W\x00o\x00r\x00l\x00d\x00')
+
+#Example 2:
+#bytearray() Function on a byte Object
+
+# Creates bytearray from byte literal
+arr1 = bytearray(b"abcd")
+ 
+# iterating the value
+for value in arr1:
+    print(value)
+     
+# Create a bytearray object
+arr2 = bytearray(b"aaaacccc")
+ 
+# count bytes from the buffer
+print("Count of c is:", arr2.count(b"c"))
+
+#OUTPUT:
+97
+98
+99
+100
+Count of c is: 4
+
+'''-memoryview: Python memoryview() function returns the memory views objects. Before learning more about memoryview() function let’s see why do we use this function.'''
+
+#Python memoryview() Function
+#Syntax: memoryview(obj)
+
+#Example 1: 
+#Python memoryview() works
+
+byte_array = bytearray('XYZ', 'utf-8')
+ 
+mv = memoryview(byte_array)
+ 
+print(mv[0])
+print(bytes(mv[0:1]))
+
+#OUTPUT:
+88
+b'X'
+
+#Example 2: 
+# Python program to illustrate
+# Modifying internal data using memory view
+ 
+# random bytearray
+byte_array = bytearray('XYZ', 'utf-8')
+print('Before update:', byte_array)
+ 
+mem_view = memoryview(byte_array)
+ 
+# update 2nd index of mem_view to J
+mem_view[2] = 74
+print('After update:', byte_array)
+#OUTPUT:
+Before update: bytearray(b'XYZ')
+After update: bytearray(b'XYJ')
+
+
+'''NONE TYPE'''
+
+'''None_Type: The NoneType object is a special type in Python that represents the absence of a value.
+In other words, NoneType is the type for the None object, which is an object that contains no value or defines a null value. It is used to indicate that a variable or expression does not have a value or has an undefined value. “None” basically means the absence of a value. '''
+
+#Check Python None Type Using type() Method
+#In this example, the code employs the type() method to check if the variable x is of type NoneType. It prints “The variable is of NoneType.” if x is None; otherwise, it prints “The variable is not of NoneType.”
+
+#Example 1: 
+
+x = None
+ 
+# Using type() method
+if type(x)==type(None):
+    print("The variable is of NoneType.")
+else:
+    print("The variable is not of NoneType.")
+#OUTPUT:
+The variable is of NoneType.
+
+
+#Check Python None Using if Condition
+#In this example, the code uses an if condition with the value None, which is considered as False in a boolean context. Therefore, it executes the else block and prints the value which is 10.
+
+#Example 2: 
+
+# Using if condition
+if None:
+  print(0)
+else:
+  print(10)
+#OUTPUT: 
+10

@@ -1,0 +1,359 @@
+################################################  PYTHON CONTROL FLOW  ################################################
+
+'''In Python programming, flow control is the order in which statements or blocks of code are executed at runtime based on a condition.
+
+The flow control statements are divided into three categories:
+CONDITIONAL STATEMENTS
+ITERATIVE STATEMENTS
+TRANSFER STATEMENTS.'''
+
+'''CONDITIONAL STATEMENTS: In Python, condition statements act depending on whether a given condition is true or false. You can execute different blocks of codes depending on the outcome of a condition. Condition statements always evaluate to either True or False. 
+
+There are three types of conditional statements.
+1. if statement
+2. if-else
+3. if-elif-else
+4. nested if-else'''
+
+
+'''- `if`statement: Used for conditional execution.'''
+
+#Python if statement
+#Syntax: if condition:
+   # Statements to execute if
+   # condition is true
+
+if (condition):
+    code1
+else:
+    code2
+[on_true] if [expression] else [on_false]
+
+#Example:
+# python program to illustrate If statement 
+  
+i = 10
+  
+if (i > 15): 
+    print("10 is less than 15") 
+print("I am Not in if") 
+ 
+#Output:
+I am Not in if
+
+'''if-else conditional statement: The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But if we want to do something else if the condition is false, we can use the else statement with the if statement to execute a block of code when the if condition is false.'''
+
+#Python If-Else statement:
+#Syntax 
+if (condition):
+    # Executes this block if
+    # condition is true
+else:
+    # Executes this block if
+    # condition is false
+
+#Example:
+# python program to illustrate If else statement 
+#!/usr/bin/python 
+  
+i = 20
+if (i < 15): 
+    print("i is smaller than 15") 
+    print("i'm in if Block") 
+else: 
+    print("i is greater than 15") 
+    print("i'm in else Block") 
+print("i'm not in if and not in else Block") 
+
+#Output:
+i is greater than 15
+i'm in else Block
+i'm not in if and not in else Block
+
+
+'''if-elif-else: The if-elif statement is shortcut of if..else chain. While using if-elif statement at the end else block is added which is performed if none of the above if-elif statement is true.'''
+
+#Python if-elif Statement 
+#Syntax: if (condition): statementelif (condition): statement..else: statement
+
+#Example:
+# if-elif statement example
+letter = "A"
+ 
+if letter == "B":
+    print("letter is B")
+ 
+elif letter == "C":
+    print("letter is C")
+ 
+elif letter == "A":
+    print("letter is A")
+ 
+else:
+    print("letter isn't A, B or C")    
+#Output:
+letter is A
+
+
+'''nested if-else: There come situations in real life when we need to make some decisions and based on these decisions, we decide what should we do next. Similar situations arise in programming also where we need to make some decisions and based on these decisions we will execute the next block of code. This is done with the help of decision-making statements in Python.'''
+
+#Python nested if statement
+#Syntax:
+
+if (condition1):
+   # Executes when condition1 is true
+   if (condition2): 
+      # Executes when condition2 is true
+   # if Block is end here
+# if Block is end here
+
+#Example: 
+# Python program to demonstrate nested if statement 
+   
+num = 15
+if num >= 0: 
+    if num == 0: 
+        print("Zero") 
+    else: 
+        print("Positive number") 
+else: 
+    print("Negative number") 
+
+#Output:
+Positive number
+
+
+'''ITERATIVE STATEMENTS: In Python, iterative statements allow us to execute a block of code repeatedly as long as the condition is True. We also call it a loop statements.
+
+Python provides us the following two loop statement to perform some actions repeatedly.
+1. for loop
+2. while loop'''
+
+'''-for loop: For Loops in Python are a special type of loop statement that is used for sequential traversal. Python For loop is used for iterating over an iterable like a String, Tuple, List, Set, or Dictionary. '''
+
+#Python for loop Syntax :
+for var in iterable:
+    # statements
+
+#Example 1: 
+# Iterating over dictionary
+print("Dictionary Iteration")
+
+d = dict()
+
+d['xyz'] = 123
+d['abc'] = 345
+for i in d:
+    print("% s % d" % (i, d[i]))
+
+#Ouput:
+Dictionary Iteration
+xyz  123
+abc  345
+
+
+#Example 2:
+# Iterating over a String
+print("String Iteration")
+
+s = "Geeks"
+for i in s:
+    print(i)
+
+#Output:
+String Iteration
+G
+e
+e
+k
+s
+
+
+'''while loop: Python While Loop is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the line immediately after the loop in the program is executed.'''
+
+#Syntax of while loop in Python
+while expression:
+    statement(s)
+
+#Example 1:
+
+# Python program to illustrate 
+# while loop 
+count = 0
+while (count < 3): 
+    count = count + 1
+    print("Hello World")
+
+#Output:
+Hello World
+Hello World
+Hello World
+
+#Example 2:
+
+# Python program to demonstrate 
+# while-else loop 
+  
+i = 0
+while i < 4: 
+    i += 1
+    print(i) 
+else:  # Executed because no break in for 
+    print("No Break\n") 
+  
+i = 0
+while i < 4: 
+    i += 1
+    print(i) 
+    break
+else:  # Not executed as there is a break 
+    print("No Break") 
+Output
+1
+2
+3
+4
+No Break
+
+1
+
+
+'''TRANSFER STATEMENTS: transfer statements are used to alter the program’s way of execution in a certain manner. For this purpose, we use three types of transfer statements.
+
+1. break statement
+2. continue statement
+3. pass statements'''
+
+
+'''- `break`: Exits out of the closest enclosing loop.
+Python break is used to terminate the execution of the loop. 
+break statement is used to bring the control out of the loop when some external condition is triggered. break statement is put inside the loop body (generally after if condition). It terminates the current loop, i.e., the loop in which it appears, and resumes execution at the next statement immediately after the end of that loop. If the break statement is inside a nested loop, the break will terminate the innermost loop.'''
+
+#Python break() Function
+#Python break() Syntax:
+
+#Example 1: 
+for i in range(10): 
+    print(i) 
+    if i == 2: 
+        break
+
+#Output:
+0
+1
+2
+
+#Example 2: 
+num = 0
+for i in range(10): 
+    num += 1
+    if num == 8: 
+        break
+    print("The num has value:", num) 
+print("Out of loop")
+
+#Output:
+The num has value: 1
+The num has value: 2
+The num has value: 3
+The num has value: 4
+The num has value: 5
+The num has value: 6
+The num has value: 7
+Out of loop
+
+
+'''- `continue statement skips the rest of the current loop iteration. Python continue statement skips the execution of the program block after the continue statement and forces the control to start the next iteration.'''
+
+#Python Continue Statement
+#Syntax:
+while True:
+    ...
+    if x == 10:
+        continue
+    print(x)
+
+#Example 1:
+# loop from 1 to 10
+for i in range(1, 11):
+ 
+    # If i is equals to 6,
+    # continue to next iteration
+    # without printing
+    if i == 6:
+        continue
+    else:
+        # otherwise print the value
+        # of i
+        print(i, end=" ")
+
+OUTPUT: 
+1 2 3 4 5 7 8 9 10 
+
+#Example 2: 
+# prints all the elements in the nested list 
+# except for the ones with value 3
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ 
+for i in nested_list:
+    for j in i:
+        if j == 3:
+            continue
+        print(j)
+
+#OUTPUT: 
+1
+2
+4
+5
+6
+7
+8
+9
+
+'''pass statements is a null statement. But the difference between pass and comment is that comment is ignored by the interpreter whereas pass is not ignored'''
+
+#Syntax of the pass statement
+pass
+
+#Excample 1: 
+#Use of pass keyword in Conditional statement
+
+li =['a', 'b', 'c', 'd']
+ 
+for i in li:
+    if(i =='a'):
+        pass
+    else:
+        print(i)
+
+#Output:
+b
+c
+d
+
+
+#Example 2: 
+# Using pass as a placeholder inside an if statement
+x = 5
+if x > 10:
+    pass
+else:
+    print("x is less than or equal to 10")
+ 
+# Using pass in a function definition as a 
+# placeholder for implementation
+def my_function():
+    pass
+ 
+# Using pass in a class definition as
+# a placeholder for implementation
+ 
+class MyClass:
+    def __init__(self):
+        pass
+
+#Output:
+x is less than or equal to 10
+
+

@@ -1,0 +1,101 @@
+################################################   ERRORS AND EXCEPTIONS   ################################################
+
+'''Error in Python can be of two types i.e. Syntax errors and Exceptions. Errors are problems in a program due to which the program will stop the execution. On the other hand, exceptions are raised when some internal events occur which change the normal flow of the program. 
+
+Different types of exceptions in python:
+In Python, there are several built-in Python exceptions that can be raised when an error occurs during the execution of a program. Here are some of the most common types of exceptions in Python. 
+
+* TypeError: This exception is raised when an operation or function is applied to an object of the wrong type, such as adding a string to an integer.
+* NameError: This exception is raised when a variable or function name is not found in the current scope.
+* IndexError: This exception is raised when an index is out of range for a list, tuple, or other sequence types.
+* KeyError: This exception is raised when a key is not found in a dictionary.
+* ValueError: This exception is raised when a function or method is called with an invalid argument or input, such as trying to convert a string to an integer when the string does not represent a valid integer.
+* AttributeError: This exception is raised when an attribute or method is not found on an object, such as trying to access a non-existent attribute of a class instance.
+* IOError: This exception is raised when an I/O operation, such as reading or writing a file, fails due to an input/output error.
+* ZeroDivisionError: This exception is raised when an attempt is made to divide a number by zero.
+* ImportError: This exception is raised when an import statement fails to find or load a module.
+These are just a few examples of the many types of exceptions that can occur in Python. It’s important to handle exceptions properly in your code using try-except blocks or other error-handling techniques, in order to gracefully handle errors and prevent the program from crashing.
+
+Difference between Syntax Error and Exceptions
+Syntax Error: As the name suggests this error is caused by the wrong syntax in the code. It leads to the termination of the program.''' 
+
+#Example: 
+
+'''There is a syntax error in the code . The ‘if' statement should be followed by a colon (:), and the ‘print' statement should be indented to be inside the ‘if' block.'''
+
+
+amount = 10000
+if(amount > 2999)
+print("You are eligible to purchase Dsa Self Paced")
+
+#Output: 
+ File "\home\file.py", line 130
+    if(amount > 2999)
+                     ^
+SyntaxError: invalid syntax
+
+
+#Example:
+
+ '''TypeError: This exception is raised when an operation or function is applied to an object of the wrong type. Here’s an example:
+ Here a ‘TypeError’ is raised as both the datatypes are different which are being added.'''
+
+x = 5
+y = "hello"
+z = x + y
+
+#Output: 
+Traceback (most recent call last):
+  File "7edfa469-9a3c-4e4d-98f3-5544e60bff4e.py", line 4, in <module>
+    z = x + y
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+#Example: 
+'''Try and Except Statement – Catching Exceptions
+Try and except statements are used to catch and handle exceptions in Python. Statements that can raise exceptions are kept inside the try clause and the statements that handle the exception are written inside except clause.
+
+Here we are trying to access the array element whose index is out of bound and handle the corresponding exception.'''
+
+a = [1, 2, 3]
+try: 
+    print ("Second element = %d" %(a[1]))
+ 
+    print ("Fourth element = %d" %(a[3]))
+except:
+    print ("An error occurred")
+
+#Output
+Second element = 2
+An error occurred
+
+'''Try with Else Clause
+In Python, you can also use the else clause on the try-except block which must be present after all the except clauses. The code enters the else block only if the try clause does not raise an exception.
+
+The code defines a function AbyB(a, b) that calculates c as ((a+b) / (a-b)) and handles a potential ZeroDivisionError. It prints the result if there’s no division by zero error. Calling AbyB(2.0, 3.0) calculates and prints -5.0, while calling AbyB(3.0, 3.0) attempts to divide by zero, resulting in a ZeroDivisionError, which is caught and “a/b results in 0” is printed.'''
+
+def AbyB(a , b):
+    try:
+        c = ((a+b) / (a-b))
+    except ZeroDivisionError:
+        print ("a/b result in 0")
+    else:
+        print (c)
+AbyB(2.0, 3.0)
+AbyB(3.0, 3.0)
+
+#Output:
+-5.0
+a/b result in 0 
+
+'''Advantages of Exception Handling:
+Improved program reliability: By handling exceptions properly, you can prevent your program from crashing or producing incorrect results due to unexpected errors or input.
+Simplified error handling: Exception handling allows you to separate error handling code from the main program logic, making it easier to read and maintain your code.
+Cleaner code: With exception handling, you can avoid using complex conditional statements to check for errors, leading to cleaner and more readable code.
+Easier debugging: When an exception is raised, the Python interpreter prints a traceback that shows the exact location where the exception occurred, making it easier to debug your code.
+
+Disadvantages of Exception Handling:
+Performance overhead: Exception handling can be slower than using conditional statements to check for errors, as the interpreter has to perform additional work to catch and handle the exception.
+Increased code complexity: Exception handling can make your code more complex, especially if you have to handle multiple types of exceptions or implement complex error handling logic.
+Possible security risks: Improperly handled exceptions can potentially reveal sensitive information or create security vulnerabilities in your code, so it’s important to handle exceptions carefully and avoid exposing too much information about your program.'''
+

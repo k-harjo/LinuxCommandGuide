@@ -1,0 +1,277 @@
+################################################   PYTHON LISTS   ################################################
+
+'''Python Lists are just like dynamically sized arrays, declared in other languages (vector in C++ and ArrayList in Java). In simple language, a Python list is a collection of things, enclosed in [ ] and separated by commas. 
+
+The list is a sequence data type which is used to store the collection of data. Tuples and String are other types of sequence data types.'''
+
+'''                                                Creating a List in Python
+Lists in Python can be created by just placing the sequence inside the square brackets[]. Unlike Sets, a list doesn’t need a built-in function for its creation of a list. '''
+
+# Creating Python List using [].
+
+Var = ["Hello", "World"] 
+print(Var)
+
+#Output:
+['Hello', 'World']
+
+#Example 1: Creating a list in Python
+
+# Python program to demonstrate 
+# Creation of List 
+  
+# Creating a List 
+List = [] 
+print("Blank List: ") 
+print(List) 
+  
+# Creating a List of numbers 
+List = [10, 20, 14] 
+print("\nList of numbers: ") 
+print(List) 
+  
+# Creating a List of strings and accessing 
+# using index 
+List = ["Geeks", "For", "Geeks"] 
+print("\nList Items: ") 
+print(List[0]) 
+print(List[2]) 
+
+#Output
+Blank List: 
+[]
+
+List of numbers: 
+[10, 20, 14]
+
+List Items: 
+Geeks
+Geeks
+
+#Example 2:  Creating a list with multiple distinct or duplicate elements
+'''A list may contain duplicate values with their distinct positions and hence, multiple distinct or duplicate values can be passed as a sequence at the time of list creation.'''
+
+# Creating a List with 
+# the use of Numbers 
+# (Having duplicate values) 
+List = [1, 2, 4, 4, 3, 3, 3, 6, 5] 
+print("\nList with the use of Numbers: ") 
+print(List) 
+  
+# Creating a List with 
+# mixed type of values 
+# (Having numbers and strings) 
+List = [1, 2, 'Geeks', 4, 'For', 6, 'Geeks'] 
+print("\nList with the use of Mixed Values: ") 
+print(List) 
+
+#Output
+List with the use of Numbers: 
+[1, 2, 4, 4, 3, 3, 3, 6, 5]
+
+List with the use of Mixed Values: 
+[1, 2, 'Geeks', 4, 'For', 6, 'Geeks']
+
+
+'''                                                Accessing elements from the List
+In order to access the list items refer to the index number. Use the index operator [ ] to access an item in a list. The index must be an integer. Nested lists are accessed using nested indexing. '''
+
+#Example 1: Accessing elements from list
+
+
+# Python program to demonstrate 
+# accessing of element from list 
+  
+# Creating a List with 
+# the use of multiple values 
+List = ["Geeks", "For", "Geeks"] 
+  
+# accessing a element from the 
+# list using index number 
+print("Accessing a element from the list") 
+print(List[0]) 
+print(List[2])
+ 
+#Output
+Accessing a element from the list
+Geeks
+Geeks
+
+'''                                                 Getting the size of Python list
+Python len() is used to get the length of the list.'''
+
+# Creating a List 
+List1 = [] 
+print(len(List1)) 
+  
+# Creating a List of numbers 
+List2 = [10, 20, 14] 
+print(len(List2)) 
+#Output
+0
+3
+
+'''                                                Taking Input of a Python List
+We can take the input of a list of elements as string, integer, float, etc. But the default one is a string.'''
+
+# input size of the list 
+n = int(input("Enter the size of list : ")) 
+# store integers in a list using map, 
+# split and strip functions 
+lst = list(map(int, input("Enter the integer\ 
+elements:").strip().split()))[:n] 
+  
+# printing the list 
+print('The list is:', lst)    
+
+#Output:
+Enter the size of list : 4
+Enter the integer elements: 6 3 9 10
+The list is: [6, 3, 9, 10]
+
+'''                                                Adding Elements to a Python List
+Method 1: Using append() method
+Elements can be added to the List by using the built-in append() function. Only one element at a time can be added to the list by using the append() method, for the addition of multiple elements with the append() method, loops are used. Tuples can also be added to the list with the use of the append method because tuples are immutable. Unlike Sets, Lists can also be added to the existing list with the use of the append() method.''' 
+
+# Python program to demonstrate  
+# Addition of elements in a List 
+   
+# Creating a List 
+List = [1,2,3,4] 
+print("Initial List: ") 
+print(List) 
+  
+# Addition of Element at  
+# specific Position 
+# (using Insert Method) 
+List.insert(3, 12) 
+List.insert(0, 'Geeks') 
+print("\nList after performing Insert Operation: ") 
+print(List) 
+#Output
+Initial List: 
+[1, 2, 3, 4]
+
+List after performing Insert Operation: 
+['Geeks', 1, 2, 3, 12, 4]
+
+'''                                                Reversing a List
+
+Method 1:  A list can be reversed by using the reverse() method in Python.'''
+
+
+'''Using the reversed() function:
+The reversed() function returns a reverse iterator, which can be converted to a list using the list() function.'''
+
+my_list = [1, 2, 3, 4, 5] 
+reversed_list = list(reversed(my_list)) 
+print(reversed_list) 
+#Output
+[5, 4, 3, 2, 1]
+
+
+'''                                                 Removing Elements from the List
+Method 1: Using remove() method
+Elements can be removed from the List by using the built-in remove() function but an Error arises if the element doesn’t exist in the list. Remove() method only removes one element at a time, to remove a range of elements, the iterator is used. The remove() method removes the specified item.'''
+
+# Python program to demonstrate 
+# Removal of elements in a List 
+  
+# Creating a List 
+List = [1, 2, 3, 4, 5, 6, 
+        7, 8, 9, 10, 11, 12] 
+print("Initial List: ") 
+print(List) 
+  
+# Removing elements from List 
+# using Remove() method 
+List.remove(5) 
+List.remove(6) 
+print("\nList after Removal of two elements: ") 
+print(List) 
+#Output
+Initial List: 
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+List after Removal of two elements: 
+[1, 2, 3, 4, 7, 8, 9, 10, 11, 12]
+
+'''                                               Slicing of a List
+We can get substrings and sublists using a slice. In Python List, there are multiple ways to print the whole list with all the elements, but to print a specific range of elements from the list, we use the Slice operation. 
+
+Slice operation is performed on Lists with the use of a colon(:).'''
+
+# Python program to demonstrate 
+# Removal of elements in a List 
+  
+# Creating a List 
+List = ['G', 'E', 'E', 'K', 'S', 'F', 
+        'O', 'R', 'G', 'E', 'E', 'K', 'S'] 
+print("Initial List: ") 
+print(List) 
+  
+# Print elements of a range 
+# using Slice operation 
+Sliced_List = List[3:8] 
+print("\nSlicing elements in a range 3-8: ") 
+print(Sliced_List) 
+  
+# Print elements from a 
+# pre-defined point to end 
+Sliced_List = List[5:] 
+print("\nElements sliced from 5th "
+      "element till the end: ") 
+print(Sliced_List) 
+  
+# Printing elements from 
+# beginning till end 
+Sliced_List = List[:] 
+print("\nPrinting all elements using slice operation: ") 
+print(Sliced_List) 
+
+#Output
+Initial List: 
+['G', 'E', 'E', 'K', 'S', 'F', 'O', 'R', 'G', 'E', 'E', 'K', 'S']
+
+Slicing elements in a range 3-8: 
+['K', 'S', 'F', 'O', 'R']
+
+Elements sliced from 5th element till the end: 
+['F', 'O', 'R', 'G', 'E', 'E', 'K', 'S']
+
+Printing all elements using slice operation: 
+['G', 'E', 'E', 'K', 'S', 'F', 'O', 'R', 'G', 'E', 'E', 'K', 'S']
+
+'''                                                List Comprehension
+Python List comprehensions are used for creating new lists from other iterables like tuples, strings, arrays, lists, etc. A list comprehension consists of brackets containing the expression, which is executed for each element along with the for loop to iterate over each element. 
+
+Syntax:
+
+newList = [ expression(element) for element in oldList if condition ]'''
+
+# Python program to demonstrate list 
+# comprehension in Python 
+  
+# below list contains square of all 
+# odd numbers from range 1 to 10 
+odd_square = [x ** 2 for x in range(1, 11) if x % 2 == 1] 
+print(odd_square) 
+#Output
+[1, 9, 25, 49, 81]
+
+
+'''Note:  
+
+Python provides several built-in data structures that you can use to organize and manipulate data. Here are some of the most commonly used ones:
+
+Lists: Lists are ordered collections of items. They can contain elements of different data types, and you can add, remove, or modify items in a list. Some common methods for lists include:
+
+append(x): Adds an item to the end of the list.
+extend(iterable): Extends the list by appending items from an iterable.
+insert(i, x): Inserts an item at a specific position.
+remove(x): Removes the first occurrence of an item with a specific value.
+pop([i]): Removes and returns an item at a given position.
+index(x[, start[, end]]): Returns the index of the first occurrence of an item with a specific value.
+count(x): Returns the number of occurrences of an item.
+sort(): Sorts the list in place.
+reverse(): Reverses the order of elements in the list.
+copy(): Creates a shallow copy of the list1.'''

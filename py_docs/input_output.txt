@@ -1,0 +1,81 @@
+INPUT AND OUTPUT OPERATIONS
+
+'''Understanding input and output operations are fundamental to Python programming. With the print() function, you can display output in various formats, while the input() function enables interaction with users by gathering input during program execution.'''
+
+#Example 1: 
+
+'''Using % Operator
+We can use ‘%’ operator. % values are replaced with zero or more value of elements. The formatting using % is similar to that of ‘printf’ in the C programming language.
+
+%d –integer
+%f – float
+%s – string
+%x –hexadecimal
+%o – octal'''
+
+# Taking input from the user
+num = int(input("Enter a value: "))
+
+add = num + 5
+
+# Output
+print("The sum is %d" %add)
+Output
+
+Enter a value: 50The sum is 55
+
+
+#Example 2: 
+'''Take Conditional Input from user in Python
+
+In this example, the program prompts the user to enter their age. The input is converted to an integer using the int() function. Then, the program uses conditional statements to check the age range and prints a message based on whether the user is a minor, an adult, or a senior citizen.'''
+
+
+# Prompting the user for input
+age_input = input("Enter your age: ")
+
+# Converting the input to an integer
+age = int(age_input)
+
+# Checking conditions based on user input
+if age < 0:
+    print("Please enter a valid age.")
+elif age < 18:
+    print("You are a minor.")
+elif age >= 18 and age < 65:
+    print("You are an adult.")
+else:
+    print("You are a senior citizen.")
+Output
+
+Enter your age: 22
+You are an adult.
+
+#Example 3:
+'''Find DataType of Input in Python
+In the given example, we are printing the type of variable x. We will determine the type of an object in Python.'''
+
+a = "Hello World"
+b = 10
+c = 11.22
+d = ("Geeks", "for", "Geeks")
+e = ["Geeks", "for", "Geeks"]
+f = {"Geeks": 1, "for":2, "Geeks":3}
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(f))
+
+#Output
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'tuple'>
+<class 'list'>
+<class 'dict'>
+
+
+#################################################    PYTHON FILE HANDLING

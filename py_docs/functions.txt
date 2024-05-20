@@ -1,0 +1,219 @@
+################################################   PYTHON FUNCTIONS   ################################################
+
+
+'''Python Functions is a block of statements that return the specific task. The idea is to put some commonly or repeatedly done tasks together and make a function so that instead of writing the same code again and again for different inputs, we can do the function calls to reuse code contained in it over and over again.
+
+Some Benefits of Using Functions
+* Increase Code Readability 
+* Increase Code Reusability'''
+
+
+'''Python Function Declaration
+The syntax to declare a function is: 
+Keyword (def)
+Function name (function_name)
+Body of Statement (#statement)
+Function return (return expression)'''
+
+
+'''Creating a Function in Python
+We can define a function in Python, using the def keyword. We can add any type of functionalities and properties to it as we require. By the following example, we can understand how to write a function in Python.'''
+
+# A simple Python function
+def fun():
+    print("Welcome to GFG")
+
+'''Calling a Function in Python
+After creating a function in Python we can call it by using the name of the functions Python followed by parenthesis containing parameters of that particular function. Below is the example for calling def function Python.'''
+
+# A simple Python function
+def fun():
+    print("Welcome to GFG")
+
+
+# Driver code to call a function
+fun()
+
+#Output:
+Welcome to GFG
+
+'''Python Function with Parameters
+If you have experience in C/C++ or Java then you must be thinking about the return type of the function and data type of arguments. That is possible in Python as well (specifically for Python 3.5 and above).'''
+
+#Python Function Syntax with Parameters
+ def function_name(parameter: data_type) -> return_type:
+    """Docstring"""
+    # body of the function
+    return expression
+
+'''The following example uses arguments and parameters that you will learn later in this article so you can come back to it again if not understood.'''
+
+def add(num1: int, num2: int) -> int:
+    """Add two numbers"""
+    num3 = num1 + num2
+
+    return num3
+
+# Driver code
+num1, num2 = 5, 15
+ans = add(num1, num2)
+print(f"The addition of {num1} and {num2} results {ans}.")
+
+#Output:
+The addition of 5 and 15 results 20.
+
+'''Python Function Arguments
+Arguments are the values passed inside the parenthesis of the function. A function can have any number of arguments separated by a comma.
+
+In this example, we will create a simple function in Python to check whether the number passed as an argument to the function is even or odd.'''
+
+# A simple Python function to check
+# whether x is even or odd
+def evenOdd(x):
+    if (x % 2 == 0):
+        print("even")
+    else:
+        print("odd")
+
+
+# Driver code to call the function
+evenOdd(2)
+evenOdd(3)
+
+#Output:
+even
+odd
+
+'''Types of Python Function Arguments
+Python supports various types of arguments that can be passed at the time of the function call. In Python, we have the following function argument types in Python:
+
+Default argument
+Keyword arguments (named arguments)
+Positional arguments
+Arbitrary arguments (variable-length arguments *args and **kwargs)'''
+
+
+'''Default Arguments
+A default argument is a parameter that assumes a default value if a value is not provided in the function call for that argument. The following example illustrates Default arguments to write functions in Python.'''
+
+# Python program to demonstrate
+# default arguments
+def myFun(x, y=50):
+    print("x: ", x)
+    print("y: ", y)
+
+# Driver code (We call myFun() with only
+# argument)
+myFun(10)
+
+#Output:
+x:  10
+y:  50
+
+'''Keyword Arguments
+The idea is to allow the caller to specify the argument name with values so that the caller does not need to remember the order of parameters.'''
+
+# Python program to demonstrate Keyword Arguments
+def student(firstname, lastname):
+    print(firstname, lastname)
+
+# Keyword arguments
+student(firstname='Geeks', lastname='Practice')
+student(lastname='Practice', firstname='Geeks')
+
+#Output:
+Geeks Practice
+Geeks Practice
+
+'''Positional Arguments
+We used the Position argument during the function call so that the first argument (or value) is assigned to name and the second argument (or value) is assigned to age. By changing the position, or if you forget the order of the positions, the values can be used in the wrong places, as shown in the Case-2 example below, where 27 is assigned to the name and Suraj is assigned to the age.'''
+
+def nameAge(name, age):
+    print("Hi, I am", name)
+    print("My age is ", age)
+
+
+# You will get correct output because 
+# argument is given in order
+print("Case-1:")
+nameAge("Suraj", 27)
+# You will get incorrect output because
+# argument is not in order
+print("\nCase-2:")
+nameAge(27, "Suraj")
+
+#Output:
+Case-1:
+Hi, I am Suraj
+My age is  27
+Case-2:
+Hi, I am 27
+My age is  Suraj
+
+
+'''Arbitrary Keyword  Arguments
+In Python Arbitrary Keyword Arguments, *args, and **kwargs can pass a variable number of arguments to a function using special symbols. There are two special symbols:
+
+*args in Python (Non-Keyword Arguments)
+**kwargs in Python (Keyword Arguments)'''
+
+#Example 1: Variable length non-keywords argument
+# Python program to illustrate
+# *args for variable number of arguments
+def myFun(*argv):
+    for arg in argv:
+        print(arg)
+
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')
+
+#Output:
+Hello
+Welcome
+to
+GeeksforGeeks
+
+#Example 2: Variable length keyword arguments
+
+# Python program to illustrate
+# *kwargs for variable number of keyword arguments
+
+def myFun(**kwargs):
+    for key, value in kwargs.items():
+        print("%s == %s" % (key, value))
+
+
+# Driver code
+myFun(first='Geeks', mid='for', last='Geeks')
+Output:
+
+first == Geeks
+mid == for
+last == Geeks
+
+
+'''Docstring
+The first string after the function is called the Document string or Docstring in short. This is used to describe the functionality of the function. The use of docstring in functions is optional but it is considered a good practice.
+
+The below syntax can be used to print out the docstring of a function.'''
+
+#Syntax: print(function_name.__doc__)
+#Example: Adding Docstring to the function
+
+
+# A simple Python function to check
+# whether x is even or odd
+
+
+def evenOdd(x):
+    """Function to check if the number is even or odd"""
+    
+    if (x % 2 == 0):
+        print("even")
+    else:
+        print("odd")
+
+# Driver code to call the function
+print(evenOdd.__doc__)
+
+#Output:
+Function to check if the number is even or odd

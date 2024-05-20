@@ -1,0 +1,311 @@
+
+################################################     PYTHON LIBRARIES    ######################################################
+
+'''A Python library is a collection of related modules. It contains bundles of code that can be used repeatedly in different programs. It makes Python Programming simpler and convenient for the programmer. As we don’t need to write the same code again and again for different programs. Python libraries play a very vital role in fields of Machine Learning, Data Science, Data Visualization, etc.
+
+Working of Python Library
+
+As is stated above, a Python library is simply a collection of codes or modules of codes that we can use in a program for specific operations. We use libraries so that we don’t need to write the code again in our program that is already available. But how it works. Actually, in the MS Windows environment, the library files have a DLL extension (Dynamic Load Libraries). When we link a library with our program and run that program, the linker automatically searches for that library. It extracts the functionalities of that library and interprets the program accordingly. That’s how we use the methods of a library in our program. '''
+
+'''Python standard library
+The Python Standard Library contains the exact syntax, semantics, and tokens of Python. It contains built-in modules that provide access to basic system functionality like I/O and some other core modules. Most of the Python Libraries are written in the C programming language. The Python standard library consists of more than 200 core modules. All these work together to make Python a high-level programming language. Python Standard Library plays a very important role. Without it, the programmers can’t have access to the functionalities of Python. But other than this, there are several other libraries in Python that make a programmer’s life easier. Let’s have a look at some of the commonly used libraries:
+
+1. TensorFlow
+2. Matplotlib
+3. Pandas
+4. Numpy
+5. Scipy
+6. Scrapy
+7. Scikit-learn
+8. PyGame
+9. PyTorch
+10.PyBrain
+
+
+TensorFlow: This library was developed by Google in collaboration with the Brain Team. It is an open-source library used for high-level computations. It is also used in machine learning and deep learning algorithms. It contains a large number of tensor operations. Researchers also use this Python library to solve complex computations in Mathematics and Physics.'''
+
+#Example: Given below is an example using Varaible. 
+
+# importing tensorflow
+import tensorflow as tf
+ 
+# creating nodes in computation graph
+node = tf.Variable(tf.zeros([2,2]))
+ 
+# running computation graph
+with tf.Session() as sess:
+ 
+    # initialize all global variables 
+    sess.run(tf.global_variables_initializer())
+ 
+    # evaluating node
+    print("Tensor value before addition:\n",sess.run(node))
+ 
+    # elementwise addition to tensor
+    node = node.assign(node + tf.ones([2,2]))
+ 
+    # evaluate node again
+    print("Tensor value after addition:\n", sess.run(node))
+
+#Output:
+Tensor value before addition:
+ [[ 0.  0.]
+ [ 0.  0.]]
+Tensor value after addition:
+ [[ 1.  1.]
+ [ 1.  1.]]
+
+
+'''Matplotlib: This library is responsible for plotting numerical data. And that’s why it is used in data analysis. It is also an open-source library and plots high-defined figures like pie charts, histograms, scatterplots, graphs, etc.'''
+
+#Example:
+
+'''Scatter Plot in Matplotlib
+By importing matpltlib. plot () we created a scatter plot. It defines x and y coordinates, then plots the points in blue and displays the plot.''' 
+
+import matplotlib.pyplot as plt
+ 
+x =[5, 7, 8, 7, 2, 17, 2, 9,
+    4, 11, 12, 9, 6] 
+ 
+y =[99, 86, 87, 88, 100, 86, 
+    103, 87, 94, 78, 77, 85, 86]
+ 
+plt.scatter(x, y, c ="blue")
+ 
+# To show the plot
+plt.show()
+
+
+'''Pandas: Pandas are an important library for data scientists. It is an open-source machine learning library that provides flexible high-level data structures and a variety of analysis tools. It eases data analysis, data manipulation, and cleaning of data. Pandas support operations like Sorting, Re-indexing, Iteration, Concatenation, Conversion of data, Visualizations, Aggregations, etc.'''
+
+#Example:
+
+#Creating a Pandas DataFrame.
+
+# import pandas as pd
+import pandas as pd
+ 
+# list of strings
+lst = ['Geeks', 'For', 'Geeks', 'is', 
+            'portal', 'for', 'Geeks']
+ 
+# Calling DataFrame constructor on list
+df = pd.DataFrame(lst)
+print(df)
+
+'''Numpy: The name “Numpy” stands for “Numerical Python”. It is the commonly used library. It is a popular machine learning library that supports large matrices and multi-dimensional data. It consists of in-built mathematical functions for easy computations. Even libraries like TensorFlow use Numpy internally to perform several operations on tensors. Array Interface is one of the key features of this library.'''
+
+#Example:
+
+#Creating a Numpy Array.
+
+# Python program for
+# Creation of Arrays
+
+import numpy as np
+ 
+# Creating a rank 1 Array
+arr = np.array([1, 2, 3])
+print("Array with Rank 1: \n",arr)
+ 
+# Creating a rank 2 Array
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+print("Array with Rank 2: \n", arr)
+ 
+# Creating an array from tuple
+arr = np.array((1, 3, 2))
+print("\nArray created using "
+      "passed tuple:\n", arr)
+Run on IDE
+
+#Output:
+Array with Rank 1: 
+ [1 2 3]
+Array with Rank 2: 
+ [[1 2 3]
+ [4 5 6]]
+
+Array created using passed tuple:
+ [1 3 2
+
+'''SciPy: The name “SciPy” stands for “Scientific Python”. It is an open-source library used for high-level scientific computations. This library is built over an extension of Numpy. It works with Numpy to handle complex computations. While Numpy allows sorting and indexing of array data, the numerical data code is stored in SciPy. It is also widely used by application developers and engineers.'''
+
+#Example: 
+
+'''Exploratory Data Analysis (EDA)
+Use descriptive statistics from SciPy’s stats module to gain insights into the dataset.
+Calculate measures such as mean, median, standard deviation, skewness, kurtosis, etc.'''
+
+from scipy import stats
+data = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+# Calculate mean and standard deviation
+mean_val = np.mean(data)
+std_dev = np.std(data)
+# Perform basic statistical tests
+t_stat, p_value = stats.ttest_1samp(data, popmean=5)
+print("t_stat:" , t_stat)
+print("p_value:", p_value) 
+
+#Output:
+t_stat: 0.0
+p_value: 1.0
+
+'''Scrapy: It is an open-source library that is used for extracting data from websites. It provides very fast web crawling and high-level screen scraping. It can also be used for data mining and automated testing of data.'''
+
+#Example:
+
+'''Creating Items to be passed over files.
+One more thing to note is that we will require a description of what our item will contain in items.py file. Hence our items.py file contains the below-given code:'''
+
+import scrapy
+ 
+class ScrapytutorialItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+     
+    # only one field that it of Quote.
+    Quote = scrapy.Field()
+
+'''Scikit-learn: It is a famous Python library to work with complex data. Scikit-learn is an open-source library that supports machine learning. It supports variously supervised and unsupervised algorithms like linear regression, classification, clustering, etc. This library works in association with Numpy and SciPy.'''
+
+#Example: 
+
+'''Load a Dataset'''
+
+# load the iris dataset as an example 
+from sklearn.datasets import load_iris 
+iris = load_iris() 
+  
+# store the feature matrix (X) and response vector (y) 
+X = iris.data 
+y = iris.target 
+  
+# store the feature and target names 
+feature_names = iris.feature_names 
+target_names = iris.target_names 
+  
+# printing features and target names of our dataset 
+print("Feature names:", feature_names) 
+print("Target names:", target_names) 
+  
+# X and y are numpy arrays 
+print("\nType of X is:", type(X)) 
+  
+# printing first 5 input rows 
+print("\nFirst 5 rows of X:\n", X[:5])
+
+#Output: 
+Feature names: ['sepal length (cm)','sepal width (cm)',
+                'petal length (cm)','petal width (cm)']
+Target names: ['setosa' 'versicolor' 'virginica']
+Type of X is: 
+First 5 rows of X:
+ [[ 5.1  3.5  1.4  0.2]
+ [ 4.9  3.   1.4  0.2]
+ [ 4.7  3.2  1.3  0.2]
+ [ 4.6  3.1  1.5  0.2]
+ [ 5.   3.6  1.4  0.2]]
+
+
+'''PyGame: This library provides an easy interface to the Standard Directmedia Library (SDL) platform-independent graphics, audio, and input libraries. It is used for developing video games using computer graphics and audio libraries along with Python programming language.'''
+
+#Example: 
+
+'''Drawing a solid polygon'''
+
+# Importing pygame module
+import pygame
+from pygame.locals import *
+ 
+# initiate pygame and give permission
+# to use pygame's functionality.
+pygame.init()
+ 
+# create the display surface object
+# of specific dimension.
+window = pygame.display.set_mode((600, 600))
+ 
+# Fill the scree with white color
+window.fill((255, 255, 255))
+ 
+# Using draw.rect module of
+# pygame to draw the outlined polygon
+pygame.draw.polygon(window, (255, 0, 0), 
+                    [[300, 300], [100, 400],
+                     [100, 300]])
+ 
+# Draws the surface object to the screen.
+pygame.display.update()
+
+
+'''PyTorch: PyTorch is the largest machine learning library that optimizes tensor computations. It has rich APIs to perform tensor computations with strong GPU acceleration. It also helps to solve application issues related to neural networks.'''
+
+#Example: 
+'''In the Python example below we join two one-dimensional tensors using torch.stack() method.'''
+
+# Python 3 program to demonstrate torch.stack() method 
+# for two one dimensional tensors 
+# importing torch 
+import torch 
+  
+# creating tensors 
+x = torch.tensor([1.,3.,6.,10.]) 
+y = torch.tensor([2.,7.,9.,13.]) 
+  
+# printing above created tensors 
+print("Tensor x:", x) 
+print("Tensor y:", y) 
+  
+# join above tensor using "torch.stack()" 
+print("join tensors:") 
+t = torch.stack((x,y)) 
+  
+# print final tensor after join 
+print(t) 
+  
+print("join tensors dimension 0:") 
+t = torch.stack((x,y), dim = 0) 
+print(t) 
+  
+print("join tensors dimension 1:") 
+t = torch.stack((x,y), dim = 1) 
+print(t) 
+
+#Output:
+Tensor x: tensor([ 1.,  3.,  6., 10.])
+Tensor y: tensor([ 2.,  7.,  9., 13.])
+join tensors:
+tensor([[ 1.,  3.,  6., 10.],
+        [ 2.,  7.,  9., 13.]])
+join tensors dimension 0:
+tensor([[ 1.,  3.,  6., 10.],
+        [ 2.,  7.,  9., 13.]])
+join tensors dimension 1:
+tensor([[ 1.,  2.],
+        [ 3.,  7.],
+        [ 6.,  9.],
+        [10., 13.]])
+
+'''Explanation: In the above code tensors x and y are one-dimensional each having four elements.  The final concatenated tensor is a 2D tensor. As the dimension is 1, we can stack the tensors with dimensions 0 and 1. When dim =0 the tensors are stacked increasing the number of rows. When dim =1 the tensors are transposed and stacked along the column.'''
+
+
+'''PyBrain: The name “PyBrain” stands for Python Based Reinforcement Learning, Artificial Intelligence, and Neural Networks library. It is an open-source library built for beginners in the field of Machine Learning. It provides fast and easy-to-use algorithms for machine learning tasks. It is so flexible and easily understandable and that’s why is really helpful for developers that are new in research fields.'''
+
+#Example:
+
+'''In this example, the input has a size equal to 2 and the target has a size equal to 1.'''
+
+# Python program to create a dataset 
+# using PyBrain 
+  
+# Importing SupervisedDataSet from  
+# pybrain.datasets 
+from pybrain.datasets import SupervisedDataSet 
+  
+# Creating SupervisedDataSet 
+supervised_dataset = SupervisedDataSet(2, 1) 
+  
+# Print 
+print(dataSet) 

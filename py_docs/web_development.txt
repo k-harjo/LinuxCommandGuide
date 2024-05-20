@@ -1,0 +1,37 @@
+#############################################    PYTHON WEB DEVELOPMENT   #####################################################
+
+'''Python Django is a web framework that allows to quickly create efficient web pages. Django is also called batteries included framework because it provides built-in features such as Django Admin Interface, default database – SQLite3, etc. When you’re building a website, you always need a similar set of components: a way to handle user authentication (signing up, signing in, signing out), a management panel for your website, forms, a way to upload files, etc. Django gives you ready-made components to use.
+
+Why Django Framework?
+Excellent documentation and high scalability.
+Used by Top MNCs and Companies, such as Instagram, Disqus, Spotify, Youtube, Bitbucket, Dropbox, etc. and the list is never-ending.
+Easiest Framework to learn, rapid development, and Batteries fully included. Django is a rapid web development framework that can be used to develop fully fleshed web applications in a short period of time.
+The last but not least reason to learn Django is Python, Python has a huge library and features such as Web Scraping, Machine Learning, Image Processing, Scientific Computing, etc. One can integrate all this with web applications and do lots and lots of advanced stuff.
+
+Why Django Framework?
+Excellent documentation and high scalability.
+Used by Top MNCs and Companies, such as Instagram, Disqus, Spotify, Youtube, Bitbucket, Dropbox, etc. and the list is never-ending.
+Easiest Framework to learn, rapid development, and Batteries fully included. Django is a rapid web development framework that can be used to develop fully fleshed web applications in a short period of time.
+The last but not least reason to learn Django is Python, Python has a huge library and features such as Web Scraping, Machine Learning, Image Processing, Scientific Computing, etc. One can integrate all this with web applications and do lots and lots of advanced stuff.
+Django Architecture
+Django is based on MVT (Model-View-Template) architecture which has the following three parts – 
+
+Model: The model is going to act as the interface of your data. It is responsible for maintaining data. It is the logical data structure behind the entire application and is represented by a database (generally relational databases such as MySql, Postgres).
+
+View: The View is the user interface that you see in your browser when you render a website. It is represented by HTML/CSS/Javascript and Jinja files.
+
+Template: A template consists of static parts of the desired HTML output as well as some special syntax describing how dynamic content will be inserted. To check more, visit – Django Templates.
+
+Setting up the Virtual Environment
+Most of the time when you’ll be working on some Django projects, you’ll find that each project may need a different version of Django. This problem may arise when you install Django in a global or default environment. To overcome this problem we will use virtual environments in Python. This enables us to create multiple different Django environments on a single computer. To create a virtual environment type the below command in the terminal.'''
+
+python3 -m venv ./name
+'''Here the name suggests the name of the virtual environment. Let’s create our virtual environment with the name as venv only. So the command to create it will be – '''
+
+python3 -m venv ./venv
+
+'''After running the above command you will see a folder named venv with the following sub-directories.
+After creating the virtual environment let’s activate it. To activate it type the below command in the terminal.'''
+
+source ./venv/bin/activate
+'''In the above command ./ is used to tell the current working directory.'''

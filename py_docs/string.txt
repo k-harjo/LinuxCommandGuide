@@ -1,0 +1,164 @@
+################################################   PYTHON STRING   ################################################
+
+'''A String is a data structure in Python Programming that represents a sequence of characters. It is an immutable data type, meaning that once you have created a string, you cannot change it. Python String are used widely in many different applications, such as storing and manipulating text data, representing names, addresses, and other types of data that can be represented as text.
+
+What is a String in Python?
+Python Programming does not have a character data type, a single character is simply a string with a length of 1. '''
+
+
+'''String Data Type in Python
+
+Creating a String in Python
+
+Strings in Python can be created using single quotes or double quotes or even triple quotes. Let us see how we can define a string in Python or how to write string in Python.
+
+In this example, we will demonstrate different ways to create a Python String. We will create a string using single quotes (‘ ‘), double quotes (” “), and triple double quotes (“”” “””). The triple quotes can be used to declare multiline strings in Python.'''
+
+#Example:
+
+# Creating a String
+# with single Quotes
+String1 = 'Welcome to the Geeks World'
+print("String with the use of Single Quotes: ")
+print(String1)
+
+# Creating a String
+# with double Quotes
+String1 = "I'm a Geek"
+print("\nString with the use of Double Quotes: ")
+print(String1)
+
+# Creating a String
+# with triple Quotes
+String1 = '''I'm a Geek and I live in a world of "Geeks"'''
+print("\nString with the use of Triple Quotes: ")
+print(String1)
+
+# Creating String with triple
+# Quotes allows multiple lines
+String1 = '''Geeks
+            For
+            Life'''
+print("\nCreating a multiline String: ")
+print(String1)
+
+#Output: 
+String with the use of Single Quotes: 
+Welcome to the Geeks World
+String with the use of Double Quotes: 
+I'm a Geek
+String with the use of Triple Quotes: 
+I'm a Geek and I live in a world of "Geeks"
+Creating a multiline String: 
+Geeks
+            For
+            Life
+
+'''Deleting a character
+
+Python strings are immutable, that means we cannot delete a character from it. When we try to delete thecharacter using the del keyword, it will generate an error.'''
+
+# Python Program to delete
+# character of a String
+
+String1 = "Hello, I'm a Geek"
+print("Initial String: ")
+print(String1)
+
+print("Deleting character at 2nd Index: ")
+del String1[2]
+print(String1)
+
+#Output:
+Initial String: 
+Hello, I'm a Geek
+Deleting character at 2nd Index: 
+Traceback (most recent call last):
+  File "e:\GFG\Python codes\Codes\demo.py", line 9, in <module>
+    del String1[2]
+TypeError: 'str' object doesn't support item deletion
+
+
+'''In this example, we will first slice the string up to the character that we want to delete and then concatenate the remaining string next from the deleted character.'''
+
+# Python Program to Delete
+# characters from a String
+
+String1 = "Hello, I'm a Geek"
+print("Initial String: ")
+print(String1)
+
+# Deleting a character
+# of the String
+String2 = String1[0:2] + String1[3:]
+print("\nDeleting character at 2nd Index: ")
+print(String2)
+
+#Output: 
+Initial String: 
+Hello, I'm a Geek
+Deleting character at 2nd Index: 
+Helo, I'm a Geek
+
+'''Formatting of Strings
+Strings in Python or string data type in Python can be formatted with the use of format() method which is a very versatile and powerful tool for formatting Strings. Format method in String contains curly braces {} as placeholders which can hold arguments according to position or keyword to specify the order.
+
+Example 1:
+
+In this example, we will declare a string which contains the curly braces {} that acts as a placeholders and provide them values to see how string declaration position matters.'''
+
+# Python Program for
+# Formatting of Strings
+
+# Default order
+String1 = "{} {} {}".format('Geeks', 'For', 'Life')
+print("Print String in default order: ")
+print(String1)
+
+# Positional Formatting
+String1 = "{1} {0} {2}".format('Geeks', 'For', 'Life')
+print("\nPrint String in Positional order: ")
+print(String1)
+
+# Keyword Formatting
+String1 = "{l} {f} {g}".format(g='Geeks', f='For', l='Life')
+print("\nPrint String in order of Keywords: ")
+print(String1)
+
+#Output: 
+Print String in default order: 
+Geeks For Life
+Print String in Positional order: 
+For Geeks Life
+Print String in order of Keywords: 
+Life For Geeks
+
+'''Example 2:
+
+Integers such as Binary, hexadecimal, etc., and floats can be rounded or displayed in the exponent form with the use of format specifiers.'''
+
+
+# Formatting of Integers
+String1 = "{0:b}".format(16)
+print("\nBinary representation of 16 is ")
+print(String1)
+
+# Formatting of Floats
+String1 = "{0:e}".format(165.6458)
+print("\nExponent representation of 165.6458 is ")
+print(String1)
+
+# Rounding off Integers
+String1 = "{0:.2f}".format(1/6)
+print("\none-sixth is : ")
+print(String1)
+
+#Output: 
+Binary representation of 16 is 
+10000
+Exponent representation of 165.6458 is 
+1.656458e+02
+one-sixth is : 
+0.17
+
+######################################################    PYTHON SET
